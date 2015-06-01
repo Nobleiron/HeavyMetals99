@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('NavbarCtrl', function ($scope) {
+  .controller('HM_NavbarCtrl', function ($scope,filterFilter) {
     /**
      * Represents a book.
      * @constructor
@@ -27,4 +27,42 @@ angular.module('HeavyMetals')
      * @param {string} author - The author of the book.
      */
     $scope.date = new Date();
+
+
+    $scope.selectedUser = '';
+
+    var users = [{
+      name: 'test',
+      group: 'Equipments'
+    }, {
+      name: 'test1',
+      group: 'Parts'
+    }, {
+      name: 'Test user3',
+      group: 'Attachments'
+    }, {
+      name: 'Test user1',
+      group: 'Attachments'
+    }, {
+      name: 'Test user3',
+      group: 'Parts'
+    },
+    ];
+
+    $scope.getUsers = function (search) {
+      var filtered = filterFilter(users, search);
+
+      var results = _(filtered)
+        .groupBy('group')
+        .map(function (g) {
+          g[0].firstInGroup = true;  // the first item in each group
+          return g;
+        })
+        .flatten()
+        .value();
+
+      console.log(results);
+
+      return results;
+    }
   });

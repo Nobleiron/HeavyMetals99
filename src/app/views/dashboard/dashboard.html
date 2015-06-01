@@ -1,33 +1,142 @@
-<div class="container">
-
-  <div ng-include="'app/views/templates/navbar.html'"></div>
-
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-  </div>
-
+<div class="clearfix">
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-        <div class="caption">
-          <h3>{{awesomeThing.title}}</h3>
-          <p>{{awesomeThing.description}}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-        </div>
+    <div class="col-md-3">
+      <div ng-include="'app/views/templates/sidebar.html'"></div>
+    </div>
+    <div class="col-md-9">
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Dashboard
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
+        <section class="content">
+          <div class="row">
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>150</h3>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-heart"></i>
+                </div>
+                <a href="#" class="small-box-footer">Catalog Products <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>53</h3>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-android-pin"></i>
+                </div>
+                <a href="#" class="small-box-footer">Jobs Sites <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>44</h3>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-android-bus"></i>
+                </div>
+                <a href="#" class="small-box-footer">Reservations <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+
+
+            <div class="col-md-6">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Upcoming Equipments Booking</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="products-list product-list-in-box">
+                    <li class="item" ng-repeat="upcoming in upcomingEquipmentBookings">
+                      <div class="product-img">
+                        <div class="small-box ">
+                          <div class="inner">
+                            <h3>26</h3>
+                          </div>
+
+                          <a href="#" class="small-box-footer">January</a>
+                        </div>
+                        <!--<img src="assets/images/default-50x50.gif" alt="Product Image">-->
+                      </div>
+                      <div class="product-info">
+                        <a href="javascript::;" class="product-title">{{upcoming.name}} <span class="label label-warning pull-right">$1800</span></a>
+                        <span class="product-description">
+                          Booked at {{upcoming.bookedAt}}
+                        </span>
+                      </div>
+                    </li><!-- /.item -->
+                  </ul>
+                </div><!-- /.box-body -->
+                <!--<div class="box-footer text-center">-->
+                  <!--<a href="javascript::;" class="uppercase">View All Products</a>-->
+                <!--</div>&lt;!&ndash; /.box-footer &ndash;&gt;-->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Equipments Nearing Rent Period End</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="products-list product-list-in-box">
+                    <li class="item" ng-repeat="upcoming in equipmentNearingEndPeriod">
+                      <div class="product-img">
+                        <div class="small-box ">
+                          <div class="inner">
+                            <h3>26</h3>
+                          </div>
+
+                          <a href="#" class="small-box-footer">January</a>
+                        </div>
+                        <!--<img src="assets/images/default-50x50.gif" alt="Product Image">-->
+                      </div>
+                      <div class="product-info">
+                        <a href="javascript::;" class="product-title">{{upcoming.name}} <span class="label label-warning pull-right">$1800</span></a>
+                        <span class="product-description">
+                          Booked at {{upcoming.bookedAt}}
+                        </span>
+                      </div>
+                    </li><!-- /.item -->
+                  </ul>
+                </div><!-- /.box-body -->
+                <!--<div class="box-footer text-center">-->
+                  <!--<a href="javascript::;" class="uppercase">View All Products</a>-->
+                <!--</div>&lt;!&ndash; /.box-footer &ndash;&gt;-->
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </section>
       </div>
+
     </div>
   </div>
 
-  <hr>
-
-  <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
-  </div>
 
 </div>

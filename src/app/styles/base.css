@@ -1,0 +1,33 @@
+.main-sidebar{
+  display: inline-block;
+  position: static;
+  float: left;
+}
+.content-wrapper{
+  margin-left: 0;
+}
+
+.navbar-brand{
+  margin-left: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.navbar-form{
+  width: 100%;
+}
+.navbar-form .form-group{
+  width: 60%;
+}
+.navbar-form .form-group input.form-control{
+  width: 100%;
+}
+
+
+.angular-google-map-container { height: 400px; }
+
+
+.typeahead-group-header {
+  padding: 3px 20px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}

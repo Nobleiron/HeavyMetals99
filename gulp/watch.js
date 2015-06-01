@@ -10,7 +10,7 @@ function isOnlyChange(event) {
 module.exports = function(options) {
   gulp.task('watch', ['inject'], function () {
 
-    gulp.watch([options.src + '/*.html', 'bower.json'], ['inject']);
+    gulp.watch([options.src + '/**/**/*.html', 'bower.json'], ['inject']);
 
     gulp.watch(options.src + '/app/**/*.css', function(event) {
       if(isOnlyChange(event)) {

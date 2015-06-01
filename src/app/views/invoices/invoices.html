@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-3">
+    <div ng-include="'app/views/templates/sidebar.html'"></div>
+  </div>
+  <div class="col-md-9">
+    <div class="content-wrapper1">
+      <section class="content-header">
+        <h1>
+          Invoices
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Invoices</li>
+        </ol>
+        <div class="clearfix">
+          <div class="box-tools pull-left">
+            <div class="has-feedback">
+              <input type="text" class="form-control input-sm" placeholder="Search Invoices">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+          </div>
+
+          <div class=" pull-right">
+            All Invoices/ Outstanding
+          </div>
+        </div>
+      </section>
+      <br>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Invoices</th>
+          <th>Job Sites</th>
+          <th>Contract #</th>
+          <th>Purchase Order</th>
+          <th>Total</th>
+          <th>Due Amount</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="invoice in invoices">
+          <td>{{invoice.no}}</td>
+          <td>{{invoice.jobsite}}</td>
+          <td>{{invoice.contract}}</td>
+          <td>{{invoice.purchaseOrder}}</td>
+          <td>{{invoice.total}}</td>
+          <td>{{invoice.dueAmount}}</td>
+          <td>
+            <a href="#"><i class="fa fa-eye"></i></a>
+            <a href="#"><i class="fa fa-download"></i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

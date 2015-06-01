@@ -24,7 +24,13 @@ module.exports = function(options) {
       .pipe(gulp.dest(options.tmp + '/partials/'));
   });
 
-  gulp.task('html', ['inject', 'partials'], function () {
+
+  gulp.task('copyViews', function() {
+    return gulp.src('./src/app/views/**/*.html')
+      .pipe( gulp.dest('./dist/app/views') )
+  });
+
+  gulp.task('html', ['inject', 'partials','copyViews'], function () {
     var partialsInjectFile = gulp.src(options.tmp + '/partials/templateCacheHtml.js', { read: false });
     var partialsInjectOptions = {
       starttag: '<!-- inject:partials -->',

@@ -5,25 +5,33 @@
     <title>heavyMetals</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <!-- FontAwesome 4.3.0 -->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- Ionicons 2.0.0 -->
+    <!--<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- Theme style -->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
-    <!-- endbower -->
+    <link href="../bower_components/ionicons/css/ionicons.min.css"/>
+    <link href="../bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbuild -->
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
-    <!-- inject:css -->
-    <!-- css files will be automatically insert here -->
-    <!-- endinject -->
+    <link rel="stylesheet" href="app/styles/index.css" />
+    <link rel="stylesheet" href="app/styles/navbar.css" />
+    <link rel="stylesheet" href="app/styles/AdminLTE.css" />
+    <link rel="stylesheet" href="app/styles/skin-blue.css" />
+    <link rel="stylesheet" href="app/styles/base.css" />
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="skin-blue">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div ui-view="navbar"></div>
     <div ui-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -51,6 +59,9 @@
       <script src="app/scripts/modules/hm/heavy-metals.module.js"></script>
       <script src="app/scripts/modules/hm/global.module.js"></script>
       <script src="app/scripts/modules/dashboard/dashboard.module.js"></script>
+      <script src="app/scripts/modules/invoices/invoices.module.js"></script>
+      <script src="app/scripts/modules/jobsites/manage-jobsite.module.js"></script>
+      <script src="app/scripts/modules/equipments/equipments.module.js"></script>
     <!-- End Modules -->
 
     <script src="app/scripts/constants/hm-config/env.constants.js"></script>
@@ -60,7 +71,17 @@
 
     <script src="app/scripts/controllers/dashboard/dashboard.controller.js"></script>
     <script src="app/scripts/controllers/components/navbar/navbar.controller.js"></script>
+    <script src="app/scripts/controllers/invoices/invoices.controller.js"></script>
+    <script src="app/scripts/controllers/jobsites/manage-jobsites.controller.js"></script>
+    <script src="app/scripts/controllers/equipments/sell-equipment.controller.js"></script>
     <!-- endbuild -->
 
+    <script type="text/ng-template" id="typeahead-item.html">
+
+      <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
+      <a>
+        <span ng-bind-html="match.label | typeaheadHighlight:query"></span>
+      </a>
+    </script>
   </body>
 </html>
