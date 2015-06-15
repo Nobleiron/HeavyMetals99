@@ -1,6 +1,7 @@
 'use strict';
 angular.module('HM_DashboardMD')
-  .controller('HM_DashboardCtrl', function ($scope) {
+  .controller('HM_DashboardCtrl', function ($scope, localStorageService) {
+
 
     $scope.upcomingEquipmentBookings = [{
       name : 'Equipment Name',
