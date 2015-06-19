@@ -323,7 +323,9 @@
     <div class="search_main">
       <form class="navbar-form" role="search">
 
-        <input type="text" class="form-control search-head" placeholder="Search for equpiment, parts, etc..." name="q">
+        <input type="text" class="form-control search-head" placeholder="Search for equpiment, parts, etc..." name="q" ng-model="selectedUser"
+               typeahead="user as user.name for user in getUsers($viewValue)"
+               typeahead-template-url="typeahead-item.html">
 
         <button class="btn btn-default my_search" type="submit" style=" "><i class="glyphicon glyphicon-arrow-right"></i></button>
 
