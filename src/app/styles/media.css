@@ -1,0 +1,96 @@
+/*
+    Document   : media
+    Created on : Jun 15, 2015, 5:31:01 PM
+    Author     : AMU
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 980px) {
+    .search_main {
+        padding: 20px 0 92px;
+
+    }
+    .lift_part{margin: 15px 0;}
+    .pay_part{margin: 15px 0;}
+}
+@media screen and (max-width: 768px) {
+    .get_soft{}
+
+
+    .rent_tit {
+        font-size: 28px; padding: 147px 0 40px;
+
+    }
+    .search_main {
+        padding: 20px 0 60px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .soc_foot {
+        text-align: center;
+    }
+    .copy-text{text-align: center; padding: 10px 0;}
+    .about_part{margin: 15px 0;}
+    .logo_part{margin: 15px 0;}
+    .logo-center{text-align: center;}
+    .req_part{ }
+    .get_soft {
+        margin: 0 0 0 7px;
+
+    }
+    .glyphicon-align-justify{font-size: 18px;}
+    .glyphicon-earphone{font-size: 18px;}
+    .glyphicon-log-in{font-size: 18px;}
+    .eqe_tex {
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .req_call {
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .req_call a {
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .req_part {
+        padding: 0;}
+    .rent_tit {
+        font-size: 23px;
+        padding: 186px 0 12px;
+    }
+    .search-head {
+        display: inline-block;
+        width: 70% !important;
+    }
+    .main_bg{
+        background-size: 100% 100%;
+    }
+    .mob_tit {
+        font-size: 20px;
+
+    }
+    .mob_subtit {
+        font-size: 14px;
+
+    }
+    .tech-menu ul li h2 {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .eqe_tex {
+        font-size: 10px;
+
+    }
+    .get_soft {
+        padding: 6px 16px;
+    }
+}

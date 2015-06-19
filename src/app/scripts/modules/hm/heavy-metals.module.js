@@ -20,6 +20,7 @@
       'ui.bootstrap',
       'LocalStorageModule',
       'HM_ConfigMD',
+      'HM_RoutesMD',
       'HM_GlobalMD'])
 
 

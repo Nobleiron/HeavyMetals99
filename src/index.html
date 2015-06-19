@@ -13,26 +13,27 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <link href="../bower_components/ionicons/css/ionicons.min.css"/>
-    <link href="../bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="app/styles/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="app/styles/style.css"> <!-- Resource style -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800' rel='stylesheet' type='text/css'>
+    <link href="../bower_components/fontawesome/css/font-awesome.min.css"/>
     <!-- endbuild -->
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
-    <link rel="stylesheet" href="app/styles/index.css" />
-    <link rel="stylesheet" href="app/styles/navbar.css" />
-    <link rel="stylesheet" href="app/styles/AdminLTE.css" />
-    <link rel="stylesheet" href="app/styles/skin-blue.css" />
-    <link rel="stylesheet" href="app/styles/base.css" />
+
+    <link href="app/styles/main.css" rel="stylesheet">
+    <link href="app/styles/media.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
-  <body class="skin-blue">
+  <body class="skin-blue prelogin">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div ui-view="navbar"></div>
     <div ui-view></div>
+    <div ui-view="footer"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -56,8 +57,10 @@
 
     <!-- Modules -->
       <script src="app/scripts/modules/hm/heavy-metals-config.module.js"></script>
+      <script src="app/scripts/modules/hm/heavy-metals-routes.module.js"></script>
       <script src="app/scripts/modules/hm/heavy-metals.module.js"></script>
       <script src="app/scripts/modules/hm/global.module.js"></script>
+      <script src="app/scripts/modules/prelogin/dashboard/search.module.js"></script>
       <script src="app/scripts/modules/dashboard/dashboard.module.js"></script>
       <script src="app/scripts/modules/invoices/invoices.module.js"></script>
       <script src="app/scripts/modules/jobsites/manage-jobsite.module.js"></script>
@@ -68,7 +71,8 @@
     <script src="app/scripts/constants/hm-config/routes.constants.js"></script>
     <script src="app/scripts/constants/hm-config/global.constant.js"></script>
 
-
+    <script src="app/scripts/controllers/prelogin/dashboard/search.controller.js"></script>
+    <script src="app/scripts/controllers/prelogin/components/navbar/navbar.controller.js"></script>
     <script src="app/scripts/controllers/dashboard/dashboard.controller.js"></script>
     <script src="app/scripts/controllers/components/navbar/navbar.controller.js"></script>
     <script src="app/scripts/controllers/invoices/invoices.controller.js"></script>
