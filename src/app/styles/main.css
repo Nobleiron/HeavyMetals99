@@ -135,4 +135,16 @@ a:focus { color: #0099cc;
 .glyphicon-time{font-size: 23px; color: #ff5600;}
 .glyphicon-credit-card{font-size: 23px; color: #ff5600;}
 .fa-money{font-size: 23px; color: #ff5600;}
+pre { margin-top: 10px; }
+.typeahead-group-header {
+  color: #000000;
+  padding: 3px 20px;
+  font-weight: bold;
+}
+.dropdown-menu a.typeahead-search-item{
+  padding-left: 30px;
+}
 
+.dropdown-menu a.typeahead-search-item strong{
+  color :#0099cc;
+}

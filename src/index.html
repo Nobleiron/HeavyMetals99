@@ -83,7 +83,7 @@
     <script type="text/ng-template" id="typeahead-item.html">
 
       <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
-      <a>
+      <a class="typeahead-search-item">
         <span ng-bind-html="match.label | typeaheadHighlight:query"></span>
       </a>
     </script>

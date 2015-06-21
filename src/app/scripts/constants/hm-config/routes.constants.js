@@ -30,9 +30,9 @@ angular.module("HM_ConfigMD")
             }
           }
         },
-        'hmPrelogin.search' : {
+        'landing' : {
           url: '/',
-          templateUrl: 'app/views/prelogin/dashboard/search.html',
+          templateUrl: 'app/views/prelogin/dashboard/landing.html',
           controller: 'HM_PreloginSearchCtrl'
         },
         'hm.dashboard' : {

@@ -32,21 +32,27 @@ angular.module('HeavyMetals')
     $scope.selectedUser = '';
 
     var users = [{
-      name: 'test',
+      name: 'Electric Scissor lift',
+      group: 'Equipments'
+    },{
+      name: 'Electric Scissor lift (Wide)',
+      group: 'Equipments'
+    },{
+      name: 'Electric Scissor lift - 16\"',
       group: 'Equipments'
     }, {
-      name: 'test1',
+      name: 'Electric transmission of gearbox',
       group: 'Parts'
     }, {
-      name: 'Test user3',
-      group: 'Attachments'
-    }, {
-      name: 'Test user1',
-      group: 'Attachments'
-    }, {
-      name: 'Test user3',
+      name: 'Electric gear docket',
       group: 'Parts'
-    },
+    }, {
+      name: 'Expansion Electric Chord',
+      group: 'Attachments'
+    }, {
+      name: 'Advanced Electric resistance socket box',
+      group: 'Attachments'
+    }
     ];
 
     $scope.getUsers = function (search) {
