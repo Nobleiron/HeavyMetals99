@@ -41,7 +41,7 @@ angular.module("HM_ConfigMD")
           controller: 'HM_DashboardCtrl'
         },
         'hm.sellEquipment' :{
-          url : '/sell-your-equipments',
+          url : '/equipments/sell',
           templateUrl : 'app/views/equipments/sell-equipments.html',
           controller: 'HM_SellEquipmentCtrl'
         },
@@ -50,6 +50,12 @@ angular.module("HM_ConfigMD")
               templateUrl: 'app/views/invoices/invoices.html',
               controller: 'HM_InvoicesCtrl',
               openInModal : true
+        },
+        'hm.reserveTheEquipment' : {
+          url: '/equipments/reserve',
+          templateUrl: 'app/views/equipments/reserve.html',
+          controller: 'HM_InvoicesCtrl',
+          openInModal : true
         },
         'hm.manageJobSite' : {
           url: '/manage/job-sites',
