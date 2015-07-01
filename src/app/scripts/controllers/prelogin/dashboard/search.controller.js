@@ -1,5 +1,5 @@
 'use strict';
-angular.module('HM_PreloginSearchMD')
+angular.module('HM_PreloginMD')
   .controller('HM_PreloginSearchCtrl', ['$scope','filterFilter', function ($scope,filterFilter) {
 
     /**

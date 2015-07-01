@@ -66,9 +66,14 @@ angular.module("HM_ConfigMD")
           url: '/requests',
           templateUrl: 'app/views/requests/requests.html',
           controller: 'HM_RequestsCtrl'
+        },
+        'hmPrelogin.login' : {
+          url: '/login',
+          templateUrl: 'app/views/prelogin/login/login.html',
+          controller: 'HM_LoginCtrl'
         }
 
       },
-      defaultRoute : '/'
+      defaultRoute : '/login'
 
   });
