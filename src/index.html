@@ -15,9 +15,9 @@
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/styles/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="app/styles/style.css"> <!-- Resource style -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app/vendor/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800' rel='stylesheet' type='text/css'>
-    <link href="../bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link href="../bower_components/fontawesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'/>
     <!-- endbuild -->
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
@@ -46,9 +46,16 @@
     </script>
 
     <!-- build:js(src) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- run `gulp inject` to automatically populate bower script dependencies -->
-    <!-- endbower -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="../bower_components/angular-google-maps/dist/angular-google-maps-street-view.min.js"></script>
+    <script src="../bower_components/angular-ui-select2/src/select2.js"></script>
+    <script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->

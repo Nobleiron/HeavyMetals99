@@ -8,9 +8,11 @@
     <!-- START  Search box -->
     <div class="col-lg-7 col-md-6 col-sm-4 col-xs-12">
 
-      <form class="navbar-form" role="search">
+      <form class="navbar-form topnav-search" role="search">
 
-        <input type="text" class="form-control search-head" placeholder="Search for equpiment, parts, etc..." name="q">
+        <input type="text" class="form-control search-head"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedUser"
+               typeahead="user as user.name for user in getUsers($viewValue)"
+               typeahead-template-url="typeahead-item.html">
 
         <button class="btn btn-default my_search" type="submit" style=" "><i class="glyphicon glyphicon-arrow-right"></i></button>
 

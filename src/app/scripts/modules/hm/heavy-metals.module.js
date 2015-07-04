@@ -13,9 +13,6 @@
 
   angular.module('HeavyMetals',
     ['ngAnimate',
-      'ngCookies',
-      'ngTouch',
-      'ngSanitize',
       'ui.router',
       'ui.bootstrap',
       'LocalStorageModule',

@@ -1,11 +1,11 @@
-watching model:
-<div class="button" ngf-select ng-model="files">Upload using model $watch</div>
-<div class="button" ngf-select ngf-change="upload($files)">Upload on file change</div>
-Drop File:
-<div ngf-drop ng-model="files" class="drop-box"
-     ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
-     ngf-accept="'image/*,application/pdf'">Drop Images or PDFs files here</div>
-<img ngf-src="files[0]" ngf-default-src="assets/images/yeoman.png" ngf-accept="'image/*'">
+<!--watching model:-->
+<!--<div class="button" ngf-select ng-model="files">Upload using model $watch</div>-->
+<!--<div class="button" ngf-select ngf-change="upload($files)">Upload on file change</div>-->
+<!--Drop File:-->
+<!--<div ngf-drop ng-model="files" class="drop-box"-->
+     <!--ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"-->
+     <!--ngf-accept="'image/*,application/pdf'">Drop Images or PDFs files here</div>-->
+<!--<img ngf-src="files[0]" ngf-default-src="assets/images/yeoman.png" ngf-accept="'image/*'">-->
 <section>
   <!-- START  Main Content -->
   <article class="main-cantain">
@@ -15,17 +15,21 @@ Drop File:
         <h2 class="sell_main_tit">Sell Us your Equipment | <span class="sell_sec_tit">We will buy yours even if you don’t buy ours!</span> </h2>
         <hr>
         <h4 class="sell_lebal">Equipment Details</h4>
-        <div class="upload_box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*'">
-          <button class="btn btn-primary btn-file">
-            <i class="fa fa-plus"></i>
-            Add Pictures
+        <div class="upload_box" ngf-drop ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" ng-model="files"  ngf-select  ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*'">
+          <div class="upload-area" ng-if="!files[0]">
+            <button class="btn btn-primary btn-file">
+              <i class="fa fa-plus"></i>
+              Add Pictures
 
 
-          </button>
+            </button>
 
-          <p class="smplyfy_p">OR</p>
+            <p class="smplyfy_p">OR</p>
 
-          <p class="smplyfy_p">Simply Drag and Drop Photos here</p>
+            <p class="smplyfy_p">Simply Drag and Drop Photos here</p>
+          </div>
+          <img ngf-src="files[0]" ng-if="files[0]" ngf-default-src="assets/images/yeoman.png" ngf-accept="'image/*'">
+
         </div>
         <form role="form" class="form_sell">
           <div class="form-group form-group-sell">
