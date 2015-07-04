@@ -1,6 +1,7 @@
 'use strict';
 angular.module("HM_InvoicesMD")
   .controller('HM_InvoicesCtrl', ['$scope','PreviousState',function($scope,PreviousState){
+    console.log(PreviousState)
 
     $scope.invoices = [{
       no :'93234',

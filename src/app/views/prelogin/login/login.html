@@ -1,0 +1,106 @@
+<section>
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+        <h4 class="signin_teg">Noble Iron offers equipment for rent, equipment for sale, and software applications for the construction and industrial equipment industry</h4>
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <img src="/assets/images/rent.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+            <h6 class="rent_title">Equipment Rental</h6>
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <img src="/assets/images/sale.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+            <h6 class="rent_title">Equipment Sales</h6>
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 ">
+            <img src="/assets/images/soft.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+            <h6 class="rent_title">Software</h6>
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+      </div>
+      <!-- START  LOGIN/REGISTER TAB -->
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page">
+        <ul class="nav nav-tabs nav-mytab">
+          <li ng-class="{'active' : !signUpTab}"><a data-toggle="tab" ng-click="signUpTab= false;">Log in</a></li>
+          <li ng-class="{'active' : signUpTab}"><a data-toggle="tab" ng-click="signUpTab= true;">Register</a></li>
+        </ul>
+
+        <div class="tab-content my-tab">
+          <!-- START  LOGIN TAB Content -->
+          <div id="home" class="tab-pane fade in" ng-class="{'active' : !signUpTab}">
+
+            <div class="col-lg-12 welcome_title">Welcome back!<span class="flot-right need_help"><a href="#">Need Help?</a></span></div>
+
+            <div class="col-lg-12">
+              <form role="form">
+                <div class="form-group">
+
+                  <input type="email" class="form-control" id="email" placeholder="Phone, email or username">
+                </div>
+                <div class="form-group">
+
+                  <input type="password" class="form-control" id="pwd" placeholder="password">
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox"> Remember me</label>
+                  <span class="flot-right need_help"><a href="#">Forgot Password?</a></span>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-default flot-right sign_mybtn">Sign In</button>
+              </form>
+            </div>
+          </div>
+          <!-- End  LOGIN TAB Content -->
+          <!-- START  REGISTER TAB Content -->
+          <div id="menu1" class="tab-pane fade in" ng-class="{'active' : signUpTab}">
+            <div class="col-lg-12 welcome_title">Get Started - <span class="link_clr">it’s free</span><span class="flot-right need_help"><a href="#">Need Help?</a></span></div>
+
+            <div class="col-lg-12">
+              <form role="form">
+                <div class="form-group">
+                  <input type="email" class="form-control in-block fname_in" id="email" placeholder="Email">
+                  <input type="email" class="form-control in-block fname_in flot-right" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+
+                  <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+
+                  <input type="password" class="form-control" id="pwd" placeholder="password">
+                </div>
+
+                <div class="need_help">By <a href="#">Signing up</a>, you agree to findoo’s <a href="#">Terms & Conditions</a></div>
+                <hr>
+
+                <button type="submit" class="btn btn-default flot-right sign_mybtn">Sign Up</button>
+
+              </form>
+            </div>
+          </div>
+          <!-- End  REGISTER TAB Content -->
+
+        </div>
+      </div>
+      <!-- End  LOGIN/REGISTER TAB -->
+    </div>
+  </article>
+
+  <!-- End  Main Content -->
+
+
+</section>

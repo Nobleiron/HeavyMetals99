@@ -13,26 +13,27 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <link href="../bower_components/ionicons/css/ionicons.min.css"/>
-    <link href="../bower_components/fontawesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app/styles/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="app/styles/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="app/vendor/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800' rel='stylesheet' type='text/css'>
+    <link href="../bower_components/fontawesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'/>
     <!-- endbuild -->
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
-    <link rel="stylesheet" href="app/styles/index.css" />
-    <link rel="stylesheet" href="app/styles/navbar.css" />
-    <link rel="stylesheet" href="app/styles/AdminLTE.css" />
-    <link rel="stylesheet" href="app/styles/skin-blue.css" />
-    <link rel="stylesheet" href="app/styles/base.css" />
+
+    <link href="app/styles/main.css" rel="stylesheet">
+    <link href="app/styles/media.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
-  <body class="skin-blue">
+  <body class="skin-blue prelogin">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div ui-view="navbar"></div>
     <div ui-view></div>
+    <div ui-view="footer"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -45,9 +46,16 @@
     </script>
 
     <!-- build:js(src) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- run `gulp inject` to automatically populate bower script dependencies -->
-    <!-- endbower -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="../bower_components/angular-google-maps/dist/angular-google-maps-street-view.min.js"></script>
+    <script src="../bower_components/angular-ui-select2/src/select2.js"></script>
+    <script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
@@ -56,8 +64,10 @@
 
     <!-- Modules -->
       <script src="app/scripts/modules/hm/heavy-metals-config.module.js"></script>
+      <script src="app/scripts/modules/hm/heavy-metals-routes.module.js"></script>
       <script src="app/scripts/modules/hm/heavy-metals.module.js"></script>
       <script src="app/scripts/modules/hm/global.module.js"></script>
+      <script src="app/scripts/modules/prelogin/prelogin.module.js"></script>
       <script src="app/scripts/modules/dashboard/dashboard.module.js"></script>
       <script src="app/scripts/modules/invoices/invoices.module.js"></script>
       <script src="app/scripts/modules/jobsites/manage-jobsite.module.js"></script>
@@ -68,18 +78,21 @@
     <script src="app/scripts/constants/hm-config/routes.constants.js"></script>
     <script src="app/scripts/constants/hm-config/global.constant.js"></script>
 
-
+    <script src="app/scripts/controllers/prelogin/dashboard/search.controller.js"></script>
+    <script src="app/scripts/controllers/prelogin/components/navbar/navbar.controller.js"></script>
     <script src="app/scripts/controllers/dashboard/dashboard.controller.js"></script>
     <script src="app/scripts/controllers/components/navbar/navbar.controller.js"></script>
     <script src="app/scripts/controllers/invoices/invoices.controller.js"></script>
     <script src="app/scripts/controllers/jobsites/manage-jobsites.controller.js"></script>
     <script src="app/scripts/controllers/equipments/sell-equipment.controller.js"></script>
+    <script src="app/scripts/controllers/equipments/reserve-equipment.controller.js"></script>
+    <script src="app/scripts/controllers/prelogin/login/login.controller.js"></script>
     <!-- endbuild -->
 
     <script type="text/ng-template" id="typeahead-item.html">
 
       <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
-      <a>
+      <a class="typeahead-search-item">
         <span ng-bind-html="match.label | typeaheadHighlight:query"></span>
       </a>
     </script>
