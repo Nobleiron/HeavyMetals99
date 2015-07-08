@@ -235,3 +235,12 @@ a:focus { color: #0099cc;
 .topnav-search .dropdown-menu{
   padding: 10px;
 }
+.typeahead-group-header{
+  color: black;
+  padding: 5px 0px 5px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+.typeahead-search-item strong{
+  color: #0099cc !important;
+}
