@@ -60,6 +60,11 @@ angular.module("HM_ConfigMD")
           controller: 'HM_EquipmentReserveCtrl',
           openInModal : true
         },
+        'hm.search' : {
+          url: '/search',
+          templateUrl: 'app/views/search/search.html',
+          controller: 'HM_SearchCtrl'
+        },
         'hm.reserveEquipmentSuccess' : {
           url: '/equipments/:id/reserve-success',
           templateUrl: 'app/views/equipments/equipment.reserve-success.html',

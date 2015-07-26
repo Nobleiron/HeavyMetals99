@@ -5,6 +5,7 @@ angular.module("HM_GlobalMD",[
   'HM_ManageJobSitesMD',
   'HM_EquipmentsMD',
   'HM_PreloginMD',
-  'HM_OrdersMD'
+  'HM_OrdersMD',
+  'HM_SearchMD'
 
 ]);

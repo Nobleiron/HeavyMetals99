@@ -32,3 +32,4 @@
 }
 
 .zoom img::selection { background-color: transparent; }
+.angular-google-map-container { height: 500px; }
