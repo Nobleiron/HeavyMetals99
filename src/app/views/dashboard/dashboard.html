@@ -1,142 +1,485 @@
-<div class="clearfix">
-  <div class="row">
-    <div class="col-md-3">
-      <div ng-include="'app/views/templates/sidebar.html'"></div>
-    </div>
-    <div class="col-md-9">
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Dashboard
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>
-        <section class="content">
-          <div class="row">
-            <div class="col-lg-4 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>150</h3>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-heart"></i>
-                </div>
-                <a href="#" class="small-box-footer">Catalog Products <i class="fa fa-arrow-circle-right"></i></a>
+<section>
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="row">
+        <!-- START  Dashboard tab -->
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+          <ul class="nav nav-pills nav-stacked my-verti-tab">
+            <li class="active">
+              <a data-toggle="pill" href="#dash">
+                <i class="fa fa-th-large my-verti-icon"></i>
+
+                Dashboard</a></li>
+            <li><a data-toggle="pill" href="#mycat">
+              <i class="fa fa-heart my-verti-icon"></i>
+              My Catalog</a></li>
+            <li><a data-toggle="pill" href="#jobsite">
+              <i class="fa fa-map-marker my-verti-icon"></i>
+              Manage Job Sites</a></li>
+            <li><a data-toggle="pill" href="#myalc">
+              <i class="fa fa-user my-verti-icon"></i>
+              Manage My Account</a></li>
+            <li><a data-toggle="pill" href="#quotes">
+              <i class="fa fa-bookmark-o my-verti-icon"></i>
+              Quotes &amp;
+              Reservations</a></li>
+            <li><a data-toggle="pill" href="#makepay">
+              <i class="fa fa-usd my-verti-icon"></i>
+              Make a Payment</a></li>
+            <li><a data-toggle="pill" href="#viewin">
+              <i class="fa fa-file my-verti-icon"></i>
+
+              View Invoices</a></li>
+            <li><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
+              Requests</a></li>
+            <li><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
+              View Contracts</a></li>
+
+          </ul>
+
+        </div>
+        <!-- End  Dashboard tab -->
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
+          <div class="tab-content">
+            <!-- START  Dashboard Content -->
+            <div id="dash" class="tab-pane fade in active">
+
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+                Manage Job Sites
               </div>
-            </div><!-- ./col -->
-            <div class="col-lg-4 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>53</h3>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-android-pin"></i>
-                </div>
-                <a href="#" class="small-box-footer">Jobs Sites <i class="fa fa-arrow-circle-right"></i></a>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit">
+                <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span>
               </div>
-            </div><!-- ./col -->
-            <div class="col-lg-4 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>44</h3>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-android-bus"></i>
-                </div>
-                <a href="#" class="small-box-footer">Reservations <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box">
+                <ul>
+                  <li>
+                    <div class="">
+                      <span class="number-job">34</span>
+                                                    <span class="flot-right job-ste-box_icon">
+                                                        <i class="fa fa-heart fa-2x job-ste-box_icon"></i>
+                                                    </span>
+                    </div>
+                    <div class="cat-product">
+                      <span class="cat-span">Catalog Products</span>
+                                                    <span>
+                                                        <i class="fa fa-angle-right  fa-2x flot-right right-arrw"></i>
 
 
-            <div class="col-md-6">
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Upcoming Equipments Booking</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <ul class="products-list product-list-in-box">
-                    <li class="item" ng-repeat="upcoming in upcomingEquipmentBookings">
-                      <div class="product-img">
-                        <div class="small-box ">
-                          <div class="inner">
-                            <h3>26</h3>
-                          </div>
+                                                    </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="">
+                      <span class="number-job">12</span>
+                                                    <span class="flot-right job-ste-box_icon">
 
-                          <a href="#" class="small-box-footer">January</a>
-                        </div>
-                        <!--<img src="assets/images/default-50x50.gif" alt="Product Image">-->
+                                                        <i class="fa fa-map-marker fa-2x job-ste-box_icon"></i>
+                                                    </span>
+                    </div>
+                    <div class="cat-product">
+                      <span class="cat-span">Job Sites</span>
+                                                    <span>
+                                                        <i class="fa fa-angle-right  fa-2x flot-right right-arrw"></i>
+
+
+                                                    </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="">
+                      <span class="number-job">20</span>
+                                                    <span class="flot-right job-ste-box_icon">
+                                                        <i class="fa fa-bookmark fa-2x job-ste-box_icon"></i>
+
+                                                    </span>
+                    </div>
+                    <div class="cat-product">
+                      <span class="cat-span">Job Sites</span>
+                                                    <span>
+
+                                                        <i class="fa fa-angle-right  fa-2x flot-right right-arrw"></i>
+
+
+                                                    </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col -lg-6 col-md-6 col-sm-12 col-xs-12  upcoming">
+                <h4 class="upcoming-title">Upcoming Reservations
+                  <i class="fa fa-angle-right  fa-2x flot-right upcom-arrow"></i></h4>
+                <div class="upcome_eqe">
+                  <ul>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
                       </div>
-                      <div class="product-info">
-                        <a href="javascript::;" class="product-title">{{upcoming.name}} <span class="label label-warning pull-right">$1800</span></a>
-                        <span class="product-description">
-                          Booked at {{upcoming.bookedAt}}
-                        </span>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="reser_tex">Reserved 8 days ago</p>
+
+
                       </div>
-                    </li><!-- /.item -->
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="reser_tex">Reserved 8 days ago</p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="reser_tex">Reserved 8 days ago</p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="reser_tex">Reserved 8 days ago</p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
                   </ul>
-                </div><!-- /.box-body -->
-                <!--<div class="box-footer text-center">-->
-                  <!--<a href="javascript::;" class="uppercase">View All Products</a>-->
-                <!--</div>&lt;!&ndash; /.box-footer &ndash;&gt;-->
+                </div>
+              </div>
+              <div class="col -lg-6 col-md-6 col-sm-12 col-xs-12  upcoming">
+                <h4 class="upcoming-title">Equipment nearing Rental eriod End
+                  <i class="fa fa-angle-right  fa-2x flot-right upcom-arrow"></i></h4>
+                <div class="upcome_eqe">
+                  <ul>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="last_day"><a href="#">Last 4 days to submit</a></p>
+                        <p class="view_contact">
+                          <span class="text-left"><a href="#">Extend Now</a></span>
+                          <span class=" flot-right"><a href="#">View Contract</a></span>
+                        </p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="last_day"><a href="#">Last 4 days to submit</a></p>
+                        <p class="view_contact">
+                          <span class="text-left"><a href="#">Extend Now</a></span>
+                          <span class=" flot-right"><a href="#">View Contract</a></span>
+                        </p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="last_day"><a href="#">Last 4 days to submit</a></p>
+                        <p class="view_contact">
+                          <span class="text-left"><a href="#">Extend Now</a></span>
+                          <span class=" flot-right"><a href="#">View Contract</a></span>
+                        </p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-block update_date">
+                        <span class="update_date_number">26</span>
+                        <span class="update_date_month">January</span>
+                      </div>
+                      <div class="in-block update_date_title">
+                        <p class="eqe_tex">Equipment Name</p>
+                        <p class="eqe_tex">Job Site Location</p>
+                        <p class="last_day"><a href="#">Last 4 days to submit</a></p>
+                        <p class="view_contact">
+                          <span class="text-left"><a href="#">Extend Now</a></span>
+                          <span class=" flot-right"><a href="#">View Contract</a></span>
+                        </p>
+
+
+                      </div>
+                      <div class="in-block update_date_pic">
+                        <img src="assets/images/dash_pic1.png" alt="">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            <!-- End  Dashboard Content -->
+            <div id="mycat" class="tab-pane fade">
+              <h3>My Catalog</h3>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <!-- START  Manage Job Sites Content -->
+            <div id="jobsite" class="tab-pane fade">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+                Manage Job SItes
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-right flot-right nopadding my-bottm-line dash_board_tit">
+                <input type="text" class="form-control" placeholder="Search SItes">
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 add_site_top nopadding">
+                <button type="button" class="btn btn-default map_btn_manage">Add Job Site</button>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 flot-right add_site_top nopadding">
+
+                <div class="btn-group btn-group-justified">
+                  <a href="#" class="btn btn-primary btn_map_view">Map View</a>
+                  <a href="#" class="btn btn-primary btn_map_view">List View</a>
+
+                </div>
+              </div>
+              <!-- START  google map -->
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gmap">
+                <div class="google-maps">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                </div>
+              </div>
+              <!-- End   google map -->
+            </div>
+            <!-- End  Manage Job Sites Content -->
+            <div id="myalc" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="quotes" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="makepay" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <!-- START  View Invoices Content -->
+            <div id="viewin" class="tab-pane fade">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+                Invoices
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-right flot-right nopadding my-bottm-line dash_board_tit">
+                <input type="text" class="form-control" placeholder="Search Invoices">
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 add_site_top nopadding">
+
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 flot-right add_site_top nopadding">
+
+                <div class="btn-group btn-group-justified">
+                  <a href="#" class="btn btn-primary btn_map_view">All Invoices</a>
+                  <a href="#" class="btn btn-primary btn_map_view">Outstanding</a>
+
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <table class="table my-invoice">
+                  <thead>
+                  <tr class="invoice_head">
+                    <th class="invoice_title">Invoices #</th>
+                    <th class="invoice_title">Job Site</th>
+                    <th class="invoice_title">Contract #</th>
+                    <th class="invoice_title">Purchase Order</th>
+                    <th class="invoice_title">Total</th>
+                    <th class="invoice_title">Due Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="invoice-tr">
+                    <td><a href="#">49345</a></td>
+                    <td>Harbor Freight</td>
+                    <td>23478</td>
+                    <td>324-46733</td>
+                    <td>$ 928.96</td>
+                    <td>$ 00.00</td>
+                    <td><a href="#"><i class="fa fa-download"></i></a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Equipments Nearing Rent Period End</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <ul class="products-list product-list-in-box">
-                    <li class="item" ng-repeat="upcoming in equipmentNearingEndPeriod">
-                      <div class="product-img">
-                        <div class="small-box ">
-                          <div class="inner">
-                            <h3>26</h3>
-                          </div>
-
-                          <a href="#" class="small-box-footer">January</a>
-                        </div>
-                        <!--<img src="assets/images/default-50x50.gif" alt="Product Image">-->
-                      </div>
-                      <div class="product-info">
-                        <a href="javascript::;" class="product-title">{{upcoming.name}} <span class="label label-warning pull-right">$1800</span></a>
-                        <span class="product-description">
-                          Booked at {{upcoming.bookedAt}}
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                  </ul>
-                </div><!-- /.box-body -->
-                <!--<div class="box-footer text-center">-->
-                  <!--<a href="javascript::;" class="uppercase">View All Products</a>-->
-                <!--</div>&lt;!&ndash; /.box-footer &ndash;&gt;-->
-              </div>
+            <!-- End  View Invoices Content -->
+            <div id="req" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
             </div>
-
+            <div id="viewcon" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
           </div>
+        </div>
 
-
-
-        </section>
       </div>
 
     </div>
-  </div>
+  </article>
+
+  <!-- End  Main Content -->
 
 
-</div>
+</section>

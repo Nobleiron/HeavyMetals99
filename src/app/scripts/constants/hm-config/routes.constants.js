@@ -45,8 +45,8 @@ angular.module("HM_ConfigMD")
         },
         'hm.sellEquipment' :{
           url : '/equipments/sell',
-          templateUrl : 'app/views/equipments/sell-equipments.html',
-          controller: 'HM_SellEquipmentCtrl'
+          templateUrl : 'app/views/equipments/equipment.sell.html',
+          controller: 'HM_EquipmentSellCtrl'
         },
         'hm.invoices' : {
               url: '/invoices',
@@ -54,16 +54,26 @@ angular.module("HM_ConfigMD")
               controller: 'HM_InvoicesCtrl',
               openInModal : true
         },
-        'hm.reserveTheEquipment' : {
-          url: '/equipments/reserve',
-          templateUrl: 'app/views/equipments/reserve.html',
-          controller: 'HM_InvoicesCtrl',
+        'hm.reserveEquipment' : {
+          url: '/equipments/:id/reserve',
+          templateUrl: 'app/views/equipments/equipment.reserve.html',
+          controller: 'HM_EquipmentReserveCtrl',
           openInModal : true
+        },
+        'hm.reserveEquipmentSuccess' : {
+          url: '/equipments/:id/reserve-success',
+          templateUrl: 'app/views/equipments/equipment.reserve-success.html',
+          controller: 'HM_EquipmentReserveSuccessCtrl'
         },
         'hm.orderHistory' : {
           url: '/orders/history',
-          templateUrl: 'app/views/orders/history.html',
+          templateUrl: 'app/views/orders/order.history.html',
           controller: 'HM_OrderHistoryCtrl'
+        },
+        'hm.equipmentDetails' : {
+          url: '/equipments/:id',
+          templateUrl: 'app/views/equipments/equipment.details.html',
+          controller: 'HM_EquipmentDetailsCtrl'
         },
         'hm.manageJobSite' : {
           url: '/manage/job-sites',

@@ -13,7 +13,7 @@
       if (!Routescnst.routes.hasOwnProperty(state)) {
         continue;
       }
-
+      var registerState = Routescnst.routes[state];
       var stateObj = angular.extend({resolve: {
         PreviousState: [
           "$state",
@@ -26,7 +26,7 @@
             return currentStateData;
           }
         ]
-      }},Routescnst.routes[state]);
+      }},registerState);
       $stateProvider
         .state(state, stateObj);
     }
@@ -35,29 +35,32 @@
 
   function _run( $rootScope, $modal) {
 
+
     $rootScope.$on('$stateChangeStart', function (event, toState) {
-      if(!toState.openInModal) return;
-      $modal.open({
-        templateUrl : toState.templateUrl,
-        controller: toState.controller,
-        resolve: {
-          PreviousState: [
-            "$state",
-            function ($state) {
-              var currentStateData = {
-                name: $state.current.name,
-                params: $state.params,
-                url: $state.href($state.current.name, $state.params)
-              };
-              return currentStateData;
-            }
-          ]
-        }
-      });
-      /**
-       * Prevent the transition to the dummy state, stay where you are
-       */
-      event.preventDefault();
+      if(toState.openInModal){
+        $modal.open({
+          templateUrl : toState.templateUrl,
+          controller: toState.controller,
+          resolve: {
+            PreviousState: [
+              "$state",
+              function ($state) {
+                var currentStateData = {
+                  name: $state.current.name,
+                  params: $state.params,
+                  url: $state.href($state.current.name, $state.params)
+                };
+                return currentStateData;
+              }
+            ]
+          }
+        });
+        /**
+         * Prevent the transition to the dummy state, stay where you are
+         */
+        event.preventDefault();
+
+      }
 
     });
 
