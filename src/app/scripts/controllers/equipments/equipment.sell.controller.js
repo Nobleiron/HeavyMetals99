@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_EquipmentsMD")
-  .controller("HM_SellEquipmentCtrl",['$scope','Upload', function($scope, Upload){
+  .controller("HM_EquipmentSellCtrl",['$scope','Upload', function($scope, Upload){
 
     $scope.$watch('files', function () {
       $scope.upload($scope.files);

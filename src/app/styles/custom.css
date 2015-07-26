@@ -1,0 +1,35 @@
+.topnav-search .dropdown-menu{
+  padding: 10px;
+}
+.typeahead-group-header{
+  color: black;
+  padding: 5px 0px 5px 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+.typeahead-search-item strong{
+  color: #0099cc !important;
+}
+.zoom {
+  display:inline-block;
+  position: relative;
+}
+
+/* magnifying glass icon */
+.zoom:after {
+  content:'';
+  display:block;
+  width:33px;
+  height:33px;
+  position:absolute;
+  top:0;
+  right:0;
+  background:url(icon.png);
+}
+
+.zoom img {
+  display: block;
+}
+
+.zoom img::selection { background-color: transparent; }
+.angular-google-map-container { height: 500px; }

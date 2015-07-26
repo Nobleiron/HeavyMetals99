@@ -15,6 +15,7 @@
     ['ngAnimate',
       'ui.router',
       'ui.bootstrap',
+      'ngSanitize',
       'LocalStorageModule',
       'HM_ConfigMD',
       'HM_RoutesMD',
