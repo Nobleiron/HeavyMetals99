@@ -25,6 +25,9 @@ angular.module("HM_ConfigMD")
               templateUrl: 'app/views/templates/navbar.html',
               controller: 'HM_NavbarCtrl'
             },
+            footer : {
+              templateUrl : 'app/views/templates/footer.html'
+            },
             '' : {
               template: "<div ui-view></div>"
             }
@@ -56,6 +59,11 @@ angular.module("HM_ConfigMD")
           templateUrl: 'app/views/equipments/reserve.html',
           controller: 'HM_InvoicesCtrl',
           openInModal : true
+        },
+        'hm.orderHistory' : {
+          url: '/orders/history',
+          templateUrl: 'app/views/orders/history.html',
+          controller: 'HM_OrderHistoryCtrl'
         },
         'hm.manageJobSite' : {
           url: '/manage/job-sites',
