@@ -33,3 +33,47 @@
 
 .zoom img::selection { background-color: transparent; }
 .angular-google-map-container { height: 500px; }
+
+form.ng-submitted input.ng-invalid{
+  border-color: #ff5600;
+}
+form.ng-submitted.ng-invalid .tooltip .tooltip-inner{
+  background-color: red;
+}
+form.ng-submitted.ng-invalid .tooltip{
+  z-index: 99999;
+}
+
+form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
+  border-top-color:red;
+}
+
+
+.valdr-message {
+  display: none;
+}
+.valdr-message.ng-invalid.ng-touched.ng-dirty {
+  display: block;
+  color: #ff5600;
+  margin-top: 5px;
+  margin-left: 10px
+}
+
+.register-user .fname_in{
+  width: 99%;
+}
+
+.register-user .flex-field{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.register-user .flex-field fieldset{
+  -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */
+  flex: 1;
+}
+
+.register-user .flex-field fieldset.form-group{
+  margin-bottom: 0;
+}
