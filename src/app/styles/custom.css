@@ -58,3 +58,22 @@ form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
   margin-top: 5px;
   margin-left: 10px
 }
+
+.register-user .fname_in{
+  width: 99%;
+}
+
+.register-user .flex-field{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.register-user .flex-field fieldset{
+  -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */
+  flex: 1;
+}
+
+.register-user .flex-field fieldset.form-group{
+  margin-bottom: 0;
+}
