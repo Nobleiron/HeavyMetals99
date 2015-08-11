@@ -5,7 +5,8 @@ angular.module('HM_PreloginMD')
     $scope.signUpTab = $state.is("hmPrelogin.register");
 
     $scope.login = function(){
-      $state.go("hm.dashboard")
+      $scope.formSubmitted = true;
+      //$state.go("hm.dashboard")
     }
 
   }]);

@@ -33,3 +33,28 @@
 
 .zoom img::selection { background-color: transparent; }
 .angular-google-map-container { height: 500px; }
+
+form.ng-submitted input.ng-invalid{
+  border-color: #ff5600;
+}
+form.ng-submitted.ng-invalid .tooltip .tooltip-inner{
+  background-color: red;
+}
+form.ng-submitted.ng-invalid .tooltip{
+  z-index: 99999;
+}
+
+form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
+  border-top-color:red;
+}
+
+
+.valdr-message {
+  display: none;
+}
+.valdr-message.ng-invalid.ng-touched.ng-dirty {
+  display: block;
+  color: #ff5600;
+  margin-top: 5px;
+  margin-left: 10px
+}

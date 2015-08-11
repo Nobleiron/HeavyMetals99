@@ -17,10 +17,10 @@
       'ui.bootstrap',
       'ngSanitize',
       'LocalStorageModule',
+      'valdr',
       'HM_ConfigMD',
       'HM_RoutesMD',
       'HM_GlobalMD'])
-
 
 }());
 
