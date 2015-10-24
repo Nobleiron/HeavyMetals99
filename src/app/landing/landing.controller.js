@@ -20,7 +20,7 @@ angular.module('HM_LandingMD')
         query = $scope.selectedProduct;
       }
 
-      $state.go('hm.search',{ query : query});
+      $state.go('hm.search', { query : query});
 
     };
 
@@ -70,6 +70,12 @@ angular.module('HM_LandingMD')
       });
 
 
+    }
+
+
+
+    function normalizeSearchQuery(str){
+      return str.replace('\'','');
     }
 
   }]);

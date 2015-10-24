@@ -157,164 +157,175 @@
           <!-- End Equipment Tab -->
 
           <div class="tab-content">
-            <!-- START  Equipment Product Display -->
-            <div id="equpment" class="tab-pane fade in active">
+            <div ng-if="flags.loading">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
-                <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Displaying 48 Equipments matching ‘Electric’</div>
+                <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’ &nbsp;&nbsp;<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i></div>
                 <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
-                  <div class="btn-group drop-btn">
-                    <button class="btn btn-mini"> Sort By</button>
-                    <button class="btn btn-mini dropdown-toggle " data-toggle="dropdown">
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                    </ul>
-                  </div>
-
-                  <!--                                    Sort By
-                                                      <span class="short">  <i class="fa fa-sort-desc fa-2x"></i></span>-->
                 </div>
               </div>
-              <div ng-if="gridView">
-                <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
+            </div>
+            <div ng-if="!flags.loading">
+              <!-- START  Equipment Product Display -->
+              <div id="equpment" class="tab-pane fade in active">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
+                  <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Displaying {{results.length}} Equipments matching ‘{{query}}’</div>
+                  <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
+                    <div class="btn-group drop-btn">
+                      <button class="btn btn-mini"> Sort By</button>
+                      <button class="btn btn-mini dropdown-toggle " data-toggle="dropdown">
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                      </ul>
+                    </div>
 
-                  <figure>
-                    <a href="#"><img src="assets/images/image_1.png" alt=""></a></figure>
-                  <div class="certified_box">
-                    <img src="assets/images/certified.png">
-                  </div>
-                  <div class="star_rate">
-                    <a href="#"> <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star-half-o"></i>
-                      <i class="fa fa-star-o"></i></a>
-
-                  </div>
-                  <h4 class="lift_box_tit"><a href="#">{{item.Product_Name}}</a></h4>
-                  <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                  <div class="daily_ul">
-                    <ul>
-                      <li>
-                        <p class="daily_title">Daily</p>
-                        <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                      </li>
-                      <li>
-                        <p class="daily_title">Weekly</p>
-                        <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                      </li>
-                      <li>
-                        <p class="daily_title">Monthly</p>
-                        <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="heart">
-                    <ul>
-                      <li>
-                        <a href=""><i class="fa fa-eye fa-2x"></i></a>
-
-                      </li>
-                      <li>
-                        <button type="button" class="btn btn-default my-reserve">Reserve</button>
-
-                      </li>
-                      <li>
-                        <a href=""><i class="fa fa-heart fa-2x"></i></a>
-
-
-                      </li>
-                    </ul>
+                    <!--                                    Sort By
+                                                        <span class="short">  <i class="fa fa-sort-desc fa-2x"></i></span>-->
                   </div>
                 </div>
-              </div>
-              <div class="row" ng-if="!gridView">
-                <div class="col-md-12"><hr class="dash"></div>
-                <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
-                  <div class="col-md-3 lift-list">
+                <div ng-if="flags.gridView">
+                  <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
+
                     <figure>
-                      <a href="#"> <img src="assets/images/image_page2.png"></a>
-                    </figure>
-                  </div>
-                  <div class="col-md-6 nopadding">
+                      <a href="#"><img src="assets/images/image_1.png" alt=""></a></figure>
+                    <div class="certified_box">
+                      <img src="assets/images/certified.png">
+                    </div>
+                    <div class="star_rate">
+                      <a href="#"> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i></a>
+
+                    </div>
                     <h4 class="lift_box_tit"><a href="#">{{item.Product_Name}}</a></h4>
                     <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                    <div class="col-md-3 star_list">
-                      <div class="star-list-top">
-                        <a href="#"> <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-o"></i></a>
-
-                      </div>
+                    <div class="daily_ul">
+                      <ul>
+                        <li>
+                          <p class="daily_title">Daily</p>
+                          <p class="daily_price">${{item.Product_Price.Daily}}</p>
+                        </li>
+                        <li>
+                          <p class="daily_title">Weekly</p>
+                          <p class="daily_price">${{item.Product_Price.Weekly}}</p>
+                        </li>
+                        <li>
+                          <p class="daily_title">Monthly</p>
+                          <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-md-9">
-                      <div class="daily_ul">
-                        <ul>
-                          <li>
-                            <p class="daily_title">Daily</p>
-                            <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                          </li>
-                          <li>
-                            <p class="daily_title">Weekly</p>
-                            <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                          </li>
-                          <li>
-                            <p class="daily_title">Monthly</p>
-                            <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                          </li>
-                        </ul>
-                      </div>
+                    <div class="heart">
+                      <ul>
+                        <li>
+                          <a href=""><i class="fa fa-eye fa-2x"></i></a>
+
+                        </li>
+                        <li>
+                          <button type="button" class="btn btn-default my-reserve">Reserve</button>
+
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-heart fa-2x"></i></a>
+
+
+                        </li>
+                      </ul>
                     </div>
-                    <div class="col-md-12">
-                      <div class=" heart_list">
-                        <ul>
-                          <li>
-                            <a href=""><i class="fa fa-eye fa-lg list-icon-top"></i>
-                              <span class="eye_view">357 views</span>
-                            </a>
-
-                          </li>
-                          <li>
-                            <a href=""> <i class="fa fa-clock-o fa-icon-clr fa-lg list-icon-top"></i>
-                            </a>
-                            <span class="eye_view">7 Times Rented</span>
-
-                          </li>
-                          <li>
-                            <a href=""><i class="fa fa-share-alt fa-icon-clr fa-lg list-icon-top"></i>
-                            </a>
-                            <span class="eye_view">26 Shares</span>
-
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
                   </div>
-                  <div class="col-md-3">
-                    <button type="button" class="btn btn-default my-reserve-list">Reserve</button>
-                    <button type="button" class="btn btn-default add-list">Add to Wishlist</button>
-                  </div>
-                  <div class="col-md-12"><hr class="dash"></div>
                 </div>
-              </div>
+                <div class="row" ng-if="!flags.gridView">
+                  <div class="col-md-12"><hr class="dash"></div>
+                  <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
+                    <div class="col-md-3 lift-list">
+                      <figure>
+                        <a href="#"> <img src="assets/images/image_page2.png"></a>
+                      </figure>
+                    </div>
+                    <div class="col-md-6 nopadding">
+                      <h4 class="lift_box_tit"><a href="#">{{item.Product_Name}}</a></h4>
+                      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
+                      <div class="col-md-3 star_list">
+                        <div class="star-list-top">
+                          <a href="#"> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i></a>
 
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="daily_ul">
+                          <ul>
+                            <li>
+                              <p class="daily_title">Daily</p>
+                              <p class="daily_price">${{item.Product_Price.Daily}}</p>
+                            </li>
+                            <li>
+                              <p class="daily_title">Weekly</p>
+                              <p class="daily_price">${{item.Product_Price.Weekly}}</p>
+                            </li>
+                            <li>
+                              <p class="daily_title">Monthly</p>
+                              <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class=" heart_list">
+                          <ul>
+                            <li>
+                              <a href=""><i class="fa fa-eye fa-lg list-icon-top"></i>
+                                <span class="eye_view">357 views</span>
+                              </a>
+
+                            </li>
+                            <li>
+                              <a href=""> <i class="fa fa-clock-o fa-icon-clr fa-lg list-icon-top"></i>
+                              </a>
+                              <span class="eye_view">7 Times Rented</span>
+
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-share-alt fa-icon-clr fa-lg list-icon-top"></i>
+                              </a>
+                              <span class="eye_view">26 Shares</span>
+
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-md-3">
+                      <button type="button" class="btn btn-default my-reserve-list">Reserve</button>
+                      <button type="button" class="btn btn-default add-list">Add to Wishlist</button>
+                    </div>
+                    <div class="col-md-12"><hr class="dash"></div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- End Equipment Product Display -->
+              <div id="attachment" class="tab-pane fade">
+                Attachments
+              </div>
+              <div id="accessories" class="tab-pane fade">
+                Attachments
+              </div>
+              <div id="parts" class="tab-pane fade">
+                Attachments
+              </div>
             </div>
-            <!-- End Equipment Product Display -->
-            <div id="attachment" class="tab-pane fade">
-              Attachments
-            </div>
-            <div id="accessories" class="tab-pane fade">
-              Attachments
-            </div>
-            <div id="parts" class="tab-pane fade">
-              Attachments
-            </div>
+
+
           </div>
         </div>
         <!-- End All Product Side -->

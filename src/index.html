@@ -50,6 +50,18 @@
     <!-- build:js(src) scripts/vendor.js -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/raven-js/dist/raven.min.js"></script>
+    <script>
+      Raven.config('YOUR_PUBLIC_DSN', {
+        // Raven settings
+      })
+        .setUser({
+          "id": "SERVER_RENDERED_ID",
+          "email": "SERVER_RENDERED_EMAIL"
+        })
+        .install()
+    </script>
+    <script src="../bower_components/angular-raven/angular-raven.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="../bower_components/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
@@ -78,7 +90,6 @@
       <script src="app/hm/heavy-metals.module.js"></script>
       <script src="app/global/global.module.js"></script>
       <script src="app/env/env.module.js"></script>
-      <script src="app/scripts/modules/prelogin/prelogin.module.js"></script>
       <script src="app/landing/landing.module.js"></script>
       <script src="app/login/login.module.js"></script>
       <script src="app/dashboard/dashboard.module.js"></script>
@@ -91,7 +102,7 @@
       <script src="app/order-history/order-history.module.js"></script>
       <script src="app/search/search.module.js"></script>
 
-      <script src="app/scripts/directives/image.zoom.directive.js"></script>
+      <script src="app/image-zoom/image.zoom.directive.js"></script>
 
     <!-- End Modules -->
 
@@ -103,10 +114,10 @@
 
 
     <script src="app/validation/validation.constraints.constant.js"></script>
-    <script src="app/scripts/services/rest.service.js"></script>
-    <script src="app/scripts/controllers/prelogin/components/navbar/navbar.controller.js"></script>
+    <script src="app/core/rest.service.js"></script>
+    <script src="app/prelogin-header/header.controller.js"></script>
     <script src="app/dashboard/dashboard.controller.js"></script>
-    <script src="app/scripts/controllers/components/navbar/navbar.controller.js"></script>
+    <script src="app/header/header.controller.js"></script>
     <script src="app/invoices/invoices.controller.js"></script>
     <script src="app/manage-jobsites/manage-jobsites.controller.js"></script>
     <script src="app/equipment-sell/equipment-sell.controller.js"></script>

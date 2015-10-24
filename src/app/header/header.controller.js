@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_PreloginNavbarCtrl', function ($scope,filterFilter) {
+  .controller('HM_HeaderCtrl', function ($scope,filterFilter) {
     /**
      * Represents a book.
      * @constructor
@@ -32,27 +32,21 @@ angular.module('HeavyMetals')
     $scope.selectedUser = '';
 
     var users = [{
-      name: 'Electric Scissor lift',
-      group: 'Equipments'
-    },{
-      name: 'Electric Scissor lift (Wide)',
-      group: 'Equipments'
-    },{
-      name: 'Electric Scissor lift - 16\"',
+      name: 'test',
       group: 'Equipments'
     }, {
-      name: 'Electric transmission of gearbox',
+      name: 'test1',
       group: 'Parts'
     }, {
-      name: 'Electric gear docket',
+      name: 'Test user3',
+      group: 'Attachments'
+    }, {
+      name: 'Test user1',
+      group: 'Attachments'
+    }, {
+      name: 'Test user3',
       group: 'Parts'
-    }, {
-      name: 'Expansion Electric Chord',
-      group: 'Attachments'
-    }, {
-      name: 'Advanced Electric resistance socket box',
-      group: 'Attachments'
-    }
+    },
     ];
 
     $scope.getUsers = function (search) {

@@ -11,7 +11,6 @@ angular.module("HM_GlobalMD",[
   'HM_EquipmentReserveSuccessMD',
   'HM_LoginMD',
   'HM_LandingMD',
-  'HM_PreloginMD',
   'HM_OrderHistoryMD',
   'HM_SearchMD'
 
