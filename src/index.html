@@ -73,45 +73,56 @@
 
 
     <!-- Modules -->
-      <script src="app/scripts/modules/hm/heavy-metals-config.module.js"></script>
-      <script src="app/scripts/modules/hm/heavy-metals-routes.module.js"></script>
-      <script src="app/scripts/modules/hm/heavy-metals.module.js"></script>
-      <script src="app/scripts/modules/hm/global.module.js"></script>
+      <script src="app/core/hm.core.request.interceptor.js"></script>
+      <script src="app/routes/routes.module.js"></script>
+      <script src="app/hm/heavy-metals.module.js"></script>
+      <script src="app/global/global.module.js"></script>
+      <script src="app/env/env.module.js"></script>
       <script src="app/scripts/modules/prelogin/prelogin.module.js"></script>
-      <script src="app/scripts/modules/dashboard/dashboard.module.js"></script>
-      <script src="app/scripts/modules/invoices/invoices.module.js"></script>
-      <script src="app/scripts/modules/jobsites/jobsite.manage.module.js"></script>
-      <script src="app/scripts/modules/equipments/equipments.module.js"></script>
-      <script src="app/scripts/modules/orders/orders.module.js"></script>
-      <script src="app/scripts/modules/search/search.module.js"></script>
+      <script src="app/landing/landing.module.js"></script>
+      <script src="app/login/login.module.js"></script>
+      <script src="app/dashboard/dashboard.module.js"></script>
+      <script src="app/invoices/invoices.module.js"></script>
+      <script src="app/equipment-detail/equipment-detail.module.js"></script>
+      <script src="app/manage-jobsites/manage-jobsites.module.js"></script>
+      <script src="app/equipment-reserve/equipment-reserve.module.js"></script>
+      <script src="app/equipment-reserve-success/equipment-reserve-success.module.js"></script>
+      <script src="app/equipment-sell/equipment-sell.module.js"></script>
+      <script src="app/order-history/order-history.module.js"></script>
+      <script src="app/search/search.module.js"></script>
 
       <script src="app/scripts/directives/image.zoom.directive.js"></script>
 
     <!-- End Modules -->
 
-    <script src="app/scripts/constants/hm-config/env.constants.js"></script>
-    <script src="app/scripts/constants/hm-config/routes.constants.js"></script>
-    <script src="app/scripts/constants/hm-config/global.constant.js"></script>
-    <script src="app/scripts/constants/validation/validation.constraints.constant.js"></script>
+    <script src="app/env/env.constants.js"></script>
+    <script src="app/routes/routes.constants.js"></script>
+    <script src="app/global/global.constant.js"></script>
+    <script src="app/login/login.constant.js"></script>
+    <script src="app/landing/landing.constant.js"></script>
 
-    <script src="app/scripts/controllers/prelogin/dashboard/search.controller.js"></script>
+
+    <script src="app/validation/validation.constraints.constant.js"></script>
+    <script src="app/scripts/services/rest.service.js"></script>
     <script src="app/scripts/controllers/prelogin/components/navbar/navbar.controller.js"></script>
-    <script src="app/scripts/controllers/dashboard/dashboard.controller.js"></script>
+    <script src="app/dashboard/dashboard.controller.js"></script>
     <script src="app/scripts/controllers/components/navbar/navbar.controller.js"></script>
-    <script src="app/scripts/controllers/invoices/invoices.controller.js"></script>
-    <script src="app/scripts/controllers/jobsites/manage-jobsites.controller.js"></script>
-    <script src="app/scripts/controllers/equipments/equipment.sell.controller.js"></script>
-    <script src="app/scripts/controllers/equipments/equipments.details.controller.js"></script>
-    <script src="app/scripts/controllers/equipments/equipment.reserve.controller.js"></script>
-    <script src="app/scripts/controllers/prelogin/login/login.controller.js"></script>
-    <script src="app/scripts/controllers/orders/orders.history.controller.js"></script>
-    <script src="app/scripts/controllers/equipments/equipment.reserve-success.controller.js"></script>
-    <script src="app/scripts/controllers/search/search.controller.js"></script>
+    <script src="app/invoices/invoices.controller.js"></script>
+    <script src="app/manage-jobsites/manage-jobsites.controller.js"></script>
+    <script src="app/equipment-sell/equipment-sell.controller.js"></script>
+    <script src="app/equipment-detail/equipment-detail.controller.js"></script>
+    <script src="app/equipment-reserve/equipment-reserve.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/landing/landing.controller.js"></script>
+    <script src="app/order-history/order-history.controller.js"></script>
+    <script src="app/equipment-reserve-success/equipment-reserve-success.controller.js"></script>
+    <script src="app/search/search.controller.js"></script>
+
     <!-- endbuild -->
 
     <script type="text/ng-template" id="typeahead-item.html">
 
-      <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.group}}</div>
+      <div class="typeahead-group-header" ng-if="match.model.firstInGroup">{{match.model.Category_Name}}</div>
       <a class="typeahead-search-item">
         <span ng-bind-html="match.label | typeaheadHighlight:query"></span>
       </a>

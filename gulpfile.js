@@ -22,8 +22,9 @@ var options = {
   }
 };
 
+// Loading gulp task files through require js
 wrench.readdirSyncRecursive('./gulp').filter(function(file) {
-  return (/\.(js|coffee)$/i).test(file);
+  return (/\.js$/i).test(file);
 }).map(function(file) {
   require('./gulp/' + file)(options);
 });
@@ -40,3 +41,13 @@ gulp.task('docs', shell.task([
   '-d build/docs '+                             // output directory
   '-r src/app/*.js'                              // source code directory
 ]));
+
+
+
+
+
+
+gulp.task('release', function(){
+
+
+});
