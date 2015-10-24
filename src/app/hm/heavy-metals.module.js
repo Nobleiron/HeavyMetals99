@@ -25,7 +25,7 @@
 
 
 
-  function _configure(localStorageServiceProvider,valdrProvider,ValidationConstraintsCnst) {
+  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst) {
 
     // Setup Local Storage Prefix
     localStorageServiceProvider
