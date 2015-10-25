@@ -9,10 +9,22 @@ angular.module('HM_LoginMD')
 
     $scope.register = register;
 
+    $scope.credentials = "valid";
 
     function _initialize(){
       $scope.signUpTab = $state.is("hmPrelogin.register");
-      //$scope.credentials = "";
+    }
+
+    function _invalidateLoginForm(){
+      $scope.credentials = "";
+      $scope.loginForm.credentials.$setDirty();
+      $scope.loginForm.credentials.$setTouched();
+    }
+
+    function _resetLoginValidity(){
+      $scope.credentials = "valid";
+      $scope.loginForm.credentials.$setPristine();
+      $scope.loginForm.credentials.$setUntouched();
     }
 
 
@@ -20,11 +32,9 @@ angular.module('HM_LoginMD')
       $scope.formSubmitted = true;
     }
 
-
-
     function  login(){
+      _resetLoginValidity();
       if($scope.loginForm.$valid){
-
         RestSV
           .post( LoginCnst.login.url() ,{
             email : $scope.loginData.email,
@@ -34,9 +44,12 @@ angular.module('HM_LoginMD')
             $state.go('hm.dashboard')
           })
           .catch(function(error){
+            $scope.formSubmitted = true;
+            _invalidateLoginForm();
             console.log("Error logging in", error)
           });
       }
     }
+
 
   }]);
