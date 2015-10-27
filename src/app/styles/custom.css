@@ -77,3 +77,11 @@ form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
 .register-user .flex-field fieldset.form-group{
   margin-bottom: 0;
 }
+
+.btn.my-btn:focus{
+  outline: none;
+}
+
+.modal-content .modal-header .modal-title .close-cross{
+  float: right;
+}

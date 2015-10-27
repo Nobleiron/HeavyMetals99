@@ -1,19 +1,27 @@
 'use strict';
-angular.module('HM_LoginMD')
-  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','HM_CoreClientStoreSV', function ($scope, $state, LoginCnst,RestSV, ClientStoreSV ) {
+angular.module('HM_LogoutMD')
+  .controller('HM_LogoutCtrl', ['$scope','$state','HM_logoutCnst','HM_RestSV','HM_CoreClientStoreSV', function ($scope, $state, LogoutCnst,RestSV, ClientStoreSV ) {
 
 
     _initialize();
 
 
-    $scope.login = login;
-
-    $scope.register = register;
-
 
     function _initialize(){
-      $scope.credentials = "valid";
-      $scope.signUpTab = $state.is("hmPrelogin.register");
+      var loggedOut = RestSV.get( LogoutCnst.logout.url() );
+
+      loggedOut
+        .then( function(){
+          ClientStoreSV
+            .get('userObj')
+            .then(function(userObj){
+              ClientStoreSV.remove(userObj);
+            })
+            .finally(function(){
+              $state.go('hmPrelogin.login');
+            })
+
+        });
     }
 
     function _invalidateLoginForm(){
@@ -33,7 +41,7 @@ angular.module('HM_LoginMD')
       $scope.formSubmitted = true;
     }
 
-    function  login(){
+    function  logout(){
       _resetLoginValidity();
       if($scope.loginForm.$valid){
         RestSV
@@ -46,7 +54,7 @@ angular.module('HM_LoginMD')
             var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
 
             ClientStoreSV
-              .post(userObj)
+              .put(userObj)
               .then(function(){
                 $state.go('hm.dashboard')
               })

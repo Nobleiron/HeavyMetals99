@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_HeaderCtrl', function ($scope,filterFilter) {
+  .controller('HM_HeaderCtrl', ['$scope','filterFilter','HM_CoreClientStoreSV',function ($scope,filterFilter,ClientStoreSV) {
     /**
      * Represents a book.
      * @constructor
@@ -31,23 +31,9 @@ angular.module('HeavyMetals')
 
     $scope.selectedUser = '';
 
-    var users = [{
-      name: 'test',
-      group: 'Equipments'
-    }, {
-      name: 'test1',
-      group: 'Parts'
-    }, {
-      name: 'Test user3',
-      group: 'Attachments'
-    }, {
-      name: 'Test user1',
-      group: 'Attachments'
-    }, {
-      name: 'Test user3',
-      group: 'Parts'
-    },
-    ];
+    $scope.status = {
+      isopen: false
+    };
 
     $scope.getUsers = function (search) {
       var filtered = filterFilter(users, search);
@@ -64,5 +50,14 @@ angular.module('HeavyMetals')
       console.log(results);
 
       return results;
-    }
-  });
+    };
+
+
+
+    ClientStoreSV
+      .get('userObj')
+      .then(function(response){
+
+        $scope.userObj = response;
+      });
+  }]);

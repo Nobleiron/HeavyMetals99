@@ -51,8 +51,7 @@ angular.module("HM_RoutesMD")
         'hm.invoices' : {
               url: '/invoices',
               templateUrl: 'app/invoices/invoices.html',
-              controller: 'HM_InvoicesCtrl',
-              openInModal : true
+              controller: 'HM_InvoicesCtrl'
         },
         'hm.reserveEquipment' : {
           url: '/equipments/:id/reserve',
@@ -99,6 +98,17 @@ angular.module("HM_RoutesMD")
           url: '/register',
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
+        },
+        'hmPrelogin.logout' : {
+          url: '/logout',
+          templateUrl : 'app/logout/logout.html',
+          controller: 'HM_LogoutCtrl'
+        },
+        'hmPrelogin.requestCallback' : {
+          url : '/request-callback',
+          templateUrl : 'app/request-callback/request-callback.html',
+          controller : 'HM_RequestCallBackCtrl',
+          openInModal : true
         }
 
       },

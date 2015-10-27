@@ -46,15 +46,14 @@
           </li>
         </ul>
       </div>
-      <div class="btn-group drop-btn" >
-        <button class="btn btn-mini my-alc-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">hiren2hiren</button>
-        <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" data-toggle="dropdown">
+      <div class="btn-group drop-btn" dropdown >
+        <button class="btn btn-mini my-alc-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
+        <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" id="single-button" dropdown-toggle>
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+        <ul class="dropdown-menu"  role="menu">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profile</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
         </ul>
       </div>
     </div>

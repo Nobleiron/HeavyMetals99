@@ -2,7 +2,7 @@
   <div class="container">
     <!-- START  logo -->
     <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 nopadding logo-center">
-      <a href="index.html">  <img src="assets/images/logo.png" alt="" ></a>
+      <a href="/#/">  <img src="assets/images/logo.png" alt="" ></a>
     </div>
     <!-- END  logo -->
     <!-- START  SIGN IN PART -->
@@ -286,7 +286,7 @@
           <span class="glyphicon glyphicon-earphone"></span>
         </div>
         <div class="col-lg-10 col-md-10 col-sm-9 col-xs-11 nopadding">
-          <span class="req_call"><a href="#">  Request Callback</a></span>
+          <span class="req_call"><a href="/#/request-callback">  Request Callback</a></span>
         </div>
 
       </div>
@@ -314,8 +314,8 @@
 
     <!-- START  RENT/BUY BUTTON -->
     <div class="rent_bt_main">
-      <button type="button" class="btn btn-default my-btn">RENT</button>
-      <button type="button" class="btn btn-default my-btn active">BUY</button>
+      <button type="button" class="btn btn-default my-btn" ng-class="{'active' : flags.rented}" ng-click="toggleRentOrBuy(true)">RENT</button>
+      <button type="button" class="btn btn-default my-btn" ng-class="{'active' : !flags.rented}" ng-click="toggleRentOrBuy(false)">BUY</button>
     </div>
 
     <!-- END  RENT/BUY BUTTON -->

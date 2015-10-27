@@ -16,6 +16,7 @@
       'ui.router',
       'ui.bootstrap',
       'ngSanitize',
+      'pouchdb',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
       'valdr',

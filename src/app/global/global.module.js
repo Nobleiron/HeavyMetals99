@@ -10,6 +10,8 @@ angular.module("HM_GlobalMD",[
   'HM_EquipmentReserveMD',
   'HM_EquipmentReserveSuccessMD',
   'HM_LoginMD',
+  'HM_RequestCallbackMD',
+  'HM_LogoutMD',
   'HM_LandingMD',
   'HM_OrderHistoryMD',
   'HM_SearchMD'

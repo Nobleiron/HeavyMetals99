@@ -78,6 +78,9 @@
     <script src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
     <script src="../bower_components/valdr/valdr.min.js"></script>
     <script src="../bower_components/valdr/valdr-message.min.js"></script>
+    <script src="../bower_components/pouchdb/dist/pouchdb.js"></script>
+    <script src="../bower_components/angular-pouchdb/angular-pouchdb.min.js"></script>
+
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
@@ -92,6 +95,7 @@
       <script src="app/env/env.module.js"></script>
       <script src="app/landing/landing.module.js"></script>
       <script src="app/login/login.module.js"></script>
+      <script src="app/logout/logout.module.js"></script>
       <script src="app/dashboard/dashboard.module.js"></script>
       <script src="app/invoices/invoices.module.js"></script>
       <script src="app/equipment-detail/equipment-detail.module.js"></script>
@@ -100,6 +104,7 @@
       <script src="app/equipment-reserve-success/equipment-reserve-success.module.js"></script>
       <script src="app/equipment-sell/equipment-sell.module.js"></script>
       <script src="app/order-history/order-history.module.js"></script>
+      <script src="app/request-callback/request-callback.module.js"></script>
       <script src="app/search/search.module.js"></script>
 
       <script src="app/image-zoom/image.zoom.directive.js"></script>
@@ -110,11 +115,13 @@
     <script src="app/routes/routes.constants.js"></script>
     <script src="app/global/global.constant.js"></script>
     <script src="app/login/login.constant.js"></script>
+    <script src="app/logout/logout.constant.js"></script>
     <script src="app/landing/landing.constant.js"></script>
 
 
     <script src="app/validation/validation.constraints.constant.js"></script>
     <script src="app/core/rest.service.js"></script>
+    <script src="app/core/hm.core.client-store.service.js"></script>
     <script src="app/prelogin-header/header.controller.js"></script>
     <script src="app/dashboard/dashboard.controller.js"></script>
     <script src="app/header/header.controller.js"></script>
@@ -124,7 +131,9 @@
     <script src="app/equipment-detail/equipment-detail.controller.js"></script>
     <script src="app/equipment-reserve/equipment-reserve.controller.js"></script>
     <script src="app/login/login.controller.js"></script>
+    <script src="app/logout/logout.controller.js"></script>
     <script src="app/landing/landing.controller.js"></script>
+    <script src="app/request-callback/request-callback.controller.js"></script>
     <script src="app/order-history/order-history.controller.js"></script>
     <script src="app/equipment-reserve-success/equipment-reserve-success.controller.js"></script>
     <script src="app/search/search.controller.js"></script>
