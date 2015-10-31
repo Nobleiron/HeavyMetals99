@@ -10,32 +10,15 @@
             <span class="filter">Filter Results:</span>
           </div>
           <div class="col-lg-12 category_filter1">
-            <h5 class="cat_side_title">Category <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#catename"><i class="fa fa-minus-square fa-lg"></i></a></span>
+            <h5 class="cat_side_title">Category <i ng-show="!categories" class='fa fa-circle-o-notch fa-spin  fa-fw'></i><span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#catename"><i class="fa fa-minus-square fa-lg"></i></a></span>
             </h5>
-            <form id="catename" class="collapse in">
+            <form id="catename" class="collapse in" ng-if="categories">
               <div class="checkbox filter_cat_tex">
                 <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
               </div>
-
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
+              <div class="checkbox filter_cat_tex" ng-repeat="category in categories">
+                <label><input type="checkbox" value=""><span class="cat_mar">{{category.Name}}</span></label>
               </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Category Name</span></label>
-              </div>
-
             </form>
           </div>
           <div class="col-lg-12 category_filter">
@@ -157,14 +140,14 @@
           <!-- End Equipment Tab -->
 
           <div class="tab-content">
-            <div ng-if="flags.loading">
+            <div ng-if="flags.searchResultLoading">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
                 <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’ &nbsp;&nbsp;<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i></div>
                 <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
                 </div>
               </div>
             </div>
-            <div ng-if="!flags.loading">
+            <div ng-if="!flags.searchResultLoading">
               <!-- START  Equipment Product Display -->
               <div id="equpment" class="tab-pane fade in active">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
@@ -186,11 +169,11 @@
                                                         <span class="short">  <i class="fa fa-sort-desc fa-2x"></i></span>-->
                   </div>
                 </div>
-                <div ng-if="flags.gridView">
+                <div ng-if="flags.gridView" class="clearfix">
                   <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
 
                     <figure>
-                      <a href="#"><img src="assets/images/image_1.png" alt=""></a></figure>
+                      <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
                     <div class="certified_box">
                       <img src="assets/images/certified.png">
                     </div>
@@ -202,7 +185,7 @@
                         <i class="fa fa-star-o"></i></a>
 
                     </div>
-                    <h4 class="lift_box_tit"><a href="#">{{item.Product_Name}}</a></h4>
+                    <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
                     <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
                     <div class="daily_ul">
                       <ul>
@@ -227,7 +210,7 @@
 
                         </li>
                         <li>
-                          <button type="button" class="btn btn-default my-reserve">Reserve</button>
+                          <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
 
                         </li>
                         <li>
@@ -244,11 +227,11 @@
                   <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
                     <div class="col-md-3 lift-list">
                       <figure>
-                        <a href="#"> <img src="assets/images/image_page2.png"></a>
+                        <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}"></a>
                       </figure>
                     </div>
                     <div class="col-md-6 nopadding">
-                      <h4 class="lift_box_tit"><a href="#">{{item.Product_Name}}</a></h4>
+                      <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
                       <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
                       <div class="col-md-3 star_list">
                         <div class="star-list-top">
@@ -305,7 +288,7 @@
 
                     </div>
                     <div class="col-md-3">
-                      <button type="button" class="btn btn-default my-reserve-list">Reserve</button>
+                      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
                       <button type="button" class="btn btn-default add-list">Add to Wishlist</button>
                     </div>
                     <div class="col-md-12"><hr class="dash"></div>

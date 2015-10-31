@@ -85,3 +85,8 @@ form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
 .modal-content .modal-header .modal-title .close-cross{
   float: right;
 }
+
+.lift_box figure img ,.lift-list figure img{
+  width: 100%;
+  height: 100%;
+}

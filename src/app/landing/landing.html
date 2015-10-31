@@ -323,7 +323,7 @@
     <div class="search_main">
       <form class="navbar-form" role="search">
 
-        <input type="text" class="form-control search-head" placeholder="Search lifts, boom lifts, forklifts etc" id="query" name="query" ng-model="selectedProduct"
+        <input type="text" class="form-control search-head" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="query" name="query" ng-model="selectedProduct"
                typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-on-select="selectSearchedItem($item, $model, $label)">
 

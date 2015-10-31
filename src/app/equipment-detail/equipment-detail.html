@@ -28,12 +28,12 @@
         <div class="col-lg-10 col-md-10 product_box nopadding">
           <p class="mouse_search"><i class="fa fa-search"></i>
             Mouse hover to Zoom</p>
-          <a href="#"><span hm-zoom><img class="img-responsive product-main-img" src="assets/images/product-main.jpg" alt=""></span></a>
+          <a href="#"><span hm-zoom><img class="img-responsive product-main-img" ng-src="{{equipment.Product_Image[0].ProductImage_Path}}" alt=""></span></a>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 prodetil_main">
-        <h4 class="productname_tit"><a href="#">{{equipment.name}}</a></h4>
-        <h5 class="procutby">by <span class="procutby_vendor"><a href="#">Vendor Name</a></span></h5>
+        <h4 class="productname_tit"><a href="#">{{equipment.Product_Name}}</a></h4>
+        <h5 class="procutby">by <span class="procutby_vendor"><a href="#">{{equipment.MAKE}}</a></span></h5>
         <div class="col-lg-12 req_dash_botam ten_botam">
           <a href="#"> <i class="fa fa-star fa-2x"></i>
             <i class="fa fa-star fa-2x"></i>
@@ -49,17 +49,17 @@
             <ul>
               <li>
                 <p class="daily_title_product">Daily</p>
-                <p class="daily_price_product">$199</p>
+                <p class="daily_price_product">${{equipment.Product_Price.Daily}}</p>
                 <p>Save 20%</p>
               </li>
               <li>
                 <p class="daily_title_product">Weekly</p>
-                <p class="daily_price_product">$1049</p>
+                <p class="daily_price_product">${{equipment.Product_Price.Weekly}}</p>
                 <p>Save 22%</p>
               </li>
               <li>
                 <p class="daily_title_product">Monthly</p>
-                <p class="daily_price_product">$3599</p>
+                <p class="daily_price_product">${{equipment.Product_Price.Monthly}}</p>
                 <p>Save 25%</p>
               </li>
             </ul>
@@ -112,23 +112,20 @@
         <div id="description" class="tab-pane fade active in">
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <h2 class="product_info_tit">Product Information</h2>
-            <p class="product_info_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud.</p>
-            <p class="product_info_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud.</p>
+            <p class="product_info_p" ng-bind-html="equipment.Product_Specification[0].Specification_Description"></p>
+            <!--<p class="product_info_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod-->
+              <!--tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim-->
+              <!--veniam, quis nostrud.</p>-->
             <div class="col-lg-12 req_dash_botam"></div>
             <div class="col-lg-12 nopadding">
               <h2 class="product_info_tit">Technical Specs</h2>
-              <h6 class="work_height">Working Height: <span class="work_ft">16ft (4.87m)</span></h6>
-              <h6 class="work_height">Width:  <span class="work_ft">2ft 6in (0.76m)</span></h6>
-              <h6 class="work_height">Inside Turning Radius: <span class="work_ft">1ft 9in (0.53m)</span></h6>
-              <h6 class="work_height">Lift Capacity: <span class="work_ft">750lbs (340.2kg)</span></h6>
-              <h6 class="work_height">Occupancy:  <span class="work_ft">2 persons</span></h6>
-              <h4><a href="#" class="theme_clr">Download Complete Specifications</a></h4>
+              <p class="product_info_p" ng-bind-html="equipment.Product_Description"></p>
+              <!--<h6 class="work_height">Working Height: <span class="work_ft">16ft (4.87m)</span></h6>-->
+              <!--<h6 class="work_height">Width:  <span class="work_ft">2ft 6in (0.76m)</span></h6>-->
+              <!--<h6 class="work_height">Inside Turning Radius: <span class="work_ft">1ft 9in (0.53m)</span></h6>-->
+              <!--<h6 class="work_height">Lift Capacity: <span class="work_ft">750lbs (340.2kg)</span></h6>-->
+              <!--<h6 class="work_height">Occupancy:  <span class="work_ft">2 persons</span></h6>-->
+              <!--<h4><a href="#" class="theme_clr">Download Complete Specifications</a></h4>-->
             </div>
             <div class="col-lg-12 req_dash_botam push_up"></div>
           </div>

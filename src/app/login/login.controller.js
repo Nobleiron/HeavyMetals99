@@ -51,6 +51,7 @@ angular.module('HM_LoginMD')
                 $state.go('hm.dashboard')
               })
               .catch(function(err){
+                $state.go('hm.dashboard')
                 console.log('Error saving User Data', err)
               });
             //

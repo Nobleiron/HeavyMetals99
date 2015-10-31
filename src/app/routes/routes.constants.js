@@ -60,7 +60,7 @@ angular.module("HM_RoutesMD")
           openInModal : true
         },
         'hm.search' : {
-          url: '/search?query',
+          url: '/search?query&viewType',
           templateUrl: 'app/search/search.html',
           controller: 'HM_SearchCtrl'
         },
@@ -81,7 +81,7 @@ angular.module("HM_RoutesMD")
         },
         'hm.manageJobSite' : {
           url: '/manage/jobsites',
-          templateUrl: 'app/views/jobsites/manage.html',
+          templateUrl: 'app/manage-jobsites/manage-jobsites.html',
           controller: 'HM_ManageJobSitesCtrl'
         },
         'hm.requests' : {

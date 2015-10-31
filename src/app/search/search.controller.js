@@ -1,12 +1,12 @@
 'use strict';
 angular.module("HM_SearchMD")
   .controller("HM_SearchCtrl",
-    ['$scope','$stateParams','HM_RestSV','HM_LandingCnst',
-    function($scope, $stateParams, RestSV, landingCnst){
+    ['$scope','$stateParams','HM_RestSV','HM_SearchCnst',
+    function($scope, $stateParams, RestSV, SearchCnst){
 
       $scope.results = [];
       $scope.flags = {
-        loading : false,
+        searchResultLoading : false,
         gridView : false
       };
 
@@ -20,17 +20,19 @@ angular.module("HM_SearchMD")
        */
       function _initialize(){
         $scope.query = $stateParams.query || '';
-        $scope.flags.loading = true;
+        $scope.flags.gridView = $stateParams.viewType == "grid";
+        $scope.flags.searchResultLoading = true;
           RestSV
-            .get( landingCnst.search.url() ,{
+            .get( SearchCnst.search.url() ,{
               search_text : normalizeSearchQuery($scope.query)
             })
             .then(function(response){
-              $scope.results = response.data.result.ProductSearchList;
+              $scope.results = response.data.result.SearchResult;
             })
             .finally(function(){
-              $scope.flags.loading = false;
+              $scope.flags.searchResultLoading = false;
             })
+        loadCategories();
       }
 
       /**
@@ -43,6 +45,15 @@ angular.module("HM_SearchMD")
 
       function normalizeSearchQuery(str){
         return str.replace('\'','');
+      }
+
+
+      function loadCategories(){
+        RestSV
+          .get( SearchCnst.categoryList.url())
+          .then(function(response){
+            $scope.categories = response.data.result.CategoryList;
+          })
       }
 
     }]);

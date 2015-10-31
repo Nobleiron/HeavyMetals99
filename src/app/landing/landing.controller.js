@@ -26,8 +26,7 @@ angular.module('HM_LandingMD')
       return RestSV.get( landingCnst.search.url() ,{
         search_text : 'lift'
       }).then(function(response){
-        var filtered = filterFilter(response.data.result.ProductSearchList, search);
-
+        var filtered = filterFilter(response.data.result.SearchResult, search);
         var results = _(filtered)
           .groupBy('Category_Name')
           .map(function (g) {
