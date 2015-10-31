@@ -13,6 +13,7 @@ angular.module('HM_LoginMD')
 
     function _initialize(){
       $scope.credentials = "valid";
+      $scope.UserRegisterData = {};
       $scope.signUpTab = $state.is("hmPrelogin.register");
     }
 
@@ -30,7 +31,23 @@ angular.module('HM_LoginMD')
 
 
     function register(){
-      $scope.formSubmitted = true;
+      if($scope.userRegisterForm.$valid){
+        RestSV
+          .post( LoginCnst.register.url() ,{
+            user_name :'saneilnaik11',
+            email : $scope.UserRegisterData.email,
+            password : $scope.UserRegisterData.password,
+            phone : $scope.UserRegisterData.phone
+          })
+          .then(function(response){
+
+            // TODO user activation screen
+          })
+          .catch(function(error){
+            // TODO Exception handler
+          });
+      }
+
     }
 
     function  login(){

@@ -7,6 +7,7 @@ angular.module("HM_SearchMD")
       $scope.results = [];
       $scope.flags = {
         searchResultLoading : false,
+        categoryCollapse : false,
         gridView : false
       };
 
