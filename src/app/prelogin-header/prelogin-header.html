@@ -10,11 +10,12 @@
 
       <form class="navbar-form topnav-search" role="search">
 
-        <input type="text" class="form-control search-head"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedUser"
-               typeahead="user as user.name for user in getUsers($viewValue)"
+        <input type="text" class="form-control search-head"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
+               typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+               typeahead-on-select="selectSearchedItem($item, $model, $label)"
                typeahead-template-url="typeahead-item.html">
 
-        <button class="btn btn-default my_search" type="submit" style=" "><i class="glyphicon glyphicon-arrow-right"></i></button>
+        <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
 
       </form>
 
