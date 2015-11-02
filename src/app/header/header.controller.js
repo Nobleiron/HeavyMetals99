@@ -20,37 +20,49 @@
  */
 angular.module('HeavyMetals')
   .controller('HM_HeaderCtrl', ['$scope','filterFilter','HM_CoreClientStoreSV',function ($scope,filterFilter,ClientStoreSV) {
-    /**
-     * Represents a book.
-     * @constructor
-     * @param {string} title - The title of the book.
-     * @param {string} author - The author of the book.
-     */
-    $scope.date = new Date();
+
+    $scope.getProducts = getProducts;
+
+    $scope.selectSearchedItem = selectSearchedItem;
 
 
-    $scope.selectedUser = '';
+    _initialize();
 
-    $scope.status = {
-      isopen: false
-    };
+    function selectSearchedItem(item, model, label){
+      var query = '';
+      if(typeof $scope.selectedProduct == "object"){
+        query = $scope.selectedProduct.Product_Name;
+      }
+      if(typeof $scope.selectedProduct == "string"){
+        query = $scope.selectedProduct;
+      }
 
-    $scope.getUsers = function (search) {
-      var filtered = filterFilter(users, search);
+      $state.go('hm.search', { query : query});
+    }
 
-      var results = _(filtered)
-        .groupBy('group')
-        .map(function (g) {
-          g[0].firstInGroup = true;  // the first item in each group
-          return g;
-        })
-        .flatten()
-        .value();
+    function getProducts(search){
+      return RestSV.get( landingCnst.search.url() ,{
+        search_text : 'lift'
+      }).then(function(response){
+        var filtered = filterFilter(response.data.result.SearchResult, search);
+        var results = _(filtered)
+          .groupBy('Category_Name')
+          .map(function (g) {
+            g[0].firstInGroup = true;  // the first item in each group
+            return g;
+          })
+          .flatten()
+          .value();
+        return results;
+      });
+    }
 
-      console.log(results);
-
-      return results;
-    };
+    function _initialize(){
+      $scope.selectedProduct = '';
+      $scope.flags = {
+        rented : true
+      }
+    }
 
 
 
