@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_HeaderCtrl', ['$scope','filterFilter','HM_CoreClientStoreSV',function ($scope,filterFilter,ClientStoreSV) {
+  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_CoreClientStoreSV','HM_RestSV','HM_HeaderCnst',function ($scope,$state,filterFilter,ClientStoreSV, RestSV,HeaderCnst) {
 
     $scope.getProducts = getProducts;
 
@@ -37,11 +37,11 @@ angular.module('HeavyMetals')
         query = $scope.selectedProduct;
       }
 
-      $state.go('hm.search', { query : query});
+      $state.go('hm.search', { query : query},{ reload: true });
     }
 
     function getProducts(search){
-      return RestSV.get( landingCnst.search.url() ,{
+      return RestSV.get( HeaderCnst.search.url() ,{
         search_text : 'lift'
       }).then(function(response){
         var filtered = filterFilter(response.data.result.SearchResult, search);
