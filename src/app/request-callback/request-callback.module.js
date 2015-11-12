@@ -1,2 +1,2 @@
 'use strict';
-angular.module("HM_RequestCallbackMD",[]);
+angular.module("HM_RequestCallbackMD",['ui.mask']);

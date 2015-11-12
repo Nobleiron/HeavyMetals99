@@ -10,12 +10,14 @@
             <span class="filter">Filter Results:</span>
           </div>
           <div class="col-lg-12 category_filter1">
-            <h5 class="cat_side_title">Category <i ng-show="!categories" class='fa fa-circle-o-notch fa-spin  fa-fw'></i><span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
+            <h5 class="cat_side_title">Category
+              <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
             </h5>
             <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">
               <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
-              </div>O
+                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>
+                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>
+              </div>
               <div class="checkbox filter_cat_tex" ng-repeat="category in categories">
                 <label><input type="checkbox" value=""><span class="cat_mar">{{category.Name}}</span></label>
               </div>
@@ -28,7 +30,6 @@
               <div class="checkbox filter_cat_tex">
                 <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
               </div>
-
               <div class="checkbox filter_cat_tex">
                 <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
               </div>
@@ -289,7 +290,7 @@
                     </div>
                     <div class="col-md-3">
                       <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-                      <button type="button" class="btn btn-default add-list">Add to Wishlist</button>
+                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item.Product_Id)">Add to Wishlist</button>
                     </div>
                     <div class="col-md-12"><hr class="dash"></div>
                   </div>

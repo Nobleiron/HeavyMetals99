@@ -1,6 +1,15 @@
 'use strict';
 angular.module("HM_InvoicesMD")
-  .controller('HM_InvoicesCtrl', ['$scope','PreviousState',function($scope,PreviousState){
+  .controller('HM_InvoicesCtrl', ['$scope','PreviousState','HM_RestSV',function($scope,PreviousState,RestSV){
+
+
+    RestSV.get('/portal/outstandingInvoiceList')
+      .then(function(){
+        debugger
+      })
+      .catch(function(){
+        debugger
+      });
     console.log(PreviousState)
 
     $scope.invoices = [{

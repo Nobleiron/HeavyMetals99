@@ -10,5 +10,10 @@ angular.module('HM_SearchMD')
       url : function(){
         return '/category'
       }
+    },
+    addToWishList : {
+      url : function(){
+        return '/catelog'
+      }
     }
   });

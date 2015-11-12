@@ -5,14 +5,20 @@ angular.module("HM_SearchMD")
     function($scope, $stateParams, RestSV, SearchCnst){
 
       $scope.results = [];
+
       $scope.flags = {
         searchResultLoading : false,
         categoryCollapse : false,
         gridView : false
       };
 
+      $scope.selection = { type : "rent"};
+
+      $scope.addToWishList = addToWishList;
 
       $scope.toggleGridView = toggleGridView;
+
+      $scope.loadCategories = loadCategories;
 
       _initialize();
 
@@ -51,10 +57,23 @@ angular.module("HM_SearchMD")
 
       function loadCategories(){
         RestSV
-          .get( SearchCnst.categoryList.url())
+          .get( SearchCnst.categoryList.url(),{type: $scope.selection.type})
           .then(function(response){
             $scope.categories = response.data.result.CategoryList;
           })
       }
+
+      function addToWishList(product_id){
+        RestSV
+          .post( SearchCnst.addToWishList.url(),{ product_id : product_id })
+          .then(function(response){
+            debugger
+          })
+          .catch(function(){
+            debugger
+          })
+      }
+
+
 
     }]);

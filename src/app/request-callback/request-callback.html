@@ -20,16 +20,14 @@
           <div class="col-md-8 padding-right-0">
             <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
-              <input type="phone" name="p1" id="p1" class="form-control col-xs-12 col-sm-6 col-md-8" placeholder="10 Digits Phone No" data-mask="999-999-9999">
+              <input type="phone" name="p1" id="p1" class="form-control col-xs-12 col-sm-6 col-md-8" ng-model="phone" ui-mask="999-999-9999" >
             </div>
           </div>
           <div class="col-md-4 padding-left-2">
-            <input type="phone" name="p2" size="5" id="p2" class="form-control col-xs-6 col-md-4" placeholder="Extension (optional)" data-mask="99999">
+            <input type="phone" name="p2" size="5" id="p2" class="form-control col-xs-6 col-md-4" ui-mask="9999" ng-model="extension"/>
           </div>
         </div>
       </div>
-
-
       <div id="phoneError"></div>
       <div id="errorDiv"></div>
       <!--ctl_error=1-->
