@@ -573,6 +573,19 @@ a:focus { color: #0099cc;
   margin-left: 5px;
 }
 
+.rent-buy-btn {
+  background-color: #e6e6e6;
+  border-color: #adadad;
+  color: #333;
+}
+
+.rent-buy-btn.active {
+  background-color: #009ddc;
+  color: #fff;
+}
+
+
+
 
 
 
