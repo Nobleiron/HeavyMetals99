@@ -23,6 +23,142 @@
               </div>
             </form>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+          <div class="col-lg-12 category_filter1">
+            <h5 class="cat_side_title">Category
+              <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
+            </h5>
+            <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">
+              <div class="checkbox filter_cat_tex">
+                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>
+                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>
+              </div>
+            </form>
+            <uib-accordion close-others="oneAtATime">
+              <uib-accordion-group heading="Skidsteers & Attachments">
+                <ul>
+                  <li><h5>Skidsteer Type</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Track</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Rubber Tire</span></label>
+                    </div>
+                  </li>
+                  <li><h5>Attachments</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Augers</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Breakers</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Brooms</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Buckets</span></label>
+                    </div>
+                  </li>
+                </ul>
+              </uib-accordion-group>
+              <uib-accordion-group heading="Air Compressor & Tools">
+                <ul>
+                  <li><h5>Equipment</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Breakers</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Hammers</span></label>
+                    </div>
+                  </li>
+                  <li><h5>Attachments</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Other</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Chisel</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Moil Point</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Spade</span></label>
+                    </div>
+                  </li>
+                </ul>
+              </uib-accordion-group><uib-accordion-group heading="Generators & Lighting">
+                <ul>
+                  <li><h5>Skidsteer Type</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                  <li><h5>Attachments</h5></li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox filter_cat_tex">
+                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
+                    </div>
+                  </li>
+                </ul>
+              </uib-accordion-group>
+            </uib-accordion>
+          </div>
+
+
+
+
+
           <div class="col-lg-12 category_filter">
             <h5 class="cat_side_title">Vendors <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#vendname"><i class="fa fa-minus-square fa-lg"></i></a></span>
             </h5>

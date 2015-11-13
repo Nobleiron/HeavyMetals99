@@ -536,3 +536,30 @@ a:focus { color: #0099cc;
 .veary_tex{font-size: 30px; font-weight: 600;}
 .title_form{margin: 15px 0 0 0;}
 .mouse_search{color: #09a0dd; margin: 7px 11px 0 0;  text-align: right; font-size: 16px;}
+.panel-group .panel {
+  border-color: transparent;
+  box-shadow: none;
+  margin-bottom: 18px;
+}
+
+.panel-default>.panel-heading {
+  background-color: transparent;
+  color: #848e97;
+  padding: 0;
+  border-color: transparent;
+}
+
+.panel-title {
+  font-size: 14px;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  border-top-color: transparent;
+}
+
+
+
+
+
+
+

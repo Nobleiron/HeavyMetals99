@@ -5,6 +5,7 @@ angular.module("HM_SearchMD")
     function($scope, $stateParams, RestSV, SearchCnst){
 
       $scope.results = [];
+      $scope.oneAtATime = true;
 
       $scope.flags = {
         searchResultLoading : false,
