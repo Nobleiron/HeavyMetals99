@@ -557,6 +557,22 @@ a:focus { color: #0099cc;
   border-top-color: transparent;
 }
 
+.sort-by-btn {
+  background-color: #ddd;
+  border: 1px solid transparent;
+  color: #009ddc;
+}
+
+.sort-by-btn:hover {
+  background-color: #ddd;
+  border: 1px solid transparent;
+  color: #009ddc;
+}
+
+.sort-by-btn .caret {
+  margin-left: 5px;
+}
+
 
 
 
