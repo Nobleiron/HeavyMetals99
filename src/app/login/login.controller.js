@@ -12,6 +12,13 @@ angular.module('HM_LoginMD')
 
 
     function _initialize(){
+      $scope.flags = {
+        registration : {
+          success : false,
+          error : false,
+          initiated : false
+        }
+      };
       $scope.credentials = "valid";
       $scope.UserRegisterData = {};
       $scope.signUpTab = $state.is("hmPrelogin.register");
@@ -40,12 +47,17 @@ angular.module('HM_LoginMD')
             phone : $scope.UserRegisterData.phone
           })
           .then(function(response){
-
+            $scope.flags.registration.success = true;
             // TODO user activation screen
           })
-          .catch(function(error){
+          .catch(function(response){
+            $scope.flags.registration.error = true;
+            $scope.errorMessage = response.data.errortext[0];
             // TODO Exception handler
-          });
+          })
+          .finally(function(){
+            $scope.flags.registration.initiated = true;
+          })
       }
 
     }

@@ -68,10 +68,8 @@ angular.module("HM_SearchMD")
         RestSV
           .post( SearchCnst.addToWishList.url(),{ product_id : product_id })
           .then(function(response){
-            debugger
           })
           .catch(function(){
-            debugger
           })
       }
 
