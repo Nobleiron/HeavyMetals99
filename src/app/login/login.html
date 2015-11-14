@@ -39,12 +39,14 @@
       </div>
       <!-- START  LOGIN/REGISTER TAB -->
       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page">
-        <div ng-show="flags.registration.initiated" class="panel panel-default">
+        <div ng-show="flags.registration.initiated" class="panel panel-default success-panel">
           <div class="panel-body">
           <div ng-show="flags.registration.success">
             <div class="panel panel-success">
               <div class="panel-heading">
-                <h3 class="panel-title">Registration Successful.</h3>
+                <h3 class="panel-title">Registration Successful.
+                  <i class="fa fa-check"></i>
+                </h3>
               </div>
               <div class="panel-body">
                 To verify your email address, we have sent you an email with activation details.

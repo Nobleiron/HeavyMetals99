@@ -584,6 +584,43 @@ a:focus { color: #0099cc;
   color: #fff;
 }
 
+.success-panel {
+  margin-top: 60px;
+}
+
+.success-panel .panel-success {
+  margin-top: 20px;
+}
+
+.success-panel .panel-success>.panel-heading {
+  color: #009ddc;
+}
+
+.success-panel .panel-success h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.success-panel .panel-success h3 i {
+  float: right;
+  font-size: 20px;
+  color: #ff5600;
+}
+
+.success-panel .panel-body {
+  font-size: 16px;
+}
+
+.success-panel .panel-body p {
+  margin-top: 20px;
+}
+
+.success-panel .panel-body p a {
+  color: #009ddc;
+}
+
+
+
 
 
 
