@@ -594,7 +594,7 @@ a:focus { color: #0099cc;
 }
 
 .success-panel .panel-danger {
-  height: 200px;
+  min-height: 170px;
 }
 
 .success-panel .panel-success>.panel-heading {
