@@ -597,12 +597,14 @@ a:focus { color: #0099cc;
   color: #009ddc;
 }
 
-.success-panel .panel-success h3 {
+.success-panel .panel-success h3,
+.success-panel .panel-danger h3 {
   font-size: 18px;
   font-weight: 700;
 }
 
-.success-panel .panel-success h3 i {
+.success-panel .panel-success h3 i,
+.success-panel .panel-danger h3 i {
   float: right;
   font-size: 20px;
 }
