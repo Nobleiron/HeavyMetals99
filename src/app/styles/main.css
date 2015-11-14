@@ -586,6 +586,7 @@ a:focus { color: #0099cc;
 
 .success-panel {
   margin-top: 60px;
+  border: none;
 }
 
 .success-panel .panel-success {
@@ -604,7 +605,6 @@ a:focus { color: #0099cc;
 .success-panel .panel-success h3 i {
   float: right;
   font-size: 20px;
-  color: #ff5600;
 }
 
 .success-panel .panel-body {
