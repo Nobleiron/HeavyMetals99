@@ -653,6 +653,15 @@ a:focus { color: #0099cc;
   border-right-width: 6px;
 }
 
+.reserve-right .reserve_eqe_tit {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reserve-right .daily_ul {
+  margin-bottom: 20px;
+}
+
 
 
 
