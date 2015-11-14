@@ -625,6 +625,34 @@ a:focus { color: #0099cc;
   color: #009ddc;
 }
 
+.right-btn-col {
+  text-align: center;
+}
+
+.right-btn-col .my-reserve {
+  min-width: 125px;
+}
+
+.right-btn-col .add-list {
+  margin-left: 0;
+  display: inline-block;
+}
+
+.profile-dropdown .my-alc-btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.profile-dropdown .my-alc-btn-toggle {
+  margin-top: 15px;
+}
+
+.profile-dropdown .my-alc-btn-toggle .caret {
+  border-top-width: 6px;
+  border-left-width: 6px;
+  border-right-width: 6px;
+}
+
 
 
 
