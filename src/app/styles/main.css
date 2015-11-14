@@ -593,6 +593,10 @@ a:focus { color: #0099cc;
   margin-top: 20px;
 }
 
+.success-panel .panel-danger {
+  height: 200px;
+}
+
 .success-panel .panel-success>.panel-heading {
   color: #009ddc;
 }
