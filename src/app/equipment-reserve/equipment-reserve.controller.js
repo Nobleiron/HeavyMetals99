@@ -1,11 +1,8 @@
 'use strict';
 angular.module("HM_EquipmentReserveMD")
-  .controller("HM_EquipmentReserveCtrl",['$scope','$modalInstance', function($scope,$modalInstance){
+  .controller("HM_EquipmentReserveCtrl",['$scope','$modalInstance','modalParams', function($scope,$modalInstance,modalParams){
 
 
 
-    $scope.$on('$stateChangeSuccess', function(){
-      $modalInstance.close();
-    });
-
+  
   }]);

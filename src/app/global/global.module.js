@@ -14,6 +14,7 @@ angular.module("HM_GlobalMD",[
   'HM_LogoutMD',
   'HM_LandingMD',
   'HM_OrderHistoryMD',
-  'HM_SearchMD'
+  'HM_SearchMD',
+  'HM_ActivateUserMD'
 
 ]);

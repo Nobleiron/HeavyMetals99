@@ -35,13 +35,15 @@
 
   function _run( $rootScope, $modal) {
 
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-    $rootScope.$on('$stateChangeStart', function (event, toState) {
+
       if(toState.openInModal){
-        $modal.open({
+        var modalInstance =  $modal.open({
           templateUrl : toState.templateUrl,
           controller: toState.controller,
           resolve: {
+            modalParams : toParams,
             PreviousState: [
               "$state",
               function ($state) {
@@ -54,7 +56,10 @@
               }
             ]
           }
-        });
+        })
+
+
+
         /**
          * Prevent the transition to the dummy state, stay where you are
          */

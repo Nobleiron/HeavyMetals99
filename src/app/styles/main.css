@@ -661,14 +661,6 @@ a:focus { color: #0099cc;
 .reserve-right .daily_ul {
   margin-bottom: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
+.user-activation-container{
+  text-align: center;
+}

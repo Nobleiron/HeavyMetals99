@@ -99,6 +99,11 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },
+        'hmPrelogin.activateUser' : {
+          url: '/user/activate?auth_code&email',
+          templateUrl: 'app/activate-user/activate-user.html',
+          controller: 'HM_ActivateUserCtrl'
+        },
         'hmPrelogin.logout' : {
           url: '/logout',
           templateUrl : 'app/logout/logout.html',
