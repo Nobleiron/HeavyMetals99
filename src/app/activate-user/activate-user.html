@@ -1,11 +1,12 @@
 <section>
 
-  <div style="min-height: 300px;" ng-if="flags.activationInProgress">
-    <h4 style="margin: 20px 0 0 40px;">Please wait while we make your account active...</h4>
+  <div ng-if="flags.activationInProgress">
+    <h4 style="margin: 20px 0 20px 40px;">Please wait while we make your account active...</h4>
   </div>
   <article class="main-cantain" ng-if="flags.activationComplete">
     <div class="container">
-      <div class="user-activation-container text-center" ng-if="flags.activationSuccessful">
+      <div class="user-activation-container text-center user-activate-div" ng-if="flags.activationSuccessful">
+        <i class="fa fa-check-circle-o" style="font-size: 45px;"></i>
         <h4>Your account is activated successfully</h4>
         <p ><a ui-sref="hmPrelogin.login">Click here to continue  to login</a></p>
       </div>

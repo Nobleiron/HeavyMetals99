@@ -661,6 +661,19 @@ a:focus { color: #0099cc;
 .reserve-right .daily_ul {
   margin-bottom: 20px;
 }
+
 .user-activation-container{
   text-align: center;
+}
+
+.user-activate-div i {
+  font-size: 45px;
+}
+
+.user-activate-div h4 {
+  font-size: 22px;
+}
+
+.user-activate-div a {
+  font-size: 18px;
 }
