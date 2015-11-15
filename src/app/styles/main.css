@@ -677,3 +677,28 @@ a:focus { color: #0099cc;
 .user-activate-div a {
   font-size: 18px;
 }
+
+.reserve-left {
+  padding: 0;
+}
+
+.reserve-table {
+  max-height: 118px;
+  overflow: auto;
+}
+
+.reserve-table thead tr th {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.reserve-table tbody tr td {
+  padding: 0;
+}
+
+.reserve-table td input,
+.reserve-table td select {
+  border: none;
+  box-shadow: none;
+  padding: 5px;
+}
