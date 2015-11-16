@@ -653,6 +653,10 @@ a:focus { color: #0099cc;
   border-right-width: 6px;
 }
 
+.reserve-right {
+  padding: 0;
+}
+
 .reserve-right .reserve_eqe_tit {
   margin-bottom: 20px;
   text-align: center;
@@ -678,22 +682,9 @@ a:focus { color: #0099cc;
   font-size: 18px;
 }
 
-.reserve-left {
-  padding: 0;
-}
-
 .reserve-table {
-  max-height: 118px;
+  max-height: 100px;
   overflow: auto;
-}
-
-.reserve-table thead tr th {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.reserve-table tbody tr td {
-  padding: 0;
 }
 
 .reserve-table td input,
@@ -701,4 +692,8 @@ a:focus { color: #0099cc;
   border: none;
   box-shadow: none;
   padding: 5px;
+}
+
+.quantity-btn a {
+  margin-top: 10%;
 }
