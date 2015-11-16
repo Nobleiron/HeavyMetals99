@@ -697,3 +697,39 @@ a:focus { color: #0099cc;
 .quantity-btn a {
   margin-top: 10%;
 }
+
+.manage-job-btn-col {
+  padding: 20px 0 5px 0;
+}
+
+.manage-job-btn-col .manage-job-btn {
+  background-color: #009ddc;
+  color: #fff;
+  font-family: Open Sans;
+  font-weight: 600;
+  padding: 10px 30px 10px 30px;
+}
+
+.manage-job-btn-col .list {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.manage-job-btn-col .map {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.manage-job-btn-col .deactivate {
+  background-color: #fff;
+  color: #666666;
+}
+
+.mng-search-bar {
+  max-width: 250px;
+  width: 250px;
+}
+
+
+
+
