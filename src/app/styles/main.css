@@ -102,7 +102,7 @@ a:focus { color: #0099cc;
 }
 .search_main{text-align: center; padding: 20px 0 330px 0;}
 
-.my_search{background: #ff5600; color: #fff; margin-left: -7px;  padding: 9px 12px;
+.my_search{background: #ff5600; margin-right: 25px; color: #fff; margin-left: -7px;  padding: 9px 12px;
   border-radius: 0px 5px 5px 0px;
   -moz-border-radius: 0px 5px 5px 0px;
   -webkit-border-radius: 0px 5px 5px 0px;
@@ -788,6 +788,19 @@ a:focus { color: #0099cc;
   font-weight: 600;
   font-size: 14px;
   background-color: #009ddc;
+}
+
+.no-search-row .text-col {
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+
+.modal-dialog {
+  width: 787px;
+}
+
+.help-link {
+  color: #009ddc;
 }
 
 

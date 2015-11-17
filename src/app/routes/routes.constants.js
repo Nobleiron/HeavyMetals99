@@ -89,6 +89,11 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/views/requests/requests.html',
           controller: 'HM_RequestsCtrl'
         },
+        'hm.help': {
+          url: '/help',
+          templateUrl: 'app/help/help.html',
+          openInModal: true
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',
