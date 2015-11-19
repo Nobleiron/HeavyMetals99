@@ -48,25 +48,25 @@
     </div>
     <div class="col-lg-6 reserve-right">
       <h4 class="reserve_eqe_tit">
-        Jig Skytrak 42’ Telehandler 8000
-        <span class="reserve_eqe_num text-center">#8042</span>
+        {{product.Product_Name}}
+        <span class="reserve_eqe_num text-center">{{product.MODEL}}</span>
       </h4>
       <div class="daily_ul">
         <ul>
           <li>
             <p class="daily_title">Daily</p>
-            <p class="daily_price">$199</p>
-            <p class="daily_price_check">$239</p>
+            <p class="daily_price">${{product.Product_Price.Daily}}</p>
+            <p class="daily_price_check">${{product.Product_Price.Daily}}</p>
           </li>
           <li>
             <p class="daily_title">Weekly</p>
-            <p class="daily_price">$1156</p>
-            <p class="daily_price_check">$1399</p>
+            <p class="daily_price">${{product.Product_Price.Weekly}}</p>
+            <p class="daily_price_check">${{product.Product_Price.Weekly}}</p>
           </li>
           <li>
             <p class="daily_title">Monthly</p>
-            <p class="daily_price">$4556</p>
-            <p class="daily_price_check">$499</p>
+            <p class="daily_price">${{product.Product_Price.Monthly}}</p>
+            <p class="daily_price_check">${{product.Product_Price.Monthly}}</p>
           </li>
         </ul>
       </div>

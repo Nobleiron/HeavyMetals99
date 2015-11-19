@@ -15,6 +15,7 @@
     ['ngAnimate',
       'ui.router',
       'ui.bootstrap',
+      '720kb.datepicker',
       'ngSanitize',
       'pouchdb',
       'LocalStorageModule',
@@ -43,4 +44,3 @@
 
 
 }());
-
