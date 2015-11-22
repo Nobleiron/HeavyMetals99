@@ -36,26 +36,20 @@
   function _run( $rootScope, $modal) {
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-
-
       if(toState.openInModal){
         var modalInstance =  $modal.open({
           templateUrl : toState.templateUrl,
           controller: toState.controller,
-          resolve: {
-            modalParams : toParams,
-            PreviousState: [
-              "$state",
-              function ($state) {
-                var currentStateData = {
-                  name: $state.current.name,
-                  params: $state.params,
-                  url: $state.href($state.current.name, $state.params)
-                };
-                return currentStateData;
-              }
-            ]
-          }
+          scope: function() {
+
+            var scope = $rootScope.$new();
+            scope.modalParams = toParams
+            // Might leak memory
+            scope.$on("$stateChangeSuccess", function(){
+              modalInstance.close();
+            });
+            return scope;
+        }()
         })
 
 

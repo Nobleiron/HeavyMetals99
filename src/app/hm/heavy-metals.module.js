@@ -14,7 +14,6 @@
   angular.module('HeavyMetals',
     ['ngAnimate',
       'ui.router',
-      'datePicker',
       'ui.bootstrap',
       'ngSanitize',
       'LocalStorageModule',
