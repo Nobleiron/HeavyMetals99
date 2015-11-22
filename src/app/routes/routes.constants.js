@@ -99,6 +99,11 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },
+        'hmPrelogin.forgotPassword' : {
+          url: '/forgot-password',
+          templateUrl: 'app/forgot-password/forgot-password.html',
+          controller: 'HM_ForgotPasswordCtrl'
+        },
         'hmPrelogin.register' : {
           url: '/register',
           templateUrl: 'app/login/login.html',
