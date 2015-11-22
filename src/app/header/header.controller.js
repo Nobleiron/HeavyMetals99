@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_CoreClientStoreSV','HM_RestSV','HM_HeaderCnst',function ($scope,$state,filterFilter,ClientStoreSV, RestSV,HeaderCnst) {
+  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst',function ($scope,$state,filterFilter, RestSV,HeaderCnst) {
 
     $scope.getProducts = getProducts;
 
@@ -66,10 +66,10 @@ angular.module('HeavyMetals')
 
 
 
-    ClientStoreSV
-      .get('userObj')
-      .then(function(response){
-
-        $scope.userObj = response;
-      });
+    // ClientStoreSV
+    //   .get('userObj')
+    //   .then(function(response){
+    //
+    //     $scope.userObj = response;
+    //   });
   }]);

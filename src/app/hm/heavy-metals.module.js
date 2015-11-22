@@ -14,9 +14,9 @@
   angular.module('HeavyMetals',
     ['ngAnimate',
       'ui.router',
+      'datePicker',
       'ui.bootstrap',
       'ngSanitize',
-      'pouchdb',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
       'valdr',
@@ -26,11 +26,11 @@
 
 
 
-  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst) {
+  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,$httpProvider) {
 
     // Setup Local Storage Prefix
     localStorageServiceProvider
-      .setPrefix('HM_');
+      .setPrefix('HM');
 
     //Setting Up validation Messages
     for(var constraints in ValidationConstraintsCnst){

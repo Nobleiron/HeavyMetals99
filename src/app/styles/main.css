@@ -803,8 +803,6 @@ a:focus { color: #0099cc;
   color: #009ddc;
 }
 
-
-
-
-
-
+[datepicker-popup-wrap].dropdown-menu{
+  z-index: 9999;
+}

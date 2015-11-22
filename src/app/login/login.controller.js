@@ -1,10 +1,9 @@
 'use strict';
 angular.module('HM_LoginMD')
-  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','HM_CoreClientStoreSV', function ($scope, $state, LoginCnst,RestSV, ClientStoreSV ) {
+  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','localStorageService','$http', function ($scope, $state, LoginCnst,RestSV, localStorageService,$http ) {
 
 
     _initialize();
-
 
     $scope.login = login;
 
@@ -44,7 +43,8 @@ angular.module('HM_LoginMD')
             user_name :'saneilnaik11',
             email : $scope.UserRegisterData.email,
             password : $scope.UserRegisterData.password,
-            phone : $scope.UserRegisterData.phone
+            phone : $scope.UserRegisterData.phone,
+            url : 'http://localhost:3000/user/activate'
           })
           .then(function(response){
             $scope.flags.registration.success = true;
@@ -69,21 +69,15 @@ angular.module('HM_LoginMD')
           .post( LoginCnst.login.url() ,{
             email : $scope.loginData.email,
             password : $scope.loginData.password
+          },{
+            withCredential : true
           })
           .then(function(response){
 
             var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
 
-            ClientStoreSV
-              .post(userObj)
-              .then(function(){
-                $state.go('hm.dashboard')
-              })
-              .catch(function(err){
-                $state.go('hm.dashboard')
-                console.log('Error saving User Data', err)
-              });
-            //
+            localStorageService.set('userObj',userObj)
+            $state.go('hm.dashboard');
           })
           .catch(function(error){
             $scope.formSubmitted = true;

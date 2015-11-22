@@ -1,6 +1,6 @@
 'use strict';
 angular.module('HM_LogoutMD')
-  .controller('HM_LogoutCtrl', ['$scope','$state','HM_logoutCnst','HM_RestSV','HM_CoreClientStoreSV', function ($scope, $state, LogoutCnst,RestSV, ClientStoreSV ) {
+  .controller('HM_LogoutCtrl', ['$scope','$state','HM_logoutCnst','HM_RestSV', function ($scope, $state, LogoutCnst,RestSV ) {
 
 
     _initialize();
@@ -12,15 +12,7 @@ angular.module('HM_LogoutMD')
 
       loggedOut
         .then( function(){
-          ClientStoreSV
-            .get('userObj')
-            .then(function(userObj){
-              ClientStoreSV.remove(userObj);
-            })
-            .finally(function(){
               $state.go('hmPrelogin.login');
-            })
-
         });
     }
 

@@ -90,9 +90,32 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="text" placeholder="Enter Date" class="form-control"></td>
-              <td><input type="text" placeholder="Enter Date" class="form-control"></td>
-              <td><input type="text" placeholder="Enter Time" class="form-control"></td>
+              <td>
+                <input type="text" class="form-control"
+               datepicker-popup="mediumDate"
+               is-open="valuationDatePickerIsOpen"
+               ng-click="valuationDatePickerOpen()"
+               ng-model="pickupDate" />
+                <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
+              </td>
+              <td>
+                <input type="text" class="form-control"
+               datepicker-popup="mediumDate"
+               datepicker-append-to-body=true
+               is-open="valuationDatePickerIsOpen"
+               ng-click="valuationDatePickerOpen()"
+               ng-model="pickupEndDate" />
+                <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
+              </td>
+              <td>
+                <input type="text" class="form-control"
+               datepicker-popup="mediumDate"
+               datepicker-append-to-body=true
+               is-open="valuationDatePickerIsOpen"
+               ng-click="valuationDatePickerOpen()"
+               ng-model="pickupTime" />
+                <!-- <input type="text" placeholder="Enter Time" class="form-control"> -->
+              </td>
             </tr>
           </tbody>
       </table>
