@@ -21,7 +21,10 @@
       'valdr',
       'HM_RoutesMD',
       'HM_GlobalMD'])
-    .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','$httpProvider', _configure]);
+    .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','$httpProvider', _configure])
+    .run(['$rootScope','$state', function($rootScope, $state){
+      $rootScope.$state = $state;
+    }])
 
 
 
