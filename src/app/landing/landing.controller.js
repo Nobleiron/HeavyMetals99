@@ -44,6 +44,7 @@ angular.module('HM_LandingMD')
       $scope.flags = {
         rented : true
       }
+
     }
 
     function toggleRentOrBuy(rented){

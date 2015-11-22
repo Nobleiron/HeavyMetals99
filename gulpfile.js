@@ -41,13 +41,3 @@ gulp.task('docs', shell.task([
   '-d build/docs '+                             // output directory
   '-r src/app/*.js'                              // source code directory
 ]));
-
-
-
-
-
-
-gulp.task('release', function(){
-
-
-});
