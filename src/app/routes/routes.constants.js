@@ -124,6 +124,12 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/request-callback/request-callback.html',
           controller : 'HM_RequestCallBackCtrl',
           openInModal : true
+        },
+        'hmPrelogin.termsAndConditions' : {
+          url : '/terms-n-conditions',
+          templateUrl : 'app/terms-and-conditions/terms-and-conditions.html',
+          controller : 'HM_TermsAndConditionsCtrl',
+          openInModal : true
         }
 
       },
