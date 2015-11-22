@@ -6,9 +6,13 @@ angular.module('HM_RequestHeadersINT', [])
       'localStorageService',
       function ($q, localStorageService) {
         var _requestHeaders = function (request) {
+           var userObj = localStorageService.get("userObj");
 
             request.headers["X-API-KEY"] = "123";
-            request.headers["auth_token"] = localStorageService.get("userObj").auth_token
+            if(userObj){
+            request.headers["auth_token"] = localStorageService.get("userObj").auth_token  
+            }
+
 
           return request || $q.when(request);
         };
