@@ -13,6 +13,10 @@ angular.module("HM_SearchMD")
         gridView : false
       };
 
+      $scope.myPagingFunction = function(){
+        debugger
+      }
+
       $scope.selection = { type : "rent"};
 
       $scope.addToWishList = addToWishList;

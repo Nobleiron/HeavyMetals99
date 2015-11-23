@@ -16,6 +16,7 @@
       'ui.router',
       'ui.bootstrap',
       'ngSanitize',
+      'infinite-scroll',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
       'valdr',

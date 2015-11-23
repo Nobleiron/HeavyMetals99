@@ -5,5 +5,10 @@ angular.module('HM_LandingMD')
       url : function(){
         return '/products/search'
       }
+    },
+    categories : {
+      url : function(){
+        return '/category'
+      }
     }
   });

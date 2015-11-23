@@ -43,12 +43,21 @@ angular.module('HM_LandingMD')
       $scope.selectedProduct = '';
       $scope.flags = {
         rented : true
-      }
+      };
+      fetchEquipmentMenus();
+    }
 
+    function fetchEquipmentMenus(){
+      RestSV.get(landingCnst.categories.url() ,{
+        type : 'rent'
+      })
+      .then(function(response){
+        $scope.equipmentMenus = response.data.result.CategoryList;
+      });
     }
 
     function toggleRentOrBuy(rented){
-      $scope.flags.rented = rented
+      $scope.flags.rented = rented;
     }
 
   }]);
