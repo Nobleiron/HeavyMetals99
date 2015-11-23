@@ -6,18 +6,17 @@ angular.module("HM_SearchMD")
 
       $scope.results = [];
       $scope.oneAtATime = true;
-
+      $scope.selection = { type : "rent"};
       $scope.flags = {
         searchResultLoading : false,
         categoryCollapse : false,
-        gridView : false
+        gridView : false,
+        page : 1,
+        resultFetching : false,
+        stopPaging : false
       };
 
-      $scope.myPagingFunction = function(){
-        debugger
-      }
-
-      $scope.selection = { type : "rent"};
+      $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
       $scope.addToWishList = addToWishList;
 
@@ -34,17 +33,31 @@ angular.module("HM_SearchMD")
         $scope.query = $stateParams.query || '';
         $scope.flags.gridView = $stateParams.viewType == "grid";
         $scope.flags.searchResultLoading = true;
+        _getSearchResult();
+        loadCategories();
+      }
+
+      function _getSearchResult(){
+        if(!$scope.flags.stopPaging && !$scope.flags.resultFetching){
+          $scope.flags.resultFetching = true
           RestSV
             .get( SearchCnst.search.url() ,{
-              search_text : normalizeSearchQuery($scope.query)
+              search_text : normalizeSearchQuery($scope.query),
+              page : $scope.flags.page
             })
             .then(function(response){
-              $scope.results = response.data.result.SearchResult;
+              if(response.data.result == ""){
+                  $scope.flags.stopPaging = true;
+              }else{
+                $scope.results = $scope.results.concat(response.data.result.SearchResult);
+                $scope.flags.page += 1 ;
+              }
             })
             .finally(function(){
+              $scope.flags.resultFetching = false;
               $scope.flags.searchResultLoading = false;
             })
-        loadCategories();
+        }
       }
 
       /**
@@ -75,6 +88,10 @@ angular.module("HM_SearchMD")
           })
           .catch(function(){
           })
+      }
+
+      function lazyLoadSearchResult(){
+        _getSearchResult();
       }
 
 
