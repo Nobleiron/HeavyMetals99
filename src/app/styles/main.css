@@ -806,3 +806,17 @@ a:focus { color: #0099cc;
 [datepicker-popup-wrap].dropdown-menu{
   z-index: 9999;
 }
+
+.forgot-password-col {
+  padding-top: 50px;
+}
+
+.forgot-password-col .panel-body {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.forgot-password-col .panel-body .heading {
+  color: #009ddc;
+  margin-top: 0;
+}
