@@ -820,3 +820,11 @@ a:focus { color: #0099cc;
   color: #009ddc;
   margin-top: 0;
 }
+
+.prelogin-header-col {
+  padding-top: 13px;
+}
+
+.prelogin-header-btn {
+  padding-top: 18px;
+}
