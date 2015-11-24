@@ -98,6 +98,11 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/manage-my-account/manage-my-account.html',
           controller: 'HM_ManageMyAccountCtrl'
         },
+        'hm.dashboard.quotaNReservations' : {
+          url: '/quota-n-reservations',
+          templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
+          controller: 'HM_QuotaNReservationsCtrl'
+        },
         'hm.dashboard.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
