@@ -94,6 +94,11 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/manage-my-account/manage-my-account.html',
           controller: 'HM_ManageMyAccountCtrl'
         },
+        'hm.myCatalogue' : {
+          url: '/my-catalogue',
+          templateUrl: 'app/my-catalogue/my-catalogue.html',
+          controller: 'HM_MyCatalogueCtrl'
+        },
         'hm.help': {
           url: '/help',
           templateUrl: 'app/help/help.html',

@@ -12,6 +12,7 @@ angular.module("HM_GlobalMD",[
   'HM_LoginMD',
   'HM_ForgotPasswordMD',
   'HM_ManageMyAccountMD',
+  'HM_MyCatalogueMD',
   'HM_TermsAndConditionsMD',
   'HM_MenuAimMD',
   'HM_RequestCallbackMD',
