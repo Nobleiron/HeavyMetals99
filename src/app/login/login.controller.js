@@ -41,7 +41,7 @@ angular.module('HM_LoginMD')
         var url = location.port
         RestSV
           .post( LoginCnst.register.url() ,{
-            user_name : $scope.UserRegisterData.firstName + $scope.UserRegisterData.lastName,
+            user_name : $scope.UserRegisterData.firstName + " " + $scope.UserRegisterData.lastName,
             email : $scope.UserRegisterData.email,
             password : $scope.UserRegisterData.password,
             phone : $scope.UserRegisterData.phone,
