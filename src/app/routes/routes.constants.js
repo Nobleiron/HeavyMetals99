@@ -86,8 +86,13 @@ angular.module("HM_RoutesMD")
         },
         'hm.requests' : {
           url: '/requests',
-          templateUrl: 'app/views/requests/requests.html',
+          templateUrl: 'app/requests/requests.html',
           controller: 'HM_RequestsCtrl'
+        },
+        'hm.manageMyAccount' : {
+          url: '/manage-my-account',
+          templateUrl: 'app/manage-my-account/manage-my-account.html',
+          controller: 'HM_ManageMyAccountCtrl'
         },
         'hm.help': {
           url: '/help',

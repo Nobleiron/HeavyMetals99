@@ -14,7 +14,7 @@ module.exports = function(options) {
 
     gulp.watch(options.src + '/app/**/*.css', function(event) {
       if(isOnlyChange(event)) {
-        browserSync.reload(event.path);
+        //browserSync.reload(event.path);
       } else {
         gulp.start('inject');
       }
@@ -29,7 +29,7 @@ module.exports = function(options) {
     });
 
     gulp.watch(options.src + '/app/**/*.html', function(event) {
-      browserSync.reload(event.path);
+      //browserSync.reload(event.path);
     });
   });
 };
