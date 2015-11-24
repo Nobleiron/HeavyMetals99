@@ -40,11 +40,11 @@ angular.module('HM_LoginMD')
       if($scope.userRegisterForm.$valid){
         RestSV
           .post( LoginCnst.register.url() ,{
-            user_name :'saneilnaik11',
+            user_name : $scope.UserRegisterData.firstName + $scope.UserRegisterData.lastName,
             email : $scope.UserRegisterData.email,
             password : $scope.UserRegisterData.password,
             phone : $scope.UserRegisterData.phone,
-            url : 'http://localhost:3000/user/activate'
+            url : location.protocol + "//" + location.hostname + '/#/user/activate'
           })
           .then(function(response){
             $scope.flags.registration.success = true;
