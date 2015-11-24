@@ -33,22 +33,26 @@ angular.module("HM_RoutesMD")
             }
           }
         },
+        'hm.dashboard' : {
+          abstract : true,
+          templateUrl : "app/dashboard/dashboard.html",
+          controller: 'HM_DashboardCtrl'
+        },
         'landing' : {
           url: '/',
           templateUrl: 'app/landing/landing.html',
           controller: 'HM_LandingCtrl'
         },
-        'hm.dashboard' : {
+        'hm.dashboard.main' : {
           url: '/dashboard',
-          templateUrl: 'app/dashboard/dashboard.html',
-          controller: 'HM_DashboardCtrl'
+          templateUrl: 'app/dashboard-main/dashboard-main.html'
         },
         'hm.sellEquipment' :{
           url : '/equipments/sell',
           templateUrl : 'app/equipment-sell/equipment-sell.html',
           controller: 'HM_EquipmentSellCtrl'
         },
-        'hm.invoices' : {
+        'hm.dashboard.invoices' : {
               url: '/invoices',
               templateUrl: 'app/invoices/invoices.html',
               controller: 'HM_InvoicesCtrl'
@@ -89,12 +93,12 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/requests/requests.html',
           controller: 'HM_RequestsCtrl'
         },
-        'hm.manageMyAccount' : {
+        'hm.dashboard.manageMyAccount' : {
           url: '/manage-my-account',
           templateUrl: 'app/manage-my-account/manage-my-account.html',
           controller: 'HM_ManageMyAccountCtrl'
         },
-        'hm.myCatalogue' : {
+        'hm.dashboard.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
           controller: 'HM_MyCatalogueCtrl'
