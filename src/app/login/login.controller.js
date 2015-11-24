@@ -38,13 +38,14 @@ angular.module('HM_LoginMD')
 
     function register(){
       if($scope.userRegisterForm.$valid){
+        var url = location.port
         RestSV
           .post( LoginCnst.register.url() ,{
             user_name : $scope.UserRegisterData.firstName + $scope.UserRegisterData.lastName,
             email : $scope.UserRegisterData.email,
             password : $scope.UserRegisterData.password,
             phone : $scope.UserRegisterData.phone,
-            url : location.protocol + "//" + location.hostname + '/#/user/activate'
+            url : getLocation() + '/#/user/activate'
           })
           .then(function(response){
             $scope.flags.registration.success = true;
@@ -60,6 +61,14 @@ angular.module('HM_LoginMD')
           })
       }
 
+    }
+
+    function getLocation(){
+      var url = location.origin;
+      if(location.port){
+          url = url + ":" + location.port;
+      }
+      return url;
     }
 
     function  login(){
