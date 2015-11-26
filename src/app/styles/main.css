@@ -828,3 +828,41 @@ a:focus { color: #0099cc;
 .prelogin-header-btn {
   padding-top: 18px;
 }
+
+.job-header-row {
+  margin: 0;
+}
+
+.job-site-header {
+  padding: 10px 20px 10px;
+  background-color: #666666;
+  color: #fff;
+}
+
+.fields-row {
+  margin: 0;
+}
+
+.fields-row .form-control {
+  border-radius: 0 !important;
+}
+
+.fields-row .col {
+  padding: 10px 20px 10px 20px;
+}
+
+.fields-row .other-col {
+  padding: 0px 20px 10px 20px;
+}
+
+.btn-col {
+  padding: 10px 20px 10px 20px;
+}
+
+.job-btn {
+  background: none;
+  border: 1px solid #000;
+  border-radius: 0;
+  color: #000;
+  margin-right: 10px;
+}
