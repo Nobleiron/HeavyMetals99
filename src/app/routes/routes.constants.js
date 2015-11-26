@@ -119,6 +119,11 @@ angular.module("HM_RoutesMD")
           controller: 'HM_AddJobSiteCtrl',
           openInModal: true
         },
+        'hm.jobSiteDetail': {
+          url: '/job-site-detail',
+          templateUrl: 'app/job-site-detail/job-site-detail.html',
+          openInModal: true
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',

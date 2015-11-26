@@ -847,16 +847,12 @@ a:focus { color: #0099cc;
   border-radius: 0 !important;
 }
 
-.fields-row .col {
+.site-col {
   padding: 10px 20px 10px 20px;
 }
 
 .fields-row .other-col {
   padding: 0px 20px 10px 20px;
-}
-
-.btn-col {
-  padding: 10px 20px 10px 20px;
 }
 
 .job-btn {
@@ -865,4 +861,23 @@ a:focus { color: #0099cc;
   border-radius: 0;
   color: #000;
   margin-right: 10px;
+}
+
+.detail-col {
+  padding-left: 30px;
+  margin: 20px 0;
+  border-right: 1px solid #eee;
+}
+
+.detail-col h4 {
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.detail-col p {
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: 1.1;
 }
