@@ -38,6 +38,7 @@ angular.module('HM_LoginMD')
 
     function register(){
       if($scope.userRegisterForm.$valid){
+        $scope.loading = true;
         var url = location.port
         RestSV
           .post( LoginCnst.register.url() ,{
@@ -48,10 +49,12 @@ angular.module('HM_LoginMD')
             url : getLocation() + '/#/user/activate'
           })
           .then(function(response){
+            $scope.loading = false;
             $scope.flags.registration.success = true;
             // TODO user activation screen
           })
           .catch(function(response){
+            $scope.loading = false;
             $scope.flags.registration.error = true;
             $scope.errorMessage = response.data.errortext[0];
             // TODO Exception handler
@@ -74,6 +77,7 @@ angular.module('HM_LoginMD')
     function  login(){
       _resetLoginValidity();
       if($scope.loginForm.$valid){
+        $scope.loading = true;
         RestSV
           .post( LoginCnst.login.url() ,{
             email : $scope.loginData.email,
@@ -82,7 +86,7 @@ angular.module('HM_LoginMD')
             withCredential : true
           })
           .then(function(response){
-
+            $scope.loading = false;
             var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
 
             localStorageService.set('userObj',userObj)
@@ -92,7 +96,10 @@ angular.module('HM_LoginMD')
             $scope.formSubmitted = true;
             _invalidateLoginForm();
             console.log("Error logging in", error)
+            $scope.loading = false;
           });
+      } else {
+        $scope.loading = false;
       }
     }
 

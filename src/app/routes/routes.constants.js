@@ -113,6 +113,17 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/help/help.html',
           openInModal: true
         },
+        'hm.addJobSite': {
+          url: '/add-job',
+          templateUrl: 'app/add-job-site/add-job-site.html',
+          controller: 'HM_AddJobSiteCtrl',
+          openInModal: true
+        },
+        'hm.jobSiteDetail': {
+          url: '/job-site-detail',
+          templateUrl: 'app/job-site-detail/job-site-detail.html',
+          openInModal: true
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',
@@ -149,6 +160,10 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/terms-and-conditions/terms-and-conditions.html',
           controller : 'HM_TermsAndConditionsCtrl',
           openInModal : true
+        },
+        'hmPrelogin.termsDetails' : {
+          url : '/terms/detail',
+          templateUrl : 'app/terms-and-conditions/terms-and-conditions-detail.html'
         }
 
       },
