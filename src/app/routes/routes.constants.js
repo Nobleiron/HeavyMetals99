@@ -160,6 +160,10 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/terms-and-conditions/terms-and-conditions.html',
           controller : 'HM_TermsAndConditionsCtrl',
           openInModal : true
+        },
+        'hmPrelogin.termsDetails' : {
+          url : '/terms/detail',
+          templateUrl : 'app/terms-and-conditions/terms-and-conditions-detail.html'
         }
 
       },

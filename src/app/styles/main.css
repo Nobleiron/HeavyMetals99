@@ -881,3 +881,8 @@ a:focus { color: #0099cc;
   margin: 10px 0;
   line-height: 1.1;
 }
+
+.tc {
+  font-family: Open Sans;
+  font-size: 11px;
+}
