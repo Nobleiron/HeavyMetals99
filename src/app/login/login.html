@@ -102,7 +102,10 @@
                     <span class="flot-right need_help"><a href="/#/forgot-password">Forgot Password?</a></span>
                   </div>
                   <hr>
-                  <button type="submit" ng-click="login()" class="btn btn-default flot-right sign_mybtn">Sign In</button>
+                  <button type="submit" ng-click="login()" class="btn btn-default flot-right sign_mybtn">
+                    <span ng-hide="loading">Sign In</span>
+                    <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
+                  </button>
                 </form>
               </div>
             </div>
@@ -144,7 +147,9 @@
                     Conditions</a></div>
                   <hr>
 
-                  <button type="submit" ng-click="register()" class="btn btn-default flot-right sign_mybtn">Sign Up
+                  <button type="submit" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
+                    <span ng-hide="loading">Sign Up</span>
+                    <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
                   </button>
 
                 </form>
