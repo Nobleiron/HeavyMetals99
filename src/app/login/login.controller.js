@@ -86,7 +86,7 @@ angular.module('HM_LoginMD')
             var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
 
             localStorageService.set('userObj',userObj)
-            $state.go('hm.dashboard');
+            $state.go('hm.dashboard.main');
           })
           .catch(function(error){
             $scope.formSubmitted = true;
