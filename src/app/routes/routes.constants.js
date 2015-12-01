@@ -53,9 +53,14 @@ angular.module("HM_RoutesMD")
           controller: 'HM_EquipmentSellCtrl'
         },
         'hm.dashboard.invoices' : {
-              url: '/invoices',
-              templateUrl: 'app/invoices/invoices.html',
-              controller: 'HM_InvoicesCtrl'
+          url: '/invoices',
+          templateUrl: 'app/invoices/invoices.html',
+          controller: 'HM_InvoicesCtrl'
+        },
+        'hm.portalAccess': {
+          url: '/portal-access',
+          templateUrl: 'app/portal-access/portal-access.html',
+          controller: 'HM_PortalAccessCtrl'
         },
         'hm.reserveEquipment' : {
           url: '/equipments/:id/reserve',

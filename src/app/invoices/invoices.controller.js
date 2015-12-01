@@ -3,7 +3,7 @@ angular.module("HM_InvoicesMD")
   .controller('HM_InvoicesCtrl', ['$scope','PreviousState','HM_RestSV',function($scope,PreviousState,RestSV){
 
 
-    RestSV.get('/portal/outstandingInvoiceList')
+    RestSV.get('/portal/outstandingInvoiceList',{is_outstanding : true})
       .then(function(){
         debugger
       })

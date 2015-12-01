@@ -46,7 +46,7 @@ angular.module('HM_LoginMD')
             email : $scope.UserRegisterData.email,
             password : $scope.UserRegisterData.password,
             phone : $scope.UserRegisterData.phone,
-            url : getLocation() + '/#/user/activate'
+            url : location.origin + '/#/user/activate'
           })
           .then(function(response){
             $scope.loading = false;
@@ -66,13 +66,7 @@ angular.module('HM_LoginMD')
 
     }
 
-    function getLocation(){
-      var url = location.origin;
-      if(location.port){
-          url = url + ":" + location.port;
-      }
-      return url;
-    }
+
 
     function  login(){
       _resetLoginValidity();

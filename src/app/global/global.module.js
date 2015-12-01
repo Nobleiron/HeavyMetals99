@@ -11,6 +11,7 @@ angular.module("HM_GlobalMD",[
   'HM_EquipmentReserveSuccessMD',
   'HM_LoginMD',
   'HM_ForgotPasswordMD',
+  'HM_PortalAccessMD',
   'HM_ManageMyAccountMD',
   'HM_MyCatalogueMD',
   'HM_QuotaNReservationsMD',
