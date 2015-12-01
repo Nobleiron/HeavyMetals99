@@ -152,7 +152,8 @@ a:focus { color: #0099cc;
 .welcome_title{ color: #666666; font-size: 20px; margin: 20px 0 10px 0;}
 .need_help{}
 .need_help a{ color: #ff5600; font-size: 14px;}
-.sign_mybtn{background: #009ddc; font-size: 14px; padding: 8px 50px; color: #fff;}
+.sign_mybtn{width: 150px; background: #009ddc; font-size: 14px; padding: 8px 50px; color: #fff;}
+.sign_mybtn:focus {outline: none;}
 .in_block{display: inline-block; vertical-align: top;}
 .fname_in{width: 46%; }
 .link_clr{color: #009ddc;}
@@ -834,33 +835,30 @@ a:focus { color: #0099cc;
 }
 
 .job-site-header {
-  padding: 10px 20px 10px;
-  background-color: #666666;
-  color: #fff;
+  padding: 10px 20px 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.job-site-header h4 {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .fields-row {
   margin: 0;
 }
 
-.fields-row .form-control {
-  border-radius: 0 !important;
-}
-
 .site-col {
   padding: 10px 20px 10px 20px;
 }
 
-.fields-row .other-col {
-  padding: 0px 20px 10px 20px;
+.site-col button:first-child {
+  margin-right: 10px;
 }
 
-.job-btn {
-  background: none;
-  border: 1px solid #000;
-  border-radius: 0;
-  color: #000;
-  margin-right: 10px;
+.fields-row .other-col {
+  padding: 0px 20px 10px 20px;
 }
 
 .detail-col {
