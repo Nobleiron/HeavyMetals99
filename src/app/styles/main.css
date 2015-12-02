@@ -884,3 +884,11 @@ a:focus { color: #0099cc;
   font-family: Open Sans;
   font-size: 11px;
 }
+
+.landing-header {
+  padding: 40px 0 0 0;
+}
+
+.landing-header .icon-bar {
+  background-color: #ffffff;
+}

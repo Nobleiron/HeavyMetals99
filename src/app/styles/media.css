@@ -50,6 +50,31 @@
     font-size: 15px;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .main_bg {
+    height: 450px;
+    background-size: 100% 100%;
+  }
+
+  .rent_tit {
+    font-size: 24px;
+    padding: 8% 0 5% 0;
+  }
+
+  .search_main {
+    padding: 0;
+  }
+
+  .search-head {
+    display: inline-block;
+  }
+
+  .logo_part {
+    margin-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .soc_foot {
     text-align: center;
