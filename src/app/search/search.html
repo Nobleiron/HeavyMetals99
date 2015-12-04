@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <!-- START  Filter Results side -->
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <div class="col-lg-12">
             <i class="fa fa-filter fa-lg"></i>
             <span class="filter">Filter Results:</span>
@@ -238,6 +238,10 @@
             </form>
           </div>
         </div>
+
+        <div class="col-md-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Filter</button>
+        </div>
         <!-- End Filter Results side -->
         <!-- START  All Product side -->
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
@@ -366,8 +370,8 @@
                   <div class="col-md-12"><hr class="dash"></div>
                   <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
                     <div class="col-md-3 lift-list">
-                      <figure>
-                        <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}"></a>
+                      <figure class="search-res-figure">
+                        <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}" class="search-res-img"></a>
                       </figure>
                     </div>
                     <div class="col-md-6 nopadding">

@@ -53,7 +53,6 @@
 
 @media only screen and (max-width: 992px) {
   .main_bg {
-    height: 450px;
     background-size: 100% 100%;
   }
 
@@ -62,16 +61,47 @@
     padding: 8% 0 5% 0;
   }
 
-  .search_main {
-    padding: 0;
-  }
-
   .search-head {
     display: inline-block;
   }
 
   .logo_part {
     margin-bottom: 10px;
+  }
+
+  .right-btn-col {
+    padding-top: 10px;
+  }
+
+  .right-btn-col .add-list {
+    margin: 0;
+  }
+
+  .show-for-small {
+    display: none;
+  }
+
+  .filt-btn {
+    display: block;
+  }
+
+  .show-filter {
+    display: block;
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+    margin-top: 35px;
+  }
+
+  .search-res-figure {
+    text-align: center;
+  }
+
+  .search-res-figure .search-res-img {
+    max-width: 350px;
   }
 }
 

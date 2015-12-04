@@ -16,6 +16,10 @@ angular.module("HM_SearchMD")
         stopPaging : false
       };
 
+      $scope.filterBtn = function() {
+        $scope.showFilter = !$scope.showFilter
+      }
+
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
       $scope.addToWishList = addToWishList;
