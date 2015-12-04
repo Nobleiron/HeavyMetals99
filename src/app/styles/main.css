@@ -265,10 +265,12 @@ a:focus { color: #0099cc;
           -moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
           box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
 }
-.star_rate{position: absolute;
-           right: 23px;
-           text-align: right;
-           top: 130px;}
+.star_rate{margin-top: 70%;
+  /*position: absolute;*/
+           /*right: 23px;*/
+           /*text-align: right;*/
+           /*top: 130px;*/
+         }
 .lift_box figure{padding: 1px;}
 .lift_box_tit{ font-size: 16px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
 .lift_box_tit a{color: #666666;}
@@ -288,7 +290,7 @@ a:focus { color: #0099cc;
 .daily_ul ul li p{ margin:0 0 5px 0; }
 .heart{overflow: hidden; margin: 15px 0 0 0; padding: 0 0 10px 0;}
 .heart ul{}
-.heart ul li{  border: 1px solid #dedede; margin: 0 10px 0 18px;
+.heart ul li{  border: 1px solid #dedede; margin: 0 2% 0 4%;
                border-radius: 5px;
                float: left;
                padding: 5px;}

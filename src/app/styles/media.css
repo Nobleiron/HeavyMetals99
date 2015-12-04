@@ -103,6 +103,11 @@
   .search-res-figure .search-res-img {
     max-width: 350px;
   }
+
+  .lift_box {
+    width: 45%;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -166,6 +171,9 @@
   }
   .cart_menu .noti{left: 72px;}
 
+  .lift_box {
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 320px) {
