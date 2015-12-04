@@ -108,6 +108,107 @@
     width: 45%;
   }
 
+  .productname_tit {
+    font-size: 18px;
+  }
+
+  .procutby {
+    font-size: 16px;
+  }
+
+  .rate_user {
+    font-size: 14px;
+  }
+
+  .read_review {
+    font-size: 14px;
+  }
+
+  .rating-div i {
+    font-size: 16px;
+  }
+
+  .cunsult {
+    font-size: 16px;
+  }
+
+  .daily_price_product {
+    font-size: 18px;
+  }
+
+  .you-save {
+    text-align: center;
+  }
+
+  .you-save .can_dolar_product {
+    font-size: 14px;
+  }
+
+  .you-save .reg_dolar_product {
+    font-size: 18px;
+  }
+
+  .you-save .save_dol {
+    font-size: 14px;
+  }
+
+  .avelble_status {
+    text-align: center;
+  }
+
+  .divider-col {
+    text-align: center;
+  }
+
+  .divider-col .product_dash_lf {
+    width: 40%;
+  }
+
+  .divider-col .product_dash_rg {
+    width: 40%;
+  }
+
+  .inq_btn {
+    float: right;
+    margin-right: -20px;
+  }
+
+  .calc-col {
+    text-align: center;
+  }
+
+  .calc-col .enter_zip {
+    width: 100%;
+    margin: 10px 0 10px 0;
+    display: block;
+    margin: 10px auto;
+    max-width: 250px;
+  }
+
+  .calc-col .check_rate {
+    width: 100%;
+    margin: 0 0 10px 0;
+    display: block;
+    margin: 10px auto;
+    max-width: 250px;
+  }
+
+  .product_info_tit {
+    font-size: 16px;
+  }
+
+  .product_info_p {
+    font-size: 16px;
+  }
+
+  .push_up {
+    margin-bottom: 12px;
+  }
+
+  .we_can {
+    font-size: 16px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {

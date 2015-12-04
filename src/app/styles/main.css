@@ -517,7 +517,7 @@ a:focus { color: #0099cc;
 .go_back{}
 .go_back a{line-height: 35px;  font-size: 16px; color: #009ddc;}
 .product_or{position: relative; top: -13px; font-size: 16px; color: #666666;}
-.product_dash_lf{width:48%;}
+.product_dash_lf{width:47%;}
 .product_dash_rg{width:47%;}
 .or_main{margin: 20px 0 0 0;}
 .product_info_tit{font-size: 20px; font-weight: 600;}
