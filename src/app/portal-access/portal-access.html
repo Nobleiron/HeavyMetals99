@@ -1,87 +1,75 @@
-<div class="row">
+<section>
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+
+        <h3>Don't have full access?</h3>
+        <p><a target="_blank" href="https://na2.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=44529d52-2355-45d7-bb7f-21532a9fa491">Click here</a> now to fill out our credit application. As a member, you'll receive discounts on rentals up to
+
+          60% OFF when compared with other rental companies. You will enjoy 24/7 access to premium on-
+
+          demand account management services that Noble Iron offers, including access to these awesome
+
+          benefits:</p>
+        <ul>
+          <li>Access and generate real-time quotes</li>
+
+          <li> Create &amp; manage reservations and off-rent any equipment in seconds
+          </li>
+          <li>Manage job sites</li>
+
+          <li>Pay online using ACH (e-check) or credit card</li>
+
+          <li>Access contracts, invoices and much more</li>
+        </ul>
+
+        <p>Got questions? Our Rental Experts and Customer Experience Managers will be delighted to answer any questions you may have.</p>
+        <adress>
+          <h5>Contact us:</h5>
+
+          Phone: <a href="tel:1-855-767-4424">1-855-767-4424</a><br>
+
+          <a title="Request a call back" href="/#/request-callback">Request Call Back</a><br>
+
+          Email: <a href="mailto:customercare@nobleiron.com">customercare@nobleiron.com</a>
 
 
-  <div class="col-md-6 divider-right">
 
-    <h3>Don't have full access?</h3>
-    <p><a target="_blank" href="https://na2.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=44529d52-2355-45d7-bb7f-21532a9fa491">Click here</a> now to fill out our credit application. As a member, you'll receive discounts on rentals up to
-
-      60% OFF when compared with other rental companies. You will enjoy 24/7 access to premium on-
-
-      demand account management services that Noble Iron offers, including access to these awesome
-
-      benefits:</p>
-    <ul>
-      <li>Access and generate real-time quotes</li>
-
-      <li> Create &amp; manage reservations and off-rent any equipment in seconds
-      </li>
-      <li>Manage job sites</li>
-
-      <li>Pay online using ACH (e-check) or credit card</li>
-
-      <li>Access contracts, invoices and much more</li>
-    </ul>
-
-    <p>Got questions? Our Rental Experts and Customer Experience Managers will be delighted to answer any questions you may have.</p>
-    <adress>
-      <h5>Contact us:</h5>
-
-      Phone: <a href="tel:1-855-767-4424">1-855-767-4424</a><br>
-
-      <a title="Request a call back" data-title="Request a Callback" data-toggle="modal" data-target="#myModal" data-url="http://nobleiron.com/phone/call">Request Call Back</a><br>
-
-      Email: <a href="mailto:customercare@nobleiron.com">customercare@nobleiron.com</a>
-
-
-
-    </adress></div>
-  <!-----/my account header ---->
-  <div class="hidden-lg">
-    <hr>
-  </div>
-  <div class="col-md-6">
-    <h3>Already have a credit account with us?</h3>
-    <p>If you already have an open credit account with Noble Iron, please contact us in order to receive the
-      following credentials to have full access to all our features. </p>
-    <p> Give us a call at <a href="tel:1-855-767-4424">1-855-767-4424</a>
-      <br>Or email our direct online customer experience manager at <a href="mailto:brian.flores@nobleiron.com">brian.flores@nobleiron.com</a></p>
-
-    <form method="post" action="http://nobleiron.com/shop/myportalaccount/">
-      <input type="hidden" name="ispost" value="1">
-      <!-- alert failed -->
-
-
-      <div class="form-group">
-
-        <label>Portal Username</label>
-        <input type="text" class="form-control" name="customer_email" value="" data-required="true">
-
+        </adress>
       </div>
+      <!-- START  LOGIN/REGISTER TAB -->
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page">
 
+        <h3>Already have a credit account with us?</h3>
+        <p>If you already have an open credit account with Noble Iron, please contact us in order to receive the
+          following credentials to have full access to all our features. </p>
+        <p> Give us a call at <a href="tel:1-855-767-4424">1-855-767-4424</a>
+          <br>Or email our direct online customer experience manager at <a href="mailto:brian.flores@nobleiron.com">brian.flores@nobleiron.com</a></p>
 
-      <div class="form-group">
-
-        <label>Portal Password</label>
-        <input type="text" class="form-control" name="customer_password" value="" data-required="true">
-
+        <form role="form" name="loginForm" novalidate valdr-type="User">
+          <div class="form-group" valdr-form-group>
+            <input type="hidden" id="credentials" name="credentials" ng-model="loginData.credentials" />
+          </div>
+          <div class="form-group" valdr-form-group>
+            <label>Portal Username</label>
+            <input type="text" class="form-control" autocomplete="off" ng-required="true" name="email" ng-model="loginData.email">
+          </div>
+          <div class="form-group" valdr-form-group>
+            <label>Portal Password</label>
+            <input type="password" class="form-control"  autocomplete="off" ng-required="true" name="password" ng-model="loginData.password">
+          </div>
+          <div class="form-group">
+            <input type="submit" type="submit" ng-click="portalLogin()" value="Update" class="btn btn-primary">
+          </div>
+        </form>
       </div>
+      <!-- End  LOGIN/REGISTER TAB -->
+    </div>
+  </article>
+
+  <!-- End  Main Content -->
 
 
-      <div class="form-group">
+</section>
 
-        <input type="submit" value="Update" class="btn btn-primary" data-loading-text="Loading...">
-
-      </div>
-
-    </form>
-
-
-
-  </div>
-
-  <!-- /.col-md-12 -->
-
-
-
-</div>

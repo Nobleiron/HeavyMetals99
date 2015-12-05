@@ -4,7 +4,7 @@ angular.module("HeavyMetals")
       'User': {
         'credentials' : {
           'required' : {
-            'message' : 'Invalid Credentials'
+            'message' : 'Invalid email or password'
           }
         },
         'firstName' : {
@@ -32,6 +32,9 @@ angular.module("HeavyMetals")
         }
       },
     'UserRegister': {
+      'alreadyExists' : {
+        'required' : 'User already exist with this email'
+      },
       'firstName' : {
         'required' : {
           'message' : "First Name is required"

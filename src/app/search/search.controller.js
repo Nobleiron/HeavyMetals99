@@ -24,6 +24,8 @@ angular.module("HM_SearchMD")
 
       $scope.loadCategories = loadCategories;
 
+
+
       _initialize();
 
       /**
@@ -77,7 +79,8 @@ angular.module("HM_SearchMD")
         RestSV
           .get( SearchCnst.categoryList.url(),{type: $scope.selection.type})
           .then(function(response){
-            $scope.categories = response.data.result.CategoryList;
+            $scope.categories = _normalizeCategories(response.data.result.CategoryList);
+            $scope.selectedCategory = $scope.categories["Equipment"];
           })
       }
 
@@ -92,6 +95,16 @@ angular.module("HM_SearchMD")
 
       function lazyLoadSearchResult(){
         _getSearchResult();
+      }
+
+
+
+      function _normalizeCategories(crudeCategories){
+        var categories = {};
+        crudeCategories.forEach(function(c){
+          categories[c.Name] = c;
+        });
+        return categories;
       }
 
 

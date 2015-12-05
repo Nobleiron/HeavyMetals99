@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst',function ($scope,$state,filterFilter, RestSV,HeaderCnst) {
+  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst','localStorageService',function ($scope,$state,filterFilter, RestSV,HeaderCnst, localStorageService) {
 
     $scope.getProducts = getProducts;
 
@@ -62,14 +62,11 @@ angular.module('HeavyMetals')
       $scope.flags = {
         rented : true
       }
+      $scope.userObj = localStorageService.get('userObj');
     }
 
+    $scope.$on("PortalAccess:Granted", function(){
+      $scope.userObj = localStorageService.get('userObj');
+    });
 
-
-    // ClientStoreSV
-    //   .get('userObj')
-    //   .then(function(response){
-    //
-    //     $scope.userObj = response;
-    //   });
   }]);
