@@ -98,10 +98,14 @@ angular.module('HM_LoginMD')
           })
           .then(function(response){
             $scope.loading = false;
-            var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
+            var userObj = response.data.result.logged_user_data.logged_user;
+            localStorageService.set('userObj',userObj);
+            if(userObj.portal_login){
+              $state.go('hm.dashboard.main');
+            }else{
+              $state.go('hm.search');
+            }
 
-            localStorageService.set('userObj',userObj)
-            $state.go('hm.dashboard.main');
           })
           .catch(function(error){
             $scope.formSubmitted = true;

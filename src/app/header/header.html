@@ -50,10 +50,14 @@
         <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" id="single-button" dropdown-toggle>
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu"  role="menu">
+        <ul class="dropdown-menu"  role="menu" ng-if="userObj">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/profile">Profile</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+        </ul>
+        <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
         </ul>
       </div>
     </div>
