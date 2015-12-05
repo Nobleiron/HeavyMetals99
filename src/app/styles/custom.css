@@ -155,3 +155,6 @@ html, body {
   max-width: inherit;
 }
 
+.btn[disabled]{
+  color: #ccc;
+}

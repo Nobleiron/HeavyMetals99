@@ -140,7 +140,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_ForgotPasswordCtrl'
         },
         'hmPrelogin.register' : {
-          url: '/register',
+          url: '/register?terms',
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },

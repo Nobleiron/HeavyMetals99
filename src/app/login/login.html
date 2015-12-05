@@ -144,12 +144,12 @@
                     <input type="text" class="form-control" ng-model="UserRegisterData.phone" name="phone" placeholder="Phone" autocomplete="off">
                   </div>
                   <div class="need_help">
-                    <input type="checkbox">
-                      By Signing up, you agree to NobleIron's <a href="/#/terms-n-conditions">Terms &
+                    <input type="checkbox" ng-model="UserRegisterData.termsAccepted">
+                      <span>By Signing up, you agree to NobleIron's </span><a href="/#/terms-n-conditions">Terms &
                     Conditions</a></div>
                   <hr>
 
-                  <button type="submit" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
+                  <button type="submit" ng-disabled="!UserRegisterData.termsAccepted" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
                     <span ng-hide="loading">Sign Up</span>
                     <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
                   </button>

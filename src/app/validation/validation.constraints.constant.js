@@ -33,7 +33,8 @@ angular.module("HeavyMetals")
       },
     'UserRegister': {
       'alreadyExists' : {
-        'required' : 'User already exist with this email'
+        'required' : {
+          'message' : 'User already exist with this email'}
       },
       'firstName' : {
         'required' : {
@@ -56,6 +57,16 @@ angular.module("HeavyMetals")
       'password': {
         'required': {
           'message': 'Password is required.'
+        },
+        'size' : {
+          'min' : 6,
+          'max' : 30,
+          'message' : 'Password must be between 6 and 30 characters.'
+        }
+      },
+      'phone' : {
+        'required': {
+          'message': 'Phone no is required.'
         }
       }
     }

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('HM_LoginMD')
-  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','localStorageService', function ($scope, $state, LoginCnst,RestSV, localStorageService ) {
+  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','localStorageService','$stateParams', function ($scope, $state, LoginCnst,RestSV, localStorageService,$stateParams ) {
 
 
     _initialize();
@@ -22,7 +22,10 @@ angular.module('HM_LoginMD')
       $scope.loginData = {
         credentials : "valid"
       }
-      $scope.UserRegisterData= { alreadyExists  :  "valid"};
+      $scope.UserRegisterData= {
+        alreadyExists  :  "valid",
+        termsAccepted : !!$stateParams.terms
+      };
       $scope.signUpTab = $state.is("hmPrelogin.register");
     }
 
@@ -66,20 +69,15 @@ angular.module('HM_LoginMD')
             url : location.origin + '/#/user/activate'
           })
           .then(function(response){
-            $scope.loading = false;
+            $scope.flags.registration.initiated = true;
             $scope.flags.registration.success = true;
-            // TODO user activation screen
           })
           .catch(function(response){
-            $scope.loading = false;
             $scope.formSubmitted = true;
             _invalidateRegistrationForm();
-            //$scope.flags.registration.error = true;
-            //$scope.errorMessage = response.data.errortext[0];
-            // TODO Exception handler
           })
           .finally(function(){
-            //$scope.flags.registration.initiated = true;
+            $scope.loading = false;
           })
       }
 
