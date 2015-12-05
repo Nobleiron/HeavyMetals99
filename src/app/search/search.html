@@ -55,10 +55,7 @@
 
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
             <ul class="nav nav-tabs gride-tab">
-              <li class="active"><a data-toggle="tab" href="#equpment">Equipment</a></li>
-              <li><a data-toggle="tab" href="#attachment">Attachments</a></li>
-              <li><a data-toggle="tab" href="#accessories">Accessories</a></li>
-              <li><a data-toggle="tab" href="#parts">Parts</a></li>
+              <li ng-class="{'active': selectedCategory.Name == category.Name}" ng-repeat="category in categories | orderBy:'categoryDisplaySortOrder'"><a data-toggle="tab" href="#equpment">{{category.Name}}</a></li>
             </ul>
 
 

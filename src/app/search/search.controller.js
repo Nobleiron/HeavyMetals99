@@ -5,6 +5,7 @@ angular.module("HM_SearchMD")
     function($scope, $stateParams, RestSV, SearchCnst){
 
       $scope.results = [];
+
       $scope.oneAtATime = true;
       $scope.selection = { type : "rent"};
       $scope.flags = {
@@ -15,6 +16,7 @@ angular.module("HM_SearchMD")
         resultFetching : false,
         stopPaging : false
       };
+      $scope.categories = [];
 
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
@@ -35,8 +37,37 @@ angular.module("HM_SearchMD")
         $scope.query = $stateParams.query || '';
         $scope.flags.gridView = $stateParams.viewType == "grid";
         $scope.flags.searchResultLoading = true;
-        _getSearchResult();
-        loadCategories();
+        loadCategories()
+          .then(function(){
+            if($scope.query){
+              _getSearchResult();
+            }else{
+              _getProductListFromSelectedCategory();
+            }
+          });
+
+
+      }
+
+      function _getProductListFromSelectedCategory(){
+        RestSV
+          .get( SearchCnst.productByCategory.url(),{
+            page : $scope.flags.page,
+            category_slag : $scope.selectedCategory.children[0].Slug
+          })
+          .then(function(response){
+            debugger
+            if(response.data.result == ""){
+              $scope.flags.stopPaging = true;
+            }else{
+              $scope.results = $scope.results.concat(response.data.result.ProductList);
+              $scope.flags.page += 1 ;
+            }
+          })
+          .finally(function(){
+            $scope.flags.resultFetching = false;
+            $scope.flags.searchResultLoading = false;
+          })
       }
 
       function _getSearchResult(){
@@ -76,11 +107,14 @@ angular.module("HM_SearchMD")
 
 
       function loadCategories(){
-        RestSV
+       return RestSV
           .get( SearchCnst.categoryList.url(),{type: $scope.selection.type})
           .then(function(response){
-            $scope.categories = _normalizeCategories(response.data.result.CategoryList);
-            $scope.selectedCategory = $scope.categories["Equipment"];
+            $scope.categories = response.data.result.CategoryList;
+            $scope.categories.forEach(function(c){
+              c.categoryDisplaySortOrder = SearchCnst.categoryDisplaySortOrder[c.Name];
+            });
+            $scope.selectedCategory = $scope.categories[0];
           })
       }
 
@@ -94,7 +128,10 @@ angular.module("HM_SearchMD")
       }
 
       function lazyLoadSearchResult(){
-        _getSearchResult();
+        if($scope.categories.length){
+          $scope.query ? _getSearchResult() : _getProductListFromSelectedCategory();
+        }
+        console.log("Lazy loading")
       }
 
 
@@ -103,6 +140,7 @@ angular.module("HM_SearchMD")
         var categories = {};
         crudeCategories.forEach(function(c){
           categories[c.Name] = c;
+
         });
         return categories;
       }
