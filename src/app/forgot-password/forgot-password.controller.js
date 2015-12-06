@@ -20,7 +20,6 @@ angular.module('HM_ForgotPasswordMD')
 
           });
       }
-      debugger
     }
 
   }]);

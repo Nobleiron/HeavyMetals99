@@ -56,7 +56,6 @@ angular.module("HM_SearchMD")
             category_slag : $scope.selectedCategory.children[0].Slug
           })
           .then(function(response){
-            debugger
             if(response.data.result == ""){
               $scope.flags.stopPaging = true;
             }else{
@@ -118,10 +117,12 @@ angular.module("HM_SearchMD")
           })
       }
 
-      function addToWishList(product_id){
+      function addToWishList(product){
+
         RestSV
-          .post( SearchCnst.addToWishList.url(),{ product_id : product_id })
+          .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
           .then(function(response){
+            product.addedToWishlist = true;
           })
           .catch(function(){
           })

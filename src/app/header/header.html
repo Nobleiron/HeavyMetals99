@@ -51,7 +51,7 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu"  role="menu" ng-if="userObj">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/profile">Profile</a></li>
+          <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
         </ul>

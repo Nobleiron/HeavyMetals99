@@ -161,9 +161,7 @@
 
                         </li>
                         <li>
-                          <a href=""><i class="fa fa-heart fa-2x"></i></a>
-
-
+                          <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
                         </li>
                       </ul>
                     </div>
@@ -236,7 +234,10 @@
                     </div>
                     <div class="col-md-3 right-btn-col">
                       <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item.Product_Id)">Add to Wishlist</button>
+                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
+                        <span ng-if="!item.addedToWishlist">Add to Wishlist</span>
+                        <span ng-if="item.addedToWishlist">Added to Wishlist</span>
+                      </button>
                     </div>
                     <div class="col-md-12"><hr class="dash"></div>
                   </div>

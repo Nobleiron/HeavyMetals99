@@ -12,6 +12,7 @@ angular.module("HM_GlobalMD",[
   'HM_LoginMD',
   'HM_ForgotPasswordMD',
   'HM_PortalAccessMD',
+  'HM_UserProfileMD',
   'HM_ManageMyAccountMD',
   'HM_MyCatalogueMD',
   'HM_QuotaNReservationsMD',

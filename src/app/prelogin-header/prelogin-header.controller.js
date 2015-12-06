@@ -9,7 +9,6 @@ angular.module('HeavyMetals')
     _initialize();
 
     function selectSearchedItem(item, model, label){
-      debugger
       var query = '';
       if(typeof $scope.selectedProduct == "object"){
         query = $scope.selectedProduct.Product_Name;
