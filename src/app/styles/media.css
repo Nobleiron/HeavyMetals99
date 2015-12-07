@@ -286,6 +286,22 @@
     margin-right: 33px;
   }
 
+  .table-top {
+    padding-top: 15px;
+  }
+
+  .reserve-success-heading {
+    font-size: 16px;
+  }
+
+  .reserve-success-heading {
+    font-size: 16px;
+  }
+
+  .reserve-success-heading {
+    font-size: 16px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {

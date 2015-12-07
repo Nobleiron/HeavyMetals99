@@ -4,82 +4,81 @@
     <h4 class="modal-title">Reserve this Equipment</h4>
   </div>
   <div class="modal-body" style="overflow: hidden;">
-    <div class="col-lg-6 reserve-left">
-      <figure>
-        <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" alt="" style="width: 100%;">
-      </figure>
+        <div class="col-lg-6 reserve-left">
+          <figure style="text-align: center;">
+            <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" alt="" style="width: 100%; max-width: 350px;">
+          </figure>
 
-      <div class="col-md-12">
-        <p class="terms">
-          <strong>Terms:</strong> Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat massa placerat ac.
-          Curabitur dapibus iaculis. Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat
-          massa placerat ac. Curabitur dapibus iaculis.
-        </p>
-      </div>
-      <!-- <div class="col-lg-6">
-        <div class="form-group">
-          <label for="email">Pickup Date</label>
-          <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
+          <div class="col-md-12">
+            <p class="terms">
+              <strong>Terms:</strong> Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat massa placerat ac.
+              Curabitur dapibus iaculis. Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat
+              massa placerat ac. Curabitur dapibus iaculis.
+            </p>
+          </div>
+          <!-- <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Pickup Date</label>
+              <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Pickup Date</label>
+              <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Pickup Time</label>
+              <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-6">
+            <div class="form-group">
+              <label for="email">Quantity</label>
+              <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </div> -->
         </div>
-      </div> -->
-      <!-- <div class="col-lg-6">
-        <div class="form-group">
-          <label for="email">Pickup Date</label>
-          <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
+        <div class="col-lg-6 reserve-right">
+          <h4 class="reserve_eqe_tit">
+            {{product.Product_Name}}
+            <span class="reserve_eqe_num text-center">{{product.MODEL}}</span>
+          </h4>
+          <div class="daily_ul">
+            <ul>
+              <li>
+                <p class="daily_title">Daily</p>
+                <p class="daily_price">${{product.Product_Price.Daily}}</p>
+                <p class="daily_price_check">${{product.Product_Price.Daily}}</p>
+              </li>
+              <li>
+                <p class="daily_title">Weekly</p>
+                <p class="daily_price">${{product.Product_Price.Weekly}}</p>
+                <p class="daily_price_check">${{product.Product_Price.Weekly}}</p>
+              </li>
+              <li>
+                <p class="daily_title">Monthly</p>
+                <p class="daily_price">${{product.Product_Price.Monthly}}</p>
+                <p class="daily_price_check">${{product.Product_Price.Monthly}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 total_price_popup">Total: <span class="total_price_cle">$349</span></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <a class="btn btn-default print_btn pull-right" href="/#/equipments/12/reserve-success" type="submit">Reserve Now</a>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 quantity-btn">
+            <a class="btn btn-default print_btn pull-right" href="" type="submit">Add Quantity</a>
+          </div>
         </div>
-      </div> -->
-      <!-- <div class="col-lg-6">
-        <div class="form-group">
-          <label for="email">Pickup Time</label>
-          <input type="email" placeholder="Enter a valid email address" id="email" class="form-control">
-        </div>
-      </div> -->
-      <!-- <div class="col-lg-6">
-        <div class="form-group">
-          <label for="email">Quantity</label>
-          <select class="form-control" id="sel1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
-      </div> -->
-    </div>
-    <div class="col-lg-6 reserve-right">
-      <h4 class="reserve_eqe_tit">
-        {{product.Product_Name}}
-        <span class="reserve_eqe_num text-center">{{product.MODEL}}</span>
-      </h4>
-      <div class="daily_ul">
-        <ul>
-          <li>
-            <p class="daily_title">Daily</p>
-            <p class="daily_price">${{product.Product_Price.Daily}}</p>
-            <p class="daily_price_check">${{product.Product_Price.Daily}}</p>
-          </li>
-          <li>
-            <p class="daily_title">Weekly</p>
-            <p class="daily_price">${{product.Product_Price.Weekly}}</p>
-            <p class="daily_price_check">${{product.Product_Price.Weekly}}</p>
-          </li>
-          <li>
-            <p class="daily_title">Monthly</p>
-            <p class="daily_price">${{product.Product_Price.Monthly}}</p>
-            <p class="daily_price_check">${{product.Product_Price.Monthly}}</p>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6 total_price_popup">Total: <span class="total_price_cle">$349</span></div>
-      <div class="col-lg-6">
-        <a class="btn btn-default print_btn pull-right" href="/#/equipments/12/reserve-success" type="submit">Reserve Now</a>
-      </div>
-      <div class="col-lg-12 quantity-btn">
-        <a class="btn btn-default print_btn pull-right" href="" type="submit">Add Quantity</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-top">
         <table class="table table-bordered reserve-table">
           <thead>
             <tr>
