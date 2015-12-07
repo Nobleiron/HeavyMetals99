@@ -276,6 +276,16 @@
     margin-top: 15px;
   }
 
+  .no-search-row .form-left p {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .no-search-row .form-left .to {
+    margin-left: 0px;
+    margin-right: 33px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
