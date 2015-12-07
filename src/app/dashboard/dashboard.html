@@ -4,7 +4,10 @@
     <div class="container">
       <div class="row">
         <!-- START  Dashboard tab -->
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+        <div class="col-sm-12 col-xs-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Dashboard</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <ul class="nav nav-pills nav-stacked my-verti-tab">
             <li class="active">
               <a data-toggle="pill" href="/#/dashboard">
