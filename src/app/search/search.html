@@ -9,6 +9,20 @@
             <i class="fa fa-filter fa-lg"></i>
             <span class="filter">Filter Results:</span>
           </div>
+          <!--<div class="col-lg-12 category_filter1">-->
+            <!--<h5 class="cat_side_title">Category-->
+              <!--<span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>-->
+            <!--</h5>-->
+            <!--<form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">-->
+              <!--<div class="checkbox filter_cat_tex">-->
+                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>-->
+                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>-->
+              <!--</div>-->
+              <!--<div class="checkbox filter_cat_tex" ng-repeat="category in categories">-->
+                <!--<label><input type="checkbox" value=""><span class="cat_mar">{{category.Name}}</span></label>-->
+              <!--</div>-->
+            <!--</form>-->
+          <!--</div>-->
           <div class="col-lg-12 category_filter1">
             <h5 class="cat_side_title">Category
               <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
@@ -18,224 +32,20 @@
                 <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>
                 <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>
               </div>
-              <div class="checkbox filter_cat_tex" ng-repeat="category in categories">
-                <label><input type="checkbox" value=""><span class="cat_mar">{{category.Name}}</span></label>
-              </div>
             </form>
-          </div>
-          <div class="col-lg-12 category_filter1">
-            <h5 class="cat_side_title">Category
-              <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
-            </h5>
-            <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">
-              <div class="checkbox filter_cat_tex">
-                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>
-                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>
-              </div>
-            </form>
-            <uib-accordion close-others="oneAtATime">
-              <uib-accordion-group heading="Skidsteers & Attachments">
+            <uib-accordion close-others="true" ng-repeat="subcategories in selectedCategory.children">
+              <uib-accordion-group heading="{{subcategories.Name}}">
                 <ul>
-                  <li><h5>Skidsteer Type</h5></li>
-                  <li>
+                  <li><h5> <input type="radio" name="subcatefories" value=""><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
+                  <li ng-repeat="childCategories in subcategories.children">
                     <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Track</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Rubber Tire</span></label>
-                    </div>
-                  </li>
-                  <li><h5>Attachments</h5></li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Augers</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Breakers</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Brooms</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Buckets</span></label>
+                      <label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>
                     </div>
                   </li>
                 </ul>
               </uib-accordion-group>
-              <uib-accordion-group heading="Air Compressor & Tools">
-                <ul>
-                  <li><h5>Equipment</h5></li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Breakers</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Hammers</span></label>
-                    </div>
-                  </li>
-                  <li><h5>Attachments</h5></li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Other</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Chisel</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Moil Point</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Spade</span></label>
-                    </div>
-                  </li>
-                </ul>
-              </uib-accordion-group><uib-accordion-group heading="Generators & Lighting">
-                <ul>
-                  <li><h5>Skidsteer Type</h5></li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                  <li><h5>Attachments</h5></li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">Equipments</span></label>
-                    </div>
-                  </li>
-                </ul>
-              </uib-accordion-group>
+
             </uib-accordion>
-          </div>
-
-
-
-
-
-          <div class="col-lg-12 category_filter">
-            <h5 class="cat_side_title">Vendors <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#vendname"><i class="fa fa-minus-square fa-lg"></i></a></span>
-            </h5>
-            <form id="vendname" class="collapse in">
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Vendor Name</span></label>
-              </div>
-
-            </form>
-          </div>
-          <div class="col-lg-12 category_filter">
-            <h5 class="cat_side_title">Capacity <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#capname"><i class="fa fa-minus-square fa-lg"></i></a></span>
-            </h5>
-            <form id="capname" class="collapse in">
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
-              </div>
-
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Capacity Detail</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Capacity Detail</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Capacity Detail</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Capacity Detail</span></label>
-              </div>
-
-            </form>
-          </div>
-          <div class="col-lg-12 category_filter">
-            <h5 class="cat_side_title">Available for <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#available"><i class="fa fa-minus-square fa-lg"></i></a></span>
-            </h5>
-            <form id="available" class="collapse in">
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Show All</span></label>
-              </div>
-
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Rent</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Buy</span></label>
-              </div>
-              <div class="checkbox filter_cat_tex">
-                <label><input type="checkbox" value=""><span class="cat_mar">Monthly Rent</span></label>
-              </div>
-
-
-            </form>
-          </div>
-          <div class="col-lg-12 category_filter">
-            <h5 class="cat_side_title">User Rating <span class="cat_minus"><a href="#" data-toggle="collapse" data-target="#userrate"><i class="fa fa-minus-square fa-lg"></i></a></span>
-            </h5>
-            <form id="userrate" class="collapse in">
-
-              <a href="#"> <i class="fa fa-star user_reting fa-2x"></i>
-                <i class="fa fa-star user_reting fa-2x"></i>
-                <i class="fa fa-star user_reting fa-2x"></i>
-                <i class="fa fa-star user_reting fa-2x"></i>
-
-                <i class="fa fa-star-o user_reting fa-2x"></i>
-
-              </a>
-              <p class="user_rate_tex">Reviews based on 274 submits</p>
-
-            </form>
           </div>
         </div>
 
@@ -249,10 +59,7 @@
 
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
             <ul class="nav nav-tabs gride-tab">
-              <li class="active"><a data-toggle="tab" href="#equpment">Equipment</a></li>
-              <li><a data-toggle="tab" href="#attachment">Attachments</a></li>
-              <li><a data-toggle="tab" href="#accessories">Accessories</a></li>
-              <li><a data-toggle="tab" href="#parts">Parts</a></li>
+              <li ng-class="{'active': selectedCategory.Name == category.Name}" ng-repeat="category in categories | orderBy:'categoryDisplaySortOrder'"><a data-toggle="tab" href="#equpment">{{category.Name}}</a></li>
             </ul>
 
 
@@ -359,9 +166,7 @@
 
                         </li>
                         <li>
-                          <a href=""><i class="fa fa-heart fa-2x"></i></a>
-
-
+                          <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
                         </li>
                       </ul>
                     </div>
@@ -434,7 +239,10 @@
                     </div>
                     <div class="col-md-3 right-btn-col">
                       <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item.Product_Id)">Add to Wishlist</button>
+                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
+                        <span ng-if="!item.addedToWishlist">Add to Wishlist</span>
+                        <span ng-if="item.addedToWishlist">Added to Wishlist</span>
+                      </button>
                     </div>
                     <div class="col-md-12"><hr class="dash"></div>
                   </div>

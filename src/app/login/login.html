@@ -86,8 +86,7 @@
               <div class="col-lg-12">
                 <form role="form" name="loginForm" novalidate valdr-type="User">
                   <div class="form-group" valdr-form-group>
-                    <input type="hidden" id="credentials" name="credentials" ng-model="credentials" />
-
+                    <input type="hidden" id="credentials" name="credentials" ng-model="loginData.credentials" />
                   </div>
                   <div class="form-group" valdr-form-group>
                     <input type="email" autocomplete="off" class="form-control" ng-model="loginData.email" name="email"
@@ -117,6 +116,9 @@
 
               <div class="col-lg-12">
                 <form  role="form" name="userRegisterForm"  novalidate valdr-type="UserRegister" class="register-user">
+                  <div class="form-group" valdr-form-group>
+                    <input type="hidden" id="alreadyExists" name="alreadyExists" ng-model="UserRegisterData.alreadyExists" />
+                  </div>
                   <div class="form-group flex-field">
                     <fieldset valdr-form-group>
                       <input type="text" class="form-control in-block fname_in" ng-model="UserRegisterData.firstName" name="firstName"
@@ -131,7 +133,7 @@
 
                     <input type="email" autocomplete="off" class="form-control" ng-model="UserRegisterData.email" name="email" placeholder="Email">
                   </div>
-                  <div class="form-group" valdr-form;[-group>
+                  <div class="form-group" valdr-form-group>
 
                     <input type="password" class="form-control" ng-model="UserRegisterData.password" name="password"
                            placeholder="password" autocomplete="off">
@@ -142,12 +144,12 @@
                     <input type="text" class="form-control" ng-model="UserRegisterData.phone" name="phone" placeholder="Phone" autocomplete="off">
                   </div>
                   <div class="need_help">
-                    <input type="checkbox">
-                      By Signing up, you agree to NobleIron's <a href="/#/terms-n-conditions">Terms &
+                    <input type="checkbox" ng-model="UserRegisterData.termsAccepted">
+                      <span>By Signing up, you agree to NobleIron's </span><a href="/#/terms-n-conditions">Terms &
                     Conditions</a></div>
                   <hr>
 
-                  <button type="submit" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
+                  <button type="submit" ng-disabled="!UserRegisterData.termsAccepted" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
                     <span ng-hide="loading">Sign Up</span>
                     <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
                   </button>

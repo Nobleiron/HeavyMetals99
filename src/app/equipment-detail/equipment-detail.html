@@ -78,11 +78,14 @@
           <div class="in-block req_dash_botam product_dash_rg"></div>
         </div>
         <!--                        <div class="req_dash_botam col-lg-12 ten_botam"></div>-->
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center ten_top_botam">
-          <button class="btn btn-default now-reserve col-lg-12" type="button">Add to Wishlist</button>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center ten_top_botam">
+          <button class="btn btn-default now-reserve col-lg-12" type="button">
+            <span ng-if="!equipment.addedToWishlist">Add to Wishlist</span>
+            <span ng-if="equipment.addedToWishlist">Added to Wishlist</span>
+          </button>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center ten_top_botam">
-          <a class="btn btn-default now-reserve col-lg-12" type="button" href="/#/equipments/12/reserve">Reserve Now</a>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center ten_top_botam">
+          <a class="btn btn-default now-reserve col-lg-12" type="button" ui-sref="hm.reserveEquipment({id: equipment.Product_Id})">Reserve Now</a>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ten_top_botam">
           <button class="btn btn-default col-lg-12 col-md-12 col-sm-12 inq_btn" type="button">Inquire for Multiple Equipments Rentals</button>

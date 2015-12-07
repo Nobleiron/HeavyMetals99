@@ -1,53 +1,36 @@
 'use strict';
 angular.module("HM_InvoicesMD")
-  .controller('HM_InvoicesCtrl', ['$scope','PreviousState','HM_RestSV',function($scope,PreviousState,RestSV){
+  .controller('HM_InvoicesCtrl', ['$scope','PreviousState','HM_RestSV','HM_InvoicesCnst',function($scope,PreviousState,RestSV, InvoicesCnst){
+
+    $scope.flags = {
+      outstanding : false,
+      is_include_history : false
+    };
 
 
-    RestSV.get('/portal/outstandingInvoiceList',{is_outstanding : true})
-      .then(function(){
-        debugger
-      })
-      .catch(function(){
-        debugger
-      });
-    console.log(PreviousState)
+    $scope.fetchInvoices  = _fetchInvoices;
 
-    $scope.invoices = [{
-      no :'93234',
-      purchaseOrder: '23434',
-      contract : '2348954',
-      dueAmount : '$0.00',
-      total : '$145.00',
-      jobsite : 'Harbour Fight'
+    $scope.toggleInvoiceView  = _toggleInvoiceView;
 
-    },
-      {
-        no :'93234',
-        purchaseOrder: '23434',
-        contract : '2348954',
-        dueAmount : '$0.00',
-        total : '$145.00',
-        jobsite : 'Harbour Fight'
+    _fetchInvoices();
 
-      },
-      {
-        no :'93234',
-        purchaseOrder: '23434',
-        contract : '2348954',
-        dueAmount : '$0.00',
-        total : '$145.00',
-        jobsite : 'Harbour Fight'
+    function _fetchInvoices(){
+      var params = {is_include_history : $scope.flags.is_include_history, outstanding: $scope.flags.outstanding};
+      $scope.query && $scope.query.length >= 3 && angular.extend(params,{search_by :'Site_Name',search_value : $scope.query});
+      RestSV.get(InvoicesCnst.invoicesList.url(), params)
+        .then(function(response){
+          $scope.invoices = response.data.result.InvoiceInquery_List || response.data.result.OutstandingInvoice_List;
+        })
+        .catch(function(){
 
-      },
-      {
-        no :'93234',
-        purchaseOrder: '23434',
-        contract : '2348954',
-        dueAmount : '$0.00',
-        total : '$145.00',
-        jobsite : 'Harbour Fight'
+        });
+    }
 
-      }]
+    function _toggleInvoiceView(){
+      $scope.flags.outstanding = !$scope.flags.outstanding;
+      _fetchInvoices();
+    }
+
 
 
 

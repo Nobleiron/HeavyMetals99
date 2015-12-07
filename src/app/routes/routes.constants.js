@@ -52,6 +52,11 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/equipment-sell/equipment-sell.html',
           controller: 'HM_EquipmentSellCtrl'
         },
+        'hm.userProfile' :{
+          url : '/user/profile',
+          templateUrl : 'app/user-profile/user-profile.html',
+          controller: 'HM_UserProfileCtrl'
+        },
         'hm.dashboard.invoices' : {
           url: '/invoices',
           templateUrl: 'app/invoices/invoices.html',
@@ -140,7 +145,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_ForgotPasswordCtrl'
         },
         'hmPrelogin.register' : {
-          url: '/register',
+          url: '/register?terms',
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },
@@ -172,6 +177,15 @@ angular.module("HM_RoutesMD")
         }
 
       },
-      defaultRoute : '/'
+      defaultRoute : function($injector){
+        var localStorageService = $injector.get('localStorageService');
+        var userObj = localStorageService.get("userObj");
+        if(userObj){
+          return '/search'
+        }else{
+          return '/'
+        }
+
+      }
 
   });

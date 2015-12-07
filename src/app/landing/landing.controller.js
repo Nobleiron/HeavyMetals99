@@ -2,6 +2,9 @@
 angular.module('HM_LandingMD')
   .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_LandingCnst','HM_RestSV', function ($scope, $state, filterFilter, landingCnst, RestSV ) {
 
+
+    $scope.defaultSearchType = "rent";
+
     $scope.getProducts = getProducts;
 
     $scope.selectSearchedItem = selectSearchedItem;
@@ -24,7 +27,8 @@ angular.module('HM_LandingMD')
 
     function getProducts(search){
       return RestSV.get( landingCnst.search.url() ,{
-        search_text : 'lift'
+        search_text : 'lift',
+        type : $scope.defaultSearchType
       }).then(function(response){
         var filtered = filterFilter(response.data.result.SearchResult, search);
         var results = _(filtered)
@@ -58,6 +62,7 @@ angular.module('HM_LandingMD')
 
     function toggleRentOrBuy(rented){
       $scope.flags.rented = rented;
+      $scope.defaultSearchType = rented ? "rent" : "buy";
     }
 
   }]);

@@ -8,12 +8,12 @@ angular.module("HM_ManageJobSitesMD")
 
     //TODO
 
-    $http.post('http://52.88.68.50/index.php/jobsiteaddress/addjobsiteaddress',{"jobname":"DLF","adddress1":"barasat","city":"kolkata","state":"WB","zip":700126,"phone": 234234})
-      .then(function(){
-        debugger
-      })
-      .catch(function(){
-        debugger
-      })
+    //$http.post('http://52.88.68.50/index.php/jobsiteaddress/addjobsiteaddress',{"jobname":"DLF","adddress1":"barasat","city":"kolkata","state":"WB","zip":700126,"phone": 234234})
+    //  .then(function(){
+    //    debugger
+    //  })
+    //  .catch(function(){
+    //    debugger
+    //  })
 
   }]);

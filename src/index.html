@@ -27,7 +27,7 @@
     <link href="app/styles/media.css" rel="stylesheet">
     <link href="app/styles/custom.css" rel="stylesheet">
     <!-- endbuild -->
-    <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src='http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false'></script>
 
   </head>
   <body class="skin-blue prelogin">
@@ -36,7 +36,7 @@
     <![endif]-->
 
     <div ui-view="navbar"></div>
-    <div ui-view></div>
+    <div ui-view autoscroll=""></div>
     <div ui-view="footer"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -80,8 +80,8 @@
     <script src="../bower_components/jquery-zoom/jquery.zoom.js"></script>
     <script src="../bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-    <script src="../bower_components/valdr/valdr.min.js"></script>
-    <script src="../bower_components/valdr/valdr-message.min.js"></script>
+    <script src="../bower_components/valdr/valdr.js"></script>
+    <script src="../bower_components/valdr/valdr-message.js"></script>
     <script src="../bower_components/angular-ui-mask/dist/mask.min.js"></script>
     <script src="../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
 
@@ -104,6 +104,7 @@
       <script src="app/logout/logout.module.js"></script>
       <script src="app/manage-my-account/manage-my-account.module.js"></script>
       <script src="app/my-catalogue/my-catalogue.module.js"></script>
+      <script src="app/user-profile/user-profile.module.js"></script>
       <script src="app/dashboard/dashboard.module.js"></script>
       <script src="app/terms-and-conditions/terms-and-conditions.module.js"></script>
       <script src="app/invoices/invoices.module.js"></script>
@@ -128,9 +129,11 @@
     <script src="app/routes/routes.constants.js"></script>
     <script src="app/global/global.constant.js"></script>
     <script src="app/activate-user/activate-user.constant.js"></script>
+    <script src="app/user-profile/user-profile.constant.js"></script>
     <script src="app/login/login.constant.js"></script>
     <script src="app/portal-access/portal-access.constant.js"></script>
     <script src="app/logout/logout.constant.js"></script>
+    <script src="app/invoices/invoices.constant.js"></script>
     <script src="app/quota-n-reservations/quota-n-reservations.constant.js"></script>
     <script src="app/forgot-password/forgot-password.constant.js"></script>
     <script src="app/landing/landing.constant.js"></script>
@@ -148,6 +151,7 @@
     <script src="app/core/rest.service.js"></script>
     <script src="app/core/hm.core.client-store.service.js"></script>
     <script src="app/prelogin-header/prelogin-header.controller.js"></script>
+    <script src="app/user-profile/user-profile.controller.js"></script>
     <script src="app/dashboard/dashboard.controller.js"></script>
     <script src="app/portal-access/portal-access.controller.js"></script>
     <script src="app/quota-n-reservations/quota-n-reservations.controller.js"></script>
@@ -172,6 +176,7 @@
     <script src="app/add-job-site/add-job-site-controller.js"></script>
 
     <script src="app/menu-aim/menu-aim.directive.js"></script>
+    <script src="app/autocomplete/ngAutocomplete.js"></script>
 
     <!-- endbuild -->
 

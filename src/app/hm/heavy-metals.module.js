@@ -15,6 +15,7 @@
     ['ngAnimate',
       'ui.router',
       'ui.bootstrap',
+      'ngAutocomplete',
       'ngSanitize',
       'infinite-scroll',
       'LocalStorageModule',

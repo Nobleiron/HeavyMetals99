@@ -1,6 +1,6 @@
 'use strict';
 angular.module('HM_LoginMD')
-  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','localStorageService','$http', function ($scope, $state, LoginCnst,RestSV, localStorageService,$http ) {
+  .controller('HM_LoginCtrl', ['$scope','$state','HM_loginCnst','HM_RestSV','localStorageService','$stateParams', function ($scope, $state, LoginCnst,RestSV, localStorageService,$stateParams ) {
 
 
     _initialize();
@@ -18,25 +18,45 @@ angular.module('HM_LoginMD')
           initiated : false
         }
       };
-      $scope.credentials = "valid";
-      $scope.UserRegisterData = {};
+
+      $scope.loginData = {
+        credentials : "valid"
+      }
+      $scope.UserRegisterData= {
+        alreadyExists  :  "valid",
+        termsAccepted : !!$stateParams.terms
+      };
       $scope.signUpTab = $state.is("hmPrelogin.register");
     }
 
     function _invalidateLoginForm(){
-      $scope.credentials = "";
+      $scope.loginData.credentials = "";
       $scope.loginForm.credentials.$setDirty();
       $scope.loginForm.credentials.$setTouched();
     }
 
     function _resetLoginValidity(){
-      $scope.credentials = "valid";
+      $scope.loginData.credentials = "valid";
       $scope.loginForm.credentials.$setPristine();
       $scope.loginForm.credentials.$setUntouched();
     }
 
 
+    function _invalidateRegistrationForm(){
+      $scope.UserRegisterData.alreadyExists = "";
+      $scope.userRegisterForm.alreadyExists.$setDirty();
+      $scope.userRegisterForm.alreadyExists.$setTouched();
+    }
+
+    function _resetRegistrationValidity(){
+      $scope.UserRegisterData.alreadyExists = "valid";
+      $scope.userRegisterForm.alreadyExists.$setPristine();
+      $scope.userRegisterForm.alreadyExists.$setUntouched();
+    }
+
+
     function register(){
+      _resetRegistrationValidity()
       if($scope.userRegisterForm.$valid){
         $scope.loading = true;
         var url = location.port
@@ -49,18 +69,15 @@ angular.module('HM_LoginMD')
             url : location.origin + '/#/user/activate'
           })
           .then(function(response){
-            $scope.loading = false;
+            $scope.flags.registration.initiated = true;
             $scope.flags.registration.success = true;
-            // TODO user activation screen
           })
           .catch(function(response){
-            $scope.loading = false;
-            $scope.flags.registration.error = true;
-            $scope.errorMessage = response.data.errortext[0];
-            // TODO Exception handler
+            $scope.formSubmitted = true;
+            _invalidateRegistrationForm();
           })
           .finally(function(){
-            $scope.flags.registration.initiated = true;
+            $scope.loading = false;
           })
       }
 
@@ -81,10 +98,14 @@ angular.module('HM_LoginMD')
           })
           .then(function(response){
             $scope.loading = false;
-            var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
+            var userObj = response.data.result.logged_user_data.logged_user;
+            localStorageService.set('userObj',userObj);
+            if(userObj.portal_login){
+              $state.go('hm.dashboard.main');
+            }else{
+              $state.go('hm.search');
+            }
 
-            localStorageService.set('userObj',userObj)
-            $state.go('hm.dashboard.main');
           })
           .catch(function(error){
             $scope.formSubmitted = true;
