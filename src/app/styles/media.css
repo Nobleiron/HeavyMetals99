@@ -25,6 +25,11 @@
 @media screen and (max-width: 768px) {
   .get_soft{}
 
+  .modal-dialog {
+    width: 600px;
+    margin: 10px auto;
+  }
+
   .login_page{margin: 25px 0 0 0;}
   .rent_tit {
     font-size: 28px; padding: 147px 0 40px;
@@ -48,6 +53,13 @@
   }
   .sell_lebal {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-dialog {
+    width: 480px;
+    margin: 10px auto;
   }
 }
 
@@ -254,6 +266,16 @@
     float: none;
   }
 
+  .mng-search-bar {
+    float: none !important;
+    max-width: 290px;
+    width: 290px;
+  }
+
+  .bord_dash_bot_small {
+    margin-top: 15px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -319,6 +341,25 @@
 
   .lift_box {
     width: auto;
+  }
+
+  .add-job-site-btn {
+    margin-bottom: 10px;
+  }
+
+  .list-view-btn {
+    min-width: 127px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .map-view-btn {
+    border-radius: 4px;
+  }
+
+  .modal-dialog {
+    width: 320px;
+    margin: 10px auto;
   }
 }
 

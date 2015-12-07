@@ -2,6 +2,9 @@
 angular.module("HM_ManageJobSitesMD")
   .controller('HM_ManageJobSitesCtrl', ['$scope', '$http', function($scope, $http){
     $scope.showFilter = false;
+    $scope.filterBtn = function() {
+      $scope.showFilter = !$scope.showFilter
+    }
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
     $scope.randomMarkers = [{ id : 34,latitude: 21, longitude: 78 }];
