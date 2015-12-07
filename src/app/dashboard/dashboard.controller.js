@@ -2,6 +2,14 @@
 angular.module('HM_DashboardMD')
   .controller('HM_DashboardCtrl', function ($scope, localStorageService) {
 
+    // $scope.showFilter = false;
+    $scope.filterBtn = function() {
+      $scope.showFilter = !$scope.showFilter
+    }
+
+    $scope.closeFilter = function() {
+      $scope.showFilter = false;
+    }
 
     $scope.upcomingEquipmentBookings = [{
       name : 'Equipment Name',

@@ -1,16 +1,10 @@
 <section>
   <!-- START  Main Content -->
-  <article class="main-cantain" style="min-height: 400px;">
+  <article class="main-cantain">
     <div class="container">
-      <div ng-show="!flags.searchReady">
-        <div class="cssload-jumping">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-      <div class="row" ng-show="flags.searchReady">
-
+      <div class="row">
         <!-- START  Filter Results side -->
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <div class="col-lg-12">
             <i class="fa fa-filter fa-lg"></i>
             <span class="filter">Filter Results:</span>
@@ -54,6 +48,10 @@
             </uib-accordion>
           </div>
         </div>
+
+        <div class="col-md-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Filter</button>
+        </div>
         <!-- End Filter Results side -->
         <!-- START  All Product side -->
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
@@ -81,13 +79,7 @@
           <div class="tab-content">
             <div ng-if="flags.searchResultLoading">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
-                <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">
-                  Searching Equipments matching ‘{{query}}’
-                  <div class="cssload-jumping">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                  <!--<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i>-->
-                </div>
+                <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’ &nbsp;&nbsp;<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i></div>
                 <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
                 </div>
               </div>
@@ -128,160 +120,150 @@
                                                         <span class="short">  <i class="fa fa-sort-desc fa-2x"></i></span>-->
                   </div>
                 </div>
-                <div infinite-scroll="lazyLoadSearchResult()" infinite-scroll-immediate-check="false" infinite-scroll-distance="3" infinite-scroll-disabled="flags.resultFetching">
-                  <div ng-if="flags.gridView" class="clearfix">
-                    <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
+                <div ng-if="flags.gridView" class="clearfix">
+                  <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
 
-                      <figure>
-                        <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
-                      <div class="certified_box">
-                        <img src="assets/images/certified.png">
-                      </div>
+                    <figure>
+                      <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
+                    <div class="certified_box">
+                      <img src="assets/images/certified.png">
+                      <br>
                       <div class="star_rate">
                         <a href="#"> <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-half-o"></i>
                           <i class="fa fa-star-o"></i></a>
-
-                      </div>
-                      <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
-                      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                      <div class="daily_ul">
-                        <ul>
-                          <li>
-                            <p class="daily_title">Daily</p>
-                            <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                          </li>
-                          <li>
-                            <p class="daily_title">Weekly</p>
-                            <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                          </li>
-                          <li>
-                            <p class="daily_title">Monthly</p>
-                            <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="heart">
-                        <ul>
-                          <li>
-                            <a href=""><i class="fa fa-eye fa-2x"></i></a>
-
-                          </li>
-                          <li>
-                            <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-
-                          </li>
-                          <li>
-                            <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
-                          </li>
-                        </ul>
                       </div>
                     </div>
-                    <div class="cssload-jumping" ng-if="flags.resultFetching">
-                      <span></span><span></span><span></span><span></span><span></span>
+                    
+                    <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
+                    <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
+                    <div class="daily_ul">
+                      <ul>
+                        <li>
+                          <p class="daily_title">Daily</p>
+                          <p class="daily_price">${{item.Product_Price.Daily}}</p>
+                        </li>
+                        <li>
+                          <p class="daily_title">Weekly</p>
+                          <p class="daily_price">${{item.Product_Price.Weekly}}</p>
+                        </li>
+                        <li>
+                          <p class="daily_title">Monthly</p>
+                          <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="heart">
+                      <ul>
+                        <li>
+                          <a href=""><i class="fa fa-eye fa-2x"></i></a>
+
+                        </li>
+                        <li>
+                          <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+
+                        </li>
+                        <li>
+                          <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="row" ng-if="!flags.gridView">
-                    <div class="col-md-12"><hr class="dash"></div>
-                    <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
-                      <div class="col-md-3 lift-list">
-                        <figure>
-                          <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}"></a>
-                        </figure>
-                      </div>
-                      <div class="col-md-6 nopadding">
-                        <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
-                        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                        <div class="col-md-3 star_list">
-                          <div class="star-list-top">
-                            <a href="#"> <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star-half-o"></i>
-                              <i class="fa fa-star-o"></i></a>
-
-                          </div>
-                        </div>
-                        <div class="col-md-9">
-                          <div class="daily_ul">
-                            <ul>
-                              <li>
-                                <p class="daily_title">Daily</p>
-                                <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                              </li>
-                              <li>
-                                <p class="daily_title">Weekly</p>
-                                <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                              </li>
-                              <li>
-                                <p class="daily_title">Monthly</p>
-                                <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class=" heart_list">
-                            <ul>
-                              <li>
-                                <a href=""><i class="fa fa-eye fa-lg list-icon-top"></i>
-                                  <span class="eye_view">357 views</span>
-                                </a>
-
-                              </li>
-                              <li>
-                                <a href=""> <i class="fa fa-clock-o fa-icon-clr fa-lg list-icon-top"></i>
-                                </a>
-                                <span class="eye_view">7 Times Rented</span>
-
-                              </li>
-                              <li>
-                                <a href=""><i class="fa fa-share-alt fa-icon-clr fa-lg list-icon-top"></i>
-                                </a>
-                                <span class="eye_view">26 Shares</span>
-
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="col-md-3 right-btn-col">
-                        <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-                        <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
-                          <span ng-if="!item.addedToWishlist">Add to Wishlist</span>
-                          <span ng-if="item.addedToWishlist">Added to Wishlist</span>
-                        </button>
-                      </div>
-                      <div class="col-md-12"><hr class="dash"></div>
-                    </div>
-                    <div class="cssload-jumping" ng-if="flags.resultFetching">
-                      <span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                  </div>
-
                 </div>
+                <div class="row" ng-if="!flags.gridView">
+                  <div class="col-md-12"><hr class="dash"></div>
+                  <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
+                    <div class="col-md-3 lift-list">
+                      <figure class="search-res-figure">
+                        <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}" class="search-res-img"></a>
+                      </figure>
+                    </div>
+                    <div class="col-md-6 nopadding">
+                      <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
+                      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
+                      <div class="col-md-3 star_list">
+                        <div class="star-list-top">
+                          <a href="#"> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i></a>
 
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="daily_ul">
+                          <ul>
+                            <li>
+                              <p class="daily_title">Daily</p>
+                              <p class="daily_price">${{item.Product_Price.Daily}}</p>
+                            </li>
+                            <li>
+                              <p class="daily_title">Weekly</p>
+                              <p class="daily_price">${{item.Product_Price.Weekly}}</p>
+                            </li>
+                            <li>
+                              <p class="daily_title">Monthly</p>
+                              <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class=" heart_list">
+                          <ul>
+                            <li>
+                              <a href=""><i class="fa fa-eye fa-lg list-icon-top"></i>
+                                <span class="eye_view">357 views</span>
+                              </a>
 
+                            </li>
+                            <li>
+                              <a href=""> <i class="fa fa-clock-o fa-icon-clr fa-lg list-icon-top"></i>
+                              </a>
+                              <span class="eye_view">7 Times Rented</span>
+
+                            </li>
+                            <li>
+                              <a href=""><i class="fa fa-share-alt fa-icon-clr fa-lg list-icon-top"></i>
+                              </a>
+                              <span class="eye_view">26 Shares</span>
+
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-md-3 right-btn-col">
+                      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
+                        <span ng-if="!item.addedToWishlist">Add to Wishlist</span>
+                        <span ng-if="item.addedToWishlist">Added to Wishlist</span>
+                      </button>
+                    </div>
+                    <div class="col-md-12"><hr class="dash"></div>
+                  </div>
+                </div>
                 <div class="row no-search-row" ng-if="!results.length">
                   <div class="col-md-12 text-col">
-                    <p style="text-align: center;">Sorry, no result found for "{{query}}". Let us help you out. Tell us what do need? We will get back to you.</p>
+                    <p style="text-align: center; margin-top: 10px;">Sorry, no result found for "{{query}}". Let us help you out. Tell us what do need? We will get back to you.</p>
                   </div>
                   <div class="col-md-12 col1">
                       <p>Let us help you out</p>
                   </div>
                   <div class="col-md-12 col2">
                     <p>What do you need?</p>
-                    <input type="text" placeholder="Type of equipment, service, parts, etc." class="form-control" style="height: 38px;">
+                    <input type="text" placeholder="Type of equipment, service, parts, etc." class="form-control" style="height: 38px; margin-bottom: 10px;">
                   </div>
                   <div class="col-md-12 col2">
                     <p>When do you need it?</p>
                   </div>
                   <div class="col-md-6 col2 col3" style="padding-top:0;">
-                    <div class="form-control form-left" style="height: 38px;">
-                      <p class="pull-left">To</p>
+                    <div class="form-control form-left" style="height: 38px; margin-bottom: 10px;">
+                      <p class="pull-left to">To</p>
                       <input type="text" placeholder="dd/mm/yy">
                       <img src="assets/images/calendar.png" class="pull-right">
                     </div>
@@ -328,11 +310,10 @@
           </div>
         </div>
         <!-- End All Product Side -->
-
       </div>
 
     </div>
-
+    <div infinite-scroll="lazyLoadSearchResult()" infinite-scroll-distance="3"></div>
   </article>
 
   <!-- End  Main Content -->

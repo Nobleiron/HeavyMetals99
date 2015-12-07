@@ -4,59 +4,62 @@
     <div class="container">
       <div class="row">
         <!-- START  Dashboard tab -->
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+        <div class="col-sm-12 col-xs-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Manage Job Sites</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <ul class="nav nav-pills nav-stacked my-verti-tab">
-            <li>
+            <li ng-click="closeFilter()">
               <a data-toggle="pill" href="/#/dashboard">
                 <i class="fa fa-th-large my-verti-icon"></i>
 
                 Dashboard</a></li>
-            <li><a data-toggle="pill" href="#mycat">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#mycat">
               <i class="fa fa-heart my-verti-icon"></i>
               My Catalog</a></li>
-            <li class="active"><a data-toggle="pill" href="/#/manage/job-sites">
+            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage/job-sites">
               <i class="fa fa-map-marker my-verti-icon"></i>
               Manage Job Sites</a></li>
-            <li><a data-toggle="pill" href="/#/manage-my-account">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
               <i class="fa fa-user my-verti-icon"></i>
               Manage My Account</a></li>
-            <li><a data-toggle="pill" href="#quotes">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#quotes">
               <i class="fa fa-bookmark-o my-verti-icon"></i>
               Quotes &amp;
               Reservations</a></li>
-            <li><a data-toggle="pill" href="#makepay">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#makepay">
               <i class="fa fa-usd my-verti-icon"></i>
               Make a Payment</a></li>
-            <li><a data-toggle="pill" href="#viewin">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewin">
               <i class="fa fa-file my-verti-icon"></i>
 
               View Invoices</a></li>
-            <li><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
               Requests</a></li>
-            <li><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
               View Contracts</a></li>
 
           </ul>
 
         </div>
         <!-- End  Dashboard tab -->
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding dashboard-small">
           <div class="tab-content">
             <!-- START  Dashboard Content -->
             <div id="dash" class="tab-pane fade in active">
 
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
                 Manage Job Sites
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
                 <input type="text" placeholder="Search Sites" class="form-control pull-right mng-search-bar">
                 <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
               </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
-                <a href="#/add-job" class="btn pull-left manage-job-btn">Add Job Site</a>
-                <button class="btn btn-default pull-right manage-job-btn deactivate list">List View</button>
-                <button class="btn pull-right manage-job-btn map">Map View</button>
+                <a href="#/add-job" class="btn pull-left manage-job-btn add-job-site-btn">Add Job Site</a>
+                <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn">List View</button>
+                <button class="btn pull-right manage-job-btn map map-view-btn">Map View</button>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box">
                 <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>

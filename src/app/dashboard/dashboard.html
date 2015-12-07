@@ -4,36 +4,39 @@
     <div class="container">
       <div class="row">
         <!-- START  Dashboard tab -->
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side">
+        <div class="col-sm-12 col-xs-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Dashboard</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <ul class="nav nav-pills nav-stacked my-verti-tab">
             <li class="active">
-              <a data-toggle="pill" href="/#/dashboard">
+              <a data-toggle="pill" href="/#/dashboard" ng-click="closeFilter()">
                 <i class="fa fa-th-large my-verti-icon"></i>
 
                 Dashboard</a></li>
-            <li><a data-toggle="pill" href="/#/my-catalogue">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/my-catalogue">
               <i class="fa fa-heart my-verti-icon"></i>
               My Catalog</a></li>
-            <li><a data-toggle="pill" href="/#/manage/jobsites">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage/jobsites">
               <i class="fa fa-map-marker my-verti-icon"></i>
               Manage Job Sites</a></li>
-            <li><a data-toggle="pill" href="/#/manage-my-account">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
               <i class="fa fa-user my-verti-icon"></i>
               Manage My Account</a></li>
-            <li><a data-toggle="pill" href="/#/quota-n-reservations">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/quota-n-reservations">
               <i class="fa fa-bookmark-o my-verti-icon"></i>
               Quotes &amp;
               Reservations</a></li>
-            <li><a data-toggle="pill" href="/#/quota-n-reservations">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/quota-n-reservations">
               <i class="fa fa-usd my-verti-icon"></i>
               Make a Payment</a></li>
-            <li><a data-toggle="pill" href="/#/invoices">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/invoices">
               <i class="fa fa-file my-verti-icon"></i>
 
               View Invoices</a></li>
-            <li><a data-toggle="pill" href="/#/quota-n-reservations"><i class="fa fa-comments"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/quota-n-reservations"><i class="fa fa-comments"></i>
               Requests</a></li>
-            <li><a data-toggle="pill" href="/#/quota-n-reservations"><i class="fa fa-briefcase"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/quota-n-reservations"><i class="fa fa-briefcase"></i>
               View Contracts</a></li>
 
           </ul>

@@ -19,6 +19,10 @@ angular.module("HM_SearchMD")
       };
       $scope.categories = [];
 
+      $scope.filterBtn = function() {
+        $scope.showFilter = !$scope.showFilter
+      }
+
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
       $scope.addToWishList = addToWishList;
