@@ -3,8 +3,6 @@ angular.module("HM_EquipmentReserveMD")
   .controller("HM_EquipmentReserveCtrl",['$scope','$modalInstance','HM_RestSV','HM_EquipmentReserveCnst', function( $scope, $modalInstance, RestSV, EquipmentReserveCnst ){
 
 
-
-
       $scope.valuationDate = new Date();
       $scope.valuationDatePickerIsOpen = false;
 

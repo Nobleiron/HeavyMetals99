@@ -14,7 +14,8 @@ angular.module("HM_SearchMD")
         gridView : false,
         page : 1,
         resultFetching : false,
-        stopPaging : false
+        stopPaging : false,
+        searchReady: false
       };
       $scope.categories = [];
 
@@ -41,12 +42,11 @@ angular.module("HM_SearchMD")
           .then(function(){
             if($scope.query){
               _getSearchResult();
+              $scope.flags.searchReady = true;
             }else{
               _getProductListFromSelectedCategory();
             }
           });
-
-
       }
 
       function _getProductListFromSelectedCategory(){
@@ -118,7 +118,6 @@ angular.module("HM_SearchMD")
       }
 
       function addToWishList(product){
-
         RestSV
           .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
           .then(function(response){
@@ -132,7 +131,6 @@ angular.module("HM_SearchMD")
         if($scope.categories.length){
           $scope.query ? _getSearchResult() : _getProductListFromSelectedCategory();
         }
-        console.log("Lazy loading")
       }
 
 
