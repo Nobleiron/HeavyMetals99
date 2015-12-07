@@ -7,6 +7,11 @@ angular.module("HM_InvoicesMD")
       is_include_history : false
     };
 
+    $scope.showFilter = false;
+    $scope.filterBtn = function() {
+      $scope.showFilter = !$scope.showFilter
+    }
+
 
     $scope.fetchInvoices  = _fetchInvoices;
 

@@ -1,9 +1,13 @@
 'use strict';
 angular.module("HM_ManageJobSitesMD")
   .controller('HM_ManageJobSitesCtrl', ['$scope', '$http', function($scope, $http){
-    $scope.showFilter = false;
+    // $scope.showFilter = false;
     $scope.filterBtn = function() {
       $scope.showFilter = !$scope.showFilter
+    }
+
+    $scope.closeFilter = function() {
+        $scope.showFilter = false;
     }
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 

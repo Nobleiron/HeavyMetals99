@@ -9,34 +9,34 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <ul class="nav nav-pills nav-stacked my-verti-tab">
-            <li>
+            <li ng-click="closeFilter()">
               <a data-toggle="pill" href="/#/dashboard">
                 <i class="fa fa-th-large my-verti-icon"></i>
 
                 Dashboard</a></li>
-            <li><a data-toggle="pill" href="#mycat">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#mycat">
               <i class="fa fa-heart my-verti-icon"></i>
               My Catalog</a></li>
-            <li class="active"><a data-toggle="pill" href="/#/manage/job-sites">
+            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage/job-sites">
               <i class="fa fa-map-marker my-verti-icon"></i>
               Manage Job Sites</a></li>
-            <li><a data-toggle="pill" href="/#/manage-my-account">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
               <i class="fa fa-user my-verti-icon"></i>
               Manage My Account</a></li>
-            <li><a data-toggle="pill" href="#quotes">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#quotes">
               <i class="fa fa-bookmark-o my-verti-icon"></i>
               Quotes &amp;
               Reservations</a></li>
-            <li><a data-toggle="pill" href="#makepay">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#makepay">
               <i class="fa fa-usd my-verti-icon"></i>
               Make a Payment</a></li>
-            <li><a data-toggle="pill" href="#viewin">
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewin">
               <i class="fa fa-file my-verti-icon"></i>
 
               View Invoices</a></li>
-            <li><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
               Requests</a></li>
-            <li><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
               View Contracts</a></li>
 
           </ul>
