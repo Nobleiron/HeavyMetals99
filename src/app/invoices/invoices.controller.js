@@ -31,7 +31,7 @@ angular.module("HM_InvoicesMD")
         });
     }
 
-    function _toggleInvoiceView(){
+    function _toggleInvoiceView(hello){
       $scope.flags.outstanding = !$scope.flags.outstanding;
       _fetchInvoices();
     }

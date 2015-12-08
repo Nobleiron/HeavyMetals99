@@ -71,7 +71,7 @@ a:focus { color: #0099cc;
 .comp ul li a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
 .cont{}
 .cont ul{margin: 0; padding: 0; list-style-type: none;}
-.cont ul li{   padding: 0 0 0 30px;
+.cont ul li{   padding: 0 0 0 0px;
   line-height: 30px;
 }
 .cont ul li:nth-child(1){background: url(../images/phone.png) no-repeat;background-position: 0 7px;}
@@ -910,4 +910,9 @@ a:focus { color: #0099cc;
 
 .filt-btn {
   display: none;
+}
+
+.manage-job-btn.active {
+  background-color: #009ddc !important;
+  color: #fff !important;
 }
