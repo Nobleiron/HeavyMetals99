@@ -916,3 +916,33 @@ a:focus { color: #0099cc;
   background-color: #009ddc !important;
   color: #fff !important;
 }
+
+.portal-access-header {
+  background-color: #dddddd;
+  padding: 14px 0;
+}
+
+.portal-access-header h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.portal-access-header span {
+  font-size: 13px;
+  color: #009ddc;
+}
+
+.portal-access-header span:last-child {
+  font-size: 13px;
+  color: #666;
+}
+
+.portal-access {
+  color: #333;
+  font-weight: 600;
+}
+
+.portal-contact {
+  font-weight: 600;
+}
