@@ -946,3 +946,7 @@ a:focus { color: #0099cc;
 .portal-contact {
   font-weight: 600;
 }
+
+.left-link-div {
+  display: inline-block;
+}
