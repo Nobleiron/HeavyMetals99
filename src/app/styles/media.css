@@ -85,6 +85,33 @@
     margin: 0;
   }
 
+  .collapse-for-small .sign-reg-link {
+    padding: 0;
+    margin: 8px 0;
+  }
+
+  .prelogin-header-btn {
+    float: right;
+  }
+
+  .prelogin-header-btn .icon-bar {
+    background-color: #009ddc;
+  }
+
+  .prelogin-header .search-head {
+    width: 60% !important;
+    margin-bottom: 15px;
+  }
+
+  .prelogin-header .see-your-need-small {
+    display: block;
+    float: none;
+  }
+
+  .pre-collapse {
+    margin-top: 20px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

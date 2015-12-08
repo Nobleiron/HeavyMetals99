@@ -950,3 +950,27 @@ a:focus { color: #0099cc;
 .left-link-div {
   display: inline-block;
 }
+
+.prelogin-header {
+  float: none;
+  padding-top: 20px;
+}
+
+.prelogin-header-btn .navbar-brand {
+  padding-top: 0;
+}
+
+.prelogin-header .search-head {
+  width: 30% !important;
+  display: inline-block;
+}
+  
+.see-your-need-small {
+  display: inline-block;
+}
+
+.prelogin-header .right-links {
+  float: right;
+  margin-top: 15px;
+}
+
