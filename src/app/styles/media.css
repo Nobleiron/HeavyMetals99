@@ -54,6 +54,64 @@
   .sell_lebal {
     font-size: 15px;
   }
+
+  .collapse-for-small {
+    margin-top: 34px;
+  }
+
+  .collapse-for-small .landing-header {
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+
+  .collapse-for-small .left-link-div {
+    display: block;
+  }
+
+  .collapse-for-small .req-call-div {
+    height: 40px;
+  }
+
+  .collapse-for-small .req-call-div .glyphicon-earphone {
+    margin-right: 10px;
+  }
+
+  .collapse-for-small .sign-in-div .glyphicon-log-in {
+    margin-right: 2px;
+    margin-left: 0;
+  }
+
+  .collapse-for-small .landing-header .get-free-acc {
+    margin: 0;
+  }
+
+  .collapse-for-small .sign-reg-link {
+    padding: 0;
+    margin: 8px 0;
+  }
+
+  .prelogin-header-btn {
+    float: right;
+  }
+
+  .prelogin-header-btn .icon-bar {
+    background-color: #009ddc;
+  }
+
+  .prelogin-header .search-head {
+    width: 60% !important;
+    margin-bottom: 15px;
+  }
+
+  .prelogin-header .see-your-need-small {
+    display: block;
+    float: none;
+  }
+
+  .pre-collapse {
+    margin-top: 20px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

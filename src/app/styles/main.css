@@ -71,7 +71,7 @@ a:focus { color: #0099cc;
 .comp ul li a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
 .cont{}
 .cont ul{margin: 0; padding: 0; list-style-type: none;}
-.cont ul li{   padding: 0 0 0 30px;
+.cont ul li{   padding: 0 0 0 0px;
   line-height: 30px;
 }
 .cont ul li:nth-child(1){background: url(../images/phone.png) no-repeat;background-position: 0 7px;}
@@ -911,3 +911,66 @@ a:focus { color: #0099cc;
 .filt-btn {
   display: none;
 }
+
+.manage-job-btn.active {
+  background-color: #009ddc !important;
+  color: #fff !important;
+}
+
+.portal-access-header {
+  background-color: #dddddd;
+  padding: 14px 0;
+}
+
+.portal-access-header h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.portal-access-header span {
+  font-size: 13px;
+  color: #009ddc;
+}
+
+.portal-access-header span:last-child {
+  font-size: 13px;
+  color: #666;
+}
+
+.portal-access {
+  color: #333;
+  font-weight: 600;
+}
+
+.portal-contact {
+  font-weight: 600;
+}
+
+.left-link-div {
+  display: inline-block;
+}
+
+.prelogin-header {
+  float: none;
+  padding-top: 20px;
+}
+
+.prelogin-header-btn .navbar-brand {
+  padding-top: 0;
+}
+
+.prelogin-header .search-head {
+  width: 30% !important;
+  display: inline-block;
+}
+  
+.see-your-need-small {
+  display: inline-block;
+}
+
+.prelogin-header .right-links {
+  float: right;
+  margin-top: 15px;
+}
+

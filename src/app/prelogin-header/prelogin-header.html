@@ -1,11 +1,105 @@
 <header class="head_without_index">
   <div class="container">
-    <!-- START  logo -->
-    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 nopadding logo-center">
+
+
+
+
+    <nav class="navbar">
+      <div class="container nopadding">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed landing-header prelogin-header-btn" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true" style="margin-top: 0;">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/#/" class="navbar-brand" style="padding-top:0;">  <img src="assets/images/logo.png" alt="" ></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse collapse-for-small pre-collapse" id="bs-example-navbar-collapse-1" style="border-color: #009ddc;">
+          <div class="nav navbar-nav landing-header prelogin-header">
+            <div>
+              <form class="topnav-search" role="search">
+                <input type="text" class="form-control search-head"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
+                       typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+                       typeahead-on-select="selectSearchedItem($item, $model, $label)"
+                       autocomplete="off"
+                       typeahead-template-url="typeahead-item.html">
+
+                <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+
+                <a href="/#/help" class="help-link see-your-need-small">Don't see what you need?</a>
+                
+                <a href="/#/login" ng-if="$state.is('hmPrelogin.register') || $state.is('hmPrelogin.forgotPassword')" class="right-links see-your-need-small">Sign in</a>
+                <a href="/#/register" ng-if="$state.is('hmPrelogin.login')" class="right-links see-your-need-small">Register</a>
+              </form>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 nopadding logo-center">
       <a href="/#/">  <img src="/assets/images/logo.png" alt="" ></a>
     </div>
-    <!-- END  logo -->
-    <!-- START  Search box -->
     <div class="col-lg-7 col-md-6 col-sm-4 col-xs-12 prelogin-header-col">
 
       <form class="navbar-form topnav-search" role="search">
@@ -21,21 +115,11 @@
       </form>
 
     </div>
-    <!-- END  Search box -->
     <div class="col-lg-4 col-md-2 col-sm-6 col-xs-12 my_alc prelogin-header-btn">
       <div class="btn-group drop-btn">
         <a href="/#/login" ng-if="$state.is('hmPrelogin.register') || $state.is('hmPrelogin.forgotPassword')">Sign in</a>
         <a href="/#/register" ng-if="$state.is('hmPrelogin.login')">Register</a>
-        <!-- <button class="btn btn-mini my-alc-btn">My Account</button>
-        <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-        </ul> -->
       </div>
-    </div>
+    </div> -->
   </div>
 </header>
