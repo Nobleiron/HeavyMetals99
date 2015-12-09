@@ -310,3 +310,10 @@ html, body {
     -moz-transform: scale(0);
   }
 }
+.categories .sub-categories{
+  margin-left: 20px;
+}
+
+.root-categories{
+  margin-bottom: 15px;
+}

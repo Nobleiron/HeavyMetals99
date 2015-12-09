@@ -1,8 +1,12 @@
 <section>
   <!-- START  Main Content -->
-  <article class="main-cantain">
+  <article class="main-cantain" style="min-height: 400px;">
     <div class="container">
-      <div class="row">
+      <div class="cssload-jumping" ng-show="!flags.searchReady">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="row" ng-show="flags.searchReady">
+
         <!-- START  Filter Results side -->
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <div class="col-lg-12">
@@ -27,25 +31,41 @@
             <h5 class="cat_side_title">Category
               <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
             </h5>
-            <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">
-              <div class="checkbox filter_cat_tex">
-                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>
-                <label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>
-              </div>
+            <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="rootCategories">
+              <!--<div class="checkbox filter_cat_tex">-->
+                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>-->
+                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>-->
+              <!--</div>-->
             </form>
-            <uib-accordion close-others="true" ng-repeat="subcategories in selectedCategory.children">
-              <uib-accordion-group heading="{{subcategories.Name}}">
-                <ul>
-                  <li><h5> <input type="radio" name="subcatefories" value=""><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
-                  <li ng-repeat="childCategories in subcategories.children">
-                    <div class="checkbox filter_cat_tex">
-                      <label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>
-                    </div>
+            <div ng-repeat="subcategories in selectedRootCategory.children" class="root-categories">
+              <div>
+                <ul class="categories">
+                  <li ng-click="selectCategory(subcategories)"><h5><input type="radio" name="subcatefories" ng-checked="subcategories.Id == selectedCategory.Id" ><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
+                  <li ng-show="subcategories.Id == selectedCategory.Id">
+                    <ul class="sub-categories">
+                      <li ng-repeat="childCategories in subcategories.children">
+                        <div class="checkbox filter_cat_tex1">
+                          <label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>
+                        </div>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
-              </uib-accordion-group>
+              </div>
+            </div>
+            <!--<uib-accordion close-others="true" ng-repeat="subcategories in selectedCategory.children">-->
+              <!--<uib-accordion-group heading="{{subcategories.Name}}">-->
+                <!--<ul>-->
+                  <!--<li><h5> <input type="radio" name="subcatefories" value=""><span class="cat_mar">{{subcategories.Name}}</span></h5></li>-->
+                  <!--<li ng-repeat="childCategories in subcategories.children">-->
+                    <!--<div class="checkbox filter_cat_tex">-->
+                      <!--<label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>-->
+                    <!--</div>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</uib-accordion-group>-->
 
-            </uib-accordion>
+            <!--</uib-accordion>-->
           </div>
         </div>
 
@@ -59,7 +79,7 @@
 
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
             <ul class="nav nav-tabs gride-tab">
-              <li ng-class="{'active': selectedCategory.Name == category.Name}" ng-repeat="category in categories | orderBy:'categoryDisplaySortOrder'"><a data-toggle="tab" href="#equpment">{{category.Name}}</a></li>
+              <li ng-class="{'active': selectedRootCategory.Name == category.Name}" ng-repeat="category in rootCategories | orderBy:'categoryDisplaySortOrder'"><a data-toggle="tab" href="#equpment">{{category.Name}}</a></li>
             </ul>
 
 
@@ -77,7 +97,7 @@
           <!-- End Equipment Tab -->
 
           <div class="tab-content">
-            <div ng-if="flags.searchResultLoading">
+            <div ng-if="flags.searchResultLoading && query">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
                 <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’ &nbsp;&nbsp;<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i></div>
                 <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
@@ -88,7 +108,7 @@
               <!-- START  Equipment Product Display -->
               <div id="equpment" class="tab-pane fade in active">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
-                  <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Displaying {{results.length}} Equipments matching ‘{{query}}’</div>
+                  <div class="col-lg-10 col-md-10 col-xs-8 dis_tex"><span ng-if="query.length">Displaying {{results.length}} Equipments matching ‘{{query}}’</span></div>
                   <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
                     <div class="btn-group drop-btn">
                       <div>
@@ -136,7 +156,7 @@
                           <i class="fa fa-star-o"></i></a>
                       </div>
                     </div>
-                    
+
                     <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
                     <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
                     <div class="daily_ul">
@@ -247,7 +267,7 @@
                     <div class="col-md-12"><hr class="dash"></div>
                   </div>
                 </div>
-                <div class="row no-search-row" ng-if="!results.length">
+                <div class="row no-search-row" ng-if="userQuery">
                   <div class="col-md-12 text-col">
                     <p style="text-align: center; margin-top: 10px;">Sorry, no result found for "{{query}}". Let us help you out. Tell us what do need? We will get back to you.</p>
                   </div>
