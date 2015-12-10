@@ -4,61 +4,67 @@
 <header class="head_without_index">
   <div class="container">
     <!-- START  logo -->
-    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 nopadding logo-center">
+    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 nopadding logo-center">
       <a href="/#/">  <img src="assets/images/logo.png" alt="" ></a>
     </div>
     <!-- END  logo -->
     <!-- START  Search box -->
-    <div class="col-lg-7 col-md-8 col-sm-4 col-xs-12">
 
-      <form class="navbar-form my-search-nav" role="search">
+    <button type="button" class="for-small" ng-click="toggleHeader()">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="hide-header-navbar" ng-class="{'show-header-navbar': showHeader}">
+      <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12">
 
-        <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
-               typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-               typeahead-on-select="selectSearchedItem($item, $model, $label)"
-               typeahead-template-url="typeahead-item.html">
+        <form class="navbar-form my-search-nav" role="search">
 
-        <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
-        <a href="/#/help" class="help-link">Don't see what you need?</a>
-      </form>
+          <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
+                 typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+                 typeahead-on-select="selectSearchedItem($item, $model, $label)"
+                 typeahead-template-url="typeahead-item.html">
 
-    </div>
-    <!-- END  Search box -->
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 my_alc">
-      <div class="cart_menu">
-        <ul>
-          <li>
-            <a href="#">
+          <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+          <div class="dont-see-div">
+            <a href="/#/help" class="help-link">Don't see what you need?</a>
+          </div>
+        </form>
 
-              <i class="fa fa-shopping-cart fa-2x"></i></a>
-            <span class="cart_noti">1</span>
-
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-bell-o fa-2x"></i>
-
-
-
-            </a>
-            <span class="noti">5</span>
-          </li>
-        </ul>
       </div>
-      <div class="btn-group drop-btn profile-dropdown" dropdown >
-        <button class="btn btn-mini my-alc-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
-        <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" id="single-button" dropdown-toggle>
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu"  role="menu" ng-if="userObj">
-          <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
-        </ul>
-        <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
-        </ul>
+      <!-- END  Search box -->
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 my_alc">
+        <div class="cart_menu">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa fa-shopping-cart fa-2x"></i></a>
+              <span class="cart_noti">1</span>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-bell-o fa-2x"></i>
+              </a>
+              <span class="noti">5</span>
+            </li>
+          </ul>
+        </div>
+        <div class="btn-group drop-btn profile-dropdown" dropdown >
+          <button class="btn btn-mini my-alc-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
+          <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle" id="single-button" dropdown-toggle>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu"  role="menu" ng-if="userObj">
+            <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+          </ul>
+          <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

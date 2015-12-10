@@ -69,4 +69,8 @@ angular.module('HeavyMetals')
       $scope.userObj = localStorageService.get('userObj');
     });
 
+    $scope.toggleHeader = function() {
+      $scope.showHeader = !$scope.showHeader
+    }
+
   }]);

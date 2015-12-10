@@ -974,3 +974,11 @@ a:focus { color: #0099cc;
   margin-top: 15px;
 }
 
+.for-small {
+  display: none;
+}
+
+.dont-see-div {
+  display: inline-block;
+}
+

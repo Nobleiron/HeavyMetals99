@@ -360,6 +360,54 @@
     font-size: 16px;
   }
 
+  .for-small {
+    display: inline-block;
+    float: right;
+    background: transparent;
+    border: none;
+    padding-top: 38px;
+    outline: none;
+  }
+
+  .for-small .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: #009ddc;
+    margin-bottom: 4px;
+  }
+
+  .hide-header-navbar {
+    display: none;
+  }
+
+  .show-header-navbar {
+    display: block;
+  }
+
+  .my-search-nav {
+    padding: 0;
+  }
+
+  .my-search-nav .search-head-without {
+    width: 85% !important;
+  }
+
+  .my_search {
+    margin-right: 0;
+  }
+
+  .dont-see-div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+  }
+
+  .dropdown-menu {
+    min-width: auto;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
