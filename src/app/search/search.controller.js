@@ -36,6 +36,8 @@ angular.module("HM_SearchMD")
 
       $scope.selectCategory = selectCategory;
 
+      $scope.selectRootCategory = selectRootCategory;
+
 
 
       _initialize();
@@ -170,6 +172,12 @@ angular.module("HM_SearchMD")
         return categories;
       }
 
+      function selectRootCategory(rootCategory){
+        //TODO
+        $scope.selectedRootCategory = rootCategory;
+        $scope.selectedCategory = $scope.selectedRootCategory.children[0];
+        //$scope.query ? _getSearchResult(true) : _getProductListFromSelectedCategory(true);
+      }
 
       function selectCategory(category){
         $scope.selectedCategory = category;
