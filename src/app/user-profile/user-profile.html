@@ -1,10 +1,48 @@
 <section>
+  <div class="portal-access-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h3 style="color:#666666">Profile
+            <a href="#/change/password" class="pull-right change-pass">Change Password</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
   <article class="main-cantain" >
     <div class="container">
       <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <form class="prof-form">
+            <h4>First name</h4>
+            <input type="text" placeholder="First Name" class="form-control">
+
+            <h4>Last name</h4>
+            <input type="text" placeholder="Last Name" class="form-control">
+
+            <h4>Password</h4>
+            <input type="password" placeholder="Password" class="form-control">
+
+            <h4>City</h4>
+            <input type="text" placeholder="City" class="form-control">
+
+            <h4>State</h4>
+            <input type="text" placeholder="State" class="form-control">
+
+            <h4>Country</h4>
+            <input type="text" placeholder="Country" class="form-control">
+
+            <h4>Zip code</h4>
+            <input type="text" placeholder="Zip Code" class="form-control">
+
+            <div class="submt-btn-div">
+              <input type="submit" type="submit" value="Update" class="btn btn-default update-btn">
+            </div>
+          </form>
+        </div>
         <!--<h4>User Profile Page</h4>-->
-        <tabset>
-          <!--<tab heading="Static title">Profile</tab>-->
+        <!-- <tabset>
           <tab select="alertMe()">
             <tab-heading>
               <i class="glyphicon glyphicon-bell"></i> Profile
@@ -90,8 +128,8 @@
             </form>
 
           </tab>
-        </tabset>
-        {{userDetails | json}}
+        </tabset> -->
+        <!-- {{userDetails | json}} -->
       </div>
     </div>
   </article>

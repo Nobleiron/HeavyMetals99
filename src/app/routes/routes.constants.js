@@ -57,6 +57,10 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/user-profile/user-profile.html',
           controller: 'HM_UserProfileCtrl'
         },
+        'hm.changePassword' :{
+          url : '/change/password',
+          templateUrl : 'app/change-password/change-password.html'
+        },
         'hm.dashboard.invoices' : {
           url: '/invoices',
           templateUrl: 'app/invoices/invoices.html',
