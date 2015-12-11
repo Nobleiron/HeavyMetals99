@@ -982,3 +982,8 @@ a:focus { color: #0099cc;
   display: inline-block;
 }
 
+.update-btn {
+  background-color: #009ddc;
+  color: #fff;
+}
+
