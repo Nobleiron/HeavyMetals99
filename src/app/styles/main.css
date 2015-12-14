@@ -151,7 +151,7 @@ a:focus { color: #0099cc;
 .rental_main{padding: 40px 0 0 0;}
 .welcome_title{ color: #666666; font-size: 20px; margin: 20px 0 10px 0;}
 .need_help{}
-.need_help a{ color: #ff5600; font-size: 14px;}
+.need_help a{ color: #ff5600; font-size: 13px;}
 .sign_mybtn{width: 150px; background: #009ddc; font-size: 14px; padding: 8px 50px; color: #fff;}
 .sign_mybtn:focus {outline: none;}
 .in_block{display: inline-block; vertical-align: top;}
@@ -169,7 +169,7 @@ a:focus { color: #0099cc;
         box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15); }
 .nav-mytab{border: none;}
 .nav-mytab > li{width: 50%; }
-.nav-mytab > li a{ padding: 17px 15px; text-align: center;  font-size: 20px; margin: 0;}
+.nav-mytab > li a{ padding: 17px 15px; text-align: center;  font-size: 16px; margin: 0;}
 .login_page{}
 .my-alc-btn{background: #f5f5f5 ;  color: #009ddc; line-height: 23px;}
 .my-alc-btn-toggle{background: #f5f5f5 ;  color: #009ddc;
@@ -759,7 +759,7 @@ a:focus { color: #0099cc;
 
 .no-search-row .col2 p {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 21px;
   margin-bottom: 6px;
 }
@@ -774,6 +774,7 @@ a:focus { color: #0099cc;
   border-left: 1px dashed #cccccc;
   outline: none;
   padding-left: 19px;
+  height: 100%;
 }
 
 .no-search-row .form-left .info-input {
@@ -1065,5 +1066,13 @@ a:focus { color: #0099cc;
   float: left;
   font-size: 12px;
   margin: 0 10px 10px 0;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.remem-me {
+  font-size: 13px;
 }
 

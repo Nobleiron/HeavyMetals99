@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <!-- START About Us -->
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 about_part">
+        <!-- <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 about_part">
           <h4>About Us</h4>
           <p>
             Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus
@@ -12,45 +12,58 @@
             rhoncus felis odio, ut volutpat massa placerat ac. Curabitur
             dapibus iaculis.
           </p>
-          <button type="button" class="btn btn-default sell-equ">Sell Your Equipment</button>
-        </div>
+          <button type="button" class="btn btn-default sell-equ  foot-btn" ng-click="$state.go('hm.sellEquipment')">Sell Your Equipment</button>
+        </div> -->
         <!-- End About Us -->
         <!-- START Company -->
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 about_part">
-          <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 nopadding about_part">
             <h4>Company</h4>
             <div class="comp">
               <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Careers</a></li>
                 <li><a href="#">Team</a></li>
-                <li><a href="#">Become a Vendor</a></li>
+                <li><a href="#">Board of Directors</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Press Releases</a></li>
+                <li><a href="#">Financial Reports</a></li>
+                <li><a href="#">2015 Annual Meeting</a></li>
+                <li><a href="#">Contact Us</a></li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 nopadding about_part">
             <h4>Contact</h4>
             <div class="cont">
               <ul>
-                <li><a href="#">(000) 000-0000</a></li>
-                <li><a href="#">(000) 000-0000</a></li>
-                <li><a href="#">(000) 000-0000</a></li>
+                <li><a href="#">Equipment Sales and Rental: 1-855-767-4424</a></li>
+                <li><a href="#">Texada Software: 1-800-361-1233</a></li>
+                <li><a href="#">Investor Relations: (832) 767-4424</a></li>
+                <li><a href="#">Email: customercare@nobleiron.com</a></li>
               </ul>
             </div>
           </div>
         </div>
         <!-- End Company -->
         <!-- START Location -->
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 about_part">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 about_part">
           <h4>Location</h4>
           <p>
             Address Line, Address Line 2,<br>
             Address Line 3.<br>
             City, State.
           </p>
-          <button type="button" class="btn btn-default sell-equ">Get Directions</button>
+          <button type="button" class="btn btn-default sell-equ foot-btn">Get Directions</button>
         </div>
         <!-- End Location -->
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <h4>Newsletter</h4>
+          <p>
+            Get news on our latest promotions, products and services. We'll never share your email address and you can opt out any time
+          </p>
+          <input type="text" placeholder="Enter Your Email Id" class="form-control news-input">
+          <button class="btn btn-default sell-equ foot-btn" style="height: 34px;">Subscribe</button>
+          <!-- <button type="button" class="btn btn-default sell-equ  foot-btn" ng-click="$state.go('hm.sellEquipment')">Sell Your Equipment</button> -->
+        </div>
       </div>
     </div>
   </article>
