@@ -59,7 +59,7 @@ a:focus { color: #0099cc;
 .easy_pic_img a:hover{color: #000;  transition: all 0.6s ease 0s;}
 .partner_main{padding: 38px 0;}
 .about_main{background: #3e3e3e; padding: 50px 0; color: #e1e1e1;}
-.main_foot{background: #292929; padding: 40px 0 20px 0;; color: #e1e1e1;}
+.main_foot{background: #292929; padding: 20px 0 20px 0;; color: #e1e1e1;}
 .soc_foot{text-align: right;}
 .soc_foot ul{margin: 0; padding: 0; list-style-type: none;}
 .soc_foot ul li{display: inline;}
@@ -117,7 +117,7 @@ a:focus { color: #0099cc;
 .eqe_tex a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s; }
 .req_call{ line-height: 20px;  margin: 0 0 0 9px;}
 .req_call a{color: #fff; text-decoration: none;  font-size: 14px;}
-.req_call a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
+.req_call a:hover{color: #1BB6F5; text-decoration: none; transition: all 0.6s ease 0s;}
 .head_btn_main{text-align: right; margin: 20px 0 0 0; padding: 0;}
 .mob_tit{ color: #009bdc; font-size: 38px; text-align: center;padding: 50px 0 0 0; font-family: 'Open Sans', sans-serif;}
 .mob_subtit{ color: #666666; font-size: 24px; text-align: center; padding: 0 0 40px 0; font-family: 'Open Sans', sans-serif;}
@@ -384,7 +384,7 @@ a:focus { color: #0099cc;
 .update_date_pic{width: 30%;}
 .update_date_number{ font-size: 60px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
 .update_date_month{font-size: 18px; color: #999999; display: block;}
-.eqe_tex{font-size: 18px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
+.eqe_tex{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
 .reser_tex{color: #666666;font-size: 15px; padding: 20px 0 0 0;}
 .view_contact{}
 .view_contact a{font-size: 13px; color: #009ddc; text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: 500;}
@@ -1019,5 +1019,51 @@ a:focus { color: #0099cc;
 
 .catalogue-desc .lift_box_tit {
   padding: 0 10px 0 10px;
+}
+
+.catalog-div {
+  text-align: center;
+}
+
+.catalog-div .lift_box {
+  float: none;
+  display: inline-block;
+  width: 30%;
+}
+
+.catalog-div .manage_job_tit {
+  text-align: left;
+}
+
+.eqe_tex:hover {
+  color: #1BB6F5;
+  transition: all 0.6s ease 0s;
+}
+
+.on-hover-pointer {
+  cursor: pointer;
+}
+
+.main_box:hover {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s ease 0s;
+}
+
+.easy_main_box:hover a,
+.easy_main_box:hover span {
+  color: #000;
+  transition: all 0.6s ease 0s;
+}
+
+.foot-btn {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.news-input {
+  width: 54%;
+  float: left;
+  font-size: 12px;
+  margin: 0 10px 10px 0;
 }
 

@@ -408,6 +408,9 @@
     min-width: auto;
   }
 
+  .catalog-div .lift_box {
+    width: 45%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -470,7 +473,7 @@
     padding: 0 6px;
   }
   .cart_menu .noti{left: 72px;}
-
+  
   .lift_box {
     width: auto;
     display: inline-block;
@@ -494,6 +497,12 @@
   .modal-dialog {
     width: 320px;
     margin: 10px auto;
+  }
+
+  .catalog-div .lift_box {
+    width: auto;
+    display: inline-block;
+    float: none;
   }
 }
 
