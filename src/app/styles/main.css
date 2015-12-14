@@ -1004,3 +1004,20 @@ a:focus { color: #0099cc;
   color: #FF5600;
 }
 
+.catalogue-fig {
+  background-color: #ddd;
+}
+
+.catalogue-fig .star_rate {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.catalogue-desc {
+  text-align: center;
+}
+
+.catalogue-desc .lift_box_tit {
+  padding: 0 10px 0 10px;
+}
+

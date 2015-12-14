@@ -150,6 +150,7 @@ angular.module("HM_SearchMD")
           .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
           .then(function(response){
             product.addedToWishlist = true;
+            $scope.addedToWishlist = true;
           })
           .catch(function(){
           })

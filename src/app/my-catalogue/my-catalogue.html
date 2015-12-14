@@ -1,43 +1,304 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
-  <div class="tab-content">
-    <!-- START  Dashboard Content -->
-    <div id="dash" class="tab-pane fade in active">
+  <div class="clearfix">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit manage_job_tit_small">
+      My Catalog
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit manage_job_tit_small">
+      <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Catalog</span>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-bottm-line manage_job_tit">
-        Manage catalogue
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!-- End  Dashboard Content -->
-    <div id="mycat" class="tab-pane fade">
-      <h3>My Catalog</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <!-- START  Manage Job Sites Content -->
-    <div id="jobsite" class="tab-pane fade">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-        Manage catalogue
+
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!-- End  Manage Job Sites Content -->
-    <div id="myalc" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div id="quotes" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div id="makepay" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="req" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="viewcon" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    <div class="col-md-4 lift_box nopadding">
+      <figure class="catalogue-fig">
+        <a><img alt=""/></a>
+        <!-- <div class="certified_box"> -->
+          <div class="star_rate">
+            <a href="#"> <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </a>
+          </div>
+        <!-- </div> -->
+      </figure>
+      <div class="catalogue-desc">
+        <h4 class="lift_box_tit"><a href="">Electric Equipment Wide-16</a></h4>
+        <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">Vendor Name</a></span></h5>
+        <div class="daily_ul">
+          <ul>
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">$199</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">$1156</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">$4556</p>
+            </li>
+          </ul>
+        </div>
+        <div class="heart">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-eye fa-2x"></i></a>
+            </li>
+            <li>
+              <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+            </li>
+            <li>
+              <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

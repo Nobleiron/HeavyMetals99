@@ -473,6 +473,8 @@
 
   .lift_box {
     width: auto;
+    display: inline-block;
+    float: none;
   }
 
   .add-job-site-btn {
