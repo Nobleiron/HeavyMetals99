@@ -272,7 +272,7 @@ a:focus { color: #0099cc;
            /*top: 130px;*/
          }
 .lift_box figure{padding: 1px;}
-.lift_box_tit{ font-size: 16px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
+.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 16px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
 .lift_box_tit a{color: #666666;}
 .lift_box_subtit{color: #666666; font-size: 14px; padding: 0 0 0 10px;}
 .lift_box_vendor{color: #009ddc; font-size: 14px; }
