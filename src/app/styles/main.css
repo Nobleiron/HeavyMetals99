@@ -222,14 +222,14 @@ a:focus { color: #0099cc;
 .cart_menu ul li{display: inline;}
 .cart_menu ul li a{padding: 0 10px; line-height: 70px;}
 .cart_menu .cart_noti{background: #ff5600 none repeat scroll 0 0;
-                      border-radius: 12px; left: 36px;
+                      border-radius: 12px; left: 23px;
                       color: #fff;
                       padding: 1px 7px;
                       position: absolute;
                       text-align: center;
                       top:3px;}
 .cart_menu .noti{background: #ff5600 none repeat scroll 0 0;
-                 border-radius: 12px; left: 87px;
+                 border-radius: 12px; left: 72px;
                  color: #fff;
                  padding: 1px 7px;
                  position: absolute;
