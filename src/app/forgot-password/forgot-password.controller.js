@@ -11,14 +11,17 @@ angular.module('HM_ForgotPasswordMD')
 
     function notifyForgotPassword(){
       if($scope.forgotPasswordForm.$valid){
+        $scope.loading = true;
         RestSV
           .post( ForgotPasswordCnst.forgotPassword.url() ,{
             email : $scope.forgotPasswordData.email,
           })
           .finally(function(response){
             $scope.flags.forgotPasswordNotifyInitiated = true;
-
+            $scope.loading = false;
           });
+      } else {
+        $scope.loading = false;
       }
     }
 
