@@ -44,7 +44,7 @@
     font-size: 15px;
   }
   .search_main {
-    padding: 20px 0 60px;
+    padding: 20px 0 5%;
   }
   .sell-main-part{overflow: hidden;}
   .need_main{margin: 25px 0 0 0;}
@@ -124,6 +124,7 @@
 @media only screen and (max-width: 992px) {
   .main_bg {
     background-size: 100% 100%;
+    min-height: 500px;
   }
 
   .rent_tit {
@@ -458,7 +459,7 @@
     padding: 0;}
   .rent_tit {
     font-size: 23px;
-    padding: 60px 0 12px;
+    padding: 10% 0 12px;
   }
   .search-head {
     display: inline-block;
@@ -466,6 +467,7 @@
   }
   .main_bg{
     background-size: 100% 100%;
+    min-height: auto;
   }
   .mob_tit {
     font-size: 20px;
@@ -521,7 +523,7 @@
 
 @media screen and (max-width: 320px) {
   .eqe_tex {
-    font-size: 10px;
+    font-size: 12px;
 
   }
   .get_soft {
