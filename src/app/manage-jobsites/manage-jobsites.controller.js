@@ -2,6 +2,10 @@
 angular.module("HM_ManageJobSitesMD")
   .controller('HM_ManageJobSitesCtrl', ['$scope', '$http', function($scope, $http){
     // $scope.showFilter = false;
+    $scope.flags = {
+      listView : false
+    };
+    $scope.toggleListView  = toggleListView;
     $scope.filterBtn = function() {
       $scope.showFilter = !$scope.showFilter
     }
@@ -22,5 +26,9 @@ angular.module("HM_ManageJobSitesMD")
     //  .catch(function(){
     //    debugger
     //  })
+
+    function toggleListView(option){
+      $scope.flags.listView = !$scope.flags.listView;
+    }
 
   }]);

@@ -12,32 +12,30 @@
             <li ng-click="closeFilter()">
               <a data-toggle="pill" href="/#/dashboard">
                 <i class="fa fa-th-large my-verti-icon"></i>
-
-                Dashboard</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#mycat">
-              <i class="fa fa-heart my-verti-icon"></i>
-              My Catalog</a></li>
+                <span class="sidebar-heading">Dashboard</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
+              <i class="fa fa-heart my-verti-icon" style="color: #666666;"></i>
+              <span class="sidebar-heading">My Catalog</span></a></li>
             <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage/job-sites">
               <i class="fa fa-map-marker my-verti-icon"></i>
-              Manage Job Sites</a></li>
+              <span class="sidebar-heading">Manage Job Sites</span></a></li>
             <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
               <i class="fa fa-user my-verti-icon"></i>
-              Manage My Account</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#quotes">
-              <i class="fa fa-bookmark-o my-verti-icon"></i>
-              Quotes &amp;
-              Reservations</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#makepay">
+              <span class="sidebar-heading">Manage My Account</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
+              <i class="fa fa-bookmark my-verti-icon"></i>
+              <span class="sidebar-heading">Quotes &amp;
+              Reservations</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
               <i class="fa fa-usd my-verti-icon"></i>
-              Make a Payment</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewin">
+              <span class="sidebar-heading">Make a Payment</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
               <i class="fa fa-file my-verti-icon"></i>
-
-              View Invoices</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#req"><i class="fa fa-comments"></i>
-              Requests</a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#viewcon"><i class="fa fa-briefcase"></i>
-              View Contracts</a></li>
+              <span class="sidebar-heading">View Invoices</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations"><i class="fa fa-comments my-verti-icon"></i>
+              <span class="sidebar-heading">Requests</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations"><i class="fa fa-briefcase my-verti-icon"></i>
+              <span class="sidebar-heading">View Contracts</span></a></li>
 
           </ul>
 
@@ -58,215 +56,17 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
                 <a href="#/add-job" class="btn pull-left manage-job-btn add-job-site-btn">Add Job Site</a>
-                <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn">List View</button>
-                <button class="btn pull-right manage-job-btn map map-view-btn">Map View</button>
+                <!-- <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn">List View</button>
+                <button class="btn pull-right manage-job-btn map map-view-btn">Map View</button> -->
+                <button class="btn btn-default pull-right manage-job-btn deactivate list" ng-class="{'active' : flags.listView}" ng-click="toggleListView(true)">List View</button>
+                <button class="btn btn-default pull-right manage-job-btn deactivate map" ng-click="toggleListView(false)" ng-class="{'active' : !flags.listView}">Map View</button>
               </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box" ng-if="!flags.listView">
                 <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
               </div>
-
-            </div>
-            <!-- End  Dashboard Content -->
-            <div id="mycat" class="tab-pane fade">
-              <h3>My Catalog</h3>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <!-- START  Manage Job Sites Content -->
-            <div id="jobsite" class="tab-pane fade">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-                Manage Job SItes
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="flags.listView">
+                
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-right flot-right nopadding my-bottm-line dash_board_tit">
-                <input type="text" class="form-control" placeholder="Search SItes">
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 add_site_top nopadding">
-                <button type="button" class="btn btn-default map_btn_manage">Add Job Site</button>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 flot-right add_site_top nopadding">
-
-                <div class="btn-group btn-group-justified">
-                  <a href="#" class="btn btn-primary btn_map_view">Map View</a>
-                  <a href="#" class="btn btn-primary btn_map_view">List View</a>
-
-                </div>
-              </div>
-              <!-- START  google map -->
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gmap">
-                <div class="google-maps">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
-                </div>
-              </div>
-              <!-- End   google map -->
-            </div>
-            <!-- End  Manage Job Sites Content -->
-            <div id="myalc" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
-            <div id="quotes" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
-            <div id="makepay" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
-            <!-- START  View Invoices Content -->
-            <div id="viewin" class="tab-pane fade">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-                Invoices
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 text-right flot-right nopadding my-bottm-line dash_board_tit">
-                <input type="text" class="form-control" placeholder="Search Invoices">
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 add_site_top nopadding">
-
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 flot-right add_site_top nopadding">
-
-                <div class="btn-group btn-group-justified">
-                  <a href="#" class="btn btn-primary btn_map_view">All Invoices</a>
-                  <a href="#" class="btn btn-primary btn_map_view">Outstanding</a>
-
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                <table class="table my-invoice">
-                  <thead>
-                  <tr class="invoice_head">
-                    <th class="invoice_title">Invoices #</th>
-                    <th class="invoice_title">Job Site</th>
-                    <th class="invoice_title">Contract #</th>
-                    <th class="invoice_title">Purchase Order</th>
-                    <th class="invoice_title">Total</th>
-                    <th class="invoice_title">Due Amount</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  <tr class="invoice-tr">
-                    <td><a href="#">49345</a></td>
-                    <td>Harbor Freight</td>
-                    <td>23478</td>
-                    <td>324-46733</td>
-                    <td>$ 928.96</td>
-                    <td>$ 00.00</td>
-                    <td><a href="#"><i class="fa fa-download"></i></a>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- End  View Invoices Content -->
-            <div id="req" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
-            <div id="viewcon" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
             </div>
           </div>
         </div>
