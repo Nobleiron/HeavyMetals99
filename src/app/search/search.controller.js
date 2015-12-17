@@ -1,8 +1,8 @@
 'use strict';
 angular.module("HM_SearchMD")
   .controller("HM_SearchCtrl",
-    ['$scope','$stateParams','HM_RestSV','HM_SearchCnst',
-    function($scope, $stateParams, RestSV, SearchCnst){
+    ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
+    function($scope, $state, $stateParams, RestSV, SearchCnst){
 
 
       $scope.toggleGridView = toggleGridView;
@@ -10,7 +10,6 @@ angular.module("HM_SearchMD")
       $scope.selectCategory = selectCategory;
 
       $scope.selectRootCategory = selectRootCategory;
-
 
       _initialize();
 
@@ -20,10 +19,12 @@ angular.module("HM_SearchMD")
       function _initialize(){
         $scope.results = [];
 
+        $scope.params = angular.extend({},$stateParams);
+
         $scope.selectedCategory = { };
 
-        $scope.oneAtATime = true;
         $scope.selection = { type : "rent"};
+
         $scope.flags = {
           searchResultLoading : false,
           categoryCollapse : false,
@@ -43,8 +44,7 @@ angular.module("HM_SearchMD")
         $scope.flags.searchResultLoading = true;
         loadCategories()
           .then(function(){
-            console.log("fooo")
-             $scope.$broadcast('Categories:Loaded');
+             $scope.$broadcast('Categories:Loaded', true);
             $scope.flags.searchReady = true;
           })
       }
@@ -56,6 +56,8 @@ angular.module("HM_SearchMD")
        */
       function toggleGridView(bool){
         $scope.flags.gridView = bool;
+        $scope.params.view_type = bool ? 'grid' : 'list';
+        $state.go('hm.search.results',$scope.params,{notify : false});
       }
 
       function loadCategories(){
@@ -68,6 +70,7 @@ angular.module("HM_SearchMD")
             });
             $scope.selectedRootCategory = $scope.rootCategories[0];
            $scope.selectedCategory = $scope.selectedRootCategory.children[0];
+           console.log("adsd")
           })
       }
 
@@ -78,7 +81,9 @@ angular.module("HM_SearchMD")
 
       function selectCategory(category){
         $scope.selectedCategory = category;
-        $scope.$broadcast('Categories:Loaded', true);
+        $scope.flags.page = 1;
+        $scope.params.category_id = $scope.selectedCategory.Id;
+        $state.go('hm.search.results',$scope.params);
       }
 
     }]);

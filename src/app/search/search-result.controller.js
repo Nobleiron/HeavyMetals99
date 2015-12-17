@@ -8,12 +8,12 @@ angular.module("HM_SearchMD")
 
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
-      $scope.$on('Categories:Loaded', _initialize);
+      !angular.equals({},$scope.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
-        console.log('gred', fresh)
+        angular.extend($scope.params, $stateParams);
         $scope.query = $stateParams.query || '';
-        $scope.flags.gridView = $stateParams.viewType == "grid";
+        $scope.flags.gridView = $stateParams.view_type == "grid";
         console.log("initialized")
         if($scope.query){
           _getSearchResult();
@@ -51,7 +51,7 @@ angular.module("HM_SearchMD")
         RestSV
           .get( SearchCnst.productByCategory.url(),{
             page : $scope.flags.page,
-            category_id : $scope.selectedCategory.Id
+            category_id : $scope.params.category_id
           })
           .then(function(response){
             if(response.data.result == ""){
@@ -77,7 +77,7 @@ angular.module("HM_SearchMD")
           $scope.flags.resultFetching = true
           RestSV
             .get( SearchCnst.search.url() ,{
-              search_text : normalizeSearchQuery($scope.query),
+              search_text : $scope.query,
               page : $scope.flags.page
             })
             .then(function(response){

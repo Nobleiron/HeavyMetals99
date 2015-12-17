@@ -82,7 +82,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_SearchCtrl'
         },
         'hm.search.results' : {
-          url: '/search?query&viewType=grid',
+          url: '/search?query&view_type=grid&category_id',
           templateUrl: 'app/search/results.html',
           controller: 'HM_SearchResultCtrl'
         },
