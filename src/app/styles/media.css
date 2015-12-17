@@ -22,7 +22,7 @@
     width: 78% !important;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .get_soft{}
 
   .modal-dialog {
@@ -110,6 +110,31 @@
 
   .pre-collapse {
     margin-top: 20px;
+  }
+
+  .landing-navbar-header {
+    padding: 0 15px;
+  }
+
+  .landing-collapse-small {
+    position: absolute;
+    width: 100%;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    color: rgb(0, 157, 220);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .req_call-small a {
+    color: #009ddc;
+  }
+
+  .cd-dropdown-trigger-small {
+    color: #009ddc;
+  }
+
+  .landing-container {
+    padding: 0;
   }
 
 }
