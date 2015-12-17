@@ -1088,3 +1088,40 @@ button:hover {
   transition: all 0.6s ease 0s;
 }
 
+.list-view-ul {
+  margin-top: 15px;
+  height: 80px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #009ddc;
+}
+
+.list-view-ul li {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.list-view-ul .list-view-li {
+  width: 9%;
+}
+
+.list-view-ul .list-view-li h4 {
+  margin: 23px 0;
+  text-align: center;
+}
+
+.list-view-ul .list-view-desc {
+  width: 18%;
+  text-align: center;
+}
+
+.list-view-ul .list-desc {
+  width: 53%;
+}
+
+.list-view-ul .list-desc p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 
+
