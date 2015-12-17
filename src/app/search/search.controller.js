@@ -6,10 +6,8 @@ angular.module("HM_SearchMD")
 
 
 
-
       $scope.toggleGridView = toggleGridView;
-
-      $scope.loadCategories = loadCategories;
+      
 
       $scope.selectCategory = selectCategory;
 
@@ -85,11 +83,6 @@ angular.module("HM_SearchMD")
       }
 
 
-
-
-
-
-
       function _normalizeCategories(crudeCategories){
         var categories = {};
         crudeCategories.forEach(function(c){
@@ -106,7 +99,8 @@ angular.module("HM_SearchMD")
 
       function selectCategory(category){
         $scope.selectedCategory = category;
-        $scope.query ? _getSearchResult(true) : _getProductListFromSelectedCategory(true);
+        $scope.$broadcast('Categories:Loaded', true);
+        //$scope.query ? _getSearchResult(true) : _getProductListFromSelectedCategory(true);
       }
 
     }]);

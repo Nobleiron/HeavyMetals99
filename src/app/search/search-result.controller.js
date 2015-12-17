@@ -10,7 +10,8 @@ angular.module("HM_SearchMD")
 
       $scope.$on('Categories:Loaded', _initialize);
 
-      function _initialize(){
+      function _initialize(event,fresh){
+        console.log('gred', fresh)
         $scope.query = $stateParams.query || '';
         $scope.flags.gridView = $stateParams.viewType == "grid";
         console.log("initialized")
@@ -18,7 +19,7 @@ angular.module("HM_SearchMD")
           _getSearchResult();
 
         }else{
-          _getProductListFromSelectedCategory();
+          _getProductListFromSelectedCategory(fresh);
         }
       }
 
