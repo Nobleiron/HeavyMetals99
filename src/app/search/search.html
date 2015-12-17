@@ -13,30 +13,10 @@
             <i class="fa fa-filter fa-lg"></i>
             <span class="filter">Filter Results:</span>
           </div>
-          <!--<div class="col-lg-12 category_filter1">-->
-            <!--<h5 class="cat_side_title">Category-->
-              <!--<span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>-->
-            <!--</h5>-->
-            <!--<form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="categories">-->
-              <!--<div class="checkbox filter_cat_tex">-->
-                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>-->
-                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>-->
-              <!--</div>-->
-              <!--<div class="checkbox filter_cat_tex" ng-repeat="category in categories">-->
-                <!--<label><input type="checkbox" value=""><span class="cat_mar">{{category.Name}}</span></label>-->
-              <!--</div>-->
-            <!--</form>-->
-          <!--</div>-->
           <div class="col-lg-12 category_filter1">
             <h5 class="cat_side_title">Category
               <span class="cat_minus"><a ng-click="flags.categoryCollapse = !flags.categoryCollapse" data-toggle="collapse" data-target="#catename"><i class="fa fa-lg" ng-class="{'fa-minus-square' : !flags.categoryCollapse,'fa-plus-square ' : flags.categoryCollapse }"></i></a></span>
             </h5>
-            <form id="catename" class="collapse" ng-class="{'in': !flags.categoryCollapse, 'out' : flags.categoryCollapse}" ng-if="rootCategories">
-              <!--<div class="checkbox filter_cat_tex">-->
-                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="rent"><span class="cat_mar">Rent</span></label>-->
-                <!--<label><input type="radio" name="type" ng-model="selection.type" ng-change="loadCategories()" value="buy"><span class="cat_mar">Buy</span></label>-->
-              <!--</div>-->
-            </form>
             <div ng-repeat="subcategories in selectedRootCategory.children" class="root-categories">
               <div>
                 <ul class="categories">
@@ -53,19 +33,6 @@
                 </ul>
               </div>
             </div>
-            <!--<uib-accordion close-others="true" ng-repeat="subcategories in selectedCategory.children">-->
-              <!--<uib-accordion-group heading="{{subcategories.Name}}">-->
-                <!--<ul>-->
-                  <!--<li><h5> <input type="radio" name="subcatefories" value=""><span class="cat_mar">{{subcategories.Name}}</span></h5></li>-->
-                  <!--<li ng-repeat="childCategories in subcategories.children">-->
-                    <!--<div class="checkbox filter_cat_tex">-->
-                      <!--<label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>-->
-                    <!--</div>-->
-                  <!--</li>-->
-                <!--</ul>-->
-              <!--</uib-accordion-group>-->
-
-            <!--</uib-accordion>-->
           </div>
         </div>
 
@@ -94,235 +61,15 @@
           </div>
 
           <!-- End Equipment Tab -->
-
-          <div class="tab-content">
-            <div ng-if="flags.searchResultLoading && query">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
-                <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’ &nbsp;&nbsp;<i class='fa fa-circle-o-notch fa-spin  fa-fw'></i></div>
-                <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
-                </div>
-              </div>
-            </div>
-            <div ng-if="!flags.searchResultLoading">
-              <!-- START  Equipment Product Display -->
-              <div id="equpment" class="tab-pane fade in active">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
-                  <div class="col-lg-10 col-md-10 col-xs-8 dis_tex"><span ng-if="query.length">Displaying {{results.length}} Equipments matching ‘{{query}}’</span></div>
-                  <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
-                    <div class="btn-group drop-btn">
-                      <div>
-                          <div class="btn-group" uib-dropdown is-open="status.isopen">
-                            <button id="single-button" type="button" class="btn sort-by-btn" uib-dropdown-toggle ng-disabled="disabled">
-                              Sort By <span class="caret"></span>
-                            </button>
-                            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
-                              <li role="menuitem"><a href="#">Price</a></li>
-                              <li role="menuitem"><a href="#">Maximum Availability</a></li>
-                              <li role="menuitem"><a href="#">Relavance</a></li>
-                            </ul>
-                          </div>
-                      </div>
-                    </div>
-
-                    <!--                                    Sort By
-                                                        <span class="short">  <i class="fa fa-sort-desc fa-2x"></i></span>-->
-                  </div>
-                </div>
-                <div ng-if="flags.gridView" class="clearfix">
-                  <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
-
-                    <figure>
-                      <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
-                    <div class="certified_box">
-                      <img src="assets/images/certified.png">
-                      <br>
-                      <div class="star_rate">
-                        <a href="#"> <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-half-o"></i>
-                          <i class="fa fa-star-o"></i></a>
-                      </div>
-                    </div>
-
-                    <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
-                    <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                    <div class="daily_ul">
-                      <ul>
-                        <li>
-                          <p class="daily_title">Daily</p>
-                          <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                        </li>
-                        <li>
-                          <p class="daily_title">Weekly</p>
-                          <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                        </li>
-                        <li>
-                          <p class="daily_title">Monthly</p>
-                          <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="heart">
-                      <ul>
-                        <li>
-                          <a href=""><i class="fa fa-eye fa-2x"></i></a>
-
-                        </li>
-                        <li>
-                          <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-
-                        </li>
-                        <li>
-                          <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
-                          <a ng-click="addToWishList(item)" ng-if="addedToWishlist == 'true'"><i class="fa fa-heart fa-2x wish-added"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="row" ng-if="!flags.gridView" style="margin:0;">
-                  <div class="col-md-12"><hr class="dash"></div>
-                  <div class="col-md-12 col-sm-6 col-xs-12 list-product" ng-repeat="item in results">
-                    <div class="col-md-3 lift-list">
-                      <figure class="search-res-figure">
-                        <a ng-href="/#/equipments/{{item.Product_Id}}"> <img ng-src="{{item.Product_Image[0].ProductImage_Path}}" class="search-res-img"></a>
-                      </figure>
-                    </div>
-                    <div class="col-md-6 nopadding">
-                      <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
-                      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
-                      <div class="col-md-3 star_list">
-                        <div class="star-list-top">
-                          <a href="#"> <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i></a>
-
-                        </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="daily_ul">
-                          <ul>
-                            <li>
-                              <p class="daily_title">Daily</p>
-                              <p class="daily_price">${{item.Product_Price.Daily}}</p>
-                            </li>
-                            <li>
-                              <p class="daily_title">Weekly</p>
-                              <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-                            </li>
-                            <li>
-                              <p class="daily_title">Monthly</p>
-                              <p class="daily_price">${{item.Product_Price.Monthly}}</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class=" heart_list">
-                          <ul>
-                            <li>
-                              <a href=""><i class="fa fa-eye fa-lg list-icon-top"></i>
-                                <span class="eye_view">357 views</span>
-                              </a>
-
-                            </li>
-                            <li>
-                              <a href=""> <i class="fa fa-clock-o fa-icon-clr fa-lg list-icon-top"></i>
-                              </a>
-                              <span class="eye_view">7 Times Rented</span>
-
-                            </li>
-                            <li>
-                              <a href=""><i class="fa fa-share-alt fa-icon-clr fa-lg list-icon-top"></i>
-                              </a>
-                              <span class="eye_view">26 Shares</span>
-
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="col-md-3 right-btn-col">
-                      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-                      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
-                        <span ng-if="!item.addedToWishlist">Add to Wishlist</span>
-                        <span ng-if="item.addedToWishlist">Added to Wishlist</span>
-                      </button>
-                    </div>
-                    <div class="col-md-12"><hr class="dash"></div>
-                  </div>
-                </div>
-                <div class="row no-search-row" ng-if="userQuery">
-                  <div class="col-md-12 text-col">
-                    <p style="text-align: center; margin-top: 10px;">Sorry, no result found for "{{query}}". Let us help you out. Tell us what do need? We will get back to you.</p>
-                  </div>
-                  <div class="col-md-12 col1">
-                      <p>Let us help you out</p>
-                  </div>
-                  <div class="col-md-12 col2">
-                    <p>What do you need?</p>
-                    <input type="text" placeholder="Type of equipment, service, parts, etc." class="form-control" style="height: 38px; margin-bottom: 10px;">
-                  </div>
-                  <div class="col-md-12 col2">
-                    <p>When do you need it?</p>
-                  </div>
-                  <div class="col-md-6 col2 col3" style="padding-top:0;">
-                    <div class="form-control form-left" style="height: 38px; margin-bottom: 10px;">
-                      <p class="pull-left to">To</p>
-                      <input type="text" placeholder="dd/mm/yy">
-                      <img src="assets/images/calendar.png" class="pull-right">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col2 col3" style="padding-top:0;">
-                    <div class="form-control form-left" style="height: 38px; margin-bottom: 10px;">
-                      <p class="pull-left">From</p>
-                      <input type="text" placeholder="dd/mm/yy">
-                      <img src="assets/images/calendar.png" class="pull-right">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col2 col3">
-                    <p>Email</p>
-                    <div class="form-control form-left" style="height: 38px;">
-                      <input type="text" placeholder="Enter a valid email address" class="info-input">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col2 col3">
-                    <p>Phone</p>
-                    <div class="form-control form-left" style="height: 38px;">
-                      <input type="text" placeholder="(xxx)-xxx-xxxxx)" class="info-input">
-                    </div>
-                  </div>
-                  <div class="col-md-12 col1"></div>
-                  <div class="col-md-12 col4">
-                    <button class="btn btn-primary pull-right">Request Further Information</button>
-                  </div>
-                </div>
-
-              </div>
-              <!-- End Equipment Product Display -->
-              <div id="attachment" class="tab-pane fade">
-                Attachments
-              </div>
-              <div id="accessories" class="tab-pane fade">
-                Attachments
-              </div>
-              <div id="parts" class="tab-pane fade">
-                Attachments
-              </div>
-            </div>
+          <ui-view></ui-view>
 
 
-          </div>
         </div>
         <!-- End All Product Side -->
       </div>
 
     </div>
-    <div infinite-scroll="lazyLoadSearchResult()" infinite-scroll-distance="3"></div>
+
   </article>
 
   <!-- End  Main Content -->

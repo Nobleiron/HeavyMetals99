@@ -1,0 +1,53 @@
+<div class="clearfix">
+  <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
+
+    <figure>
+      <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
+    <div class="certified_box">
+      <img src="assets/images/certified.png">
+      <br>
+      <div class="star_rate">
+        <a href="#"> <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+          <i class="fa fa-star-o"></i></a>
+      </div>
+    </div>
+
+    <h4 class="lift_box_tit"><a ng-href="/#/equipments{{item.id}}">{{item.Product_Name}}</a></h4>
+    <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a href="#">{{item.MAKE}}</a></span></h5>
+    <div class="daily_ul">
+      <ul>
+        <li>
+          <p class="daily_title">Daily</p>
+          <p class="daily_price">${{item.Product_Price.Daily}}</p>
+        </li>
+        <li>
+          <p class="daily_title">Weekly</p>
+          <p class="daily_price">${{item.Product_Price.Weekly}}</p>
+        </li>
+        <li>
+          <p class="daily_title">Monthly</p>
+          <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="heart">
+      <ul>
+        <li>
+          <a href=""><i class="fa fa-eye fa-2x"></i></a>
+
+        </li>
+        <li>
+          <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
+
+        </li>
+        <li>
+          <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
+          <a ng-click="addToWishList(item)" ng-if="addedToWishlist == 'true'"><i class="fa fa-heart fa-2x wish-added"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

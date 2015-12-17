@@ -78,9 +78,13 @@ angular.module("HM_RoutesMD")
           openInModal : true
         },
         'hm.search' : {
-          url: '/search?query&viewType',
           templateUrl: 'app/search/search.html',
           controller: 'HM_SearchCtrl'
+        },
+        'hm.search.results' : {
+          url: '/search?query&viewType=grid',
+          templateUrl: 'app/search/results.html',
+          controller: 'HM_SearchResultCtrl'
         },
         'hm.reserveEquipmentSuccess' : {
           url: '/equipments/:id/reserve-success',

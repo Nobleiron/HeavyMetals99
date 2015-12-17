@@ -4,31 +4,8 @@ angular.module("HM_SearchMD")
     ['$scope','$stateParams','HM_RestSV','HM_SearchCnst',
     function($scope, $stateParams, RestSV, SearchCnst){
 
-      $scope.results = [];
 
-      $scope.selectedCategory = { };
 
-      $scope.oneAtATime = true;
-      $scope.selection = { type : "rent"};
-      $scope.flags = {
-        searchResultLoading : false,
-        categoryCollapse : false,
-        gridView : false,
-        page : 1,
-        resultFetching : false,
-        stopPaging : false,
-        searchReady: false,
-        userQuery : false
-      };
-      $scope.categories = [];
-
-      $scope.filterBtn = function() {
-        $scope.showFilter = !$scope.showFilter
-      };
-
-      $scope.lazyLoadSearchResult = lazyLoadSearchResult;
-
-      $scope.addToWishList = addToWishList;
 
       $scope.toggleGridView = toggleGridView;
 
@@ -46,78 +23,40 @@ angular.module("HM_SearchMD")
        * Initialises the controller
        */
       function _initialize(){
-        $scope.query = $stateParams.query || '';
-        $scope.flags.gridView = $stateParams.viewType == "grid";
+        $scope.results = [];
+
+        $scope.selectedCategory = { };
+
+        $scope.oneAtATime = true;
+        $scope.selection = { type : "rent"};
+        $scope.flags = {
+          searchResultLoading : false,
+          categoryCollapse : false,
+          gridView : false,
+          page : 1,
+          resultFetching : false,
+          stopPaging : false,
+          searchReady: false,
+          userQuery : false
+        };
+
+        $scope.categories = [];
+
+        $scope.filterBtn = function() {
+          $scope.showFilter = !$scope.showFilter
+        };
         $scope.flags.searchResultLoading = true;
         loadCategories()
           .then(function(){
-            if($scope.query){
-              _getSearchResult();
-
-            }else{
-              _getProductListFromSelectedCategory();
-            }
+            console.log("fooo")
+             $scope.$broadcast('Categories:Loaded');
             $scope.flags.searchReady = true;
           })
       }
 
-      function _getProductListFromSelectedCategory(fresh){
-        if(fresh){
-          $scope.results = [];
-          $scope.flags.page = 1;
-        }
-        $scope.flags.searchResultLoading = true;
-        RestSV
-          .get( SearchCnst.productByCategory.url(),{
-            page : $scope.flags.page,
-            category_slag : $scope.selectedCategory.Slug
-          })
-          .then(function(response){
-            if(response.data.result == ""){
-              $scope.flags.stopPaging = true;
-            }else{
 
-              $scope.results = $scope.results.concat(response.data.result.ProductList);
-              $scope.flags.page += 1 ;
-            }
-          })
-          .finally(function(){
-            $scope.flags.resultFetching = false;
-            $scope.flags.searchResultLoading = false;
-          })
-      }
 
-      function _getSearchResult(fresh){
-        if(fresh){
-          $scope.results = [];
-          $scope.flags.page = 1;
-        }
-        if(!$scope.flags.stopPaging && !$scope.flags.resultFetching){
-          $scope.flags.resultFetching = true
-          RestSV
-            .get( SearchCnst.search.url() ,{
-              search_text : normalizeSearchQuery($scope.query),
-              page : $scope.flags.page
-            })
-            .then(function(response){
-              if(response.data.result == ""){
-                  $scope.flags.stopPaging = true;
-              }else{
 
-                $scope.results = $scope.results.concat(response.data.result.SearchResult);
-
-                $scope.flags.page += 1 ;
-              }
-            })
-            .finally(function(){
-              $scope.flags.resultFetching = false;
-              if($scope.flags.page && !$scope.results.length){
-                $scope.userQuery = true;
-              }
-              $scope.flags.searchResultLoading = false;
-            })
-        }
-      }
 
       /**
        * Toggles a list to 'GRID' or 'LIST' view
@@ -145,22 +84,9 @@ angular.module("HM_SearchMD")
           })
       }
 
-      function addToWishList(product){
-        RestSV
-          .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
-          .then(function(response){
-            product.addedToWishlist = true;
-            $scope.addedToWishlist = true;
-          })
-          .catch(function(){
-          })
-      }
 
-      function lazyLoadSearchResult(){
-        if($scope.categories.length){
-          $scope.query ? _getSearchResult() : _getProductListFromSelectedCategory();
-        }
-      }
+
+
 
 
 
@@ -174,10 +100,8 @@ angular.module("HM_SearchMD")
       }
 
       function selectRootCategory(rootCategory){
-        //TODO
         $scope.selectedRootCategory = rootCategory;
         $scope.selectedCategory = $scope.selectedRootCategory.children[0];
-        //$scope.query ? _getSearchResult(true) : _getProductListFromSelectedCategory(true);
       }
 
       function selectCategory(category){
