@@ -425,6 +425,22 @@
     right: 0;
     left: auto;
   }
+
+  .reg-success {
+    padding: 0;
+  }
+
+  .reg-success .panel-success h3 {
+    font-size: 16px;
+  }
+
+  .reg-success .panel-success h3 i {
+    font-size: 18px;
+  }
+
+  .reg-success .panel-body {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -518,6 +534,22 @@
     width: auto;
     display: inline-block;
     float: none;
+  }
+
+  .signin_teg {
+    font-size: 14px;
+  }
+
+  .rent-sale-soft {
+    padding: 0;
+  }
+
+  .rent-sale-soft .rent_title {
+    font-size: 16px;
+  }
+
+  .rent-sale-soft .rent_subtit {
+    font-size: 14px;
   }
 }
 
