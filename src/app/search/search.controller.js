@@ -69,7 +69,10 @@ angular.module("HM_SearchMD")
               c.categoryDisplaySortOrder = SearchCnst.categoryDisplaySortOrder[c.Name];
             });
             $scope.selectedRootCategory = $scope.rootCategories[0];
+
            $scope.selectedCategory = $scope.selectedRootCategory.children[0];
+           $scope.params.category_id = $scope.selectedCategory.Id;
+           console.log($scope.params)
            console.log("adsd")
           })
       }

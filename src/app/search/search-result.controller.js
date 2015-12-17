@@ -11,7 +11,6 @@ angular.module("HM_SearchMD")
       !angular.equals({},$scope.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
-        angular.extend($scope.params, $stateParams);
         $scope.query = $stateParams.query || '';
         $scope.flags.gridView = $stateParams.view_type == "grid";
         console.log("initialized")
