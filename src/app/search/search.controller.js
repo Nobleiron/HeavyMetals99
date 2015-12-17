@@ -5,14 +5,11 @@ angular.module("HM_SearchMD")
     function($scope, $stateParams, RestSV, SearchCnst){
 
 
-
       $scope.toggleGridView = toggleGridView;
-      
 
       $scope.selectCategory = selectCategory;
 
       $scope.selectRootCategory = selectRootCategory;
-
 
 
       _initialize();
@@ -53,9 +50,6 @@ angular.module("HM_SearchMD")
       }
 
 
-
-
-
       /**
        * Toggles a list to 'GRID' or 'LIST' view
        * @param {boolean} bool - set true for grid view. Default is LIST view
@@ -63,11 +57,6 @@ angular.module("HM_SearchMD")
       function toggleGridView(bool){
         $scope.flags.gridView = bool;
       }
-
-      function normalizeSearchQuery(str){
-        return str.replace('\'','');
-      }
-
 
       function loadCategories(){
        return RestSV
@@ -82,16 +71,6 @@ angular.module("HM_SearchMD")
           })
       }
 
-
-      function _normalizeCategories(crudeCategories){
-        var categories = {};
-        crudeCategories.forEach(function(c){
-          categories[c.Name] = c;
-
-        });
-        return categories;
-      }
-
       function selectRootCategory(rootCategory){
         $scope.selectedRootCategory = rootCategory;
         $scope.selectedCategory = $scope.selectedRootCategory.children[0];
@@ -100,7 +79,6 @@ angular.module("HM_SearchMD")
       function selectCategory(category){
         $scope.selectedCategory = category;
         $scope.$broadcast('Categories:Loaded', true);
-        //$scope.query ? _getSearchResult(true) : _getProductListFromSelectedCategory(true);
       }
 
     }]);

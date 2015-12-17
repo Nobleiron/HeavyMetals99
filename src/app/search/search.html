@@ -2,9 +2,10 @@
   <!-- START  Main Content -->
   <article class="main-cantain" style="min-height: 400px;">
     <div class="container">
-      <div class="cssload-jumping" ng-show="!flags.searchReady">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+      <load-indicator loading="!flags.searchReady"></load-indicator>
+      <!--<div class="cssload-jumping" ng-show="!flags.searchReady">-->
+        <!--<span></span><span></span><span></span><span></span><span></span>-->
+      <!--</div>-->
       <div class="row" ng-show="flags.searchReady">
 
         <!-- START  Filter Results side -->
