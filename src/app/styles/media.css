@@ -137,6 +137,23 @@
     padding: 0;
   }
 
+  .list-view-ul .list-view-li h4 {
+    font-size: 16px;
+  }
+
+  .list-view-ul .list-disc h4 {
+    font-size: 16px;
+  }
+
+  .list-view-ul .list-desc {
+    width: 40%;
+  }
+
+  .list-view-ul .list-view-desc {
+    width: 22%;
+    text-align: center;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
