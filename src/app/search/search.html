@@ -21,7 +21,7 @@
             <div ng-repeat="subcategories in selectedRootCategory.children" class="root-categories">
               <div>
                 <ul class="categories">
-                  <li ng-click="selectCategory(subcategories)"><h5><input type="radio" name="subcatefories" ng-checked="subcategories.Id == selectedCategory.Id" ><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
+                  <li ng-click="selectCategory(subcategories)"><h5 class="category-name on-hover-pointer" ng-checked="subcategories.Id == selectedCategory.Id" style="cursor: pointer;"><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
                   <li ng-show="subcategories.Id == selectedCategory.Id">
                     <ul class="sub-categories">
                       <li ng-repeat="childCategories in subcategories.children">
@@ -46,7 +46,7 @@
           <!-- START  Equipment Tab -->
 
           <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-            <ul class="nav nav-tabs gride-tab">
+            <ul class="nav nav-tabs gride-tab root-category">
               <li ng-click="selectRootCategory(category)" ng-class="{'active': selectedRootCategory.Name == category.Name}" ng-repeat="category in rootCategories | orderBy:'categoryDisplaySortOrder'"><a data-toggle="tab" href="#equpment">{{category.Name}}</a></li>
             </ul>
 

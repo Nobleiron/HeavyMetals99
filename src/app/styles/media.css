@@ -593,6 +593,11 @@
   .rent-sale-soft .rent_subtit {
     font-size: 14px;
   }
+
+  .root-category li a  {
+    padding: 10px 3px !important;
+    font-size: 13px !important;
+  }
 }
 
 @media screen and (max-width: 320px) {

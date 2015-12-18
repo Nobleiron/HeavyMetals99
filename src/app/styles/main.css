@@ -1123,5 +1123,10 @@ button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-} 
+}
+
+.category-name:hover {
+  color: #009ddc;
+  transition: all 0.6s ease 0s;
+}
 
