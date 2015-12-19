@@ -50,13 +50,12 @@ angular.module("HM_SearchMD")
         RestSV
           .get( SearchCnst.productByCategory.url(),{
             page : $scope.flags.page,
-            category_id : $scope.params.category_id
+            category_id : $stateParams.category_id || $scope.params.category_id
           })
           .then(function(response){
             if(response.data.result == ""){
               $scope.flags.stopPaging = true;
             }else{
-
               $scope.results = $scope.results.concat(response.data.result.ProductList);
               $scope.flags.page += 1 ;
             }
@@ -65,6 +64,10 @@ angular.module("HM_SearchMD")
             $scope.flags.resultFetching = false;
             $scope.flags.searchResultLoading = false;
           })
+      }
+
+      function normalizeSearchQuery(str){
+        return str.replace('\'','');
       }
 
       function _getSearchResult(fresh){
@@ -76,7 +79,7 @@ angular.module("HM_SearchMD")
           $scope.flags.resultFetching = true
           RestSV
             .get( SearchCnst.search.url() ,{
-              search_text : $scope.query,
+              search_text : normalizeSearchQuery($scope.query),
               page : $scope.flags.page
             })
             .then(function(response){
