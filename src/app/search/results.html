@@ -1,6 +1,10 @@
+
 <div class="tab-content">
+
   <div ng-if="flags.searchResultLoading && query">
+
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
+
       <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’</div>
       <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
       </div>
@@ -37,6 +41,11 @@
       <search-result-list-view ng-if="!flags.searchResultLoading && !flags.gridView"></search-result-list-view>
       <search-result-grid-view ng-if="!flags.searchResultLoading && flags.gridView"></search-result-grid-view>
 
+      <div class="row" style="margin-top: 10px;text-align: center;" ng-if="searchTags.length && !flags.searchResultLoading">
+        <div class="col-md-12 text-col">
+          <span class="tag label label-info" ng-repeat="tag in searchTags">{{tag.name}}<a ng-click="clearSearchTag(tag.tagType)">x</a></span>
+        </div>
+      </div>
 
       <div class="row no-search-row" ng-if="userQuery">
         <div class="col-md-12 text-col">

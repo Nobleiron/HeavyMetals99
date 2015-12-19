@@ -1,25 +1,56 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .controller("HM_SearchResultCtrl", ['$scope','$stateParams','HM_RestSV','HM_SearchCnst',
-    function($scope, $stateParams, RestSV, SearchCnst){
+  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
+    function($scope,$state, $stateParams, RestSV, SearchCnst){
 
 
       $scope.addToWishList = addToWishList;
 
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
+      $scope.clearSearchTag = clearSearchTag;
+
       !angular.equals({},$scope.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
-        $scope.query = $stateParams.query || '';
         $scope.flags.gridView = $stateParams.view_type == "grid";
-        console.log("initialized")
-        if($scope.query){
-          _getSearchResult();
+        $scope.searchTags = [];
+        jQuery.extend($scope.params,$stateParams);
 
+        $scope.params.query = $scope.params.query || '';
+        _buildSearchTags();
+        if($scope.params.query){
+          _getSearchResult(fresh);
         }else{
           _getProductListFromSelectedCategory(fresh);
         }
+      }
+
+
+      function _buildSearchTags(){
+        for(var param in $scope.params){
+          if(param == "query" && $scope.params.query){
+            $scope.searchTags.push({name : "Search:" + $scope.params.query, tagType : 'query'});
+          }
+          //if(param == "category_id" && $scope.params.category_id){
+          //  $scope.searchTags.push(_getCategoryById($scope.params[param]));
+          //}
+        }
+      }
+
+      function clearSearchTag(tagType){
+         $scope.params[tagType] = undefined;
+        $scope.searchTags = _.filter($scope.searchTags, function(tag){
+          return tag.tagType != tagType;
+        });
+        $state.go('hm.search.results', $scope.params);
+      }
+
+      function _getCategoryById(category_id){
+       var selectedCategory= _.find($scope.categories,function(x){
+          return x.Id == category_id;
+        });
+        return { name : 'Filter:'+ selectedCategory.Name, tagType : 'category_id'};
       }
 
       function addToWishList(product){
@@ -35,9 +66,8 @@ angular.module("HM_SearchMD")
 
 
       function lazyLoadSearchResult(){
-        console.log("lazy loaded")
         if($scope.flags.categoriesFetched){
-          $scope.query ? _getSearchResult() : _getProductListFromSelectedCategory();
+          $scope.params.query ? _getSearchResult() : _getProductListFromSelectedCategory();
         }
       }
 
@@ -50,7 +80,7 @@ angular.module("HM_SearchMD")
         RestSV
           .get( SearchCnst.productByCategory.url(),{
             page : $scope.flags.page,
-            category_id : $stateParams.category_id || $scope.params.category_id
+            category_id : $scope.params.category_id
           })
           .then(function(response){
             if(response.data.result == ""){
@@ -62,6 +92,9 @@ angular.module("HM_SearchMD")
           })
           .finally(function(){
             $scope.flags.resultFetching = false;
+            if($scope.flags.page && !$scope.results.length){
+              $scope.userQuery = true;
+            }
             $scope.flags.searchResultLoading = false;
           })
       }
@@ -74,13 +107,14 @@ angular.module("HM_SearchMD")
         if(fresh){
           $scope.results = [];
           $scope.flags.page = 1;
+          $scope.flags.stopPaging = false;
         }
         if(!$scope.flags.stopPaging && !$scope.flags.resultFetching){
           $scope.flags.resultFetching = true;
           $scope.flags.searchResultLoading = true;
           RestSV
             .get( SearchCnst.search.url() ,{
-              search_text : normalizeSearchQuery($scope.query),
+              search_text : normalizeSearchQuery($scope.params.query),
               page : $scope.flags.page,
               category_id : $scope.params.category_id
             })
