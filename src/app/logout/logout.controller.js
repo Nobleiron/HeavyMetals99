@@ -6,15 +6,13 @@ angular.module('HM_LogoutMD')
     _initialize();
 
 
-
     function _initialize(){
       var loggedOut = RestSV.get( LogoutCnst.logout.url() );
-
       loggedOut
-        .then( function(){
-              localStorageService.remove("userObj")
-              $state.go('hmPrelogin.login');
-        });
+        .finally(function(){
+          localStorageService.remove("userObj");
+          $state.go('hmPrelogin.login');
+        })
     }
 
 
