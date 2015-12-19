@@ -300,7 +300,7 @@
 
           <input type="text" class="form-control search-head" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="query" name="query" ng-model="selectedProduct"
                  typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-                 typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-on-select="selectSearchedItem($item, $model, $label)">
+                 typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-wait-ms="1000" typeahead-on-select="selectSearchedItem($item, $model, $label)">
 
           <button class="btn btn-default my_search" type="submit" style=" " ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
 
@@ -318,7 +318,7 @@
     <div class="container">
       <!-- START  Product Lift 1 -->
       <div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories | limitTo:6">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer" ui-sref="hm.search.results({category_id : category.Id })">
 
           <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" style="width: 100%;height:100%;"></div>
           <div class="lift_name col-lg-12 col-sm-12 nopadding"><a ui-sref="hm.search.results({category_id : category.Id })">{{category.Name}}</a></div>
