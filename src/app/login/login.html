@@ -83,7 +83,7 @@
               <div class="col-lg-12 welcome_title">Welcome back !<span class="flot-right need_help"><a href="/#/help">Need Help ?</a></span></div>
 
               <div class="col-lg-12">
-                <form role="form" name="loginForm" novalidate valdr-type="User">
+                <form role="form" name="loginForm" novalidate valdr-type="User" ng-submit="login()" >
                   <div class="form-group" valdr-form-group>
                     <input type="hidden" id="credentials" name="credentials" ng-model="loginData.credentials" />
                   </div>
@@ -100,7 +100,7 @@
                     <span class="flot-right need_help"><a href="/#/forgot-password">Forgot Password ?</a></span>
                   </div>
                   <hr>
-                  <button type="submit" ng-click="login()" class="btn btn-default flot-right sign_mybtn">
+                  <button type="submit" ng-click="login()"  class="btn btn-default flot-right sign_mybtn">
                     <span ng-hide="loading">Sign In</span>
                     <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
                   </button>

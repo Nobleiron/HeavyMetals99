@@ -43,6 +43,7 @@ angular.module("HM_SearchMD")
         $scope.searchTags = _.filter($scope.searchTags, function(tag){
           return tag.tagType != tagType;
         });
+        $scope.flags.page = 1;
         $state.go('hm.search.results', $scope.params);
       }
 
