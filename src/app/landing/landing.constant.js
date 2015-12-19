@@ -6,7 +6,7 @@ angular.module('HM_LandingMD')
         return '/products/search'
       }
     },
-    categories : {
+    categoryList : {
       url : function(){
         return '/category'
       }

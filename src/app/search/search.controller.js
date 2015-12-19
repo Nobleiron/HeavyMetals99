@@ -72,8 +72,6 @@ angular.module("HM_SearchMD")
 
             $scope.selectedCategory = $scope.selectedRootCategory.children[0];
             $scope.params.category_id = $scope.selectedCategory.Id;
-            console.log($scope.params)
-            console.log("adsd")
           })
       }
 

@@ -25,8 +25,6 @@ angular.module('HeavyMetals')
 
     $scope.selectSearchedItem = selectSearchedItem;
 
-    $scope.takeMeToHome = takeMeToHome;
-
 
     _initialize();
 
@@ -75,13 +73,5 @@ angular.module('HeavyMetals')
       $scope.showHeader = !$scope.showHeader
     };
 
-
-    function takeMeToHome(){
-      if($scope.userObj.portal_login){
-        $state.go('hm.dashboard.main');
-      }else{
-        $state.go('hm.search.results');
-      }
-    }
 
   }]);

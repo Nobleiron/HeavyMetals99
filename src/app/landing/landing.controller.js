@@ -1,6 +1,6 @@
 'use strict';
 angular.module('HM_LandingMD')
-  .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_LandingCnst','HM_RestSV', function ($scope, $state, filterFilter, landingCnst, RestSV ) {
+  .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_LandingCnst','HM_RestSV','localStorageService', function ($scope, $state, filterFilter, landingCnst, RestSV, localStorageService) {
 
 
     $scope.defaultSearchType = "rent";
@@ -13,7 +13,7 @@ angular.module('HM_LandingMD')
 
     _initialize();
 
-    function selectSearchedItem(item, model, label){
+    function selectSearchedItem(){
       var query = '';
       if(typeof $scope.selectedProduct == "object"){
         query = $scope.selectedProduct.Product_Name;
@@ -21,8 +21,7 @@ angular.module('HM_LandingMD')
       if(typeof $scope.selectedProduct == "string"){
         query = $scope.selectedProduct;
       }
-
-      $state.go('hm.search', { query : query});
+      $state.go('hm.search.results', { query : query});
     }
 
     function getProducts(search){
@@ -48,11 +47,13 @@ angular.module('HM_LandingMD')
       $scope.flags = {
         rented : true
       };
+      $scope.userObj = localStorageService.get('userObj');
       fetchEquipmentMenus();
+      loadCategories();
     }
 
     function fetchEquipmentMenus(){
-      RestSV.get(landingCnst.categories.url() ,{
+      RestSV.get(landingCnst.categoryList.url() ,{
         type : 'rent'
       })
       .then(function(response){
@@ -63,6 +64,16 @@ angular.module('HM_LandingMD')
     function toggleRentOrBuy(rented){
       $scope.flags.rented = rented;
       $scope.defaultSearchType = rented ? "rent" : "buy";
+    }
+
+
+    function loadCategories(){
+      return RestSV
+        .get( landingCnst.categoryList.url(),{type: 'rent'})
+        .then(function(response){
+          var rootCategories = response.data.result.CategoryList;
+          $scope.displayCategories = rootCategories[0].children;
+        })
     }
 
   }]);

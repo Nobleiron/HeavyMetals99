@@ -272,12 +272,12 @@
               <span class="glyphicon glyphicon-earphone"></span>
               <span class="req_call req_call-small" style="margin: 0;"><a href="/#/request-callback">  Request Callback</a></span>
             </div>
-            <div class="sign-in-div left-link-div">
+            <div class="sign-in-div left-link-div" ng-if="!userObj">
               <span class="glyphicon glyphicon-log-in"></span>
               <span class="req_call req_call-small"><a href="/#/login">  Sign In</a></span>
             </div>
           </div>
-          <div class="nav navbar-nav navbar-right landing-header">
+          <div class="nav navbar-nav navbar-right landing-header" ng-if="!userObj">
             <a type="button" class="btn btn-default get_soft get-free-acc" href="/#/register" >Get Free Account</a>
           </div>
         </div><!-- /.navbar-collapse -->
@@ -317,64 +317,64 @@
   <article class="lift-bg">
     <div class="container">
       <!-- START  Product Lift 1 -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
+      <div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories | limitTo:6">
         <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
 
-          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/engine_powerd_leep.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Engine Powered Boom <br>Lifts</a></div>
+          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" style="width: 100%;height:100%;"></div>
+          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a ui-sref="hm.search.results({category_id : category.Id })">{{category.Name}}</a></div>
 
         </div>
       </div>
       <!-- End Product Lift 1 -->
       <!-- START  Product Lift 2  -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
 
-          <div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/electric_hybrid.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Electric & Hybrid Boom<br> Lifts</a></div>
+          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/electric_hybrid.jpg" alt=""></div>-->
+          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Electric & Hybrid Boom<br> Lifts</a></div>-->
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
       <!-- End Product Lift 2 -->
       <!-- START  Product Lift 3 -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
 
-          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/vertical_lift.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Vertical Lifts & Stock <br>Pickers</a></div>
+          <!--<div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/vertical_lift.jpg" alt=""></div>-->
+          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Vertical Lifts & Stock <br>Pickers</a></div>-->
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
       <!-- End Product Lift 3 -->
       <!-- START  Product Lift 4 -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
 
-          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/scissor_lift.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Scissor Lifts</a></div>
+          <!--<div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/scissor_lift.jpg" alt=""></div>-->
+          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Scissor Lifts</a></div>-->
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
       <!-- End Product Lift 4 -->
       <!-- START  Product Lift 5 -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
 
-          <div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/towable_boomlft.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Towable Boom Lifts</a></div>
+          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/towable_boomlft.jpg" alt=""></div>-->
+          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Towable Boom Lifts</a></div>-->
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
       <!-- End Product Lift 5 -->
       <!-- START  Product Lift 6 -->
-      <div class="col-lg-2 col-md-2 col-sm-6 lift_part">
-        <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">
+      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
+        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
 
-          <div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/telehendelers.jpg" alt=""></div>
-          <div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Telehandlers</a></div>
+          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/telehendelers.jpg" alt=""></div>-->
+          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Telehandlers</a></div>-->
 
-        </div>
-      </div>
+        <!--</div>-->
+      <!--</div>-->
       <!-- End Product Lift 6 -->
     </div>
   </article>

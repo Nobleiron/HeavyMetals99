@@ -105,7 +105,7 @@ angular.module('HM_LoginMD')
             if(userObj.portal_login){
               $state.go('hm.dashboard.main');
             }else{
-              $state.go('hm.search');
+              $state.go('hm.search.results');
             }
 
           })
