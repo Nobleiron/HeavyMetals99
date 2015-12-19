@@ -58,8 +58,7 @@ angular.module("HM_SearchMD")
         RestSV
           .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
           .then(function(response){
-            product.addedToWishlist = true;
-            $scope.addedToWishlist = true;
+            product.Is_in_catelog = true;
           })
           .catch(function(){
           })
