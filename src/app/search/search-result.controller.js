@@ -76,11 +76,13 @@ angular.module("HM_SearchMD")
           $scope.flags.page = 1;
         }
         if(!$scope.flags.stopPaging && !$scope.flags.resultFetching){
-          $scope.flags.resultFetching = true
+          $scope.flags.resultFetching = true;
+          $scope.flags.searchResultLoading = true;
           RestSV
             .get( SearchCnst.search.url() ,{
               search_text : normalizeSearchQuery($scope.query),
-              page : $scope.flags.page
+              page : $scope.flags.page,
+              category_id : $scope.params.category_id
             })
             .then(function(response){
               if(response.data.result == ""){
