@@ -20,7 +20,8 @@ angular.module('HM_LoginMD')
       };
 
       $scope.loginData = {
-        credentials : "valid"
+        credentials : "valid",
+        isRememberMe : "false"
       }
       $scope.UserRegisterData= {
         alreadyExists  :  "valid",
@@ -92,6 +93,7 @@ angular.module('HM_LoginMD')
         RestSV
           .post( LoginCnst.login.url() ,{
             email : $scope.loginData.email,
+            is_remember : $scope.loginData.isRememberMe,
             password : $scope.loginData.password
           },{
             withCredential : true

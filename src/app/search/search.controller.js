@@ -1,7 +1,7 @@
 'use strict';
 angular.module("HM_SearchMD")
   .controller("HM_SearchCtrl",
-    ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
+  ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
     function($scope, $state, $stateParams, RestSV, SearchCnst){
 
 
@@ -44,7 +44,7 @@ angular.module("HM_SearchMD")
         $scope.flags.searchResultLoading = true;
         loadCategories()
           .then(function(){
-             $scope.$broadcast('Categories:Loaded', true);
+            $scope.$broadcast('Categories:Loaded', true);
             $scope.flags.searchReady = true;
           })
       }
@@ -61,7 +61,7 @@ angular.module("HM_SearchMD")
       }
 
       function loadCategories(){
-       return RestSV
+        return RestSV
           .get( SearchCnst.categoryList.url(),{type: $scope.selection.type})
           .then(function(response){
             $scope.rootCategories = response.data.result.CategoryList;
@@ -70,10 +70,10 @@ angular.module("HM_SearchMD")
             });
             $scope.selectedRootCategory = $scope.rootCategories[0];
 
-           $scope.selectedCategory = $scope.selectedRootCategory.children[0];
-           $scope.params.category_id = $scope.selectedCategory.Id;
-           console.log($scope.params)
-           console.log("adsd")
+            $scope.selectedCategory = $scope.selectedRootCategory.children[0];
+            $scope.params.category_id = $scope.selectedCategory.Id;
+            console.log($scope.params)
+            console.log("adsd")
           })
       }
 
