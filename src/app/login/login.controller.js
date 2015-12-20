@@ -59,7 +59,7 @@ angular.module('HM_LoginMD')
     function register(){
       _resetRegistrationValidity()
       if($scope.userRegisterForm.$valid){
-        $scope.loading = true;
+        $scope.$broadcast('SignUp:Process:Start');
         var url = location.port
         RestSV
           .post( LoginCnst.register.url() ,{
@@ -78,7 +78,7 @@ angular.module('HM_LoginMD')
             _invalidateRegistrationForm();
           })
           .finally(function(){
-            $scope.loading = false;
+            $scope.$broadcast('SignUp:Process:End');
           })
       }
 
@@ -89,7 +89,7 @@ angular.module('HM_LoginMD')
     function  login(){
       _resetLoginValidity();
       if($scope.loginForm.$valid){
-        $scope.loading = true;
+        $scope.$broadcast('Login:Process:Start');
         RestSV
           .post( LoginCnst.login.url() ,{
             email : $scope.loginData.email,
@@ -113,10 +113,10 @@ angular.module('HM_LoginMD')
             $scope.formSubmitted = true;
             _invalidateLoginForm();
             console.log("Error logging in", error)
-            $scope.loading = false;
+            $scope.$broadcast('Login:Process:End');
           });
       } else {
-        $scope.loading = false;
+        $scope.$broadcast('Login:Process:End');
       }
     }
 

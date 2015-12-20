@@ -11,15 +11,15 @@ angular.module("HM_SearchMD")
 
       $scope.selectRootCategory = selectRootCategory;
 
+      $scope.selectCategoryAttributes = selectCategoryAttributes;
+
+
       _initialize();
 
-      /**
-       * Initialises the controller
-       */
       function _initialize(){
         $scope.results = [];
-
         $scope.params = angular.extend({},$stateParams);
+        $scope.categoryAttributes = {}
 
         $scope.selectedCategory = { };
 
@@ -32,7 +32,7 @@ angular.module("HM_SearchMD")
           page : 1,
           resultFetching : false,
           stopPaging : false,
-          searchReady: false,
+          categoriesFetched: false,
           userQuery : false
         };
 
@@ -41,11 +41,10 @@ angular.module("HM_SearchMD")
         $scope.filterBtn = function() {
           $scope.showFilter = !$scope.showFilter
         };
-        $scope.flags.searchResultLoading = true;
         loadCategories()
           .then(function(){
             $scope.$broadcast('Categories:Loaded', true);
-            $scope.flags.searchReady = true;
+            $scope.flags.categoriesFetched = true;
           })
       }
 
@@ -85,6 +84,10 @@ angular.module("HM_SearchMD")
         $scope.flags.page = 1;
         $scope.params.category_id = $scope.selectedCategory.Id;
         $state.go('hm.search.results',$scope.params);
+      }
+
+      function selectCategoryAttributes(){
+        debugger
       }
 
     }]);

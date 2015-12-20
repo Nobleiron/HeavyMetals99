@@ -2,8 +2,8 @@
   <!-- START  Main Content -->
   <article class="main-cantain" style="min-height: 400px;">
     <div class="container">
-      <load-indicator loading="!flags.searchReady"></load-indicator>
-      <div class="row" ng-show="flags.searchReady">
+      <load-indicator loading="!flags.categoriesFetched"></load-indicator>
+      <div class="row" ng-show="flags.categoriesFetched">
 
         <!-- START  Filter Results side -->
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
@@ -23,7 +23,7 @@
                     <ul class="sub-categories">
                       <li ng-repeat="childCategories in subcategories.children">
                         <div class="checkbox filter_cat_tex1">
-                          <label><input type="checkbox" value=""><span class="cat_mar">{{childCategories.Name}}</span></label>
+                          <label><input type="checkbox" ng-value="true" ng-model="categoryAttributes" ng-change="selectCategoryAttributes(childCategories)"><span class="cat_mar">{{childCategories.Name}}</span></label>
                         </div>
                       </li>
                     </ul>

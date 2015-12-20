@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <load-indicator loading="flags.searchResultLoading"></load-indicator>
+      <load-indicator loading="flags.searchResultLoading" class="search-load-indicator-cont"></load-indicator>
 
       <search-result-list-view ng-if="!flags.searchResultLoading && !flags.gridView"></search-result-list-view>
       <search-result-grid-view ng-if="!flags.searchResultLoading && flags.gridView"></search-result-grid-view>

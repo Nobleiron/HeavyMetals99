@@ -101,8 +101,7 @@
                   </div>
                   <hr>
                   <button type="submit" ng-click="login()"  class="btn btn-default flot-right sign_mybtn">
-                    <span ng-hide="loading">Sign In</span>
-                    <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
+                    <span btn-load-indicator="Login:Process">Sign In</span>
                   </button>
                 </form>
               </div>
@@ -149,8 +148,7 @@
                   <hr>
 
                   <button type="submit" ng-disabled="!UserRegisterData.termsAccepted" ng-click="register()" class="btn btn-default flot-right sign_mybtn">
-                    <span ng-hide="loading">Sign Up</span>
-                    <i class="fa fa-spinner fa-spin" ng-show="loading" style="font-size: 18px;"></i>
+                    <span btn-load-indicator="SignUp:Process">Sign Up</span>
                   </button>
 
                 </form>

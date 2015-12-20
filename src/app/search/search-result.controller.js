@@ -16,6 +16,8 @@ angular.module("HM_SearchMD")
         $scope.flags.gridView = $stateParams.view_type == "grid";
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
+        $scope.flags.stopPaging = false;
+        $scope.flags.categoriesFetched = true;
 
         $scope.params.query = $scope.params.query || '';
         _buildSearchTags();
@@ -55,18 +57,20 @@ angular.module("HM_SearchMD")
       }
 
       function addToWishList(product){
+        $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
         RestSV
           .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
-          .then(function(response){
+          .success(function(response){
             product.Is_in_catelog = true;
           })
-          .catch(function(){
+          .finally(function(){
+            $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
           })
       }
 
 
       function lazyLoadSearchResult(){
-        if($scope.flags.categoriesFetched){
+        if($scope.flags.categoriesFetched && !$scope.flags.stopPaging){
           $scope.params.query ? _getSearchResult() : _getProductListFromSelectedCategory();
         }
       }
@@ -77,20 +81,20 @@ angular.module("HM_SearchMD")
           $scope.flags.page = 1;
         }
         $scope.flags.searchResultLoading = true;
-        RestSV
-          .get( SearchCnst.productByCategory.url(),{
+        var browseProduct = RestSV.get( SearchCnst.productByCategory.url(),{
             page : $scope.flags.page,
             category_id : $scope.params.category_id
-          })
-          .then(function(response){
-            if(response.data.result == ""){
+          });
+
+        browseProduct.success(function(data){
+            if(data.result == ""){
               $scope.flags.stopPaging = true;
             }else{
-              $scope.results = $scope.results.concat(response.data.result.ProductList);
+              $scope.results = $scope.results.concat(data.result.ProductList);
               $scope.flags.page += 1 ;
             }
-          })
-          .finally(function(){
+          });
+        browseProduct.finally(function(){
             $scope.flags.resultFetching = false;
             if($scope.flags.page && !$scope.results.length){
               $scope.userQuery = true;
@@ -118,12 +122,12 @@ angular.module("HM_SearchMD")
               page : $scope.flags.page,
               category_id : $scope.params.category_id
             })
-            .then(function(response){
-              if(response.data.result == ""){
+            .success(function(data){
+              if(data.result == ""){
                 $scope.flags.stopPaging = true;
               }else{
 
-                $scope.results = $scope.results.concat(response.data.result.SearchResult);
+                $scope.results = $scope.results.concat(data.result.SearchResult);
 
                 $scope.flags.page += 1 ;
               }
