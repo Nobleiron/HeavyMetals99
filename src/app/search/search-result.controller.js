@@ -34,9 +34,6 @@ angular.module("HM_SearchMD")
           if(param == "query" && $scope.params.query){
             $scope.searchTags.push({name : "Search:" + $scope.params.query, tagType : 'query'});
           }
-          //if(param == "category_id" && $scope.params.category_id){
-          //  $scope.searchTags.push(_getCategoryById($scope.params[param]));
-          //}
         }
       }
 
