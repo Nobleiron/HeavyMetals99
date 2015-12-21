@@ -1149,16 +1149,4 @@ button:hover {
   bottom: 20px;
   right: 20px;
   font-size: 45px;
-  visibility: hidden;
-  transition: all 0.6s ease 0s;
-}
-
-.show-button {
-  visibility: visible;
-  transition: all 0.6s ease 0s;
-}
-
-.hide-button {
-  visibility: hidden;
-  transition: all 0.6s ease 0s;
 }
