@@ -1135,3 +1135,12 @@ button:hover {
 .search-load-indicator-cont.cssload-jumping{
   margin-top: 10px;
 }
+
+.category-name {
+  color: #000000;
+  text-decoration: none !important;
+}
+
+.active-sub-category {
+  color: #009ddc;
+}

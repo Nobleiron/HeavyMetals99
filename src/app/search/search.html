@@ -18,7 +18,10 @@
             <div ng-repeat="subcategories in selectedRootCategory.children" class="root-categories">
               <div>
                 <ul class="categories">
-                  <li ng-click="selectCategory(subcategories)"><h5 class="category-name on-hover-pointer" ng-checked="subcategories.Id == selectedCategory.Id" style="cursor: pointer;"><span class="cat_mar">{{subcategories.Name}}</span></h5></li>
+                  <li ng-click="selectCategory(subcategories)">
+                    <a class="category-name on-hover-pointer" ng-checked="subcategories.Id == selectedCategory.Id" ng-class="{'active-sub-category': subcategories.Id == selectedCategory.Id}">
+                      <span class="cat_mar">{{subcategories.Name}}</span>
+                    </a></li>
                   <li ng-show="subcategories.Id == selectedCategory.Id">
                     <ul class="sub-categories">
                       <li ng-repeat="childCategories in subcategories.children">
