@@ -1131,7 +1131,6 @@ button:hover {
   transition: all 0.6s ease 0s;
 }
 
-
 .search-load-indicator-cont.cssload-jumping{
   margin-top: 10px;
 }
@@ -1143,4 +1142,23 @@ button:hover {
 
 .active-sub-category {
   color: #009ddc;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 45px;
+  visibility: hidden;
+  transition: all 0.6s ease 0s;
+}
+
+.show-button {
+  visibility: visible;
+  transition: all 0.6s ease 0s;
+}
+
+.hide-button {
+  visibility: hidden;
+  transition: all 0.6s ease 0s;
 }

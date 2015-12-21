@@ -38,7 +38,7 @@
 
 
 
-      <search-result-list-view ng-if="!flags.gridView"></search-result-list-view>
+      <search-result-list-view ng-if="!flags.gridView" id="bottom"></search-result-list-view>
       <search-result-grid-view ng-if="flags.gridView"></search-result-grid-view>
       <load-indicator loading="flags.searchResultLoading" class="search-load-indicator-cont"></load-indicator>
 
@@ -113,3 +113,9 @@
 
 </div>
 
+
+<!-- scroll to top button -->
+<a ng-click="gotoTop()" class="scroll-to-top on-hover-pointer">
+    <i class="fa fa-arrow-circle-up"></i>
+</a>
+<!-- scroll to top button -->

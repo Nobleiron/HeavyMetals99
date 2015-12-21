@@ -1,7 +1,7 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
-    function($scope,$state, $stateParams, RestSV, SearchCnst){
+  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst', '$location', '$anchorScroll', '$window',
+    function($scope,$state, $stateParams, RestSV, SearchCnst, $location, $anchorScroll, $window){
 
 
       $scope.addToWishList = addToWishList;
@@ -138,5 +138,14 @@ angular.module("HM_SearchMD")
             })
         }
       }
+      // scroll to top button 
+      $scope.gotoTop = function() {
+        $location.hash('bottom');
+        $anchorScroll();
+      }
+
+      
+
+      // scroll to top button
 
     }]);
