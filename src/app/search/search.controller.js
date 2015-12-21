@@ -90,8 +90,4 @@ angular.module("HM_SearchMD")
         debugger
       }
 
-      $scope.abc = function() {
-        window.scrollTo(0,500)
-      }
-
     }]);
