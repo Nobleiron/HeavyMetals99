@@ -25,7 +25,7 @@
                   <li ng-show="subcategories.Id == selectedCategory.Id">
                     <ul class="sub-categories">
                       <li ng-repeat="attribute in subcategories.Attribute">
-                        <div>{{attribute.Attribute_name}}</div>
+                        <div><i class="fa fa-check" style="margin-right: 15px;"></i>{{attribute.Attribute_name}}</div>
                         <div class="checkbox filter_cat_tex1" ng-repeat="value in attribute.value">
                           <label><input type="checkbox" name="selectedAtrributes[]" value="{{value.attribute_value_name}}" ng-checked="selectedAttributes.indexOf(value.attribute_value_name) > -1" ng-click="selectCategoryAttributes(attribute.Attribute_name,value.attribute_value_name)"><span class="cat_mar">{{value.attribute_value_name}}</span></label>
                         </div>
