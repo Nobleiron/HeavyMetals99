@@ -19,12 +19,9 @@ angular.module("HM_SearchMD")
       function _initialize(){
         $scope.results = [];
         $scope.params = angular.extend({},$stateParams);
-        $scope.categoryAttributes = {}
-
-        $scope.selectedCategory = { };
-
+        $scope.selectedAttributes = {};
+        $scope.selectedCategory = {};
         $scope.selection = { type : "rent"};
-
         $scope.flags = {
           searchResultLoading : false,
           categoryCollapse : false,
@@ -69,10 +66,22 @@ angular.module("HM_SearchMD")
             });
             $scope.selectedRootCategory = $scope.rootCategories[0];
             $scope.categories = $scope.selectedRootCategory.children;
+            $scope.categories.forEach(function(category){
+              if(category.Attribute.length){
+                buildAttributeMap(category.Attribute)
+              }
+            });
+
+            debugger
+            console.log($scope.selectedAttributes);
             $scope.selectedCategory = $scope.categories[0];
             $scope.params.category_id = $scope.selectedCategory.Id;
           })
       }
+
+
+
+
 
       function selectRootCategory(rootCategory){
         $scope.selectedRootCategory = rootCategory;
@@ -86,8 +95,24 @@ angular.module("HM_SearchMD")
         $state.go('hm.search.results',$scope.params);
       }
 
-      function selectCategoryAttributes(){
-        debugger
+      function selectCategoryAttributes(attribute, attributeValue){
+        var idx = _.find($scope.selectedAttributes[attribute], function(x){ return x == attributeValue});
+        // is currently selected
+        if (idx) {
+          $scope.selectedAttributes.splice(idx, 1);
+        }
+        else {
+          $scope.selectedAttributes[attribute].push(attributeValue);
+        }
+
+        console.log($scope.selectedAttributes);
+      }
+
+
+      function buildAttributeMap(attributes){
+        attributes.forEach(function(attribute){
+          $scope.selectedAttributes[attribute.Attribute_name] = [];
+        });
       }
 
     }]);
