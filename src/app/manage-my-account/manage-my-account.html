@@ -1,44 +1,92 @@
+<section>
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="row">
+        <!-- START  Dashboard tab -->
+        <div class="col-sm-12 col-xs-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">Manage Account</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
+          <ul class="nav nav-pills nav-stacked my-verti-tab">
+            <li ng-click="closeFilter()">
+              <a data-toggle="pill" href="/#/dashboard">
+                <i class="fa fa-th-large my-verti-icon"></i>
+                <span class="sidebar-heading">Dashboard</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
+              <i class="fa fa-heart my-verti-icon catelog-icon"></i>
+              <span class="sidebar-heading">My Catalog</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/manage/jobsites">
+              <i class="fa fa-map-marker my-verti-icon"></i>
+              <span class="sidebar-heading">Manage Job Sites</span></a></li>
+            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
+              <i class="fa fa-user my-verti-icon"></i>
+              <span class="sidebar-heading">Manage My Account</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
+              <i class="fa fa-bookmark my-verti-icon"></i>
+              <span class="sidebar-heading">Quotes &amp;
+              Reservations</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
+              <i class="fa fa-usd my-verti-icon"></i>
+              <span class="sidebar-heading">Make a Payment</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
+              <i class="fa fa-file my-verti-icon"></i>
+              <span class="sidebar-heading">View Invoices</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
+              <span class="sidebar-heading">Requests</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
+              <span class="sidebar-heading">View Contracts</span></a></li>
 
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
-  <div class="tab-content">
-    <!-- START  Dashboard Content -->
-    <div id="dash" class="tab-pane fade in active">
+          </ul>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-bottm-line manage_job_tit">
-        Manage my Account
+        </div>
+        <!-- End  Dashboard tab -->
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
+          <div class="tab-content">
+            <!-- START  Dashboard Content -->
+            <div id="dash" class="tab-pane fade in active">
+
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-bottm-line manage_job_tit">
+                Manage my Account
+              </div>
+            </div>
+            <!-- End  Dashboard Content -->
+            <div id="mycat" class="tab-pane fade">
+              <h3>My Catalog</h3>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <!-- START  Manage Job Sites Content -->
+            <div id="jobsite" class="tab-pane fade">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+                Manage My Account
+              </div>
+            </div>
+            <!-- End  Manage Job Sites Content -->
+            <div id="myalc" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="quotes" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="makepay" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="req" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div id="viewcon" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- End  Dashboard Content -->
-    <div id="mycat" class="tab-pane fade">
-      <h3>My Catalog</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <!-- START  Manage Job Sites Content -->
-    <div id="jobsite" class="tab-pane fade">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-        Manage My Account
-      </div>
-    </div>
-    <!-- End  Manage Job Sites Content -->
-    <div id="myalc" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="quotes" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="makepay" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="req" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-    <div id="viewcon" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-  </div>
-</div>
+  </article>
+</section>
+
+

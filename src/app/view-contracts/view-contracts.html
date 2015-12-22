@@ -5,7 +5,7 @@
 		      <div class="row">
 		        <!-- START  Dashboard tab -->
 		        <div class="col-sm-12 col-xs-12 filt-btn">
-		          <button class="btn btn-default" ng-click="filterBtn()">Qoutes and Reservation</button>
+		          <button class="btn btn-default" ng-click="filterBtn()">View Contracts</button>
 		        </div>
 		        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
 		          <ul class="nav nav-pills nav-stacked my-verti-tab">
@@ -22,7 +22,7 @@
 		            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
 		              <i class="fa fa-user my-verti-icon"></i>
 		              <span class="sidebar-heading">Manage My Account</span></a></li>
-		            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
 		              <i class="fa fa-bookmark my-verti-icon"></i>
 		              <span class="sidebar-heading">Quotes &amp;
 		              Reservations</span></a></li>
@@ -34,7 +34,7 @@
 		              <span class="sidebar-heading">View Invoices</span></a></li>
 		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
 		              <span class="sidebar-heading">Requests</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
+		            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
 		              <span class="sidebar-heading">View Contracts</span></a></li>
 
 		          </ul>
@@ -43,13 +43,14 @@
 		        <!-- End  Dashboard tab -->
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
 				  <div class="tab-content">
-				    <!-- START  Dashboard Content -->
+				    <!-- START  Payment Content -->
 				    <div id="dash" class="tab-pane fade in active">
 
 				      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-bottm-line manage_job_tit">
-				        Quota and Reservations
+				        Contracts
 				      </div>
 				    </div>
+				    <!-- End Payment Content -->
 				  </div>
 				</div>
 			</div>

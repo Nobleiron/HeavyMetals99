@@ -61,7 +61,7 @@ angular.module("HM_RoutesMD")
           url : '/change/password',
           templateUrl : 'app/change-password/change-password.html'
         },
-        'hm.dashboard.invoices' : {
+        'hm.invoices' : {
           url: '/invoices',
           templateUrl: 'app/invoices/invoices.html',
           controller: 'HM_InvoicesCtrl'
@@ -106,24 +106,37 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/manage-jobsites/manage-jobsites.html',
           controller: 'HM_ManageJobSitesCtrl'
         },
-        'hm.requests' : {
-          url: '/requests',
-          templateUrl: 'app/requests/requests.html',
-          controller: 'HM_RequestsCtrl'
-        },
-        'hm.dashboard.manageMyAccount' : {
+        // 'hm.requests' : {
+        //   url: '/requests',
+        //   templateUrl: 'app/requests/requests.html',
+        //   controller: 'HM_RequestsCtrl'
+        // },
+        'hm.manageMyAccount' : {
           url: '/manage-my-account',
           templateUrl: 'app/manage-my-account/manage-my-account.html',
           controller: 'HM_ManageMyAccountCtrl'
         },
-        'hm.dashboard.quotaNReservations' : {
+        'hm.quotaNReservations' : {
           url: '/quota-n-reservations',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
           controller: 'HM_QuotaNReservationsCtrl'
         },
-        'hm.dashboard.myCatalogue' : {
+        'hm.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
+          controller: 'HM_MyCatalogueCtrl'
+        },
+        'hm.makePayment' : {
+          url: '/make-payment',
+          templateUrl: 'app/make-payment/make-payment.html'
+        },
+        'hm.requests' : {
+          url: '/requests',
+          templateUrl: 'app/requests/requests.html'
+        },
+        'hm.viewContracts' : {
+          url: '/view-contracts',
+          templateUrl: 'app/view-contracts/view-contracts.html',
           controller: 'HM_MyCatalogueCtrl'
         },
         'hm.help': {

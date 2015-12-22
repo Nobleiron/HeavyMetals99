@@ -1,67 +1,114 @@
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-  <div class="content-wrapper1">
-    <div id="dash" class="tab-pane fade in active">
+<section>
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="row">
+        <!-- START  Dashboard tab -->
+        <div class="col-sm-12 col-xs-12 filt-btn">
+          <button class="btn btn-default" ng-click="filterBtn()">View Invoices</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
+          <ul class="nav nav-pills nav-stacked my-verti-tab">
+            <li ng-click="closeFilter()">
+              <a data-toggle="pill" href="/#/dashboard">
+                <i class="fa fa-th-large my-verti-icon"></i>
+                <span class="sidebar-heading">Dashboard</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
+              <i class="fa fa-heart my-verti-icon catelog-icon"></i>
+              <span class="sidebar-heading">My Catalog</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/manage/jobsites">
+              <i class="fa fa-map-marker my-verti-icon"></i>
+              <span class="sidebar-heading">Manage Job Sites</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
+              <i class="fa fa-user my-verti-icon"></i>
+              <span class="sidebar-heading">Manage My Account</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
+              <i class="fa fa-bookmark my-verti-icon"></i>
+              <span class="sidebar-heading">Quotes &amp;
+              Reservations</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
+              <i class="fa fa-usd my-verti-icon"></i>
+              <span class="sidebar-heading">Make a Payment</span></a></li>
+            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
+              <i class="fa fa-file my-verti-icon"></i>
+              <span class="sidebar-heading">View Invoices</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
+              <span class="sidebar-heading">Requests</span></a></li>
+            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
+              <span class="sidebar-heading">View Contracts</span></a></li>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
-        Invoices
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
-        <input type="text" placeholder="Search Invoices" ng-model="query" ng-change="fetchInvoices()" class="form-control pull-right mng-search-bar">
-        <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col" style="padding-bottom: 20px;">
-        <button class="btn btn-default pull-right manage-job-btn deactivate list" ng-class="{'active' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
-        <button class="btn btn-default pull-right manage-job-btn deactivate map" ng-click="toggleInvoiceView(false)" ng-class="{'active' : !flags.outstanding}">All Invoices</button>
-      </div>
-  </div>
-    <!-- <section class="content-header">
-      <h1>
-        Invoices
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Invoices</li>
-      </ol>
-      <div class="clearfix">
-        <div class="box-tools pull-left">
-          <div class="has-feedback">
-            <input type="text" class="form-control input-sm" placeholder="Search Invoices">
-            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+          </ul>
+
+        </div>
+        <!-- End  Dashboard tab -->
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+          <div class="content-wrapper1">
+            <div id="dash" class="tab-pane fade in active">
+
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
+                Invoices
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
+                <input type="text" placeholder="Search Invoices" ng-model="query" ng-change="fetchInvoices()" class="form-control pull-right mng-search-bar">
+                <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col" style="padding-bottom: 20px;">
+                <button class="btn btn-default pull-right manage-job-btn deactivate list" ng-class="{'active' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
+                <button class="btn btn-default pull-right manage-job-btn deactivate map" ng-click="toggleInvoiceView(false)" ng-class="{'active' : !flags.outstanding}">All Invoices</button>
+              </div>
+          </div>
+            <!-- <section class="content-header">
+              <h1>
+                Invoices
+              </h1>
+              <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Invoices</li>
+              </ol>
+              <div class="clearfix">
+                <div class="box-tools pull-left">
+                  <div class="has-feedback">
+                    <input type="text" class="form-control input-sm" placeholder="Search Invoices">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+                </div>
+
+                <div class=" pull-right">
+                  All Invoices/ Outstanding
+                </div>
+              </div>
+            </section> -->
+            <br>
+            <table class="table table-striped" ng-if="invoices.length">
+              <thead>
+              <tr>
+                <th>Invoices</th>
+                <th>Job Sites</th>
+                <th>Contract #</th>
+                <th>Purchase Order</th>
+                <th>Total</th>
+                <th>Due Amount</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="invoice in invoices">
+                <td class="invoice-no">{{invoice.InvoiceID}}</td>
+                <td>{{invoice.Site_Name}}</td>
+                <td>{{invoice.Source}}</td>
+                <td>{{invoice.Purchase_Order_ID}}</td>
+                <td>{{invoice.Total}}</td>
+                <td>{{invoice.Balance}}</td>
+                <td>
+                  <a href="#"><i class="fa fa-eye"></i></a>
+                  <a href="#"><i class="fa fa-download"></i></a></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-
-        <div class=" pull-right">
-          All Invoices/ Outstanding
-        </div>
       </div>
-    </section> -->
-    <br>
-    <table class="table table-striped" ng-if="invoices.length">
-      <thead>
-      <tr>
-        <th>Invoices</th>
-        <th>Job Sites</th>
-        <th>Contract #</th>
-        <th>Purchase Order</th>
-        <th>Total</th>
-        <th>Due Amount</th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr ng-repeat="invoice in invoices">
-        <td class="invoice-no">{{invoice.InvoiceID}}</td>
-        <td>{{invoice.Site_Name}}</td>
-        <td>{{invoice.Source}}</td>
-        <td>{{invoice.Purchase_Order_ID}}</td>
-        <td>{{invoice.Total}}</td>
-        <td>{{invoice.Balance}}</td>
-        <td>
-          <a href="#"><i class="fa fa-eye"></i></a>
-          <a href="#"><i class="fa fa-download"></i></a></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    </div>
+  </article>
+</section>
