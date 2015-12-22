@@ -71,9 +71,6 @@ angular.module("HM_SearchMD")
                 buildAttributeMap(category.Attribute)
               }
             });
-
-            debugger
-            console.log($scope.selectedAttributes);
             $scope.selectedCategory = $scope.categories[0];
             $scope.params.category_id = $scope.selectedCategory.Id;
           })

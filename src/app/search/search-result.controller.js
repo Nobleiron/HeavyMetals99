@@ -78,7 +78,7 @@ angular.module("HM_SearchMD")
           $scope.flags.page = 1;
         }
         $scope.flags.searchResultLoading = true;
-        var browseProduct = RestSV.get( SearchCnst.productByCategory.url(),{
+        var browseProduct = RestSV.post( SearchCnst.productByCategory.url(),{
             page : $scope.flags.page,
             category_id : $scope.params.category_id
           });
@@ -114,7 +114,7 @@ angular.module("HM_SearchMD")
           $scope.flags.resultFetching = true;
           $scope.flags.searchResultLoading = true;
           RestSV
-            .get( SearchCnst.search.url() ,{
+            .post( SearchCnst.search.url() ,{
               search_text : normalizeSearchQuery($scope.params.query),
               page : $scope.flags.page,
               category_id : $scope.params.category_id
@@ -123,9 +123,7 @@ angular.module("HM_SearchMD")
               if(data.result == ""){
                 $scope.flags.stopPaging = true;
               }else{
-
                 $scope.results = $scope.results.concat(data.result.SearchResult);
-
                 $scope.flags.page += 1 ;
               }
             })
@@ -138,13 +136,13 @@ angular.module("HM_SearchMD")
             })
         }
       }
-      // scroll to top button 
+      // scroll to top button
       $scope.gotoTop = function() {
         $location.hash('bottom');
         $anchorScroll();
       }
 
-      
+
 
       // scroll to top button
 

@@ -42,11 +42,11 @@
       <search-result-grid-view ng-if="flags.gridView"></search-result-grid-view>
       <load-indicator loading="flags.searchResultLoading" class="search-load-indicator-cont"></load-indicator>
 
-      <div class="row" style="margin-top: 10px;text-align: center;" ng-if="searchTags.length && !flags.searchResultLoading">
-        <div class="col-md-12 text-col">
-          <span class="tag label label-info" ng-repeat="tag in searchTags">{{tag.name}}<a ng-click="clearSearchTag(tag.tagType)">x</a></span>
-        </div>
-      </div>
+      <!--<div class="row" style="margin-top: 10px;text-align: center;" ng-if="searchTags.length && !flags.searchResultLoading">-->
+        <!--<div class="col-md-12 text-col">-->
+          <!--<span class="tag label label-info" ng-repeat="tag in searchTags">{{tag.name}}<a ng-click="clearSearchTag(tag.tagType)">x</a></span>-->
+        <!--</div>-->
+      <!--</div>-->
 
       <div class="row no-search-row" ng-if="userQuery">
         <div class="col-md-12 text-col">
