@@ -77,27 +77,30 @@ angular.module("HM_SearchMD")
           $scope.results = [];
           $scope.flags.page = 1;
         }
-        $scope.flags.searchResultLoading = true;
-        var browseProduct = RestSV.post( SearchCnst.productByCategory.url(),{
-            page : $scope.flags.page,
-            category_id : $scope.params.category_id
+        if(!$scope.flags.stopPaging && !$scope.flags.resultFetching) {
+          $scope.flags.resultFetching = true;
+          $scope.flags.searchResultLoading = true;
+          var browseProduct = RestSV.get(SearchCnst.productByCategory.url(), {
+            page: $scope.flags.page,
+            category_id: $scope.params.category_id
           });
 
-        browseProduct.success(function(data){
-            if(data.result == ""){
+          browseProduct.success(function (data) {
+            if (data.result == "") {
               $scope.flags.stopPaging = true;
-            }else{
+            } else {
               $scope.results = $scope.results.concat(data.result.ProductList);
-              $scope.flags.page += 1 ;
+              $scope.flags.page += 1;
             }
           });
-        browseProduct.finally(function(){
+          browseProduct.finally(function () {
             $scope.flags.resultFetching = false;
-            if($scope.flags.page && !$scope.results.length){
+            if ($scope.flags.page && !$scope.results.length) {
               $scope.userQuery = true;
             }
             $scope.flags.searchResultLoading = false;
           })
+        }
       }
 
       function normalizeSearchQuery(str){
