@@ -64,7 +64,7 @@
     </div>
     <div class="col-md-3 right-btn-col">
       <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn btn-default my-reserve">Reserve</a>
-      <button type="button" class="btn btn-default add-list" ng-click="addToWishList(item)">
+      <button type="button" class="btn btn-default add-list" ng-click="addToOrRemoveFromWishList(item)">
         <span btn-load-indicator="Add:Wishlist:Process" btn-uid="item.Product_Id">{{item.Is_in_catelog ? 'Added to Wishlist': 'Add to Wishlist'}}</span>
       </button>
     </div>

@@ -20,7 +20,7 @@ angular.module("HM_SearchMD")
         $scope.results = [];
         $scope.params = angular.extend({},$stateParams);
         $scope.selectedAttributes = {};
-        $scope.selectedCategory = {};
+        //$scope.selectedCategory = {};
         $scope.selection = { type : "rent"};
         $scope.flags = {
           searchResultLoading : false,
@@ -29,6 +29,7 @@ angular.module("HM_SearchMD")
           page : 1,
           resultFetching : false,
           stopPaging : false,
+          selectedCategory : {},
           categoriesFetched: false,
           userQuery : false
         };
@@ -71,24 +72,38 @@ angular.module("HM_SearchMD")
                 buildAttributeMap(category.Attribute)
               }
             });
-            $scope.selectedCategory = $scope.categories[0];
-            $scope.params.category_id = $scope.selectedCategory.Id;
+            $scope.flags.selectedCategory = $scope.params.category_id ? _.find($scope.categories,function(x){
+              return x.Id == $scope.params.category_id;
+            }) : $scope.categories[0];
+            $scope.params.category_id = $scope.flags.selectedCategory.Id;
           })
       }
 
+
+      function selectDefaultCategory(){
+
+      }
+
+
+      function _getCategoryById(category_id){
+        var selectedCategory= _.find($scope.categories,function(x){
+          return x.Id == category_id;
+        });
+        return { name : 'Filter:'+ selectedCategory.Name, tagType : 'category_id'};
+      }
 
 
 
 
       function selectRootCategory(rootCategory){
         $scope.selectedRootCategory = rootCategory;
-        $scope.selectedCategory = $scope.selectedRootCategory.children[0];
+        $scope.flags.selectedCategory = $scope.selectedRootCategory.children[0];
       }
 
       function selectCategory(category){
-        $scope.selectedCategory = category;
+        $scope.flags.selectedCategory = category;
         $scope.flags.page = 1;
-        $scope.params.category_id = $scope.selectedCategory.Id;
+        $scope.params.category_id = $scope.flags.selectedCategory.Id;
         $state.go('hm.search.results',$scope.params);
       }
 

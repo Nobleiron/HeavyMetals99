@@ -4,13 +4,13 @@ angular.module("HM_SearchMD")
     function($scope,$state, $stateParams, RestSV, SearchCnst, $location, $anchorScroll, $window){
 
 
-      $scope.addToWishList = addToWishList;
+      $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
 
       $scope.lazyLoadSearchResult = lazyLoadSearchResult;
 
       $scope.clearSearchTag = clearSearchTag;
 
-      !angular.equals({},$scope.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
+      !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
         $scope.flags.gridView = $stateParams.view_type == "grid";
@@ -18,6 +18,9 @@ angular.module("HM_SearchMD")
         jQuery.extend($scope.params,$stateParams);
         $scope.flags.stopPaging = false;
         $scope.flags.categoriesFetched = true;
+        $scope.params.category_id && ($scope.flags.selectedCategory =  _.find($scope.categories,function(x){
+          return x.Id == $scope.params.category_id;
+        }));
 
         $scope.params.query = $scope.params.query || '';
         _buildSearchTags();
@@ -46,23 +49,30 @@ angular.module("HM_SearchMD")
         $state.go('hm.search.results', $scope.params);
       }
 
-      function _getCategoryById(category_id){
-       var selectedCategory= _.find($scope.categories,function(x){
-          return x.Id == category_id;
-        });
-        return { name : 'Filter:'+ selectedCategory.Name, tagType : 'category_id'};
-      }
 
-      function addToWishList(product){
+
+      function addToOrRemoveFromWishList(product){
         $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
-        RestSV
-          .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
-          .success(function(response){
-            product.Is_in_catelog = true;
-          })
-          .finally(function(){
-            $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
-          })
+        if(product.Is_in_catelog){
+          RestSV
+            .delete( SearchCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
+            .success(function(response){
+              product.Is_in_catelog = false;
+            })
+            .finally(function(){
+              $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+            });
+        }else{
+          RestSV
+            .post( SearchCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
+            .success(function(response){
+              product.Is_in_catelog = true;
+            })
+            .finally(function(){
+              $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+            });
+        }
+
       }
 
 

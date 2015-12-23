@@ -16,7 +16,7 @@ angular.module('HM_SearchMD')
         return  '/products/category'
       }
     },
-    addToWishList : {
+    addToOrRemoveFromWishList : {
       url : function(){
         return '/catelog'
       }
