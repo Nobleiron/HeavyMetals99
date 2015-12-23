@@ -433,16 +433,16 @@ a:focus { color: #0099cc;
 
 
 /******************reserve-success***********************/
-.req_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 20px; color: #666666; line-height: 42px;}
+.req_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 18px; color: #666666; line-height: 42px;}
 .print_btn{background: #009ddc; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 14px;}
-.theme_clr{font-size: 20px; color: #009ddc;}
+.theme_clr{font-size: 18px; color: #009ddc;}
 .req_mar{margin: 10px 0 0 0;}
-.comferm_email_tex{color: #666666; font-size: 18px;}
+.comferm_email_tex{color: #666666; font-size: 16px;}
 .req_dash_botam{border-bottom: dashed 1px;}
 .req_tab{font-size: 18px ;color: #666666;}
-.req_tabal_lf{width: 30%; font-family: 'Open Sans', sans-serif; font-weight: 500; }
+.req_tabal_lf{width: 50%; font-family: 'Open Sans', sans-serif; font-weight: 500; }
 .req_tab > tbody > tr > td, .req_tab > tbody > tr > th, .req_tab > tfoot > tr > td, .req_tab > tfoot > tr > th, .req_tab > thead > tr > td, .req_tab > thead > tr > th{border: none;}
-
+.reserve-success-heading tbody tr td {padding: 8px 0 8px 0; font-size: 16px;}
 /******************order-history***********************/
 .gas_title{color: #666666; font-size: 20px;}
 .rent_title{color: #009ddc; font-size: 18px;}
@@ -472,7 +472,7 @@ a:focus { color: #0099cc;
 .product_menu ul{margin: 0; padding: 0;}
 .product_menu ul li{display: inline;}
 .product_menu ul li a{   color: #009ddc;
-                         font-size: 16px;
+                         font-size: 15px;
                          line-height: 35px;
                          padding: 0 5px;}
 .product_menu ul li a.active{ color: #666;}
@@ -480,14 +480,14 @@ a:focus { color: #0099cc;
 .small_product_thumb{margin: 0 0 32px 0;}
 .product_box{border: solid 2px #f5f5f5;}
 .clear{clear: both;}
-.productname_tit{ font-size: 30px; padding: 0 0 0 10px; margin: 0;}
+.productname_tit{ font-size: 20px; padding: 0 0 0 10px; margin: 0;}
 .productname_tit a{color: #666666;  }
-.procutby{color: #666666; font-size: 20px; padding: 0 0 0 10px;}
+.procutby{color: #666666; font-size: 15px; padding: 0 0 0 10px;}
 .procutby_vendor{ }
-.procutby_vendor a{color: #009ddc; font-size: 20px; }
-.cunsult{color: #666666; font-size: 18px;}
+.procutby_vendor a{color: #009ddc; font-size: 15px; }
+.cunsult{color: #666666; font-size: 16px;}
 .cunsult a{color: #ff5600; font-weight: 500;}
-.daily_price_product{font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 600;}
+.daily_price_product{font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 600;}
 .daily_title_product{font-family: 'Open Sans', sans-serif;margin: 0;}
 .now-reserve{color: #009ddc; border: solid 1px #009ddc; padding:10px 18px;}
 .inq_btn{background: #009ddc; color: #fff;}
@@ -498,31 +498,32 @@ a:focus { color: #0099cc;
 .product_pics{background: #ebebeb; min-height: 419px;}
 .rivew_pic{width: 70px; height: 70px; border-radius: 50%; background: #ebebeb;}
 .prodetil_main{margin:25px 0 0 0;}
-.rate_user{ font-size: 18px; padding: 0 25px 0 20px;}
-.read_reivew{ color: #09a0dd; font-weight: 500; font-size: 18px;}
-.ten_botam{padding: 0 0 10px 0;}
+.rate_user{ font-size: 15px; padding: 0 25px 0 20px;}
+.read_reivew{ color: #009ddc; font-weight: 500; font-size: 14px;}
+.ten_botam{padding: 0 0 10px 10px;}
 .ten_top_botam{margin: 10px 0;}
-.can_dolar_product{font-size: 18px; padding: 0 10px 0 0;  text-decoration: line-through;}
-.reg_dolar_product{color: #009ddc; font-size: 30px; padding:0 10px 0 0px;}
-.save_dol{ font-size: 16px;}
-.avelble_status{font-size: 16px; margin: 15px 0 0 0;}
+.can_dolar_product{font-size: 16px; padding: 0 10px 0 0;  text-decoration: line-through;}
+.reg_dolar_product{color: #009ddc; font-size: 24px; padding:0 3px 0 0px;}
+.save_dol{ font-size: 13px;}
+.avelble_status{font-size: 16px; margin: 10px 0 0 0;}
 .day_status{color: #ff7934; font-size: 16px;}
-.caldil{margin: 0 0 0 15px;  font-size: 18px;}
-.check_rate{color: #009ddc; border: solid 1px #009ddc; padding:10px 18px; margin: 0 10px 0 10px;}
-.we_can{font-size: 18px;}
+.caldil{margin: 0 0 0 15px;  font-size: 16px;}
+.check_rate{color: #009ddc; border: solid 1px #009ddc; padding:6px 18px; margin: 0 10px 0 10px; font-size: 13px;}
+.we_can{font-size: 16px;}
 .we_can_price{font-weight: 600;}
 .enter_zip{border: solid 1px #cccccc; border-radius: 5px;  margin: 0 0 0 35px;
            padding: 8px 0 8px 8px;
-           width: 150px;}
+           width: 150px;
+           font-size: 13px;}
 .go_back{}
-.go_back a{line-height: 35px;  font-size: 16px; color: #009ddc;}
+.go_back a{line-height: 35px;  font-size: 15px; color: #009ddc;}
 .product_or{position: relative; top: -13px; font-size: 16px; color: #666666;}
 .product_dash_lf{width:47%;}
 .product_dash_rg{width:47%;}
 .or_main{margin: 20px 0 0 0;}
-.product_info_tit{font-size: 20px; font-weight: 600;}
-.product_info_p{font-size: 19px;}
-.work_height{font-size: 18px; font-weight: 600; margin: 13px 0;}
+.product_info_tit{font-size: 18px; font-weight: 600;}
+.product_info_p{font-size: 15px;}
+.work_height{font-size: 15px; font-weight: 600; margin: 13px 0;}
 .work_ft{font-weight: normal; }
 .push_up{margin: 12px 0 0 0;}
 .rievew_rate{ font-size: 30px;
@@ -538,7 +539,7 @@ a:focus { color: #0099cc;
 .ovear_all{font-size: 18px; font-weight: 600;}
 .veary_tex{font-size: 30px; font-weight: 600;}
 .title_form{margin: 15px 0 0 0;}
-.mouse_search{color: #09a0dd; margin: 7px 11px 0 0;  text-align: right; font-size: 16px;}
+.mouse_search{color: #009ddc; margin: 7px 11px 0 0;  text-align: right; font-size: 14px;}
 .panel-group .panel {
   border-color: transparent;
   box-shadow: none;
@@ -1060,6 +1061,7 @@ a:focus { color: #0099cc;
 .foot-btn {
   font-size: 12px;
   font-weight: 400;
+  height: 34px;
 }
 
 .news-input {
@@ -1153,4 +1155,139 @@ button:hover {
 
 .catelog-icon {
   color: #666666;
+}
+
+.fullwidth{
+  width: 100%
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.topmargin {
+  margin-top: 0;
+}
+
+.bottommargin {
+  margin-bottom: 0;
+}
+
+.leftmargin {
+  margin-left: 0;
+}
+
+.rightmargin {
+  margin-right: 0;
+}
+
+.noborder {
+  border: 0;
+}
+
+.forgot-pass-cancel {
+  margin-left: 10px; 
+  padding: 8px 10px;
+}
+
+.forgot-pass-btn {
+  width: auto; 
+  min-width: 148px;
+}
+
+.loading-spinner {
+  font-size: 18px;
+}
+
+.prof-btn {
+  box-shadow: none !important;
+  outline: none !important; 
+}
+
+.help-heading-col {
+  padding-top: 23px;
+}
+
+.your-need {
+  height: 38px;
+}
+
+.help-request-btn {
+  padding-bottom: 16px;
+}
+
+.to-from-div {
+  margin-bottom: 10px;
+}
+
+.invoices-btn-div {
+  padding-bottom: 20px;
+}
+
+.logout-div {
+  min-height: 300px;
+}
+
+.logout-div h4 {
+  margin: 20px 0 0 40px;
+}
+
+.order-history-modal {
+  overflow: hidden;
+}
+
+.portal-access-ul {
+  padding-left: 40px; 
+  list-style-type: disc;
+}
+
+.toppadding {
+  padding-top: 0;
+}
+
+.pre-collapse {
+  border-color: #009ddc; 
+}
+
+.no-search-desc {
+  text-align: center; 
+  margin-top: 20px;
+}
+
+.search-main-contain {
+  min-height: 400px;
+}
+
+.pull-center {
+  text-align: center;
+}
+
+.equip-reserve-img {
+  width: 100%; 
+  max-width: 350px;
+}
+
+.change-pass {
+  color: #666666;
+  font-size: 20px;
+}
+
+.activate-user-div {
+  min-height: 185px;
+}
+
+.activate-user-div h4 {
+  margin: 20px 0 20px 40px;
+}
+
+.check-mark {
+  font-size: 45px;
+}
+
+.tour-col {
+  padding-left: 10px;
 }

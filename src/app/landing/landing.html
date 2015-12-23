@@ -4,7 +4,7 @@
       <div class="container nopadding">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header landing-navbar-header">
-          <button type="button" class="navbar-toggle collapsed landing-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true" style="margin-top: 0;">
+          <button type="button" class="navbar-toggle collapsed landing-header topmargin" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -270,7 +270,7 @@
             </div>
             <div class="req-call-div left-link-div">
               <span class="glyphicon glyphicon-earphone"></span>
-              <span class="req_call req_call-small" style="margin: 0;"><a href="/#/request-callback">  Request Callback</a></span>
+              <span class="req_call req_call-small nomargin"><a href="/#/request-callback">  Request Callback</a></span>
             </div>
             <div class="sign-in-div left-link-div" ng-if="!userObj">
               <span class="glyphicon glyphicon-log-in"></span>
@@ -302,7 +302,7 @@
                  typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                  typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-wait-ms="1000" typeahead-on-select="selectSearchedItem($item, $model, $label)">
 
-          <button class="btn btn-default my_search" type="submit" style=" " ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+          <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
 
         </form>
 
@@ -320,7 +320,7 @@
       <div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories | limitTo:6">
         <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer" ui-sref="hm.search.results({category_id : category.Id })">
 
-          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" style="width: 100%;height:100%;"></div>
+          <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" class="fullwidth fullheight"></div>
           <div class="lift_name col-lg-12 col-sm-12 nopadding"><a ui-sref="hm.search.results({category_id : category.Id })">{{category.Name}}</a></div>
 
         </div>
@@ -650,7 +650,7 @@
             Get news on our latest promotions, products and services. We'll never share your email address and you can opt out any time
           </p>
           <input type="text" placeholder="Enter Your Email Id" class="form-control news-input">
-          <button class="btn btn-default sell-equ foot-btn" style="height: 34px;">Subscribe</button>
+          <button class="btn btn-default sell-equ foot-btn">Subscribe</button>
           <!-- <button type="button" class="btn btn-default sell-equ  foot-btn" ng-click="$state.go('hm.sellEquipment')">Sell Your Equipment</button> -->
         </div>
       </div>
