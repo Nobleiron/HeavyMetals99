@@ -1060,6 +1060,7 @@ a:focus { color: #0099cc;
 .foot-btn {
   font-size: 12px;
   font-weight: 400;
+  height: 34px;
 }
 
 .news-input {
@@ -1153,4 +1154,32 @@ button:hover {
 
 .catelog-icon {
   color: #666666;
+}
+
+.fullwidth{
+  width: 100%
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.topmargin {
+  margin-top: 0;
+}
+
+.bottommargin {
+  margin-bottom: 0;
+}
+
+.leftmargin {
+  margin-left: 0;
+}
+
+.rightmargin {
+  margin-right: 0;
 }
