@@ -321,3 +321,23 @@ html, body {
 .root-categories{
   margin-bottom: 15px;
 }
+
+.fadable {
+  transition: 0s linear all;
+}
+.fadable.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+  transition: 0.4s linear all;
+}
+.fadable.ng-hide-remove.ng-hide-remove-active {
+  opacity: .5;
+}
+.fadable.ng-hide-add {
+  opacity: .5;
+  display: block !important;
+  transition: 0.4s linear all;
+}
+.fadable.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
