@@ -433,16 +433,16 @@ a:focus { color: #0099cc;
 
 
 /******************reserve-success***********************/
-.req_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 20px; color: #666666; line-height: 42px;}
+.req_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 18px; color: #666666; line-height: 42px;}
 .print_btn{background: #009ddc; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 14px;}
-.theme_clr{font-size: 20px; color: #009ddc;}
+.theme_clr{font-size: 18px; color: #009ddc;}
 .req_mar{margin: 10px 0 0 0;}
-.comferm_email_tex{color: #666666; font-size: 18px;}
+.comferm_email_tex{color: #666666; font-size: 16px;}
 .req_dash_botam{border-bottom: dashed 1px;}
 .req_tab{font-size: 18px ;color: #666666;}
-.req_tabal_lf{width: 30%; font-family: 'Open Sans', sans-serif; font-weight: 500; }
+.req_tabal_lf{width: 50%; font-family: 'Open Sans', sans-serif; font-weight: 500; }
 .req_tab > tbody > tr > td, .req_tab > tbody > tr > th, .req_tab > tfoot > tr > td, .req_tab > tfoot > tr > th, .req_tab > thead > tr > td, .req_tab > thead > tr > th{border: none;}
-
+.reserve-success-heading tbody tr td {padding: 8px 0 8px 0; font-size: 16px;}
 /******************order-history***********************/
 .gas_title{color: #666666; font-size: 20px;}
 .rent_title{color: #009ddc; font-size: 18px;}

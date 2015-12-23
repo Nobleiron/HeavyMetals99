@@ -168,6 +168,10 @@
     font-size: 13px;
   }
 
+  .req-confirm {
+    text-align: left;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
