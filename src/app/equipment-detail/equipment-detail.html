@@ -3,7 +3,7 @@
   <article class="main-cantain">
     <div class="container">
 
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 procuct_bor_bot noopad_mobile">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 procuct_bor_bot noopad_mobile">
         <div class="product_menu">
           <ul>
             <li><a href="#">Home &gt; </a></li>
@@ -13,7 +13,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 procuct_bor_bot text-right go_back noopad_mobile">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 procuct_bor_bot text-right go_back noopad_mobile">
         <a href=""> &lt;  Go Back to Listing Page</a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 prodetil_main">
@@ -35,16 +35,18 @@
         <h4 class="productname_tit"><a href="#">{{equipment.Product_Name}}</a></h4>
         <h5 class="procutby">by <span class="procutby_vendor"><a href="#">{{equipment.MAKE}}</a></span></h5>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_dash_botam ten_botam rating-div">
-          <a href="#"> <i class="fa fa-star fa-2x"></i>
-            <i class="fa fa-star fa-2x"></i>
-            <i class="fa fa-star fa-2x"></i>
-            <i class="fa fa-star-half-o fa-2x"></i>
-            <i class="fa fa-star-o fa-2x"></i></a>
+          <a href="#"> <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i></a>
           <span class="rate_user">Rated by 5 users</span>
           <span class="read_reivew">Read Reviews</span>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <h3 class="cunsult">Consult before Renting. Talk to our <a href="#">Rental Experts</a></h3></div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ten_top_botam">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tour-col"> 
+          <h3 class="cunsult">Consult before Renting. Talk to our <a href="#">Rental Experts</a></h3>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ten_top_botam nopadding">
           <div class="daily_ul">
             <ul>
               <li>
@@ -65,7 +67,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding you-save">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 you-save tour-col">
           <span class="can_dolar_product">$260</span><span class="reg_dolar_product">$129</span>
           <span class="save_dol">(you save 10%)</span>
         </div>
@@ -78,13 +80,13 @@
           <div class="in-block req_dash_botam product_dash_rg"></div>
         </div>
         <!--                        <div class="req_dash_botam col-lg-12 ten_botam"></div>-->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center ten_top_botam">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam add-wish-btn">
           <button class="btn btn-default now-reserve col-lg-12" type="button">
             <span ng-if="!equipment.addedToWishlist">Add to Wishlist</span>
             <span ng-if="equipment.addedToWishlist">Added to Wishlist</span>
           </button>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center ten_top_botam">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam">
           <a class="btn btn-default now-reserve col-lg-12" type="button" ui-sref="hm.reserveEquipment({id: equipment.Product_Id})">Reserve Now</a>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ten_top_botam">
