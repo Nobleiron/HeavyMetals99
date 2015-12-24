@@ -181,7 +181,7 @@
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .main_bg {
     background-size: 100% 100%;
     min-height: 500px;
@@ -373,12 +373,15 @@
     width: 100%;
     margin-left: 0;
     margin-bottom: 15px;
-    max-width: 290px;
-    float: none;
+    max-width: 230px;
   }
 
   .job-ste-box-small ul li:first-child {
-    margin: 0 0 15px 0;
+    margin: 0 1.5% 15px 0;
+  }
+
+  .job-ste-box ul li:last-child {
+    margin: 0 0 0 0;
   }
 
   .update_date_number {
@@ -494,10 +497,6 @@
     width: 45%;
   }
 
-  .cart_menu .cart_noti {
-    left: 20px;
-  }
-
   .cart_menu .noti{
     left: 72px;
   }
@@ -521,6 +520,31 @@
 
   .reg-success .panel-body {
     font-size: 14px;
+  }
+
+  .upcoming-small {
+    padding: 0
+  }
+
+  .upcoming-small .upcoming-title {
+    font-size: 15px;
+  }
+
+  .upcoming-small .update_date {
+    width: 20%;
+  }
+
+  .upcoming-small .update_date_pic {
+    width: 32%;
+  }
+
+  .upcoming-small .update_date_title {
+    padding: 0 0 0 4%;
+  }
+
+  .upcoming-small .update_date_title p,
+  .eqe_text {
+    font-size: 13px;
   }
 }
 
@@ -577,8 +601,9 @@
   .tech-menu ul li h2 {
     font-size: 20px;
   }
-  .pro_pic {
-    margin: 0;
+
+  .user-div {
+    padding: 0;
   }
   .cart_menu ul li a {
 
@@ -636,6 +661,10 @@
   .root-category li a  {
     padding: 10px 3px !important;
     font-size: 13px !important;
+  }
+
+  .job-ste-box-small ul li {
+    max-width: 320px;
   }
 }
 

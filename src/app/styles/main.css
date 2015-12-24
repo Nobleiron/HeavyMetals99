@@ -144,7 +144,7 @@ a:focus { color: #0099cc;
   -moz-box-shadow: 0px 2px 6px 0px rgba(1,1,1,0.25);
   box-shadow: 0px 2px 6px 0px rgba(1,1,1,0.25);}
 .flot-right{float: right;}
-.main-cantain{padding: 50px 0;}
+.main-cantain{padding: 20px 0;}
 .rent_title{color: #666666;margin: 0; padding: 0; font-size: 18px;}
 .rent_subtit{color: #999999; font-size: 16px; margin: 10px 0 0 0;}
 .signin_teg{color: #009ddc; font-size:18px; line-height:25px;}
@@ -222,12 +222,14 @@ a:focus { color: #0099cc;
 .cart_menu ul li{display: inline;}
 .cart_menu ul li a{padding: 0 10px; line-height: 70px;}
 .cart_menu .cart_noti{background: #ff5600 none repeat scroll 0 0;
-                      border-radius: 12px; left: 23px;
+                      border-radius: 12px; 
+                      /*left: 23px;*/
                       color: #fff;
                       padding: 1px 7px;
                       position: absolute;
                       text-align: center;
-                      top:3px;}
+                      top:3px;
+                      right: 0;}
 .cart_menu .noti{background: #ff5600 none repeat scroll 0 0;
                  border-radius: 12px; left: 72px;
                  color: #fff;
@@ -237,7 +239,7 @@ a:focus { color: #0099cc;
                  top:3px;}
 .fa-shopping-cart{color: #c2c2c2;}
 .fa-bell-o{color: #c2c2c2;}
-.pro_pic{margin: 0 10px 0 0;}
+.pro_pic{margin: 0 10px 0 0; width: 30px;}
 .my-search-nav{margin: 21px 0 0 0;}
 .drop-btn{float: right;}
 .search-head-without{width: 56% !important; height: 40px;}
@@ -336,7 +338,7 @@ a:focus { color: #0099cc;
 .star-list-top a i {
     font-size: 16px;
 }
-.list-product{}
+.list-product{border-bottom: 1px dashed #009ddc; padding: 20px 0;}
 .lift-list img{}
 .certy-list{ position: absolute;
              right: 29px;
@@ -365,30 +367,31 @@ a:focus { color: #0099cc;
                    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);}
 .job-ste-box ul li:first-child{margin: 0 1.5% 0 0;}
 .job-ste-box ul li:last-child{margin: 0 0 0 1.5%;}
-.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0;}
-.number-job{font-size: 60px; color: #999999; margin: 0 0 0 15px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0; font-size: 18px;}
+.number-job{font-size: 48px; color: #999999; margin: 0 0 0 15px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
 .cat-product{background: #009ddc; line-height: 53px; color: #fff; -webkit-border-bottom-right-radius: 5px;
              -webkit-border-bottom-left-radius: 5px;
              -moz-border-radius-bottomright: 5px;
              -moz-border-radius-bottomleft: 5px;
              border-bottom-right-radius: 5px;
              border-bottom-left-radius: 5px;}
-.right-arrw{line-height: 48px; margin: 0 15px 0 0;}
-.cat-span{margin: 0 0 0 15px; font-size: 18px;}
+.right-arrw{line-height: 48px; margin: 0 15px 0 0; font-size: 20px;}
+.cat-span{margin: 0 0 0 15px; font-size: 15px;}
 .upcoming{border-bottom: solid 1px #c2c2c2; border-top: solid 1px #c2c2c2;}
-.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 18px;}
+.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 16px;}
 .upcom-arrow{color: #009ddc}
 .upcome_eqe{}
 .upcome_eqe ul{}
 .upcome_eqe ul li{ border-top: dashed 1px #000; padding: 10px 0; }
-.update_date{width: 22%; color: #666666; border-right: dashed 1px #000;}
-.update_date_title{width: 46%; color: #666666; padding: 15px 0 0 2%;}
+.update_date{width: 18%; color: #666666; vertical-align: middle;}
+.update_date_title{width: 46%; color: #666666; padding: 15px 0 0 4%; border-left: dashed 1px #000; vertical-align: middle;}
 .update_date_title p{margin: 0;}
-.update_date_pic{width: 30%;}
-.update_date_number{ font-size: 60px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
-.update_date_month{font-size: 18px; color: #999999; display: block;}
+.update_date_pic{width: 34%; vertical-align: middle;}
+.update_date_number{ font-size: 48px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+.update_date_month{font-size: 15px; color: #999999; display: block;}
 .eqe_tex{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.reser_tex{color: #666666;font-size: 15px; padding: 20px 0 0 0;}
+.eqe_text{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
+.reser_tex{color: #666666;font-size: 15px; padding: 8px 0 0 0;}
 .view_contact{}
 .view_contact a{font-size: 13px; color: #009ddc; text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: 500;}
 .view_contact a:hover{text-decoration: none;}
@@ -433,6 +436,9 @@ a:focus { color: #0099cc;
     border-top: none;
 }
 .invoice_head{ border-bottom: 1px solid #d9d9d9;}
+.job-num-div {
+  min-height: 80px;
+}
 
 
 /******************reserve-success***********************/
@@ -493,7 +499,7 @@ a:focus { color: #0099cc;
 .daily_price_product{font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 600;}
 .daily_title_product{font-family: 'Open Sans', sans-serif;margin: 0;}
 .now-reserve{color: #009ddc; border: solid 1px #009ddc; padding:10px 18px;}
-.inq_btn{background: #009ddc; color: #fff;}
+.inq_btn{background: #009ddc; color: #fff; padding: 10px 18px;}
 .truck{-ms-transform: rotate(7deg); /* IE 9 */
        -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
        transform: rotate(7deg);}
@@ -652,7 +658,8 @@ a:focus { color: #0099cc;
 }
 
 .profile-dropdown .my-alc-btn-toggle {
-  margin-top: 15px;
+  margin-top: 10px;
+  padding-left: 5px !important;
 }
 
 .profile-dropdown .my-alc-btn-toggle .caret {
@@ -978,6 +985,31 @@ a:focus { color: #0099cc;
 .prelogin-header .right-links {
   float: right;
   margin-top: 15px;
+}
+
+.header-prof-part {
+  text-align: right;
+}
+
+.header-prof-part .cart_menu {
+  float: right;
+}
+
+.not-user-div {
+  display: inline-block;
+  padding: 17px 20px;
+}
+
+.not-user-div a {
+  margin: 0 10px;
+}
+
+.user-div {
+  padding: 0 10px;
+}
+
+.user-div .my-alc-btn {
+  margin: 12px 0;
 }
 
 .for-small {
