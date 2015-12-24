@@ -488,7 +488,7 @@ a:focus { color: #0099cc;
 .procutby{color: #666666; font-size: 15px; padding: 0 0 0 10px;}
 .procutby_vendor{ }
 .procutby_vendor a{color: #009ddc; font-size: 15px; }
-.cunsult{color: #666666; font-size: 16px;}
+.cunsult{color: #666666; font-size: 14px;}
 .cunsult a{color: #ff5600; font-weight: 500;}
 .daily_price_product{font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 600;}
 .daily_title_product{font-family: 'Open Sans', sans-serif;margin: 0;}
@@ -510,9 +510,9 @@ a:focus { color: #0099cc;
 .save_dol{ font-size: 13px;}
 .avelble_status{font-size: 16px; margin: 10px 0 0 0;}
 .day_status{color: #ff7934; font-size: 16px;}
-.caldil{margin: 0 0 0 15px;  font-size: 16px;}
+.caldil{margin: 0 0 0 15px;  font-size: 14px;}
 .check_rate{color: #009ddc; border: solid 1px #009ddc; padding:6px 18px; margin: 0 10px 0 10px; font-size: 13px;}
-.we_can{font-size: 16px;}
+.we_can{font-size: 14px;}
 .we_can_price{font-weight: 600;}
 .enter_zip{border: solid 1px #cccccc; border-radius: 5px;  margin: 0 0 0 35px;
            padding: 8px 0 8px 8px;
