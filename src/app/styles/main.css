@@ -274,10 +274,10 @@ a:focus { color: #0099cc;
            /*top: 130px;*/
          }
 .lift_box figure{padding: 1px;}
-.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 16px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
+.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 15px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
 .lift_box_tit a{color: #666666;}
-.lift_box_subtit{color: #666666; font-size: 14px; padding: 0 0 0 10px;}
-.lift_box_vendor{color: #009ddc; font-size: 14px; }
+.lift_box_subtit{color: #666666; font-size: 13px; padding: 0 0 0 10px;}
+.lift_box_vendor{color: #009ddc; font-size: 13px; }
 .daily_ul{overflow: hidden; color: #666666;}
 .daily_ul ul{}
 
@@ -302,7 +302,7 @@ a:focus { color: #0099cc;
 .fa-star{color: #ff5600;}
 .fa-star-half-o{color: #ff5600;}
 .fa-star-o{color: #ff5600;}
-.daily_price{font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 18px;}
+.daily_price{font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 15px;}
 .daily_title{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 12px;}
 .fa-eye{color: #c2c2c2;}
 .fa-heart{color: #c2c2c2;}
@@ -397,8 +397,8 @@ a:focus { color: #0099cc;
 .view_contact a:hover{text-decoration: none;}
 .last_day{padding: 4px 0;}
 .last_day a{color: #ff0000; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.manage_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 20px; color: #666666;}
-.dash_board_tit{font-family: 'Open Sans', sans-serif; font-size: 20px; color: #666666; }
+.manage_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 16px; color: #666666;}
+.dash_board_tit{font-family: 'Open Sans', sans-serif; font-size: 16px; color: #666666; }
 .dash_board_bold{ font-weight: 500;}
 .dash_board_light{font-weight: 300;}
 .bord_dash_bot{border-bottom: 1px solid #d9d9d9;}
@@ -1325,4 +1325,9 @@ button:hover {
 
 .tour-col {
   padding-left: 10px;
+}
+
+.all-btn {
+  padding: 11px 18px;
+  font-size: 13px;
 }
