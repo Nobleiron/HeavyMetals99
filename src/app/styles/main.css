@@ -1578,6 +1578,16 @@ button:hover {
   border-top: 1px solid #ddd;
 }
 
+.update-exist {
+  display: none;
+  transition: display .15s linear;
+}
+
+.update-exist.in {
+  display: block;
+  transition: display .15s linear;
+}
+
 
 
 

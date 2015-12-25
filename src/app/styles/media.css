@@ -199,6 +199,14 @@
     width: 138px;
   }
 
+  .job-site-detail {
+    padding: 0 15px;
+  }
+  
+  .job-site-list {
+    padding: 15px 15px 0;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

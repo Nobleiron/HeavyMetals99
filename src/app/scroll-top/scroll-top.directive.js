@@ -18,4 +18,14 @@ angular.module("HM_ScrollTopMD")
 
       }
     };
-  }]);
+  }])
+  .directive('tabtoggle', ['$window', function($window){
+    return {
+            link: function (scope, element, attrs) {
+                element.click(function(e) {
+                    e.preventDefault();
+                    $(element).tab('show');
+                });
+            }
+        };
+    }]);
