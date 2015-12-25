@@ -360,38 +360,42 @@ a:focus { color: #0099cc;
 .my-bottm-line{ line-height: 40px;}
 .job-ste-box{margin:15px 0; padding: 0;}
 .job-ste-box ul{}
-.job-ste-box ul li{border: solid 1px #dedede; float: left; width: 31.20%; margin: 0 1.5%; border-radius: 5px;
+.job-ste-box ul li{border: solid 1px #dedede; float: left; width: 23%; margin: 0 1.5%; border-radius: 5px;
                    padding: 10px 0 0 0;
                    -webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
                    -moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
                    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);}
-.job-ste-box ul li:first-child{margin: 0 1.5% 0 0;}
+.job-ste-box ul li:first-child{margin: 0 1% 0 0;}
 .job-ste-box ul li:last-child{margin: 0 0 0 1.5%;}
-.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0; font-size: 18px;}
+.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0; font-size: 18px; opacity: 0.5;}
 .number-job{font-size: 48px; color: #999999; margin: 0 0 0 15px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
-.cat-product{background: #009ddc; line-height: 53px; color: #fff; -webkit-border-bottom-right-radius: 5px;
+.cat-product{background: #009ddc; line-height: 43px; color: #fff; -webkit-border-bottom-right-radius: 5px;
              -webkit-border-bottom-left-radius: 5px;
              -moz-border-radius-bottomright: 5px;
              -moz-border-radius-bottomleft: 5px;
              border-bottom-right-radius: 5px;
              border-bottom-left-radius: 5px;}
-.right-arrw{line-height: 48px; margin: 0 15px 0 0; font-size: 20px;}
+.right-arrw{line-height: 43px; margin: 0 15px 0 0; font-size: 20px;}
 .cat-span{margin: 0 0 0 15px; font-size: 15px;}
 .upcoming{border-bottom: solid 1px #c2c2c2; border-top: solid 1px #c2c2c2;}
 .upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 16px;}
 .upcom-arrow{color: #009ddc}
 .upcome_eqe{}
 .upcome_eqe ul{}
-.upcome_eqe ul li{ border-top: dashed 1px #000; padding: 10px 0; }
-.update_date{width: 18%; color: #666666; vertical-align: middle;}
-.update_date_title{width: 46%; color: #666666; padding: 15px 0 0 4%; border-left: dashed 1px #000; vertical-align: middle;}
+.upcome_eqe ul li{ border-top: dashed 1px #000; padding: 5px 0; }
+.update_date{width: 18%; color: #666666; vertical-align: middle; text-align: center;}
+.update_date_title{width: 46%; color: #666666; padding: 1px 0 0 2%; border-left: dashed 1px #000; vertical-align: middle;}
 .update_date_title p{margin: 0;}
 .update_date_pic{width: 34%; vertical-align: middle;}
-.update_date_number{ font-size: 48px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+.update_date_pic img {
+    height: 85px;
+    width: 85px;
+}
+.update_date_number{ font-size: 24px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
 .update_date_month{font-size: 15px; color: #999999; display: block;}
 .eqe_tex{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.eqe_text{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.reser_tex{color: #666666;font-size: 15px; padding: 8px 0 0 0;}
+.eqe_text{font-size: 13px; line-height: 19px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
+.reser_tex{color: #A94442;font-size: 15px; padding: 6px 0 0 0;}
 .view_contact{}
 .view_contact a{font-size: 13px; color: #009ddc; text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: 500;}
 .view_contact a:hover{text-decoration: none;}
@@ -437,7 +441,7 @@ a:focus { color: #0099cc;
 }
 .invoice_head{ border-bottom: 1px solid #d9d9d9;}
 .job-num-div {
-  min-height: 80px;
+  min-height: 69px;
 }
 
 
