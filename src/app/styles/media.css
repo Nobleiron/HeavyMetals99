@@ -172,6 +172,33 @@
     text-align: left;
   }
 
+  .total-price div {
+    padding: 0 0 25px 0;
+    width: 50%;
+    min-width: 300px;
+    text-align: left;
+  }
+
+  .total-price div label {
+    margin-right: 0;
+  }
+
+  .total-price div span {
+    float: right;
+  }
+
+  .cont-rent-btn {
+    text-align: center;
+  }
+
+  .reserve-generate-btn {
+    text-align: center;
+  }
+
+  .reserve-generate-btn .sign_mybtn {
+    width: 138px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -545,6 +572,15 @@
   .upcoming-small .update_date_title p,
   .eqe_text {
     font-size: 13px;
+  }
+
+  .cart-table thead tr th,
+  .cart-table tbody tr td {
+    white-space: nowrap;
+  }
+
+  .total-price div {
+    padding-right: 0;
   }
 }
 
