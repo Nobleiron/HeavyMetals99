@@ -1502,6 +1502,82 @@ button:hover {
   color: #fff;
 }
 
+.fa-map-marker {
+  color: #009ddc;
+}
+
+/*update job site*/
+.job-site-list {
+  padding: 15px;
+}
+
+.job-site-list .search-div i {
+  color: #ccc;
+}
+
+.job-site-list .search-div input {
+  border: none;
+  height: 100%;
+  width: 90%;
+  outline: none;
+  padding-left: 5px;
+}
+
+.job-site-list .job-lists {
+  overflow: auto;
+  max-height: 250px;
+  margin: 15px 0;
+}
+
+.job-site-list .job-lists div {
+  height: 40px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.job-lists input,
+.job-lists input:focus {
+  margin: 3px 0;
+  outline: none;
+}
+
+.job-lists span {
+  font-size: 13px;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+.job-site-detail {
+  padding: 65px 15px;
+}
+
+.job-site-detail h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.job-site-detail span {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.job-site-detail p {
+  margin: 2px 16px;
+}
+
+.job-site-detail .zip {
+  margin-bottom: 10px;
+}
+
+.marker {
+  color: #009ddc;
+}
+
+.site-btn-div {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
 
 
 
