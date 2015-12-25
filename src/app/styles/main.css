@@ -122,7 +122,7 @@ a:focus { color: #0099cc;
 .mob_tit{ color: #009bdc; font-size: 38px; text-align: center;padding: 50px 0 0 0; font-family: 'Open Sans', sans-serif;}
 .mob_subtit{ color: #666666; font-size: 24px; text-align: center; padding: 0 0 40px 0; font-family: 'Open Sans', sans-serif;}
 .about_main h4{color: #e1e1e1; font-size: 18px; margin: 10px 0 20px 0;}
-.sell-equ{ border: solid 1px #009ddc; font-weight: 600;
+.sell-equ{ border: solid 1px #009ddc; font-weight: 400;
   background: #ffffff; padding: 6px 20px;color: #009ddc;}
 .lift_part{padding: 0 10px 0 10px;}
 .lift_part:hover{color: #0099cc;}
@@ -643,8 +643,15 @@ a:focus { color: #0099cc;
 }
 
 .right-btn-col .my-reserve {
-  min-width: 125px;
+  min-width: 127px;
+  margin-bottom: 10px;
 }
+
+.right-btn-col .my-reserve-added {
+  min-width: 143px;
+  margin-bottom: 10px;
+}
+
 
 .right-btn-col .add-list {
   margin-left: 0;
@@ -801,9 +808,10 @@ a:focus { color: #0099cc;
 }
 
 .no-search-row .col4 button {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 13px;
   background-color: #009ddc;
+  color: #fff;
 }
 
 .no-search-row .text-col {
@@ -1231,7 +1239,7 @@ button:hover {
 
 .forgot-pass-btn {
   width: auto; 
-  min-width: 148px;
+  min-width: 138px;
 }
 
 .loading-spinner {
@@ -1330,6 +1338,7 @@ button:hover {
 .all-btn {
   padding: 11px 18px;
   font-size: 13px;
+  font-weight: 400 !important;
 }
 
 /*cart css*/
@@ -1476,6 +1485,21 @@ button:hover {
 
 .reserve-generate-btn .sign_mybtn:last-child {
   margin-left: 10px;
+}
+
+.primary-btn:hover {
+  background-color: #2F83CC !important;
+  color: #fff;
+  border-color: #2F83CC;
+  transition: all 0.6s ease 0s;
+}
+
+.border-dashed {
+  margin-top: 15px;
+}
+
+.primary-btn:focus {
+  color: #fff;
 }
 
 
