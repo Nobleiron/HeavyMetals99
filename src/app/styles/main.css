@@ -1596,6 +1596,16 @@ button:hover {
   margin-bottom: 15px;
 }
 
+.head_without_index {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content-top {
+  padding-top: 82px;
+}
+
 
 
 
