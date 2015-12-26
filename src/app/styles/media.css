@@ -181,10 +181,16 @@
 
   .total-price div label {
     margin-right: 0;
+    font-size: 14px;
   }
 
   .total-price div span {
     float: right;
+    font-size: 14px;
+  }
+
+  .total-price div {
+    padding-right: 15px;
   }
 
   .cont-rent-btn {
@@ -590,6 +596,40 @@
   .total-price div {
     padding-right: 0;
   }
+
+  .cart-for-mobile {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .cart-col .cart-image-div {
+    min-height: 200px;
+    text-align: center;
+    background: #ddd;
+  }
+
+  .cart-col .equipment-desc {
+    padding: 0 15px;
+  }
+
+  .cart-col .qty-head {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+  }
+
+  .equipment-desc input {
+    margin: 3px 0 10px 0;
+  }
+
+  .sub-total {
+    margin: 10px 0;
+    font-weight: 600;
+  }
+
+  .promo-code button {
+    width: 140px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -721,6 +761,10 @@
 
   .map-view-btn {
     min-width: 127px;
+  }
+
+  .not-user-div {
+    padding: 17px 0px;
   }
 }
 
