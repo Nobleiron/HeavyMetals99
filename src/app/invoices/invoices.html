@@ -1,11 +1,11 @@
-<section>
+<section class="content-top">
   <!-- START  Main Content -->
   <article class="main-cantain">
     <div class="container">
       <div class="row">
         <!-- START  Dashboard tab -->
         <div class="col-sm-12 col-xs-12 filt-btn">
-          <button class="btn btn-default" ng-click="filterBtn()">View Invoices</button>
+          <button class="btn sell-equ all-btn" ng-click="filterBtn()">View Invoices</button>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
           <ul class="nav nav-pills nav-stacked my-verti-tab">
@@ -54,8 +54,8 @@
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col invoices-btn-div">
-                <button class="btn btn-default pull-right manage-job-btn deactivate list" ng-class="{'active' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
-                <button class="btn btn-default pull-right manage-job-btn deactivate map" ng-click="toggleInvoiceView(false)" ng-class="{'active' : !flags.outstanding}">All Invoices</button>
+                <button class="btn btn-default pull-right manage-job-btn deactivate list all-btn" ng-class="{'active primary-btn' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
+                <button class="btn btn-default pull-right manage-job-btn deactivate map all-btn" ng-click="toggleInvoiceView(false)" ng-class="{'active primary-btn' : !flags.outstanding}">All Invoices</button>
               </div>
           </div>
             <!-- <section class="content-header">

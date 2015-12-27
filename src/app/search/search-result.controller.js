@@ -58,6 +58,7 @@ angular.module("HM_SearchMD")
             .delete( SearchCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
             .success(function(response){
               product.Is_in_catelog = false;
+              $scope.catelog = false;
             })
             .finally(function(){
               $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
@@ -67,6 +68,7 @@ angular.module("HM_SearchMD")
             .post( SearchCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
             .success(function(response){
               product.Is_in_catelog = true;
+              $scope.catelog = true;
             })
             .finally(function(){
               $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)

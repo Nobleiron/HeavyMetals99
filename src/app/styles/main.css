@@ -122,7 +122,7 @@ a:focus { color: #0099cc;
 .mob_tit{ color: #009bdc; font-size: 38px; text-align: center;padding: 50px 0 0 0; font-family: 'Open Sans', sans-serif;}
 .mob_subtit{ color: #666666; font-size: 24px; text-align: center; padding: 0 0 40px 0; font-family: 'Open Sans', sans-serif;}
 .about_main h4{color: #e1e1e1; font-size: 18px; margin: 10px 0 20px 0;}
-.sell-equ{ border: solid 1px #009ddc; font-weight: 600;
+.sell-equ{ border: solid 1px #009ddc; font-weight: 400;
   background: #ffffff; padding: 6px 20px;color: #009ddc;}
 .lift_part{padding: 0 10px 0 10px;}
 .lift_part:hover{color: #0099cc;}
@@ -144,7 +144,7 @@ a:focus { color: #0099cc;
   -moz-box-shadow: 0px 2px 6px 0px rgba(1,1,1,0.25);
   box-shadow: 0px 2px 6px 0px rgba(1,1,1,0.25);}
 .flot-right{float: right;}
-.main-cantain{padding: 50px 0;}
+.main-cantain{padding: 20px 0;}
 .rent_title{color: #666666;margin: 0; padding: 0; font-size: 18px;}
 .rent_subtit{color: #999999; font-size: 16px; margin: 10px 0 0 0;}
 .signin_teg{color: #009ddc; font-size:18px; line-height:25px;}
@@ -222,12 +222,14 @@ a:focus { color: #0099cc;
 .cart_menu ul li{display: inline;}
 .cart_menu ul li a{padding: 0 10px; line-height: 70px;}
 .cart_menu .cart_noti{background: #ff5600 none repeat scroll 0 0;
-                      border-radius: 12px; left: 23px;
+                      border-radius: 12px; 
+                      /*left: 23px;*/
                       color: #fff;
                       padding: 1px 7px;
                       position: absolute;
                       text-align: center;
-                      top:3px;}
+                      top:3px;
+                      right: 0;}
 .cart_menu .noti{background: #ff5600 none repeat scroll 0 0;
                  border-radius: 12px; left: 72px;
                  color: #fff;
@@ -237,7 +239,7 @@ a:focus { color: #0099cc;
                  top:3px;}
 .fa-shopping-cart{color: #c2c2c2;}
 .fa-bell-o{color: #c2c2c2;}
-.pro_pic{margin: 0 10px 0 0;}
+.pro_pic{margin: 0 10px 0 0; width: 30px;}
 .my-search-nav{margin: 21px 0 0 0;}
 .drop-btn{float: right;}
 .search-head-without{width: 56% !important; height: 40px;}
@@ -272,10 +274,10 @@ a:focus { color: #0099cc;
            /*top: 130px;*/
          }
 .lift_box figure{padding: 1px;}
-.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 16px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
+.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 15px; padding: 0 0 0 10px; font-family: 'Open Sans', sans-serif; font-weight: 600;}
 .lift_box_tit a{color: #666666;}
-.lift_box_subtit{color: #666666; font-size: 14px; padding: 0 0 0 10px;}
-.lift_box_vendor{color: #009ddc; font-size: 14px; }
+.lift_box_subtit{color: #666666; font-size: 13px; padding: 0 0 0 10px;}
+.lift_box_vendor{color: #009ddc; font-size: 13px; }
 .daily_ul{overflow: hidden; color: #666666;}
 .daily_ul ul{}
 
@@ -300,7 +302,7 @@ a:focus { color: #0099cc;
 .fa-star{color: #ff5600;}
 .fa-star-half-o{color: #ff5600;}
 .fa-star-o{color: #ff5600;}
-.daily_price{font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 18px;}
+.daily_price{font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 15px;}
 .daily_title{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 12px;}
 .fa-eye{color: #c2c2c2;}
 .fa-heart{color: #c2c2c2;}
@@ -336,7 +338,7 @@ a:focus { color: #0099cc;
 .star-list-top a i {
     font-size: 16px;
 }
-.list-product{}
+.list-product{border-bottom: 1px dashed #009ddc; padding: 20px 0;}
 .lift-list img{}
 .certy-list{ position: absolute;
              right: 29px;
@@ -358,44 +360,49 @@ a:focus { color: #0099cc;
 .my-bottm-line{ line-height: 40px;}
 .job-ste-box{margin:15px 0; padding: 0;}
 .job-ste-box ul{}
-.job-ste-box ul li{border: solid 1px #dedede; float: left; width: 31.20%; margin: 0 1.5%; border-radius: 5px;
+.job-ste-box ul li{border: solid 1px #dedede; float: left; width: 23%; margin: 0 1.5%; border-radius: 5px;
                    padding: 10px 0 0 0;
                    -webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
                    -moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
                    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);}
-.job-ste-box ul li:first-child{margin: 0 1.5% 0 0;}
+.job-ste-box ul li:first-child{margin: 0 1% 0 0;}
 .job-ste-box ul li:last-child{margin: 0 0 0 1.5%;}
-.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0;}
-.number-job{font-size: 60px; color: #999999; margin: 0 0 0 15px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
-.cat-product{background: #009ddc; line-height: 53px; color: #fff; -webkit-border-bottom-right-radius: 5px;
+.job-ste-box_icon{color: #ff5600; margin: 0 6px 0 0; font-size: 18px; opacity: 0.5;}
+.number-job{font-size: 48px; color: #999999; margin: 0 0 0 15px; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+.cat-product{background: #009ddc; line-height: 43px; color: #fff; -webkit-border-bottom-right-radius: 5px;
              -webkit-border-bottom-left-radius: 5px;
              -moz-border-radius-bottomright: 5px;
              -moz-border-radius-bottomleft: 5px;
              border-bottom-right-radius: 5px;
              border-bottom-left-radius: 5px;}
-.right-arrw{line-height: 48px; margin: 0 15px 0 0;}
-.cat-span{margin: 0 0 0 15px; font-size: 18px;}
+.right-arrw{line-height: 43px; margin: 0 15px 0 0; font-size: 20px;}
+.cat-span{margin: 0 0 0 15px; font-size: 15px;}
 .upcoming{border-bottom: solid 1px #c2c2c2; border-top: solid 1px #c2c2c2;}
-.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 18px;}
+.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 16px;}
 .upcom-arrow{color: #009ddc}
 .upcome_eqe{}
 .upcome_eqe ul{}
-.upcome_eqe ul li{ border-top: dashed 1px #000; padding: 10px 0; }
-.update_date{width: 22%; color: #666666; border-right: dashed 1px #000;}
-.update_date_title{width: 46%; color: #666666; padding: 15px 0 0 2%;}
+.upcome_eqe ul li{ border-top: dashed 1px #000; padding: 5px 0; }
+.update_date{width: 18%; color: #666666; vertical-align: middle; text-align: center;}
+.update_date_title{width: 46%; color: #666666; padding: 1px 0 0 2%; border-left: dashed 1px #000; vertical-align: middle;}
 .update_date_title p{margin: 0;}
-.update_date_pic{width: 30%;}
-.update_date_number{ font-size: 60px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
-.update_date_month{font-size: 18px; color: #999999; display: block;}
+.update_date_pic{width: 34%; vertical-align: middle;}
+.update_date_pic img {
+    height: 85px;
+    width: 85px;
+}
+.update_date_number{ font-size: 24px;  color: #666666; display: block; font-family: 'Open Sans', sans-serif; font-weight: 300;}
+.update_date_month{font-size: 15px; color: #999999; display: block;}
 .eqe_tex{font-size: 14px; line-height: 24px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.reser_tex{color: #666666;font-size: 15px; padding: 20px 0 0 0;}
+.eqe_text{font-size: 13px; line-height: 19px; font-family: 'Open Sans', sans-serif; font-weight: 500;}
+.reser_tex{color: #A94442;font-size: 15px; padding: 6px 0 0 0;}
 .view_contact{}
 .view_contact a{font-size: 13px; color: #009ddc; text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: 500;}
 .view_contact a:hover{text-decoration: none;}
 .last_day{padding: 4px 0;}
 .last_day a{color: #ff0000; font-family: 'Open Sans', sans-serif; font-weight: 500;}
-.manage_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 20px; color: #666666;}
-.dash_board_tit{font-family: 'Open Sans', sans-serif; font-size: 20px; color: #666666; }
+.manage_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 16px; color: #666666;}
+.dash_board_tit{font-family: 'Open Sans', sans-serif; font-size: 16px; color: #666666; }
 .dash_board_bold{ font-weight: 500;}
 .dash_board_light{font-weight: 300;}
 .bord_dash_bot{border-bottom: 1px solid #d9d9d9;}
@@ -433,6 +440,9 @@ a:focus { color: #0099cc;
     border-top: none;
 }
 .invoice_head{ border-bottom: 1px solid #d9d9d9;}
+.job-num-div {
+  min-height: 69px;
+}
 
 
 /******************reserve-success***********************/
@@ -488,12 +498,12 @@ a:focus { color: #0099cc;
 .procutby{color: #666666; font-size: 15px; padding: 0 0 0 10px;}
 .procutby_vendor{ }
 .procutby_vendor a{color: #009ddc; font-size: 15px; }
-.cunsult{color: #666666; font-size: 16px;}
+.cunsult{color: #666666; font-size: 14px;}
 .cunsult a{color: #ff5600; font-weight: 500;}
 .daily_price_product{font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 600;}
 .daily_title_product{font-family: 'Open Sans', sans-serif;margin: 0;}
 .now-reserve{color: #009ddc; border: solid 1px #009ddc; padding:10px 18px;}
-.inq_btn{background: #009ddc; color: #fff;}
+.inq_btn{background: #009ddc; color: #fff; padding: 10px 18px;}
 .truck{-ms-transform: rotate(7deg); /* IE 9 */
        -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
        transform: rotate(7deg);}
@@ -510,9 +520,9 @@ a:focus { color: #0099cc;
 .save_dol{ font-size: 13px;}
 .avelble_status{font-size: 16px; margin: 10px 0 0 0;}
 .day_status{color: #ff7934; font-size: 16px;}
-.caldil{margin: 0 0 0 15px;  font-size: 16px;}
+.caldil{margin: 0 0 0 15px;  font-size: 14px;}
 .check_rate{color: #009ddc; border: solid 1px #009ddc; padding:6px 18px; margin: 0 10px 0 10px; font-size: 13px;}
-.we_can{font-size: 16px;}
+.we_can{font-size: 14px;}
 .we_can_price{font-weight: 600;}
 .enter_zip{border: solid 1px #cccccc; border-radius: 5px;  margin: 0 0 0 35px;
            padding: 8px 0 8px 8px;
@@ -637,8 +647,15 @@ a:focus { color: #0099cc;
 }
 
 .right-btn-col .my-reserve {
-  min-width: 125px;
+  min-width: 127px;
+  margin-bottom: 10px;
 }
+
+.right-btn-col .my-reserve-added {
+  min-width: 143px;
+  margin-bottom: 10px;
+}
+
 
 .right-btn-col .add-list {
   margin-left: 0;
@@ -652,7 +669,8 @@ a:focus { color: #0099cc;
 }
 
 .profile-dropdown .my-alc-btn-toggle {
-  margin-top: 15px;
+  margin-top: 10px;
+  padding-left: 5px !important;
 }
 
 .profile-dropdown .my-alc-btn-toggle .caret {
@@ -794,9 +812,10 @@ a:focus { color: #0099cc;
 }
 
 .no-search-row .col4 button {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 13px;
   background-color: #009ddc;
+  color: #fff;
 }
 
 .no-search-row .text-col {
@@ -978,6 +997,31 @@ a:focus { color: #0099cc;
 .prelogin-header .right-links {
   float: right;
   margin-top: 15px;
+}
+
+.header-prof-part {
+  text-align: right;
+}
+
+.header-prof-part .cart_menu {
+  float: right;
+}
+
+.not-user-div {
+  display: inline-block;
+  padding: 17px 20px;
+}
+
+.not-user-div a {
+  margin: 0 10px;
+}
+
+.user-div {
+  padding: 0 10px;
+}
+
+.user-div .my-alc-btn {
+  margin: 12px 0;
 }
 
 .for-small {
@@ -1199,7 +1243,7 @@ button:hover {
 
 .forgot-pass-btn {
   width: auto; 
-  min-width: 148px;
+  min-width: 138px;
 }
 
 .loading-spinner {
@@ -1294,3 +1338,280 @@ button:hover {
 .tour-col {
   padding-left: 10px;
 }
+
+.all-btn {
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 400 !important;
+}
+
+/*cart css*/
+.shopping-cart-heading {
+  padding: 10px 15px 0;
+}
+
+.cart-table {
+  border-bottom: 1px solid #ddd;
+}
+
+.equipment-desc h3 {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.equipment-desc input {
+  margin: 3px 0 0 0;
+}
+
+.equipment-desc span {
+  vertical-align: inherit;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.equipment-desc .price-ul{
+  margin: 10px 0 0 0;
+}
+
+.price-ul li {
+  display: inline-block;
+  width: 25%;
+}
+
+.price-ul li .daily_title {
+  margin: 0 0 5px 0;
+}
+
+.cart-table tbody tr .vertically-middle {
+  vertical-align: middle;
+}
+
+.quantity {
+  width: 13%;
+}
+
+.quantity .form-control {
+  padding: 11px 5px;
+  font-size: 13px;
+  text-align: center;
+  height: auto;
+  width: 30%;
+  display: inline-block;
+  min-width: 70px;
+}
+
+.duration {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.duration .to {
+  text-align: center;
+  width: 53%;
+}
+
+.duration p:last-child {
+  margin: 0;
+}
+
+.area span {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.area p {
+  margin: 5px 0 0 0;
+  font-size: 13px;
+}
+
+.area p a {
+  color: #009ddc;
+}
+
+.area p a:hover {
+  color: #23527c;
+}
+
+.pricing {
+  font-weight: 600;
+}
+
+.promo-code {
+  padding: 15px 15px 35px;
+}
+
+.promo-code .form-control {
+  width: 50%;
+  display: inline-block;
+  padding: 11px 18px;
+  height: auto;
+}
+
+.total-price div {
+  text-align: right;
+  padding-right: 17%;
+}
+
+.total-price .total-price-div h3 {
+  font-weight: 600;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+.total-price-div h3 label {
+  margin-right: 15%;
+  font-weight: 600;
+}
+
+.total-price h3 .total {
+  font-weight: 700;
+}
+
+.cart-bottom-btn {
+  padding: 25px 15px;
+}
+
+.cont-rent-btn {
+  padding: 10px 15px;
+}
+
+.cont-rent-btn .sell-equ {
+  font-weight: 400;
+  width: 150px;
+}
+
+.reserve-generate-btn {
+  text-align: right;
+  padding: 10px 15px;
+}
+
+.reserve-generate-btn .sign_mybtn:last-child {
+  margin-left: 10px;
+}
+
+.primary-btn:hover {
+  background-color: #2F83CC !important;
+  color: #fff;
+  border-color: #2F83CC;
+  transition: all 0.6s ease 0s;
+}
+
+.border-dashed {
+  margin-top: 15px;
+}
+
+.primary-btn:focus {
+  color: #fff;
+}
+
+.fa-map-marker {
+  color: #009ddc;
+}
+
+/*update job site*/
+.job-site-list {
+  padding: 15px;
+}
+
+.job-site-list .search-div i {
+  color: #ccc;
+}
+
+.job-site-list .search-div input {
+  border: none;
+  height: 100%;
+  width: 90%;
+  outline: none;
+  padding-left: 5px;
+}
+
+.job-site-list .job-lists {
+  overflow: auto;
+  max-height: 250px;
+  margin: 15px 0;
+}
+
+.job-site-list .job-lists div {
+  height: 40px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.job-lists input,
+.job-lists input:focus {
+  margin: 3px 0;
+  outline: none;
+}
+
+.job-lists span {
+  font-size: 13px;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+.job-site-detail {
+  padding: 65px 15px;
+}
+
+.job-site-detail h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.job-site-detail span {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.job-site-detail p {
+  margin: 2px 16px;
+}
+
+.job-site-detail .zip {
+  margin-bottom: 10px;
+}
+
+.marker {
+  color: #009ddc;
+}
+
+.site-btn-div {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.update-exist {
+  display: none;
+  transition: display .15s linear;
+}
+
+.update-exist.in {
+  display: block;
+  transition: display .15s linear;
+}
+
+.req-call-num {
+  margin-bottom: 15px;
+}
+
+.head_without_index {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content-top {
+  padding-top: 82px;
+}
+
+
+
+
+
+
+
+
+
+

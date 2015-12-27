@@ -17,11 +17,11 @@
       <span class="icon-bar"></span>
     </button> -->
     <!-- <div class="hide-header-navbar" ng-class="{'show-header-navbar': showHeader}"> -->
-    <div class="col-lg-4 col-md-4 col-sm-10 col-xs-8 my_alc nopadding hidden-lg hidden-md">
+    <div class="col-lg-4 col-md-4 col-sm-10 col-xs-8 my_alc nopadding hidden-lg hidden-md header-prof-part">
         <div class="cart_menu">
           <ul>
             <li>
-              <a href="#">
+              <a href="#/shopping-cart">
                 <i class="fa fa-shopping-cart fa-2x"></i></a>
               <span class="cart_noti">1</span>
             </li>
@@ -33,20 +33,20 @@
             </li> -->
           </ul>
         </div>
-        <div class="btn-group drop-btn profile-dropdown" dropdown >
+        <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
           <button class="btn btn-mini my-alc-btn nopadding prof-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
           <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu"  role="menu" ng-if="userObj">
+          <ul class="dropdown-menu"  role="menu">
             <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
           </ul>
-          <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
-          </ul>
+        </div>
+        <div ng-if="!userObj" class="not-user-div">
+          <a href="#/login" class="help-link">Login</a>
+          <a href="#/register" class="help-link">Register</a>
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 nopadding">
@@ -66,11 +66,11 @@
 
       </div>
       <!-- END  Search box -->
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 my_alc hide-header-navbar nopadding">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 my_alc hide-header-navbar nopadding header-prof-part">
         <div class="cart_menu">
           <ul>
             <li>
-              <a href="#">
+              <a href="#/shopping-cart">
                 <i class="fa fa-shopping-cart fa-2x"></i></a>
               <span class="cart_noti">1</span>
             </li>
@@ -82,20 +82,24 @@
             </li> -->
           </ul>
         </div>
-        <div class="btn-group drop-btn profile-dropdown" dropdown >
+        <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
           <button class="btn btn-mini my-alc-btn nopadding prof-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
           <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu"  role="menu" ng-if="userObj">
+          <ul class="dropdown-menu"  role="menu">
             <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
           </ul>
-          <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
+          <!-- <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
-          </ul>
+          </ul> -->
+        </div>
+        <div ng-if="!userObj" class="not-user-div">
+          <a href="#/login" class="help-link">Login</a>
+          <a href="#/register" class="help-link">Register</a>
         </div>
       </div>
     <!-- </div> -->

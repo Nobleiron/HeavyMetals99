@@ -155,6 +155,15 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/job-site-detail/job-site-detail.html',
           openInModal: true
         },
+        'hm.shoppingCart': {
+          url: '/shopping-cart',
+          templateUrl: 'app/shopping-cart/shopping-cart.html'
+        },
+        'hm.updateJobSite': {
+          url: '/update-job-site',
+          templateUrl: 'app/update-job-site/update-job-site.html',
+          openInModal: true
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',
