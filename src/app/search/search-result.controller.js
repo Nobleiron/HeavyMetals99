@@ -16,6 +16,7 @@ angular.module("HM_SearchMD")
         $scope.flags.gridView = $stateParams.view_type == "grid";
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
+        $scope.params.attributes && _setCategoryAttributesFromParams($scope.params.attributes);
         $scope.flags.stopPaging = false;
         $scope.flags.page = 1;
         $scope.flags.categoriesFetched = true;
@@ -29,6 +30,20 @@ angular.module("HM_SearchMD")
           _getSearchResult(fresh);
         }else{
           _getProductListFromSelectedCategory(fresh);
+        }
+      }
+
+
+      function _setCategoryAttributesFromParams(attributes){
+        if(typeof attributes == "string"){
+          var key = attributes.split('~');
+          $scope.selectedAttributes[key[0]] = key[1].split(',');
+        }
+        if(typeof attributes == "object"){
+          attributes.forEach(function(attr){
+            var key = attr.split('~');
+            $scope.selectedAttributes[key[0]] = key[1].split(',');
+          })
         }
       }
 
@@ -119,18 +134,22 @@ angular.module("HM_SearchMD")
 
 
       function _getCategoryAttributeParams(){
-        var obj = {};
+        var obj = [];
         if(typeof $scope.params.attributes == "string"){
           var key = $scope.params.attributes.split('~');
-          obj[key[0]] = key[1].split(',');
+          var att = {};
+          att[key[0]] = key[1].split(',');
+          obj.push(att);
         }
         if(typeof $scope.params.attributes == "object"){
           $scope.params.attributes.forEach(function(attribute){
             var key = attribute.split('~');
-            obj[key[0]] = key[1].split(',');
+            var att = {};
+            att[key[0]] = key[1].split(',');
+            obj.push(att);
           });
         }
-        return angular.equals(obj,{}) ? undefined : obj;
+        return obj.length ?  obj : undefined;
       }
 
       function normalizeSearchQuery(str){

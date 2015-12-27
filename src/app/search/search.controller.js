@@ -114,7 +114,9 @@ angular.module("HM_SearchMD")
         else {
           $scope.selectedAttributes[attribute].push(attributeValue);
         }
+        $scope.flags.page = 1;
         normalizeCategoryAttributes();
+        console.log("$scope.selectedAttributes",$scope.selectedAttributes)
         $state.go('hm.search.results',$scope.params);
         event.stopPropagation();
       }
@@ -125,6 +127,7 @@ angular.module("HM_SearchMD")
           value.length && ($scope.params['attributes'].push(key + '~'+ value.join(',')))
         })
       }
+
 
       function buildAttributeMap(){
         $scope.selectedAttributes = {};
