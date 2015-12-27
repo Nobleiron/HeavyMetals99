@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_BtnLoadIndicatorMD")
-  .directive('btnLoadIndicator', ['$compile', function($compile){
+  .directive('btnLoadIndicator', ['$compile','$timeout', function($compile,$timeout){
     return {
       scope : {
         'btnUid' :'=btnUid'
@@ -14,16 +14,16 @@ angular.module("HM_BtnLoadIndicatorMD")
         scope.$on(eventName+':Start', function(e, uid){
           if(scope.btnUid == uid){
             scope.loading = true;
-            element.parent('button').attr("disabled","disabled");
-            element.hide();
+              element.parent('button').attr("disabled","disabled");
+              element.hide();
           }
         });
 
         scope.$on(eventName+':End', function(e, uid){
           if(scope.btnUid == uid) {
-            scope.loading = false;
-            element.parent('button').removeAttr("disabled");
-            element.show();
+              scope.loading = false;
+              element.parent('button').removeAttr("disabled");
+              element.show();
           }
         });
 

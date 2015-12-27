@@ -13,23 +13,24 @@ angular.module('HM_LandingMD')
 
     _initialize();
 
-    function selectSearchedItem(){
-      var query = '';
+    function selectSearchedItem(product){
       if(typeof $scope.selectedProduct == "object"){
-        query = $scope.selectedProduct.Product_Name;
+        $scope.params.query = product.Product_Name;
       }
       if(typeof $scope.selectedProduct == "string"){
-        query = $scope.selectedProduct;
+        $scope.params.query = $scope.selectedProduct;
       }
-      $state.go('hm.search.results', { query : query});
+      $scope.params.page = 1;
+      product && ($scope.params.category_id = product.Category_Id);
+      $state.go('hm.search.results', $scope.params);
     }
 
     function getProducts(search){
       return RestSV.get( landingCnst.search.url() ,{
-        search_text : 'lift',
+        search_text : search,
         type : $scope.defaultSearchType
       }).then(function(response){
-        var filtered = filterFilter(response.data.result.SearchResult, search);
+        var filtered = filterFilter(response.data.result.ProductList, search);
         var results = _(filtered)
           .groupBy('Category_Name')
           .map(function (g) {

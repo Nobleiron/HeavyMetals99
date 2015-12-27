@@ -17,6 +17,7 @@ angular.module("HM_SearchMD")
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
         $scope.flags.stopPaging = false;
+        $scope.flags.page = 1;
         $scope.flags.categoriesFetched = true;
         $scope.params.category_id && ($scope.flags.selectedCategory =  _.find($scope.categories,function(x){
           return x.Id == $scope.params.category_id;
@@ -138,7 +139,8 @@ angular.module("HM_SearchMD")
               if(data.result == ""){
                 $scope.flags.stopPaging = true;
               }else{
-                $scope.results = $scope.results.concat(data.result.SearchResult);
+                var result = data.result.SearchResult || data.result.ProductList;
+                $scope.results = $scope.results.concat(result);
                 $scope.flags.page += 1 ;
               }
             })

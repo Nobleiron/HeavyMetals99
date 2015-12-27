@@ -26,7 +26,8 @@
     .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','$httpProvider', _configure])
     .run(['$rootScope','$state', function($rootScope, $state){
       $rootScope.$state = $state;
-    }])
+      $rootScope.params = {};
+    }]);
 
 
 

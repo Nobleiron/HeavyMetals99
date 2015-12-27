@@ -18,7 +18,7 @@ angular.module("HM_SearchMD")
 
       function _initialize(){
         $scope.results = [];
-        $scope.params = angular.extend({},$stateParams);
+        angular.extend($scope.params,$stateParams);
         $scope.selectedAttributes = {};
         //$scope.selectedCategory = {};
         $scope.selection = { type : "rent"};

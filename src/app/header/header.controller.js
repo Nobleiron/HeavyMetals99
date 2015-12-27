@@ -25,26 +25,27 @@ angular.module('HeavyMetals')
 
     $scope.selectSearchedItem = selectSearchedItem;
 
-
     _initialize();
 
-    function selectSearchedItem(item, model, label){
-      var query = '';
+    function selectSearchedItem(product){
+      //var query = '';
       if(typeof $scope.selectedProduct == "object"){
-        query = $scope.selectedProduct.Product_Name;
+        $scope.params.query = $scope.selectedProduct.Product_Name;
       }
       if(typeof $scope.selectedProduct == "string"){
-        query = $scope.selectedProduct;
+        $scope.params.query = $scope.selectedProduct;
       }
-
-      $state.go('hm.search', { query : query},{ reload: true });
+      product && ($scope.params.category_id = product.Category_Id);
+      $scope.params.page = 1;
+      $state.go('hm.search.results', $scope.params);
+      //$state.go('hm.search', { query : query},{ reload: true });
     }
 
     function getProducts(search){
       return RestSV.get( HeaderCnst.search.url() ,{
-        search_text : 'lift'
+        search_text : search,
       }).then(function(response){
-        var filtered = filterFilter(response.data.result.SearchResult, search);
+        var filtered = filterFilter(response.data.result.ProductList, search);
         var results = _(filtered)
           .groupBy('Category_Name')
           .map(function (g) {
@@ -58,7 +59,7 @@ angular.module('HeavyMetals')
     }
 
     function _initialize(){
-      $scope.selectedProduct = '';
+      $scope.selectedProduct = $scope.params.query || '';
       $scope.flags = {
         rented : true
       };
@@ -72,6 +73,10 @@ angular.module('HeavyMetals')
     $scope.toggleHeader = function() {
       $scope.showHeader = !$scope.showHeader
     };
+
+    $scope.$watch('params.query', function(){
+      $scope.selectedProduct = $scope.params.query || '';
+    })
 
 
   }]);
