@@ -15,6 +15,7 @@ angular.module("HM_SearchMD")
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
+        console.log("initialized")
         $scope.flags.gridView = $stateParams.view_type == "grid";
         $scope.queryFormData = {};
         $scope.searchTags = [];
@@ -126,6 +127,7 @@ angular.module("HM_SearchMD")
             } else {
               $scope.results = $scope.results.concat(data.result.ProductList);
               $scope.flags.page += 1;
+              console.log("browseProduct",$scope.results)
             }
           });
           browseProduct.finally(function () {
@@ -195,12 +197,6 @@ angular.module("HM_SearchMD")
             })
         }
       }
-      // scroll to top button
-      $scope.gotoTop = function() {
-        $location.hash('bottom');
-        $anchorScroll();
-      }
-
 
 
       // scroll to top button

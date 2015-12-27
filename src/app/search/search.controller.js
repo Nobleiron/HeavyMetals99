@@ -1,8 +1,8 @@
 'use strict';
 angular.module("HM_SearchMD")
   .controller("HM_SearchCtrl",
-  ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst','toastr',
-    function($scope, $state, $stateParams, RestSV, SearchCnst,toastr){
+  ['$scope','$state','$stateParams','$location','HM_RestSV','HM_SearchCnst','toastr',
+    function($scope, $state, $stateParams,$location, RestSV, SearchCnst,toastr){
 
 
       $scope.toggleGridView = toggleGridView;
