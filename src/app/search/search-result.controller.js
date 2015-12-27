@@ -10,10 +10,13 @@ angular.module("HM_SearchMD")
 
       $scope.clearSearchTag = clearSearchTag;
 
+      $scope.openDatepicker = openDatepicker;
+
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
         $scope.flags.gridView = $stateParams.view_type == "grid";
+        $scope.queryFormData = {};
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
         $scope.params.attributes && _setCategoryAttributesFromParams($scope.params.attributes);
@@ -33,6 +36,9 @@ angular.module("HM_SearchMD")
         }
       }
 
+      function openDatepicker(model){
+        $scope.queryFormData[model] = !$scope.queryFormData[model];
+      }
 
       function _setCategoryAttributesFromParams(attributes){
         if(typeof attributes == "string"){
