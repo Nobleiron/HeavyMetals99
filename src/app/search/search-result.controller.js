@@ -1,7 +1,7 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst', '$location', '$anchorScroll', '$window',
-    function($scope,$state, $stateParams, RestSV, SearchCnst, $location, $anchorScroll, $window){
+  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
+    function($scope,$state, $stateParams, RestSV, SearchCnst){
 
 
       $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
