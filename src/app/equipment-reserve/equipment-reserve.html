@@ -3,7 +3,11 @@
     <button type="button" class="close" data-dismiss="modal" ng-click="$dismiss()">×</button>
     <h4 class="modal-title">Reserve this Equipment</h4>
   </div>
-  <div class="modal-body order-history-modal">
+  <div class="modal-body order-history-modal" style="min-height: 300px">
+    <load-indicator loading="!product"></load-indicator>
+    <div ng-show="product">
+
+
         <div class="col-lg-6 reserve-left">
           <figure class="pull-center">
             <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" alt="" class="equip-reserve-img">
@@ -95,6 +99,7 @@
                is-open="valuationDatePickerIsOpen"
                ng-click="valuationDatePickerOpen()"
                ng-model="pickupDate" />
+                <img src="assets/images/calendar.png">
                 <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
               </td>
               <td>
@@ -104,6 +109,7 @@
                is-open="valuationDatePickerIsOpen"
                ng-click="valuationDatePickerOpen()"
                ng-model="pickupEndDate" />
+                <img src="assets/images/calendar.png">
                 <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
               </td>
               <td>
@@ -113,6 +119,7 @@
                is-open="valuationDatePickerIsOpen"
                ng-click="valuationDatePickerOpen()"
                ng-model="pickupTime" />
+                <img src="assets/images/calendar.png">
                 <!-- <input type="text" placeholder="Enter Time" class="form-control"> -->
               </td>
             </tr>
@@ -120,6 +127,7 @@
       </table>
       </div>
     </div>
+  </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn all-btn sell-equ" ng-click="$dismiss()" data-dismiss="modal">Close</button>
