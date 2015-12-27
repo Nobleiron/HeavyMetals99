@@ -18,6 +18,7 @@
       'ngAutocomplete',
       'ngSanitize',
       'infinite-scroll',
+      'toastr',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
       'valdr',

@@ -1,8 +1,8 @@
 'use strict';
 angular.module("HM_SearchMD")
   .controller("HM_SearchCtrl",
-  ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
-    function($scope, $state, $stateParams, RestSV, SearchCnst){
+  ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst','toastr',
+    function($scope, $state, $stateParams, RestSV, SearchCnst,toastr){
 
 
       $scope.toggleGridView = toggleGridView;
@@ -72,6 +72,9 @@ angular.module("HM_SearchMD")
               return x.Id == $scope.params.category_id;
             }) : $scope.categories[0];
             $scope.params.category_id = $scope.flags.selectedCategory.Id;
+          })
+          .catch(function(){
+            toastr.error('Something went wrong','Error')
           })
       }
 
