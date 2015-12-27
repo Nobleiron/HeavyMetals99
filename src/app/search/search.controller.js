@@ -67,11 +67,7 @@ angular.module("HM_SearchMD")
             });
             $scope.selectedRootCategory = $scope.rootCategories[0];
             $scope.categories = $scope.selectedRootCategory.children;
-            $scope.categories.forEach(function(category){
-              if(category.Attribute.length){
-                buildAttributeMap(category.Attribute)
-              }
-            });
+            buildAttributeMap();
             $scope.flags.selectedCategory = $scope.params.category_id ? _.find($scope.categories,function(x){
               return x.Id == $scope.params.category_id;
             }) : $scope.categories[0];
@@ -103,28 +99,43 @@ angular.module("HM_SearchMD")
       function selectCategory(category){
         $scope.flags.selectedCategory = category;
         $scope.flags.page = 1;
+        $scope.params['attributes'] = [];
+        $scope.params.attributes = undefined;
         $scope.params.category_id = $scope.flags.selectedCategory.Id;
+        buildAttributeMap();
         $state.go('hm.search.results',$scope.params);
       }
 
-      function selectCategoryAttributes(attribute, attributeValue){
+      function selectCategoryAttributes(event, attribute, attributeValue){
         var idx = _.find($scope.selectedAttributes[attribute], function(x){ return x == attributeValue});
-        // is currently selected
         if (idx) {
-          $scope.selectedAttributes.splice(idx, 1);
+          $scope.selectedAttributes[attribute].splice(idx, 1);
         }
         else {
           $scope.selectedAttributes[attribute].push(attributeValue);
         }
-
-        console.log($scope.selectedAttributes);
+        normalizeCategoryAttributes();
+        $state.go('hm.search.results',$scope.params);
+        event.stopPropagation();
       }
 
+      function normalizeCategoryAttributes(){
+        $scope.params['attributes'] = []
+        angular.forEach($scope.selectedAttributes, function(value,key){
+          value.length && ($scope.params['attributes'].push(key + '~'+ value.join(',')))
+        })
+      }
 
-      function buildAttributeMap(attributes){
-        attributes.forEach(function(attribute){
-          $scope.selectedAttributes[attribute.Attribute_name] = [];
+      function buildAttributeMap(){
+        $scope.selectedAttributes = {};
+        $scope.categories.forEach(function(category){
+          if(category.Attribute.length){
+            category.Attribute.forEach(function(attribute){
+              $scope.selectedAttributes[attribute.Attribute_slug] = [];
+            });
+          }
         });
+
       }
 
     }]);
