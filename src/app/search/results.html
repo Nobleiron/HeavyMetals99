@@ -49,6 +49,7 @@
       <!--</div>-->
 
       <div class="row no-search-row" ng-if="userQuery">
+        <form>
         <div class="col-md-12 text-col">
           <p class="no-search-desc">
             <span>Sorry, no result found for "{{params.query}}"</span>. Let us help you out. Tell us what do need? We will get back to you.</p>
@@ -91,8 +92,9 @@
         </div>
         <div class="col-md-12 col1"></div>
         <div class="col-md-12 col4">
-          <button class="btn btn-primary pull-right">Request Further Information</button>
+          <button class="btn btn-primary pull-right" ng-click="acceptUserQuery()">Request Further Information</button>
         </div>
+        </form>
       </div>
 
       <div infinite-scroll="lazyLoadSearchResult()" infinite-scroll-distance="3"></div>

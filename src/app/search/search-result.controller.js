@@ -1,7 +1,7 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst',
-    function($scope,$state, $stateParams, RestSV, SearchCnst){
+  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst','toastr','toastrConfig',
+    function($scope,$state, $stateParams, RestSV, SearchCnst,toastr,toastrConfig){
 
 
       $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
@@ -12,12 +12,15 @@ angular.module("HM_SearchMD")
 
       $scope.openDatepicker = openDatepicker;
 
+      $scope.acceptUserQuery = acceptUserQuery;
+
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
         console.log("initialized")
         $scope.flags.gridView = $stateParams.view_type == "grid";
         $scope.queryFormData = {};
+        toastrConfig.positionClass = 'toast-top-center';
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
         $scope.params.attributes && _setCategoryAttributesFromParams($scope.params.attributes);
@@ -196,6 +199,12 @@ angular.module("HM_SearchMD")
               $scope.flags.searchResultLoading = false;
             })
         }
+      }
+
+      function acceptUserQuery(){
+        $scope.params.query = undefined;
+        $state.go('hm.search.results', $scope.params);
+        toastr.success('Thanks for submitting your query. We will get back to you shortly');
       }
 
 
