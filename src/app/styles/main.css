@@ -1517,10 +1517,6 @@ button:hover {
   color: #fff;
 }
 
-.fa-map-marker {
-  color: #009ddc;
-}
-
 /*update job site*/
 .job-site-list {
   padding: 15px;
@@ -1552,7 +1548,7 @@ button:hover {
 
 .job-lists input,
 .job-lists input:focus {
-  margin: 3px 0;
+  margin: 3px 0 0 5px;
   outline: none;
 }
 
