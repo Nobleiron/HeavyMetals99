@@ -1350,6 +1350,17 @@ button:hover {
   padding: 10px 15px 0;
 }
 
+.cart-table thead {
+  background-color: #009ddc;
+  color: #fff;
+  font-weight: 600;
+}
+
+.delete-icon i {
+  color: #009ddc;
+  font-size: 20px;
+}
+
 .cart-table {
   border-bottom: 1px solid #ddd;
 }
