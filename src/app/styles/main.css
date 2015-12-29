@@ -472,7 +472,7 @@ a:focus { color: #0099cc;
   margin: 5px 0;
 }
 /*.collapsing{width: 100%;}*/
-.total_order_d{float: right; margin: -8px 0 0 0;}
+.total_order_d{float: right; margin: 0 0 0 0;}
 .down_arrow_accordian{margin: 0 0 0 30px; color: #009ddc;}
 .daily_price_check {
     font-size: 16px; text-decoration: line-through;}
@@ -1725,6 +1725,16 @@ button:hover {
 .rightpadding {
   padding-right: 0;
 }
+
+.order-history-accordion .order-no {
+  border-bottom: 1px solid #ddd;
+}
+
+.order-history-accordion .treack_main_order {
+  padding-top: 20px;
+}
+
+
 
 
 

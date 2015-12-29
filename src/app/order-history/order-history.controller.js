@@ -2,6 +2,7 @@
 angular.module("HM_OrderHistoryMD")
   .controller("HM_OrderHistoryCtrl",['$scope', function($scope){
 
+    $scope.oneAtATime = true;
 
     $scope.orders = [{
       orderNo: 'ODR-123-456-7890',
