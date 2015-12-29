@@ -54,7 +54,7 @@ angular.module("HM_SearchMD")
       function toggleGridView(bool){
         $scope.flags.gridView = bool;
         $scope.params.view_type = bool ? 'grid' : 'list';
-        $state.go('hm.search.results',$scope.params,{notify : false});
+        $state.go('hm.search.results',$scope.params);
       }
 
       function loadCategories(){
