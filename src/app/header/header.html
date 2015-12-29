@@ -44,6 +44,21 @@
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
           </ul>
         </div>
+        <!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
+          <div>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-mini my-alc-btn nopadding prof-btn" uib-dropdown-toggle ng-disabled="disabled">
+            <img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+            <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/logout">Logout</a></li>
+            </ul>
+            </div>
+          </div>
+        </div> -->
         <div ng-if="!userObj" class="not-user-div">
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
@@ -92,11 +107,22 @@
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
           </ul>
-          <!-- <ul class="dropdown-menu"  role="menu" ng-if="!userObj">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/login">Login</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/register">Register</a></li>
-          </ul> -->
         </div>
+        <!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
+          <div>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-mini my-alc-btn nopadding prof-btn" uib-dropdown-toggle ng-disabled="disabled">
+            <img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+            <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/logout">Logout</a></li>
+            </ul>
+            </div>
+          </div>
+        </div> -->
         <div ng-if="!userObj" class="not-user-div">
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
