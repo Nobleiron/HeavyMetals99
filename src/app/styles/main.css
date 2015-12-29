@@ -1734,7 +1734,20 @@ button:hover {
   padding-top: 20px;
 }
 
+.quotes-table thead {
+  background-color: #009ddc;
+  color: #fff;
+  font-weight: 600;
+}
 
+.quotes-table thead tr th,
+.quotes-table tbody tr td {
+  font-size: 13px;
+}
+
+.view-down {
+  margin-right: 10px;
+}
 
 
 
