@@ -634,6 +634,30 @@
     padding-top: 182px;
   }
 
+  .panel-left {
+    padding: 0 0
+  }
+
+  .panel-right {
+    padding: 10px 0;
+  }
+
+  .panel-right .total_order_d {
+    float: none;
+  }
+
+  .order-history-panel .order_bot {
+    margin: 10px 0 0px 0;
+  }
+
+  .order-history-panel .treack_main_order {
+    text-align: left;
+  }
+
+  .order-history-collapse {
+    padding: 0;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -770,6 +794,9 @@
   .not-user-div {
     padding: 17px 0px;
   }
+.panel-left {
+  line-height: 25px;
+}
 }
 
 @media screen and (max-width: 320px) {

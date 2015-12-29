@@ -5,26 +5,29 @@
       <!-- START  My Orders  -->
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit">
         My Account/ My Orders
-        <hr>
+        <hr class="order-hr">
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default my-order-panal" ng-repeat="order in orders">
-            <div class="panel-heading">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc">
+        <div class="panel-group row" id="accordion">
+          <div class="row panel panel-default my-order-panal rightmargin leftmargin panel-row" ng-repeat="order in orders">
+            <div class="panel-heading row nomargin">
               <h4 class="panel-title order_panel">
 
-                <a data-toggle="collapse" data-parent="#accordion" ng-click="toggleAccordian(order)" aria-expanded="true" class="">
-                  <span class="order_tit_list">{{order.orderNo}}</span>| <span class="order_tit_pump">{{order.title}}</span>|
-                  <span class="order_tit_rent">Rented for {{order.RentedForDays}} Days</span>
-
-                  <span class="total_order_d">Order Total: ${{order.totalAmount}}<i class="fa fa-angle-down fa-2x down_arrow_accordian"></i></span>
+                <a data-toggle="collapse" data-parent="#accordion" ng-click="toggleAccordian(order)" aria-expanded="true" class="on-hover-pointer">
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 panel-left">
+                    <span class="order_tit_list heading-text">{{order.orderNo}}</span>| <span class="order_tit_pump heading-text">{{order.title}}</span>|
+                    <span class="order_tit_rent heading-text">Rented for {{order.RentedForDays}} Days</span>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 panel-right">
+                    <span class="total_order_d desc-text">Order Total: ${{order.totalAmount}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
+                  </div>
                 </a>
 
               </h4>
             </div>
-            <div class="panel-collapse collapse" ng-class="{'in': order.toggleOpened}" aria-expanded="true">
-              <div class="panel-body">
-                <div class="col-lg-11 col-md-11 col-sm-8 col-xs-8">{{order.orderNo}}</div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel-collapse collapse order-history-collapse" ng-class="{'in': order.toggleOpened}" aria-expanded="true">
+              <div class="panel-body order-history-panel nopadding">
+                <div class="col-lg-11 col-md-11 col-sm-8 col-xs-8 nopadding">{{order.orderNo}}</div>
                 <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4 text-right">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_dash_botam order_bot"></div>
@@ -32,13 +35,13 @@
                   <img src="assets/images/order-history.jpg" alt="">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 order_text">
-                  <h3 class="gas_title">{{order.title}}</h3>
-                  <h4 class="rent_title">Rented for {{order.RentedForDays}} Days</h4>
-                  <h5 class="order_his_title">Order Total: ${{order.totalAmount}}</h5>
+                  <h3 class="gas_title heading-text">{{order.title}}</h3>
+                  <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
+                  <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 treack_main_order">
-                  <button type="button" class="btn btn-default print_btn">Track Order</button>
-                  <button type="button" class="btn btn-default print_btn">Write a Review for Order</button>
+                  <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn">Track Order</button>
+                  <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn">Write a Review for Order</button>
                 </div>
               </div>
             </div>
@@ -48,27 +51,26 @@
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sell-main-part">
 
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
 
 
-          <hr class="req_dash_botam">
-          <h3 class="req_job_tit">Track Reservation Status</h3>
-          <p class="comferm_email_tex">
+          <!-- <hr class="req_dash_botam order-his-hr"> -->
+          <h3 class="req_job_tit topmargin">Track Reservation Status</h3>
+          <p class="comferm_email_tex desc-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
           </p>
-          <p class="theme_clr">
+          <p class="theme_clr desc-text">
             Track Here
           </p>
-          <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">help</button>
+          <button type="button" class="btn sell-equ all-btn" data-toggle="modal" data-target="#myModal">Help</button>
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">×</button>
-                  <h4 class="modal-title">Let us help you out</h4>
+                  <h4 class="modal-title">Let us help you out<a class="close-cross pull-right" ng-click="$dismiss()"><i class="fa fa-times marker on-hover-pointer" data-dismiss="modal"></i></a></h4>
                 </div>
                 <div class="modal-body order-history-modal">
                   <form role="form">
@@ -84,7 +86,7 @@
                         <input type="email" class="form-control" id="email" placeholder="(xxx)-xxx-xxxxx">
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-12">
                       <label for="email">What do you need?</label>
                       <input type="email" class="form-control" id="email" placeholder="Type of equipment, service, parts, etc.">
                     </div>
@@ -119,7 +121,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-default print_btn">Request Further Information</button>
+                  <button type="submit" class="btn all-btn sign_mybtn primary-btn autowidth print_btn">Request Further Information</button>
                   <!--                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
                 </div>
               </div>
@@ -128,14 +130,14 @@
           </div>
           <hr class="req_dash_botam">
           <h3 class="req_job_tit">FAQ’s Regarding Orders</h3>
-          <p class="comferm_email_tex">
+          <p class="comferm_email_tex desc-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
           </p>
-          <p class="theme_clr">
+          <p class="theme_clr desc-text">
             Go to FAQ’s
           </p>
-          <hr class="req_dash_botam">
+          <hr class="req_dash_botam order-his-hr">
         </div>
       </div>
       <!-- End  My Orders  -->
@@ -143,14 +145,14 @@
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 need_main">
         <!-- START  Need Assistance -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 need_part">
-          <h2 class="need_title">Need Assistance?</h2>
-          <p class="need_sub">
+          <h2 class="need_title heading-text">Need Assistance?</h2>
+          <p class="need_sub desc-text">
             We would be more than happy to help you.
             Our team advisors are 24/7 at your service to
             help you.
           </p>
-          <p class="help_clr"><a href="#" class="">help@nobleiron.com</a></p>
-          <p class="skype_tex"><i class="fa fa-phone"></i>
+          <p class="help_clr desc-text"><a href="#">help@nobleiron.com</a></p>
+          <p class="skype_tex desc-text"><i class="fa fa-phone"></i>
             1-800-123-HELLO</p>
         </div>
         <!-- End  Need Assistance -->
