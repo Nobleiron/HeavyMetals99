@@ -121,7 +121,7 @@ angular.module("HM_SearchMD")
           var browseProduct = RestSV.post(SearchCnst.productByCategory.url(), {
             page: $scope.flags.page,
             category_id: $scope.params.category_id,
-            attributes : _getCategoryAttributeParams()
+            attribute : _getCategoryAttributeParams()
           });
 
           browseProduct.success(function (data) {
@@ -148,16 +148,21 @@ angular.module("HM_SearchMD")
         var obj = [];
         if(typeof $scope.params.attributes == "string"){
           var key = $scope.params.attributes.split('~');
-          var att = {};
-          att[key[0]] = key[1].split(',');
-          obj.push(att);
+          key[1].split(',').forEach(function(k){
+            var j = {};
+            j[key[0]] = k
+            obj.push(j);
+          });
         }
         if(typeof $scope.params.attributes == "object"){
           $scope.params.attributes.forEach(function(attribute){
+
             var key = attribute.split('~');
-            var att = {};
-            att[key[0]] = key[1].split(',');
-            obj.push(att);
+            key[1].split(',').forEach(function(k){
+              var j = {};
+              j[key[0]] = k
+              obj.push(j);
+            });
           });
         }
         return obj.length ?  obj : undefined;
