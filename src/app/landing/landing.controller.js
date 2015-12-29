@@ -48,6 +48,9 @@ angular.module('HM_LandingMD')
       $scope.flags = {
         rented : true
       };
+      $scope.params.page = undefined;
+      $scope.params.category_id = undefined;
+      $scope.params.query = undefined;
       $scope.userObj = localStorageService.get('userObj');
       fetchEquipmentMenus();
       loadCategories();
