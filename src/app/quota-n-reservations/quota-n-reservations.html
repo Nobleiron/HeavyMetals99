@@ -5,7 +5,7 @@
 		      <div class="row">
 		        <!-- START  Dashboard tab -->
 		        <div class="col-sm-12 col-xs-12 filt-btn">
-		          <button class="btn sell-equ all-btn" ng-click="filterBtn()">Qoutes and Reservation</button>
+		          <button class="btn sell-equ all-btn" ng-click="filterBtn()">Quotes and Reservation</button>
 		        </div>
 		        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
 		          <ul class="nav nav-pills nav-stacked my-verti-tab">
@@ -41,31 +41,35 @@
 
 		        </div>
 		        <!-- End  Dashboard tab -->
-				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-
-		              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
-		                Quotes
-		              </div>
-		              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
-		                <input type="text" placeholder="Search Quotes" class="form-control pull-right mng-search-bar">
-		              </div>
-		            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-			            <table class="table table-striped quotes-table">
-			              <thead>
-			              <tr>
-			                <th>Quote ID</th>
+						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
+								Quotes
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit job-site-list">
+								<!-- <input type="text" placeholder="Search Quotes" class="form-control pull-right mng-search-bar"> -->
+								<div class="form-control search-div quotes-search">
+									<i class="fa fa-search"></i>
+									<input type="text" placeholder="Search">
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+								<table class="table table-striped quotes-table">
+									<thead>
+										<tr>
+											<th>Quote ID</th>
 			                <th>Request Date</th>
 			                <th>Quote Value</th>
 			                <th></th>
 			              </tr>
-			              </thead>
-			              <tbody>
+			            </thead>
+			            <tbody>
 			              <tr>
 			                <td><a href="" class="invoice-no">49345</a></td>
 			                <td>May 21, 2015</td>
 			                <td>$928.96</td>
 			                <td>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
+			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
 			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
 			              </tr>
 			              <tr>
@@ -73,7 +77,7 @@
 			                <td>May 21, 2015</td>
 			                <td>$928.96</td>
 			                <td>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
+			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
 			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
 			              </tr>
 			              <tr>
@@ -81,7 +85,7 @@
 			                <td>May 21, 2015</td>
 			                <td>$928.96</td>
 			                <td>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
+			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
 			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
 			              </tr>
 			              <tr>
@@ -89,7 +93,7 @@
 			                <td>May 21, 2015</td>
 			                <td>$928.96</td>
 			                <td>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
+			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
 			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
 			              </tr>
 			              <tr>
@@ -97,14 +101,14 @@
 			                <td>May 21, 2015</td>
 			                <td>$928.96</td>
 			                <td>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
+			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
 			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
 			              </tr>
-			              </tbody>
-			            </table>
-		            </div>
-		    </div>
-			</div>
-		</div>
-	</article>
+			            </tbody>
+			          </table>
+		          </div>
+		    		</div>
+					</div>
+				</div>
+			</article>
 </section>

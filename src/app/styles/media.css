@@ -658,6 +658,18 @@
     padding: 0;
   }
 
+  .quotes-search {
+    float: none;
+  }
+
+  .quotes-total-price {
+    background-color: transparent;
+  }
+
+  .quotes-total-price div {
+    padding-right: 15px;
+  } 
+
 }
 
 @media screen and (max-width: 480px) {

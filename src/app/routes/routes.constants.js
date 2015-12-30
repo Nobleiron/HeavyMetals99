@@ -121,6 +121,10 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
           controller: 'HM_QuotaNReservationsCtrl'
         },
+        'hm.quotesDetail' : {
+          url: '/quotes-detail',
+          templateUrl: 'app/quotes-detail/quotes-detail.html'
+        },
         'hm.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',

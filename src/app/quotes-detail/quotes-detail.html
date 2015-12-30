@@ -1,0 +1,199 @@
+<section class="content-top">
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+	    <div class="container">
+		      <div class="row">
+		        <!-- START  Dashboard tab -->
+		        <div class="col-sm-12 col-xs-12 filt-btn">
+		          <button class="btn sell-equ all-btn" ng-click="filterBtn()">Quotes and Reservation</button>
+		        </div>
+		        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
+		          <ul class="nav nav-pills nav-stacked my-verti-tab">
+		            <li ng-click="closeFilter()">
+		              <a data-toggle="pill" href="/#/dashboard">
+		                <i class="fa fa-th-large my-verti-icon"></i>
+		                <span class="sidebar-heading">Dashboard</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
+		              <i class="fa fa-heart my-verti-icon catelog-icon"></i>
+		              <span class="sidebar-heading">My Catalog</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/manage/jobsites">
+		              <i class="fa fa-map-marker my-verti-icon"></i>
+		              <span class="sidebar-heading">Manage Job Sites</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
+		              <i class="fa fa-user my-verti-icon"></i>
+		              <span class="sidebar-heading">Manage My Account</span></a></li>
+		            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
+		              <i class="fa fa-bookmark my-verti-icon"></i>
+		              <span class="sidebar-heading">Quotes &amp;
+		              Reservations</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
+		              <i class="fa fa-usd my-verti-icon"></i>
+		              <span class="sidebar-heading">Make a Payment</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
+		              <i class="fa fa-file my-verti-icon"></i>
+		              <span class="sidebar-heading">View Invoices</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
+		              <span class="sidebar-heading">Requests</span></a></li>
+		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
+		              <span class="sidebar-heading">View Contracts</span></a></li>
+
+		          </ul>
+
+		        </div>
+		        <!-- End  Dashboard tab -->
+						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
+								<a href="#/quota-n-reservations" class="desc-text"><i class="fa fa-chevron-left"></i>&nbsp Back to Quotes List</a>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 quotes-id">
+								<h3 class="go-back-text">
+									Quote #23456
+									<span class="pull-right">Date: 15 Nov, 2015</span>
+								</h3>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
+								<table class="table cart-table">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Equipment</th>
+											<th>Quantity</th>
+											<th>Request Dates</th>
+											<th>Sub-Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="vertically-middle">
+												<i class="fa fa-truck fa-4x"></i>
+											</td>
+											<td class="equipment-desc vertically-middle quotes-equip">
+												<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+												<i class="fa fa-map-marker marker"></i>
+												<span>Bay Area, Houstan</span>
+											</td>
+											<td class="quantity vertically-middle">
+												<p class="desc-text pull-center qty">1</p>
+											</td>
+											<td class="duration vertically-middle">
+												<p>12 Dec, 2015 - 23:00</p>
+												<p class="to">to</p>
+												<p>14 Dec, 2015 - 11:30</p>
+											</td>
+											<td class="vertically-middle pricing">$3556</td>
+										</tr>
+										<tr>
+											<td class="vertically-middle">
+												<i class="fa fa-truck fa-4x"></i>
+											</td>
+											<td class="equipment-desc vertically-middle quotes-equip">
+												<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+												<i class="fa fa-map-marker marker"></i>
+												<span>Bay Area, Houstan</span>
+											</td>
+											<td class="quantity vertically-middle">
+												<p class="desc-text pull-center qty">1</p>
+											</td>
+											<td class="duration vertically-middle">
+												<p>12 Dec, 2015 - 23:00</p>
+												<p class="to">to</p>
+												<p>14 Dec, 2015 - 11:30</p>
+											</td>
+											<td class="vertically-middle pricing">$3556</td>
+										</tr>
+										<tr>
+											<td class="vertically-middle">
+												<i class="fa fa-truck fa-4x"></i>
+											</td>
+											<td class="equipment-desc vertically-middle quotes-equip">
+												<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+												<i class="fa fa-map-marker marker"></i>
+												<span>Bay Area, Houstan</span>
+											</td>
+											<td class="quantity vertically-middle">
+												<p class="desc-text pull-center qty">1</p>
+											</td>
+											<td class="duration vertically-middle">
+												<p>12 Dec, 2015 - 23:00</p>
+												<p class="to">to</p>
+												<p>14 Dec, 2015 - 11:30</p>
+											</td>
+											<td class="vertically-middle pricing">$3556</td>
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
+								<div class="cart-for-mobile">
+									<div class="cart-image-div">
+										<i class="fa fa-truck fa-4x"></i>
+									</div>
+									<div class="equipment-desc quotes-equip">
+										<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+										<i class="fa fa-map-marker marker"></i>
+										<span>Bay Area, Houstan</span>
+										<p class="desc-text quantity-p">Quantity: 1
+											<span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+										</p>
+									</div>
+								</div>
+								<div class="cart-for-mobile">
+									<div class="cart-image-div">
+										<i class="fa fa-truck fa-4x"></i>
+									</div>
+									<div class="equipment-desc quotes-equip">
+										<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+										<i class="fa fa-map-marker marker"></i>
+										<span>Bay Area, Houstan</span>
+										<p class="desc-text quantity-p">Quantity: 1
+											<span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+										</p>
+									</div>
+								</div>
+								<div class="cart-for-mobile">
+									<div class="cart-image-div">
+										<i class="fa fa-truck fa-4x"></i>
+									</div>
+									<div class="equipment-desc quotes-equip">
+										<a class="heading-text on-hover-pointer">Electric Equipment Wide-16 "</a>
+										<i class="fa fa-map-marker marker"></i>
+										<span>Bay Area, Houstan</span>
+										<p class="desc-text quantity-p">Quantity: 1
+											<span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 total-price quotes-total-price">
+								<div class="total-price-div">
+									<h3>
+										<label>Sub-Total Rental:</label>
+										<span>$ 13,847</span>
+									</h3>
+									<h3>
+										<label>Environmental Fee:</label>
+										<span>$ 13,847</span>
+									</h3>
+									<h3>
+										<label>Equipment Protection Program:</label>
+										<span>$ 13,847</span>
+									</h3>
+									<h3>
+										<label>Taxes:</label>
+										<span>$ 13,847</span>
+									</h3>
+									<h3>
+										<label class="total">Total:</label>
+										<span class="total">$ 13,847</span>
+									</h3>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="bottommargin"></div>
+							<div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 reserve-generate-btn">
+								<button class="btn sign_mybtn all-btn primary-btn"><i class="fa fa-download"></i>&nbsp Download</button>
+							</div>
+		    		</div>
+					</div>
+				</div>
+			</article>
+</section>

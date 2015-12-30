@@ -1427,7 +1427,7 @@ button:hover {
 
 .duration .to {
   text-align: center;
-  width: 53%;
+  width: 70%;
 }
 
 .duration p:last-child {
@@ -1734,6 +1734,8 @@ button:hover {
   padding-top: 20px;
 }
 
+/*quotes list*/
+
 .quotes-table thead {
   background-color: #009ddc;
   color: #fff;
@@ -1747,6 +1749,65 @@ button:hover {
 
 .view-down {
   margin-right: 10px;
+}
+
+.devider {
+  margin-top: 12px;
+}
+
+.quotes-search {
+  width: 70%;
+  float: right;
+  text-align: left;
+  min-width: 300px;
+}
+
+/*quotes-detail*/
+.qty {
+  width: 55%;
+}
+
+.quotes-equip a {
+  margin: 10px 0 8px 0;
+  display: block;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.quotes-total-price {
+  background-color: #eeeeee;
+  padding: 10px 0;
+}
+
+.quotes-total-price div {
+  padding-right: 4%;
+}
+
+.go-back-text {
+  font-size: 15px;
+}
+
+.quotes-id {
+  background-color: #eeeeee;
+  margin-bottom: 15px;
+}
+
+.quotes-id h3 {
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.quotes-id h3 span {
+  font-weight: 400;
+}
+
+.quotes-equip .quantity-p {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.bold-font {
+  font-weight: 600 !important;
 }
 
 
