@@ -213,6 +213,9 @@
     padding: 15px 15px 0;
   }
 
+  .reserve-btns {
+    padding: 0 6% 10px 6%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -806,9 +809,13 @@
   .not-user-div {
     padding: 17px 0px;
   }
-.panel-left {
-  line-height: 25px;
-}
+  .panel-left {
+    line-height: 25px;
+  }
+
+  .reserve-btns {
+    padding: 0 10% 10px 10%;
+  }
 }
 
 @media screen and (max-width: 320px) {

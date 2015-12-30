@@ -33,20 +33,10 @@
         </li>
       </ul>
     </div>
-    <div class="heart">
-      <ul>
-        <li>
-          <a href=""><i class="fa fa-eye fa-2x"></i></a>
-
-        </li>
-        <li>
+    <div class="heart reserve-btns">
+          <a href=""><i class="fa fa-eye fa-2x pull-left"></i></a>
           <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn my-reserve all-btn">Reserve</a>
-
-        </li>
-        <li>
-          <a ng-click="addToOrRemoveFromWishList(item)"><i class="fa fa-heart fa-2x" btn-load-indicator="Add:Wishlist:Process"  btn-uid="item.Product_Id" ng-class="{'wish-added': item.Is_in_catelog}"></i></a>
-        </li>
-      </ul>
+          <a ng-click="addToOrRemoveFromWishList(item)"><i class="fa fa-heart fa-2x pull-right" btn-load-indicator="Add:Wishlist:Process"  btn-uid="item.Product_Id" ng-class="{'wish-added': item.Is_in_catelog}"></i></a>
     </div>
   </div>
 </div>
