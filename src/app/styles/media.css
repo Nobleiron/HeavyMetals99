@@ -672,7 +672,23 @@
   .quotes-total-price div {
     padding-right: 15px;
   } 
+  .pro_pic {
+    margin: 0px 5px 0px 6px;
+    width: 22px;
+  }
 
+  .cart_menu .cart_noti {
+    right: 130px;
+  }
+
+  .user-list-group {
+    min-width: 100%;
+  }
+
+  .about-dropdown {
+    min-width: auto;
+    left: -45px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -815,6 +831,9 @@
 
   .reserve-btns {
     padding: 0 10% 10px 10%;
+  }
+  .cart_menu .cart_noti {
+    right: 118px;
   }
 }
 

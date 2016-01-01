@@ -1023,7 +1023,7 @@ a:focus { color: #0099cc;
 }
 
 .user-div {
-  padding: 0 10px;
+  padding: 0 7px;
 }
 
 .user-div .my-alc-btn {
@@ -1219,7 +1219,7 @@ button:hover {
 }
 
 .nomargin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .topmargin {
