@@ -63,8 +63,8 @@
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
         </div>
-      </div>
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 nopadding">
+    </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 nopadding">
 
         <form class="navbar-form my-search-nav" role="search">
 
@@ -78,35 +78,54 @@
             <a href="/#/help" class="help-link">Don't see what you need?</a>
           </div>
         </form>
-
       </div>
       <!-- END  Search box -->
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 my_alc hide-header-navbar nopadding header-prof-part">
-        <div class="cart_menu" ng-if="userObj">
-          <ul>
-            <li>
-              <a href="#/shopping-cart">
-                <i class="fa fa-shopping-cart fa-2x"></i></a>
-              <span class="cart_noti">1</span>
-            </li>
-            <!-- <li>
-              <a href="#">
-                <i class="fa fa-bell-o fa-2x"></i>
-              </a>
-              <span class="noti">5</span>
-            </li> -->
-          </ul>
-        </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 my_alc hide-header-navbar nopadding header-prof-part visible-md visible-lg">
+        
         <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
           <button class="btn btn-mini my-alc-btn nopadding prof-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
           <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu"  role="menu">
-            <li role="presentation"><a role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+          <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu">
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Recent Orders</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">My Profile</a></li>
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Settings</a></li>
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+            <li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
           </ul>
+        </div>
+
+        <div class="cart_menu" ng-if="userObj">
+          <ul>
+            <!-- <li>
+              <a href="#" class="marker">
+                <i class="fa fa-tachometer fa-2x marker"></i>
+              </a>
+            </li> -->
+            <li>
+              <a href="#/shopping-cart" class="marker">
+                <i class="fa fa-shopping-cart fa-2x marker"></i></a>
+              <span class="cart_noti">1</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="btn-group drop-btn profile-dropdown user-div" dropdown>
+            <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn about-caret" id="single-button" dropdown-toggle>About &nbsp
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu list-group user-list-group arrow_box about-dropdown"  role="menu">
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Team</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Board of Directors</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">FAQ</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Press Releases</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Financial Reports</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">2015 Annual Meeting</a></li>
+              <li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Contact Us</a></li>
+            </ul>
         </div>
         <!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
           <div>
