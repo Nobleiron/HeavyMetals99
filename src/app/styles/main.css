@@ -731,7 +731,7 @@ a:focus { color: #0099cc;
 }
 
 .manage-job-btn-col {
-  padding: 20px 0 5px 0;
+  padding: 20px 0 20px 0;
 }
 
 .manage-job-btn-col .manage-job-btn {
@@ -1858,6 +1858,8 @@ button:hover {
   padding: 10px;
   cursor: pointer;
   font-size: 13px;
+  border-right: 0;
+  border-left: 0;
 }
 
 .user-list-group .list-group-item a:focus,
