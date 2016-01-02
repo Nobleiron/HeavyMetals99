@@ -216,6 +216,16 @@
   .reserve-btns {
     padding: 0 6% 10px 6%;
   }
+  .contact-numbers-col {
+    padding: 0;
+  }
+
+  .contact-numbers-col button {
+    min-width: 290px;
+  }
+  .contact-row {
+    padding: 20px 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -750,7 +760,7 @@
   }
   .cart_menu ul li a {
 
-    padding: 0 6px;
+    padding: 0 2px;
   }
   .cart_menu .noti{left: 60px;}
   
@@ -831,9 +841,6 @@
 
   .reserve-btns {
     padding: 0 10% 10px 10%;
-  }
-  .cart_menu .cart_noti {
-    right: 118px;
   }
 }
 

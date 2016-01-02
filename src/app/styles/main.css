@@ -1927,8 +1927,66 @@ button:hover {
   margin: 0 15px 15px 0;
 }
 
+.faq-accordion .panel {
+  margin-bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-accordion h4:hover {
+  color: #009ddc;
+}
+
+.faq-accordion ul {
+  list-style: inherit;
+  margin-left: 40px;
+}
+
 .active-about {
   background-color: #fafafa;
+}
+
+/*contact us*/
+
+.numbers-mail {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.contact-row {
+  padding: 0 0 20px;
+}
+
+.contact-text {
+  margin: 15px 0;
+}
+
+.contact-numbers-col button {
+  min-width: 315px;
+}
+
+.contact-us-col .talk-heading {
+  padding-bottom: 10px;
+}
+
+.contact-us-col .form-control {
+  margin-bottom: 15px;
+}
+
+.contact-us-col .choice-option {
+  padding: 12px;
+}
+
+.choice-option input {
+  margin: 3px 5px 0 0;
+}
+
+.choice-option span {
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.msg-textarea {
+  min-height: 100px;
 }
 
 

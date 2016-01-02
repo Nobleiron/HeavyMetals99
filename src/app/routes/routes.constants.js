@@ -170,7 +170,24 @@ angular.module("HM_RoutesMD")
         },
         'hm.faq': {
           url: '/FAQ',
-          templateUrl: 'app/faq/faq.html'
+          templateUrl: 'app/faq/faq.html',
+          controller: 'HM_OrderHistoryCtrl'
+        },
+        'hm.contactUs': {
+          url: '/contact-us',
+          templateUrl: 'app/contact-us/contact-us.html'
+        },
+        'hm.pressReleases': {
+          url: '/press-releases',
+          templateUrl: 'app/press-releases/press-releases.html'
+        },
+        'hm.annualMeeting': {
+          url: '/annual-meeting',
+          templateUrl: 'app/annual-meeting/annual-meeting.html'
+        },
+        'hm.financialReports': {
+          url: '/financial-reports',
+          templateUrl: 'app/financial-reports/financial-reports.html'
         },
         'hmPrelogin.login' : {
           url: '/login',
