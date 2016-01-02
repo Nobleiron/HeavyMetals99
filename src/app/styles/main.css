@@ -1754,6 +1754,7 @@ button:hover {
   font-size: 13px;
   border-top: 1px dashed #ddd;
   border-bottom: 1px dashed #ddd;
+  line-height: 30px;
 }
 
 .view-down {
