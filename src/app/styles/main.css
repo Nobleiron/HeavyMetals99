@@ -1907,6 +1907,29 @@ button:hover {
   text-align: right;
 }
 
+/*faq's*/
+
+.heading-border {
+  border-bottom: 1px solid #ddd;
+}
+
+.description-col {
+  border-right: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.about-row {
+  padding: 20px 0;
+}
+
+.about-fields-small a {
+  margin: 0 15px 15px 0;
+}
+
+.active-about {
+  background-color: #fafafa;
+}
+
 
 
 

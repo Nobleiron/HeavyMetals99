@@ -168,6 +168,10 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/update-job-site/update-job-site.html',
           openInModal: true
         },
+        'hm.faq': {
+          url: '/FAQ',
+          templateUrl: 'app/faq/faq.html'
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',
