@@ -17,8 +17,8 @@ angular.module('HeavyMetals')
         this.post = function(url, config){
             return HTTP.post(_that.apiEndPoint + url, config);
         };
-        this.delete = function(url,params,config){
-          return HTTP.delete(_that.apiEndPoint + url, {params : params},config);
+        this.delete = function(url,config){
+          return HTTP.delete(_that.apiEndPoint + url,config);
         };
     }
 

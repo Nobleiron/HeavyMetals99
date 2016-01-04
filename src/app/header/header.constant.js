@@ -5,5 +5,10 @@ angular.module('HeavyMetals')
       url : function(){
         return '/products/search'
       }
+    },
+    CartDetails :{
+      url : function(){
+        return '/cart'
+      }
     }
   });

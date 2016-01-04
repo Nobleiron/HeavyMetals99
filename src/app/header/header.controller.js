@@ -64,6 +64,7 @@ angular.module('HeavyMetals')
         rented : true
       };
       $scope.userObj = localStorageService.get('userObj');
+      _getCountOfProductInCart();
     }
 
     $scope.$on("PortalAccess:Granted", function(){
@@ -76,7 +77,18 @@ angular.module('HeavyMetals')
 
     $scope.$watch('params.query', function(){
       $scope.selectedProduct = $scope.params.query || '';
-    })
+    });
 
+    $scope.$on("Cart:Updated", function(e,count){
+      $scope.cartCount = count
+    });
+
+    function _getCountOfProductInCart(){
+      RestSV.get(HeaderCnst.CartDetails.url())
+        .then(function(response){
+          $scope.cartCount = response.data.result.Cart_Count;
+
+        })
+    }
 
   }]);

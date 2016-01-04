@@ -74,61 +74,65 @@
             </ul>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 total_price_popup">Total: <span class="total_price_cle">$349</span></div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <a class="btn pull-right all-btn sign_mybtn primary-btn" href="/#/equipments/12/reserve-success" type="submit">Reserve Now</a>
-          </div>
+
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 quantity-btn all-btn">
-            <a class="btn pull-right all-btn sign_mybtn primary-btn" href="" type="submit">Add Quantity</a>
+            <input type="text" ng-value="quantity" ng-model="quantity"/>
+            <!--<a class="btn pull-right all-btn sign_mybtn primary-btn" href="" type="submit">Add Quantity</a>-->
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <a class="btn pull-right all-btn sign_mybtn primary-btn" ng-click="equipmentReserve()" type="submit">
+              <span btn-load-indicator="Equipment:Reserve:Process">Reserve Now</span>
+            </a>
           </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-top">
-        <table class="table table-bordered reserve-table">
-          <thead>
-            <tr>
-              <th>Pickup Date</th>
-              <th>Pickup Date</th>
-              <th>Pickup Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input type="text" class="form-control"
-               datepicker-popup="mediumDate"
-               is-open="valuationDatePickerIsOpen"
-               ng-click="valuationDatePickerOpen()"
-               ng-model="pickupDate" />
-                <img src="assets/images/calendar.png">
-                <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
-              </td>
-              <td>
-                <input type="text" class="form-control"
-               datepicker-popup="mediumDate"
-               datepicker-append-to-body=true
-               is-open="valuationDatePickerIsOpen"
-               ng-click="valuationDatePickerOpen()"
-               ng-model="pickupEndDate" />
-                <img src="assets/images/calendar.png">
-                <!-- <input type="text" placeholder="Enter Date" class="form-control"> -->
-              </td>
-              <td>
-                <input type="text" class="form-control"
-               datepicker-popup="mediumDate"
-               datepicker-append-to-body=true
-               is-open="valuationDatePickerIsOpen"
-               ng-click="valuationDatePickerOpen()"
-               ng-model="pickupTime" />
-                <img src="assets/images/calendar.png">
-                <!-- <input type="text" placeholder="Enter Time" class="form-control"> -->
-              </td>
-            </tr>
-          </tbody>
-      </table>
+        <!--<table class="table table-bordered reserve-table">-->
+          <!--<thead>-->
+            <!--<tr>-->
+              <!--<th>Pickup Date</th>-->
+              <!--<th>Pickup Date</th>-->
+              <!--<th>Pickup Time</th>-->
+            <!--</tr>-->
+          <!--</thead>-->
+          <!--<tbody>-->
+            <!--<tr>-->
+              <!--<td>-->
+                <!--<input type="text" class="form-control"-->
+               <!--datepicker-popup="mediumDate"-->
+               <!--is-open="valuationDatePickerIsOpen"-->
+               <!--ng-click="valuationDatePickerOpen()"-->
+               <!--ng-model="pickupDate" />-->
+                <!--<img src="assets/images/calendar.png">-->
+                <!--&lt;!&ndash; <input type="text" placeholder="Enter Date" class="form-control"> &ndash;&gt;-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--<input type="text" class="form-control"-->
+               <!--datepicker-popup="mediumDate"-->
+               <!--datepicker-append-to-body=true-->
+               <!--is-open="valuationDatePickerIsOpen"-->
+               <!--ng-click="valuationDatePickerOpen()"-->
+               <!--ng-model="pickupEndDate" />-->
+                <!--<img src="assets/images/calendar.png">-->
+                <!--&lt;!&ndash; <input type="text" placeholder="Enter Date" class="form-control"> &ndash;&gt;-->
+              <!--</td>-->
+              <!--<td>-->
+                <!--<input type="text" class="form-control"-->
+               <!--datepicker-popup="mediumDate"-->
+               <!--datepicker-append-to-body=true-->
+               <!--is-open="valuationDatePickerIsOpen"-->
+               <!--ng-click="valuationDatePickerOpen()"-->
+               <!--ng-model="pickupTime" />-->
+                <!--<img src="assets/images/calendar.png">-->
+                <!--&lt;!&ndash; <input type="text" placeholder="Enter Time" class="form-control"> &ndash;&gt;-->
+              <!--</td>-->
+            <!--</tr>-->
+          <!--</tbody>-->
+      <!--</table>-->
       </div>
     </div>
   </div>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn all-btn sell-equ" ng-click="$dismiss()" data-dismiss="modal">Close</button>
-  </div>
+  <!--<div class="modal-footer">-->
+    <!--<button type="button" class="btn all-btn sell-equ" ng-click="$dismiss()" data-dismiss="modal">Close</button>-->
+  <!--</div>-->
 </div>

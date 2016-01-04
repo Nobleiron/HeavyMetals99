@@ -89,7 +89,7 @@
       </div>
       <!-- END  Search box -->
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 my_alc hide-header-navbar nopadding header-prof-part visible-md visible-lg">
-        
+
         <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
           <button class="btn btn-mini my-alc-btn nopadding prof-btn"><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
           <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
@@ -116,7 +116,7 @@
             <li>
               <a href="#/shopping-cart" class="marker">
                 <i class="fa fa-shopping-cart fa-2x marker"></i></a>
-              <span class="cart_noti">1</span>
+              <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
             </li>
           </ul>
         </div>

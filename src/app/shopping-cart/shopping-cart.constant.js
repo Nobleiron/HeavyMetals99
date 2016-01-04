@@ -1,12 +1,12 @@
 'use strict';
-angular.module("HM_EquipmentReserveMD")
-  .constant("HM_EquipmentReserveCnst",{
+angular.module("HM_ShoppingCartMD")
+  .constant("HM_ShoppingCartCnst",{
     details : {
       url : function(){
-        return '/products/product/'
+        return '/cart'
       }
     },
-    addToCart : {
+    delete : {
       url : function(){
         return '/cart'
       }

@@ -81,7 +81,7 @@ angular.module("HM_SearchMD")
         $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
         if(product.Is_in_catelog){
           RestSV
-            .delete( SearchCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
+            .delete( SearchCnst.addToOrRemoveFromWishList.url(),{ params : {product_id : product.Product_Id }})
             .success(function(response){
               product.Is_in_catelog = false;
               $scope.catelog = false;

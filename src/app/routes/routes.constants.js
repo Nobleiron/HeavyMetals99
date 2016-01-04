@@ -161,7 +161,8 @@ angular.module("HM_RoutesMD")
         },
         'hm.shoppingCart': {
           url: '/shopping-cart',
-          templateUrl: 'app/shopping-cart/shopping-cart.html'
+          templateUrl: 'app/shopping-cart/shopping-cart.html',
+          controller: 'HM_ShoppingCartCtrl'
         },
         'hm.updateJobSite': {
           url: '/update-job-site',

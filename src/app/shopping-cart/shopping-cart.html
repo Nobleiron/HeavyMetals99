@@ -1,10 +1,19 @@
 <div class="container content-top">
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line manage_job_tit manage_job_tit_small shopping-cart-heading">
-			Shopping Cart
-		</div>
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-	</div>
+
+
+  <div style="min-height: 400px;">
+    <load-indicator loading="cartFetchInProgress"></load-indicator>
+  <div ng-show="!cartFetchInProgress">
+    <div ng-show="cart">
+
+
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line manage_job_tit manage_job_tit_small shopping-cart-heading">
+        Shopping Cart
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+    </div>
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
 			<table class="table cart-table">
@@ -20,30 +29,30 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr ng-repeat="product in cart.Product">
 						<td class="vertically-middle">
 							<i class="fa fa-truck fa-4x"></i>
 						</td>
 						<td class="equipment-desc">
-							<h3>Electric Equipment Wide-16 "</h3>
+							<h3>{{product.product_name}}</h3>
 							<input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
 							<ul class="price-ul">
 								<li>
 									<p class="daily_title">Daily</p>
-									<p class="daily_price">$199</p>
+									<p class="daily_price">${{product.product_price.Daily}}</p>
 								</li>
 								<li>
 									<p class="daily_title">Weekly</p>
-									<p class="daily_price">$1156</p>
+									<p class="daily_price">${{product.product_price.Monthly}}</p>
 								</li>
 								<li>
 									<p class="daily_title">Monthly</p>
-									<p class="daily_price">$4556</p>
+									<p class="daily_price">${{product.product_price.Weekly}}</p>
 								</li>
 							</ul>
 						</td>
 						<td class="quantity vertically-middle">
-							<input class="form-control" type="text" value="1">
+							<input class="form-control" type="text" ng-value="product.product_quantity">
 						</td>
 						<td class="duration vertically-middle">
 							<p>12 Dec, 2015 - 23:00</p>
@@ -55,86 +64,10 @@
 							<span>Bay Area, Houstan</span>
 							<p><a href="#/update-job-site">Update</a></p>
 						</td>
-						<td class="vertically-middle pricing">$3556</td>
-						<td class="vertically-middle delete-icon on-hover-pointer"><i class="fa fa-trash fa-2x"></i></td>
-					</tr>
-
-					<tr>
-						<td class="vertically-middle">
-							<i class="fa fa-truck fa-4x"></i>
-						</td>
-						<td class="equipment-desc">
-							<h3>Electric Equipment Wide-16 "</h3>
-							<input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
-							<ul class="price-ul">
-								<li>
-									<p class="daily_title">Daily</p>
-									<p class="daily_price">$199</p>
-								</li>
-								<li>
-									<p class="daily_title">Weekly</p>
-									<p class="daily_price">$1156</p>
-								</li>
-								<li>
-									<p class="daily_title">Monthly</p>
-									<p class="daily_price">$4556</p>
-								</li>
-							</ul>
-						</td>
-						<td class="quantity vertically-middle">
-							<input class="form-control" type="text" value="1">
-						</td>
-						<td class="duration vertically-middle">
-							<p>12 Dec, 2015 - 23:00</p>
-							<p class="to">to</p>
-							<p>14 Dec, 2015 - 23:00</p>
-						</td>
-						<td class="area vertically-middle">
-							<i class="fa fa-map-marker marker"></i>
-							<span>Bay Area, Houstan</span>
-							<p><a href="#/update-job-site">Update</a></p>
-						</td>
-						<td class="vertically-middle pricing">$3556</td>
-						<td class="vertically-middle delete-icon on-hover-pointer"><i class="fa fa-trash fa-2x"></i></td>
-					</tr>
-
-					<tr>
-						<td class="vertically-middle">
-							<i class="fa fa-truck fa-4x"></i>
-						</td>
-						<td class="equipment-desc">
-							<h3>Electric Equipment Wide-16 "</h3>
-							<input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
-							<ul class="price-ul">
-								<li>
-									<p class="daily_title">Daily</p>
-									<p class="daily_price">$199</p>
-								</li>
-								<li>
-									<p class="daily_title">Weekly</p>
-									<p class="daily_price">$1156</p>
-								</li>
-								<li>
-									<p class="daily_title">Monthly</p>
-									<p class="daily_price">$4556</p>
-								</li>
-							</ul>
-						</td>
-						<td class="quantity vertically-middle">
-							<input class="form-control" type="text" value="1">
-						</td>
-						<td class="duration vertically-middle">
-							<p>12 Dec, 2015 - 23:00</p>
-							<p class="to">to</p>
-							<p>14 Dec, 2015 - 23:00</p>
-						</td>
-						<td class="area vertically-middle">
-							<i class="fa fa-map-marker marker"></i>
-							<span>Bay Area, Houstan</span>
-							<p><a href="#/update-job-site">Update</a></p>
-						</td>
-						<td class="vertically-middle pricing">$3556</td>
-						<td class="vertically-middle delete-icon delete-icon"><i class="fa fa-trash fa-2x"></i></td>
+						<td class="vertically-middle pricing">${{product.Product_Rate}}</td>
+						<td class="vertically-middle delete-icon on-hover-pointer">
+              <a ng-click="deleteProductFromCart(product.product_id)"><i class="fa fa-trash fa-2x"></i></a>
+            </td>
 					</tr>
 				</tbody>
 			</table>
@@ -202,23 +135,23 @@
 			<div class="total-price-div">
 				<h3>
 					<label>Sub-Total Rental:</label>
-					<span>$ 13,847</span>
+					<span>${{cart.Sub_Total}}</span>
 				</h3>
 				<h3>
 					<label>Environmental Fee:</label>
-					<span>$ 13,847</span>
+					<span>${{cart.Charges['ENVIRONMENTAL FEE']}}</span>
 				</h3>
 				<h3>
 					<label>Equipment Protection Program:</label>
-					<span>$ 13,847</span>
+					<span>${{cart.Charges['EQUIPMENT PROTECTION PROGRAM']}}</span>
 				</h3>
 				<h3>
 					<label>Taxes:</label>
-					<span>$ 13,847</span>
+					<span>${{cart.Charges['ESTIMATED TAXES']}}</span>
 				</h3>
 				<h3>
 					<label class="total">Total:</label>
-					<span class="total">$ 13,847</span>
+					<span class="total">${{cart.Grand_Total}}</span>
 				</h3>
 			</div>
 		</div>
@@ -226,12 +159,19 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn">
-			<button class="btn sell-equ all-btn">Continue Renting</button>
+			<button class="btn sell-equ all-btn" ng-click="$state.go('hm.search.results')">Continue Renting</button>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
 			<button class="btn sign_mybtn all-btn primary-btn">Generate Quote</button>
 			<button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button>
 		</div>
 		</div>
+    </div>
+    <div ng-show="!cart">
+      Your Cart is empty!. Click go back to search and add products to your cart.
+      <a ui-sref="hm.search.results"> Go Back</a>
+    </div>
 	</div>
+  </div>
+</div>
 </div>
