@@ -93,7 +93,7 @@ module.exports = function(options) {
 
 
   gulp.task('clean', function (done) {
-    $.del('/dist', done);
+    $.del('./dist', done);
   });
 
   gulp.task('build', ['clean','html', 'fonts', 'copyImages']);
