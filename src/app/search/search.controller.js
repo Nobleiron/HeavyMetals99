@@ -120,8 +120,9 @@ angular.module("HM_SearchMD")
         $scope.flags.page = 1;
         normalizeCategoryAttributes();
         console.log("$scope.selectedAttributes",$scope.selectedAttributes)
-        $state.go('hm.search.results',$scope.params);
         event.stopPropagation();
+        $state.go('hm.search.results',$scope.params);
+
       }
 
       function normalizeCategoryAttributes(){
