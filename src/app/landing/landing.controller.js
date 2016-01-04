@@ -51,6 +51,7 @@ angular.module('HM_LandingMD')
       $scope.params.page = undefined;
       $scope.params.category_id = undefined;
       $scope.params.query = undefined;
+      $scope.params.attributes = undefined;
       $scope.userObj = localStorageService.get('userObj');
       fetchEquipmentMenus();
       loadCategories();
