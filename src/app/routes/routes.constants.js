@@ -190,6 +190,10 @@ angular.module("HM_RoutesMD")
           url: '/financial-reports',
           templateUrl: 'app/financial-reports/financial-reports.html'
         },
+        'hm.jobsiteRent': {
+          url: '/jobsite-rent',
+          templateUrl: 'app/jobsite-rent/jobsite-rent.html'
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',

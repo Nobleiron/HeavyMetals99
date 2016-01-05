@@ -839,6 +839,19 @@
   .reserve-btns {
     padding: 0 10% 10px 10%;
   }
+  .select-date {
+    width: 100%; 
+    display: block; 
+    margin-bottom: 10px;
+  }
+
+  .reserve-generate-btn .reser-now:last-child {
+    margin-left: 0;
+  }
+
+  .reserve-generate-btn .cont {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 320px) {

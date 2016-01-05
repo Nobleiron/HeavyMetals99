@@ -1529,7 +1529,7 @@ button:hover {
 
 /*update job site*/
 .job-site-list {
-  padding: 15px;
+  padding: 15px 15px 0;
 }
 
 .job-site-list .search-div i {
@@ -1985,6 +1985,20 @@ button:hover {
 
 .msg-textarea {
   min-height: 100px;
+}
+
+.select-date {
+  width: 49%;
+  display: inline-block;
+  padding-right: 0;
+}
+
+.select-date-time {
+  padding: 0 15px 15px;
+}
+
+.select-date-heading {
+  border-top: 1px solid #ddd;
 }
 
 

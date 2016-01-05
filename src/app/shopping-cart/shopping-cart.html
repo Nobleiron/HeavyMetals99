@@ -159,18 +159,20 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn">
-			<button class="btn sell-equ all-btn" ng-click="$state.go('hm.search.results')">Continue Renting</button>
+			<button class="btn sell-equ all-btn" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+				Continue Renting
+			</button>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-			<button class="btn sign_mybtn all-btn primary-btn">Generate Quote</button>
-			<button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button>
+			<a href="#/jobsite-rent" class="btn sign_mybtn all-btn primary-btn">Continue</a>
+			<!-- <button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button> -->
 		</div>
-		</div>
-    </div>
-    <div ng-show="!cart">
-      Your Cart is empty!. Click go back to search and add products to your cart.
-      <a ui-sref="hm.search.results"> Go Back</a>
-    </div>
+	</div>
+</div>
+<div ng-show="!cart">
+  Your Cart is empty!. Click go back to search and add products to your cart.
+	<a ui-sref="hm.search.results"> Go Back</a>
+</div>
 	</div>
   </div>
 </div>
