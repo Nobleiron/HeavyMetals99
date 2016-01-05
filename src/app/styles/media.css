@@ -221,10 +221,7 @@
   }
 
   .contact-numbers-col button {
-    min-width: 290px;
-  }
-  .contact-row {
-    padding: 20px 0;
+    min-width: 270px;
   }
 }
 
