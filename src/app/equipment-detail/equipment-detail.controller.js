@@ -8,12 +8,16 @@ angular.module("HM_EquipmentDetailMD")
     _initialize();
 
     function _initialize(){
+      $scope.equipmentFetchInProgress = true;
       RestSV
         .get( EquipmentDetailCnst.details.url() ,{
           product_id : $stateParams.id
         })
         .then(function(response){
           $scope.equipment = response.data.result.ProductDetails;
+        })
+        .finally(function(){
+          $scope.equipmentFetchInProgress = false;
         })
 
     }

@@ -40,7 +40,7 @@ angular.module("HM_EquipmentReserveMD")
           $scope.$broadcast('Equipment:Reserve:Process:End');
           $scope.$dismiss()
         });
-      
+
     }
 
 
