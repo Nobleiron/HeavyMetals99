@@ -226,6 +226,9 @@
   .reserve-generate-btn .cont {
     width: 162px;
   }
+  .nopadding-xs {
+    padding: 0;
+  }
 
 }
 
@@ -711,6 +714,10 @@
     margin-top: 3px;
     margin-right: 10px;
     float: right;
+  }
+  .order-history-accordion>.panel-heading+.panel-collapse>.panel-body {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

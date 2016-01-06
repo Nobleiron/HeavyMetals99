@@ -407,7 +407,7 @@ a:focus { color: #0099cc;
 .manage_job_tit{font-family: 'Open Sans', sans-serif; font-weight: 500; font-size: 16px; color: #666666;}
 .dash_board_tit{font-family: 'Open Sans', sans-serif; font-size: 16px; color: #666666; }
 .dash_board_bold{ font-weight: 500; font-size: 13px;}
-.dash_board_light{font-weight: 300; font-size: 13px;}
+.dash_board_light{font-weight: 400; font-size: 13px;}
 .bord_dash_bot{border-bottom: 1px solid #d9d9d9;}
 .map_btn_manage{background: #009ddc; color: #fff; padding: 8px 22px;}
 .btn_map_view{background-color: #fff;
@@ -476,7 +476,7 @@ a:focus { color: #0099cc;
 }
 /*.collapsing{width: 100%;}*/
 .total_order_d{float: right; margin: 0 0 0 0;}
-.down_arrow_accordian{margin: 0 0 0 30px; color: #009ddc;}
+.down_arrow_accordian{margin: 0 0 0 8px; color: #009ddc;}
 .daily_price_check {
 		font-size: 16px; text-decoration: line-through;}
 .total_price_popup{font-size: 18px;}
@@ -1409,6 +1409,10 @@ button:hover {
 	vertical-align: middle;
 }
 
+.vertically-middle {
+	vertical-align: middle !important;
+}
+
 .quantity {
 	width: 13%;
 }
@@ -1730,12 +1734,35 @@ button:hover {
 	padding-right: 0;
 }
 
+.panel-group .order-history-accordion {
+	background-color: #f5f5f5;
+	padding: 9px 10px 0;
+	margin-bottom: 10px;
+}
+
+.panel-group .order-history-accordion:last-child {
+	margin-bottom: 18px;
+}
+
+.order-history-accordion>.panel-heading+.panel-collapse>.panel-body {
+	border-top-color: #ddd;
+}
+
 .order-history-accordion .order-no {
 	border-bottom: 1px solid #ddd;
 }
 
 .order-history-accordion .treack_main_order {
 	padding-top: 20px;
+}
+
+.order-history-accordion .treack_main_order button {
+	margin-bottom: 10px;
+}
+
+.orders-small {
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #ddd;
 }
 
 /*quotes list*/
@@ -2012,6 +2039,10 @@ button:hover {
 
 .reserve-success-btn {
 	margin-top: 10px;
+}
+
+.order-img-td {
+	width: 10%;
 }
 
 
