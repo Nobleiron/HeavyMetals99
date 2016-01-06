@@ -7,7 +7,8 @@ angular.module("HM_BtnLoadIndicatorMD")
       },
       link : function(scope,element,attrs){
 
-        var loader = $compile("<i class='fa fa-spinner fa-spin' ng-show='loading' style='font-size: 18px;'></i>")(scope),
+        scope.loading = false;
+        var loader = $compile("<i class='fa fa-spinner fa-spin ng-hide' ng-show='loading' style='font-size: 18px;'></i>")(scope),
           eventName = attrs.btnLoadIndicator;
         element.after(loader);
 

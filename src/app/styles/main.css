@@ -1243,12 +1243,12 @@ button:hover {
 }
 
 .forgot-pass-cancel {
-	margin-left: 10px; 
+	margin-left: 10px;
 	padding: 8px 10px;
 }
 
 .forgot-pass-btn {
-	width: auto; 
+	width: auto;
 	min-width: 138px;
 }
 
@@ -1258,7 +1258,7 @@ button:hover {
 
 .prof-btn {
 	box-shadow: none !important;
-	outline: none !important; 
+	outline: none !important;
 }
 
 .prof-btn:focus {
@@ -1298,7 +1298,7 @@ button:hover {
 }
 
 .portal-access-ul {
-	padding-left: 40px; 
+	padding-left: 40px;
 	list-style-type: disc;
 }
 
@@ -1307,11 +1307,11 @@ button:hover {
 }
 
 .pre-collapse {
-	border-color: #009ddc; 
+	border-color: #009ddc;
 }
 
 .no-search-desc {
-	text-align: center; 
+	text-align: center;
 	margin-top: 20px;
 }
 
@@ -1324,7 +1324,7 @@ button:hover {
 }
 
 .equip-reserve-img {
-	width: 100%; 
+	width: 100%;
 	max-width: 350px;
 }
 
@@ -2086,6 +2086,7 @@ button:hover {
 
 .cart-empty {
 	margin-bottom: 15px;
+  margin-top: 50px;
 }
 
 .reserve-success-btn {

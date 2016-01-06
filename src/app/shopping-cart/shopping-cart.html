@@ -31,25 +31,25 @@
 										<i class="fa fa-truck fa-4x"></i>
 									</td>
 									<td class="equipment-desc">
-										<h3>{{product.product_name}}</h3>
+										<h3>{{product.Product_name}}</h3>
 										<input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
 										<ul class="price-ul">
 											<li>
 												<p class="daily_title">Daily</p>
-												<p class="daily_price">${{product.product_price.Daily}}</p>
+												<p class="daily_price">${{product.Product_price.Daily}}</p>
 											</li>
 											<li>
 												<p class="daily_title">Weekly</p>
-												<p class="daily_price">${{product.product_price.Monthly}}</p>
+												<p class="daily_price">${{product.Product_price.Weekly}}</p>
 											</li>
 											<li>
 												<p class="daily_title">Monthly</p>
-												<p class="daily_price">${{product.product_price.Weekly}}</p>
+												<p class="daily_price">${{product.Product_price.Monthly}}</p>
 											</li>
 										</ul>
 									</td>
 									<td class="quantity vertically-middle">
-										<input class="form-control" type="text" ng-value="product.product_quantity">
+										<input class="form-control" type="text" ng-value="product.Product_quantity">
 									</td>
 									<!-- <td class="duration vertically-middle">
 										<p>12 Dec, 2015 - 23:00</p>
@@ -61,9 +61,9 @@
 										<span>Bay Area, Houstan</span>
 										<p><a href="#/update-job-site">Update</a></p>
 									</td> -->
-									<td class="vertically-middle pricing">${{product.Product_Rate}}</td>
+									<td class="vertically-middle pricing">${{product.Product_rate}}</td>
 									<td class="vertically-middle delete-icon on-hover-pointer">
-			              <a ng-click="deleteProductFromCart(product.product_id)"><i class="fa fa-trash fa-2x"></i></a>
+			              <a ng-click="deleteProductFromCart(product.Product_id)"><i class="fa fa-trash fa-2x"></i></a>
 			            </td>
 								</tr>
 							</tbody>
@@ -133,23 +133,23 @@
 						<div class="total-price-div">
 							<h3>
 								<label>Sub-Total Rental:</label>
-								<span>${{cart.Sub_Total}}</span>
+								<span>${{cart.Sub_total}}</span>
 							</h3>
 							<h3>
 								<label>Environmental Fee:</label>
-								<span>${{cart.Charges['ENVIRONMENTAL FEE']}}</span>
+								<span>${{cart.Charges['Environmental Fee']}}</span>
 							</h3>
 							<h3>
 								<label>Equipment Protection Program:</label>
-								<span>${{cart.Charges['EQUIPMENT PROTECTION PROGRAM']}}</span>
+								<span>${{cart.Charges['Equiment Protection Plan']}}</span>
 							</h3>
 							<h3>
 								<label>Taxes:</label>
-								<span>${{cart.Charges['ESTIMATED TAXES']}}</span>
+								<span>${{cart.Charges['Estimated Taxes']}}</span>
 							</h3>
 							<h3>
 								<label class="total">Total:</label>
-								<span class="total">${{cart.Grand_Total}}</span>
+								<span class="total">${{cart.Grand_total}}</span>
 							</h3>
 						</div>
 					</div>

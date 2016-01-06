@@ -183,7 +183,7 @@ angular.module("HM_SearchMD")
           $scope.flags.searchResultLoading = true;
           RestSV
             .post( SearchCnst.search.url() ,{
-              search_text : normalizeSearchQuery($scope.params.query),
+              search_text : encodeURIComponent($scope.params.query),
               page : $scope.flags.page,
               category_id : $scope.params.category_id
             })
