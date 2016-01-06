@@ -2045,6 +2045,10 @@ button:hover {
 	width: 10%;
 }
 
+.special-instruction {
+	min-height: 100px;
+}
+
 
 
 
