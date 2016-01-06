@@ -206,7 +206,7 @@
   }
 
   .job-site-detail {
-    padding: 0 15px;
+    padding: 0 15px 15px;
   }
   
   .job-site-list {
@@ -223,6 +223,10 @@
   .contact-numbers-col button {
     min-width: 270px;
   }
+  .reserve-generate-btn .cont {
+    width: 162px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -685,7 +689,7 @@
   }
 
   .cart_menu .cart_noti {
-    right: 130px;
+    right: 115px;
   }
 
   .user-list-group {
@@ -695,6 +699,18 @@
   .about-dropdown {
     min-width: auto;
     left: -45px;
+  }
+  .select-date {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .job-site-list .search-div i {
+    color: #ccc;
+    margin-top: 3px;
+    margin-right: 10px;
+    float: right;
   }
 }
 
@@ -838,11 +854,6 @@
 
   .reserve-btns {
     padding: 0 10% 10px 10%;
-  }
-  .select-date {
-    width: 100%; 
-    display: block; 
-    margin-bottom: 10px;
   }
 
   .reserve-generate-btn .reser-now:last-child {
