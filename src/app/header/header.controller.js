@@ -21,6 +21,7 @@
 angular.module('HeavyMetals')
   .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst','localStorageService',function ($scope,$state,filterFilter, RestSV,HeaderCnst, localStorageService) {
 
+    $scope.showAutocomplete = false;
     $scope.getProducts = getProducts;
 
     $scope.selectSearchedItem = selectSearchedItem;
@@ -28,7 +29,7 @@ angular.module('HeavyMetals')
     _initialize();
 
     function selectSearchedItem(product){
-      //var query = '';
+      $scope.showAutocomplete = false;
       if(typeof $scope.selectedProduct == "object"){
         $scope.params.query = $scope.selectedProduct.Product_Name;
       }
@@ -38,23 +39,25 @@ angular.module('HeavyMetals')
       product && ($scope.params.category_id = product.Category_Id);
       $scope.params.page = 1;
       $state.go('hm.search.results', $scope.params);
-      //$state.go('hm.search', { query : query},{ reload: true });
     }
 
     function getProducts(search){
       return RestSV.get( HeaderCnst.search.url() ,{
         search_text : search,
       }).then(function(response){
-        var filtered = filterFilter(response.data.result.ProductList, search);
-        var results = _(filtered)
-          .groupBy('Category_Name')
-          .map(function (g) {
-            g[0].firstInGroup = true;  // the first item in each group
-            return g;
-          })
-          .flatten()
-          .value();
-        return results;
+        if($scope.showAutocomplete){
+          var filtered = filterFilter(response.data.result.ProductList, search);
+          var results = _(filtered)
+            .groupBy('Category_Name')
+            .map(function (g) {
+              g[0].firstInGroup = true;  // the first item in each group
+              return g;
+            })
+            .flatten()
+            .value();
+          return results;
+        }
+
       });
     }
 

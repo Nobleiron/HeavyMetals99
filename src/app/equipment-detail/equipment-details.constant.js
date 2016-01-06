@@ -5,5 +5,10 @@ angular.module("HM_EquipmentDetailMD")
       url : function(){
         return '/products/product'
       }
+    },
+    addToOrRemoveFromWishList : {
+      url : function(){
+        return '/catelog'
+      }
     }
   });

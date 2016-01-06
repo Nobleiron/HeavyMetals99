@@ -3,7 +3,7 @@ angular.module("HM_EquipmentDetailMD")
   .controller("HM_EquipmentDetailCtrl",['$scope','$stateParams',"HM_RestSV","HM_EquipmentDetailCnst", function($scope, $stateParams,RestSV, EquipmentDetailCnst){
 
 
-    $scope.addToWishList = addToWishList;
+    $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
 
     _initialize();
 
@@ -22,15 +22,29 @@ angular.module("HM_EquipmentDetailMD")
 
     }
 
-    function addToWishList(product){
-
-      RestSV
-        .post( SearchCnst.addToWishList.url(),{ product_id : product.Product_Id })
-        .then(function(response){
-          product.addedToWishlist = true;
-        })
-        .catch(function(){
-        })
+    function addToOrRemoveFromWishList(product){
+      $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
+      if(product.Is_in_catelog){
+        RestSV
+          .delete( EquipmentDetailCnst.addToOrRemoveFromWishList.url(),{ params : {product_id : product.Product_Id }})
+          .success(function(response){
+            product.Is_in_catelog = false;
+            $scope.catelog = false;
+          })
+          .finally(function(){
+           $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+          });
+      }else{
+        RestSV
+          .post( EquipmentDetailCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
+          .success(function(response){
+            product.Is_in_catelog = true;
+            $scope.catelog = true;
+          })
+          .finally(function(){
+           $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+          });
+      }
     }
 
 

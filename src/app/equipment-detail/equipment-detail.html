@@ -44,7 +44,7 @@
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i></a>
             <span class="rate_user">Rated by 5 users</span>
-            <span class="read_reivew">Read Reviews</span>
+            <!--<span class="read_reivew">Read Reviews</span>-->
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tour-col">
             <h3 class="cunsult">Consult before Renting. Talk to our <a href="#">Rental Experts</a></h3>
@@ -70,23 +70,22 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 you-save tour-col">
-            <span class="can_dolar_product">$260</span><span class="reg_dolar_product">$129</span>
-            <span class="save_dol">(you save 10%)</span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding avelble_status">
-            Availability Status: <span> 4 to 6 Days</span>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding or_main divider-col">
-            <div class="in-block req_dash_botam product_dash_lf"></div>
-            <div class="in-block product_or">or</div>
-            <div class="in-block req_dash_botam product_dash_rg"></div>
-          </div>
+          <!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 you-save tour-col">-->
+            <!--<span class="can_dolar_product">$260</span><span class="reg_dolar_product">$129</span>-->
+            <!--<span class="save_dol">(you save 10%)</span>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding avelble_status">-->
+            <!--Availability Status: <span> 4 to 6 Days</span>-->
+          <!--</div>-->
+          <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding or_main divider-col">-->
+            <!--<div class="in-block req_dash_botam product_dash_lf"></div>-->
+            <!--<div class="in-block product_or">or</div>-->
+            <!--<div class="in-block req_dash_botam product_dash_rg"></div>-->
+          <!--</div>-->
           <!--                        <div class="req_dash_botam col-lg-12 ten_botam"></div>-->
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam add-wish-btn">
-            <button class="btn now-reserve col-lg-12 all-btn sell-equ" type="button">
-              <span ng-if="!equipment.addedToWishlist">Add to Wishlist</span>
-              <span ng-if="equipment.addedToWishlist">Added to Wishlist</span>
+            <button class="btn now-reserve col-lg-12 all-btn sell-equ" type="button" ng-click="addToOrRemoveFromWishList(equipment)">
+              <span btn-load-indicator="Add:Wishlist:Process" btn-uid="equipment.Product_Id">{{equipment.Is_in_catelog ? 'Added to Wishlist': 'Add to Wishlist'}}</span>
             </button>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam">
