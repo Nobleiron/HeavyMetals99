@@ -230,6 +230,11 @@
     padding: 0;
   }
 
+  .search-show {
+    display: block;
+    padding-bottom: 15px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -719,6 +724,9 @@
     padding-left: 0;
     padding-right: 0;
   }
+  .quotes-filter-div .search-div input {
+    width: 85%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -869,6 +877,17 @@
 
   .reserve-generate-btn .cont {
     margin-bottom: 10px;
+  }
+  .view-down {
+    margin-right: 0; 
+  }
+
+  .filter-btns {
+    width: 115px;
+  }
+
+  .quotes-filter-div {
+    width: 92%;
   }
 }
 
