@@ -13,7 +13,7 @@
         <a class="dash_board_light invoice-no" href="#/">Home </a>/ <span class="dash_board_bold">Catalog</span>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-      <div class="col-md-4 lift_box nopadding" ng-repeat="product in catelog">
+      <div class="col-md-4 lift_box nopadding repeat-item" ng-repeat="product in catelog">
         <figure class="catalogue-fig">
           <a ui-sref="hm.equipmentDetails({id: product.Product_Id})"><img alt="" ng-src="{{product.Product_Image[0].ProductImage_Path}}"/></a>
           <!-- <div class="certified_box"> -->
@@ -46,23 +46,10 @@
               </li>
             </ul>
           </div>
-          <!-- <div class="heart">
-            <ul>
-              <li>
-                <a href=""><i class="fa fa-eye fa-2x"></i></a>
-              </li>
-              <li>
-                <a ng-href="" type="button" class="btn my-reserve all-btn">Reserve</a>
-              </li>
-              <li>
-                <a ng-click="addToWishList(item)"><i class="fa fa-heart fa-2x"></i></a>
-              </li>
-            </ul>
-          </div> -->
           <div class="heart reserve-btns">
             <a href=""><i class="fa fa-eye fa-2x pull-left"></i></a>
             <a ui-sref="hm.reserveEquipment({id: product.Product_Id})" type="button" class="btn my-reserve all-btn">Add to Cart</a>
-            <a ng-click="addToOrRemoveFromWishList(product)"><i class="fa fa-heart fa-2x pull-right" btn-load-indicator="Add:Wishlist:Process"  btn-uid="product.Product_Id" ng-class="{'wish-added': product.Is_in_catelog}"></i></a>
+            <a ng-click="removeFromWishList(product)"><i class="fa fa-heart fa-2x pull-right" btn-load-indicator="Add:Wishlist:Process"  btn-uid="product.Product_Id" ng-class="{'wish-added': product.Is_in_catelog}"></i></a>
           </div>
         </div>
       </div>

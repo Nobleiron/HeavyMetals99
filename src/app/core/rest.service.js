@@ -18,6 +18,8 @@ angular.module('HeavyMetals')
             return HTTP.post(_that.apiEndPoint + url, config);
         };
         this.delete = function(url,config){
+          angular.extend(config , {data : jQuery.param(config.data),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
           return HTTP.delete(_that.apiEndPoint + url,config);
         };
     }

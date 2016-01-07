@@ -37,8 +37,7 @@ angular.module("HM_CartMD")
 
     function deleteProductFromCart(id){
       RestSV.delete(ShoppingCartCnst.delete.url(),{
-        data : jQuery.param({proid: id}),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+        data : {proid: id}})
         .then(function(response){
           $scope.cart = response.data.result.Cart_Content;
         })
