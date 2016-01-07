@@ -16,9 +16,12 @@ angular.module("HM_MyCatalogueMD")
       RestSV.get(MyCatalogueCnst.list.url())
         .then(function(response){
           $scope.catelog = response.data.result.ProductList;
-          $scope.catelogFetchInProgress= false;
         })
         .catch(function(error){
+          $scope.catelog = [];
+        })
+        .finally(function(){
+          $scope.catelogFetchInProgress= false;
         })
     }
 
