@@ -23,4 +23,10 @@ angular.module("HM_QuotaNReservationsMD")
     	$scope.toDate = '';
     	$scope.jobsite = '';
     }
+
+    $scope.openDatepicker = openDatepicker
+
+    function openDatepicker(model){
+        $scope.queryFormData[model] = !$scope.queryFormData[model];
+    }
 }]);

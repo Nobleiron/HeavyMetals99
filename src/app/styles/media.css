@@ -99,7 +99,7 @@
   }
 
   .prelogin-header .search-head {
-    width: 60% !important;
+    width: 84% !important;
     margin-bottom: 15px;
   }
 
@@ -234,7 +234,7 @@
     display: block;
     padding-bottom: 15px;
   }
-
+\
 }
 
 @media screen and (max-width: 600px) {
@@ -379,8 +379,12 @@
   }
 
   .inq_btn {
-    float: right;
-    margin-right: -30px;
+    /*float: right;*/
+    /*margin-right: -30px;*/
+  }
+
+  .inquiry-multiple {
+    padding: 0;
   }
 
   .calc-col {
@@ -656,6 +660,14 @@
     padding-top: 182px;
   }
 
+  .login-content-top {
+    padding-top: 82px;
+  }
+
+  .forgot-content-top {
+    padding-top: 30px;
+  }
+
   .panel-left {
     padding: 0 0
   }
@@ -686,11 +698,9 @@
 
   .quotes-total-price {
     background-color: transparent;
+    padding: 10px 15px;
   }
 
-  .quotes-total-price div {
-    padding-right: 15px;
-  } 
   .pro_pic {
     margin: 0px 5px 0px 6px;
     width: 22px;
@@ -726,6 +736,14 @@
   }
   .quotes-filter-div .search-div input {
     width: 85%;
+  }
+
+  .not-user-div .cart_noti {
+    right: 10px;
+    top: 4px;
+  }
+  .quotes-site-price {
+    margin-top: 15px;
   }
 }
 
@@ -818,7 +836,7 @@
   }
 
   .catalog-div .lift_box {
-    width: auto;
+    width: 85%;
     display: inline-block;
     float: none;
   }
@@ -879,7 +897,7 @@
     margin-bottom: 10px;
   }
   .view-down {
-    margin-right: 0; 
+    margin-right: 10px; 
   }
 
   .filter-btns {
@@ -888,6 +906,18 @@
 
   .quotes-filter-div {
     width: 92%;
+  }
+  .not-user-div .cart_noti {
+    right: -8px;
+    top: 10px;
+  }
+  .quotes-total-price {
+    background-color: transparent;
+    padding: 10px 5px;
+  }
+
+  .quotes-total-price div {
+    padding-right: 20px;
   }
 }
 

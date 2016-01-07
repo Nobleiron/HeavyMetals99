@@ -1,44 +1,9 @@
-<section class="content-top">
+<section class="content-top login-content-top">
   <!-- START  Main Content -->
   <article class="main-cantain">
     <div class="container">
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-        <h4 class="signin_teg">Noble Iron offers equipment for rent, equipment for sale, and software applications for
-          the construction and industrial equipment industry</h4>
-
-        <div class="row rental_main">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-            <img src="/assets/images/rent.png" alt="">
-          </div>
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
-            <h6 class="rent_title">Equipment Rental</h6>
-
-            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
-          </div>
-        </div>
-        <div class="row rental_main">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-            <img src="/assets/images/sale.png" alt="">
-          </div>
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
-            <h6 class="rent_title">Equipment Sales</h6>
-
-            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
-          </div>
-        </div>
-        <div class="row rental_main">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 ">
-            <img src="/assets/images/soft.png" alt="">
-          </div>
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
-            <h6 class="rent_title">Software</h6>
-
-            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
-          </div>
-        </div>
-      </div>
-      <!-- START  LOGIN/REGISTER TAB -->
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page reg-success">
+      <!-- start mobile login register tab -->
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page reg-success visible-xs">
         <div ng-show="flags.registration.initiated" class="panel panel-default success-panel">
           <div class="panel-body reg-success">
           <div ng-show="flags.registration.success">
@@ -159,10 +124,167 @@
           </div>
 
         </div>
-
-
       </div>
-      <!-- End  LOGIN/REGISTER TAB -->
+      <!-- end mobile login register tab -->
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+        <h4 class="signin_teg">Noble Iron offers equipment for rent, equipment for sale, and software applications for
+          the construction and industrial equipment industry</h4>
+
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <img src="/assets/images/rent.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
+            <h6 class="rent_title">Equipment Rental</h6>
+
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <img src="/assets/images/sale.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
+            <h6 class="rent_title">Equipment Sales</h6>
+
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+        <div class="row rental_main">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 ">
+            <img src="/assets/images/soft.png" alt="">
+          </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 rent-sale-soft">
+            <h6 class="rent_title">Software</h6>
+
+            <p class="rent_subtit">Mention something related to this title here mention something here.</p>
+          </div>
+        </div>
+      </div>
+      <!-- START Web  LOGIN/REGISTER TAB -->
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 login_page reg-success hidden-xs">
+        <div ng-show="flags.registration.initiated" class="panel panel-default success-panel">
+          <div class="panel-body reg-success">
+          <div ng-show="flags.registration.success">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Registration Successful.
+                  <i class="fa fa-check"></i>
+                </h3>
+              </div>
+              <div class="panel-body">
+                To verify your email address, we have sent you an email with activation details.
+                  <p><a href="/#/login">Click here to continue on login page</a></p>
+              </div>
+            </div>
+          </div>
+          <div  ng-show="flags.registration.error">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title">Registration Failed.
+                  <i class="fa fa-times"></i>
+                </h3>
+              </div>
+              <div class="panel-body">
+                Something Went Wrong :(
+                <p>
+                  <a ng-click="$state.go('hmPrelogin.register',{},{ reload : true })">Click here to continue on register page</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div ng-show="!flags.registration.initiated">
+          <ul class="nav nav-tabs nav-mytab">
+            <li ng-class="{'active' : !signUpTab}"><a href="/#/login">Log in</a></li>
+            <li ng-class="{'active' : signUpTab}"><a href="/#/register" >Register</a></li>
+          </ul>
+          <div class="tab-content my-tab">
+            <!-- START  LOGIN TAB Content -->
+            <div id="home" class="tab-pane fade in" ng-class="{'active' : !signUpTab}">
+
+              <div class="col-lg-12 welcome_title">Welcome back !<span class="flot-right need_help"><a href="/#/help">Need Help ?</a></span></div>
+
+              <div class="col-lg-12">
+                <form role="form" name="loginForm" novalidate valdr-type="User" ng-submit="login()" >
+                  <div class="form-group" valdr-form-group>
+                    <input type="hidden" id="credentials" name="credentials" ng-model="loginData.credentials" />
+                  </div>
+                  <div class="form-group" valdr-form-group>
+                    <input type="email" autocomplete="off" class="form-control" ng-model="loginData.email" name="email"
+                           ng-required="true" placeholder="Phone, email or username">
+                  </div>
+                  <div class="form-group" valdr-form-group>
+                    <input type="password" autocomplete="off" name="password" ng-model="loginData.password" ng-required="true"
+                           class="form-control" placeholder="Password">
+                  </div>
+                  <div class="checkbox">
+                    <label class="remem-me"><input type="checkbox" ng-model="loginData.isRememberMe"  ng-true-value="'true'" ng-false-value="'false'"> Remember me</label>
+                    <span class="flot-right need_help"><a href="/#/forgot-password">Forgot Password ?</a></span>
+                  </div>
+                  <hr>
+                  <button type="submit" ng-click="login()"  class="btn flot-right sign_mybtn all-btn primary-btn">
+                    <span btn-load-indicator="Login:Process">Sign In</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- End  LOGIN TAB Content -->
+            <!-- START  REGISTER TAB Content -->
+            <div id="menu1" class="tab-pane fade in" ng-class="{'active' : signUpTab}">
+              <div class="col-lg-12 welcome_title">Get Started - <span class="link_clr">it’s free</span><span
+                class="flot-right need_help"><a href="/#/help">Need Help?</a></span></div>
+
+              <div class="col-lg-12">
+                <form  role="form" name="userRegisterForm"  novalidate valdr-type="UserRegister" class="register-user">
+                  <div class="form-group" valdr-form-group>
+                    <input type="hidden" id="alreadyExists" name="alreadyExists" ng-model="UserRegisterData.alreadyExists" />
+                  </div>
+                  <div class="form-group flex-field">
+                    <fieldset valdr-form-group>
+                      <input type="text" class="form-control in-block fname_in" ng-model="UserRegisterData.firstName" name="firstName"
+                             placeholder="First Name" autocomplete="off">
+                    </fieldset>
+                    <fieldset valdr-form-group>
+                      <input type="text" class="form-control in-block fname_in" ng-model="UserRegisterData.lastName" name="lastName"
+                             placeholder="Last Name" autocomplete="off">
+                    </fieldset>
+                  </div>
+                  <div class="form-group" valdr-form-group>
+
+                    <input type="email" autocomplete="off" class="form-control" ng-model="UserRegisterData.email" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group" valdr-form-group>
+
+                    <input type="password" class="form-control" ng-model="UserRegisterData.password" name="password"
+                           placeholder="Password" autocomplete="off">
+                  </div>
+
+                  <div class="form-group" valdr-form-group>
+
+                    <input type="text" class="form-control" ng-model="UserRegisterData.phone" name="phone" placeholder="Phone" autocomplete="off">
+                  </div>
+                  <div class="need_help">
+                    <input type="checkbox" ng-model="UserRegisterData.termsAccepted">
+                      <span>By Signing up, you agree to NobleIron's </span><a href="/#/terms-n-conditions">Terms &
+                    Conditions</a></div>
+                  <hr>
+
+                  <button type="submit" ng-disabled="!UserRegisterData.termsAccepted" ng-click="register()" class="btn flot-right sign_mybtn all-btn primary-btn">
+                    <span btn-load-indicator="SignUp:Process">Sign Up</span>
+                  </button>
+
+                </form>
+              </div>
+            </div>
+            <!-- End  REGISTER TAB Content -->
+
+          </div>
+
+        </div>
+      </div>
+      <!-- End Web  LOGIN/REGISTER TAB -->
     </div>
   </article>
 

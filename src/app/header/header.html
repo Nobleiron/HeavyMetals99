@@ -44,7 +44,7 @@
             <li>
               <a href="#/shopping-cart" class="marker">
                 <i class="fa fa-shopping-cart fa-2x marker"></i></a>
-              <span class="cart_noti">1</span>
+              <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
             </li>
           </ul>
         </div>
@@ -63,9 +63,12 @@
             </div>
           </div>
         </div> -->
-        <div ng-if="!userObj" class="not-user-div">
+        <div ng-if="!userObj" class="not-user-div cart_menu">
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
+          <a href="#/shopping-cart" class="marker">
+          <i class="fa fa-shopping-cart fa-2x marker"></i></a>
+          <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
         </div>
     </div>
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 nopadding">
@@ -121,8 +124,8 @@
           </ul>
         </div>
 
-        <div class="btn-group drop-btn profile-dropdown user-div">
-            <a href="#/FAQ" class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn about-caret">About</a>
+        <div class="btn-group drop-btn user-div">
+            <a href="#/FAQ" class="btn invoice-no prof-btn about-caret">About</a>
         </div>
         <!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
           <div>
@@ -139,9 +142,12 @@
             </div>
           </div>
         </div> -->
-        <div ng-if="!userObj" class="not-user-div">
+        <div ng-if="!userObj" class="not-user-div cart_menu">
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
+          <a href="#/shopping-cart" class="marker">
+          <i class="fa fa-shopping-cart fa-2x marker"></i></a>
+          <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
         </div>
       </div>
     <!-- </div> -->
