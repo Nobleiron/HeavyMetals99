@@ -45,6 +45,7 @@ angular.module("HM_RoutesMD")
         },
         'hm.dashboard.main' : {
           url: '/dashboard',
+          controller: 'HM_DashboardMainCtrl',
           templateUrl: 'app/dashboard-main/dashboard-main.html'
         },
         'hm.sellEquipment' :{
