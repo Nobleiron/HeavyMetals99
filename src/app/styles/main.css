@@ -1801,13 +1801,14 @@ button:hover {
 .quotes-search {
 	/*width: 70%;
 	float: right;*/
+	transition: all 0.9s ease;
 	width: 0;
-  min-width: 0;
-  overflow: hidden;
+  /*min-width: 0;*/
+  /*overflow: hidden;*/
   padding: 0;
-  border-width: 0;
+  border-width: -1px;
+  border-left: 0;
 	text-align: left;
-	transition: all 0.9 ease;
 }
 
 .search-filter-icon {
@@ -1821,6 +1822,7 @@ button:hover {
 	/*min-width: 300px;*/
 	overflow: visible;
 	border-width: 1px;
+	border-left: 1px solid #ddd;
 	padding: 6px 12px;
 	transition: width 0.9s ease;
 }
