@@ -1488,7 +1488,7 @@ button:hover {
 
 .total-price .total-price-div h3 {
 	font-weight: 600;
-	font-size: 15px;
+	font-size: 14px;
 	margin: 10px 0 0 0;
 }
 
@@ -2130,6 +2130,23 @@ button:hover {
 	border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
+}
+
+.quotes-site-price {
+	background-color: #eeeeee;
+  padding: 10px 0;
+}
+
+.quotes-site-price .job-site-detail {
+	padding: 10px 15px;
+}
+
+.quotes-site-price .job-site-detail p {
+	margin: 2px 17px;
+}
+
+.view-jobsite {
+	padding: 20px 30px;
 }
 
 

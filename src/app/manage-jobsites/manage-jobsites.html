@@ -24,8 +24,7 @@
               <span class="sidebar-heading">Manage My Account</span></a></li> -->
             <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
               <i class="fa fa-bookmark my-verti-icon"></i>
-              <span class="sidebar-heading">Quotes &amp;
-              Reservations</span></a></li>
+              <span class="sidebar-heading">Quotation</span></a></li>
             <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
               <i class="fa fa-usd my-verti-icon"></i>
               <span class="sidebar-heading">Make a Payment</span></a></li>
@@ -82,7 +81,7 @@
                         <td><a href="" class="invoice-no">49345</a></td>
                         <td>Job 1</td>
                         <td class="text-right">
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+                          <a class="invoice-no view-down"  data-toggle="modal" data-target="#myModal"><i class="fa fa-eye invoice-no heading-text"></i></a>
                           <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
                           <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
                       </tr>
@@ -199,6 +198,33 @@
 
       </div>
 
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document" style="width: 500px;">
+        <div class="modal-content">
+          <div class="modal-header nosearch-row" style="padding-bottom: 0;">
+            <div class="col-md-12 col1 ">
+                            <p class="heading-text">Jobsite<a class="close-cross pull-right"  data-dismiss="modal" aria-label="Close"><i class="fa fa-times marker on-hover-pointer"></i></a></p>
+                        </div>
+          </div>
+          <div class="modal-body  job-site-detail view-jobsite">
+            <h4 class="go-back-text">Details</h4>
+                        <i class="fa fa-map-marker marker go-back-text"></i>
+                        <span class="go-back-text">DSK Ranwara Constructions</span>
+                        <br>
+                        <p>Commercial Area</p>
+                        <p>Houstan - TX</p>
+                        <p class="zip">Zip Code: 34001</p>
+                        <i class="fa fa-phone-square zip marker go-back-text"></i>
+                        <span class="marker go-back-text">+1 657 657 5678</span>
+                        <br>
+                        <i class="fa fa-user marker go-back-text"></i>
+                        <span class="marker go-back-text">
+                          Name of Contact Person
+                        </span>
+          </div>
+        </div>
+      </div>
     </div>
   </article>
 

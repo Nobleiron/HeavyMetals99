@@ -698,11 +698,9 @@
 
   .quotes-total-price {
     background-color: transparent;
+    padding: 10px 15px;
   }
 
-  .quotes-total-price div {
-    padding-right: 15px;
-  } 
   .pro_pic {
     margin: 0px 5px 0px 6px;
     width: 22px;
@@ -743,6 +741,9 @@
   .not-user-div .cart_noti {
     right: 10px;
     top: 4px;
+  }
+  .quotes-site-price {
+    margin-top: 15px;
   }
 }
 
@@ -909,6 +910,14 @@
   .not-user-div .cart_noti {
     right: -8px;
     top: 10px;
+  }
+  .quotes-total-price {
+    background-color: transparent;
+    padding: 10px 5px;
+  }
+
+  .quotes-total-price div {
+    padding-right: 20px;
   }
 }
 
