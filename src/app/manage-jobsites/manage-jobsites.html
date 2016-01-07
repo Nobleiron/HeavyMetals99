@@ -1,234 +1,183 @@
-<section class="content-top">
-  <!-- START  Main Content -->
-  <article class="main-cantain">
-    <div class="container">
-      <div class="row">
-        <!-- START  Dashboard tab -->
-        <div class="col-sm-12 col-xs-12 filt-btn">
-          <button class="btn sell-equ all-btn" ng-click="filterBtn()">Manage Job Sites</button>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
-          <ul class="nav nav-pills nav-stacked my-verti-tab">
-            <li ng-click="closeFilter()">
-              <a data-toggle="pill" href="/#/dashboard">
-                <i class="fa fa-th-large my-verti-icon"></i>
-                <span class="sidebar-heading">Dashboard</span></a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
-              <i class="fa fa-heart my-verti-icon catelog-icon"></i>
-              <span class="sidebar-heading">My Catalog</span></a></li>
-            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/manage/jobsites">
-              <i class="fa fa-map-marker my-verti-icon"></i>
-              <span class="sidebar-heading">Manage Job Sites</span></a></li>
-            <!-- <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
-              <i class="fa fa-user my-verti-icon"></i>
-              <span class="sidebar-heading">Manage My Account</span></a></li> -->
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
-              <i class="fa fa-bookmark my-verti-icon"></i>
-              <span class="sidebar-heading">Quotation</span></a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
-              <i class="fa fa-usd my-verti-icon"></i>
-              <span class="sidebar-heading">Make a Payment</span></a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
-              <i class="fa fa-file my-verti-icon"></i>
-              <span class="sidebar-heading">View Invoices</span></a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
-              <span class="sidebar-heading">Requests</span></a></li>
-            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
-              <span class="sidebar-heading">View Contracts</span></a></li>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding dashboard-small">
+  <div class="tab-content">
+    <!-- START  Dashboard Content -->
+    <div id="dash" class="tab-pane fade in active">
 
-          </ul>
-
-        </div>
-        <!-- End  Dashboard tab -->
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding dashboard-small">
-          <div class="tab-content">
-            <!-- START  Dashboard Content -->
-            <div id="dash" class="tab-pane fade in active">
-
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
-                Manage Job Sites
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
-                <input type="text" placeholder="Search Sites" class="form-control pull-right mng-search-bar">
-                <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
-                <a href="#/add-job" class="btn pull-left manage-job-btn add-job-site-btn sign_mybtn all-btn primary-btn">Add Job Site</a>
-                <!-- <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn">List View</button>
-                <button class="btn pull-right manage-job-btn map map-view-btn">Map View</button> -->
-                <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn all-btn" ng-class="{'active primary-btn' : flags.listView}" ng-click="toggleListView(true)">List View</button>
-                <button class="btn btn-default pull-right manage-job-btn deactivate map map-view-btn all-btn" ng-click="toggleListView(false)" ng-class="{'active primary-btn' : !flags.listView}">Map View</button>
-              </div>
-              <!-- map view start -->
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box" ng-if="!flags.listView">
-                <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-              </div>
-              <!-- map view end -->
-              <!-- list view start -->
-              <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" ng-if="flags.listView">
-                  <table class="table quotes-table">
-                    <thead>
-                      <tr>
-                        <th>Site ID</th>
-                        <th>Site Name</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="" class="invoice-no">49345</a></td>
-                        <td>Job 1</td>
-                        <td class="text-right">
-                          <a class="invoice-no view-down"  data-toggle="modal" data-target="#myModal"><i class="fa fa-eye invoice-no heading-text"></i></a>
-                          <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="" class="invoice-no">49345</a></td>
-                        <td>Job 2</td>
-                        <td class="text-right">
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-                          <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="" class="invoice-no">49345</a></td>
-                        <td>Job 3</td>
-                        <td class="text-right">
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-                          <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="" class="invoice-no">49345</a></td>
-                        <td>Job 4</td>
-                        <td class="text-right">
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-                          <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="" class="invoice-no">49345</a></td>
-                        <td>Job 5</td>
-                        <td class="text-right">
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-                          <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-                          <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>1</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>2</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>3</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>4</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>5</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>6</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul>
-                <ul class="list-view-ul">
-                  <li class="list-view-li"><h4>7</h4></li>
-                  <li class="list-desc">
-                    <h4>Hello world</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </li>
-                  <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
-                  <li class="list-view-li list-view-desc"><h4>World</h4></li>
-                </ul> -->
-              <!-- </div> -->
-              <!-- list view end -->
-            </div>
-          </div>
-        </div>
-
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
+        Manage Job Sites
       </div>
-
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
+        <input type="text" placeholder="Search Sites" class="form-control pull-right mng-search-bar">
+        <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
+        <a href="#/add-job" class="btn pull-left manage-job-btn add-job-site-btn sign_mybtn all-btn primary-btn">Add Job Site</a>
+        <!-- <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn">List View</button>
+        <button class="btn pull-right manage-job-btn map map-view-btn">Map View</button> -->
+        <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn all-btn" ng-class="{'active primary-btn' : flags.listView}" ng-click="toggleListView(true)">List View</button>
+        <button class="btn btn-default pull-right manage-job-btn deactivate map map-view-btn all-btn" ng-click="toggleListView(false)" ng-class="{'active primary-btn' : !flags.listView}">Map View</button>
+      </div>
+      <!-- map view start -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-ste-box" ng-if="!flags.listView">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+      </div>
+      <!-- map view end -->
+      <!-- list view start -->
+      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" ng-if="flags.listView">
+        <table class="table quotes-table">
+          <thead>
+          <tr>
+            <th>Site ID</th>
+            <th>Site Name</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><a href="" class="invoice-no">49345</a></td>
+            <td>Job 1</td>
+            <td class="text-right">
+              <a class="invoice-no view-down"  data-toggle="modal" data-target="#myModal"><i class="fa fa-eye invoice-no heading-text"></i></a>
+              <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+              <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+          </tr>
+          <tr>
+            <td><a href="" class="invoice-no">49345</a></td>
+            <td>Job 2</td>
+            <td class="text-right">
+              <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+              <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+              <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+          </tr>
+          <tr>
+            <td><a href="" class="invoice-no">49345</a></td>
+            <td>Job 3</td>
+            <td class="text-right">
+              <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+              <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+              <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+          </tr>
+          <tr>
+            <td><a href="" class="invoice-no">49345</a></td>
+            <td>Job 4</td>
+            <td class="text-right">
+              <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+              <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+              <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+          </tr>
+          <tr>
+            <td><a href="" class="invoice-no">49345</a></td>
+            <td>Job 5</td>
+            <td class="text-right">
+              <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+              <a href="#/add-job" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+              <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <ul class="list-view-ul">
+        <li class="list-view-li"><h4>1</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>2</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>3</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>4</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>5</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>6</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul>
+      <ul class="list-view-ul">
+        <li class="list-view-li"><h4>7</h4></li>
+        <li class="list-desc">
+          <h4>Hello world</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="list-view-li list-view-desc"><h4>Hello</h4></li>
+        <li class="list-view-li list-view-desc"><h4>World</h4></li>
+      </ul> -->
+      <!-- </div> -->
+      <!-- list view end -->
     </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document" style="width: 500px;">
-        <div class="modal-content">
-          <div class="modal-header nosearch-row" style="padding-bottom: 0;">
-            <div class="col-md-12 col1 ">
-                            <p class="heading-text">Jobsite<a class="close-cross pull-right"  data-dismiss="modal" aria-label="Close"><i class="fa fa-times marker on-hover-pointer"></i></a></p>
-                        </div>
-          </div>
-          <div class="modal-body  job-site-detail view-jobsite">
-            <h4 class="go-back-text">Details</h4>
-                        <i class="fa fa-map-marker marker go-back-text"></i>
-                        <span class="go-back-text">DSK Ranwara Constructions</span>
-                        <br>
-                        <p>Commercial Area</p>
-                        <p>Houstan - TX</p>
-                        <p class="zip">Zip Code: 34001</p>
-                        <i class="fa fa-phone-square zip marker go-back-text"></i>
-                        <span class="marker go-back-text">+1 657 657 5678</span>
-                        <br>
-                        <i class="fa fa-user marker go-back-text"></i>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width: 500px;">
+    <div class="modal-content">
+      <div class="modal-header nosearch-row" style="padding-bottom: 0;">
+        <div class="col-md-12 col1 ">
+          <p class="heading-text">Jobsite<a class="close-cross pull-right"  data-dismiss="modal" aria-label="Close"><i class="fa fa-times marker on-hover-pointer"></i></a></p>
+        </div>
+      </div>
+      <div class="modal-body  job-site-detail view-jobsite">
+        <h4 class="go-back-text">Details</h4>
+        <i class="fa fa-map-marker marker go-back-text"></i>
+        <span class="go-back-text">DSK Ranwara Constructions</span>
+        <br>
+        <p>Commercial Area</p>
+        <p>Houstan - TX</p>
+        <p class="zip">Zip Code: 34001</p>
+        <i class="fa fa-phone-square zip marker go-back-text"></i>
+        <span class="marker go-back-text">+1 657 657 5678</span>
+        <br>
+        <i class="fa fa-user marker go-back-text"></i>
                         <span class="marker go-back-text">
                           Name of Contact Person
                         </span>
-          </div>
-        </div>
       </div>
     </div>
-  </article>
-
-  <!-- End  Main Content -->
-
-
-</section>
+  </div>
+</div>

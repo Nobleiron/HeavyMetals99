@@ -12,10 +12,14 @@ angular.module("HM_MyCatalogueMD")
     _initialize();
 
     function _initialize(){
+      $scope.productFetchInProgress= true;
       RestSV.get(MyCatalogueCnst.list.url())
         .then(function(response){
+          $scope.catelog = response.data.result.ProductList;
+          $scope.productFetchInProgress= false;
         })
         .catch(function(error){
+          debugger
         })
     }
 }]);

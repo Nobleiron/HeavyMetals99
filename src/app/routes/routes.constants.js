@@ -62,7 +62,7 @@ angular.module("HM_RoutesMD")
           url : '/change/password',
           templateUrl : 'app/change-password/change-password.html'
         },
-        'hm.invoices' : {
+        'hm.dashboard.invoices' : {
           url: '/invoices',
           templateUrl: 'app/invoices/invoices.html',
           controller: 'HM_InvoicesCtrl'
@@ -102,7 +102,7 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/equipment-detail/equipment-detail.html',
           controller: 'HM_EquipmentDetailCtrl'
         },
-        'hm.manageJobSite' : {
+        'hm.dashboard.manageJobSite' : {
           url: '/manage/jobsites',
           templateUrl: 'app/manage-jobsites/manage-jobsites.html',
           controller: 'HM_ManageJobSitesCtrl'
@@ -117,29 +117,29 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/manage-my-account/manage-my-account.html',
           controller: 'HM_ManageMyAccountCtrl'
         },
-        'hm.quotaNReservations' : {
+        'hm.dashboard.quotaNReservations' : {
           url: '/quota-n-reservations',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
           controller: 'HM_QuotaNReservationsCtrl'
         },
-        'hm.quotesDetail' : {
+        'hm.dashboard.quotesDetail' : {
           url: '/quotes-detail',
           templateUrl: 'app/quotes-detail/quotes-detail.html'
         },
-        'hm.myCatalogue' : {
+        'hm.dashboard.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
           controller: 'HM_MyCatalogueCtrl'
         },
-        'hm.makePayment' : {
+        'hm.dashboard.makePayment' : {
           url: '/make-payment',
           templateUrl: 'app/make-payment/make-payment.html'
         },
-        'hm.requests' : {
+        'hm.dashboard.requests' : {
           url: '/requests',
           templateUrl: 'app/requests/requests.html'
         },
-        'hm.viewContracts' : {
+        'hm.dashboard.viewContracts' : {
           url: '/view-contracts',
           templateUrl: 'app/view-contracts/view-contracts.html',
           controller: 'HM_MyCatalogueCtrl'

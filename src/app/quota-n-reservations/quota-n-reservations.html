@@ -1,152 +1,105 @@
-<section class="content-top">
-  <!-- START  Main Content -->
-  <article class="main-cantain">
-	    <div class="container">
-		      <div class="row">
-		        <!-- START  Dashboard tab -->
-		        <div class="col-sm-12 col-xs-12 filt-btn">
-		          <button class="btn sell-equ all-btn" ng-click="filterBtn()">Quotation</button>
-		        </div>
-		        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 filter_side show-for-small" ng-class="{'show-filter': showFilter}">
-		          <ul class="nav nav-pills nav-stacked my-verti-tab">
-		            <li ng-click="closeFilter()">
-		              <a data-toggle="pill" href="/#/dashboard">
-		                <i class="fa fa-th-large my-verti-icon"></i>
-		                <span class="sidebar-heading">Dashboard</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/my-catalogue">
-		              <i class="fa fa-heart my-verti-icon catelog-icon"></i>
-		              <span class="sidebar-heading">My Catalog</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/manage/jobsites">
-		              <i class="fa fa-map-marker my-verti-icon"></i>
-		              <span class="sidebar-heading">Manage Job Sites</span></a></li>
-		            <!-- <li ng-click="closeFilter()"><a data-toggle="pill" href="/#/manage-my-account">
-		              <i class="fa fa-user my-verti-icon"></i>
-		              <span class="sidebar-heading">Manage My Account</span></a>
-		            </li> -->
-		            <li class="active" ng-click="closeFilter()"><a data-toggle="pill" href="#/quota-n-reservations">
-		              <i class="fa fa-bookmark my-verti-icon"></i>
-		              <span class="sidebar-heading">Quotation</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/make-payment">
-		              <i class="fa fa-usd my-verti-icon"></i>
-		              <span class="sidebar-heading">Make a Payment</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/invoices">
-		              <i class="fa fa-file my-verti-icon"></i>
-		              <span class="sidebar-heading">View Invoices</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/requests"><i class="fa fa-comments my-verti-icon"></i>
-		              <span class="sidebar-heading">Requests</span></a></li>
-		            <li ng-click="closeFilter()"><a data-toggle="pill" href="#/view-contracts"><i class="fa fa-briefcase my-verti-icon"></i>
-		              <span class="sidebar-heading">View Contracts</span></a></li>
-
-		          </ul>
-
-		        </div>
-		        <!-- End  Dashboard tab -->
-						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-								Quotation
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
-								<i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i>
-								<i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="search()"></i>
-								<div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow': showSearch}">
-									<input type="text" placeholder="Quote Id">
-								</div>
-							</div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box search-box-xs job-site-list quotes-filter-div search-arrow-box" ng-class="{'search-show': showSearch}">
-								<div class="form-control search-div quotes-search searchShow">
-									<input type="text" placeholder="Search">
-								</div>
-							</div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': showFilterDiv}">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<p class="desc-text">From Date</p>
-									<div class="form-control search-div select-date" ng-click="openDatepicker('from')">
-										<input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="from" is-open="queryFormData.from">
-										<i class="fa fa-calendar"></i>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<p class="desc-text">To Date</p>
-									<div class="form-control search-div select-date" ng-click="openDatepicker('to')">
-										<input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="to"  is-open="queryFormData.to">
-										<i class="fa fa-calendar"></i>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<p class="desc-text">Job Site</p>
-									<div class="form-control search-div select-date">
-										<input type="text" placeholder="Enter Jobsite Keyword" ng-model="jobsite">
-										<i class="fa fa-marker"></i>
-									</div>
-								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-btn-div text-right devider">
-									<button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
-									<button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
-								</div>
-							</div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-								<table class="table quotes-table">
-									<thead>
-										<tr>
-											<th>Quote ID</th>
-			                <th>Request Date</th>
-			                <th>Job Site</th>
-			                <th>Quote Value</th>
-			                <th></th>
-			              </tr>
-			            </thead>
-			            <tbody>
-			              <tr>
-			                <td><a href="" class="invoice-no">49345</a></td>
-			                <td>May 21, 2015</td>
-			                <td>Site 1</td>
-			                <td>$928.96</td>
-			                <td class="text-right">
-			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
-			              </tr>
-			              <tr>
-			                <td><a href="" class="invoice-no">49345</a></td>
-			                <td>May 21, 2015</td>
-			                <td>Site 1</td>
-			                <td>$928.96</td>
-			                <td class="text-right">
-			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
-			              </tr>
-			              <tr>
-			                <td><a href="" class="invoice-no">49345</a></td>
-			                <td>May 21, 2015</td>
-			                <td>Site 1</td>
-			                <td>$928.96</td>
-			                <td class="text-right">
-			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
-			              </tr>
-			              <tr>
-			                <td><a href="" class="invoice-no">49345</a></td>
-			                <td>May 21, 2015</td>
-			                <td>Site 1</td>
-			                <td>$928.96</td>
-			                <td class="text-right">
-			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
-			              </tr>
-			              <tr>
-			                <td><a href="" class="invoice-no">49345</a></td>
-			                <td>May 21, 2015</td>
-			                <td>Site 1</td>
-			                <td>$928.96</td>
-			                <td class="text-right">
-			                  <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
-			                  <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
-			              </tr>
-			            </tbody>
-			          </table>
-		          </div>
-		    		</div>
-					</div>
-				</div>
-			</article>
-</section>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+    Quotation
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
+    <i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i>
+    <i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="search()"></i>
+    <div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow': showSearch}">
+      <input type="text" placeholder="Quote Id">
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box search-box-xs job-site-list quotes-filter-div search-arrow-box" ng-class="{'search-show': showSearch}">
+    <div class="form-control search-div quotes-search searchShow">
+      <input type="text" placeholder="Search">
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': showFilterDiv}">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">From Date</p>
+      <div class="form-control search-div select-date" ng-click="openDatepicker('from')">
+        <input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="from" is-open="queryFormData.from">
+        <i class="fa fa-calendar"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">To Date</p>
+      <div class="form-control search-div select-date" ng-click="openDatepicker('to')">
+        <input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="to"  is-open="queryFormData.to">
+        <i class="fa fa-calendar"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">Job Site</p>
+      <div class="form-control search-div select-date">
+        <input type="text" placeholder="Enter Jobsite Keyword" ng-model="jobsite">
+        <i class="fa fa-marker"></i>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-btn-div text-right devider">
+      <button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
+      <button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+    <table class="table quotes-table">
+      <thead>
+      <tr>
+        <th>Quote ID</th>
+        <th>Request Date</th>
+        <th>Job Site</th>
+        <th>Quote Value</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="" class="invoice-no">49345</a></td>
+        <td>May 21, 2015</td>
+        <td>Site 1</td>
+        <td>$928.96</td>
+        <td class="text-right">
+          <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="" class="invoice-no">49345</a></td>
+        <td>May 21, 2015</td>
+        <td>Site 1</td>
+        <td>$928.96</td>
+        <td class="text-right">
+          <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="" class="invoice-no">49345</a></td>
+        <td>May 21, 2015</td>
+        <td>Site 1</td>
+        <td>$928.96</td>
+        <td class="text-right">
+          <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="" class="invoice-no">49345</a></td>
+        <td>May 21, 2015</td>
+        <td>Site 1</td>
+        <td>$928.96</td>
+        <td class="text-right">
+          <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      <tr>
+        <td><a href="" class="invoice-no">49345</a></td>
+        <td>May 21, 2015</td>
+        <td>Site 1</td>
+        <td>$928.96</td>
+        <td class="text-right">
+          <a href="#/quotes-detail" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
