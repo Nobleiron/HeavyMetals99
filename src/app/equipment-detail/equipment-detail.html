@@ -85,11 +85,11 @@
           <!--                        <div class="req_dash_botam col-lg-12 ten_botam"></div>-->
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam add-wish-btn">
             <button class="btn now-reserve col-lg-12 all-btn sell-equ" type="button" ng-click="addToOrRemoveFromWishList(equipment)">
-              <span btn-load-indicator="Add:Wishlist:Process" btn-uid="equipment.Product_Id">{{equipment.Is_in_catelog ? 'Added to Wishlist': 'Add to Wishlist'}}</span>
+              <span btn-load-indicator="Add:Wishlist:Process" btn-uid="equipment.Product_Id">{{equipment.Is_in_catelog ? 'Added to Catelog': 'Add to Catelog'}}</span>
             </button>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam">
-            <a class="btn now-reserve col-lg-12 all-btn" type="button" ui-sref="hm.reserveEquipment({id: equipment.Product_Id})">Reserve Now</a>
+            <a class="btn now-reserve col-lg-12 all-btn" type="button" ui-sref="hm.reserveEquipment({id: equipment.Product_Id})">Add to Cart</a>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ten_top_botam inquiry-multiple">
             <button class="btn col-lg-12 col-md-12 col-sm-12 inq_btn primary-btn all-btn" type="button">Inquire for Multiple Equipments Rentals</button>

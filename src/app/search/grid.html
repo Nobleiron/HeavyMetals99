@@ -2,7 +2,7 @@
   <div class="col-md-4  lift_box nopadding" ng-repeat="item in results">
 
     <figure>
-      <a ng-href="/#/equipments{{item.id}}"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
+      <a ui-sref="hm.equipmentDetails({id: item.Product_Id})"><img ng-src="{{item.Product_Image[0].ProductImage_Path}}" alt=""/></a></figure>
     <div class="certified_box">
       <img src="assets/images/certified.png">
       <br>

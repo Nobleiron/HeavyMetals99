@@ -160,10 +160,20 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/job-site-detail/job-site-detail.html',
           openInModal: true
         },
-        'hm.shoppingCart': {
+        'hm.cart': {
           url: '/shopping-cart',
-          templateUrl: 'app/shopping-cart/shopping-cart.html',
-          controller: 'HM_ShoppingCartCtrl'
+          template: '<ui-view></ui-view>',
+          controller: 'HM_CartCtrl'
+        },
+        'hm.cart.details': {
+          url: '/details',
+          templateUrl: 'app/cart/cart-details.html',
+          controller: 'HM_CartDetailsCtrl'
+        },
+        'hm.cart.updateAddress': {
+          url: '/update-jobsite',
+          templateUrl: 'app/cart/cart-update-jobsite.html',
+          controller: 'HM_CartUpdateJobSiteCtrl'
         },
         'hm.updateJobSite': {
           url: '/update-job-site',
@@ -190,10 +200,6 @@ angular.module("HM_RoutesMD")
         'hm.financialReports': {
           url: '/financial-reports',
           templateUrl: 'app/financial-reports/financial-reports.html'
-        },
-        'hm.jobsiteRent': {
-          url: '/jobsite-rent',
-          templateUrl: 'app/jobsite-rent/jobsite-rent.html'
         },
         'hmPrelogin.login' : {
           url: '/login',

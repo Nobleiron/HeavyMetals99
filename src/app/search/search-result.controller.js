@@ -1,7 +1,7 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst','toastr','toastrConfig',
-    function($scope,$state, $stateParams, RestSV, SearchCnst,toastr,toastrConfig){
+  .controller("HM_SearchResultCtrl", ['$scope','$state','$stateParams','HM_RestSV','HM_SearchCnst','toastr',
+    function($scope,$state, $stateParams, RestSV, SearchCnst,toastr){
 
 
       $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
@@ -20,7 +20,7 @@ angular.module("HM_SearchMD")
         console.log("initialized")
         $scope.flags.gridView = $stateParams.view_type == "grid";
         $scope.queryFormData = {};
-        toastrConfig.positionClass = 'toast-top-center';
+
         $scope.searchTags = [];
         jQuery.extend($scope.params,$stateParams);
         $scope.params.attributes && _setCategoryAttributesFromParams($scope.params.attributes);

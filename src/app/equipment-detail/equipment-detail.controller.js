@@ -26,7 +26,9 @@ angular.module("HM_EquipmentDetailMD")
       $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
       if(product.Is_in_catelog){
         RestSV
-          .delete( EquipmentDetailCnst.addToOrRemoveFromWishList.url(),{ params : {product_id : product.Product_Id }})
+          .delete( EquipmentDetailCnst.addToOrRemoveFromWishList.url(),{
+            data : jQuery.param({product_id: product.Product_Id}),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
           .success(function(response){
             product.Is_in_catelog = false;
             $scope.catelog = false;

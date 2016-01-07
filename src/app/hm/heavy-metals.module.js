@@ -24,7 +24,7 @@
       'valdr',
       'HM_RoutesMD',
       'HM_GlobalMD'])
-    .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','$httpProvider', _configure])
+    .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
     .run(['$rootScope','$state', function($rootScope, $state){
       $rootScope.$state = $state;
       $rootScope.params = {};
@@ -32,8 +32,11 @@
 
 
 
-  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,$httpProvider) {
+  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
 
+    angular.extend(toastrConfig, {
+      positionClass: 'toast-top-center'
+    });
     // Setup Local Storage Prefix
     localStorageServiceProvider
       .setPrefix('HM');

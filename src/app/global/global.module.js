@@ -17,7 +17,7 @@ angular.module("HM_GlobalMD",[
   'HM_BtnLoadIndicatorMD',
   'HM_ManageMyAccountMD',
   'HM_MyCatalogueMD',
-  'HM_ShoppingCartMD',
+  'HM_CartMD',
   'HM_QuotaNReservationsMD',
   'HM_TermsAndConditionsMD',
   'HM_MenuAimMD',
