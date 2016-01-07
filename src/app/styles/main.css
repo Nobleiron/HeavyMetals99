@@ -171,7 +171,7 @@ a:focus { color: #0099cc;
 .nav-mytab > li{width: 50%; }
 .nav-mytab > li a{ padding: 17px 15px; text-align: center;  font-size: 16px; margin: 0;}
 .login_page{}
-.my-alc-btn{background: #f5f5f5 ;  color: #009ddc; line-height: 23px;}
+.my-alc-btn{background: #f5f5f5 ;  color: #009ddc; line-height: 23px; z-index: 0 !important;}
 .my-alc-btn-toggle{background: #f5f5f5 ;  color: #009ddc;
 									 /*                  margin: 14px 0 0 0;*/
 }
@@ -220,7 +220,7 @@ a:focus { color: #0099cc;
 					 vertical-align: top;}
 .cart_menu ul{margin: 0; padding: 0;}
 .cart_menu ul li{display: inline;}
-.cart_menu ul li a{padding: 5px; line-height: 56px;}
+.cart_menu ul li a{padding: 5px; line-height: 56px;z-index: 1000;}
 .cart_menu .cart_noti{background: #ff5600 none repeat scroll 0 0;
 											border-radius: 50px;
 											height: 20px;
@@ -381,6 +381,7 @@ a:focus { color: #0099cc;
 .right-arrw{line-height: 43px; margin: 0 15px 0 0; font-size: 20px;}
 .cat-span{margin: 0 0 0 15px; font-size: 15px;}
 .upcoming{border-bottom: solid 1px #c2c2c2; border-top: solid 1px #c2c2c2;}
+.upcoming-left .upcome_eqe ul li {padding-bottom: 7px;}
 .upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 16px;}
 .upcom-arrow{color: #009ddc}
 .upcome_eqe{}
@@ -1015,11 +1016,16 @@ a:focus { color: #0099cc;
 
 .not-user-div {
 	display: inline-block;
-	padding: 17px 20px;
+	padding: 10px 20px;
 }
 
 .not-user-div a {
 	margin: 0 10px;
+}
+
+.not-user-div .cart_noti {
+	top: 10px;
+	right: 75px;
 }
 
 .user-div {
@@ -1983,6 +1989,10 @@ button:hover {
 .about-dropdown {
 	left: -30px;
 	margin: 2px 0 0;
+}
+
+.about-caret {
+	margin-top: 10px;
 }
 
 .text-right {
