@@ -655,7 +655,7 @@ a:focus { color: #0099cc;
 
 .right-btn-col .my-reserve {
 	min-width: 127px;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 }
 
 .right-btn-col .my-reserve-added {
@@ -1210,6 +1210,7 @@ button:hover {
 	bottom: 20px;
 	right: 20px;
 	font-size: 45px;
+	z-index: 1000;
 }
 
 .catelog-icon {
@@ -1918,7 +1919,7 @@ button:hover {
 
 .reserve-btns {
 	text-align: center;
-	padding: 0 10% 10px 10%;
+	padding: 0 4% 10px 4%;
 }
 
 .reserve-btns a i {
@@ -2115,6 +2116,20 @@ button:hover {
 
 .special-instruction textarea {
 	min-height: 100px;
+}
+
+.landing-collapse-small {
+	box-shadow: 0 0 5px #000;
+}
+
+.catalog-col {
+	margin-top: 30px;
+}
+
+.catalog-col .catalogs-div {
+	border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
 }
 
 

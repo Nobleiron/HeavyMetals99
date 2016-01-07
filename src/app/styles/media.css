@@ -99,7 +99,7 @@
   }
 
   .prelogin-header .search-head {
-    width: 60% !important;
+    width: 84% !important;
     margin-bottom: 15px;
   }
 
@@ -379,8 +379,12 @@
   }
 
   .inq_btn {
-    float: right;
-    margin-right: -30px;
+    /*float: right;*/
+    /*margin-right: -30px;*/
+  }
+
+  .inquiry-multiple {
+    padding: 0;
   }
 
   .calc-col {
@@ -656,6 +660,14 @@
     padding-top: 182px;
   }
 
+  .login-content-top {
+    padding-top: 82px;
+  }
+
+  .forgot-content-top {
+    padding-top: 30px;
+  }
+
   .panel-left {
     padding: 0 0
   }
@@ -823,7 +835,7 @@
   }
 
   .catalog-div .lift_box {
-    width: auto;
+    width: 85%;
     display: inline-block;
     float: none;
   }
@@ -884,7 +896,7 @@
     margin-bottom: 10px;
   }
   .view-down {
-    margin-right: 0; 
+    margin-right: 10px; 
   }
 
   .filter-btns {
