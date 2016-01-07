@@ -3,6 +3,10 @@
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
     Invoices
   </div>
+  <div ng-show="flags.invoicesInProgress" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    <load-indicator loading="flags.invoicesInProgress"></load-indicator>
+  </div>
+  <div ng-style="{'visibility': flags.invoicesInProgress ? 'hidden':'visible'}">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
     <input type="text" placeholder="Search Invoices" ng-model="query" ng-change="fetchInvoices()" class="form-control pull-right mng-search-bar">
     <!-- <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span> -->
@@ -12,54 +16,6 @@
     <button class="btn btn-default pull-right manage-job-btn deactivate list all-btn" ng-class="{'active primary-btn' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
     <button class="btn btn-default pull-right manage-job-btn deactivate map all-btn" ng-click="toggleInvoiceView(false)" ng-class="{'active primary-btn' : !flags.outstanding}">All Invoices</button>
   </div>
-  <!-- <section class="content-header">
-    <h1>
-      Invoices
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Invoices</li>
-    </ol>
-    <div class="clearfix">
-      <div class="box-tools pull-left">
-        <div class="has-feedback">
-          <input type="text" class="form-control input-sm" placeholder="Search Invoices">
-          <span class="glyphicon glyphicon-search form-control-feedback"></span>
-        </div>
-      </div>
-
-      <div class=" pull-right">
-        All Invoices/ Outstanding
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <table class="table table-striped" ng-if="invoices.length">
-    <thead>
-    <tr>
-      <th>Invoices</th>
-      <th>Job Sites</th>
-      <th>Contract #</th>
-      <th>Purchase Order</th>
-      <th>Total</th>
-      <th>Due Amount</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="invoice in invoices">
-      <td class="invoice-no">{{invoice.InvoiceID}}</td>
-      <td>{{invoice.Site_Name}}</td>
-      <td>{{invoice.Source}}</td>
-      <td>{{invoice.Purchase_Order_ID}}</td>
-      <td>{{invoice.Total}}</td>
-      <td>{{invoice.Balance}}</td>
-      <td>
-        <a href="#"><i class="fa fa-eye"></i></a>
-        <a href="#"><i class="fa fa-download"></i></a></td>
-    </tr>
-    </tbody>
-  </table> -->
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding hidden-xs">
     <table class="table table-striped quotes-table">
@@ -105,4 +61,5 @@
       </div>
     </div>
   </div>
+    </div>
 </div>

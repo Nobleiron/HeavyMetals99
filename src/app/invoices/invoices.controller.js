@@ -4,6 +4,7 @@ angular.module("HM_InvoicesMD")
 
     $scope.flags = {
       outstanding : false,
+      invoicesInProgress : true,
       is_include_history : false
     };
 
@@ -28,7 +29,10 @@ angular.module("HM_InvoicesMD")
         })
         .catch(function(){
 
-        });
+        })
+        .finally(function(){
+          $scope.flags.invoicesInProgress = false;
+        })
     }
 
     function _toggleInvoiceView(option){
