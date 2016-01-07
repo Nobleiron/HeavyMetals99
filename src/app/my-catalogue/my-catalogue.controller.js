@@ -1,25 +1,50 @@
 angular.module("HM_MyCatalogueMD")
 .controller('HM_MyCatalogueCtrl', ['$scope','HM_RestSV','HM_MyCatalogueCnst', function($scope, RestSV, MyCatalogueCnst){
-	$scope.showFilter = false;
-	$scope.filterBtn = function() {
-      $scope.showFilter = !$scope.showFilter
-    };
 
-    $scope.closeFilter = function() {
-        $scope.showFilter = false;
-    };
+
+    $scope.addToOrRemoveFromWishList = addToOrRemoveFromWishList;
 
     _initialize();
 
     function _initialize(){
-      $scope.productFetchInProgress= true;
+      fetchMyCatelog();
+    }
+
+
+    function fetchMyCatelog(){
+      $scope.catelogFetchInProgress= true;
       RestSV.get(MyCatalogueCnst.list.url())
         .then(function(response){
           $scope.catelog = response.data.result.ProductList;
-          $scope.productFetchInProgress= false;
+          $scope.catelogFetchInProgress= false;
         })
         .catch(function(error){
-          debugger
         })
+    }
+
+    function addToOrRemoveFromWishList(product){
+      $scope.$broadcast('Add:Wishlist:Process:Start', product.Product_Id);
+      if(product.Is_in_catelog){
+        RestSV
+          .delete( MyCatalogueCnst.addToOrRemoveFromWishList.url(),{ params : {product_id : product.Product_Id }})
+          .success(function(response){
+            product.Is_in_catelog = false;
+            $scope.catelog = false;
+          })
+          .finally(function(){
+            $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+          });
+      }else{
+        RestSV
+          .post( MyCatalogueCnst.addToOrRemoveFromWishList.url(),{ product_id : product.Product_Id })
+          .success(function(response){
+            product.Is_in_catelog = true;
+            $scope.catelog = true;
+          })
+          .finally(function(){
+            $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
+          });
+      }
+
     }
 }]);

@@ -5,5 +5,10 @@ angular.module('HM_MyCatalogueMD')
       url : function(){
         return '/catelog'
       }
+    },
+    addToOrRemoveFromWishList : {
+      url : function(){
+        return '/catelog'
+      }
     }
   });
