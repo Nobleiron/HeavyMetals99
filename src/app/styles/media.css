@@ -208,7 +208,7 @@
   .job-site-detail {
     padding: 0 15px 15px;
   }
-  
+
   .job-site-list {
     padding: 15px 15px 0;
   }
@@ -234,7 +234,6 @@
     display: block;
     padding-bottom: 15px;
   }
-\
 }
 
 @media screen and (max-width: 600px) {
@@ -429,7 +428,7 @@
   }
 
   .dashboard-small {
-    padding: 0 15px 0 15px !important;    
+    padding: 0 15px 0 15px !important;
   }
 
   .manage_job_tit_small {
@@ -809,7 +808,7 @@
     padding: 0 2px;
   }
   .cart_menu .noti{left: 60px;}
-  
+
   .lift_box {
     width: auto;
     display: inline-block;
@@ -897,7 +896,7 @@
     margin-bottom: 10px;
   }
   .view-down {
-    margin-right: 10px; 
+    margin-right: 10px;
   }
 
   .filter-btns {

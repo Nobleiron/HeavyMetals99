@@ -6,7 +6,7 @@ angular.module("HM_ManageJobSitesMD")
     $scope.flags = {
       listView : false
     };
-    
+
     $scope.toggleListView  = toggleListView;
 
     $scope.map = { center: { latitude: 41.850033, longitude: -87.6500523 }, zoom: 8 };
