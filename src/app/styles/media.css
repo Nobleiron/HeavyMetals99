@@ -241,6 +241,11 @@
 
   .dashboard-text-small {
     font-size: 14px;
+    line-height: 23px;
+  }
+
+  .about-small {
+    line-height: 23px;
   }
 
   .dashboard-small-icon {
@@ -798,7 +803,7 @@
     line-height: 23px;
   }
   .req_call a {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 23px;
   }
   .req_part {
