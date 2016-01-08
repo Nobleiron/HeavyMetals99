@@ -67,7 +67,7 @@ a:focus { color: #0099cc;
 .comp{}
 .comp ul{margin: 0; padding: 0; list-style-type: none;}
 .comp ul li{}
-.comp ul li a{ color: #e1e1e1; line-height:30px; font-size: 14px;}
+.comp ul li a{ color: #e1e1e1; line-height:30px; font-size: 13px;}
 .comp ul li a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
 .cont{}
 .cont ul{margin: 0; padding: 0; list-style-type: none;}
@@ -77,7 +77,7 @@ a:focus { color: #0099cc;
 .cont ul li:nth-child(1){background: url(../images/phone.png) no-repeat;background-position: 0 7px;}
 .cont ul li:nth-child(2){background: url(../images/telephone.png) no-repeat;background-position: 0 7px;}
 .cont ul li:nth-child(3){background: url(../images/fax.png) no-repeat;background-position: 0 7px;}
-.cont ul li a{color: #e1e1e1; line-height: 25px;}
+.cont ul li a{color: #e1e1e1; line-height: 25px; font-size: 13px;}
 .cont ul li a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
 .rent_tit{text-align: center; text-shadow: 0px 5px 5px rgba(1, 1, 1, 0.5);
 	padding: 180px 0 40px 0; font-size: 36px; color: #fefefe; font-weight: 300;}
@@ -515,7 +515,7 @@ a:focus { color: #0099cc;
 			 -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
 			 transform: rotate(7deg);}
 .cal_main{background: #ebebeb; border: solid 1px #d7d7d7; margin: 20px 0 20px 0; padding: 10px 15px;}
-.product_pics{background: #ebebeb; min-height: 419px;}
+.product_pics{background: #ebebeb; min-height: 419px; margin-top: 15px;}
 .rivew_pic{width: 70px; height: 70px; border-radius: 50%; background: #ebebeb;}
 .prodetil_main{margin:25px 0 0 0;}
 .rate_user{ font-size: 15px; padding: 0 25px 0 20px;}
@@ -1218,11 +1218,11 @@ button:hover {
 }
 
 .fullwidth{
-	width: 100%
+	width: 100% !important;
 }
 
 .fullheight {
-	height: 100%;
+	height: 100% !important;
 }
 
 .nomargin {
@@ -2110,16 +2110,13 @@ button:hover {
 	width: 10%;
 }
 
+
 .special-instruction {
 	padding: 15px;
 }
 
 .special-instruction textarea {
 	min-height: 100px;
-}
-
-.landing-collapse-small {
-	box-shadow: 0 0 5px #000;
 }
 
 .catalog-col {
@@ -2147,6 +2144,37 @@ button:hover {
 
 .view-jobsite {
 	padding: 20px 30px;
+}
+
+.view-jobsite-modal {
+	width: 500px;
+}
+
+.landing-right-header {
+	padding-top: 30px;
+}
+
+.landing-right-header .my-alc-btn {
+	background: transparent;
+  color: #fff;
+}
+
+.landing-right-header .my-alc-btn-toggle {
+	background: transparent;
+	color: #fff;
+}
+
+.landing-right-header .pro_pic {
+	margin-left: 10px;
+}
+
+.landing-right-header .cart_menu ul li a {
+	line-height: 50px;
+  padding-right: 10px;
+}
+
+.landing-right-header .cart_menu ul li a i {
+	font-size: 20px;
 }
 
 

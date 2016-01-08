@@ -69,7 +69,7 @@
   }
 
   .collapse-for-small .req-call-div {
-    height: 40px;
+    height: 30px;
   }
 
   .collapse-for-small .req-call-div .glyphicon-earphone {
@@ -234,7 +234,30 @@
     display: block;
     padding-bottom: 15px;
   }
-\
+
+  .landing-collapse-small {
+    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.5);
+  }
+
+  .dashboard-text-small {
+    font-size: 14px;
+  }
+
+  .dashboard-small-icon {
+    margin-right: 10px;
+  }
+  .cart-menu-small {
+    display: block;
+  }
+
+  .about-button-small {
+    float: none;
+  }
+
+  .req_call {
+    margin: 0;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -745,6 +768,9 @@
   .quotes-site-price {
     margin-top: 15px;
   }
+  .terms-content-top {
+    padding-top: 100px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -918,6 +944,9 @@
 
   .quotes-total-price div {
     padding-right: 20px;
+  }
+  .view-jobsite-modal {
+    width: 300px;
   }
 }
 
