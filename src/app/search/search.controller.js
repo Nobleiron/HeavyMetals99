@@ -13,6 +13,9 @@ angular.module("HM_SearchMD")
 
       $scope.selectCategoryAttributes = selectCategoryAttributes;
 
+      $scope.$on('Cart:Count:Fetched', function(e, data){
+      });
+
 
       _initialize();
 

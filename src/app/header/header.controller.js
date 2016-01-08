@@ -19,7 +19,7 @@
  </example>
  */
 angular.module('HeavyMetals')
-  .controller('HM_HeaderCtrl', ['$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst','localStorageService',function ($scope,$state,filterFilter, RestSV,HeaderCnst, localStorageService) {
+  .controller('HM_HeaderCtrl', ['$rootScope','$scope','$state','filterFilter','HM_RestSV','HM_HeaderCnst','localStorageService',function ($rootScope, $scope,$state,filterFilter, RestSV,HeaderCnst, localStorageService) {
 
     $scope.showAutocomplete = false;
     $scope.getProducts = getProducts;
@@ -89,7 +89,8 @@ angular.module('HeavyMetals')
     function _getCountOfProductInCart(){
       RestSV.get(HeaderCnst.CartDetails.url())
         .then(function(response){
-          $scope.cartCount = response.data.result.Cart_Count;
+          $scope.cartCount = response.data.result.Cart_Quantity;
+          $rootScope.$broadcast('Cart:Count:Fetched',response.data.result)
 
         })
     }

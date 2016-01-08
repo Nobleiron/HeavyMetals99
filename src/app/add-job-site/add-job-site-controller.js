@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_ManageJobSitesMD")
-  .controller('HM_AddJobSiteCtrl', ['$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','HM_AddJobSiteCnst', function( $scope, $timeout, $log, RestSV, GoogleMapApi ,AddJobSiteCnst){
+  .controller('HM_AddJobSiteCtrl', ['$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_AddJobSiteCnst', function( $scope, $timeout, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
 
     var componentForm = {
       street_number: 'short_name',
@@ -80,6 +80,7 @@ angular.module("HM_ManageJobSitesMD")
           phone : $scope.address.phone
         })
         .then(function(response){
+          toastr.success("JobSite Added Successfully");
           $scope.$dismiss();
         })
         .catch(function(response){
