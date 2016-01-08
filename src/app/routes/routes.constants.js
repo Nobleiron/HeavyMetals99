@@ -201,6 +201,10 @@ angular.module("HM_RoutesMD")
           url: '/financial-reports',
           templateUrl: 'app/financial-reports/financial-reports.html'
         },
+        'hm.dashboard.invoiceDetail': {
+          url: '/invoice-detail',
+          templateUrl: 'app/invoice-detail/invoice-detail.html'
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',

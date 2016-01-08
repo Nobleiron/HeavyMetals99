@@ -269,12 +269,51 @@
               <!--</div>-->
             <!--</div>-->
             <div class="req-call-div left-link-div">
-              <span class="glyphicon glyphicon-earphone"></span>
+              <span class="glyphicon glyphicon-earphone hidden-xs"></span>
               <span class="req_call req_call-small nomargin"><a href="/#/request-callback">  Request Callback</a></span>
             </div>
+            <div class="req-call-div left-link-div visible-xs" ng-if="userObj">
+              <a href="/#/dashboard" class="marker">
+                <span class="in-block invoice-no dashboard-text-small">Dashboard</span>
+              </a>
+            </div>
+            <div class="req-call-div left-link-div visible-xs" ng-if="userObj">
+             <a href="#/FAQ" class="btn prof-btn about-caret nomargin nopadding invoice-no about-small">About</a>
+            </div>
             <div class="sign-in-div left-link-div" ng-if="!userObj">
-              <span class="glyphicon glyphicon-log-in"></span>
+              <span class="glyphicon glyphicon-log-in hidden-xs"></span>
               <span class="req_call req_call-small"><a href="/#/login">  Sign In</a></span>
+            </div>
+          </div>
+          <div class="nav navbar-nav navbar-right landing-header landing-right-header" ng-if="userObj">
+            <div class="btn-group drop-btn profile-dropdown user-div hidden-xs" dropdown ng-if="userObj">
+              <button class="btn btn-mini my-alc-btn nopadding prof-btn "><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
+              <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu">
+                <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+                <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Recent Orders</a></li>
+                <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
+                <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">My Profile</a></li>
+                <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Settings</a></li>
+                <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+                <li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+              </ul>
+            </div>
+
+            <!-- <div class="cart_menu hidden-xs" ng-if="userObj">
+              <ul>
+                <li>
+                  <a href="/#/dashboard" class="marker">
+                    <i class="fa fa-tachometer fa-2x white-color"></i>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+
+            <div class="btn-group drop-btn user-div hidden-xs">
+                <a href="#/FAQ" class="btn prof-btn about-caret white-color about-large">About</a>
             </div>
           </div>
           <div class="nav navbar-nav navbar-right landing-header" ng-if="!userObj">
@@ -612,11 +651,11 @@
               <ul>
                 <li><a href="#">Team</a></li>
                 <li><a href="#">Board of Directors</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Press Releases</a></li>
-                <li><a href="#">Financial Reports</a></li>
-                <li><a href="#">2015 Annual Meeting</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#/FAQ">FAQ</a></li>
+                <li><a href="#/press-releases">Press Releases</a></li>
+                <li><a href="#/financial-reports">Financial Reports</a></li>
+                <li><a href="#/annual-meeting">2015 Annual Meeting</a></li>
+                <li><a href="#/contact-us">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -636,7 +675,7 @@
         <!-- START Location -->
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 about_part">
           <h4>Location</h4>
-          <p>
+          <p class="desc-text">
             Address Line, Address Line 2,<br>
             Address Line 3.<br>
             City, State.
@@ -646,7 +685,7 @@
         <!-- End Location -->
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <h4>Newsletter</h4>
-          <p>
+          <p class="desc-text">
             Get news on our latest promotions, products and services. We'll never share your email address and you can opt out any time
           </p>
           <input type="text" placeholder="Enter Your Email Id" class="form-control news-input">

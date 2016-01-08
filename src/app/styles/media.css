@@ -69,7 +69,7 @@
   }
 
   .collapse-for-small .req-call-div {
-    height: 40px;
+    height: 30px;
   }
 
   .collapse-for-small .req-call-div .glyphicon-earphone {
@@ -208,7 +208,7 @@
   .job-site-detail {
     padding: 0 15px 15px;
   }
-
+  
   .job-site-list {
     padding: 15px 15px 0;
   }
@@ -234,6 +234,35 @@
     display: block;
     padding-bottom: 15px;
   }
+
+  .landing-collapse-small {
+    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.5);
+  }
+
+  .dashboard-text-small {
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .about-small {
+    line-height: 23px;
+  }
+
+  .dashboard-small-icon {
+    margin-right: 10px;
+  }
+  .cart-menu-small {
+    display: block;
+  }
+
+  .about-button-small {
+    float: none;
+  }
+
+  .req_call {
+    margin: 0;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -428,7 +457,7 @@
   }
 
   .dashboard-small {
-    padding: 0 15px 0 15px !important;
+    padding: 0 15px 0 15px !important;    
   }
 
   .manage_job_tit_small {
@@ -744,6 +773,28 @@
   .quotes-site-price {
     margin-top: 15px;
   }
+  .terms-content-top {
+    padding-top: 100px;
+  }
+  .profile-setting {
+    padding: 0
+  }
+
+  .profile-setting .inputs-div {
+    padding: 15px 15px 0 0;
+  }
+
+  .profile-setting .search-div input {
+    width: 80%;
+  }
+
+  .portal-setting .form-control {
+    margin-top: 10px;
+  }
+
+  .security-input {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -771,7 +822,7 @@
     line-height: 23px;
   }
   .req_call a {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 23px;
   }
   .req_part {
@@ -917,6 +968,12 @@
 
   .quotes-total-price div {
     padding-right: 20px;
+  }
+  .view-jobsite-modal {
+    width: 300px;
+  }
+  .view-down-quotation {
+    margin-right: 0;
   }
 }
 
