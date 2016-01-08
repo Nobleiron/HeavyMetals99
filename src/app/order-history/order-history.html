@@ -8,45 +8,6 @@
         <hr class="order-hr">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc nopadding-xs">
-        <!-- <div class="panel-group row" id="accordion">
-          <div class="row panel panel-default my-order-panal rightmargin leftmargin panel-row" ng-repeat="order in orders">
-            <div class="panel-heading row nomargin">
-              <h4 class="panel-title order_panel">
-
-                <a data-toggle="collapse" data-parent="#accordion" ng-click="toggleAccordian(order)" aria-expanded="true" class="on-hover-pointer">
-                  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 panel-left">
-                    <span class="order_tit_list heading-text">{{order.orderNo}}</span>| <span class="order_tit_pump heading-text">{{order.title}}</span>|
-                    <span class="order_tit_rent heading-text">Rented for {{order.RentedForDays}} Days</span>
-                  </div>
-                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 panel-right">
-                    <span class="total_order_d desc-text">Order Total: ${{order.totalAmount}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
-                  </div>
-                </a>
-
-              </h4>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel-collapse collapse order-history-collapse" ng-class="{'in': order.toggleOpened}" aria-expanded="true">
-              <div class="panel-body order-history-panel nopadding">
-                <div class="col-lg-11 col-md-11 col-sm-8 col-xs-8 nopadding">{{order.orderNo}}</div>
-                <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4 text-right">
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_dash_botam order_bot"></div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 order_img">
-                  <img src="assets/images/order-history.jpg" alt="">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 order_text">
-                  <h3 class="gas_title heading-text">{{order.title}}</h3>
-                  <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                  <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 treack_main_order">
-                  <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn">Track Equipment</button>
-                  <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn">Write a Review for Equipment</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <!-- web accordion -->
         <uib-accordion close-others="oneAtATime"  class="visible-lg visible-md visible-sm">
           <uib-accordion-group ng-repeat="order in orders" class="order-history-accordion">
@@ -60,12 +21,25 @@
                 <table class="table quotes-table">
                   <thead>
                     <tr>
-                      <th>Order</th>
-                      <th></th>
-                      <th></th>
+                      <th class="bottomborder">Order Detail</th>
+                      <th class="bottomborder"></th>
+                      <th class="bottomborder"></th>
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <td class="order-img-td topborder"><img src="assets/images/order-history.jpg" alt=""></td>
+                      <td class="topborder">
+                        <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
+                        <p class="nomargin">{{order.orderNo}}</p>
+                        <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
+                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
+                      </td>
+                      <td class="vertically-middle text-right topborder">
+                        <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
+                        <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Write a Review for Equipment</button>
+                      </td>
+                    </tr>
                     <tr>
                       <td class="order-img-td"><img src="assets/images/order-history.jpg" alt=""></td>
                       <td>
@@ -81,7 +55,7 @@
                     </tr>
                     <tr>
                       <td class="order-img-td"><img src="assets/images/order-history.jpg" alt=""></td>
-                      <td class="vertically-middle ">
+                      <td>
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
@@ -94,20 +68,7 @@
                     </tr>
                     <tr>
                       <td class="order-img-td"><img src="assets/images/order-history.jpg" alt=""></td>
-                      <td class="vertically-middle ">
-                        <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
-                        <p class="nomargin">{{order.orderNo}}</p>
-                        <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
-                      </td>
-                      <td class="vertically-middle text-right">
-                        <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
-                        <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Write a Review for Equipment</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="order-img-td"><img src="assets/images/order-history.jpg" alt=""></td>
-                      <td class="vertically-middle ">
+                      <td>
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>

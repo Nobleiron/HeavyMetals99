@@ -1246,7 +1246,7 @@ button:hover {
 }
 
 .noborder {
-	border: 0;
+	border: 0 !important;
 }
 
 .forgot-pass-cancel {
@@ -1962,7 +1962,11 @@ button:hover {
 }
 
 .bottomborder {
-	border-bottom: 0;
+	border-bottom: 0 !important;
+}
+
+.topborder{
+	border-top: 0 !important;
 }
 
 .arrow_box:after, .arrow_box:before {
@@ -2175,6 +2179,47 @@ button:hover {
 
 .landing-right-header .cart_menu ul li a i {
 	font-size: 20px;
+}
+
+.about-large:hover {
+	color: #fff;
+}
+
+/*profile settings*/
+.profile-setting .inputs-div {
+	padding: 15px 15px 0;
+}
+
+.profile-setting .search-div i {
+	float: right;
+  margin-top: 5px;
+}
+
+.upload-pic-div {
+	height: 200px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  padding-top: 50px;
+  width: 200px;
+  display: inline-block;
+}
+
+.upload-pic-div .user-pic {
+	display: block;
+  height: 108px;
+  text-align: center;
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.portal-security-ques .form-control {
+	width: 49%;
+	min-width: 300px;
+	margin-top: 5px;
+}
+
+.change-portal-credentials {
+	padding-top: 10px;
 }
 
 

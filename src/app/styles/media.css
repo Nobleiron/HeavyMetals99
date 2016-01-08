@@ -776,6 +776,25 @@
   .terms-content-top {
     padding-top: 100px;
   }
+  .profile-setting {
+    padding: 0
+  }
+
+  .profile-setting .inputs-div {
+    padding: 15px 15px 0 0;
+  }
+
+  .profile-setting .search-div input {
+    width: 80%;
+  }
+
+  .portal-setting .form-control {
+    margin-top: 10px;
+  }
+
+  .security-input {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -952,6 +971,9 @@
   }
   .view-jobsite-modal {
     width: 300px;
+  }
+  .view-down-quotation {
+    margin-right: 0;
   }
 }
 

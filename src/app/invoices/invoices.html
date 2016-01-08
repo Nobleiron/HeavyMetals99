@@ -71,15 +71,15 @@
         </thead>
         <tbody>
         <tr ng-repeat="invoice in invoices">
-          <td><a href="" class="invoice-no">{{invoice.InvoiceID}}</a></td>
+          <td><a href="#/invoice-detail" class="invoice-no">{{invoice.InvoiceID}}</a></td>
           <td>{{invoice.Site_Name}}</td>
           <td>{{invoice.Source}}</td>
           <td>{{invoice.Purchase_Order_ID}}</td>
           <td>{{invoice.Total}}</td>
           <td>{{invoice.Balance}}</td>
           <td>
-            <a href="#" class="invoice-no view-down"><i class="fa fa-eye invoice-no"></i></a>
-            <a href="#" class="invoice-no view-down"><i class="fa fa-download invoice-no"></i></a></td>
+            <a href="#/invoice-detail" class="invoice-no view-down heading-text"><i class="fa fa-eye invoice-no"></i></a>
+            <a href="#" class="invoice-no view-down heading-text"><i class="fa fa-download invoice-no"></i></a></td>
         </tr>
         </tbody>
       </table>
@@ -87,7 +87,7 @@
     <div class="col-xs-12 visible-xs">
       <div ng-repeat="invoice in invoices" class="invoices-small">
         <p class="bold-font desc-text">Invoice
-          <a href="#" class="invoice-no pull-right"><span># {{invoice.InvoiceID}}</span></a>
+          <a href="#/invoice-detail" class="invoice-no pull-right"><span># {{invoice.InvoiceID}}</span></a>
         </p>
         <p class="bold-font desc-text">{{invoice.Site_Name}}</p>
         <p class="desc-text">{{invoice.Source}}</p>
@@ -95,8 +95,8 @@
           <span class="desc-text bold-font pull-right">Due Amount{{invoice.Balance}}</span>
         </p>
         <div>
-          <button class="btn primary-btn all-btn sign_mybtn  autowidth"><i class="fa fa-eye white-color"></i>&nbsp View</button>
-          <button class="btn primary-btn all-btn sign_mybtn  autowidth"><i class="fa fa-download white-color"></i>&nbsp Download</button>
+          <a href="#/invoice-detail" class="btn primary-btn all-btn sign_mybtn autowidth"><i class="fa fa-eye white-color"></i>&nbsp View</a>
+          <button class="btn primary-btn all-btn sign_mybtn autowidth"><i class="fa fa-download white-color"></i>&nbsp Download</button>
         </div>
       </div>
     </div>
