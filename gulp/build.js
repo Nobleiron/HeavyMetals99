@@ -96,5 +96,5 @@ module.exports = function(options) {
     $.del('./dist', done);
   });
 
-  gulp.task('build', ['clean','html', 'fonts', 'copyImages']);
+  gulp.task('build', ['html', 'fonts', 'copyImages']);
 };

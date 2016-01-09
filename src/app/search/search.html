@@ -19,7 +19,7 @@
               <div>
                 <ul class="categories" >
                   <li >
-                    <a class="category-name on-hover-pointer" ng-class="{'active-sub-category': subcategories.Id == flags.selectedCategory.Id}" ng-click="selectCategory(subcategories)">
+                    <a class="category-name on-hover-pointer" ng-class="{'active-sub-category': (subcategories.Id == flags.selectedCategory.Id ) && !params.query}" ng-click="selectCategory(subcategories)">
                       <span class="cat_mar">{{subcategories.Name}}</span>
                     </a>
                     <ul class="sub-categories" ng-show="subcategories.Id ==flags.selectedCategory.Id">

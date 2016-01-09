@@ -1,0 +1,54 @@
+<div class="row job-header-row">
+  <div class="col-md-12 job-site-header">
+    <h4>Edit Job Site Address<a class="close-cross pull-right" ng-click="$dismiss()"><i class="fa fa-times marker on-hover-pointer"></i></a></h4>
+  </div>
+</div>
+<div class="row fields-row">
+  <div class="col-md-12 site-col">
+    <input type="text" placeholder="Job Site Name" class="form-control" ng-model="address.jobsite">
+  </div>
+  <div class="col-md-12 other-col">
+    <input type="text" placeholder="Address" class="form-control" ng-model="address.route">
+  </div>
+  <div class="col-md-6 other-col">
+    <input type="text" placeholder="City" class="form-control" ng-model="address.locality">
+  </div>
+  <div class="col-md-6 other-col">
+    <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
+  </div>
+  <div class="col-md-6 other-col">
+    <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
+  </div>
+  <div class="col-md-6 other-col">
+    <input type="text" placeholder="Phone" class="form-control" ng-model="address.phone">
+  </div>
+  <div class="col-md-12 other-col" id="searchbox">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <script type="text/ng-template" id="searchbox.tpl.html">
+      <input type="text" class="form-control" placeholder="Search Location"/>
+    </script>
+
+    <div ng-if="showMap" class="jobsite-lookup">
+      <ui-gmap-google-map
+        center="map.center"
+        zoom="map.zoom"
+        options="map.options"
+        pan="true"
+        >
+        <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
+                            events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+      </ui-gmap-google-map>
+    </div>
+
+
+  </div>
+</div>
+<div class="row nomargin">
+  <div class="col-md-12 site-col">
+    <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">Add Job Site</button>
+    <button class="btn sell-equ all-btn">Cancel</button>
+  </div>
+</div>

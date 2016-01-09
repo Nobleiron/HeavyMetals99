@@ -102,10 +102,23 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/equipment-detail/equipment-detail.html',
           controller: 'HM_EquipmentDetailCtrl'
         },
-        'hm.dashboard.manageJobSite' : {
+        'hm.dashboard.jobSites' : {
           url: '/manage/jobsites',
-          templateUrl: 'app/manage-jobsites/manage-jobsites.html',
-          controller: 'HM_ManageJobSitesCtrl'
+          templateUrl: 'app/jobsites/jobsites.html',
+          controller: 'HM_JobSitesCtrl'
+        },
+        'hm.dashboard.jobSites.addJobSite': {
+          url: '/add-job',
+          templateUrl: 'app/jobsites/add-jobsite.html',
+          controller: 'HM_AddJobSiteCtrl',
+          openInModal: true
+        },
+        'hm.dashboard.jobSites.editJobSite': {
+          url: '/add-job',
+          params : {data : null},
+          templateUrl: 'app/jobsites/edit-jobsite.html',
+          controller: 'HM_EditJobSiteCtrl',
+          openInModal: true
         },
         // 'hm.requests' : {
         //   url: '/requests',
@@ -147,17 +160,6 @@ angular.module("HM_RoutesMD")
         'hm.help': {
           url: '/help',
           templateUrl: 'app/help/help.html',
-          openInModal: true
-        },
-        'hm.addJobSite': {
-          url: '/add-job',
-          templateUrl: 'app/add-job-site/add-job-site.html',
-          controller: 'HM_AddJobSiteCtrl',
-          openInModal: true
-        },
-        'hm.jobSiteDetail': {
-          url: '/job-site-detail',
-          templateUrl: 'app/job-site-detail/job-site-detail.html',
           openInModal: true
         },
         'hm.cart': {

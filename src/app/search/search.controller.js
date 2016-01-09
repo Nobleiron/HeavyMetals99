@@ -13,6 +13,9 @@ angular.module("HM_SearchMD")
 
       $scope.selectCategoryAttributes = selectCategoryAttributes;
 
+      $scope.$on('Cart:Count:Fetched', function(e, data){
+      });
+
 
       _initialize();
 
@@ -104,6 +107,7 @@ angular.module("HM_SearchMD")
         $scope.flags.page = 1;
         $scope.params['attributes'] = [];
         $scope.params.attributes = undefined;
+        $scope.params.query = undefined;
         $scope.params.category_id = $scope.flags.selectedCategory.Id;
         buildAttributeMap();
         $state.go('hm.search.results',$scope.params);
