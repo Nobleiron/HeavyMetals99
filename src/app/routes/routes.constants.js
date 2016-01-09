@@ -172,6 +172,10 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/cart/cart-update-jobsite.html',
           controller: 'HM_CartUpdateJobSiteCtrl'
         },
+        'hm.cart.cartDuration': {
+          url: '/cart-duration',
+          templateUrl: 'app/cart/cart-duration.html'
+        },
         'hm.updateJobSite': {
           url: '/update-job-site',
           templateUrl: 'app/update-job-site/update-job-site.html',

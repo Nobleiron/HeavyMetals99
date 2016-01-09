@@ -4,170 +4,286 @@
       Select Jobsite and Rent Period
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+    <!-- cart progress bar -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <ul class="nav nav-tabs gride-tab root-category">
-        <li class="active">
-          <a tabtoggle data-toggle="tab" href="#existing-job">Existing Job Sites</a>
-        </li>
-        <li>
-          <a tabtoggle data-toggle="tab" href="#add-new-job">Add New</a>
-        </li>
-      </ul>
-    </div>
-    <!-- update existing job -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active" id="existing-job">
-
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list">
-        <div class="form-control search-div">
-          <i class="fa fa-search"></i>
-          <input type="text" placeholder="Search">
-        </div>
-        <div class="job-lists">
-          <div>
-            <input type="radio" name="Site Name" selected>
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-          <div>
-            <input type="radio" name="Site Name">
-            <span>Job site Name</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail">
-        <h4>Details</h4>
-        <i class="fa fa-map-marker marker"></i>
-        <span>DSK Ranwara Constructions</span>
-        <br>
-        <p>Commercial Area</p>
-        <p>Houstan - TX</p>
-        <p class="zip">Zip Code: 34001</p>
-        <i class="fa fa-phone-square zip marker"></i>
-        <span class="marker">+1 657 657 5678</span>
-        <br>
-        <i class="fa fa-user marker"></i>
-				<span class="marker">
-					Name of Contact Person
-				</span>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading">
-        <h3 class="heading-text">Select Date and Time</h3>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
-        <p class="desc-text">Pickup Details</p>
-        <div class="form-control search-div select-date">
-          <input type="text" placeholder="dd/mm/yyyy">
-          <i class="fa fa-calendar"></i>
-        </div>
-        <div class="form-control search-div select-date">
-          <input type="text" placeholder="hh:mm AM">
-          <i class="fa fa-clock-o"></i>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
-        <p class="desc-text">Return Details</p>
-        <div class="form-control search-div select-date">
-          <input type="text" placeholder="dd/mm/yyyy">
-          <i class="fa fa-calendar"></i>
-        </div>
-        <div class="form-control search-div select-date">
-          <input type="text" placeholder="hh:mm PM">
-          <i class="fa fa-clock-o"></i>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 special-instruction heading-border">
-        <textarea class="form-control desc-text">Special Instructions</textarea>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
-        <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
-          Continue Renting
-        </button>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-        <a href="#" class="btn sign_mybtn all-btn primary-btn cont ">Generate Quote</a>
-        <button class="btn sign_mybtn all-btn primary-btn reser-now cont">Reserve</button>
-      </div>
+        <ul class="progress-indicator custom-complex">
+          <li class="completed on-hover-pointer" ui-sref="hm.cart.details">
+            <a class="color-blue bold-font desc-text">
+              <span class="bubble">
+              </span>
+              <i class="fa fa-check-circle color-blue"></i>&nbsp
+              <span>Cart Details</span>
+            </a>
+          </li>
+          <li class="completed on-hover-pointer" ui-sref="hm.cart.updateAddress">
+            <a class="color-blue bold-font desc-text">
+            <span class="bubble">
+            </span>
+            <i class="fa fa-check-circle color-blue"></i>&nbsp
+            <span>Delivery</span>
+            </a>
+          </li>
+          <li class="pending on-hover-pointer" ui-sref="hm.cart.cartDuration">
+            <a class="color-blue bold-font desc-text">
+              <span class="bubble">
+              </span>
+              <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+              <span>Duration</span>
+            </a>
+          </li>
+          <li class="pending on-hover-pointer">
+            <a href="" class="color-blue bold-font desc-text">
+              <span class="bubble">
+              </span>
+              <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+              <span>Review</span>
+            </a>
+          </li>
+        </ul>
     </div>
 
-    <!-- add new job -->
-    <div id="add-new-job" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane fade update-exist">
-      <div class="row fields-row">
-        <!--<input type="text" id="Autocomplete" ngModel="result1" class="form-control" />-->
-        <div class="col-md-12 site-col">
-          <input type="text" placeholder="Job Site Name" class="form-control">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider-bottom"></div>
+
+    <!-- select and add jobsite part -->
+    <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <ul class="nav nav-tabs gride-tab root-category">
+          <li class="active">
+            <a tabtoggle data-toggle="tab" href="#existing-job">Existing Job Sites</a>
+          </li>
+          <li>
+            <a tabtoggle data-toggle="tab" href="#add-new-job">Add New</a>
+          </li>
+        </ul>
+      </div>
+      <!-- update existing job -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active" id="existing-job">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list">
+          <div class="form-control search-div">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search">
+          </div>
+          <div class="job-lists">
+            <div>
+              <input type="radio" name="Site Name" selected>
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+            <div>
+              <input type="radio" name="Site Name">
+              <span>Job site Name</span>
+            </div>
+          </div>
         </div>
-        <div class="col-md-12 other-col">
-          <input type="text" placeholder="City" class="form-control" ng-model="address.route">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail">
+          <h4>Details</h4>
+          <i class="fa fa-map-marker marker"></i>
+          <span>DSK Ranwara Constructions</span>
+          <br>
+          <p>Commercial Area</p>
+          <p>Houstan - TX</p>
+          <p class="zip">Zip Code: 34001</p>
+          <i class="fa fa-phone-square zip marker"></i>
+          <span class="marker">+1 657 657 5678</span>
+          <br>
+          <i class="fa fa-user marker"></i>
+  				<span class="marker">
+  					Name of Contact Person
+  				</span>
         </div>
-        <div class="col-md-6 other-col">
-          <input type="text" placeholder="Address" class="form-control" ng-model="address.locality">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading">
+          <h3 class="heading-text">Contact Information</h3>
+          <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
         </div>
-        <div class="col-md-6 other-col">
-          <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+          <div class="form-control search-div">
+            <input type="text" placeholder="First Name">
+            <i class="fa fa-user"></i>
+          </div>
         </div>
-        <div class="col-md-6 other-col">
-          <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+          <div class="form-control search-div">
+            <input type="text" placeholder="Last Name">
+            <i class="fa fa-user"></i>
+          </div>
         </div>
-        <div class="col-md-6 other-col">
-          <input type="text" placeholder="Phone" class="form-control">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+          <div class="form-control search-div">
+            <input type="text" placeholder="Email">
+            <i class="fa fa-envelope-o"></i>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+          <div class="form-control search-div">
+            <input type="text" placeholder="Phone Number">
+            <i class="fa fa-phone"></i>
+          </div>
+        </div>
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 special-instruction heading-border">
+          <textarea class="form-control desc-text">Special Instructions</textarea>
+        </div> -->
+      </div>
+
+      <!-- add new job -->
+      <div id="add-new-job" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane fade update-exist">
+        <div class="row fields-row">
+          <!--<input type="text" id="Autocomplete" ngModel="result1" class="form-control" />-->
+          <div class="col-md-12 site-col">
+            <input type="text" placeholder="Job Site Name" class="form-control">
+          </div>
+          <div class="col-md-12 other-col">
+            <input type="text" placeholder="City" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-md-6 other-col">
+            <input type="text" placeholder="Address" class="form-control" ng-model="address.locality">
+          </div>
+          <div class="col-md-6 other-col">
+            <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-md-6 other-col">
+            <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
+          </div>
+          <div class="col-md-6 other-col">
+            <input type="text" placeholder="Phone" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ui-gmap-google-map
+              center="map.center"
+              zoom="map.zoom"
+              dragging="map.dragging"
+              bounds="map.bounds"
+              events="map.events"
+              options="map.options"
+              pan="true"
+              control="map.control"
+              >
+              <!--to add as a map control -->
+              <ui-gmap-search-box options="searchbox.options" template="searchbox .html" events="searchbox.events" position="searchbox.position"></ui-gmap-search-box>
+              <ui-gmap-markers idkey="map.idkey" models="map.markers" coords="'self'" icon="'icon'" click="'onClicked'"></ui-gmap-markers>
+              <ui-gmap-window coords="selected" idkey="selected.place_id" templateurl="selected.templateurl" templateparameter="selected.templateparameter" options="selected.options" closeClick='selected.closeClick()' ng-cloak>
+              </ui-gmap-window>
+            </ui-gmap-google-map>
+          </div>
+        </div>
+        <div class="row nomargin">
+          <div class="col-md-12 site-col">
+            <button class="btn sign_mybtn all-btn primary-btn">Add Job Site</button>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ui-gmap-google-map
-            center="map.center"
-            zoom="map.zoom"
-            dragging="map.dragging"
-            bounds="map.bounds"
-            events="map.events"
-            options="map.options"
-            pan="true"
-            control="map.control"
-            >
-            <!--to add as a map control -->
-            <ui-gmap-search-box options="searchbox.options" template="searchbox .html" events="searchbox.events" position="searchbox.position"></ui-gmap-search-box>
-            <ui-gmap-markers idkey="map.idkey" models="map.markers" coords="'self'" icon="'icon'" click="'onClicked'"></ui-gmap-markers>
-            <ui-gmap-window coords="selected" idkey="selected.place_id" templateurl="selected.templateurl" templateparameter="selected.templateparameter" options="selected.options" closeClick='selected.closeClick()' ng-cloak>
-            </ui-gmap-window>
-          </ui-gmap-google-map>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding visible-sm visible-xs devider-bottom"></div>
+
+    <!-- cart summary part -->
+    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 cart-summary-col">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line shopping-cart-heading nopadding bold-font"><i class="fa fa-shopping-cart"></i>&nbsp
+        Cart Summary
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+        <ul>
+          <li>
+            <i class="fa fa-truck fa-2x pull-left"></i>
+            <p class="bold-font go-back-text equipment-name color-blue">Electric Equipment Wide - 16"</p>
+            <input type="checkbox" class="allow-checkbox"><span class="desc-text allow">Allow Subscription</span>
+            <span class="desc-text pull-right qty-summary">Qty: 1</span>
+            <p class="desc-text bold-font total">
+              $3556
+              <i class="fa fa-trash pull-right color-blue qty-summary heading-text"></i>
+            </p>
+          </li>
+          <li>
+            <i class="fa fa-truck fa-2x pull-left"></i>
+            <p class="bold-font go-back-text equipment-name color-blue">Electric Equipment Wide - 16"</p>
+            <input type="checkbox" class="allow-checkbox"><span class="desc-text allow">Allow Subscription</span>
+            <span class="desc-text pull-right qty-summary">Qty: 1</span>
+            <p class="desc-text bold-font total">
+              $3556
+              <i class="fa fa-trash pull-right color-blue qty-summary heading-text"></i>
+            </p>
+          </li>
+          <li>
+            <i class="fa fa-truck fa-2x pull-left"></i>
+            <p class="bold-font go-back-text equipment-name color-blue">Electric Equipment Wide - 16"</p>
+            <input type="checkbox" class="allow-checkbox"><span class="desc-text allow">Allow Subscription</span>
+            <span class="desc-text pull-right qty-summary">Qty: 1</span>
+            <p class="desc-text bold-font total">
+              $3556
+              <i class="fa fa-trash pull-right color-blue qty-summary heading-text"></i>
+            </p>
+          </li>
+        </ul>
+        <div>
+          <h3 class="desc-text">
+            <label>Sub-Total Rental:</label>
+            <span class="pull-right">$13,847</span>
+          </h3>
+          <h3 class="desc-text">
+            <label>Environmental Fee:</label>
+            <span class="pull-right">$13,847</span>
+          </h3>
+          <h3 class="desc-text">
+            <label>Equipment Protection Program:</label>
+            <span class="pull-right">$13,847</span>
+          </h3>
+          <h3 class="desc-text">
+            <label>Taxes:</label>
+            <span class="pull-right">$13,847</span>
+          </h3>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>
+          <h3 class="desc-text bold-font">
+            <label>Total:</label>
+            <span class="pull-right">$13,847</span>
+          </h3>
         </div>
       </div>
-      <div class="row nomargin">
-        <div class="col-md-12 site-col">
-          <button class="btn sign_mybtn all-btn primary-btn">Add Job Site</button>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+        Continue Renting
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
+      <button class="btn sign_mybtn all-btn primary-btn reser-now cont" ui-sref="hm.cart.cartDuration">Next</button>
     </div>
   </div>
 </div>

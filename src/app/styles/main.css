@@ -1799,6 +1799,10 @@ button:hover {
 	margin-top: 12px;
 }
 
+.devider-bottom {
+	margin-bottom: 15px;
+}
+
 .quotes-search {
 	/*width: 70%;
 	float: right;*/
@@ -2220,6 +2224,172 @@ button:hover {
 
 .change-portal-credentials {
 	padding-top: 10px;
+}
+
+/*cart progress bar*/
+.progress-indicator.custom-complex {
+	/*background-color: #f1f1f1;*/
+	padding: 20px 5px 0;
+	/*border: 1px solid #ddd;*/
+	/*border-radius: 10px;*/
+}
+.progress-indicator.custom-complex > .completed .bubble {
+	height: 15px;
+	width: 99%;
+	background: #009ddc;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: none;
+  padding-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.progress-indicator.custom-complex > .completed:hover .bubble {
+	background-color: #2F83CC !important;
+	color: #fff;
+	border-color: #2F83CC;
+	transition: all 0.6s ease 0s;
+}
+
+.progress-indicator.custom-complex > .pending .bubble {
+	height: 15px;
+	width: 99%;
+	background: #dddddd;
+  color: #666666;
+  border-radius: 4px;
+  box-shadow: none;
+  padding-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+}
+
+.progress-indicator.custom-complex > .pending:hover .bubble {
+	color: #000;
+	transition: all 0.6s ease;
+}
+
+.progress-indicator.custom-complex > li .bubble:before,
+.progress-indicator.custom-complex > li .bubble:after {
+	display: none;
+}
+
+/* Demo for vertical bars */
+
+.progress-indicator.stepped.stacked {
+	width: 48%;
+	display: inline-block;
+}
+.progress-indicator.stepped.stacked > li {
+	height: 150px;
+}
+.progress-indicator.stepped.stacked > li .bubble {
+	padding: 0.1em;
+}
+.progress-indicator.stepped.stacked > li:first-of-type .bubble {
+	padding: 0.5em;
+}
+.progress-indicator.stepped.stacked > li:last-of-type .bubble {
+	padding: 0em;
+}
+
+/* Nocenter */
+
+.progress-indicator.nocenter.stacked > li {
+	min-height: 100px;
+}
+.progress-indicator.nocenter.stacked > li span {
+	display: block;
+}
+
+.color-blue {
+	color: #009ddc !important;
+}
+
+/*delivery*/
+.cart-summary-col {
+	background-color: #fafafa;
+	border-radius: 4px;
+}
+
+.cart-summary-col img {
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+}
+
+.cart-summary-col .shopping-cart-heading {
+	border-bottom: 1px solid #dddddd;
+}
+
+.cart-summary-col .allow {
+	vertical-align: text-top;
+}
+
+.cart-summary-col .allow-checkbox {
+	margin-right: 4px;
+}
+
+.cart-summary-col .qty-summary {
+	margin-top: 2px;
+}
+
+.cart-summary-col .equipment-name {
+	margin-bottom: 5px;
+}
+
+.cart-summary-col .total {
+	margin: 5px 10px 5px 37px;
+}
+
+.cart-summary-col ul li {
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 0;
+}
+
+/*deliver*/
+
+.pickup-delivery {
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background: #ffffff;
+	min-height: 175px;
+}
+
+.active-pickup-delivery {
+	background: #fafafa;
+}
+
+.pickup-delivery input,
+.pickup-delivery input:focus {
+	margin-right: 5px;
+	outline: none;
+}
+
+.pickup-delivery .pickup-desc {
+	margin: 6px 0 10px 20px;
+}
+
+.pickup-delivery .pickup-desc .address {
+	margin: 0 15px;
+}
+
+.pickup-delivery .pickup-desc .zip {
+	margin-bottom: 10px;
+}
+
+.pickup-delivery .pickup-desc .number {
+	margin-right: 15px;
+}
+
+.pickup-delivery .pickup-desc .fa-map-marker {
+	margin-right: 3px;
+}
+
+.duration-time .search-div input {
+	width: 80%;
 }
 
 
