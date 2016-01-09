@@ -38,6 +38,7 @@ angular.module('HeavyMetals')
       }
       product && ($scope.params.category_id = product.Category_Id);
       $scope.params.page = 1;
+      $scope.params.category_id = undefined;
       $state.go('hm.search.results', $scope.params);
     }
 
