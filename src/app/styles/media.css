@@ -263,6 +263,14 @@
     margin: 0;
   }
 
+  .delivery-xs {
+    margin-top: 15px;
+  }
+
+  .delivery-pickup-xs {
+    padding: 0 15px !important;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

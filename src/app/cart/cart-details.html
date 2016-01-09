@@ -11,6 +11,45 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
         </div>
         <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="progress-indicator custom-complex">
+              <li class="completed on-hover-pointer" ui-sref="hm.cart.details">
+                  <a class="color-blue bold-font desc-text">
+                      <span class="bubble">
+                      </span>
+                      <i class="fa fa-check-circle color-blue"></i>&nbsp
+                      <span>Cart Details</span>
+                  </a>
+              </li>
+              <li class="pending on-hover-pointer" ui-sref="hm.cart.updateAddress">
+                  <a class="color-blue bold-font desc-text">
+                      <span class="bubble">
+                      </span>
+                      <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+                      <span>Delivery</span>
+                  </a>
+              </li>
+              <li class="pending on-hover-pointer" ui-sref="hm.cart.cartDuration">
+                <a href="" class="color-blue bold-font desc-text">
+                  <span class="bubble">
+                  </span>
+                  <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+                  <span>Duration</span>
+                </a>
+              </li>
+              <li class="pending on-hover-pointer">
+                <a href="" class="color-blue bold-font desc-text">
+                  <span class="bubble">
+                  </span>
+                  <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+                  <span>Review</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider-bottom"></div>
+        </div>
+        <div class="row">
           <!-- web shopping cart -->
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
             <table class="table cart-table">
@@ -128,7 +167,7 @@
             </button>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-            <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">Continue</a>
+            <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">Next</a>
             <!-- <button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button> -->
           </div>
         </div>
