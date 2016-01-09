@@ -159,7 +159,7 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart': {
           url: '/shopping-cart',
-          template: '<ui-view></ui-view>',
+          templateUrl: 'app/cart/cart.html',
           controller: 'HM_CartCtrl'
         },
         'hm.cart.details': {
@@ -169,12 +169,27 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart.updateAddress': {
           url: '/update-jobsite',
-          templateUrl: 'app/cart/cart-update-jobsite.html',
-          controller: 'HM_CartUpdateJobSiteCtrl'
+          views : {
+            "": {
+              templateUrl:'app/cart/cart-update-jobsite.html'
+            },
+            "snapshot@hm.cart.updateAddress": {
+              templateUrl: 'app/cart/cart-snapshot.html'
+            }
+          }
+
         },
         'hm.cart.cartDuration': {
           url: '/cart-duration',
-          templateUrl: 'app/cart/cart-duration.html'
+          views : {
+            "": {
+              templateUrl: 'app/cart/cart-duration.html'
+            },
+            "snapshot@hm.cart.cartDuration": {
+              templateUrl: 'app/cart/cart-snapshot.html'
+            }
+          }
+
         },
         'hm.updateJobSite': {
           url: '/update-job-site',

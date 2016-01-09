@@ -11,25 +11,8 @@ angular.module("HM_CartMD")
     _initialize();
 
     function _initialize(){
-      console.log($scope.cartData);
-      $scope.cartFetchInProgress = true;
-      RestSV.get(ShoppingCartCnst.details.url())
-        .then(function(response){
-          $scope.cart = response.data.result.Cart_Content;
-          $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
-            if(!$scope.cartData[product.Product_id]){
-              $scope.cartData[product.Product_id] = { qty: product.Product_quantity}
-            }
-          })
 
-        })
-        .catch(function(error){
-        })
-        .finally(function(){
-          $scope.cartFetchInProgress = false;
-        })
 
-      console.log($scope.cartData);
     }
 
 
