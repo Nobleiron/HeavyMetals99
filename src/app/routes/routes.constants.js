@@ -125,11 +125,6 @@ angular.module("HM_RoutesMD")
         //   templateUrl: 'app/requests/requests.html',
         //   controller: 'HM_RequestsCtrl'
         // },
-        'hm.manageMyAccount' : {
-          url: '/manage-my-account',
-          templateUrl: 'app/manage-my-account/manage-my-account.html',
-          controller: 'HM_ManageMyAccountCtrl'
-        },
         'hm.dashboard.quotaNReservations' : {
           url: '/quota-n-reservations',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',

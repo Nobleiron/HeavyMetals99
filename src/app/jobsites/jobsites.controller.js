@@ -9,6 +9,12 @@ angular.module("HM_JobSitesMD")
 
     $scope.viewJobSiteDetails = viewJobSiteDetails;
 
+    $scope.$on('JobSite:Update', function(e, jobsite){
+      $scope.jobsites.map(function(j){
+        jobsite.SiteID === j.SiteID && angular.extend(j, jobsite);
+      });
+    });
+
     _fetchJobsites();
 
     function _fetchJobsites(){

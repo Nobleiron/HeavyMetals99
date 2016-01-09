@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_EditJobSiteCtrl', ['$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function( $scope, $timeout, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
+  .controller('HM_EditJobSiteCtrl', ['$rootScope','$scope' , 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function($rootScope, $scope, RestSV, GoogleMapApi ,toastr,JobSiteCnst){
 
     var componentForm = {
       street_number: 'short_name',
@@ -11,7 +11,7 @@ angular.module("HM_JobSitesMD")
       postal_code: 'short_name'
     };
 
-    $scope.addJobSite = addJobSite;
+    $scope.saveJobSite = saveJobSite;
 
     $scope.address = { jobsite: '', phone: ''};
 
@@ -51,9 +51,20 @@ angular.module("HM_JobSitesMD")
         }
       });
 
-
+      initJobSiteData($scope.modalParams.data);
     }
 
+    function initJobSiteData(data){
+      $scope.address  = {
+        jobsite : data.Site_Name,
+        route: data.Address1,
+        locality : data.City,
+        administrative_area_level_1 : data.Prov,
+        postal_code : data.Postal,
+        phone : data.Phone,
+        jobsite_id : data.SiteID
+      };
+    }
 
     function fillInAddress(details) {
       var place = details;
@@ -69,10 +80,12 @@ angular.module("HM_JobSitesMD")
 
 
 
-    function addJobSite(){
+    function saveJobSite(){
+      $scope.$broadcast('JobSite:Update:Process:Start');
       RestSV
-        .post( AddJobSiteCnst.add.url() ,{
+        .put( JobSiteCnst.add.url() ,{
           jobsite_name : $scope.address.jobsite,
+          jobsite_id : $scope.address.jobsite_id,
           adddress1 : $scope.address.route,
           city : $scope.address.locality,
           state : $scope.address.administrative_area_level_1,
@@ -80,14 +93,16 @@ angular.module("HM_JobSitesMD")
           phone : $scope.address.phone
         })
         .then(function(response){
-          toastr.success("JobSite Added Successfully");
+          initJobSiteData(response.data.result.Updated_data);
+          $rootScope.$broadcast("JobSite:Update",response.data.result.Updated_data);
+          toastr.success("JobSite Address Update Successfully");
           $scope.$dismiss();
         })
         .catch(function(response){
           $scope.$dismiss();
         })
         .finally(function(){
-          $scope.$broadcast('SignUp:Process:End');
+          $scope.$broadcast('JobSite:Update:Process:Start')
         })
     }
 
