@@ -89,17 +89,9 @@
         <label>Sub-Total Rental:</label>
         <span>${{cart.Sub_total}}</span>
       </h3>
-      <h3>
-        <label>Environmental Fee:</label>
-        <span>${{cart.Charges['Environmental Fee']}}</span>
-      </h3>
-      <h3>
-        <label>Equipment Protection Program:</label>
-        <span>${{cart.Charges['Equiment Protection Plan']}}</span>
-      </h3>
-      <h3>
-        <label>Taxes:</label>
-        <span>${{cart.Charges['Estimated Taxes']}}</span>
+      <h3 ng-repeat="(key, value) in cart.Charges">
+        <label>{{key}}:</label>
+        <span>${{value}}</span>
       </h3>
       <h3>
         <label class="total">Total:</label>
@@ -108,5 +100,16 @@
     </div>
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn">
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+        Continue Renting
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
+      <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">Next</a>
+      <!-- <button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button> -->
+    </div>
+  </div>
 </div>
 

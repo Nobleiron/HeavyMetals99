@@ -20,17 +20,9 @@
         <label>Sub-Total Rental:</label>
         <span class="pull-right">${{cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text">
-        <label>Environmental Fee:</label>
-        <span class="pull-right">${{cart.Charges['Environmental Fee']}}</span>
-      </h3>
-      <h3 class="desc-text">
-        <label>Equipment Protection Program:</label>
-        <span class="pull-right">${{cart.Charges['Equiment Protection Plan']}}</span>
-      </h3>
-      <h3 class="desc-text">
-        <label>Taxes:</label>
-        <span class="pull-right">${{cart.Charges['Estimated Taxes']}}</span>
+      <h3 class="desc-text" ng-repeat="(key, value) in cart.Charges">
+        <label>{{key}}:</label>
+        <span class="pull-right">${{value}}</span>
       </h3>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>
       <h3 class="desc-text bold-font">

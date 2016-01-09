@@ -72,4 +72,15 @@
 
   <!-- cart summary part -->
   <div ui-view="snapshot"></div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+        Continue Renting
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
+      <button class="btn sign_mybtn all-btn primary-btn reser-now cont" ui-sref="hm.cart.cartDuration">Next</button>
+    </div>
+  </div>
 </div>
