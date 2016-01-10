@@ -37,7 +37,8 @@
           </ul>
         </td>
         <td class="quantity vertically-middle">
-          <input class="form-control" ng-model="cartData[product.Product_id].qty" type="text" >
+          <input class="form-control" ng-model="cartData[product.Product_id].qty" type="text" ng-blur="updateCart(product.Product_id,cartData[product.Product_id])" >
+          <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].updateInProgress"></i>
         </td>
         <!-- <td class="duration vertically-middle">
                               <p>12 Dec, 2015 - 23:00</p>
@@ -51,7 +52,10 @@
                           </td> -->
         <td class="vertically-middle pricing">${{product.Product_rate}}</td>
         <td class="vertically-middle delete-icon on-hover-pointer">
-          <a ng-click="deleteProductFromCart(product.Product_id)"><i class="fa fa-trash fa-2x"></i></a>
+          <a ng-click="deleteProductFromCart(product.Product_id,cartData[product.Product_id])">
+            <i class="fa fa-trash fa-2x" ng-if="!cartData[product.Product_id].deleteInProgress"></i>
+            <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].deleteInProgress"></i>
+          </a>
         </td>
       </tr>
       </tbody>
@@ -67,12 +71,15 @@
         <h3>{{product.Product_name}}</h3>
         <input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
         <p class="qty-head">Quantity</p>
-        <input class="form-control" type="text" ng-model="cartData[product.Product_id].qty">
+        <input class="form-control" type="text" ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData[product.Product_id])">
+        <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].updateInProgress"></i>
         <!-- <i class="fa fa-map-marker marker"></i>
         <span>Bay Area, Houstan</span>
         <span class="pull-right"><a href="#/update-job-site">Update</a></span> -->
         <p class="sub-total">Sub-Total: &nbsp ${{product.Product_rate}}
-          <span class="pull-right"><a ng-click="deleteProductFromCart(product.Product_id)">Delete</a></span>
+          <span class="pull-right">
+            <a ng-click="deleteProductFromCart(product.Product_id)">Delete</a>
+          </span>
         </p>
       </div>
     </div>
@@ -80,8 +87,10 @@
 </div>
 <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 promo-code">
-    <input type="text" placeholder="Promo code" class="form-control">
-    <button class="btn sign_mybtn all-btn primary-btn">Apply</button>
+    <input type="text" placeholder="Promo code" class="form-control" ng-model="promoCode">
+    <button class="btn sign_mybtn all-btn primary-btn" ng-click="applyPromoCode()">
+      <span btn-load-indicator="Cart:ApplyPromoCode">Apply</span>
+    </button>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 total-price">
     <div class="total-price-div">
