@@ -52,13 +52,14 @@
         <span class="go-back-text bold-font">Delivery to selected Jobsite Location </span>
         <div class="pickup-desc">
           <i class="fa fa-map-marker color-blue heading-text"></i>
-          <span class="desc-text">DSK Ranwara Constructions</span>
+          <span class="desc-text">{{selectedJobSite.Site_Name}}</span>
           <br>
-          <p class="desc-text address">Commercial Area</p>
-          <p class="desc-text address">Houstan - TX</p>
-          <p class="zip desc-text address">Zip Code: 34001</p>
+          <p class="desc-text address">{{selectedJobSite.Address1}}</p>
+          <p class="desc-text address">{{selectedJobSite.Address2}}</p>
+          <p class="desc-text address">{{selectedJobSite.City}}&nbsp;{{selectedJobSite.Prov}}</p>
+          <p class="zip desc-text address">Zip Code: {{selectedJobSite.Postal}}</p>
           <i class="fa fa-phone-square color-blue heading-text"></i>
-          <span class="color-blue desc-text number">+1 657 657 5678</span>
+          <span class="color-blue desc-text number">{{selectedJobSite.Phone}}</span>
           <i class="fa fa-user  color-blue heading-text"></i>
 		  				<span class="color-blue desc-text">
 		  					Name of Contact Person
