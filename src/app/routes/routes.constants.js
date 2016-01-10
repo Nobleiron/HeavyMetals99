@@ -171,7 +171,8 @@ angular.module("HM_RoutesMD")
           url: '/update-jobsite',
           views : {
             "": {
-              templateUrl:'app/cart/cart-update-jobsite.html'
+              templateUrl:'app/cart/cart-update-jobsite.html',
+              controller: 'HM_CartUpdateJobSiteCtrl'
             },
             "snapshot@hm.cart.updateAddress": {
               templateUrl: 'app/cart/cart-snapshot.html'
