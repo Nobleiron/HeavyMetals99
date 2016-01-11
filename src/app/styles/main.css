@@ -1484,7 +1484,7 @@ button:hover {
 }
 
 .promo-code {
-	padding: 15px 15px 35px;
+	padding: 15px 0px 35px;
 }
 
 .promo-code .form-control {
@@ -1549,6 +1549,11 @@ button:hover {
 
 .primary-btn:focus {
 	color: #fff;
+}
+
+.carts-table thead {
+	background-color: #fafafa;
+	color: #666666;
 }
 
 /*update job site*/
@@ -1747,11 +1752,11 @@ button:hover {
 }*/
 
 .leftpadding {
-	padding-left: 0;
+	padding-left: 0 !important;
 }
 
 .rightpadding {
-	padding-right: 0;
+	padding-right: 0 !important;
 }
 
 .panel-group .order-history-accordion {
@@ -2242,7 +2247,7 @@ button:hover {
 /*cart progress bar*/
 .progress-indicator.custom-complex {
 	/*background-color: #f1f1f1;*/
-	padding: 20px 5px 0;
+	padding: 20px 0 0;
 	/*border: 1px solid #ddd;*/
 	/*border-radius: 10px;*/
 }
@@ -2416,6 +2421,14 @@ button:hover {
 
 .profile-save-btn {
 	margin-right: 10px;
+}
+
+.add-top {
+	margin-top: 25px !important;
+}
+
+.progress-a:hover {
+	text-decoration: none;
 }
 
 
