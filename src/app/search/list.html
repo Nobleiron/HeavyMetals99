@@ -63,7 +63,8 @@
 
     </div>
     <div class="col-md-3 right-btn-col">
-      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn all-btn my-reserve">Add to Cart</a>
+      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn all-btn my-reserve" ng-if="!item.Is_in_catelog">Add to Cart</a>
+      <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn all-btn my-reserve is-added" ng-if="item.Is_in_catelog">Add to Cart</a>
       <button type="button" class="btn add-list all-btn sell-equ" ng-click="addToOrRemoveFromWishList(item)">
         <span btn-load-indicator="Add:Wishlist:Process" btn-uid="item.Product_Id">{{item.Is_in_catelog ? 'Added to Catelog': 'Add to Catelog'}}</span>
       </button>

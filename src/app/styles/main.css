@@ -232,7 +232,7 @@ a:focus { color: #0099cc;
 											position: absolute;
 											text-align: center;
 											top:6px;
-											right: 130px;}
+											right: 147px;}
 .cart_menu .noti{background: #ff5600 none repeat scroll 0 0;
 								 border-radius: 12px; left: 72px;
 								 color: #fff;
@@ -1067,13 +1067,14 @@ a:focus { color: #0099cc;
 }
 
 .catalogue-fig {
-	background-color: #ddd;
+	max-width: 205px;
+  display: inline-block;
 }
 
-.catalogue-fig .star_rate {
+/*.catalogue-fig .star_rate {
 	text-align: right;
 	margin-right: 10px;
-}
+}*/
 
 .catalogue-desc {
 	text-align: center;
@@ -1923,7 +1924,7 @@ button:hover {
 
 .reserve-btns {
 	text-align: center;
-	padding: 0 4% 10px 4%;
+	padding: 0 2% 10px 2%;
 }
 
 .reserve-btns a i {
@@ -2390,6 +2391,15 @@ button:hover {
 
 .duration-time .search-div input {
 	width: 80%;
+}
+
+.is-added {
+	width: 142px;
+}
+
+.popup-white-btn {
+	float: right;
+	margin-right: 10px;
 }
 
 
