@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartUpdateJobSiteCtrl",['$scope', 'HM_RestSV','HM_JobSitesCnst','uiGmapGoogleMapApi',function( $scope,RestSV, AddJobSiteCnst,GoogleMapApi){
+  .controller("HM_CartUpdateJobSiteCtrl",['$scope','$timeout', 'HM_RestSV','HM_JobSitesCnst','uiGmapGoogleMapApi',function( $scope,$timeout,RestSV, AddJobSiteCnst,GoogleMapApi){
 
 
     var componentForm = {
@@ -14,20 +14,21 @@ angular.module("HM_CartMD")
 
     $scope.selectJobsite = selectJobsite;
     $scope.addJobSite = addJobSite;
+    $scope.hackMapLoad = function(){
+      $timeout(function(){
+        $scope.showMap = true;
+      },100)
+    };
 
 
     $scope.address = { jobsite: '', phone: ''};
 
 
+
     _initialize();
 
     function _initialize(){
-      GoogleMapApi.then(function (maps) {
-        setTimeout(function () {
-          $scope.showMap = true;
-          $scope.$apply();
-        }, 100);
-      });
+
       angular.extend($scope, {
         map: {
           center: {latitude: 41.850033, longitude: -87.6500523},

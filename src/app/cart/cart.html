@@ -24,11 +24,11 @@
                   <span>Cart Details</span>
                 </a>
               </li>
-              <li class="pending on-hover-pointer" ui-sref="hm.cart.updateAddress">
+              <li class="on-hover-pointer" ui-sref="hm.cart.updateAddress" ng-class="{'completed' : !(selectedJobSite | isEmpty),'pending' : (selectedJobSite | isEmpty)}">
                 <a class="color-blue bold-font desc-text">
                       <span class="bubble">
                       </span>
-                  <!-- <i class="fa fa-check-circle"></i>&nbsp -->
+                   <i class="fa fa-check-circle"></i>&nbsp
                   <span>Delivery</span>
                 </a>
               </li>

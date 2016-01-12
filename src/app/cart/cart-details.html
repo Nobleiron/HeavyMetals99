@@ -16,7 +16,7 @@
       <tbody>
       <tr ng-repeat="product in cart.Product">
         <td class="vertically-middle">
-          <i class="fa fa-truck fa-4x"></i>
+          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}"/>
         </td>
         <td class="equipment-desc">
           <h3>{{product.Product_name}}</h3>

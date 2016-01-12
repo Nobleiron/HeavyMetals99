@@ -3,36 +3,14 @@ angular.module("HM_CartMD")
   .controller("HM_CartDetailsCtrl",['$scope','HM_RestSV','HM_CartCnst','toastr', function( $scope,RestSV, ShoppingCartCnst,toastr){
 
 
-    $scope.deleteProductFromCart = deleteProductFromCart;
+
 
     $scope.updateCart = updateCart;
 
     $scope.applyPromoCode = applyPromoCode;
 
 
-    _initialize();
 
-    function _initialize(){
-
-
-    }
-
-
-
-
-    function deleteProductFromCart(id,cartData){
-      cartData.deleteInProgress = true;
-      RestSV.delete(ShoppingCartCnst.delete.url(),{
-        data : {proid: id}})
-        .then(function(response){
-          angular.merge($scope.cart,response.data.result.Cart_Content);
-
-          toastr.info("Item removed from cart");
-        })
-        .finally(function(error){
-          cartData.deleteInProgress = false;
-        })
-    }
 
     function updateCart(productId, cartData){
       cartData.updateInProgress = true;

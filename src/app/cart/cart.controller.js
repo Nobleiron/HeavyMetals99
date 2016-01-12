@@ -4,7 +4,7 @@ angular.module("HM_CartMD")
 
     $scope.cartData = {};
     $scope.selectedJobSite = {};
-
+    $scope.deleteProductFromCart = deleteProductFromCart;
 
     _initialize();
 
@@ -25,7 +25,7 @@ angular.module("HM_CartMD")
         })
         .finally(function(){
 
-        })
+        });
     }
 
     function _fetchCart(){
@@ -42,10 +42,25 @@ angular.module("HM_CartMD")
 
         })
         .catch(function(error){
-          debugger
+
         })
         .finally(function(){
           $scope.cartFetchInProgress = false;
-        })
+        });
     }
+
+    function deleteProductFromCart(id,cartData){
+      cartData.deleteInProgress = true;
+      RestSV.delete(ShoppingCartCnst.delete.url(),{
+        data : {proid: id}})
+        .then(function(response){
+          angular.merge($scope.cart,response.data.result.Cart_Content);
+
+          toastr.info("Item removed from cart");
+        })
+        .finally(function(error){
+          cartData.deleteInProgress = false;
+        });
+    }
+
   }]);

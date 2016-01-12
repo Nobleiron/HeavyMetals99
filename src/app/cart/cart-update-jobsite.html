@@ -8,7 +8,7 @@
           <a tabtoggle data-toggle="tab" href="#existing-job">Existing Job Sites</a>
         </li>
         <li>
-          <a tabtoggle data-toggle="tab" href="#add-new-job">Add New</a>
+          <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()">Add New</a>
         </li>
       </ul>
     </div>
@@ -113,6 +113,7 @@
               zoom="map.zoom"
               options="map.options"
               pan="true"
+              refresh="showMap"
               >
               <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
                                   events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
