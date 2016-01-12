@@ -1,8 +1,8 @@
 <div class="row">
 
   <!-- select and add jobsite part -->
-  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 leftpadding">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftpadding">
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding lr-padding-small">
       <ul class="nav nav-tabs gride-tab root-category">
         <li class="active">
           <a tabtoggle data-toggle="tab" href="#existing-job">Existing Job Sites</a>
@@ -13,14 +13,14 @@
       </ul>
     </div>
     <!-- update existing job -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active leftpadding" id="existing-job">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active lr-padding" id="existing-job">
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job leftpadding">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small">
         <div class="form-control search-div">
           <i class="fa fa-search"></i>
           <input type="text" placeholder="Search" ng-model="searchJosite">
         </div>
-        <div class="job-lists">
+        <div class="job-lists bottommargin">
           <div ng-repeat="site in cartData.jobsites | filter:searchJosite">
             <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == selectedJobSite.SiteID">
             <span>{{site.Site_Name}}</span>
@@ -44,11 +44,11 @@
   					Name of Contact Person
   				</span>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading leftpadding">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding lr-padding-small">
         <h3 class="heading-text">Contact Information</h3>
         <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
           <input type="text" placeholder="First Name">
           <i class="fa fa-user pull-right"></i>
@@ -60,7 +60,7 @@
           <i class="fa fa-user pull-right"></i>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
           <input type="text" placeholder="Email">
           <i class="fa fa-envelope-o pull-right"></i>
