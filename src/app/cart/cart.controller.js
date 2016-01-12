@@ -21,7 +21,6 @@ angular.module("HM_CartMD")
           }
         })
         .catch(function(){
-          debugger
         })
         .finally(function(){
 

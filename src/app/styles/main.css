@@ -2453,11 +2453,7 @@ button:hover {
 	border-bottom: none;
 }
 
-
-
-
-
-
-
+td.quantity .error{display:none;color:#ff5600;}
+td.quantity .ng-invalid-pattern .error{display:block;}
 
 

@@ -7,7 +7,7 @@
       <li ng-repeat="product in cart.Product">
         <i class="fa fa-truck fa-2x pull-left"></i>
         <p class="bold-font go-back-text equipment-name color-blue">{{product.Product_name}}</p>
-        <input type="checkbox" class="allow-checkbox" onclick="return false;"><span class="desc-text allow">Allow Substitution</span>
+        <input type="checkbox" class="allow-checkbox" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution" onclick="return false;"><span class="desc-text allow">Allow Substitution</span>
         <span class="desc-text pull-right qty-summary">Qty: {{cartData.productsQuantity[product.Product_id].qty}}</span>
         <p class="desc-text bold-font total">
           ${{product.Product_rate}}

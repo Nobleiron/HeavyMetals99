@@ -13,6 +13,9 @@ angular.module("HM_CartMD")
 
 
     function updateCart(productId, cartData){
+      if(!(/[1-9*]+/.test(cartData.qty))){
+        return false;
+      }
       if(cartData.isDirty){
         cartData.isDirty = false;
         cartData.updateInProgress = true;
@@ -39,6 +42,8 @@ angular.module("HM_CartMD")
           .then(function(response){
             if(response.data.result){
               // $scope.cart = response.data.result.Cart_Content;
+            }else{
+              toastr.error("Invalid Coupon Code");
             }
           })
           .catch(function(){

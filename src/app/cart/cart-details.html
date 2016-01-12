@@ -16,11 +16,11 @@
       <tbody>
       <tr ng-repeat="product in cart.Product">
         <td class="vertically-middle">
-          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}"/>
+          <img ng-src="{{product.Product_image}}" style="width: 100px;height:100px;"/>
         </td>
         <td class="equipment-desc">
           <h3>{{product.Product_name}}</h3>
-          <input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
+          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
           <ul class="price-ul">
             <li>
               <p class="daily_title">Daily</p>
@@ -37,8 +37,12 @@
           </ul>
         </td>
         <td class="quantity vertically-middle">
-          <input class="form-control" ng-model="cartData.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])" >
+          <ng-form>
+          <input ng-pattern="/[1-9*]+/" class="form-control" ng-model="cartData.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])" >
           <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress" ></i>
+          <br>
+          <div class="error">Invalid Quantity</div>
+          </ng-form>
         </td>
         <!-- <td class="duration vertically-middle">
                               <p>12 Dec, 2015 - 23:00</p>
@@ -65,14 +69,17 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
     <div class="cart-for-mobile" ng-repeat="product in cart.Product">
       <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
+        <img ng-src="{{product.Product_image}}">
       </div>
       <div class="equipment-desc">
         <h3>{{product.Product_name}}</h3>
-        <input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
+        <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
         <p class="qty-head">Quantity</p>
-        <input class="form-control" type="text" ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+        <ng-form>
+        <input class="form-control" type="text"  ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+        </ng-form>
         <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress"></i>
+
         <!-- <i class="fa fa-map-marker marker"></i>
         <span>Bay Area, Houstan</span>
         <span class="pull-right"><a href="#/update-job-site">Update</a></span> -->
@@ -87,10 +94,12 @@
 </div>
 <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 promo-code lr-padding lr-padding-small">
+    <form name='promoCodeForm' ng-submit="applyPromoCode()">
     <input type="text" placeholder="Promo code" class="form-control" ng-model="promoCode">
-    <button class="btn sign_mybtn all-btn primary-btn" ng-click="applyPromoCode()">
+    <button class="btn sign_mybtn all-btn primary-btn" ng-disabled="promoCode == '' || promoCodeForm.$pristine" ng-click="applyPromoCode()">
       <span btn-load-indicator="Cart:ApplyPromoCode">Apply</span>
     </button>
+      </form>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 total-price lr-padding lr-padding-small">
     <!-- <div class="total-price-div text-left total-price-padding">
