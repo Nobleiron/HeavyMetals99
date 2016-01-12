@@ -7,14 +7,14 @@
           <button type="button" class="navbar-toggle collapsed landing-header prelogin-header-btn topmargin" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
             <i class="fa fa-search marker"></i>
           </button>
-          <a href="/#/" class="navbar-brand toppadding">  <img src="assets/images/logo.png" alt="" ></a>
+          <a href="/#/" class="navbar-brand toppadding">  <img src="assets/images/logo.png" alt="" class="header-img-small"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse collapse-for-small pre-collapse" id="bs-example-navbar-collapse-1">
           <div class="nav navbar-nav landing-header prelogin-header">
             <div>
-              <form class="topnav-search" role="search">
+              <form class="topnav-search header-form-small" role="search">
                 <input type="text" class="form-control search-head"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
                        typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                        typeahead-on-select="selectSearchedItem($item, $model, $label)"

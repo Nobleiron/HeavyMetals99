@@ -36,7 +36,7 @@ angular.module("HM_JobSitesMD")
     function viewJobSiteDetails(jobsite){
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: '/app/manage-jobsites/jobsite-details.html',
+        templateUrl: '/app/jobsites/jobsite-details.html',
         controller: ['$scope',function (scope) {
           scope.jobsite = jobsite;
         }]

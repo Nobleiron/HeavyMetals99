@@ -22,11 +22,11 @@
           </button>
           <!-- <a ui-sref="hm.search.results"> Go Back</a> -->
         </div>
-      <div class="col-md-4 lift_box nopadding repeat-item" ng-repeat="product in catelog">
+      <div class="col-md-4 lift_box nopadding repeat-item pull-left" ng-repeat="product in catelog">
         <figure class="catalogue-fig">
           <a ui-sref="hm.equipmentDetails({id: product.Product_Id})"><img alt="" ng-src="{{product.Product_Image[0].ProductImage_Path}}"/></a>
           <!-- <div class="certified_box"> -->
-          <div class="star_rate">
+          <div class="">
             <a href="#"> <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>

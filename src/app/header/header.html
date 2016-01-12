@@ -5,7 +5,7 @@
   <div class="container">
     <!-- START  logo -->
     <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 nopadding logo-center">
-      <a ng-href="/#/">  <img src="assets/images/logo.png" alt="" ></a>
+      <a ng-href="/#/">  <img src="assets/images/logo.png" alt="" class="header-img-small"></a>
     </div>
     <!-- END  logo -->
     <!-- START  Search box -->
@@ -43,8 +43,9 @@
             </li>
             <li>
               <a href="#/shopping-cart/details" class="marker">
-                <i class="fa fa-shopping-cart fa-2x marker"></i></a>
-              <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+                <i class="fa fa-shopping-cart fa-2x marker"></i>
+                <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -73,7 +74,7 @@
     </div>
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 nopadding">
 
-        <form class="navbar-form my-search-nav" role="search">
+        <form class="navbar-form my-search-nav header-form-small" role="search">
 
           <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-change="showAutocomplete = true" ng-model="selectedProduct"
                  typeahead="item as item.Product_Name for item in getProducts($viewValue)"
@@ -118,8 +119,9 @@
             </li>
             <li>
               <a ui-sref="hm.cart.details" class="marker">
-                <i class="fa fa-shopping-cart fa-2x marker"></i></a>
-              <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+                <i class="fa fa-shopping-cart fa-2x marker"></i>
+                <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+              </a>
             </li>
           </ul>
         </div>
