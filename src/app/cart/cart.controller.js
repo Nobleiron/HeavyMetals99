@@ -1,9 +1,9 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartCtrl",['$scope','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,RestSV,ShoppingCartCnst,JobSitesCnst ){
+  .controller("HM_CartCtrl",['$scope','toastr','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,toastr,RestSV,ShoppingCartCnst,JobSitesCnst ){
 
-    $scope.cartData = {};
-    $scope.selectedJobSite = {};
+    $scope.cartData = {selectedJobSite : {},productsQuantity :{}};
+
     $scope.deleteProductFromCart = deleteProductFromCart;
 
     _initialize();
@@ -35,8 +35,8 @@ angular.module("HM_CartMD")
         .then(function(response){
           $scope.cart = response.data.result.Cart_Content;
           $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
-            if(!$scope.cartData[product.Product_id]){
-              $scope.cartData[product.Product_id] = { qty: product.Product_quantity}
+            if(!$scope.cartData.productsQuantity[product.Product_id]){
+              $scope.cartData.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
             }
           })
 
@@ -54,7 +54,7 @@ angular.module("HM_CartMD")
       RestSV.delete(ShoppingCartCnst.delete.url(),{
         data : {proid: id}})
         .then(function(response){
-          angular.merge($scope.cart,response.data.result.Cart_Content);
+          $scope.cart = response.data.result.Cart_Content;
 
           toastr.info("Item removed from cart");
         })

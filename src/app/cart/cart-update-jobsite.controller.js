@@ -56,7 +56,7 @@ angular.module("HM_CartMD")
     }
 
     function selectJobsite(site){
-      angular.merge($scope.selectedJobSite,site);
+      angular.merge($scope.cartData.selectedJobSite,site);
     }
 
     function fillInAddress(details) {
@@ -84,7 +84,7 @@ angular.module("HM_CartMD")
         .then(function(response){
           $scope.cartData.jobsites = response.data.result.Jobsite_details;
           $scope.cartData.jobsites.forEach(function(j){
-            j.SiteID == response.data.result.Jobsite_id && angular.merge($scope.selectedJobSite, j);
+            j.SiteID == response.data.result.Jobsite_id && angular.merge($scope.cartData.selectedJobSite, j);
           })
         })
         .catch(function(response){

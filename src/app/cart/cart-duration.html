@@ -52,14 +52,14 @@
         <span class="go-back-text bold-font">Delivery to selected Jobsite Location </span>
         <div class="pickup-desc">
           <i class="fa fa-map-marker color-blue heading-text"></i>
-          <span class="desc-text">{{selectedJobSite.Site_Name}}</span>
+          <span class="desc-text">{{cartData.selectedJobSite.Site_Name}}</span>
           <br>
-          <p class="desc-text address">{{selectedJobSite.Address1}}</p>
-          <p class="desc-text address">{{selectedJobSite.Address2}}</p>
-          <p class="desc-text address">{{selectedJobSite.City}}&nbsp;{{selectedJobSite.Prov}}</p>
-          <p class="zip desc-text address">Zip Code: {{selectedJobSite.Postal}}</p>
+          <p class="desc-text address">{{cartData.selectedJobSite.Address1}}</p>
+          <p class="desc-text address">{{cartData.selectedJobSite.Address2}}</p>
+          <p class="desc-text address">{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
+          <p class="zip desc-text address">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
           <i class="fa fa-phone-square color-blue heading-text"></i>
-          <span class="color-blue desc-text number">{{selectedJobSite.Phone}}</span>
+          <span class="color-blue desc-text number">{{cartData.selectedJobSite.Phone}}</span>
           <i class="fa fa-user  color-blue heading-text"></i>
 		  				<span class="color-blue desc-text">
 		  					Name of Contact Person

@@ -7,14 +7,13 @@
       <li ng-repeat="product in cart.Product">
         <i class="fa fa-truck fa-2x pull-left"></i>
         <p class="bold-font go-back-text equipment-name color-blue">{{product.Product_name}}</p>
-        <input type="checkbox" class="allow-checkbox"><span class="desc-text allow">Allow Subscription</span>
-        <span class="desc-text pull-right qty-summary">Qty: {{cartData[product.Product_id].qty}}</span>
+        <input type="checkbox" class="allow-checkbox" onclick="return false;"><span class="desc-text allow">Allow Substitution</span>
+        <span class="desc-text pull-right qty-summary">Qty: {{cartData.productsQuantity[product.Product_id].qty}}</span>
         <p class="desc-text bold-font total">
           ${{product.Product_rate}}
-          <a ng-click="deleteProductFromCart(product.Product_id,cartData[product.Product_id])">
-            <i class="pull-right color-blue qty-summary heading-text" ng-class="{'fa fa-trash': !cartData[product.Product_id].deleteInProgress,'fa fa-spinner fa-spin': cartData[product.Product_id].deleteInProgress}" ></i>
+          <a ng-click="deleteProductFromCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+            <i class="pull-right color-blue qty-summary heading-text" ng-class="{'fa fa-trash': !cartData.productsQuantity[product.Product_id].deleteInProgress,'fa fa-spinner fa-spin': cartData.productsQuantity[product.Product_id].deleteInProgress}" ></i>
           </a>
-
         </p>
       </li>
     </ul>

@@ -37,8 +37,8 @@
           </ul>
         </td>
         <td class="quantity vertically-middle">
-          <input class="form-control" ng-model="cartData[product.Product_id].qty" type="text" ng-blur="updateCart(product.Product_id,cartData[product.Product_id])" >
-          <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].updateInProgress"></i>
+          <input class="form-control" ng-model="cartData.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])" >
+          <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress" ></i>
         </td>
         <!-- <td class="duration vertically-middle">
                               <p>12 Dec, 2015 - 23:00</p>
@@ -52,9 +52,9 @@
                           </td> -->
         <td class="vertically-middle pricing">${{product.Product_rate}}</td>
         <td class="vertically-middle delete-icon on-hover-pointer">
-          <a ng-click="deleteProductFromCart(product.Product_id,cartData[product.Product_id])">
-            <i class="fa fa-trash fa-2x" ng-if="!cartData[product.Product_id].deleteInProgress"></i>
-            <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].deleteInProgress"></i>
+          <a ng-click="deleteProductFromCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+            <i class="fa fa-trash fa-2x" ng-if="!cartData.productsQuantity[product.Product_id].deleteInProgress"></i>
+            <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].deleteInProgress"></i>
           </a>
         </td>
       </tr>
@@ -71,8 +71,8 @@
         <h3>{{product.Product_name}}</h3>
         <input type="checkbox" style="margin: 3px 0 0 0;"><span class="marker">Allow Substitution?</span>
         <p class="qty-head">Quantity</p>
-        <input class="form-control" type="text" ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData[product.Product_id])">
-        <i class="fa fa-spinner fa-spin" ng-if="cartData[product.Product_id].updateInProgress"></i>
+        <input class="form-control" type="text" ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+        <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress"></i>
         <!-- <i class="fa fa-map-marker marker"></i>
         <span>Bay Area, Houstan</span>
         <span class="pull-right"><a href="#/update-job-site">Update</a></span> -->

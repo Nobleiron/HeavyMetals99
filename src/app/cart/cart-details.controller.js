@@ -13,17 +13,21 @@ angular.module("HM_CartMD")
 
 
     function updateCart(productId, cartData){
-      cartData.updateInProgress = true;
-      RestSV.put(ShoppingCartCnst.updateQty.url(),{
-        proid: productId,
-        qty : cartData.qty
-      })
-        .then(function(response){
-          angular.merge($scope.cart,response.data.result.Cart_Content);
+      if(cartData.isDirty){
+        cartData.isDirty = false;
+        cartData.updateInProgress = true;
+        RestSV.put(ShoppingCartCnst.updateQty.url(),{
+          proid: productId,
+          qty : cartData.qty
         })
-        .finally(function(){
-          cartData.updateInProgress = false;
-        })
+          .then(function(response){
+            angular.merge($scope.cart,response.data.result.Cart_Content);
+          })
+          .finally(function(){
+            cartData.updateInProgress = false;
+          })
+      }
+
     }
 
     function applyPromoCode(){

@@ -27,17 +27,17 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(selectedJobSite | isEmpty)">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(cartData.selectedJobSite | isEmpty)">
         <h4>Details</h4>
         <i class="fa fa-map-marker marker"></i>
-        <span>{{selectedJobSite.Site_Name}}</span>
+        <span>{{cartData.selectedJobSite.Site_Name}}</span>
         <br>
-        <p>{{selectedJobSite.Address1}}</p>
-        <p>{{selectedJobSite.Address2}}</p>
-        <p>{{selectedJobSite.City}}&nbsp;{{selectedJobSite.Prov}}</p>
-        <p class="zip">Zip Code: {{selectedJobSite.Postal}}</p>
+        <p>{{cartData.selectedJobSite.Address1}}</p>
+        <p>{{cartData.selectedJobSite.Address2}}</p>
+        <p>{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
+        <p class="zip">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
         <i class="fa fa-phone-square zip marker"></i>
-        <span class="marker">{{selectedJobSite.Phone}}</span>
+        <span class="marker">{{cartData.selectedJobSite.Phone}}</span>
         <br>
         <i class="fa fa-user marker"></i>
   				<span class="marker">
