@@ -1247,7 +1247,7 @@ button:hover {
 }
 
 .bottommargin {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 .leftmargin {
@@ -2429,6 +2429,28 @@ button:hover {
 
 .progress-a:hover {
 	text-decoration: none;
+}
+
+.select-date-time i {
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.lr-padding {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.total-price-padding {
+	padding-right: 12% !important;
+}
+
+.job-site-list .job-lists div:last-child {
+	border-bottom: none;
 }
 
 

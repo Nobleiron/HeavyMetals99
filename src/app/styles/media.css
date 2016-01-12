@@ -174,7 +174,7 @@
 
   .total-price div {
     padding: 0 0 25px 0;
-    width: 50%;
+    width: 100%;
     min-width: 300px;
     text-align: left;
   }
@@ -190,7 +190,7 @@
   }
 
   .total-price div {
-    padding-right: 15px;
+    padding-right: 15px !important;
   }
 
   .cont-rent-btn {
@@ -291,6 +291,14 @@
 
   .cd-dropdown-wrapper-small {
     height: 30px;
+  }
+  .lr-padding-small {
+    padding-left: 15px !important;
+    padding-right: 15px !important
+  }
+
+  .nopadding-small {
+    padding: 0;
   }
 
 }
@@ -844,7 +852,7 @@
   .glyphicon-earphone{font-size: 18px;}
   .glyphicon-log-in{font-size: 18px;}
   .eqe_tex {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 23px;
   }
   .req_call {
@@ -1009,7 +1017,7 @@
 
 @media screen and (max-width: 320px) {
   .eqe_tex {
-    font-size: 12px;
+    font-size: 14px;
 
   }
   .get_soft {

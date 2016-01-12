@@ -287,11 +287,10 @@
           </div>
           <div class="nav navbar-nav navbar-right landing-header landing-right-header" ng-if="userObj">
             <div class="btn-group drop-btn profile-dropdown user-div hidden-xs" dropdown ng-if="userObj">
-              <button class="btn btn-mini my-alc-btn nopadding prof-btn "><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}</button>
-              <button class="btn btn-mini dropdown-toggle my-alc-btn-toggle prof-btn" id="single-button" dropdown-toggle>
-                <span class="caret"></span>
+              <button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+                <i class="fa fa-caret-down color-white heading-text"></i>
               </button>
-              <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu">
+              <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu" aria-labelledby="single-button">
                 <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
                 <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Recent Orders</a></li>
                 <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
