@@ -2446,11 +2446,16 @@ button:hover {
 }
 
 .total-price-padding {
-	padding-right: 12% !important;
+	padding-right: 15px !important;
+	padding-bottom: 30px;
 }
 
 .job-site-list .job-lists div:last-child {
 	border-bottom: none;
+}
+
+.loader-top {
+	margin-top: 15px !important;
 }
 
 td.quantity .error{display:none;color:#ff5600;}
