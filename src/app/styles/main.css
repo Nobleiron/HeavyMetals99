@@ -2355,6 +2355,7 @@ button:hover {
 
 .cart-summary-col .equipment-name {
 	margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .cart-summary-col .total {
