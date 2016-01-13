@@ -1,11 +1,12 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_JobSitesCtrl', ['$scope','$uibModal','HM_RestSV', 'HM_JobSitesCnst', function($scope,$uibModal, RestSV, ManageJobSitesCnst){
+  .controller('HM_JobSitesCtrl', ['$scope','$state','$uibModal','HM_RestSV', 'HM_JobSitesCnst', function($scope,$state,$uibModal, RestSV, ManageJobSitesCnst){
 
     $scope.jobsites = [];
-    $scope.flags = {
-      listView : false
-    };
+
+    //$scope.params = angular.extend({
+    //  listView : false
+    //},$state.params);
 
     $scope.viewJobSiteDetails = viewJobSiteDetails;
 
@@ -52,8 +53,9 @@ angular.module("HM_JobSitesMD")
 
     $scope.map = { center: { latitude: 41.850033, longitude: -87.6500523 }, zoom: 8 };
 
-    function toggleListView(option){
-      $scope.flags.listView = !$scope.flags.listView;
+    function toggleListView(){
+      $scope.params.listView = !$scope.params.listView;
+      $state.go('hm.dashboard.jobSites',$scope.params);
     }
 
     $scope.showFilter = false;
