@@ -4,9 +4,9 @@ angular.module("HM_JobSitesMD")
 
     $scope.jobsites = [];
 
-    //$scope.params = angular.extend({
-    //  listView : false
-    //},$state.params);
+    $scope.flags = {
+      jobSiteFetchInProgress: true
+    };
 
     $scope.viewJobSiteDetails = viewJobSiteDetails;
 
@@ -19,6 +19,7 @@ angular.module("HM_JobSitesMD")
     _fetchJobsites();
 
     function _fetchJobsites(){
+
       RestSV.get(ManageJobSitesCnst.jobsites.url())
         .then(function(response){
           if(response.data.result){
@@ -26,10 +27,10 @@ angular.module("HM_JobSitesMD")
           }
         })
         .catch(function(){
-          debugger
+
         })
         .finally(function(){
-
+          $scope.flags.jobSiteFetchInProgress = false;
         })
     }
 
