@@ -43,14 +43,14 @@
           scope: function() {
 
             var scope = $rootScope.$new();
-            scope.modalParams = toParams
+            scope.modalParams = toParams;
             // Might leak memory
             scope.$on("$stateChangeSuccess", function(){
               modalInstance.close();
             });
             return scope;
         }()
-        })
+        });
 
 
 

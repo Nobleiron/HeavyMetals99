@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_AddJobSiteCtrl', ['$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function( $scope, $timeout, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
+  .controller('HM_AddJobSiteCtrl', ['$rootScope','$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function( $rootScope,$scope, $timeout, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
 
     var componentForm = {
       street_number: 'short_name',
@@ -10,6 +10,8 @@ angular.module("HM_JobSitesMD")
       country: 'long_name',
       postal_code: 'short_name'
     };
+
+
 
     $scope.addJobSite = addJobSite;
 
@@ -70,6 +72,7 @@ angular.module("HM_JobSitesMD")
 
 
     function addJobSite(){
+      $scope.$broadcast('Add:JobSite:Process:Start');
       RestSV
         .post( AddJobSiteCnst.add.url() ,{
           jobsite_name : $scope.address.jobsite,
@@ -80,6 +83,7 @@ angular.module("HM_JobSitesMD")
           phone : $scope.address.phone
         })
         .then(function(response){
+          $rootScope.$broadcast('JobSite:Add',response.data.result.Jobsite_details);
           toastr.success("JobSite Added Successfully");
           $scope.$dismiss();
         })
@@ -87,7 +91,7 @@ angular.module("HM_JobSitesMD")
           $scope.$dismiss();
         })
         .finally(function(){
-          $scope.$broadcast('SignUp:Process:End');
+          $scope.$broadcast('Add:JobSite:Process:End');
         })
     }
 

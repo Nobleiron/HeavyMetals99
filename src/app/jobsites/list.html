@@ -13,7 +13,7 @@
     <td class="text-right">
       <a class="invoice-no view-down"  ng-click="viewJobSiteDetails(jobsite);"><i class="fa fa-eye invoice-no heading-text"></i></a>
       <a ui-sref="hm.dashboard.jobSites.editJobSite({data : jobsite})" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
-      <a href="#" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
+      <a ng-click="deleteJobSite(jobsite)" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
   </tr>
   </tbody>
 </table>
