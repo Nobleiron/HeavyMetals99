@@ -116,7 +116,7 @@ angular.module("HM_SearchMD")
       function selectCategoryAttributes(event, attribute, attributeValue){
         var idx = _.find($scope.selectedAttributes[attribute], function(x){ return x == attributeValue});
         if (idx) {
-          $scope.selectedAttributes[attribute].splice(idx, 1);
+          $scope.selectedAttributes[attribute].splice($scope.selectedAttributes[attribute].indexOf(idx), 1);
         }
         else {
           $scope.selectedAttributes[attribute].push(attributeValue);
