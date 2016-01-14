@@ -80,7 +80,7 @@ a:focus { color: #0099cc;
 .cont ul li a{color: #e1e1e1; line-height: 25px; font-size: 13px;}
 .cont ul li a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s;}
 .rent_tit{text-align: center; text-shadow: 0px 5px 5px rgba(1, 1, 1, 0.5);
-	padding: 180px 0 40px 0; font-size: 36px; color: #fefefe; font-weight: 300;}
+	padding: 180px 0 0px 0; font-size: 36px; color: #fefefe; font-weight: 300;}
 .rent_bt_main{text-align: center;}
 .my-btn{
 	border: none; font-weight: 600; margin: 0 0 0 35px;
@@ -2481,5 +2481,74 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .add-jobsite-btn {
 	margin-bottom: 15px;
+}
+
+.sentence{
+  margin-bottom: 40px;
+  margin-top: 40px;
+	color: #ddd;
+	font-size: 50px;
+	font-weight: 300;
+	padding-left: 110px;
+	padding-right: 110px;
+}
+
+.slidingVertical{
+	display: inline;
+	text-indent: 8px;
+}
+.slidingVertical span{
+	animation: topToBottom 10s linear infinite 0s;
+	-ms-animation: topToBottom 10s linear infinite 0s;
+	-webkit-animation: topToBottom 10s linear infinite 0s;
+	color: #009ddc;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.slidingVertical span:nth-child(2){
+	animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+}
+.slidingVertical span:nth-child(3){
+	animation-delay: 5s;
+	-ms-animation-delay: 5s;
+	-webkit-animation-delay: 5s;
+}
+.slidingVertical span:nth-child(4){
+	animation-delay: 7.5s;
+	-ms-animation-delay: 7.5s;
+	-webkit-animation-delay: 7.5s;
+}
+
+
+
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
 }
 
