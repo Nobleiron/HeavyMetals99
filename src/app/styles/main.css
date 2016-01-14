@@ -102,7 +102,7 @@ a:focus { color: #0099cc;
 }
 .search_main{text-align: center; padding: 20px 0 240px 0;}
 
-.my_search{background: #ff5600; margin-right: 25px; color: #fff; margin-left: -7px;  padding: 9px 12px;
+.my_search{background: #ff5600; margin-right: 25px; color: #fff; margin-left: -7px;  padding: 16px 18px;
 	border-radius: 0px 5px 5px 0px;
 	-moz-border-radius: 0px 5px 5px 0px;
 	-webkit-border-radius: 0px 5px 5px 0px;
@@ -128,7 +128,12 @@ a:focus { color: #0099cc;
 .lift_part:hover{color: #0099cc;}
 .lift_part:first-child{padding: 0 10px 0 0;}
 .lift_part:last-child{padding: 0 0 0 10px;}
-.search-head{width: 56% !important; height: 40px;}
+.search-head{width: 56% !important; height: 54px; font-size: 15px !important;}
+.search-head:focus {
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(255,255,255,0.61);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(255,255,255,0.61);
+    box-shadow: 0px 0px 8px 2px rgba(255,255,255,0.61);
+}
 .pay_part:last-child{padding: 0 0 0 15px;}
 .glyphicon-retweet{ font-size: 23px; color: #ff5600;}
 .glyphicon-usd{font-size: 23px; color: #ff5600;}
