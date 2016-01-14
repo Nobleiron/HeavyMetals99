@@ -344,24 +344,31 @@ html, body {
 
 /* you can also define the transition style
    on the base class as well (.repeat-item) */
-.repeat-item.ng-enter,
-.repeat-item.ng-leave {
-  -webkit-transition:0.7s linear all;
-  transition:0.7s linear all;
-}
+/*.repeat-item.ng-enter,*/
+/*.repeat-item.ng-leave {*/
+  /*-webkit-transition:0.7s linear opacity;*/
+  /*transition:0.7s linear opacity;*/
+/*}*/
 
-.repeat-item.ng-enter,
-.repeat-item.ng-leave.ng-leave-active {
-  opacity:0;
-  height: 0px;
-}
-.repeat-item.ng-leave,
-.repeat-item.ng-enter.ng-enter-active {
-  opacity:1;
-  height: 30px;
-}
+/*.repeat-item.ng-enter,*/
+/*.repeat-item.ng-leave.ng-leave-active {*/
+  /*opacity:0;*/
+  /*height: 0px;*/
+/*}*/
+/*.repeat-item.ng-leave,*/
+/*.repeat-item.ng-enter.ng-enter-active {*/
+  /*opacity:1;*/
+  /*height: 30px;*/
+/*}*/
 
 
+.repeat-item.ng-leave.ng-leave-active,
+.repeat-item.ng-enter {
+  opacity: 0;
+  -webkit-transition: opacity 0.7s linear;
+  -moz-transition: opacity 0.7s linear;
+  transition: opacity 0.7s linear;
+}
 
 .jobsite-lookup .angular-google-map{
   height:200px;

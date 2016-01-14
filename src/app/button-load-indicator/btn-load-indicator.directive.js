@@ -12,7 +12,6 @@ angular.module("HM_BtnLoadIndicatorMD")
         element.after(loader);
 
         scope.$on(eventName+':Start', function(e, uid){
-          debugger
           if(scope.btnUid == uid){
               loader.show();
               element.parent('button').attr("disabled","disabled");

@@ -31,6 +31,7 @@ angular.module("HM_EquipmentReserveMD")
       RestSV.post(EquipmentReserveCnst.addToCart.url(),{proid : $scope.product.Product_Id, qty : $scope.quantity})
         .then(function(response){
           $rootScope.$broadcast("Cart:Updated", response.data.result.Cart_Quantity);
+          $rootScope.$broadcast('Cart:Count:Fetched',response.data.result)
           toastr.success('Product Added to cart successfully.');
         })
         .catch(function(error){

@@ -13,6 +13,19 @@ angular.module("HM_SearchMD")
       $scope.openDatepicker = openDatepicker;
 
       $scope.acceptUserQuery = acceptUserQuery;
+      $scope.cartProduct = [];
+
+      $scope.$on('Cart:Count:Fetched',function(e,data){
+        if(data && data.Cart_Content && data.Cart_Content.Product){
+          $scope.cartProduct = $scope.cartProduct.concat(data.Cart_Content.Product.map(function(p){return p.Product_id}));
+
+          $scope.results &&  $scope.results.map(function(r){
+              r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
+            });
+
+        }
+
+      });
 
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
@@ -129,6 +142,9 @@ angular.module("HM_SearchMD")
               $scope.flags.stopPaging = true;
             } else {
               $scope.results = $scope.results.concat(data.result.ProductList);
+              $scope.results.map(function(r){
+                r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
+              });
               $scope.flags.page += 1;
               console.log("browseProduct",$scope.results)
             }
@@ -192,6 +208,9 @@ angular.module("HM_SearchMD")
               }else{
                 var result = data.result.SearchResult || data.result.ProductList;
                 $scope.results = $scope.results.concat(result);
+                $scope.results.map(function(r){
+                  r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
+                });
                 $scope.flags.page += 1 ;
               }
             })

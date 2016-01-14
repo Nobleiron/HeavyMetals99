@@ -41,7 +41,8 @@
     </div>
     <div class="heart reserve-btns">
           <a href=""><i class="fa fa-eye fa-2x pull-left"></i></a>
-          <a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn my-reserve all-btn">Reserve</a>
+          <button ui-sref="hm.reserveEquipment({id :item.Product_Id})" type="button" class="btn all-btn my-reserve sell-equ" ng-disabled="item.alreadyExistsInCart" ng-class="{'add=top': !item.Is_in_catelog, 'is-added add-top': item.Is_in_catelog }">Add{{item.alreadyExistsInCart ? 'ed' : ''}} to Cart</button>
+          <!--<a ng-href="/#/equipments/{{item.Product_Id}}/reserve" type="button" class="btn my-reserve all-btn">Reserve</a>-->
           <a ng-click="addToOrRemoveFromWishList(item)"><i class="fa fa-heart fa-2x pull-right" btn-load-indicator="Add:Wishlist:Process"  btn-uid="item.Product_Id" ng-class="{'wish-added': item.Is_in_catelog}"></i></a>
     </div>
   </div>
