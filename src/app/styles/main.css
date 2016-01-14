@@ -1790,6 +1790,10 @@ button:hover {
 	border-bottom: 1px dashed #ddd;
 }
 
+.update-job {
+	min-height: 184px;
+}
+
 /*quotes list*/
 
 .quotes-table thead {
@@ -2467,5 +2471,9 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .job-site-list .jobsite-search-show input {
 	width: 90%;
+}
+
+.add-jobsite-btn {
+	margin-bottom: 15px;
 }
 
