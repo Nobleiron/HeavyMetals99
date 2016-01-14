@@ -18,7 +18,7 @@ a:focus { color: #0099cc;
 .main_bg{
 	color: #fff;
 	background-attachment: scroll;
-	background-image: url(/assets/images/main-bg.jpg);
+	background-image: url(/assets/images/landing.jpg);
 	background-position: center top;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
