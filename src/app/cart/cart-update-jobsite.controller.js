@@ -17,9 +17,8 @@ angular.module("HM_CartMD")
     $scope.hackMapLoad = function(){
       $timeout(function(){
         $scope.showMap = true;
-      },100)
+      },300)
     };
-
 
     $scope.address = { jobsite: '', phone: ''};
 

@@ -313,7 +313,7 @@
 @media only screen and (max-width: 991px) {
   .main_bg {
     background-size: 100% 100%;
-    min-height: 500px;
+    /*min-height: 500px;*/
   }
 
   .rent_tit {
@@ -875,7 +875,7 @@
   }
   .main_bg{
     background-size: 100% 100%;
-    min-height: auto;
+    /*min-height: auto;*/
   }
   .mob_tit {
     font-size: 20px;
