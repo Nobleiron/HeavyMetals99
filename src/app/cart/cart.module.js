@@ -1,1 +1,1 @@
-angular.module("HM_CartMD",[])
+angular.module("HM_CartMD",['gavruk.card'])

@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding lr-padding-small">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding">
+      <h3 class="heading-text bold-font devider-bottom topmargin">Enter Payment Details</h3>
+    </div>
+    <!-- Enter Duration Period -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+      </div>
+
+    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <input type="radio" name="get-option">
+        <span class="heading-text bold-font">Delivery and Pickup to selected Jobsite Location </span>
+        <p class="desc-text"></p>
+    </div> -->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
+      <div id="card-container">
+
+      </div>
+      <form action="#"
+            style="margin-top: 50px;"
+            name="cardForm"
+            data-card
+            data-width="500"
+            class="addcard__previev"
+            data-card-container="#card-container"
+            data-placeholders="cardPlaceholders"
+            data-options="cardOptions"
+            data-messages="cardMessages">
+
+        <div>
+          <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
+
+          <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
+        </div>
+        <div>
+          <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+
+          <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+
+          <input type="button" value="Change card" data-ng-click="changeCard()" />
+          <input type="button" value="Clear" data-ng-click="clear()" />
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding visible-sm visible-xs devider-bottom devider"></div>
+
+  <!-- cart summary part -->
+  <div ui-view="snapshot"></div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+        Continue Renting
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
+      <button class="btn sign_mybtn all-btn primary-btn reser-now cont" ui-sref="hm.cart.cartDuration">Next</button>
+    </div>
+  </div>
+</div>

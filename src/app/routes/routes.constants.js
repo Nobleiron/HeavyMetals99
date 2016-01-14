@@ -192,6 +192,18 @@ angular.module("HM_RoutesMD")
           }
 
         },
+        'hm.cart.payment': {
+          url: '/payment',
+          views : {
+            "": {
+              templateUrl: 'app/cart/cart-payment.html'
+            },
+            "snapshot@hm.cart.payment": {
+              templateUrl: 'app/cart/cart-snapshot.html'
+            }
+          }
+
+        },
         'hm.updateJobSite': {
           url: '/update-job-site',
           templateUrl: 'app/update-job-site/update-job-site.html',
