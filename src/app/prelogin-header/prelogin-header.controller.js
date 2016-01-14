@@ -17,7 +17,7 @@ angular.module('HeavyMetals')
         query = $scope.selectedProduct;
       }
 
-      $state.go('hm.search', { query : query},{ reload: true });
+      $state.go('hm.search.results', { query : query},{ reload: true });
     }
 
     function getProducts(search){

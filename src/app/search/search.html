@@ -28,7 +28,11 @@
                           {{attribute.Attribute_name}}
                         </div>
                         <div class="checkbox filter_cat_tex1" ng-repeat="value in attribute.value" ng-click="selectCategoryAttributes($event,attribute.Attribute_slug,value.attribute_value_name)">
-                          <label ng-click="$event.preventDefault();"><input type="checkbox" name="selectedAtrributes[]" value="{{value.attribute_value_name}}" ng-checked="selectedAttributes[attribute.Attribute_slug].indexOf(value.attribute_value_name) > -1"><span class="cat_mar">{{value.attribute_value_name}}</span></label>
+                          <label ng-click="$event.preventDefault();">
+                            <span style="font-size: 18px;">
+                              <i class="fa {{ selectedAttributes[attribute.Attribute_slug].indexOf(value.attribute_value_name) > -1 ? 'fa-check-square-o' : 'fa-square-o'}}"></i>
+                            </span>
+                            <span class="cat_mar">{{value.attribute_value_name}}</span></label>
                         </div>
                       </li>
                     </ul>
