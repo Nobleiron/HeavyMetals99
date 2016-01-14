@@ -10,9 +10,9 @@
     <input type="text" placeholder="Search Sites" class="form-control pull-right mng-search-bar">
   </div> -->
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
-    <i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i>
+    <!-- <i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i> -->
     <i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="search()"></i>
-    <div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow': showSearch}">
+    <div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow jobsite-search-show': showSearch}">
       <input type="text" placeholder="Site Id">
     </div>
   </div>
@@ -21,7 +21,7 @@
       <input type="text" placeholder="Site Id">
     </div>
   </div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': showFilterDiv}">
+  <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': showFilterDiv}">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
       <p class="desc-text">From Date</p>
       <div class="form-control search-div select-date" ng-click="openDatepicker('from')">
@@ -47,7 +47,7 @@
       <button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
       <button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
     </div>
-  </div>
+  </div> -->
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
     <a ui-sref="hm.dashboard.jobSites.addJobSite" class="btn pull-left manage-job-btn add-job-site-btn sign_mybtn all-btn primary-btn">Add Job Site</a>
