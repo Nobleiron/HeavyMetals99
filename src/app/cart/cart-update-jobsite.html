@@ -17,7 +17,7 @@
       
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites">
         <p class="desc-text"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsites Available</p>
-        <!-- <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a> -->
+        <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites">
@@ -134,19 +134,19 @@
     </div>
   </div>
 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding visible-sm hidden-xs devider devider-bottom"></div>
-
   <!-- cart summary part -->
   <div ui-view="snapshot"></div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding devider devider-bottom"></div>
-  <div class="row nomargin">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
-      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
-        Continue Renting
+  <div class="row nomargin review-btn-row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+      <button class="btn all-btn sell-equ btn-right-margin" ui-sref="hm.cart.details">
+        <i class="fa fa-angle-left"></i>&nbsp
+        Back
       </button>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-      <button class="btn sign_mybtn all-btn primary-btn reser-now cont" ui-sref="hm.cart.cartDuration">Next</button>
+      <button class="btn all-btn sign_mybtn primary-btn" ui-sref="hm.cart.cartDuration">
+        Next
+        &nbsp<i class="fa fa-angle-right"></i>
+      </button>
     </div>
   </div>
 </div>

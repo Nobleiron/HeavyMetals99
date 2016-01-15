@@ -1,64 +1,62 @@
 <div class="row">
   <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding lr-padding-small">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding">
-      <h3 class="heading-text bold-font devider-bottom topmargin">Enter Payment Details</h3>
-    </div>
-    <!-- Enter Duration Period -->
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-      </div>
-
-    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <input type="radio" name="get-option">
-        <span class="heading-text bold-font">Delivery and Pickup to selected Jobsite Location </span>
-        <p class="desc-text"></p>
-    </div> -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
-      <div id="card-container">
-
+      <div class="pickup-delivery active-pickup-delivery payment-option pay-now">
+        <input type="radio" name="get-option">
+        <span class="go-back-text bold-font">Pay Now</span>
+        <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last</p>
       </div>
-      <form action="#"
-            style="margin-top: 50px;"
-            name="cardForm"
-            data-card
-            data-width="500"
-            class="addcard__previev"
-            data-card-container="#card-container"
-            data-placeholders="cardPlaceholders"
-            data-options="cardOptions"
-            data-messages="cardMessages">
-
-        <div>
-          <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
-
-          <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
-        </div>
-        <div>
-          <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
-
-          <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
-
-          <input type="button" value="Change card" data-ng-click="changeCard()" />
-          <input type="button" value="Clear" data-ng-click="clear()" />
-        </div>
-
-      </form>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small">
+      <div class="pickup-delivery delivery-xs payment-option">
+        <input type="radio" name="get-option">
+        <span class="go-back-text bold-font">Pay Later</span>
+        <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last</p>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding nopadding-small credit-card-col">
+      <div class="col-xs-12 visible-xs nopadding-xs pull-center">
+        <div id="card-container"></div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
+        <form action="#"
+              name="cardForm"
+              data-card
+              data-width="500"
+              class="addcard__previev card-detail-form"
+              data-card-container="#card-container"
+              data-placeholders="cardPlaceholders"
+              data-options="cardOptions"
+              data-messages="cardMessages">
+          <div class="card-detail">
+            <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" class="form-control" />
+            <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" class="form-control" />
+          </div>
+          <div class="form-input-div">
+            <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+            <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+          </div>
+          <div>
+            <input type="button" class="btn all-btn sell-equ btn-right-margin" value="Clear" data-ng-click="clear()" />
+            <input type="button" class="btn all-btn sign_mybtn primary-btn" value="Confirm" data-ng-click="changeCard()" />
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
+        <div id="card-container"></div>
+      </div>
     </div>
   </div>
-
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding visible-sm visible-xs devider-bottom devider"></div>
 
   <!-- cart summary part -->
   <div ui-view="snapshot"></div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
   <div class="row nomargin">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn ">
-      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
-        Continue Renting
-      </button>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-      <button class="btn sign_mybtn all-btn primary-btn reser-now cont" ui-sref="hm.cart.cartDuration">Next</button>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reserve-generate-btn">
+      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn">Skip and Generate Quote</button>
+      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn">
+        <i class="fa fa-check"></i>&nbsp
+        Confirm Reservation</button>
     </div>
   </div>
 </div>

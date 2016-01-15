@@ -1396,6 +1396,10 @@ button:hover {
 	font-size: 20px;
 }
 
+.note-text {
+	margin: 20% 20px 0 0;
+}
+
 .cart-table {
 	border-bottom: 1px solid #ddd;
 }
@@ -1749,7 +1753,7 @@ button:hover {
 }
 
 .autowidth {
-	width: auto;
+	width: auto !important;
 }
 
 /*.order-history-acc .panel-heading {
@@ -2604,6 +2608,68 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .search-on-header {
 	height: 40px;
+}
+
+/*payment page*/
+.payment-option {
+	min-height: 140px
+}
+
+.pay-now {
+	padding-right: 30px;
+}
+
+.credit-card-col {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+.credit-card-col .jp-card-container {
+	transform: scale(1) !important;
+  position: static;
+  width: 100%;
+  margin: 0;
+}
+
+.credit-card-col .jp-card {
+	min-width: 100%;
+}
+
+.card-detail .form-control {
+	margin-bottom: 10px;
+}
+
+.form-input-div {
+	padding-bottom: 15px;
+}
+
+.form-input-div input {
+	font-size: 13px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #cccccc;
+  width: 49.3%;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-input-div input:focus {
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.skip-btn {
+	margin-bottom: 10px;
+}
+
+.btn-right-margin {
+	margin-right: 10px;
 }
 
 

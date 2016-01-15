@@ -321,6 +321,15 @@
     padding: 0 !important;
     text-align: center;
   }
+  .credit-card-col .jp-card-container {
+    max-width: 300px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .card-detail-form {
+    margin-top: 15px;
+  }
 
 }
 
@@ -1045,6 +1054,9 @@
   }
   .view-down-quotation {
     margin-right: 0;
+  }
+  .skip-btn {
+    margin-left: 0 !important;
   }
 }
 

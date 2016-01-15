@@ -95,11 +95,12 @@
 <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 promo-code lr-padding lr-padding-small">
     <form name='promoCodeForm' ng-submit="applyPromoCode()">
-    <input type="text" placeholder="Promo code" class="form-control" ng-model="promoCode">
-    <button class="btn sign_mybtn all-btn primary-btn" ng-disabled="promoCode == '' || promoCodeForm.$pristine" ng-click="applyPromoCode()">
-      <span btn-load-indicator="Cart:ApplyPromoCode">Apply</span>
-    </button>
-      </form>
+      <input type="text" placeholder="Promo code" class="form-control" ng-model="promoCode">
+      <button class="btn sign_mybtn all-btn primary-btn" ng-disabled="promoCode == '' || promoCodeForm.$pristine" ng-click="applyPromoCode()">
+        <span btn-load-indicator="Cart:ApplyPromoCode">Apply</span>
+      </button>
+    </form>
+    <p class="desc-text note-text">Note: Taxes, fees and delivery charges are estimates and provided for your convinience, Actual charges may vary.</p>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 total-price lr-padding lr-padding-small">
     <!-- <div class="total-price-div text-left total-price-padding">
@@ -142,7 +143,10 @@
       </button>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
-      <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">Next</a>
+      <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">
+        Next
+        &nbsp<i class="fa fa-angle-right"></i>
+      </a>
       <!-- <button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button> -->
     </div>
   </div>
