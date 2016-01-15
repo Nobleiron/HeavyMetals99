@@ -204,6 +204,15 @@ angular.module("HM_RoutesMD")
           }
 
         },
+        'hm.cart.review': {
+          url: '/review',
+          views : {
+            "": {
+              templateUrl: 'app/cart/cart-review.html'
+            }
+          }
+
+        },
         'hm.updateJobSite': {
           url: '/update-job-site',
           templateUrl: 'app/update-job-site/update-job-site.html',
