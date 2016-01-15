@@ -5,7 +5,7 @@
 		Description:
 				Purpose of the stylesheet follows.
 */
-body{font-family: 'Open Sans', sans-serif; color: #666666;}
+body{font-family: 'Open Sans', sans-serif; color: #666666; font-weight: 300;}
 .in-block{display: inline-block; vertical-align: top;}
 a:link {
 
@@ -30,13 +30,21 @@ a:focus { color: #0099cc;
 }
 .lift-bg{background: #f5f5f5; padding: 20PX 0;}
 .nopadding{padding: 0 !important;}
-.main_box{background: #ffffff; border: solid 1px #ededed; border-radius: 5px;  min-height:230px;
+.main_box{background: #ffffff; border: solid 1px #ededed; border-radius: 10px;  min-height:230px;
 	/*          width: 15%;
 						float: left;
 						margin-right: 21px;*/
-	-webkit-box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+	/*-webkit-box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow:    0px 3px 2px 0px rgba(0, 0, 0, 0.15);
-	box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+	box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.15);*/
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    /*-moz-osx-font-smoothing: grayscale;*/
+    transition-duration: 0.2s;
+    transition-property: transform;
 }
 .main_box:last-child{margin-right: 0;}
 .lift_pic{text-align: center; margin: 5px 0 0 0; height: 132px;}
@@ -45,17 +53,24 @@ a:focus { color: #0099cc;
 	color: #666666;}
 .lift_name a:hover{color: #0099cc; text-decoration: none; transition: all 0.6s ease 0s; }
 .tech-menu{}
-.tech-menu ul{margin: 0; padding: 0;}
-.tech-menu ul li{margin: 40px 0;  list-style: decimal;   font-size: 24px; display: list-item; color: #666666; margin-left: 1em;}
-.tech-menu ul li h2{  font-size: 24px; font-family: 'Open Sans', sans-serif;}
-.tech-menu ul li p{color: #848e97; font-size: 16px; text-align: justify; font-family: 'Open Sans', sans-serif;}
+.tech-menu ul{margin: 0; padding: 0px; /* padding-left:20px;
+    text-indent:2px;
+    list-style: none;
+    list-style-position:outside;*/ }
+/*.tech-menu ul li:before {
+    content: '✔';
+    margin-left: -1em; margin-right: .100em;
+}*/
+.tech-menu ul li{margin: 20px 0; font-size: 24px; display: list-item; color: #666666; margin-left: 1em;}
+.tech-menu ul li h2{  font-size: 25px; font-weight: 300; font-family: 'Open Sans', sans-serif;}
+.tech-menu ul li p{color: #848e97; font-size: 15px; text-align: left; font-family: 'Open Sans', sans-serif;}
 .pay_main{background: #f5f5f5; padding: 55px 0;}
 .easy_main_box{background: #ffffff; border: solid 1px #ff5600; border-radius: 5px; padding: 15px 0}
 .pay_part:hover{ color: #000;}
 .easy_pic{padding: 0 10px; margin:8px 0 0;}
 .easy_pic a{padding: 0 0 0 5px;}
 .easy_pic_img{  padding: 0 5px;}
-.easy_pic_img a{color: #ff5600; font-size: 14px; font-weight: 600; text-decoration: none; }
+.easy_pic_img a{color: #ff5600; font-size: 14px; font-weight: 400; text-decoration: none; }
 .easy_pic_img a:hover{color: #000;  transition: all 0.6s ease 0s;}
 .partner_main{padding: 38px 0;}
 .about_main{background: #3e3e3e; padding: 50px 0; color: #e1e1e1;}
@@ -119,8 +134,8 @@ a:focus { color: #0099cc;
 .req_call a{color: #fff; text-decoration: none;  font-size: 14px;}
 .req_call a:hover{color: #1BB6F5; text-decoration: none; transition: all 0.6s ease 0s;}
 .head_btn_main{text-align: right; margin: 20px 0 0 0; padding: 0;}
-.mob_tit{ color: #009bdc; font-size: 38px; text-align: center;padding: 50px 0 0 0; font-family: 'Open Sans', sans-serif;}
-.mob_subtit{ color: #666666; font-size: 24px; text-align: center; padding: 0 0 40px 0; font-family: 'Open Sans', sans-serif;}
+.mob_tit{ color: #009bdc; font-weight:300;  font-size: 34px; text-align: center;padding: 20px 0 0 0; font-family: 'Open Sans', sans-serif;}
+.mob_subtit{ color: #666666; font-size: 19px; font-weight:300;  text-align: center; padding: 0 0 40px 0; font-family: 'Open Sans', sans-serif;}
 .about_main h4{color: #e1e1e1; font-size: 18px; margin: 10px 0 20px 0;}
 .sell-equ{ border: solid 1px #009ddc; font-weight: 400;
 	background: #ffffff; padding: 6px 20px;color: #009ddc;}
@@ -1125,8 +1140,9 @@ a:focus { color: #0099cc;
 }
 
 .main_box:hover {
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-	transition: all 0.6s ease 0s;
+	/*box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+	transition: all 0.6s ease 0s;*/
+    transform: scale(1.1);
 }
 
 .easy_main_box:hover a,
