@@ -100,7 +100,7 @@ a:focus { color: #0099cc;
 	margin: 0 15px 0 15px;
 	color: #009ddc;
 }
-.search_main{text-align: center; padding: 20px 0 240px 0;}
+.search_main{text-align: center; padding: 20px 0 110px 0;}
 
 .my_search{background: #ff5600; margin-right: 25px; color: #fff; margin-left: -7px;  padding: 16px 18px;
 	border-radius: 0px 5px 5px 0px;
@@ -2492,8 +2492,8 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .sentence{
-  /*margin-bottom: 40px;*/
-    margin-top: 125px;
+  margin-bottom: 25px;
+    margin-top: 100px;
 	color: #ddd;
 	font-size: 50px;
 	font-weight: 300;
