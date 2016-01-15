@@ -2645,6 +2645,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
   position: static;
   width: 100%;
   margin: 0;
+  max-width: 315px;
 }
 
 .credit-card-col .jp-card {
