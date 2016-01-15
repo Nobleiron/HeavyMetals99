@@ -330,6 +330,17 @@
   .card-detail-form {
     margin-bottom: 15px;
   }
+  .main_box {
+    width: 100%;
+  }
+
+  .sentence {
+    margin-top: 50px !important;
+  }
+
+  .progress-span {
+    font-size: 12px;
+  }
 
 }
 

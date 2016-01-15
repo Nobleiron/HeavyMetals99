@@ -2358,6 +2358,10 @@ button:hover {
 	background-color: #fafafa !important;
 }
 
+.bg-color-blue {
+	background-color: #009ddc !important;
+}
+
 /*delivery*/
 .cart-summary-col {
 	background-color: #fafafa;
@@ -2689,6 +2693,9 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	margin-right: 10px;
 }
 
+.all-white-btn {
+	width: 150px;
+}
 
 
 
