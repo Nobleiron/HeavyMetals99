@@ -65,8 +65,6 @@ angular.module("HM_CartMD")
         durationStep.complete = false;
       }
 
-
-
     }
 
     function _fetchJobsites(){
@@ -74,9 +72,6 @@ angular.module("HM_CartMD")
         .then(function(response){
           if(response.data.result){
             $scope.cartData.jobsites =  response.data.result.Jobsite_details;
-
-
-
           }
         })
         .catch(function(){
@@ -127,23 +122,6 @@ angular.module("HM_CartMD")
         });
     }
 
-    $scope.cardPlaceholders = {
-      name: 'Your Full Name',
-      number: 'xxxx xxxx xxxx xxxx',
-      expiry: 'MM/YY',
-      cvc: 'xxx'
-    };
-
-    $scope.cardMessages = {
-      validDate: 'valid\nthru',
-      monthYear: 'MM/YYYY',
-    };
-
-    $scope.cardOptions = {
-      debug: false,
-      formatting: true,
-      container: '.addcard__previev'
-    };
 
 
 

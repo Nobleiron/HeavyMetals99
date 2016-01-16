@@ -196,7 +196,8 @@ angular.module("HM_RoutesMD")
           url: '/payment',
           views : {
             "": {
-              templateUrl: 'app/cart/cart-payment.html'
+              templateUrl: 'app/cart/cart-payment.html',
+              controller : 'HM_CartPaymentCtrl'
             },
             "snapshot@hm.cart.payment": {
               templateUrl: 'app/cart/cart-snapshot.html'
