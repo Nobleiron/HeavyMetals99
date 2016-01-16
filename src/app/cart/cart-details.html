@@ -129,6 +129,10 @@
         <span>{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
+      <h3 class="desc-text topmargin" ng-if="cart.Discount !='0.00'">
+        <span>Discount:</span>
+        <span class="pull-right">{{cart.Discount}}</span>
+      </h3>
       <h3 class="desc-text bold-font topmargin">
         <label>Total:</label>
         <span class="pull-right">${{cart.Grand_total}}</span>
