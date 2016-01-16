@@ -27,22 +27,22 @@
         </div>
         <div class="job-lists bottommargin inner-scroll">
           <div ng-repeat="site in cartData.jobsites | filter:searchJosite">
-            <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == cartData.selectedJobSite.SiteID">
+            <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == cartData.delivery.selectedJobSite.SiteID">
             <span>{{site.Site_Name}}</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(cartData.selectedJobSite | isEmpty)">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
         <h4>Details</h4>
         <i class="fa fa-map-marker marker"></i>
-        <span>{{cartData.selectedJobSite.Site_Name}}</span>
+        <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
         <br>
-        <p>{{cartData.selectedJobSite.Address1}}</p>
-        <p>{{cartData.selectedJobSite.Address2}}</p>
-        <p>{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
-        <p class="zip">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
+        <p>{{cartData.delivery.selectedJobSite.Address1}}</p>
+        <p>{{cartData.delivery.selectedJobSite.Address2}}</p>
+        <p>{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+        <p class="zip">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
         <i class="fa fa-phone-square zip marker"></i>
-        <span class="marker">{{cartData.selectedJobSite.Phone}}</span>
+        <span class="marker">{{cartData.delivery.selectedJobSite.Phone}}</span>
         <br>
         <i class="fa fa-user marker"></i>
   			<span class="marker">
@@ -55,25 +55,25 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
-          <input type="text" placeholder="First Name" ng-model="cartData.ContactInfo.firstName">
+          <input type="text" placeholder="First Name" ng-model="cartData.delivery.ContactInfo.firstName">
           <i class="fa fa-user pull-right"></i>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
         <div class="form-control search-div">
-          <input type="text" placeholder="Last Name" ng-model="cartData.ContactInfo.lastName">
+          <input type="text" placeholder="Last Name" ng-model="cartData.delivery.ContactInfo.lastName">
           <i class="fa fa-user pull-right"></i>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
-          <input type="text" placeholder="Email" ng-model="cartData.ContactInfo.email">
+          <input type="text" placeholder="Email" ng-model="cartData.delivery.ContactInfo.email">
           <i class="fa fa-envelope-o pull-right"></i>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
         <div class="form-control search-div">
-          <input type="text" placeholder="Phone Number" ng-model="cartData.ContactInfo.phone">
+          <input type="text" placeholder="Phone Number" ng-model="cartData.delivery.ContactInfo.phone">
           <i class="fa fa-phone pull-right"></i>
         </div>
       </div>

@@ -7,7 +7,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time leftpadding">
       <p class="desc-text">Start Renting From</p>
       <div class="form-control search-div select-date" >
-        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" ng-model="cartData.rentingPeriod.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy"/>
+        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" ng-model="cartData.duration.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy"/>
         <i class="fa fa-calendar pull-right" ng-click="fromDtOpened= !fromDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->
@@ -19,7 +19,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time rightpadding duration-rightpadding-small leftpadding-small">
       <p class="desc-text">Return Details</p>
       <div class="form-control search-div select-date">
-        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  ng-model="cartData.rentingPeriod.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy">
+        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  ng-model="cartData.duration.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy">
         <i class="fa fa-calendar pull-right" ng-click="toDtOpened= !toDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->
@@ -28,7 +28,7 @@
       <!--</div>-->
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading leftpadding">
-      <h3 class="heading-text">{{cartData.rentingPeriod.span}}<span class="desc-text">(if returned by 3PM, wednesday)</span></h3>
+      <h3 class="heading-text">{{cartData.duration.span}}<span class="desc-text">(if returned by 3PM, wednesday)</span></h3>
       <p class="desc-text">You can keep it longer or shorter, but the price is based on this estimated duration.</p>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>
@@ -42,26 +42,26 @@
     </div> -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
       <div class="pickup-delivery active-pickup-delivery">
-        <input type="radio" name="get-option" ng-model="cartData.rentingPeriod.deliveryPreference" value="self" checked="checked">
+        <input type="radio" name="get-option" ng-model="cartData.duration.deliveryPreference" value="self" checked="checked">
         <span class="go-back-text">Pickup these items yourself</span>
         <p class="desc-text pickup-desc">Upon compilation of this order, you will receive a confirmation email with the pickup location. Call (123) 456-7890 with any questions or concerns.</p>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small rightpadding">
       <div class="pickup-delivery delivery-xs">
-        <input type="radio" name="get-option" ng-model="cartData.rentingPeriod.deliveryPreference" ng-value="cartData.selectedJobSite" ng-disabled="(cartData.selectedJobSite | isEmpty)">
+        <input type="radio" name="get-option" ng-model="cartData.duration.deliveryPreference" ng-value="cartData.delivery.selectedJobSite" ng-disabled="(cartData.delivery.selectedJobSite | isEmpty)">
         <span class="go-back-text" >Delivery to selected Jobsite Location </span>
-        <p class="desc-text" ng-if="(cartData.selectedJobSite | isEmpty)"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsite Selected</p>
-        <div class="pickup-desc" ng-if="!(cartData.selectedJobSite | isEmpty)">
+        <p class="desc-text" ng-if="(cartData.delivery.selectedJobSite | isEmpty)"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsite Selected</p>
+        <div class="pickup-desc" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
           <i class="fa fa-map-marker color-blue heading-text"></i>
-          <span class="desc-text" >{{cartData.selectedJobSite.Site_Name}}</span>
+          <span class="desc-text" >{{cartData.delivery.selectedJobSite.Site_Name}}</span>
           <br>
-          <p class="desc-text address">{{cartData.selectedJobSite.Address1}}</p>
-          <p class="desc-text address">{{cartData.selectedJobSite.Address2}}</p>
-          <p class="desc-text address">{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
-          <p class="zip desc-text address">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
+          <p class="desc-text address">{{cartData.delivery.selectedJobSite.Address1}}</p>
+          <p class="desc-text address">{{cartData.delivery.selectedJobSite.Address2}}</p>
+          <p class="desc-text address">{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+          <p class="zip desc-text address">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
           <i class="fa fa-phone-square color-blue heading-text"></i>
-          <span class="color-blue desc-text number">{{cartData.selectedJobSite.Phone}}</span>
+          <span class="color-blue desc-text number">{{cartData.delivery.selectedJobSite.Phone}}</span>
           <i class="fa fa-user  color-blue heading-text"></i>
 		  				<span class="color-blue desc-text">
 		  					Name of Contact Person

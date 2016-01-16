@@ -4,10 +4,15 @@ angular.module("HM_CartMD")
 
 
     $scope.cartData = localStorageService.get('cartData') || {
-      selectedJobSite : {},
-      productsQuantity :{},
+      summary : {
+        productsQuantity :{}
+      },
+      delivery : {
+        selectedJobSite : {},
+      },
+      duration : {deliveryPreference :null},
       payment : {},
-      rentingPeriod : {deliveryPreference :null},
+      review : {},
       steps : angular.copy(ShoppingCartCnst.steps)
     };
 
@@ -41,19 +46,19 @@ angular.module("HM_CartMD")
 
     function validateStepsCompletion(){
       var cartData = $scope.cartData;
-      if(!angular.equals(cartData.selectedJobSite, {})){
+      if(!angular.equals(cartData.delivery.selectedJobSite, {})){
         deliveryStep.complete = true;
       } else{
         deliveryStep.complete = false;
       }
 
-      if(!angular.equals(cartData.productsQuantity, {})){
+      if(!angular.equals(cartData.summary.productsQuantity, {})){
         summaryStep.complete = true;
       }else{
         summaryStep.complete = false;
       }
 
-      if(cartData.rentingPeriod.fromDt && cartData.rentingPeriod.toDt && cartData.rentingPeriod.deliveryPreference){
+      if(cartData.duration.fromDt && cartData.duration.toDt && cartData.duration.deliveryPreference){
         durationStep.complete = true;
       }else{
         reviewStep.complete = false;
@@ -90,10 +95,10 @@ angular.module("HM_CartMD")
             $scope.cart = response.data.result.Cart_Content;
 
             $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
-              if(!$scope.cartData.productsQuantity[product.Product_id]){
-                $scope.cartData.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
+              if(!$scope.cartData.summary.productsQuantity[product.Product_id]){
+                $scope.cartData.summary.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
               }
-              $scope.cartData.rentingPeriod.span= humanizeDuration(moment($scope.cartData.toDt).diff(moment($scope.cartData.fromDt)));
+              $scope.cartData.duration.span= humanizeDuration(moment($scope.cartData.duration.toDt).diff(moment($scope.cartData.duration.fromDt)));
             })
           }else{
             localStorageService.remove('cartData')

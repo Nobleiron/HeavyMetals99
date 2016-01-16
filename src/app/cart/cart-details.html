@@ -20,7 +20,7 @@
         </td>
         <td class="equipment-desc">
           <h3>{{product.Product_name}}</h3>
-          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
+          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
           <ul class="price-ul">
             <li>
               <p class="daily_title">Daily</p>
@@ -38,8 +38,8 @@
         </td>
         <td class="quantity vertically-middle">
           <ng-form>
-          <input ng-pattern="/[1-9*]+/" class="form-control" ng-model="cartData.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])" >
-          <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress" ></i>
+          <input ng-pattern="/[1-9*]+/" class="form-control" ng-model="cartData.summary.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.summary.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])" >
+          <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress" ></i>
           <br>
           <div class="error">Invalid Quantity</div>
           </ng-form>
@@ -56,9 +56,9 @@
                           </td> -->
         <td class="vertically-middle pricing">${{product.Total_rate}}</td>
         <td class="vertically-middle delete-icon on-hover-pointer">
-          <a ng-click="deleteProductFromCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
-            <i class="fa fa-trash fa-2x" ng-if="!cartData.productsQuantity[product.Product_id].deleteInProgress"></i>
-            <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].deleteInProgress"></i>
+          <a ng-click="deleteProductFromCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">
+            <i class="fa fa-trash fa-2x" ng-if="!cartData.summary.productsQuantity[product.Product_id].deleteInProgress"></i>
+            <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].deleteInProgress"></i>
           </a>
         </td>
       </tr>
@@ -73,12 +73,12 @@
       </div>
       <div class="equipment-desc">
         <h3>{{product.Product_name}}</h3>
-        <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
+        <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
         <p class="qty-head">Quantity</p>
         <ng-form>
-        <input class="form-control" type="text"  ng-model="cartData[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
+        <input class="form-control" type="text"  ng-model="cartData.summary.productsQuantity[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">
         </ng-form>
-        <i class="fa fa-spinner fa-spin" ng-if="cartData.productsQuantity[product.Product_id].updateInProgress"></i>
+        <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress"></i>
 
         <!-- <i class="fa fa-map-marker marker"></i>
         <span>Bay Area, Houstan</span>
@@ -134,8 +134,8 @@
         <span class="pull-right">{{cart.Discount}}</span>
       </h3>
       <h3 class="desc-text bold-font topmargin">
-        <label>Total:</label>
-        <span class="pull-right">${{cart.Grand_total}}</span>
+        <label class="total">Total:</label>
+        <span class="total pull-right">${{cart.Grand_total}}</span>
       </h3>
     </div>
   </div>
