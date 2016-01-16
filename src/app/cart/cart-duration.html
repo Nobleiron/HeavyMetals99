@@ -42,14 +42,14 @@
     </div> -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
       <div class="pickup-delivery active-pickup-delivery">
-        <input type="radio" name="get-option">
+        <input type="radio" name="get-option" ng-model="cartData.rentingPeriod.deliveryPreference" value="self" checked="checked">
         <span class="go-back-text">Pickup these items yourself</span>
         <p class="desc-text pickup-desc">Upon compilation of this order, you will receive a confirmation email with the pickup location. Call (123) 456-7890 with any questions or concerns.</p>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small rightpadding">
       <div class="pickup-delivery delivery-xs">
-        <input type="radio" name="get-option" ng-disabled="(cartData.selectedJobSite | isEmpty)">
+        <input type="radio" name="get-option" ng-model="cartData.rentingPeriod.deliveryPreference" ng-value="cartData.selectedJobSite" ng-disabled="(cartData.selectedJobSite | isEmpty)">
         <span class="go-back-text" >Delivery to selected Jobsite Location </span>
         <p class="desc-text" ng-if="(cartData.selectedJobSite | isEmpty)"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsite Selected</p>
         <div class="pickup-desc" ng-if="!(cartData.selectedJobSite | isEmpty)">

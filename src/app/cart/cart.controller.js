@@ -6,12 +6,14 @@ angular.module("HM_CartMD")
     $scope.cartData = localStorageService.get('cartData') || {
       selectedJobSite : {},
       productsQuantity :{},
-      rentingPeriod : {},
+      rentingPeriod : {deliveryPreference :null},
       steps : angular.copy(ShoppingCartCnst.steps)
     };
 
     var deliveryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'delivery'; });
     var summaryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'summary'; });
+    var durationStep = _.find($scope.cartData.steps, function(o) { return o.name == 'duration'; });
+
 
     $scope.deleteProductFromCart = deleteProductFromCart;
 
@@ -31,12 +33,23 @@ angular.module("HM_CartMD")
 
 
     function validateStepsCompletion(){
-      if(!angular.equals($scope.cartData.selectedJobSite, {})){
+      var cartData = $scope.cartData;
+      if(!angular.equals(cartData.selectedJobSite, {})){
         deliveryStep.complete = true;
+      } else{
+        deliveryStep.complete = false;
       }
 
-      if(!angular.equals($scope.cartData.productsQuantity, {})){
+      if(!angular.equals(cartData.productsQuantity, {})){
         summaryStep.complete = true;
+      }else{
+        summaryStep.complete = false;
+      }
+
+      if(cartData.rentingPeriod.fromDt && cartData.rentingPeriod.toDt && cartData.rentingPeriod.deliveryPreference){
+        durationStep.complete = true;
+      }else{
+        durationStep.complete = false;
       }
 
     }
