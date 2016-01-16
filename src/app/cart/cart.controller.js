@@ -11,7 +11,7 @@ angular.module("HM_CartMD")
         selectedJobSite : {},
       },
       duration : {deliveryPreference :null},
-      payment : {},
+      payment : {paynow: false},
       review : {},
       steps : angular.copy(ShoppingCartCnst.steps)
     };
