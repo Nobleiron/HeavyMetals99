@@ -5,17 +5,13 @@
   <div class="modal-body order-history-modal" style="min-height: 300px">
     <load-indicator loading="!product"></load-indicator>
     <div ng-show="product">
-
-
         <div class="col-lg-6 reserve-left">
           <figure class="pull-center">
             <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" alt="" class="equip-reserve-img">
           </figure>
 
           <div class="col-md-12">
-            <p class="terms" ng-bind-html="product.Product_Description">
-
-            </p>
+            <p class="terms" ng-bind-html="product.Product_Description"></p>
           </div>
           <!-- <div class="col-lg-6">
             <div class="form-group">
@@ -52,8 +48,8 @@
 
 
           <h4 class="reserve_eqe_tit">
-            {{product.Product_Name}}
-            <span class="reserve_eqe_num text-center">{{product.MODEL}}</span>
+            {{product.Product_Name}} {{product.MODEL}}
+            <!-- <span class="reserve_eqe_num text-center"></span> -->
           </h4>
           <div class="daily_ul">
             <ul>

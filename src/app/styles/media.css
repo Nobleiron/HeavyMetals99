@@ -342,6 +342,20 @@
     font-size: 12px;
   }
 
+  .duration-leftpadding-small {
+    padding-left: 15px !important;
+  }
+
+  .duration-rightpadding-small {
+    padding-right: 15px !important;
+  }
+
+  .leftpadding-small {
+    padding-left: 0 !important
+  }
+
+
+
 }
 
 @media screen and (max-width: 600px) {
@@ -884,6 +898,9 @@
   .jobsite-details-col .person-details {
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+  .addjob-left-padding {
+    padding-left: 0 !important
   }
 
 }

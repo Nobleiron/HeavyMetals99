@@ -19,12 +19,12 @@
       </li>
     </ul>
     <div>
-      <h3 class="desc-text">
-        <label>Sub-Total Rental:</label>
+      <h3 class="desc-text topmargin">
+        <span>Sub-Total Rental:</span>
         <span class="pull-right">${{cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text" ng-repeat="(key, value) in cart.Charges">
-        <label>{{key}}:</label>
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in cart.Charges">
+        <span>{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>
