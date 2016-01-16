@@ -364,67 +364,18 @@
   <!-- START Equipments -->
 
   <article class="lift-bg">
-    <div class="container">
+    <div class="container" style="padding-top: 80px;" ng-hide="displayCategories">
+      <load-indicator loading="!displayCategories"></load-indicator>
+    </div>
+    <div class="container" ng-show="displayCategories">
       <!-- START  Product Lift 1 -->
       <div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories | limitTo:6">
         <div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer" ui-sref="hm.search.results({category_id : category.Id })">
 
           <div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" class="fullheight"></div>
           <div class="lift_name col-lg-12 col-sm-12 nopadding"><a ui-sref="hm.search.results({category_id : category.Id })">{{category.Name}}</a></div>
-
         </div>
       </div>
-      <!-- End Product Lift 1 -->
-      <!-- START  Product Lift 2  -->
-      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
-
-          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/electric_hybrid.jpg" alt=""></div>-->
-          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Electric & Hybrid Boom<br> Lifts</a></div>-->
-
-        <!--</div>-->
-      <!--</div>-->
-      <!-- End Product Lift 2 -->
-      <!-- START  Product Lift 3 -->
-      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
-
-          <!--<div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/vertical_lift.jpg" alt=""></div>-->
-          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Vertical Lifts & Stock <br>Pickers</a></div>-->
-
-        <!--</div>-->
-      <!--</div>-->
-      <!-- End Product Lift 3 -->
-      <!-- START  Product Lift 4 -->
-      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
-
-          <!--<div class="lift_pic col-lg-12 col-sm-12 nopadding"><img src="assets/images/scissor_lift.jpg" alt=""></div>-->
-          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Scissor Lifts</a></div>-->
-
-        <!--</div>-->
-      <!--</div>-->
-      <!-- End Product Lift 4 -->
-      <!-- START  Product Lift 5 -->
-      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
-
-          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/towable_boomlft.jpg" alt=""></div>-->
-          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Towable Boom Lifts</a></div>-->
-
-        <!--</div>-->
-      <!--</div>-->
-      <!-- End Product Lift 5 -->
-      <!-- START  Product Lift 6 -->
-      <!--<div class="col-lg-2 col-md-2 col-sm-6 lift_part">-->
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer">-->
-
-          <!--<div class="lift_pic col-lg-12 col-sm-12"><img src="assets/images/telehendelers.jpg" alt=""></div>-->
-          <!--<div class="lift_name col-lg-12 col-sm-12 nopadding"><a href="#">Telehandlers</a></div>-->
-
-        <!--</div>-->
-      <!--</div>-->
-      <!-- End Product Lift 6 -->
     </div>
   </article>
   <!-- End Equipments -->
@@ -470,7 +421,7 @@
                         Noble Iron Online is powered by Texada Software’s cloud platform. Texada builds software for equipment rental companies, equipment dealerships, construction companies, contractors, and any construction or industrial equipment user, including mechanics, logistics and service technicians. Texada Software manages the entire equipment lifecycle, including equipment purchasing; rental & sales transactions; inventory location, utilization, maintenance and depreciation tracking; used equipment sales analysis; and inventory replenishment.
                     </p>
                     <button class="btn check_rate no-margin bg-color-blue primary-btn white-color" type="button">Get the Software Now <i class="fa fa-angle-double-right"></i></button>
-                    
+
                 </li>
             </ul>
           </div>

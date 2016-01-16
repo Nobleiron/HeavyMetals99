@@ -16,6 +16,7 @@
       'ui.router',
       'ui.bootstrap',
       'ngAutocomplete',
+      'angularMoment',
       'ngSanitize',
       'infinite-scroll',
       'toastr',
@@ -29,6 +30,9 @@
     .run(['$rootScope','$state', function($rootScope, $state){
       $rootScope.$state = $state;
       $rootScope.params = {};
+      $rootScope.$on('$stateChangeSuccess', function() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      });
     }]);
 
 

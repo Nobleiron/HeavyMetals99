@@ -158,17 +158,17 @@ angular.module("HM_RoutesMD")
           openInModal: true
         },
         'hm.cart': {
-          url: '/shopping-cart',
+          url: '/cart',
           templateUrl: 'app/cart/cart.html',
           controller: 'HM_CartCtrl'
         },
         'hm.cart.details': {
-          url: '/details',
+          url: '/summary',
           templateUrl: 'app/cart/cart-details.html',
           controller: 'HM_CartDetailsCtrl'
         },
         'hm.cart.updateAddress': {
-          url: '/update-jobsite',
+          url: '/delivery-details',
           views : {
             "": {
               templateUrl:'app/cart/cart-update-jobsite.html',
@@ -181,7 +181,7 @@ angular.module("HM_RoutesMD")
 
         },
         'hm.cart.cartDuration': {
-          url: '/cart-duration',
+          url: '/rental-period',
           views : {
             "": {
               templateUrl: 'app/cart/cart-duration.html'

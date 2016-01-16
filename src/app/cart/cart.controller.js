@@ -1,8 +1,9 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartCtrl",['$scope','toastr','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,toastr,RestSV,ShoppingCartCnst,JobSitesCnst ){
+  .controller("HM_CartCtrl",['$scope','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
 
-    $scope.cartData = {selectedJobSite : {},productsQuantity :{}};
+
+    $scope.cartData = localStorageService.get('cartData') || {selectedJobSite : {},productsQuantity :{},rentingPeriod : {}};
 
     $scope.deleteProductFromCart = deleteProductFromCart;
 
@@ -11,6 +12,9 @@ angular.module("HM_CartMD")
     function _initialize(){
       _fetchCart();
       _fetchJobsites();
+      $scope.$watch('cartData', function(cartData){
+        localStorageService.set('cartData',cartData);
+      }, true);
     }
 
     function _fetchJobsites(){
@@ -32,16 +36,21 @@ angular.module("HM_CartMD")
 
       RestSV.get(ShoppingCartCnst.details.url())
         .then(function(response){
-          $scope.cart = response.data.result.Cart_Content;
-          $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
-            if(!$scope.cartData.productsQuantity[product.Product_id]){
-              $scope.cartData.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
-            }
-          })
+          if(response.data.result){
+            $scope.cart = response.data.result.Cart_Content;
+            $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
+              if(!$scope.cartData.productsQuantity[product.Product_id]){
+                $scope.cartData.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
+              }
+              $scope.cartData.rentingPeriod.span= humanizeDuration(moment($scope.cartData.toDt).diff(moment($scope.cartData.fromDt)));
+            })
+          }else{
+            localStorageService.remove('cartData')
+          }
+
 
         })
         .catch(function(error){
-
         })
         .finally(function(){
           $scope.cartFetchInProgress = false;
@@ -79,5 +88,7 @@ angular.module("HM_CartMD")
       formatting: true,
       container: '.addcard__previev'
     };
+
+
 
   }]);

@@ -381,3 +381,8 @@ html, body {
 .datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
   border: 0;
 }
+
+
+.cart-duration-cont .select-date {
+  width: 98%;
+}

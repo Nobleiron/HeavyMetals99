@@ -17,92 +17,34 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr>
+			<tr ng-repeat="product in cart.Product">
 				<td class="vertically-middle">
-					<i class="fa fa-truck fa-2x"></i>
+          <img ng-src="{{product.Product_image}}" style="width: 100px;height:100px;"/>
 				</td>
 				<td class="equipment-desc">
-					<h3>Electric Equipment Wide-16"</h3>
-					<p class="desc-text">Substitution Permitted</p>
+					<h3>{{product.Product_name}}</h3>
+					<p class="desc-text">{{cartData.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
 				</td>
 				<td class="vertically-middle">
 					<ul class="price-ul">
 						<li>
 							<p class="daily_title">Daily</p>
-							<p class="daily_price nomargin">$199</p>
+							<p class="daily_price nomargin">${{product.Product_price.Daily}}</p>
 						</li>
 						<li>
 							<p class="daily_title">Weekly</p>
-							<p class="daily_price nomargin">$1156</p>
+							<p class="daily_price nomargin">${{product.Product_price.Weekly}}</p>
 						</li>
 						<li>
 							<p class="daily_title">Monthly</p>
-							<p class="daily_price nomargin">$4556</p>
+							<p class="daily_price nomargin">${{product.Product_price.Monthly}}</p>
 						</li>
 					</ul>
 				</td>
 				<td class="quantity vertically-middle review-qty">
-					4
+					{{cartData.productsQuantity[product.Product_id].qty}}
 				</td>
-				<td class="vertically-middle pricing">$3556</td>
-			</tr>
-			<tr>
-				<td class="vertically-middle">
-					<i class="fa fa-truck fa-2x"></i>
-				</td>
-				<td class="equipment-desc">
-					<h3>Electric Equipment Wide-16"</h3>
-					<p class="desc-text">Substitution Permitted</p>
-				</td>
-				<td class="vertically-middle">
-					<ul class="price-ul">
-						<li>
-							<p class="daily_title">Daily</p>
-							<p class="daily_price nomargin">$199</p>
-						</li>
-						<li>
-							<p class="daily_title">Weekly</p>
-							<p class="daily_price nomargin">$1156</p>
-						</li>
-						<li>
-							<p class="daily_title">Monthly</p>
-							<p class="daily_price nomargin">$4556</p>
-						</li>
-					</ul>
-				</td>
-				<td class="quantity vertically-middle review-qty">
-					4
-				</td>
-				<td class="vertically-middle pricing">$3556</td>
-			</tr>
-			<tr>
-				<td class="vertically-middle">
-					<i class="fa fa-truck fa-2x"></i>
-				</td>
-				<td class="equipment-desc">
-					<h3>Electric Equipment Wide-16"</h3>
-					<p class="desc-text">Substitution Permitted</p>
-				</td>
-				<td class="vertically-middle">
-					<ul class="price-ul">
-						<li>
-							<p class="daily_title">Daily</p>
-							<p class="daily_price nomargin">$199</p>
-						</li>
-						<li>
-							<p class="daily_title">Weekly</p>
-							<p class="daily_price nomargin">$1156</p>
-						</li>
-						<li>
-							<p class="daily_title">Monthly</p>
-							<p class="daily_price nomargin">$4556</p>
-						</li>
-					</ul>
-				</td>
-				<td class="quantity vertically-middle review-qty">
-					4
-				</td>
-				<td class="vertically-middle pricing">$3556</td>
+				<td class="vertically-middle pricing">${{product.Total_rate}}</td>
 			</tr>
 			</tbody>
 		</table>
@@ -113,49 +55,15 @@
       <div class="cart-image-div">
         <i class="fa fa-truck fa-4x"></i>
       </div>
-      <div class="equipment-desc">
-        <h3>Electric Equipment Wide-16"</h3>
-        <p class="desc-text nomargin">Substitution Permitted</p>
+      <div class="equipment-desc" ng-repeat="product in cart.Product">
+        <h3>{{product.Product_name}}</h3>
+        <p class="desc-text nomargin">{{cartData.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
         <p class="qty-head">Quantity
-        	<span class="pull-right color-blue">4</span>
+        	<span class="pull-right color-blue">{{cartData.productsQuantity[product.Product_id].qty}}</span>
         </p>
-        <p class="sub-total">Sub-Total: 
+        <p class="sub-total">Sub-Total:
           <span class="pull-right color-blue">
-           	$3556
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="cart-for-mobile">
-      <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
-      </div>
-      <div class="equipment-desc">
-        <h3>Electric Equipment Wide-16"</h3>
-        <p class="desc-text nomargin">Substitution Permitted</p>
-        <p class="qty-head">Quantity
-        	<span class="pull-right color-blue">4</span>
-        </p>
-        <p class="sub-total">Sub-Total: 
-          <span class="pull-right color-blue">
-           	$3556
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="cart-for-mobile">
-      <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
-      </div>
-      <div class="equipment-desc">
-        <h3>Electric Equipment Wide-16"</h3>
-        <p class="desc-text nomargin">Substitution Permitted</p>
-        <p class="qty-head">Quantity
-        	<span class="pull-right color-blue">4</span>
-        </p>
-        <p class="sub-total">Sub-Total: 
-          <span class="pull-right color-blue">
-           	$3556
+           	${{product.Total_rate}}
           </span>
         </p>
       </div>
@@ -169,12 +77,14 @@
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col">
 			<h3 class="bold-font heading-text">Jobsite Details</h3>
 			<i class="fa fa-map-marker color-blue heading-text"></i>
-      <span>DSK Ranwara Constructions</span>
+      <span>{{cartData.selectedJobSite.Site_Name}}</span>
       <br>
-      <p class="address2">Commercial Area, Houston-TX</p>
-      <p class="zip">Zip Code: 34001</p>
+      <p class="address2">{{cartData.selectedJobSite.Address1}}</p>
+      <p>{{cartData.selectedJobSite.Address2}}</p>
+      <p>{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
+      <p class="zip">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
       <i class="fa fa-phone-square color-blue heading-text"></i>
-      <span class="number">+1 123 456 7890</span>
+      <span class="number">{{cartData.selectedJobSite.Phone}}</span>
       <i class="fa fa-user color-blue heading-text"></i>
   		<span>
   			Contact Person
@@ -211,11 +121,11 @@
 			<h3 class="bold-font heading-text">Date</h3>
 			<p>
 				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp Start Date & Time:</span>&nbsp
-				<span>01/16/2016 12:00 PM</span>
+				<span>{{cartData.rentingPeriod.fromDt | date : 'longDate'}}</span>
 			</p>
 			<p>
 				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp End Date & Time:</span>&nbsp
-				<span>01/29/2016 12:00 PM</span>
+        <span>{{cartData.rentingPeriod.toDt| date : 'longDate'}}</span>
 			</p>
 		</div>
 		<!-- devider -->
@@ -232,25 +142,21 @@
 	<!-- total price part start -->
 	<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 total-price">
     <div class="text-left total-price-padding">
-      <h3 class="desc-text">
+      <h3 class="desc-text topmargin">
         <span>Sub-Total Rental:</span>
-        <span class="pull-right">$13,847</span>
+        <span class="pull-right">${{cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text topmargin">
-        <span>Environmental Fee:</span>
-        <span class="pull-right">$13,847</span>
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in cart.Charges">
+        <span>{{key}}:</span>
+        <span class="pull-right">${{value}}</span>
       </h3>
-      <h3 class="desc-text topmargin">
-        <span>Equipment Protection Program:</span>
-        <span class="pull-right">$13,847</span>
-      </h3>
-      <h3 class="desc-text topmargin">
-        <span>Taxes:</span>
-        <span class="pull-right">$13,847</span>
+      <h3 class="desc-text topmargin" ng-if="cart.Discount !='0.00'">
+        <span>Discount:</span>
+        <span class="pull-right">{{cart.Discount}}</span>
       </h3>
       <h3 class="desc-text bold-font topmargin">
         <label>Total:</label>
-        <span class="pull-right">$13,847</span>
+        <span class="pull-right">${{cart.Grand_total}}</span>
       </h3>
     </div>
   </div>
@@ -263,7 +169,7 @@
 <div class="row review-btn-row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
 		<button class="btn all-btn sell-equ btn-right-margin" ui-sref="hm.cart.cartDuration">
-			<i class="fa fa fa-chevron-left"></i>&nbsp 
+			<i class="fa fa fa-chevron-left"></i>&nbsp
 			Back
 		</button>
 		<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.cart.payment">
