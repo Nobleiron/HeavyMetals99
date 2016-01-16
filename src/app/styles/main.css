@@ -2368,6 +2368,8 @@ button:hover {
 .cart-summary-col {
 	background-color: #fafafa;
 	border-radius: 4px;
+	max-height: 400px;
+  overflow: auto;
 }
 
 .cart-summary-col img {
