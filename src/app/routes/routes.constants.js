@@ -208,6 +208,7 @@ angular.module("HM_RoutesMD")
           url: '/review',
           views : {
             "": {
+              controller: 'HM_CartReviewCtrl',
               templateUrl: 'app/cart/cart-review.html'
             }
           }

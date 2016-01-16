@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartCtrl",['$scope','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
+  .controller("HM_CartCtrl",['$scope','$state','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,$state,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
 
 
     $scope.cartData = localStorageService.get('cartData') || {
@@ -13,6 +13,7 @@ angular.module("HM_CartMD")
     var deliveryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'delivery'; });
     var summaryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'summary'; });
     var durationStep = _.find($scope.cartData.steps, function(o) { return o.name == 'duration'; });
+    var reviewStep = _.find($scope.cartData.steps, function(o) { return o.name == 'review'; });
 
 
     $scope.deleteProductFromCart = deleteProductFromCart;
@@ -24,11 +25,16 @@ angular.module("HM_CartMD")
       _fetchCart();
       _fetchJobsites();
 
-
       $scope.$watch('cartData', function(cartData){
         validateStepsCompletion();
         localStorageService.set('cartData',cartData);
       }, true);
+
+      $scope.$on('Cart:Reviewed', function(){
+        if(summaryStep.complete && deliveryStep.complete && durationStep.complete){
+          reviewStep.complete = true;
+        }
+      });
     }
 
 
@@ -49,8 +55,11 @@ angular.module("HM_CartMD")
       if(cartData.rentingPeriod.fromDt && cartData.rentingPeriod.toDt && cartData.rentingPeriod.deliveryPreference){
         durationStep.complete = true;
       }else{
+        reviewStep.complete = false;
         durationStep.complete = false;
       }
+
+
 
     }
 
