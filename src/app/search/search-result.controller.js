@@ -27,6 +27,8 @@ angular.module("HM_SearchMD")
 
       });
 
+
+
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
       function _initialize(event,fresh){
@@ -98,6 +100,7 @@ angular.module("HM_SearchMD")
             .success(function(response){
               product.Is_in_catelog = false;
               $scope.catelog = false;
+              toastr.success("Product removed from catalogue")
             })
             .finally(function(){
               $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
@@ -108,6 +111,7 @@ angular.module("HM_SearchMD")
             .success(function(response){
               product.Is_in_catelog = true;
               $scope.catelog = true;
+              toastr.success("Product added to catalogue")
             })
             .finally(function(){
               $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
@@ -229,6 +233,7 @@ angular.module("HM_SearchMD")
         $state.go('hm.search.results', $scope.params);
         toastr.success('Thanks for submitting your query. We will get back to you shortly');
       }
+
 
 
       // scroll to top button
