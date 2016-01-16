@@ -15,7 +15,7 @@
       </thead>
       <tbody>
       <tr ng-repeat="product in cart.Product">
-        <td class="vertically-middle">
+        <td class="vertically-middle cart-image-td">
           <img ng-src="{{product.Product_image}}" style="width: 100px;height:100px;"/>
         </td>
         <td class="equipment-desc">
@@ -121,15 +121,15 @@
       </h3>
     </div> -->
     <div class="text-left total-price-padding">
-      <h3 class="desc-text">
-        <label>Sub-Total Rental:</label>
+      <h3 class="desc-text topmargin">
+        <span>Sub-Total Rental:</span>
         <span class="pull-right">${{cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text" ng-repeat="(key, value) in cart.Charges">
-        <label>{{key}}:</label>
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in cart.Charges">
+        <span>{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
-      <h3 class="desc-text bold-font">
+      <h3 class="desc-text bold-font topmargin">
         <label>Total:</label>
         <span class="pull-right">${{cart.Grand_total}}</span>
       </h3>

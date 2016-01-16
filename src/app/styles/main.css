@@ -5,7 +5,7 @@
 		Description:
 				Purpose of the stylesheet follows.
 */
-body{font-family: 'Open Sans', sans-serif; color: #666666; font-weight: 300;}
+body{font-family: 'Open Sans', sans-serif; color: #666666; font-weight: 400;}
 .in-block{display: inline-block; vertical-align: top;}
 a:link {
 
@@ -220,7 +220,7 @@ a:focus { color: #0099cc;
 .need_part{border: solid 1px #dedede; border-radius: 5px;  -webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
 					 -moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);
 					 box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.15);}
-.need_title{ color: #666666; font-family: 'Open Sans', sans-serif; font-size: 20px;}
+.need_title{ color: #666666; font-family: 'Open Sans', sans-serif; font-size: 16px;}
 .need_sub{color: #848e97; font-size: 12px;margin: 5px 0 15px 0;}
 .help_clr{}
 .help_clr a{color: #ff5600; font-size: 12px;}
@@ -724,7 +724,7 @@ a:focus { color: #0099cc;
 
 .reserve-right .reserve_eqe_tit {
 	margin-bottom: 20px;
-	text-align: center;
+	text-align: left;
 }
 
 .reserve-right .daily_ul {
@@ -809,10 +809,10 @@ a:focus { color: #0099cc;
 }
 
 .no-search-row .col1 p {
-	font-weight: 600;
-	font-size: 20px;
+	font-size: 21px;
 	line-height: 21px;
 	margin: 0;
+	font-weight: 300;
 }
 
 .no-search-row .col2 {
@@ -907,8 +907,8 @@ a:focus { color: #0099cc;
 }
 
 .job-site-header h4 {
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 21px;
+	font-weight: 300;
 }
 
 .fields-row {
@@ -1413,7 +1413,7 @@ button:hover {
 }
 
 .note-text {
-	margin: 20% 20px 0 0;
+	margin: 5% 20px 0 0;
 }
 
 .cart-table {
@@ -1423,7 +1423,6 @@ button:hover {
 .equipment-desc h3 {
 	margin: 10px 0 5px 0;
 	font-size: 16px;
-	font-weight: 600;
 }
 
 .equipment-desc input {
@@ -1459,7 +1458,7 @@ button:hover {
 }
 
 .quantity {
-	width: 13%;
+	width: 28%;
 }
 
 .quantity .form-control {
@@ -1918,7 +1917,6 @@ button:hover {
 .quotes-equip a {
 	margin: 10px 0 8px 0;
 	display: block;
-	font-weight: 600;
 	text-decoration: none;
 }
 
@@ -1956,6 +1954,10 @@ button:hover {
 
 .bold-font {
 	font-weight: 600 !important;
+}
+
+.normal-font {
+	font-weight: 400 !important
 }
 
 .white-color {
@@ -2695,6 +2697,15 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .all-white-btn {
 	width: 150px;
+}
+
+.cart-image-td {
+	width: 100px;
+}
+
+.modal-title {
+	font-weight: 300;
+	font-size: 21px;
 }
 
 
