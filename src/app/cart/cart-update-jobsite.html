@@ -25,7 +25,7 @@
           <i class="fa fa-search"></i>
           <input type="text" placeholder="Search" ng-model="searchJosite">
         </div>
-        <div class="job-lists bottommargin">
+        <div class="job-lists bottommargin inner-scroll">
           <div ng-repeat="site in cartData.jobsites | filter:searchJosite">
             <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == selectedJobSite.SiteID">
             <span>{{site.Site_Name}}</span>

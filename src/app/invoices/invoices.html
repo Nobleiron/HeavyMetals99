@@ -1,12 +1,11 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
-    Invoices
-  </div>
-  <div ng-show="flags.invoicesInProgress" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+  <div ng-show="flags.invoicesInProgress" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <load-indicator loading="flags.invoicesInProgress"></load-indicator>
   </div>
   <div ng-style="{'visibility': flags.invoicesInProgress ? 'hidden':'visible'}">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+      Invoices
+    </div>
     <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
       <input type="text" placeholder="Search Invoices" ng-model="query" ng-change="fetchInvoices()" class="form-control pull-right mng-search-bar">
       <span class="dash_board_light">Home</span>/ <span class="dash_board_bold">Dashboard</span>
