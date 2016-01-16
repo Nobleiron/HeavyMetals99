@@ -7,6 +7,7 @@ angular.module('HM_LogoutMD')
 
 
     function _initialize(){
+      localStorageService.remove("cartData");
       var loggedOut = RestSV.get( LogoutCnst.logout.url() );
       loggedOut
         .finally(function(){

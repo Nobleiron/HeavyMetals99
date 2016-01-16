@@ -6,6 +6,7 @@ angular.module("HM_CartMD")
     $scope.cartData = localStorageService.get('cartData') || {
       selectedJobSite : {},
       productsQuantity :{},
+      payment : {},
       rentingPeriod : {deliveryPreference :null},
       steps : angular.copy(ShoppingCartCnst.steps)
     };
