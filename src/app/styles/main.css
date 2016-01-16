@@ -417,7 +417,7 @@ a:focus { color: #0099cc;
 .cat-span{margin: 0 0 0 15px; font-size: 15px;}
 .upcoming{border-bottom: solid 1px #c2c2c2; border-top: solid 1px #c2c2c2;}
 .upcoming-left .upcome_eqe ul li {padding-bottom: 7px;}
-.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 16px;}
+.upcoming-title{ line-height: 30px; color: #666666; font-family: 'Open Sans', sans-serif; font-size: 16px;}
 .upcom-arrow{color: #009ddc}
 .upcome_eqe{}
 .upcome_eqe ul{}
@@ -2711,6 +2711,39 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 .modal-title {
 	font-weight: 300;
 	font-size: 21px;
+}
+
+#toast-container {
+	height: 0;
+}
+
+.inner-scroll::-webkit-scrollbar{
+  width: 2px;
+}
+ 
+/* Track */
+.inner-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.inner-scroll::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1); 
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.1); 
+}
+
+.icon-text {
+	font-size: 11px;
+}
+
+.catalog-active.active i {
+	color: #009ddc;
 }
 
 
