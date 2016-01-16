@@ -85,14 +85,14 @@
           <!--                        <div class="req_dash_botam col-lg-12 ten_botam"></div>-->
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam add-wish-btn">
             <button class="btn now-reserve col-lg-12 all-btn sell-equ" type="button" ng-click="addToOrRemoveFromWishList(equipment)">
-              <span btn-load-indicator="Add:Wishlist:Process" btn-uid="equipment.Product_Id">{{equipment.Is_in_catelog ? 'Add to Catalog': 'Added to Catalog'}}</span>
+              <span btn-load-indicator="Add:Wishlist:Process" btn-uid="equipment.Product_Id">{{equipment.Is_in_catelog ? 'Added to Catalog': 'Add to Catalog'}}</span>
             </button>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center ten_top_botam">
             <a class="btn now-reserve col-lg-12 all-btn" type="button" ui-sref="hm.reserveEquipment({id: equipment.Product_Id})">Add to Cart</a>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ten_top_botam inquiry-multiple">
-            <button class="btn col-lg-12 col-md-12 col-sm-12 inq_btn primary-btn all-btn" type="button">Inquire for Multiple Equipments Rentals</button>
+            <button class="btn col-lg-12 col-md-12 col-sm-12 inq_btn primary-btn all-btn" type="button" ui-sref="hm.help">Inquire for Multiple Equipments Rentals</button>
 
 
           </div>
@@ -101,10 +101,11 @@
           <!--                        <i class="fa fa-truck fa-2x"></i>-->
           <img src="assets/images/truck.png">
           <span class="caldil">Calculate Delivery &amp; Pickup Cost</span>
-          <input class="enter_zip" type="" value="" name="" placeholder="Enter Zip Code">
+          <input class="enter_zip" type="" value="" ng-model="zipcodeCheck" name="" placeholder="Enter Zip Code">
 
-          <button class="btn btn-default check_rate" type="button">Check Rates and Availability</button>
-          <span class="we_can">We can deliver this item for<span class="we_can_price"> $49</span></span>
+          <button class="btn btn-default check_rate" type="button" ng-disabled="!zipcodeCheck" ng-click="calculateDeliveryCharges()">Check Rates and Availability</button>
+          <i class="fa fa-spinner fa-spin" ng-show="calculateDeliveryChargesInProgress" ></i>
+          <span class="we_can" ng-show="deliveryRateByZipcode && !calculateDeliveryChargesInProgress">We can deliver this item for<span class="we_can_price"> ${{deliveryRateByZipcode}}</span></span>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <ul class="nav nav-tabs gride-tab">
