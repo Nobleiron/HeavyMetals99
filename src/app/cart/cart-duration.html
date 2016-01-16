@@ -6,24 +6,25 @@
     <!-- Enter Duration Period -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time lr-padding">
       <p class="desc-text">Start Renting From</p>
-      <div class="form-control search-div select-date">
-        <input type="text" placeholder="dd/mm/yyyy">
-        <i class="fa fa-calendar pull-right"></i>
+      <div class="form-control search-div select-date" >
+        <input type="text"  datetime-picker="MM/dd/yyyy" enable-time="false" ng-model="cartData.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy"/>
+        <i class="fa fa-calendar pull-right" ng-click="fromDtOpened= !fromDtOpened"></i>
       </div>
       <div class="form-control search-div select-date">
-        <input type="text" placeholder="hh:mm AM">
-        <i class="fa fa-clock-o pull-right"></i>
+        <input type="text"  datetime-picker="HH:mm" enable-date="false" ng-model="cartData.fromTime" is-open="fromTimeOpened" placeholder="HH:MM" />
+
+        <i class="fa fa-clock-o pull-right" ng-click="fromTimeOpened= !fromTimeOpened"></i>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time lr-padding">
       <p class="desc-text">Return Details</p>
       <div class="form-control search-div select-date">
-        <input type="text" placeholder="dd/mm/yyyy">
-        <i class="fa fa-calendar pull-right"></i>
+        <input type="text" datetime-picker="MM/dd/yyyy" enable-time="false" ng-model="cartData.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy">
+        <i class="fa fa-calendar pull-right" ng-click="toDtOpened= !toDtOpened"></i>
       </div>
       <div class="form-control search-div select-date">
-        <input type="text" placeholder="hh:mm PM">
-        <i class="fa fa-clock-o pull-right"></i>
+        <input type="text"  datetime-picker="HH:mm" enable-date="false" ng-model="cartData.toTime" is-open="toTimeOpened" placeholder="HH:MM" />
+        <i class="fa fa-clock-o pull-right" ng-click="toTimeOpened= !toTimeOpened"></i>
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding">
@@ -69,7 +70,7 @@
     </div>
   </div>
 
-  
+
 
   <!-- cart summary part -->
   <div ui-view="snapshot"></div>

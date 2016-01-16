@@ -41,7 +41,7 @@ angular.module("HM_CartMD")
         })
           .then(function(response){
             if(response.data.result){
-              // $scope.cart = response.data.result.Cart_Content;
+              $scope.cart = response.data.result.Cart_Content;
             }else{
               toastr.error("Invalid Coupon Code");
             }

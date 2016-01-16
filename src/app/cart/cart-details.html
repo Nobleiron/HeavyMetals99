@@ -54,7 +54,7 @@
                               <span>Bay Area, Houstan</span>
                               <p><a href="#/update-job-site">Update</a></p>
                           </td> -->
-        <td class="vertically-middle pricing">${{product.Product_rate}}</td>
+        <td class="vertically-middle pricing">${{product.Total_rate}}</td>
         <td class="vertically-middle delete-icon on-hover-pointer">
           <a ng-click="deleteProductFromCart(product.Product_id,cartData.productsQuantity[product.Product_id])">
             <i class="fa fa-trash fa-2x" ng-if="!cartData.productsQuantity[product.Product_id].deleteInProgress"></i>
@@ -128,6 +128,10 @@
       <h3 class="desc-text" ng-repeat="(key, value) in cart.Charges">
         <label>{{key}}:</label>
         <span class="pull-right">${{value}}</span>
+      </h3>
+      <h3 class="desc-text" ng-if="cart.Discount !='0.00'">
+        <label>Discount:</label>
+        <span class="pull-right">{{cart.Discount}}</span>
       </h3>
       <h3 class="desc-text bold-font">
         <label>Total:</label>

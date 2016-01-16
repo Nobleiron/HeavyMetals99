@@ -142,9 +142,9 @@ angular.module("HM_SearchMD")
               $scope.flags.stopPaging = true;
             } else {
               $scope.results = $scope.results.concat(data.result.ProductList);
-              $scope.results.map(function(r){
-                r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
-              });
+              //$scope.results.map(function(r){
+              //  r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
+              //});
               $scope.flags.page += 1;
               console.log("browseProduct",$scope.results)
             }
@@ -208,9 +208,9 @@ angular.module("HM_SearchMD")
               }else{
                 var result = data.result.SearchResult || data.result.ProductList;
                 $scope.results = $scope.results.concat(result);
-                $scope.results.map(function(r){
-                  r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
-                });
+                //$scope.results.map(function(r){
+                //  r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
+                //});
                 $scope.flags.page += 1 ;
               }
             })

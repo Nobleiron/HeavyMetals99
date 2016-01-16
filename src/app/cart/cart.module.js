@@ -1,1 +1,1 @@
-angular.module("HM_CartMD",['gavruk.card'])
+angular.module("HM_CartMD",['gavruk.card','ui.bootstrap.datetimepicker'])

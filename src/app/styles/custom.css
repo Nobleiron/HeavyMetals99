@@ -377,3 +377,7 @@ html, body {
   height:200px;
 }
 
+
+.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
+  border: 0;
+}

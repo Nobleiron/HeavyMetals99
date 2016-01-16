@@ -21,6 +21,7 @@
       'toastr',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
+      'HM_ResponseINT',
       'valdr',
       'HM_RoutesMD',
       'HM_GlobalMD'])
