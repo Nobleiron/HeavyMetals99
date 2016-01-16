@@ -350,11 +350,21 @@
     padding-right: 15px !important;
   }
 
+
+
   .leftpadding-small {
     padding-left: 0 !important
   }
 
+  .profile-leftpadding-small {
+    padding-left: 15px !important;
+  }
 
+  .profile-lrpadding-small {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 15px !important;
+  }
 
 }
 

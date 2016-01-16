@@ -2735,6 +2735,14 @@ td.quantity .ng-invalid-pattern .error{display:block;}
   box-shadow: inset 0 0 1px rgba(0,0,0,0.1); 
 }
 
+.icon-text {
+	font-size: 11px;
+}
+
+.catalog-active.active i {
+	color: #009ddc;
+}
+
 
 
 
