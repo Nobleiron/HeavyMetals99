@@ -69,6 +69,32 @@ angular.module("HeavyMetals")
           'message': 'Phone no is required.'
         }
       }
+    },
+    'JobSite': {
+      'jobsiteName' : {
+        'required' : {
+          'message' : 'Jobsite Name is required'}
+      },
+      'city' : {
+        'required' : {
+          'message' : "City is required"
+        }
+      },
+      'address' : {
+        'required' : {
+          'message' : "Address is required"
+        }
+      },
+      'phone': {
+        'required': {
+          'message': 'Phone is required.'
+        }
+      },
+      'state': {
+        'required': {
+          'message': 'State is required.'
+        }
+      }
     }
 
 

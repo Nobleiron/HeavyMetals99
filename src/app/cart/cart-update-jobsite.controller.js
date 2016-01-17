@@ -81,10 +81,8 @@ angular.module("HM_CartMD")
           phone : $scope.address.phone
         })
         .then(function(response){
-          $scope.cartData.jobsites = response.data.result.Jobsite_details;
-          $scope.cartData.jobsites.forEach(function(j){
-            j.SiteID == response.data.result.Jobsite_id && angular.merge($scope.cartData.delivery.selectedJobSite, j);
-          })
+          $scope.cartData.delivery.selectedJobSite = response.data.result.Jobsite_details;
+          $scope.cartData.jobsites.unshift($scope.cartData.delivery.selectedJobSite);
         })
         .catch(function(response){
           debugger

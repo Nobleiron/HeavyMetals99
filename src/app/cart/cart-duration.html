@@ -7,7 +7,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time leftpadding">
       <p class="desc-text">Start Renting From</p>
       <div class="form-control search-div select-date" >
-        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" ng-model="cartData.duration.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy"/>
+        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" ng-model="cartData.duration.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('fromDt')"/>
         <i class="fa fa-calendar pull-right" ng-click="fromDtOpened= !fromDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->
@@ -19,7 +19,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time rightpadding duration-rightpadding-small leftpadding-small">
       <p class="desc-text">Return Details</p>
       <div class="form-control search-div select-date">
-        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  ng-model="cartData.duration.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy">
+        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  ng-model="cartData.duration.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('toDt')"/>
         <i class="fa fa-calendar pull-right" ng-click="toDtOpened= !toDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->
@@ -41,14 +41,14 @@
         <p class="desc-text"></p>
     </div> -->
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
-      <div class="pickup-delivery active-pickup-delivery">
+      <div class="pickup-delivery " ng-class="{'active-pickup-delivery': cartData.duration.deliveryPreference == 'self'}">
         <input type="radio" name="get-option" ng-model="cartData.duration.deliveryPreference" value="self" checked="checked">
         <span class="go-back-text">Pickup these items yourself</span>
         <p class="desc-text pickup-desc">Upon compilation of this order, you will receive a confirmation email with the pickup location. Call (123) 456-7890 with any questions or concerns.</p>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small rightpadding">
-      <div class="pickup-delivery delivery-xs">
+      <div class="pickup-delivery delivery-xs" ng-class="{'active-pickup-delivery': cartData.duration.deliveryPreference == cartData.delivery.selectedJobSite}">
         <input type="radio" name="get-option" ng-model="cartData.duration.deliveryPreference" ng-value="cartData.delivery.selectedJobSite" ng-disabled="(cartData.delivery.selectedJobSite | isEmpty)">
         <span class="go-back-text" >Delivery to selected Jobsite Location </span>
         <p class="desc-text" ng-if="(cartData.delivery.selectedJobSite | isEmpty)"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsite Selected</p>
@@ -64,7 +64,7 @@
           <span class="color-blue desc-text number">{{cartData.delivery.selectedJobSite.Phone}}</span>
           <i class="fa fa-user  color-blue heading-text"></i>
 		  				<span class="color-blue desc-text">
-		  					Name of Contact Person
+		  					{{cartData.delivery.ContactInfo.firstName}}&nbsp;{{cartData.delivery.ContactInfo.lastName}}
 		  				</span>
         </div>
       </div>

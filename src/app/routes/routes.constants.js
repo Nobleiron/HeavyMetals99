@@ -88,7 +88,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_SearchResultCtrl'
         },
         'hm.reserveEquipmentSuccess' : {
-          url: '/equipments/:id/reserve-success',
+          url: '/cart/reserve-success',
           templateUrl: 'app/equipment-reserve-success/equipment.reserve-success.html',
           controller: 'HM_EquipmentReserveSuccessCtrl'
         },
@@ -184,7 +184,8 @@ angular.module("HM_RoutesMD")
           url: '/rental-period',
           views : {
             "": {
-              templateUrl: 'app/cart/cart-duration.html'
+              templateUrl: 'app/cart/cart-duration.html',
+              controller : 'HM_CartDurationCtrl'
             },
             "snapshot@hm.cart.cartDuration": {
               templateUrl: 'app/cart/cart-snapshot.html'

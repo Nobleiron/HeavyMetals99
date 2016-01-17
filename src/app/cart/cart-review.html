@@ -77,18 +77,18 @@
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col">
 			<h3 class="bold-font heading-text">Jobsite Details</h3>
 			<i class="fa fa-map-marker color-blue heading-text"></i>
-      <span>{{cartData.selectedJobSite.Site_Name}}</span>
+      <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
       <br>
-      <p class="address2">{{cartData.selectedJobSite.Address1}}</p>
-      <p>{{cartData.selectedJobSite.Address2}}</p>
-      <p>{{cartData.selectedJobSite.City}}&nbsp;{{cartData.selectedJobSite.Prov}}</p>
-      <p class="zip">Zip Code: {{cartData.selectedJobSite.Postal}}</p>
+      <p class="address2">{{cartData.delivery.selectedJobSite.Address1}}</p>
+      <p>{{cartData.delivery.selectedJobSite.Address2}}</p>
+      <p>{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+      <p class="zip">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
       <i class="fa fa-phone-square color-blue heading-text"></i>
-      <span class="number">{{cartData.selectedJobSite.Phone}}</span>
-      <i class="fa fa-user color-blue heading-text"></i>
-  		<span>
-  			Contact Person
-  		</span>
+      <span class="number">{{cartData.delivery.selectedJobSite.Phone}}</span>
+      <!--<i class="fa fa-user color-blue heading-text"></i>-->
+  		<!--<span>-->
+  			<!--Contact Person-->
+  		<!--</span>-->
 		</div>
 		<!-- devider -->
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
@@ -98,19 +98,19 @@
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 nopadding person-details">
 				<i class="fa fa-user color-blue heading-text"></i>
 	  		<span>
-	  			Contact Person Name
+	  			{{cartData.delivery.ContactInfo.firstName}}&nbsp;{{cartData.delivery.ContactInfo.lastName}}
 	  		</span>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 nopadding person-details">
 				<i class="fa fa-envelope-o color-blue heading-text"></i>
 	  		<span>
-	  			ankit.jiwani92@gmail.com
+	  			{{cartData.delivery.ContactInfo.email}}
 	  		</span>
 			</div>
 			<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12 nopadding person-details">
 				<i class="fa fa-phone-square color-blue heading-text"></i>
 	  		<span>
-	  			+1 123 456 7890
+	  			{{cartData.delivery.ContactInfo.phone}}
 	  		</span>
 			</div>
 		</div>
@@ -121,11 +121,11 @@
 			<h3 class="bold-font heading-text">Date</h3>
 			<p>
 				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp Start Date & Time:</span>&nbsp
-				<span>{{cartData.rentingPeriod.fromDt | date : 'longDate'}}</span>
+				<span>{{cartData.duration.fromDt | date : 'longDate'}}</span>
 			</p>
 			<p>
 				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp End Date & Time:</span>&nbsp
-        <span>{{cartData.rentingPeriod.toDt| date : 'longDate'}}</span>
+        <span>{{cartData.duration.toDt| date : 'longDate'}}</span>
 			</p>
 		</div>
 		<!-- devider -->
@@ -133,7 +133,7 @@
 		<!-- duration text -->
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
 			<p class="desc-text approx-text">
-				Approximately renting for 1 week, 3 days (If returned by 3PM, wednesday)
+				Approximately renting for{{cartData.duration.span}} (If returned by 3PM, wednesday)
 			</p>
 		</div>
 		<div class="col-xs-12 bord_dash_bot visible-xs"></div>
