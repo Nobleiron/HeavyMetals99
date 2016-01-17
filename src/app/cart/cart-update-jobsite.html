@@ -22,8 +22,8 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites">
         <div class="form-control search-div">
-          <i class="fa fa-search"></i>
           <input type="text" placeholder="Search" ng-model="searchJosite">
+          <i class="fa fa-search pull-right icon-right"></i>
         </div>
         <div class="job-lists bottommargin inner-scroll">
           <div ng-repeat="site in cartData.jobsites | filter:searchJosite">
@@ -56,7 +56,8 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
           <input type="text" placeholder="First Name" ng-model="cartData.delivery.ContactInfo.firstName">
-          <i class="fa fa-user pull-right"></i>
+            <i class="fa fa-user pull-right"></i>
+          </input>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">

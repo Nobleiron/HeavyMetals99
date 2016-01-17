@@ -516,7 +516,7 @@ a:focus { color: #0099cc;
 .daily_price_check {
 		font-size: 16px; text-decoration: line-through;}
 .total_price_popup{font-size: 18px;}
-.terms{font-size: 12px; margin: 15px 0;}
+.terms{font-size: 13px; margin: 15px 0;}
 .total_price_cle{color: #ff5600;}
 .reserve_eqe_tit{font-size: 16px; color: #666666;}
 .reserve_eqe_num{display: block;}
@@ -726,8 +726,10 @@ a:focus { color: #0099cc;
 }
 
 .reserve-right .reserve_eqe_tit {
-	margin-bottom: 20px;
 	text-align: left;
+	margin-bottom: 0;
+	font-size: 21px;
+	font-weight: 300;
 }
 
 .reserve-right .daily_ul {
@@ -2359,6 +2361,10 @@ button:hover {
 	color: #009ddc !important;
 }
 
+.color-gray {
+	color: #666666 !important;
+}
+
 .bg-color-gray {
 	background-color: #fafafa !important;
 }
@@ -2403,7 +2409,7 @@ button:hover {
 }
 
 .cart-summary-col .total {
-	margin: 5px 10px 5px 37px;
+	margin: 5px 0px 5px 0px;
 }
 
 .cart-summary-col ul li {
@@ -2744,6 +2750,22 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .catalog-active.active i {
 	color: #009ddc;
+}
+
+.terms strong {
+	float: left;
+}
+
+.equipment-cancel {
+	margin-right: 10px;
+}
+
+.form-control input:focus + i {
+	color: #009ddc !important;
+}
+
+.icon-right {
+	margin-top: 3px;
 }
 
 
