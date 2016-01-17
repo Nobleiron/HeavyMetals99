@@ -2723,7 +2723,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .inner-scroll::-webkit-scrollbar{
-  width: 2px;
+  width: 8px;
 }
  
 /* Track */
