@@ -21,7 +21,8 @@ angular.module("HM_CartMD")
           msg = "Renting date should be before the return date"
         }
         toastr.error(msg);
-
+      }else{
+        $scope.cartData.duration.span= humanizeDuration(moment($scope.cartData.duration.toDt).diff(moment($scope.cartData.duration.fromDt)));
       }
     }
 

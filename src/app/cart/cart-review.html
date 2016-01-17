@@ -19,7 +19,7 @@
 			<tbody>
 			<tr ng-repeat="product in cart.Product">
 				<td class="vertically-middle">
-          <img ng-src="{{product.Product_image}}" style="width: 100px;height:100px;"/>
+          <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
 				</td>
 				<td class="equipment-desc">
 					<h3>{{product.Product_name}}</h3>
@@ -53,7 +53,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
     <div class="cart-for-mobile">
       <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
+        <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
       </div>
       <div class="equipment-desc" ng-repeat="product in cart.Product">
         <h3>{{product.Product_name}}</h3>

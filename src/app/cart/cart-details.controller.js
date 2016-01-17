@@ -3,13 +3,9 @@ angular.module("HM_CartMD")
   .controller("HM_CartDetailsCtrl",['$scope','HM_RestSV','HM_CartCnst','toastr', function( $scope,RestSV, ShoppingCartCnst,toastr){
 
 
-
-
     $scope.updateCart = updateCart;
 
     $scope.applyPromoCode = applyPromoCode;
-
-
 
 
     function updateCart(productId, cartData){

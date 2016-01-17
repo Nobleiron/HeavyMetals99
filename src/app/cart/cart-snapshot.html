@@ -5,7 +5,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-scroll cart-snap-col inner-scroll">
     <ul>
       <li ng-repeat="product in cart.Product">
-        <img ng-src="{{product.Product_image}}"/>
+        <img ng-src="{{product.Product_image}}" err-src/>
         <p class="bold-font go-back-text equipment-name color-blue">{{product.Product_name}}</p>
         <!-- <input type="checkbox" class="allow-checkbox" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution" onclick="return false;"><span class="desc-text allow">Allow Substitution</span> -->
         <span class="desc-text allow">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Allow Substitution' : 'No Substitution Permitted' }}</span>
