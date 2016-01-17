@@ -2387,6 +2387,7 @@ button:hover {
 
 .cart-summary-col .shopping-cart-heading {
 	border-bottom: 1px solid #dddddd;
+	margin-bottom: 10px;
 }
 
 .cart-summary-col .allow {
