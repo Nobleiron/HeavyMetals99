@@ -2377,8 +2377,6 @@ button:hover {
 .cart-summary-col {
 	background-color: #fafafa;
 	border-radius: 4px;
-	max-height: 400px;
-  overflow: auto;
 }
 
 .cart-summary-col img {
@@ -2766,6 +2764,15 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .icon-right {
 	margin-top: 3px;
+}
+
+.equipment-detail-need {
+	padding-top: 20px;
+}
+
+.cart-snap-col {
+	max-height: 400px;
+	overflow: auto;
 }
 
 
