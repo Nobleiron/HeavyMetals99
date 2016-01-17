@@ -15,12 +15,12 @@
     <!-- update existing job -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active leftpadding delivery-leftpadding-small" id="existing-job">
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites.length">
         <p class="desc-text"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsites Available</p>
         <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites.length">
         <div class="form-control search-div">
           <input type="text" placeholder="Search" ng-model="searchJosite">
           <i class="fa fa-search pull-right icon-right"></i>
@@ -86,27 +86,29 @@
     <!-- add new job -->
     <div id="add-new-job" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane fade update-exist">
       <div class="row fields-row">
-        <!--<input type="text" id="Autocomplete" ngModel="result1" class="form-control" />-->
-        <div class="col-md-12 site-col lr-padding">
-          <input type="text" placeholder="Job Site Name" class="form-control" ng-model="address.jobsite">
-        </div>
-        <div class="col-md-12 other-col lr-padding">
-          <input type="text" placeholder="City" class="form-control" ng-model="address.route">
-        </div>
-        <div class="col-md-6 other-col lr-padding">
-          <input type="text" placeholder="Address" class="form-control" ng-model="address.locality">
-        </div>
-        <div class="col-md-6 other-col rightpadding addjob-left-padding">
-          <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
-        </div>
-        <div class="col-md-6 other-col lr-padding">
-          <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
-        </div>
-        <div class="col-md-6 other-col rightpadding addjob-left-padding">
-          <input type="text" placeholder="Phone" class="form-control" ng-model="address.phone">
-        </div>
-        <div class="col-md-12 other-col lr-padding" id="searchbox">
-        </div>
+        <form valdr-type="JobSite">
+          <div class="col-md-12 site-col lr-padding">
+            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
+          </div>
+          <div class="col-md-12 other-col lr-padding">
+            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
+          </div>
+          <div class="col-md-12 other-col lr-padding" id="searchbox">
+          </div>
+        </form>
+
       </div>
       <div class="row">
         <div class="col-md-12">

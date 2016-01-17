@@ -8,14 +8,16 @@ angular.module("HM_CartMD")
         productsQuantity :{}
       },
       delivery : {
-        selectedJobSite : {},
+        selectedJobSite : {}
       },
       duration : {deliveryPreference :null},
       payment : {paynow: false},
       review : {},
-      steps : angular.copy(ShoppingCartCnst.steps)
+      steps : angular.copy(ShoppingCartCnst.steps),
+      jobsites : []
     };
 
+    //$scope.jobsites = [];
     var deliveryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'delivery'; });
     var summaryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'summary'; });
     var durationStep = _.find($scope.cartData.steps, function(o) { return o.name == 'duration'; });

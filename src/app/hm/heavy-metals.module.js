@@ -41,9 +41,6 @@
 
     angular.extend(toastrConfig, {
       positionClass: 'toast-top-center',
-      maxOpened :1,
-      preventDuplicates: true,
-      preventOpenDuplicates: true,
       target: 'body'
 
     });

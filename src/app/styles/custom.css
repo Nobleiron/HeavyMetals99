@@ -386,3 +386,8 @@ html, body {
 .cart-duration-cont .select-date {
   width: 98%;
 }
+
+form input:after {
+  content:"*";
+  color:red;
+}

@@ -1,20 +1,20 @@
 <div class="row">
   <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding lr-padding-small">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
-      <div class="pickup-delivery active-pickup-delivery payment-option pay-now">
+      <div class="pickup-delivery payment-option pay-now" ng-class="{'active-pickup-delivery': cartData.payment.paynow == 'true'}">
         <input type="radio" name="get-option" ng-model="cartData.payment.paynow" value="true">
         <span class="go-back-text bold-font">Pay Now</span>
         <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last{}</p>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small">
-      <div class="pickup-delivery delivery-xs payment-option">
+      <div class="pickup-delivery delivery-xs payment-option" ng-class="{'active-pickup-delivery': cartData.payment.paynow == 'false'}">
         <input type="radio" name="get-option" ng-model="cartData.payment.paynow" value="false">
         <span class="go-back-text bold-font">Pay Later</span>
         <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last</p>
       </div>
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding nopadding-small credit-card-col">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding nopadding-small credit-card-col" ng-show="cartData.payment.paynow == 'true'">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
         <form action="#"
               name="cardForm"
@@ -50,7 +50,7 @@
   <div class="row nomargin">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reserve-generate-btn">
       <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn">Skip and Generate Quote</button>
-      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn">
+      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn" ui-sref="hm.reserveEquipmentSuccess()">
         <i class="fa fa-check"></i>&nbsp
         Confirm Reservation</button>
     </div>
