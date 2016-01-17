@@ -516,7 +516,7 @@ a:focus { color: #0099cc;
 .daily_price_check {
 		font-size: 16px; text-decoration: line-through;}
 .total_price_popup{font-size: 18px;}
-.terms{font-size: 12px; margin: 15px 0;}
+.terms{font-size: 13px; margin: 15px 0;}
 .total_price_cle{color: #ff5600;}
 .reserve_eqe_tit{font-size: 16px; color: #666666;}
 .reserve_eqe_num{display: block;}
@@ -726,8 +726,10 @@ a:focus { color: #0099cc;
 }
 
 .reserve-right .reserve_eqe_tit {
-	margin-bottom: 20px;
 	text-align: left;
+	margin-bottom: 0;
+	font-size: 21px;
+	font-weight: 300;
 }
 
 .reserve-right .daily_ul {
@@ -2359,6 +2361,10 @@ button:hover {
 	color: #009ddc !important;
 }
 
+.color-gray {
+	color: #666666 !important;
+}
+
 .bg-color-gray {
 	background-color: #fafafa !important;
 }
@@ -2371,8 +2377,6 @@ button:hover {
 .cart-summary-col {
 	background-color: #fafafa;
 	border-radius: 4px;
-	max-height: 400px;
-  overflow: auto;
 }
 
 .cart-summary-col img {
@@ -2395,6 +2399,7 @@ button:hover {
 
 .cart-summary-col .qty-summary {
 	margin-top: 2px;
+	margin-right: 10px;
 }
 
 .cart-summary-col .equipment-name {
@@ -2403,7 +2408,7 @@ button:hover {
 }
 
 .cart-summary-col .total {
-	margin: 5px 10px 5px 37px;
+	margin: 5px 0px 5px 0px;
 }
 
 .cart-summary-col ul li {
@@ -2500,7 +2505,7 @@ button:hover {
 }
 
 .loader-top {
-	margin-top: 15px !important;
+	margin-top: 30px !important;
 }
 
 td.quantity .error{display:none;color:#ff5600;}
@@ -2718,7 +2723,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .inner-scroll::-webkit-scrollbar{
-  width: 2px;
+  width: 8px;
 }
  
 /* Track */
@@ -2744,6 +2749,31 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .catalog-active.active i {
 	color: #009ddc;
+}
+
+.terms strong {
+	float: left;
+}
+
+.equipment-cancel {
+	margin-right: 10px;
+}
+
+.form-control input:focus + i {
+	color: #009ddc !important;
+}
+
+.icon-right {
+	margin-top: 3px;
+}
+
+.equipment-detail-need {
+	padding-top: 20px;
+}
+
+.cart-snap-col {
+	max-height: 400px;
+	overflow: auto;
 }
 
 

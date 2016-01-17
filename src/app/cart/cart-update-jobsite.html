@@ -2,7 +2,7 @@
 
   <!-- select and add jobsite part -->
   <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding lr-padding-small">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftpadding delivery-leftpadding-small">
       <ul class="nav nav-tabs gride-tab root-category">
         <li ng-class="{'active': !addNew}">
           <a tabtoggle data-toggle="tab" href="#existing-job" ng-click="addNew = false">Existing Job Sites</a>
@@ -13,7 +13,7 @@
       </ul>
     </div>
     <!-- update existing job -->
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active lr-padding" id="existing-job">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active leftpadding delivery-leftpadding-small" id="existing-job">
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites.length">
         <p class="desc-text"><i class="fa fa-exclamation-circle"></i> &nbsp No Jobsites Available</p>
@@ -22,10 +22,10 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites.length">
         <div class="form-control search-div">
-          <i class="fa fa-search"></i>
           <input type="text" placeholder="Search" ng-model="searchJosite">
+          <i class="fa fa-search pull-right icon-right"></i>
         </div>
-        <div class="job-lists bottommargin inner-scroll">
+        <div class="job-lists inner-scroll">
           <div ng-repeat="site in cartData.jobsites | filter:searchJosite">
             <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == cartData.delivery.selectedJobSite.SiteID">
             <span>{{site.Site_Name}}</span>
@@ -56,7 +56,8 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
           <input type="text" placeholder="First Name" ng-model="cartData.delivery.ContactInfo.firstName">
-          <i class="fa fa-user pull-right"></i>
+            <i class="fa fa-user pull-right"></i>
+          </input>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">

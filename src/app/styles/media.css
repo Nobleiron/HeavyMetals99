@@ -365,6 +365,9 @@
     padding-right: 15px !important;
     padding-top: 15px !important;
   }
+  .delivery-leftpadding-small {
+    padding-left: 15px !important;
+  }
 
 }
 
