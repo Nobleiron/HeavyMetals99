@@ -2504,7 +2504,7 @@ button:hover {
 }
 
 .loader-top {
-	margin-top: 15px !important;
+	margin-top: 30px !important;
 }
 
 td.quantity .error{display:none;color:#ff5600;}
