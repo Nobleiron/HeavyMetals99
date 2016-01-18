@@ -20,6 +20,10 @@ angular.module("HM_CartMD")
       },300)
     };
 
+    $scope.tabs = {
+      addNew : false
+    };
+
     $scope.address = { jobsite: '', phone: ''};
 
 
@@ -83,6 +87,7 @@ angular.module("HM_CartMD")
         .then(function(response){
           $scope.cartData.delivery.selectedJobSite = response.data.result.Jobsite_details;
           $scope.cartData.jobsites.unshift($scope.cartData.delivery.selectedJobSite);
+          $scope.tabs.addNew= false;
         })
         .catch(function(response){
           debugger

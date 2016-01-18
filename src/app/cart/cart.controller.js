@@ -74,6 +74,11 @@ angular.module("HM_CartMD")
         .then(function(response){
           if(response.data.result){
             $scope.cartData.jobsites =  response.data.result.Jobsite_details;
+            !angular.equals($scope.cartData.delivery.selectedJobSite, {}) && $scope.cartData.jobsites.forEach(function(j){
+
+              j.selected = j.SiteID == $scope.cartData.delivery.selectedJobSite.SiteID ? 1 : 0;
+              console.log(j.selected)
+            });
           }
         })
         .catch(function(){
