@@ -43,7 +43,7 @@
     $provide.decorator('$state', function($delegate, $rootScope) {
       $rootScope.$on('$stateChangeStart', function(event, state,toParams,fromState,fromParams) {
         $delegate.next = state;
-        $delegate.prev = fromState || {name : 'hm.search.results'};
+        $delegate.prev = fromState;
       });
       return $delegate;
     });

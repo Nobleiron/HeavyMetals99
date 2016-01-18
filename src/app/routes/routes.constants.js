@@ -197,7 +197,7 @@ angular.module("HM_RoutesMD")
               var canAccess = CartAccessRules.canAccess($state.next.name);
               if(!canAccess){
                 $timeout(function() {
-                  $state.go($state.prev.name || 'hm.search.results');
+                  $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
             }]
@@ -220,7 +220,7 @@ angular.module("HM_RoutesMD")
               var canAccess = CartAccessRules.canAccess($state.next.name);
               if(!canAccess){
                 $timeout(function() {
-                  $state.go($state.prev.name || 'hm.search.results');
+                  $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
             }]
@@ -240,7 +240,7 @@ angular.module("HM_RoutesMD")
               var canAccess = CartAccessRules.canAccess($state.next.name);
               if(!canAccess){
                 $timeout(function() {
-                  $state.go($state.prev.name || 'hm.search.results');
+                  $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
             }]
