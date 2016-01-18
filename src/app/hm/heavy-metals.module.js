@@ -26,7 +26,7 @@
       'valdr',
       'HM_RoutesMD',
       'HM_GlobalMD'])
-    .config(['localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
+    .config(['$provide','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
     .run(['$rootScope','$state', function($rootScope, $state){
       $rootScope.$state = $state;
       $rootScope.params = {};
@@ -37,7 +37,16 @@
 
 
 
-  function _configure(localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
+  function _configure($provide,localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
+
+
+    $provide.decorator('$state', function($delegate, $rootScope) {
+      $rootScope.$on('$stateChangeStart', function(event, state,toParams,fromState,fromParams) {
+        $delegate.next = state;
+        $delegate.prev = fromState || {name : 'hm.search.results'};
+      });
+      return $delegate;
+    });
 
     angular.extend(toastrConfig, {
       positionClass: 'toast-top-center',
@@ -47,6 +56,7 @@
     // Setup Local Storage Prefix
     localStorageServiceProvider
       .setPrefix('HM');
+
 
     //Setting Up validation Messages
     for(var constraints in ValidationConstraintsCnst){

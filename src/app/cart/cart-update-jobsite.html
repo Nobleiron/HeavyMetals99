@@ -44,13 +44,16 @@
         <i class="fa fa-phone-square zip marker"></i>
         <span class="marker">{{cartData.delivery.selectedJobSite.Phone}}</span>
         <br>
+        <span ng-show="cartData.delivery.ContactInfo.firstName">
         <i class="fa fa-user marker"></i>
   			<span class="marker">
-  				Name of Contact Person
+  				{{cartData.delivery.ContactInfo.firstName}} {{cartData.delivery.ContactInfo.lastName}}
   			</span>
+        </span>
+
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding lr-padding-small">
-        <h3 class="heading-text">Contact Information</h3>
+        <h3 class="heading-text">Jobsite Contact Information</h3>
         <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
@@ -131,7 +134,9 @@
       </div>
       <div class="row nomargin">
         <div class="col-md-12 site-col">
-          <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">Add Job Site</button>
+          <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">
+            <span btn-load-indicator="Cart:Jobsite:Save">Add Job Site</span>
+          </button>
         </div>
       </div>
     </div>
@@ -146,7 +151,7 @@
         <i class="fa fa fa-chevron-left"></i>&nbsp
         Back
       </button>
-      <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.cart.cartDuration">
+      <button class="btn all-btn sign_mybtn primary-btn autowidth" ng-disabled="!cartData.steps.delivery.complete" ui-sref="hm.cart.cartDuration">
         Next
         &nbsp<i class="fa fa fa-chevron-right"></i>
       </button>

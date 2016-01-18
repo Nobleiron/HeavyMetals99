@@ -4,6 +4,7 @@ angular.module("HM_CartMD")
 
 
     $scope.cartData = localStorageService.get('cartData') || {
+      cartVersion : ShoppingCartCnst.cartVersion,//Hack Need a better way here
       summary : {
         productsQuantity :{}
       },
@@ -17,15 +18,12 @@ angular.module("HM_CartMD")
       jobsites : []
     };
 
-    //$scope.jobsites = [];
-    var deliveryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'delivery'; });
-    var summaryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'summary'; });
-    var durationStep = _.find($scope.cartData.steps, function(o) { return o.name == 'duration'; });
-    var reviewStep = _.find($scope.cartData.steps, function(o) { return o.name == 'review'; });
+    var steps = $scope.cartData.steps;
 
 
     $scope.deleteProductFromCart = deleteProductFromCart;
 
+    $scope.jobsiteContactInfoEmpty = jobsiteContactInfoEmpty;
 
     _initialize();
 
@@ -38,33 +36,35 @@ angular.module("HM_CartMD")
         localStorageService.set('cartData',cartData);
       }, true);
 
+
       $scope.$on('Cart:Reviewed', function(){
-        if(summaryStep.complete && deliveryStep.complete && durationStep.complete){
-          reviewStep.complete = true;
+        if(steps.summary.complete && steps.delivery.complete && steps.duration.complete){
+          steps.review.complete = true;
         }
       });
+      console.log($state.current.name)
     }
 
 
     function validateStepsCompletion(){
       var cartData = $scope.cartData;
       if(!angular.equals(cartData.delivery.selectedJobSite, {})){
-        deliveryStep.complete = true;
+        steps.delivery.complete = true;
       } else{
-        deliveryStep.complete = false;
+        steps.delivery.complete = false;
       }
 
       if(!angular.equals(cartData.summary.productsQuantity, {})){
-        summaryStep.complete = true;
+        steps.summary.complete = true;
       }else{
-        summaryStep.complete = false;
+        steps.summary.complete = false;
       }
 
       if(cartData.duration.fromDt && cartData.duration.toDt && cartData.duration.deliveryPreference){
-        durationStep.complete = true;
+        steps.duration.complete = true;
       }else{
-        reviewStep.complete = false;
-        durationStep.complete = false;
+        steps.review.complete = false;
+        steps.duration.complete = false;
       }
 
     }
@@ -75,9 +75,7 @@ angular.module("HM_CartMD")
           if(response.data.result){
             $scope.cartData.jobsites =  response.data.result.Jobsite_details;
             !angular.equals($scope.cartData.delivery.selectedJobSite, {}) && $scope.cartData.jobsites.forEach(function(j){
-
               j.selected = j.SiteID == $scope.cartData.delivery.selectedJobSite.SiteID ? 1 : 0;
-              console.log(j.selected)
             });
           }
         })
@@ -101,6 +99,7 @@ angular.module("HM_CartMD")
                 $scope.cartData.summary.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
               }
               $scope.cartData.duration.span= humanizeDuration(moment($scope.cartData.duration.toDt).diff(moment($scope.cartData.duration.fromDt)));
+              steps.summary.complete = true;
             })
           }else{
             localStorageService.remove('cartData')
@@ -129,6 +128,19 @@ angular.module("HM_CartMD")
         });
     }
 
+
+    function jobsiteContactInfoEmpty(){
+      if(!$scope.cartData.delivery.ContactInfo) return false;
+      if($scope.cartData.delivery.ContactInfo){
+        var x = _.valuesIn($scope.cartData.delivery.ContactInfo).filter(function(y){
+          return y != ''
+        });
+
+        return !!x.length;
+      }
+      return false;
+
+    }
 
 
 

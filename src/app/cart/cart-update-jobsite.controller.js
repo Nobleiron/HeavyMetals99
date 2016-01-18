@@ -26,6 +26,7 @@ angular.module("HM_CartMD")
 
     $scope.address = { jobsite: '', phone: ''};
 
+    //$scope.deliveryStep = _.find($scope.cartData.steps, function(o) { return o.name == 'delivery'; });
 
 
     _initialize();
@@ -75,6 +76,7 @@ angular.module("HM_CartMD")
     }
 
     function addJobSite(){
+      $scope.$broadcast('Cart:Jobsite:Save:Start')
       RestSV
         .post( AddJobSiteCnst.add.url() ,{
           jobsite_name : $scope.address.jobsite,
@@ -90,9 +92,9 @@ angular.module("HM_CartMD")
           $scope.tabs.addNew= false;
         })
         .catch(function(response){
-          debugger
         })
         .finally(function(){
+          $scope.$broadcast('Cart:Jobsite:Save:End')
         })
     }
 

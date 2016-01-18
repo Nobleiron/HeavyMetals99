@@ -21,7 +21,39 @@ angular.module("HM_CartMD")
         return '/cart/applyPromocode'
       }
     },
-    steps : [
+    steps : {
+      summary : {
+        complete : false,
+        label : 'CART SUMMARY',
+        od :1,
+        path : 'hm.cart.details'
+      },
+      delivery : {
+        complete : false,
+        label : 'DELIVERY DETAILS',
+        od :2,
+        path : 'hm.cart.updateAddress'
+      },
+      duration : {
+        complete : false,
+        label : 'DURATION',
+        od :3,
+        path : 'hm.cart.cartDuration'
+      },
+      review : {
+        complete : false,
+        label : 'REVIEW ORDER',
+        od :4,
+        path : 'hm.cart.review'
+      },
+      payment : {
+        complete : false,
+        label : 'PAYMENT',
+        od :5,
+        path : 'hm.cart.payment'
+      }
+    },
+    steps1 : [
       {
         name : 'summary',
         label : 'CART SUMMARY',
@@ -52,5 +84,6 @@ angular.module("HM_CartMD")
         od :5,
         path : 'hm.cart.payment'
       }
-    ]
+    ],
+    cartVersion: '1453150183107'
   });

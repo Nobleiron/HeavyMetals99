@@ -16,12 +16,12 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding lr-padding-small">
             <ul class="progress-indicator custom-complex">
-              <li class="on-hover-pointer"  ng-repeat="step in cartData.steps" ng-class="{'completed': step.complete, 'pending': !step.complete}">
-                <a class="color-blue bold-font desc-text progress-a" ui-sref="{{step.path}}">
+              <li class="on-hover-pointer"  ng-repeat="(key, value) in cartData.steps" ng-class="{'completed': value.complete, 'pending': !value.complete}">
+                <a class="color-blue bold-font desc-text progress-a" ui-sref="{{value.path}}">
                       <span class="bubble">
                       </span>
-                  <i class="fa fa-check-circle color-blue" ng-if="step.complete"></i>&nbsp
-                  <span class="progress-span">{{step.name}}</span>
+                  <i class="fa fa-check-circle color-blue" ng-if="value.complete"></i>&nbsp
+                  <span class="progress-span" sttr="{{value | json}}">{{value.label}}</span>
                 </a>
               </li>
               <!--<li class="pending on-hover-pointer" ui-sref="hm.cart.updateAddress">-->

@@ -190,6 +190,17 @@ angular.module("HM_RoutesMD")
             "snapshot@hm.cart.cartDuration": {
               templateUrl: 'app/cart/cart-snapshot.html'
             }
+          },
+          resolve : {
+            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+
+              var canAccess = CartAccessRules.canAccess($state.next.name);
+              if(!canAccess){
+                $timeout(function() {
+                  $state.go($state.prev.name || 'hm.search.results');
+                });
+              }
+            }]
           }
 
         },
@@ -203,6 +214,16 @@ angular.module("HM_RoutesMD")
             "snapshot@hm.cart.payment": {
               templateUrl: 'app/cart/cart-snapshot.html'
             }
+          },
+          resolve : {
+            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+              var canAccess = CartAccessRules.canAccess($state.next.name);
+              if(!canAccess){
+                $timeout(function() {
+                  $state.go($state.prev.name || 'hm.search.results');
+                });
+              }
+            }]
           }
 
         },
@@ -213,6 +234,16 @@ angular.module("HM_RoutesMD")
               controller: 'HM_CartReviewCtrl',
               templateUrl: 'app/cart/cart-review.html'
             }
+          },
+          resolve : {
+            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+              var canAccess = CartAccessRules.canAccess($state.next.name);
+              if(!canAccess){
+                $timeout(function() {
+                  $state.go($state.prev.name || 'hm.search.results');
+                });
+              }
+            }]
           }
 
         },
