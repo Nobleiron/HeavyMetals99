@@ -18,6 +18,10 @@ angular.module("HM_CartMD")
       jobsites : []
     };
 
+    $scope.data =  {
+      cart : {}
+    };
+
     var steps = $scope.cartData.steps;
 
 
@@ -92,9 +96,9 @@ angular.module("HM_CartMD")
       RestSV.get(ShoppingCartCnst.details.url())
         .then(function(response){
           if(response.data.result){
-            $scope.cart = response.data.result.Cart_Content;
+            $scope.data.cart = response.data.result.Cart_Content;
 
-            $scope.cart && $scope.cart.Product && $scope.cart.Product.forEach(function(product){
+            $scope.data.cart && $scope.data.cart.Product && $scope.data.cart.Product.forEach(function(product){
               if(!$scope.cartData.summary.productsQuantity[product.Product_id]){
                 $scope.cartData.summary.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
               }
@@ -119,7 +123,7 @@ angular.module("HM_CartMD")
       RestSV.delete(ShoppingCartCnst.delete.url(),{
         data : {proid: id}})
         .then(function(response){
-          $scope.cart = response.data.result.Cart_Content;
+          $scope.data.cart = response.data.result.Cart_Content;
 
           toastr.info("Item removed from cart");
         })

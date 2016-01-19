@@ -14,7 +14,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="product in cart.Product">
+      <tr ng-repeat="product in data.cart.Product">
         <td class="vertically-middle cart-image-td">
           <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
         </td>
@@ -67,7 +67,7 @@
   </div>
   <!-- mobile shopping cart -->
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
-    <div class="cart-for-mobile" ng-repeat="product in cart.Product">
+    <div class="cart-for-mobile" ng-repeat="product in data.cart.Product">
       <div class="cart-image-div">
         <img ng-src="{{product.Product_image}}">
       </div>
@@ -123,19 +123,19 @@
     <div class="text-left total-price-padding">
       <h3 class="desc-text topmargin">
         <span>Sub-Total Rental:</span>
-        <span class="pull-right">${{cart.Sub_total}}</span>
+        <span class="pull-right">${{data.cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text topmargin" ng-repeat="(key, value) in cart.Charges">
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in data.cart.Charges">
         <span>{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
-      <h3 class="desc-text topmargin" ng-if="cart.Discount !='0.00'">
+      <h3 class="desc-text topmargin" ng-if="data.cart.Discount !='0.00'">
         <span>Discount:</span>
-        <span class="pull-right">{{cart.Discount}}</span>
+        <span class="pull-right">{{data.cart.Discount}}</span>
       </h3>
       <h3 class="desc-text bold-font topmargin">
         <label class="total">Total:</label>
-        <span class="total pull-right">${{cart.Grand_total}}</span>
+        <span class="total pull-right">${{data.cart.Grand_total}}</span>
       </h3>
     </div>
   </div>

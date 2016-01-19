@@ -20,7 +20,7 @@ angular.module("HM_CartMD")
           qty : cartData.qty
         })
           .then(function(response){
-            angular.merge($scope.cart,response.data.result.Cart_Content);
+            angular.merge($scope.data.cart,response.data.result.Cart_Content);
           })
           .finally(function(){
             cartData.updateInProgress = false;
@@ -37,7 +37,7 @@ angular.module("HM_CartMD")
         })
           .then(function(response){
             if(response.data.result){
-              $scope.cart = response.data.result.Cart_Content;
+              $scope.data.cart = response.data.result.Cart_Content;
             }else{
               toastr.error("Invalid Coupon Code");
             }

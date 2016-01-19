@@ -17,13 +17,13 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr ng-repeat="product in cart.Product">
+			<tr ng-repeat="product in data.cart.Product">
 				<td class="vertically-middle">
           <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
 				</td>
 				<td class="equipment-desc">
 					<h3>{{product.Product_name}}</h3>
-					<p class="desc-text">{{cartData.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
+					<p class="desc-text">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
 				</td>
 				<td class="vertically-middle">
 					<ul class="price-ul">
@@ -42,7 +42,7 @@
 					</ul>
 				</td>
 				<td class="quantity vertically-middle review-qty">
-					{{cartData.productsQuantity[product.Product_id].qty}}
+					{{cartData.summary.productsQuantity[product.Product_id].qty}}
 				</td>
 				<td class="vertically-middle pricing">${{product.Total_rate}}</td>
 			</tr>
@@ -55,11 +55,11 @@
       <div class="cart-image-div">
         <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
       </div>
-      <div class="equipment-desc" ng-repeat="product in cart.Product">
+      <div class="equipment-desc" ng-repeat="product in data.cart.Product">
         <h3>{{product.Product_name}}</h3>
-        <p class="desc-text nomargin">{{cartData.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
+        <p class="desc-text nomargin">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
         <p class="qty-head">Quantity
-        	<span class="pull-right color-blue">{{cartData.productsQuantity[product.Product_id].qty}}</span>
+        	<span class="pull-right color-blue">{{cartData.summary.productsQuantity[product.Product_id].qty}}</span>
         </p>
         <p class="sub-total">Sub-Total:
           <span class="pull-right color-blue">
@@ -149,19 +149,19 @@
     <div class="text-left total-price-padding">
       <h3 class="desc-text">
         <span>Sub-Total Rental:</span>
-        <span class="pull-right">${{cart.Sub_total}}</span>
+        <span class="pull-right">${{data.cart.Sub_total}}</span>
       </h3>
-      <h3 class="desc-text topmargin" ng-repeat="(key, value) in cart.Charges">
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in data.cart.Charges">
         <span>{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
-      <h3 class="desc-text topmargin" ng-if="cart.Discount !='0.00'">
+      <h3 class="desc-text topmargin" ng-if="data.cart.Discount !='0.00'">
         <span>Discount:</span>
-        <span class="pull-right">{{cart.Discount}}</span>
+        <span class="pull-right">{{data.cart.Discount}}</span>
       </h3>
       <h3 class="desc-text bold-font topmargin">
         <label>Total:</label>
-        <span class="pull-right">${{cart.Grand_total}}</span>
+        <span class="pull-right">${{data.cart.Grand_total}}</span>
       </h3>
     </div>
   </div>

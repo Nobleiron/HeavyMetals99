@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartDurationCtrl",['$scope','toastr',function( $scope,toastr){
+  .controller("HM_CartDurationCtrl",['$scope','HM_RestSV','toastr','HM_CartCnst',function( $scope,RestSV,toastr,CartCnst){
 
     $scope.deliveryTimeChange = deliveryTimeChange;
 
@@ -22,6 +22,19 @@ angular.module("HM_CartMD")
         }
         toastr.error(msg);
       }else{
+        RestSV.put(CartCnst.updateDuration.url(),{
+          start_date: moment($scope.cartData.duration.fromDt).format('MM-DD-YYYY'),
+          end_date : moment($scope.cartData.duration.toDt).format('MM-DD-YYYY')
+        })
+          .then(function(response){
+            $scope.data.cart = response.data.result.Cart_Content;
+          })
+          .catch(function(){
+            debugger
+          })
+          .finally(function(){
+            debugger
+          });
         $scope.cartData.duration.span= humanizeDuration(moment($scope.cartData.duration.toDt).diff(moment($scope.cartData.duration.fromDt)));
       }
     }
