@@ -57,6 +57,8 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                     // default picker view
                     scope.showPicker = scope.enableDate ? 'date' : 'time';
 
+
+                    //NobleIron - Customisation
                     scope.$on('Date:Picker:Change', function(e,changePicker){
                       $timeout(function(){
                         scope.showPicker = 'date';
@@ -64,6 +66,7 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                       },100);
 
                     });
+                  //NobleIron - Customisation
 
                     var isHtml5DateInput = false;
 
