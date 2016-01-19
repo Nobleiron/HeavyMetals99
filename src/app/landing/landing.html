@@ -349,9 +349,13 @@
 
           <input type="text" class="form-control search-head" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="query" name="query" ng-model="selectedProduct"
                  typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-                 typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-wait-ms="1000" typeahead-on-select="selectSearchedItem($item, $model, $label)">
+                 typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-wait-ms="500" typeahead-on-select="selectSearchedItem($item, $model, $label)"
+                 typeahead-loading="isLoading">
 
           <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+          <div class="container loading-top" ng-hide="!isLoading">
+            <load-indicator loading="isLoading"></load-indicator>
+          </div>
 
         </form>
 
