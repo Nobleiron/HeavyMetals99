@@ -27,8 +27,8 @@
         <!--<i class="fa fa-clock-o pull-right" ng-click="toTimeOpened= !toTimeOpened"></i>-->
       <!--</div>-->
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading leftpadding">
-      <h3 class="heading-text">{{cartData.duration.span}}<span class="desc-text"> (if returned by 3PM, wednesday)</span></h3>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading leftpadding" ng-show="cartData.duration.toDt && cartData.duration.fromDt">
+      <h3 class="heading-text">{{cartData.duration.span}}<span class="desc-text"> (if returned by <span >{{cartData.duration.toDt | amDateFormat:'HH:mmA, dddd'}}</span>)</span></h3>
       <p class="desc-text">You can keep it longer or shorter, but the price is based on this estimated duration.</p>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>

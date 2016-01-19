@@ -2,15 +2,6 @@
 angular.module("HM_EquipmentReserveMD")
   .controller("HM_EquipmentReserveCtrl",['$rootScope','$scope','$modalInstance','toastr','HM_RestSV','HM_EquipmentReserveCnst', function($rootScope, $scope, $modalInstance,toastr, RestSV, EquipmentReserveCnst ){
 
-
-      //$scope.valuationDate = new Date();
-      //$scope.valuationDatePickerIsOpen = false;
-      //
-      //$scope.valuationDatePickerOpen = function () {
-      //
-      //    $scope.valuationDatePickerIsOpen = true;
-      //};
-
     $scope.quantity = 1;
 
     $scope.equipmentReserve = equipmentReserve;

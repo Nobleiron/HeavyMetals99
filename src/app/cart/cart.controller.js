@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartCtrl",['$scope','$state','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $scope,$state,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
+  .controller("HM_CartCtrl",['$rootScope','$scope','$state','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $rootScope,$scope,$state,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
 
 
     $scope.cartData = localStorageService.get('cartData') || {
@@ -124,6 +124,7 @@ angular.module("HM_CartMD")
         data : {proid: id}})
         .then(function(response){
           $scope.data.cart = response.data.result.Cart_Content;
+          $rootScope.$broadcast("Cart:Updated", response.data.result.Cart_Quantity);
 
           toastr.info("Item removed from cart");
         })
