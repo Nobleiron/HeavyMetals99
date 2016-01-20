@@ -969,6 +969,16 @@
     padding-top: 25px;
   }
 
+  .header-xs .not-user-div {
+    padding: 0;
+    margin-left: 0;
+    vertical-align: baseline;
+  }
+
+  .header-xs .not-user-div a {
+    margin: 0 8px;
+  } 
+
 }
 
 @media screen and (max-width: 480px) {
