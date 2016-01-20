@@ -762,6 +762,10 @@
     border-bottom: 1px solid #ddd;
   }
 
+  .cart-for-mobile .cart-image-div img {
+    width: 100%;
+  }
+
   .cart-col .cart-image-div {
     min-height: 200px;
     text-align: center;
