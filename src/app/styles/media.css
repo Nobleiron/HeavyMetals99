@@ -797,7 +797,7 @@
   }
 
   .content-top {
-    padding-top: 182px;
+    padding-top: 100px;
   }
 
   .login-content-top {
@@ -963,6 +963,10 @@
   .header-img-small {
     width: 60px;
     margin-top: 10px;
+  }
+
+  .prelogin-header-btn {
+    padding-top: 25px;
   }
 
 }
