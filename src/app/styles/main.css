@@ -2777,8 +2777,15 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	overflow: auto;
 }
 
-.loading-top {
-	padding-top: 15px;
+.loading-search {
+	position: absolute;
+  color: #000;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.loading-time {
+	padding-left: 30px;
 }
 
 
