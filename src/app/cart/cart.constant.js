@@ -26,6 +26,11 @@ angular.module("HM_CartMD")
         return '/cart/date';
       }
     },
+    cartSubmit : {
+      url : function(){
+        return '/cart/submitcart';
+      }
+    },
     steps : {
       summary : {
         complete : false,

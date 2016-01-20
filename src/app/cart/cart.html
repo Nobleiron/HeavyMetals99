@@ -3,7 +3,7 @@
     <load-indicator loading="cartFetchInProgress" class="loader-top"></load-indicator>
     <div ng-show="!cartFetchInProgress">
       <!-- cart -->
-      <div ng-show="!angular.equals(data.cart,{})">
+      <div ng-show="data.cart">
         <!-- <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line manage_job_tit manage_job_tit_small shopping-cart-heading" ng-switch="$state.current.name">
             <span ng-switch-when="hm.cart.details">Shopping Cart</span>
@@ -65,7 +65,7 @@
 
       </div>
       <!-- empty cart -->
-      <div ng-show="angular.equals(data.cart,{})" class="pull-center">
+      <div ng-show="!data.cart" class="pull-center">
         <h3 class="heading-text cart-empty pull-center">
           Sorry! No Items in Cart.
         </h3>
