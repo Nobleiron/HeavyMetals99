@@ -352,10 +352,9 @@
                  typeahead-template-url="typeahead-item.html" typeahead-min-length="3" typeahead-wait-ms="500" typeahead-on-select="selectSearchedItem($item, $model, $label)"
                  typeahead-loading="isLoading">
 
-          <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
-          <div class="container loading-top" ng-hide="!isLoading">
-            <load-indicator loading="isLoading"></load-indicator>
-          </div>
+          <button class="btn btn-default my_search" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right" ng-show="!isLoading"></i>
+            <i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
+          </button>
 
         </form>
 
