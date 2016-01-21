@@ -88,7 +88,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_SearchResultCtrl'
         },
         'hm.reserveEquipmentSuccess' : {
-          url: '/cart/reserve-success',
+          url: '/{source:(?:quote|reservation)}/:id/success',
           templateUrl: 'app/equipment-reserve-success/equipment.reserve-success.html',
           controller: 'HM_EquipmentReserveSuccessCtrl'
         },

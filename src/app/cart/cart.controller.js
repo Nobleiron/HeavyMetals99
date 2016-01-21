@@ -19,8 +19,20 @@ angular.module("HM_CartMD")
     };
 
     $scope.data =  {
-      cart : null
+      cart : null,
+      card : {
+        cc_name : "tanmoy",
+        cc_number: "5105105105105100",
+        cc_cvv: "123",
+        cc_month : "07",
+        cc_year : "17"
+      }
     };
+
+
+
+
+
 
     var steps = $scope.cartData.steps;
 
@@ -163,26 +175,27 @@ angular.module("HM_CartMD")
     }
 
     function submitCart(){
-      RestSV.post(ShoppingCartCnst.cartSubmit.url(),{
-      is_pay : 'true',
-        cc_name : "tanmoy",
-        cc_number: "5105105105105100",
-        cc_cvv: "123",
-        cc_month : "07",
-        cc_year : "17",
-        email : "saneilnaik11@gmail.com",
-        address1: "Pune",
-        state : "Mah",
-        city: "Pune",
-        zip : "411015",
-        jobsite_id:$scope.cartData.delivery.selectedJobSite.SiteID
-      })
-        .then(function(response){
-debugger
-        })
-        .catch(function(error){
-debugger
-        });
+      $state.go('hm.reserveEquipmentSuccess',{source: 'quote',id: 2});
+//      RestSV.post(ShoppingCartCnst.cartSubmit.url(),{
+//        is_pay : 'true',
+//        cc_name : "tanmoy",
+//        cc_number: "5105105105105100",
+//        cc_cvv: "123",
+//        cc_month : "07",
+//        cc_year : "17",
+//        email : "saneilnaik11@gmail.com",
+//        address1: "Pune",
+//        state : "Mah",
+//        city: "Pune",
+//        zip : "411015",
+//        jobsite_id:$scope.cartData.delivery.selectedJobSite.SiteID
+//      })
+//        .then(function(response){
+//
+//        })
+//        .catch(function(error){
+//debugger
+//        });
     }
 
 
