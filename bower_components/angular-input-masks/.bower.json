@@ -1,6 +1,6 @@
 {
   "name": "angular-input-masks",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "homepage": "https://github.com/assisrafael/angular-input-masks",
   "authors": [
     "Igor Rafael <igor.rafael@gmail.com>"
@@ -25,11 +25,11 @@
     "test",
     "tests"
   ],
-  "_release": "2.1.0",
+  "_release": "2.1.1",
   "_resolution": {
     "type": "version",
-    "tag": "2.1.0",
-    "commit": "3309e547bb093a0b461f71e4215c1789e105ea0b"
+    "tag": "2.1.1",
+    "commit": "15cf461ee970a1dd2e3e099b105bddf2eec71360"
   },
   "_source": "git://github.com/assisrafael/bower-angular-input-masks.git",
   "_target": "~2.1.0",
