@@ -42,6 +42,20 @@
         <div id="card-container"></div>
       </div>
     </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot" ng-show="cartData.payment.paynow == 'true'"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col toppadding">
+      <h3 class="heading-text topmargin">Billing Address</h3>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider-bottom"></div>
+      <i class="fa fa-map-marker color-blue heading-text"></i>
+      <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
+      <br>
+      <p class="address2">{{cartData.delivery.selectedJobSite.Address1}}</p>
+      <p class="address2">{{cartData.delivery.selectedJobSite.Address2}}</p>
+      <p class="address2">{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+      <p class="zip">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
+      <i class="fa fa-phone-square color-blue heading-text"></i>
+      <span class="number">{{cartData.delivery.selectedJobSite.Phone}}</span>
+    </div>
   </div>
 
   <!-- cart summary part -->

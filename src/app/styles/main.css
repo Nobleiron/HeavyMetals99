@@ -2604,7 +2604,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .jobsite-details-col .address2 {
-	margin: 0 12px 5px;
+	margin: 0 12px;
 }
 
 .jobsite-details-col .zip {
