@@ -131,7 +131,8 @@ angular.module("HM_RoutesMD")
           controller: 'HM_QuotaNReservationsCtrl'
         },
         'hm.dashboard.quotesDetail' : {
-          url: '/quotes-detail',
+          url: '/quotes-detail/:id',
+          controller: 'HM_QuoteDetailsCtrl',
           templateUrl: 'app/quotes-detail/quotes-detail.html'
         },
         'hm.dashboard.myCatalogue' : {

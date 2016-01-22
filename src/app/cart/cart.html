@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding lr-padding-small">
             <ul class="progress-indicator custom-complex">
-              <li class="on-hover-pointer"  ng-repeat="(key, value) in cartData.steps" ng-class="{'completed': value.complete, 'pending': !value.complete}">
+              <li class="on-hover-pointer"  ng-repeat="(key, value) in cartData.steps" ng-class="{'completed': value.complete, 'pending': !value.complete}" ng-hide=" key == 'payment' && userObj && userObj.portal_login">
                 <a class="color-blue bold-font desc-text progress-a" ui-sref="{{value.path}}">
                       <span class="bubble">
                       </span>

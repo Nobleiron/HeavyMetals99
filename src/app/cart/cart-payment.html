@@ -26,12 +26,12 @@
               data-options="cardOptions"
               data-messages="cardMessages">
           <div class="card-detail">
-            <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" class="form-control" />
-            <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" class="form-control" />
+            <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="data.card.cc_number" class="form-control" />
+            <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="data.card.cc_name" class="form-control" />
           </div>
           <div class="form-input-div">
-            <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
-            <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+            <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="data.card.expiry" />
+            <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="data.card.cc_cvv" />
           </div>
           <div>
             <input type="button" class="btn all-btn sell-equ btn-right-margin" value="Clear" data-ng-click="clear()" />

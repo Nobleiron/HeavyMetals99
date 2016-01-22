@@ -1,6 +1,6 @@
 'use strict';
-angular.module("HM_EquipmentReserveSuccessMD")
-  .controller("HM_EquipmentReserveSuccessCtrl",['$scope','HM_RestSV','$stateParams','HM_EquipmentReserveSuccessCnst', function($scope,RestSV,$stateParams,EquipmentReserveSuccessCnst){
+angular.module("HM_QuoteDetailsMD")
+  .controller("HM_QuoteDetailsCtrl",['$scope','HM_RestSV','$stateParams','HM_EquipmentReserveSuccessCnst', function($scope,RestSV,$stateParams,EquipmentReserveSuccessCnst){
 
     $scope.flags = {
       orderFetched : false
@@ -21,3 +21,6 @@ angular.module("HM_EquipmentReserveSuccessMD")
       })
 
   }]);
+
+
+

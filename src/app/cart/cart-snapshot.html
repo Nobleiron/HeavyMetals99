@@ -8,7 +8,7 @@
         <img ng-src="{{product.Product_image}}" err-src/>
         <p class="bold-font go-back-text equipment-name color-blue">{{product.Product_name}}</p>
         <!-- <input type="checkbox" class="allow-checkbox" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution" onclick="return false;"><span class="desc-text allow">Allow Substitution</span> -->
-        <span class="desc-text allow">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Allow Substitution' : 'No Substitution Permitted' }}</span>
+        <span class="desc-text allow">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</span>
         <span class="desc-text pull-right qty-summary">Qty: {{cartData.summary.productsQuantity[product.Product_id].qty}}</span>
         <p class="desc-text bold-font total">
           ${{product.Total_rate}}

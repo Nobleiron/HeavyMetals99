@@ -3,13 +3,16 @@ angular.module("HM_CartMD")
   .controller("HM_CartCtrl",['$rootScope','$scope','$state','toastr','localStorageService','HM_RestSV', 'HM_CartCnst','HM_JobSitesCnst', function( $rootScope,$scope,$state,toastr,localStorageService,RestSV,ShoppingCartCnst,JobSitesCnst ){
 
 
+
+
     $scope.cartData = localStorageService.get('cartData') || {
       cartVersion : ShoppingCartCnst.cartVersion,//Hack Need a better way here
       summary : {
         productsQuantity :{}
       },
       delivery : {
-        selectedJobSite : {}
+        selectedJobSite : {},
+        contactInfo : {}
       },
       duration : {deliveryPreference :null},
       payment : {paynow: false},
@@ -25,16 +28,23 @@ angular.module("HM_CartMD")
         cc_number: "5105105105105100",
         cc_cvv: "123",
         cc_month : "07",
-        cc_year : "17"
+        cc_year : "17",
+        expiry : "11 / 1111"
       }
     };
 
-
-
-
-
+    var normalizeCartDataToSubmit = {
+      is_pay : $scope.cartData.payment.paynow+''
+    };
 
     var steps = $scope.cartData.steps;
+
+
+
+    $scope.userObj = localStorageService.get("userObj");
+
+
+
 
 
     $scope.deleteProductFromCart = deleteProductFromCart;
@@ -151,9 +161,9 @@ angular.module("HM_CartMD")
 
 
     function jobsiteContactInfoEmpty(){
-      if(!$scope.cartData.delivery.ContactInfo) return false;
-      if($scope.cartData.delivery.ContactInfo){
-        var x = _.valuesIn($scope.cartData.delivery.ContactInfo).filter(function(y){
+      if(!$scope.cartData.delivery.contactInfo) return false;
+      if($scope.cartData.delivery.contactInfo){
+        var x = _.valuesIn($scope.cartData.delivery.contactInfo).filter(function(y){
           return y != ''
         });
 
@@ -165,37 +175,61 @@ angular.module("HM_CartMD")
 
 
     function reserve(){
-      submitCart();
+      _normalizePaymentDetails();
+      _normalizeJobSiteDetails();
+      _normalizeContactDetails();
+      normalizeCartDataToSubmit.delivery_status = 'R';
+      _submitCart();
+    }
+
+
+    function _normalizePaymentDetails(){
+      if($scope.cartData.payment.paynow == 'true'){
+        angular.extend( normalizeCartDataToSubmit, $scope.data.card );
+        var expiry = normalizeCartDataToSubmit.expiry.split(" / ");
+        normalizeCartDataToSubmit.cc_month = expiry[0];
+        normalizeCartDataToSubmit.cc_year = expiry[1].slice(-2);
+
+      }
+
+    }
+
+
+    function _normalizeContactDetails(){
+      normalizeCartDataToSubmit.contact_name = $scope.cartData.delivery.contactInfo.firstName  || null;
+      normalizeCartDataToSubmit.contact_name  = normalizeCartDataToSubmit.contact_name || '';
+      $scope.cartData.delivery.contactInfo.lastName && (normalizeCartDataToSubmit.contact_name = normalizeCartDataToSubmit.contact_name + ' ' + $scope.cartData.delivery.contactInfo.lastName);
+      normalizeCartDataToSubmit.email = $scope.cartData.delivery.contactInfo.email || null;
+      normalizeCartDataToSubmit.contact_phone = $scope.cartData.delivery.contactInfo.phone || null;
+    }
+
+
+    function _normalizeJobSiteDetails(){
+      normalizeCartDataToSubmit.jobsite_id = $scope.cartData.delivery.selectedJobSite.SiteID;
+      normalizeCartDataToSubmit.is_delivery = ($scope.cartData.duration.deliveryPreference == 'self') + '';
     }
 
     function generateQuote(){
-
-
-      submitCart();
+      _normalizeJobSiteDetails();
+      _normalizeContactDetails();
+       normalizeCartDataToSubmit.delivery_status = 'Q';
+      _submitCart();
     }
 
-    function submitCart(){
-      $state.go('hm.reserveEquipmentSuccess',{source: 'quote',id: 2});
-//      RestSV.post(ShoppingCartCnst.cartSubmit.url(),{
-//        is_pay : 'true',
-//        cc_name : "tanmoy",
-//        cc_number: "5105105105105100",
-//        cc_cvv: "123",
-//        cc_month : "07",
-//        cc_year : "17",
-//        email : "saneilnaik11@gmail.com",
-//        address1: "Pune",
-//        state : "Mah",
-//        city: "Pune",
-//        zip : "411015",
-//        jobsite_id:$scope.cartData.delivery.selectedJobSite.SiteID
-//      })
-//        .then(function(response){
-//
-//        })
-//        .catch(function(error){
-//debugger
-//        });
+    function _submitCart(){
+      RestSV.post(ShoppingCartCnst.cartSubmit.url(),normalizeCartDataToSubmit)
+        .then(function(response){
+          localStorageService.remove("cartData");
+          if(normalizeCartDataToSubmit.delivery_status == 'R'){
+            $state.go('hm.reserveEquipmentSuccess',{source: 'reservation',id: response.data.result.Order[0].Order_id});
+          }else{
+            $state.go('hm.dashboard.quotesDetail',{id: response.data.result.Order[0].Order_id});
+          }
+
+        })
+        .catch(function(error){
+          toastr.error('Failed to Submit Cart');
+        });
     }
 
 

@@ -40,13 +40,13 @@
   function _configure($provide,localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
 
 
-    $provide.decorator('$state', function($delegate, $rootScope) {
+    $provide.decorator('$state', ['$delegate', '$rootScope',function($delegate, $rootScope) {
       $rootScope.$on('$stateChangeStart', function(event, state,toParams,fromState,fromParams) {
         $delegate.next = state;
         $delegate.prev = fromState;
       });
       return $delegate;
-    });
+    }]);
 
     angular.extend(toastrConfig, {
       positionClass: 'toast-top-center',

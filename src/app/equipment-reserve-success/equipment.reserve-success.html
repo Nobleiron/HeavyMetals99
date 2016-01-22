@@ -2,6 +2,10 @@
   <!-- START  Main Content -->
   <article class="main-cantain">
     <div class="container">
+      <load-indicator loading="!flags.orderFetched"></load-indicator>
+      <div ng-if="flags.orderFetched">
+
+
       <!-- START  Request Confirmation -->
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 sell-main-part">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 req_job_tit nopadding reserve-success-heading req-confirm heading-text">Request Confirmation</div>
@@ -41,17 +45,17 @@
             </tr>
             <tr>
               <td class="req_tabal_lf desc-text bold-font">Job Site Address:   </td>
-              <td class="desc-text">353 Third Floor Avenue</td>
+              <td class="desc-text">{{order.Jobsite.Site_Name}} {{order.Jobsite.Address1}}</td>
 
             </tr>
             <tr>
               <td class="req_tabal_lf desc-text bold-font">City:  </td>
-              <td class="desc-text">Washington DC Area</td>
+              <td class="desc-text">{{order.Jobsite.City}}</td>
 
             </tr>
             <tr>
               <td class="req_tabal_lf desc-text bold-font">ZIP Code:  </td>
-              <td class="desc-text">23308</td>
+              <td class="desc-text">{{order.Jobsite.Postal}}</td>
 
             </tr>
             </tbody>
@@ -60,7 +64,7 @@
           <h3 class="req_job_tit reserve-success-heading heading-text">Payments</h3>
           <p class="comferm_email_tex reserve-success-heading desc-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.{{order| json}}
           </p>
           <p class="theme_clr reserve-success-heading desc-text">
             Payment is made by E-check (ACH)
@@ -116,7 +120,7 @@
         </div>
         <!-- End  Why Sell with us -->
       </div>
-
+      </div>
 
     </div>
   </article>

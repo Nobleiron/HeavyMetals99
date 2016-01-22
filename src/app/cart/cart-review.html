@@ -102,19 +102,19 @@
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 nopadding person-details">
 				<i class="fa fa-user color-blue heading-text"></i>
 	  		<span>
-	  			{{cartData.delivery.ContactInfo.firstName}}&nbsp;{{cartData.delivery.ContactInfo.lastName}}
+	  			{{cartData.delivery.contactInfo.firstName}}&nbsp;{{cartData.delivery.contactInfo.lastName}}
 	  		</span>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 nopadding person-details">
 				<i class="fa fa-envelope-o color-blue heading-text"></i>
 	  		<span>
-	  			{{cartData.delivery.ContactInfo.email}}
+	  			{{cartData.delivery.contactInfo.email}}
 	  		</span>
 			</div>
 			<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12 nopadding person-details">
 				<i class="fa fa-phone-square color-blue heading-text"></i>
 	  		<span>
-	  			{{cartData.delivery.ContactInfo.phone}}
+	  			{{cartData.delivery.contactInfo.phone}}
 	  		</span>
 			</div>
 		</div>
@@ -177,9 +177,10 @@
 			<i class="fa fa fa-chevron-left"></i>&nbsp
 			Back
 		</button>
-		<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.cart.payment">
+		<button ng-hide="userObj && userObj.portal_login" class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.cart.payment">
 			Next
 			&nbsp<i class="fa fa fa-chevron-right"></i>
 		</button>
+    <button ng-hide="userObj && !userObj.portal_login" class="btn sign_mybtn all-btn primary-btn autowidth" ng-click="generateQuote()">Generate Quote</button>
 	</div>
 </div>
