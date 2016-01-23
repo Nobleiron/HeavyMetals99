@@ -350,8 +350,6 @@
     padding-right: 15px !important;
   }
 
-
-
   .leftpadding-small {
     padding-left: 0 !important
   }
@@ -365,9 +363,20 @@
     padding-right: 15px !important;
     padding-top: 15px !important;
   }
+
   .delivery-leftpadding-small {
     padding-left: 15px !important;
   }
+
+  .job-leftpadding-small {
+    padding-left: 15px !important;
+  }
+
+  .profile-setting .portal-creden {
+    margin-top: 0px !important;
+  }
+
+
 }
 
 @media screen and (max-width: 600px) {
@@ -900,7 +909,7 @@
     width: 80%;
   }
 
-  .portal-setting .form-control {
+  .profile-setting .form-control {
     margin-top: 10px;
   }
 
@@ -977,7 +986,11 @@
 
   .header-xs .not-user-div a {
     margin: 0 8px;
-  } 
+  }
+  
+  .profile-setting .portal-creden {
+    margin-top: 20px;
+  }
 
 }
 
