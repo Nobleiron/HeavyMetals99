@@ -126,12 +126,12 @@ angular.module("HM_RoutesMD")
         //   controller: 'HM_RequestsCtrl'
         // },
         'hm.dashboard.quotaNReservations' : {
-          url: '/quota-n-reservations',
+          url: '/quotes',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
           controller: 'HM_QuotaNReservationsCtrl'
         },
         'hm.dashboard.quotesDetail' : {
-          url: '/quotes-detail/:id',
+          url: '/quotes/:id',
           controller: 'HM_QuoteDetailsCtrl',
           templateUrl: 'app/quotes-detail/quotes-detail.html'
         },

@@ -189,7 +189,10 @@ angular.module("HM_CartMD")
         var expiry = normalizeCartDataToSubmit.expiry.split(" / ");
         normalizeCartDataToSubmit.cc_month = expiry[0];
         normalizeCartDataToSubmit.cc_year = expiry[1].slice(-2);
-
+        normalizeCartDataToSubmit.address1 = 'xxx';
+        normalizeCartDataToSubmit.city = 'xxx';
+        normalizeCartDataToSubmit.state = 'xxx';
+        normalizeCartDataToSubmit.zip = '123456';
       }
 
     }

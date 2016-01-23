@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_OrderHistoryMD")
-  .controller("HM_OrderHistoryCtrl",['$scope', function($scope){
+  .controller("HM_OrderHistoryCtrl",['$scope','HM_RestSV','HM_QuotaNReservationsCnst', function($scope,RestSV,QuotaCnst){
 
     $scope.oneAtATime = true;
 
@@ -29,6 +29,28 @@ angular.module("HM_OrderHistoryMD")
       order.toggleOpened = !order.toggleOpened;
 
     };
+
+
+    $scope.flags = {
+      ordersFetched : false
+    };
+    RestSV
+      .get(QuotaCnst.list.url(),{
+        category : 'rent'
+      })
+      .then(function(response){
+        if(response.data.result){
+          $scope.orders = response.data.result.order_list;
+
+          $scope.orders.forEach(function(order){
+            order.toggleOpened = false;
+          })
+        }else{
+          console.log("Err", response)
+        }
+
+        $scope.flags.ordersFetched = true;
+      });
 
 
   }]);
