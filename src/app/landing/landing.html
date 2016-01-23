@@ -374,7 +374,7 @@
 		</div>
 		<div class="container" ng-show="displayCategories">
 			<!-- START  Product Lift 1 -->
-			<div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories | limitTo:6">
+			<div class="col-lg-2 col-md-2 col-sm-6 lift_part" ng-repeat="category in displayCategories">
 				<div class="col-lg-12 col-md-12 col-sm-12 main_box nopadding on-hover-pointer" ui-sref="hm.search.results({category_id : category.Id })">
 
 					<div class="lift_pic col-lg-12 col-sm-12 nopadding"><img ng-src="{{category.Image_path}}" alt="" class="fullheight"></div>

@@ -142,7 +142,10 @@ a:focus { color: #0099cc;
 .about_main h4{color: #e1e1e1; font-size: 18px; margin: 10px 0 20px 0;}
 .sell-equ{ border: solid 1px #009ddc; font-weight: 400;
 	background: #ffffff; padding: 6px 20px;color: #009ddc;}
-.lift_part{padding: 0 10px 0 10px;}
+.lift_part{
+  padding: 0 10px 0 10px;
+  margin-bottom: 20px;
+}
 .lift_part:hover{color: #0099cc;}
 .lift_part:first-child{padding: 0 10px 0 0;}
 .lift_part:last-child{padding: 0 0 0 10px;}
@@ -2726,22 +2729,22 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 .inner-scroll::-webkit-scrollbar{
   width: 8px;
 }
- 
+
 /* Track */
 .inner-scroll::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
-  box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 .inner-scroll::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: rgba(0,0,0,0.1); 
+  background: rgba(0,0,0,0.1);
   -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
-  box-shadow: inset 0 0 1px rgba(0,0,0,0.1); 
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
 }
 
 .icon-text {
