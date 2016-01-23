@@ -1,7 +1,64 @@
 <div class="row">
 
-  <!-- select and add jobsite part -->
-  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding">
+  <!-- guest user -->
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding" ng-if="!userObj">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane leftpadding job-leftpadding-small">
+      <div class="row fields-row">
+        <form valdr-type="JobSite">
+          <div class="col-md-12 site-col lr-padding">
+            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
+          </div>
+          <div class="col-md-12 other-col lr-padding">
+            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
+          </div>
+          <div class="col-md-12 other-col lr-padding" id="searchbox">
+          </div>
+        </form>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <script type="text/ng-template" id="searchbox.tpl.html">
+            <input type="text" class="form-control" placeholder="Search Location"/>
+          </script>
+          <div class="jobsite-lookup" ng-if="showMap" >
+            <ui-gmap-google-map
+              center="map.center"
+              zoom="map.zoom"
+              options="map.options"
+              pan="true"
+              refresh="showMap"
+              >
+              <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
+                                  events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+            </ui-gmap-google-map>
+          </div>
+        </div>
+      </div>
+      <div class="row nomargin">
+        <div class="col-md-12 leftpadding">
+          <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">
+            <span btn-load-indicator="Cart:Jobsite:Save">Add Job Site</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- registered user select and add jobsite part -->
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding" ng-if="userObj">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftpadding delivery-leftpadding-small">
       <ul class="nav nav-tabs gride-tab root-category">
         <li ng-class="{'active': !tabs.addNew}">
@@ -50,7 +107,6 @@
   				{{cartData.delivery.contactInfo.firstName}} {{cartData.delivery.contactInfo.lastName}}
   			</span>
         </span>
-
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding lr-padding-small">
         <h3 class="heading-text">Jobsite Contact Information</h3>
@@ -60,7 +116,6 @@
         <div class="form-control search-div">
           <input type="text" placeholder="First Name" ng-model="cartData.delivery.contactInfo.firstName">
             <i class="fa fa-user pull-right"></i>
-          </input>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">

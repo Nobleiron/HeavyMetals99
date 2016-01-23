@@ -2788,6 +2788,15 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	padding-left: 30px;
 }
 
+.cart-progress {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.profile-setting .portal-creden {
+	margin-top: 0;
+}
+
 
 
 
