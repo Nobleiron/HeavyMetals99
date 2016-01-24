@@ -11,6 +11,11 @@ angular.module('HM_LandingMD')
 
     $scope.toggleRentOrBuy = toggleRentOrBuy;
 
+
+    $scope.closeThis = function(){
+      console.log("Closethis called")
+    };
+
     _initialize();
 
     function selectSearchedItem(product){

@@ -19,6 +19,7 @@
       'angularMoment',
       'ngSanitize',
       'infinite-scroll',
+      'angular-click-outside',
       'toastr',
       'LocalStorageModule',
       'HM_RequestHeadersINT',
@@ -27,12 +28,17 @@
       'HM_RoutesMD',
       'HM_GlobalMD'])
     .config(['$provide','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
-    .run(['$rootScope','$state', function($rootScope, $state){
+    .run(['$rootScope','$state','HM_RestSV','localStorageService', function($rootScope, $state, RestSV, localStorageService){
       $rootScope.$state = $state;
       $rootScope.params = {};
       $rootScope.$on('$stateChangeSuccess', function() {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
       });
+
+      $rootScope.userObj = localStorageService.get('userObj');
+      if(!$rootScope.userObj){
+        RestSV.get()
+      }
     }]);
 
 

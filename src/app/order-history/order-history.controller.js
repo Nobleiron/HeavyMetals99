@@ -36,7 +36,8 @@ angular.module("HM_OrderHistoryMD")
     };
     RestSV
       .get(QuotaCnst.list.url(),{
-        category : 'rent'
+        category : 'rent',
+        order_type : 'R'
       })
       .then(function(response){
         if(response.data.result){

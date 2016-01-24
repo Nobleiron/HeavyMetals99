@@ -8,13 +8,17 @@
         <hr class="order-hr">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc nopadding-xs">
+        <load-indicator loading="!flags.ordersFetched"></load-indicator>
+        <div ng-show="flags.ordersFetched">
+
+
         <!-- web accordion -->
         <uib-accordion close-others="oneAtATime"  class="visible-lg visible-md visible-sm">
           <uib-accordion-group ng-repeat="order in orders" class="order-history-accordion">
             <uib-accordion-heading>
               <p>
-                {{order.orderNo}} | Rented for {{order.RentedForDays}} Days 
-                <span class="total_order_d desc-text">Order Total: ${{order.totalAmount}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
+                {{order.orderNo}} | Rented for {{order.RentedForDays}} Days
+                <span class="total_order_d desc-text">Order Total: ${{order.Order_total}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
               </p>
             </uib-accordion-heading>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
@@ -33,7 +37,7 @@
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
+                        <h5 class="order_his_title desc-text">Order Total: ${{order.Order_total}}</h5>
                       </td>
                       <td class="vertically-middle text-right topborder">
                         <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
@@ -46,7 +50,7 @@
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
+                        <h5 class="order_his_title desc-text">Order Total: ${{order.Order_total}}</h5>
                       </td>
                       <td class="vertically-middle text-right">
                         <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
@@ -59,7 +63,7 @@
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
+                        <h5 class="order_his_title desc-text">Order Total: ${{order.Order_total}}</h5>
                       </td>
                       <td class="vertically-middle text-right">
                         <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
@@ -72,7 +76,7 @@
                         <h3 class="gas_title heading-text nomargin">{{order.title}}</h3>
                         <p class="nomargin">{{order.orderNo}}</p>
                         <h4 class="rent_title desc-text">Rented for {{order.RentedForDays}} Days</h4>
-                        <h5 class="order_his_title desc-text">Order Total: ${{order.totalAmount}}</h5>
+                        <h5 class="order_his_title desc-text">Order Total: ${{order.Order_total}}</h5>
                       </td>
                       <td class="vertically-middle text-right">
                         <button type="button" class="btn print_btn all-btn primary-btn sign_mybtn autowidth reserve-success-btn">Track Equipment</button>
@@ -90,7 +94,7 @@
             <uib-accordion-heading>
               <p>
                 {{order.orderNo}}
-                <span class="total_order_d desc-text">Order Total: ${{order.totalAmount}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
+                <span class="total_order_d desc-text">Order Total: ${{order.Order_total}}<i class="fa fa-angle-down fa-2x down_arrow_accordian heading-text"></i></span>
               </p>
             </uib-accordion-heading>
             <div class="col-xs-12 nopadding orders-small">
@@ -146,6 +150,7 @@
             </div>
           </uib-accordion-group>
         </uib-accordion>
+        </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sell-main-part">
 

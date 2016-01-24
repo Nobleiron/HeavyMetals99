@@ -2,143 +2,144 @@
 <!-- START  header -->
 
 <header class="head_without_index">
-	<div class="container">
-		<!-- START  logo -->
-		<div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 nopadding logo-center">
-			<a ng-href="/#/">  <img src="assets/images/logo.png" alt="" class="header-img-small"></a>
-		</div>
-		<!-- END  logo -->
-		<!-- START  Search box -->
+  <div class="container">
+    <!-- START  logo -->
+    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 nopadding logo-center">
+      <a ng-href="/#/">  <img src="assets/images/logo.png" alt="" class="header-img-small"></a>
+    </div>
+    <!-- END  logo -->
+    <!-- START  Search box -->
 
 
-		<!-- mobile-header -->
-		<!-- <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12 my_alc nopadding hidden-lg hidden-md header-prof-part">
-				<div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
-					<button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
-						<i class="fa fa-caret-down color-blue heading-text"></i>
-					</button>
-					<ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu" aria-labelledby="single-button">
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
-						<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
-						<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
-						<li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
-					</ul>
-				</div>
+    <!-- mobile-header -->
+    <!-- <div class="col-lg-4 col-md-4 col-sm-10 col-xs-12 my_alc nopadding hidden-lg hidden-md header-prof-part">
+        <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
+          <button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+            <i class="fa fa-caret-down color-blue heading-text"></i>
+          </button>
+          <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu" aria-labelledby="single-button">
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+            <li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+          </ul>
+        </div>
 
-				<div class="cart_menu" ng-if="userObj">
-					<ul>
-						<li>
-							<a href="/#/dashboard" class="marker">
-								<i class="fa fa-tachometer fa-2x marker"></i>
-							</a>
-						</li>
-						<li>
-							<a ui-sref="hm.cart.details" class="marker">
-								<i class="fa fa-shopping-cart fa-2x marker"></i>
-								<span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div ng-if="!userObj" class="not-user-div cart_menu">
-					<a href="#/login" class="help-link">Login</a>
-					<a href="#/register" class="help-link">Register</a>
-					<a ui-sref="hm.cart.details" class="marker">
-					<i class="fa fa-shopping-cart fa-2x marker"></i></a>
-					<span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
-				</div>
-		</div> -->
-
-
-
-
-		<div class="col-lg-7 col-md-7 col-sm-10 col-xs-9 nopadding">
-
-				<form class="navbar-form my-search-nav header-form-small" role="search">
-
-					<input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-change="showAutocomplete = true" ng-model="selectedProduct"
-								 typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-								 typeahead-on-select="selectSearchedItem($item, $model, $label)"
-								 typeahead-template-url="typeahead-item.html">
-
-					<button class="btn btn-default my_search my-search-header hidden-xs hidden-sm" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
-					<div class="dont-see-div hidden-xs hidden-sm">
-						<a href="/#/help" class="help-link">Don't see what you need?</a>
-						<div class="btn-group drop-btn profile-dropdown user-div visible-xs visible-sm" dropdown>
-							<a class="help-link nomargin nopadding" href="#/FAQ">About
-							</a>
-					</div>
-					</div>
-				</form>
-		</div>
-
-
-		<!-- END  Search box -->
+        <div class="cart_menu" ng-if="userObj">
+          <ul>
+            <li>
+              <a href="/#/dashboard" class="marker">
+                <i class="fa fa-tachometer fa-2x marker"></i>
+              </a>
+            </li>
+            <li>
+              <a ui-sref="hm.cart.details" class="marker">
+                <i class="fa fa-shopping-cart fa-2x marker"></i>
+                <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div ng-if="!userObj" class="not-user-div cart_menu">
+          <a href="#/login" class="help-link">Login</a>
+          <a href="#/register" class="help-link">Register</a>
+          <a ui-sref="hm.cart.details" class="marker">
+          <i class="fa fa-shopping-cart fa-2x marker"></i></a>
+          <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+        </div>
+    </div> -->
 
 
 
-		<!-- web-header -->
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 my_alc nopadding header-prof-part header-xs">
-				<div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
-					<button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
-						<i class="fa fa-caret-down color-blue heading-text"></i>
-					</button>
-					<ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu" aria-labelledby="single-button">
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
-						<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
-						<!-- <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">My Profile</a></li> -->
-						<li role="presentation" class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/portal-access">Get Portal Access</a></li>
-						<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
-						<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
-						<li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
-					</ul>
-				</div>
 
-				<div class="cart_menu" ng-if="userObj">
-					<ul>
-						<li>
-							<a ui-sref="hm.dashboard.main" class="marker">
-								<i class="fa fa-tachometer fa-2x marker"></i>
-							</a>
-						</li>
-						<li>
-							<a ui-sref="hm.cart.details" class="marker">
-								<i class="fa fa-shopping-cart fa-2x marker"></i>
-								<span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-8 nopadding">
 
-				<div class="btn-group drop-btn user-div">
-						<a href="#/FAQ" class="btn invoice-no prof-btn about-caret">About</a>
-				</div>
-				<!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
-					<div>
-						<div class="btn-group" uib-dropdown is-open="status.isopen">
-						<button id="single-button" type="button" class="btn btn-mini my-alc-btn nopadding prof-btn" uib-dropdown-toggle ng-disabled="disabled">
-						<img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
-						<span class="caret"></span>
-						</button>
-						<ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
-						<li role="menuitem"><a ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
-						<li role="menuitem"><a tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
-						<li role="menuitem"><a tabindex="-1" href="/#/logout">Logout</a></li>
-						</ul>
-						</div>
-					</div>
-				</div> -->
-				<div ng-if="!userObj" class="not-user-div cart_menu">
-					<a href="#/login" class="help-link">Login</a>
-					<a href="#/register" class="help-link">Register</a>
-					<a ui-sref="hm.cart.details" class="marker">
-					<i class="fa fa-shopping-cart fa-2x marker"></i></a>
-					<span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
-				</div>
-		</div>
-	</div>
+        <form class="navbar-form my-search-nav header-form-small" role="search">
+
+          <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-change="showAutocomplete = true" ng-model="selectedProduct"
+                 typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+                 typeahead-on-select="selectSearchedItem($item, $model, $label)"
+                 typeahead-template-url="typeahead-item.html">
+
+          <button class="btn btn-default my_search my-search-header hidden-xs hidden-sm" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+          <div class="dont-see-div hidden-xs hidden-sm">
+            <a href="/#/help" class="help-link">Don't see what you need?</a>
+            <div class="btn-group drop-btn profile-dropdown user-div visible-xs visible-sm" dropdown>
+              <a class="help-link nomargin nopadding" href="#/FAQ">About
+              </a>
+          </div>
+          </div>
+        </form>
+    </div>
+
+
+    <!-- END  Search box -->
+
+
+
+    <!-- web-header -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 my_alc nopadding header-prof-part header-xs">
+        <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
+          <button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+            <i class="fa fa-caret-down color-blue heading-text"></i>
+          </button>
+          <ul class="dropdown-menu list-group user-list-group arrow_box"  role="menu" aria-labelledby="single-button">
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
+            <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#">Purchases</a></li>
+            <li role="presentation"class="list-group-item noborder" ng-if="!userObj.portal_login"><a class="nopadding" role="menuitem" tabindex="-1" ui-sref="hm.portalAccess">Get Portal Access</a></li>
+
+            <!-- <li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">My Profile</a></li> -->
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
+            <li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+            <li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+          </ul>
+        </div>
+
+        <div class="cart_menu" ng-if="userObj">
+          <ul>
+            <li>
+              <a ui-sref="hm.dashboard.main" class="marker">
+                <i class="fa fa-tachometer fa-2x marker"></i>
+              </a>
+            </li>
+            <li>
+              <a ui-sref="hm.cart.details" class="marker">
+                <i class="fa fa-shopping-cart fa-2x marker"></i>
+                <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="btn-group drop-btn user-div">
+            <a href="#/FAQ" class="btn invoice-no prof-btn about-caret">About</a>
+        </div>
+        <!-- <div class="btn-group drop-btn user-div" ng-if="userObj">
+          <div>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-mini my-alc-btn nopadding prof-btn" uib-dropdown-toggle ng-disabled="disabled">
+            <img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+            <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a ui-sref="hm.userProfile" tabindex="-1" href="/#/profile">Profile</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/portal-access" ng-if="!userObj.portal_login">Get Portal Access</a></li>
+            <li role="menuitem"><a tabindex="-1" href="/#/logout">Logout</a></li>
+            </ul>
+            </div>
+          </div>
+        </div> -->
+        <div ng-if="!userObj" class="not-user-div cart_menu">
+          <a href="#/login" class="help-link">Login</a>
+          <a href="#/register" class="help-link">Register</a>
+          <a ui-sref="hm.cart.details" class="marker">
+          <i class="fa fa-shopping-cart fa-2x marker"></i></a>
+          <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
+        </div>
+    </div>
+  </div>
 </header>
 <!-- End header -->

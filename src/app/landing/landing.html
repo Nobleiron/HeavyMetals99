@@ -20,7 +20,7 @@
 							<span class="glyphicon glyphicon-align-justify hidden-xs"></span>
 							<div class="cd-dropdown-wrapper cd-dropdown-wrapper-small ">
 										<a class="cd-dropdown-trigger eqe_tex cd-dropdown-trigger-small leftmargin" menu-aim-dir href="#0">Equipments</a>
-										<nav class="cd-dropdown">
+										<nav class="cd-dropdown" click-outside="closeThis()">
 											<h2>Title</h2>
 											<a href="#0" class="cd-close">Close</a>
 											<ul class="cd-dropdown-content">
@@ -142,32 +142,11 @@
 
 													<ul class="cd-dropdown-gallery is-hidden">
 														<li class="go-back"><a href="#0">Menu</a></li>
-														<li class="see-all"><a href="http://codyhouse.co/?p=748">Browse More Categories</a></li>
-														<li>
-															<a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-																<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png" alt="Product Image" style="width: 50px;height: 50px;">
-																<h3>Scissor Lifts</h3>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-																<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png" alt="Product Image" style="width: 50px;height: 50px;">
-																<h3>Boom Lifts</h3>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-																<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png" alt="Product Image" style="width: 50px;height: 50px;">
-																<h3>Mini Excavators</h3>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-																<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png" alt="Product Image" style="width: 50px;height: 50px;">
-																<h3>Backhoes</h3>
+														<li class="see-all" ><a ui-sref="hm.search.results">Browse More Categories</a></li>
+														<li ng-repeat="category in displayCategories | limitTo :6">
+															<a class="cd-dropdown-item" ui-sref="hm.search.results({category_id : category.Id })">
+																<img ng-src="{{category.Image_path}}" alt="Product Image" style="width: 50px;height: 50px;" err-src="">
+																<h3>{{category.Name}}</h3>
 															</a>
 														</li>
 													</ul> <!-- .cd-dropdown-gallery -->
@@ -177,91 +156,18 @@
 													<a href="#">Buy</a>
 													<ul class="cd-dropdown-icons is-hidden">
 														<li class="go-back"><a href="#0">Menu</a></li>
-														<li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>
+														<!--<li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>-->
 														<li>
 															<a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
-																<h3>Service #1</h3>
-																<p>This is the item description</p>
+																<h3>Texas</h3>
 															</a>
 														</li>
 
 														<li>
 															<a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
-																<h3>Service #2</h3>
-																<p>This is the item description</p>
+																<h3>California</h3>
 															</a>
 														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
-																<h3>Service #3</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
-																<h3>Service #4</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
-																<h3>Service #5</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-6" href="http://codyhouse.co/?p=748">
-																<h3>Service #6</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-7" href="http://codyhouse.co/?p=748">
-																<h3>Service #7</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-8" href="http://codyhouse.co/?p=748">
-																<h3>Service #8</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-9" href="http://codyhouse.co/?p=748">
-																<h3>Service #9</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-10" href="http://codyhouse.co/?p=748">
-																<h3>Service #10</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-11" href="http://codyhouse.co/?p=748">
-																<h3>Service #11</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
-														<li>
-															<a class="cd-dropdown-item item-12" href="http://codyhouse.co/?p=748">
-																<h3>Service #12</h3>
-																<p>This is the item description</p>
-															</a>
-														</li>
-
 													</ul> <!-- .cd-dropdown-icons -->
 												</li> <!-- .has-children -->
 											</ul> <!-- .cd-dropdown-content -->
