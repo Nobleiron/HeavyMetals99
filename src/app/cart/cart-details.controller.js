@@ -1,11 +1,13 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartDetailsCtrl",['$scope','HM_RestSV','HM_CartCnst','toastr', function( $scope,RestSV, ShoppingCartCnst,toastr){
+  .controller("HM_CartDetailsCtrl",['$scope','$uibModal','HM_RestSV','HM_CartCnst','toastr', function( $scope,$uibModal,RestSV, ShoppingCartCnst,toastr){
 
 
     $scope.updateCart = updateCart;
 
     $scope.applyPromoCode = applyPromoCode;
+
+    $scope.allowSubstitution = allowSubstitution;
 
 
     function updateCart(productId, cartData){
@@ -48,6 +50,30 @@ angular.module("HM_CartMD")
           .finally(function(){
             $scope.$broadcast('Cart:ApplyPromoCode:End');
           })
+      }
+    }
+
+
+    function allowSubstitution(product, allowed){
+      $scope.productToSubstitute = product;
+      if(allowed){
+        var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: '/app/cart/allow-substitution.html',
+          scope : $scope,
+          controller: 'HM_CartAllowSusbtitueCtrl'
+        })
+        modalInstance.opened.then(function(){
+
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+          debugger
+        }, function () {
+          debugger
+        });
+      }else{
+
       }
     }
 

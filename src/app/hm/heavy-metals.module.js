@@ -19,7 +19,6 @@
       'angularMoment',
       'ngSanitize',
       'infinite-scroll',
-      'angular-click-outside',
       'toastr',
       'LocalStorageModule',
       'HM_RequestHeadersINT',

@@ -20,7 +20,7 @@
         </td>
         <td class="equipment-desc">
           <h3>{{product.Product_name}}</h3>
-          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
+          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution" ng-change="allowSubstitution(product, cartData.summary.productsQuantity[product.Product_id].allowSubstitution)"><span class="marker">Allow Substitution?</span>
           <ul class="price-ul">
             <li>
               <p class="daily_title">Daily</p>
@@ -73,7 +73,7 @@
       </div>
       <div class="equipment-desc">
         <h3>{{product.Product_name}}</h3>
-        <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
+        <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution" ng-change="allowSubstitution()"><span class="marker">Allow Substitution?</span>
         <p class="qty-head">Quantity</p>
         <ng-form>
         <input class="form-control" type="text"  ng-model="cartData.summary.productsQuantity[product.Product_id].qty" ng-blur="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">
