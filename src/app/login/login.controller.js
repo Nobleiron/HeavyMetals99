@@ -102,6 +102,7 @@ angular.module('HM_LoginMD')
             $scope.loading = false;
             var userObj = response.data.result.logged_user_data.logged_user;
             localStorageService.set('userObj',userObj);
+            localStorageService.remove("session");
             if(userObj.portal_login){
               $state.go('hm.dashboard.main');
             }else{
