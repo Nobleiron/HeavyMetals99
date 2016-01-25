@@ -89,6 +89,11 @@
           </div>
         </div>
       </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="(cartData.delivery.selectedJobSite | isEmpty)">
+        <p class="heading-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp
+          No Jobsite Selected
+        </p>
+      </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
         <h4>Details</h4>
         <i class="fa fa-map-marker marker"></i>
@@ -114,27 +119,26 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
-          <input type="text" placeholder="First Name" ng-model="cartData.delivery.contactInfo.firstName">
-            <i class="fa fa-user pull-right"></i>
+          <input type="text" placeholder="Site Contact Name" ng-model="cartData.delivery.contactInfo.firstName">
+            <!-- <i class="fa fa-user pull-right"></i> -->
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
         <div class="form-control search-div">
-          <input type="text" placeholder="Last Name" ng-model="cartData.delivery.contactInfo.lastName">
-          <i class="fa fa-user pull-right"></i>
+          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.lastName">
+          <!-- <i class="fa fa-user pull-right"></i> -->
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
         <div class="form-control search-div">
-          <input type="text" placeholder="Email" ng-model="cartData.delivery.contactInfo.email">
-          <i class="fa fa-envelope-o pull-right"></i>
+          <input type="text" placeholder="Purchase Order" ng-model="cartData.delivery.contactInfo.email">
+          <!-- <i class="fa fa-envelope-o pull-right"></i> -->
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
-        <div class="form-control search-div">
-          <input type="text" placeholder="Phone Number" ng-model="cartData.delivery.contactInfo.phone">
-          <i class="fa fa-phone pull-right"></i>
-        </div>
+          <textarea class="form-control delivery-note-textarea">Delivery Note</textarea>
+          <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
+          <!-- <i class="fa fa-phone pull-right"></i> -->
       </div>
       <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 special-instruction heading-border">
         <textarea class="form-control desc-text">Special Instructions</textarea>
@@ -207,7 +211,7 @@
         Back
       </button>
       <button class="btn all-btn sign_mybtn primary-btn autowidth" ng-disabled="!cartData.steps.delivery.complete" ui-sref="hm.cart.cartDuration">
-        Next
+        <span>Next</span>
         &nbsp<i class="fa fa fa-chevron-right"></i>
       </button>
     </div>

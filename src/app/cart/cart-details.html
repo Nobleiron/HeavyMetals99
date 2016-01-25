@@ -20,7 +20,9 @@
         </td>
         <td class="equipment-desc">
           <h3>{{product.Product_name}}</h3>
-          <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span>
+          <!-- <input type="checkbox" style="margin: 3px 0 0 0;" ng-model="cartData.summary.productsQuantity[product.Product_id].allowSubstitution"><span class="marker">Allow Substitution?</span> -->
+          <a ng-morph-overlay="allowSubstitution" class="on-hover-pointer">Allow Substitution?</a>
+
           <ul class="price-ul">
             <li>
               <p class="daily_title">Daily</p>

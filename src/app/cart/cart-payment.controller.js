@@ -19,5 +19,12 @@ angular.module("HM_CartMD")
       container: '.addcard__previev'
     };
 
+    $scope.clear = function() {
+      $scope.data.card.cc_number ='';
+      $scope.data.card.cc_name ='';
+      $scope.data.card.expiry ='';
+      $scope.data.card.cc_cvv ='';
+    }
+
 
   }]);
