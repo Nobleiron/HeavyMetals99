@@ -28,10 +28,26 @@ a:focus { color: #0099cc;
 	background-size: 100% 100%;
 	height: auto;
 }
-.lift-bg{
-  background: #f5f5f5; padding: 20PX 0;
+
+.lift-bg {
+	background: url('/assets/images/e1.jpg');
+  padding: 20px 0;
   min-height: 270px;
 }
+
+/*.lift-bg::after {
+	content: "";
+  
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}*/
+
+
 .nopadding{padding: 0 !important;}
 .main_box{background: #ffffff; border: solid 1px #ededed; border-radius: 10px;  min-height:230px;
 	/*          width: 15%;
@@ -2799,6 +2815,22 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .profile-setting .portal-creden {
 	margin-top: 0;
+}
+
+.header-spinner {
+	margin-top: 13px;
+}
+
+.exclamation-color {
+	color: #ff5600;
+}
+
+.cd-dropdown-content .cd-dropdown-icons .cd-dropdown-item:hover {
+	background: transparent;
+}
+
+.category-name {
+	margin-top: 15px;
 }
 
 
