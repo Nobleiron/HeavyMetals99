@@ -376,7 +376,13 @@
     margin-top: 0px !important;
   }
 
+  .value-label-span {
+    display: none;
+  }
 
+  .value-id-span {
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 600px) {

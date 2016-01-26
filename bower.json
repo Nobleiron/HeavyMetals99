@@ -33,7 +33,8 @@
     "card": "https://github.com/jessepollak/card.git#~1.2.2",
     "angular-moment": "1.0.0-beta.3",
     "moment": "~2.11.1",
-    "humanize-duration": "~3.5.0"
+    "humanize-duration": "~3.5.0",
+    "angular-morph": "0.1.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.4"

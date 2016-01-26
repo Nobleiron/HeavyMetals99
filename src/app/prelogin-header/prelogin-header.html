@@ -15,11 +15,13 @@
           <div class="nav navbar-nav landing-header prelogin-header">
             <div>
               <form class="topnav-search header-form-small" role="search">
+                <i class="fa fa-spinner fa-spin loading-search header-spinner" ng-hide="!isLoading"></i>
                 <input type="text" class="form-control search-head search-on-header"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
                        typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                        typeahead-on-select="selectSearchedItem($item, $model, $label)"
                        autocomplete="off"
-                       typeahead-template-url="typeahead-item.html">
+                       typeahead-template-url="typeahead-item.html"
+                       typeahead-loading="isLoading" ng-class="{'loading-time': isLoading}">
 
                 <button class="btn btn-default my_search my-search-header" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
 

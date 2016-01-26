@@ -1,4 +1,4 @@
-angular.module("HM_CartMD",['gavruk.card','ui.bootstrap.datetimepicker'])
+angular.module("HM_CartMD",['gavruk.card','ui.bootstrap.datetimepicker', 'ngMorph'])
 .run(['localStorageService','HM_CartCnst',function(localStorageService,CartCnst){
     var data = localStorageService.get('cartData');
     if(data) {

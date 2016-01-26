@@ -57,11 +57,12 @@
     <div class="col-lg-7 col-md-7 col-sm-10 col-xs-8 nopadding">
 
         <form class="navbar-form my-search-nav header-form-small" role="search">
-
+        	<i class="fa fa-spinner fa-spin loading-search header-spinner" ng-hide="!isLoading"></i>
           <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-change="showAutocomplete = true" ng-model="selectedProduct"
                  typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                  typeahead-on-select="selectSearchedItem($item, $model, $label)"
-                 typeahead-template-url="typeahead-item.html">
+                 typeahead-template-url="typeahead-item.html"
+                 typeahead-loading="isLoading" ng-class="{'loading-time': isLoading}">
 
           <button class="btn btn-default my_search my-search-header hidden-xs hidden-sm" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
           <div class="dont-see-div hidden-xs hidden-sm">

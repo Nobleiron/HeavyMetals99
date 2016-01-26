@@ -9,6 +9,9 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc nopadding-xs">
         <load-indicator loading="!flags.ordersFetched"></load-indicator>
+        <!-- <div ng-show="!flags.ordersFetched" class="pull-center">
+          <p class="heading-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp No Recent Orders</p>
+        </div> -->
         <div ng-show="flags.ordersFetched">
 
 
@@ -153,11 +156,7 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sell-main-part">
-
-
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
-
-
           <!-- <hr class="req_dash_botam order-his-hr"> -->
           <h3 class="req_job_tit topmargin">Track Reservation Status</h3>
           <p class="comferm_email_tex desc-text">
