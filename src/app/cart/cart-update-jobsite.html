@@ -77,7 +77,7 @@
         <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="cartData.jobsites.length">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding" ng-if="cartData.jobsites.length">
         <div class="form-control search-div">
           <input type="text" placeholder="Search" ng-model="searchJosite">
           <i class="fa fa-search pull-right icon-right"></i>
@@ -94,7 +94,7 @@
           No Jobsite Selected
         </p>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail leftpadding-small rightpadding-small" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
         <h4>Details</h4>
         <i class="fa fa-map-marker marker"></i>
         <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
@@ -113,29 +113,29 @@
   			</span>
         </span>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding lr-padding-small">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding">
         <h3 class="heading-text">Jobsite Contact Information</h3>
         <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
         <div class="form-control search-div">
           <input type="text" placeholder="Site Contact Name" ng-model="cartData.delivery.contactInfo.firstName">
             <!-- <i class="fa fa-user pull-right"></i> -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
         <div class="form-control search-div">
           <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.lastName">
           <!-- <i class="fa fa-user pull-right"></i> -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding lr-padding-small">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
         <div class="form-control search-div">
           <input type="text" placeholder="Purchase Order" ng-model="cartData.delivery.contactInfo.email">
           <!-- <i class="fa fa-envelope-o pull-right"></i> -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
           <textarea class="form-control delivery-note-textarea">Delivery Note</textarea>
           <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
           <!-- <i class="fa fa-phone pull-right"></i> -->

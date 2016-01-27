@@ -11,7 +11,7 @@ angular.module("HM_CartMD")
       closeEl: '.close',
       overlay: {
         template: '<div class="substitution-div">'+
-          '<div class="col-md-12">'+
+          '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">'+
             '<i class="fa fa-close fa-2x pull-right color-gray close marker"></i>'+
           '</div>'+
           '<div class="container">'+
@@ -22,90 +22,90 @@ angular.module("HM_CartMD")
               '</div>'+
             '</div>'+
             '<div class="row">'+
-              '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">'+
+              '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">'+
                 '<h3 class="heading-text subs-headers">Recommended</h3>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
               '</div>'+
-              '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">'+
+              '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">'+
                 '<h3 class="heading-text subs-headers">Most Popular</h3>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
               '</div>'+
-              '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">'+
+              '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">'+
                 '<h3 class="heading-text subs-headers">Recent Added</h3>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
                 '<div class="list-div">'+
-                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png"  style="width:100px;height:100px;">'+
+                  '<img src="http://nobleiron.com/catimages/Scissor_Lift_new.png">'+
                   '<p class="heading-text">Electric Scissor- 26 (Wide)</p>'+
                 '</div>'+
               '</div>'+
             '</div>'+
             '<div class="row">'+
-              '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">'+
+              '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 allow-btn-col">'+
                 '<button class="btn sign_mybtn all-btn primary-btn pull-right">'+
                   'Allow'+
                 '</button>'+
