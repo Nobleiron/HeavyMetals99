@@ -1937,6 +1937,11 @@ button:hover {
 	display: none;
 }
 
+.quotation-filter-icon {
+	margin-top: 3px;
+	margin-right: 8px;
+}
+
 /*quotes-detail*/
 .qty {
 	width: 55%;
@@ -2666,6 +2671,10 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .search-on-header {
 	height: 40px;
+}
+
+.review-price-detail {
+	width: 26%;
 }
 
 /*payment page*/

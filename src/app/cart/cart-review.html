@@ -25,7 +25,7 @@
 					<h3>{{product.Product_name}}</h3>
 					<p class="desc-text">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
 				</td>
-				<td class="vertically-middle">
+				<td class="vertically-middle review-price-detail">
 					<ul class="price-ul">
 						<li>
 							<p class="daily_title">Daily</p>
@@ -51,11 +51,11 @@
 	</div>
 	<!-- mobile shopping cart review -->
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
-    <div class="cart-for-mobile">
+    <div class="cart-for-mobile" ng-repeat="product in data.cart.Product">
       <div class="cart-image-div">
-        <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
+        <img ng-src="{{product.Product_image}}" err-src />
       </div>
-      <div class="equipment-desc" ng-repeat="product in data.cart.Product">
+      <div class="equipment-desc">
         <h3>{{product.Product_name}}</h3>
         <p class="desc-text nomargin">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
         <p class="qty-head">Quantity
