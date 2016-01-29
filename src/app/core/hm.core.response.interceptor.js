@@ -1,20 +1,27 @@
 angular.module('HM_ResponseINT', [])
-  .config(['$httpProvider', function ($httpProvider) {
-    var _requestHeadersFn = [
+  .config([
+  '$httpProvider',
+  function ($httpProvider) {
+    var sessionInterceptor = [
       '$q',
-      'localStorageService',
-      function ($q, localStorageService) {
-        var _response = function (response) {
+      '$location',
+      function ($q, $location) {
 
-          //var userObj = localStorageService.get("userObj");
+        return {
+
+          'responseError': function (response) {
+            if (response.status == 401 && response.data.errortext == "Unauthorized User") {
 
 
+              $location.path('/logout');
 
-          return response
+              return $q.reject(response);
+            }
+          }
 
-        };
-        return {response: _response};
+        }
       }];
 
-    $httpProvider.interceptors.push(_requestHeadersFn);
+    $httpProvider.interceptors.push(sessionInterceptor);
+
   }]);
