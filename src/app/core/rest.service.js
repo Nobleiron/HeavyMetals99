@@ -22,6 +22,9 @@ angular.module('HeavyMetals')
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
           return HTTP.delete(_that.apiEndPoint + url,config);
         };
+        this.head = function(url, config){
+          return HTTP.head(_that.apiEndPoint + url, config);
+        };
     }
 
     this.setProperties = function(prop, value){

@@ -35,14 +35,15 @@
       });
 
       $rootScope.userObj = localStorageService.get('userObj');
-      var guestSession = localStorageService.get('session');
-      if(!$rootScope.userObj && !guestSession){
+      if(!$rootScope.userObj){
         RestSV
-          .get('/session')
+          .head('')
           .then(function(response){
-              if(response.data.result && response.data.result.session_id){
-                localStorageService.set('session',response.data.result.session_id);
+              if(response.headers().session){
+                localStorageService.set('session',response.headers().session);
               }
+          }, function(){
+            debugger
           })
       }
     }]);
