@@ -1,19 +1,37 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartDetailsCtrl",['$scope','HM_RestSV','HM_CartCnst','toastr', function( $scope,RestSV, ShoppingCartCnst,toastr){
+  .controller("HM_CartDetailsCtrl",['$scope','$uibModal','HM_RestSV','HM_CartCnst','toastr', function( $scope,$uibModal,RestSV, ShoppingCartCnst,toastr){
 
 
     $scope.updateCart = updateCart;
 
     $scope.applyPromoCode = applyPromoCode;
 
-    $scope.allowSubstitution = {
-      closeEl: '.close',
-      overlay: {
-        templateUrl: '/app/cart/allow-substitute-flyout.html'
-      }
-    };
+    //$scope.allowSubstitution = {
+    //  closeEl: '.close',
+    //  overlay: {
+    //    templateUrl: '/app/cart/allow-substitute-flyout.html'
+    //  }
+    //};
 
+    $scope.allowSubstitution = allowSubstitution;
+
+
+    function allowSubstitution(product){
+      debugger
+
+        var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: '/app/cart/allow-substitution.html',
+          controller: 'HM_CartAllowSusbtitueCtrl'
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+          $scope.selected = selectedItem;
+        }, function () {
+        });
+
+    }
 
     function updateCart(productId, cartData){
       if(!(/[1-9*]+/.test(cartData.qty))){

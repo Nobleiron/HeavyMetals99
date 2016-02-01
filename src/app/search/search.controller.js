@@ -13,9 +13,6 @@ angular.module("HM_SearchMD")
 
       $scope.selectCategoryAttributes = selectCategoryAttributes;
 
-      $scope.$on('Cart:Count:Fetched', function(e, data){
-      });
-
 
       _initialize();
 
@@ -23,7 +20,6 @@ angular.module("HM_SearchMD")
         $scope.results = [];
         angular.extend($scope.params,$stateParams);
         $scope.selectedAttributes = {};
-        //$scope.selectedCategory = {};
         $scope.selection = { type : "rent"};
         $scope.flags = {
           searchResultLoading : false,
@@ -82,17 +78,6 @@ angular.module("HM_SearchMD")
       }
 
 
-      function selectDefaultCategory(){
-
-      }
-
-
-      function _getCategoryById(category_id){
-        var selectedCategory= _.find($scope.categories,function(x){
-          return x.Id == category_id;
-        });
-        return { name : 'Filter:'+ selectedCategory.Name, tagType : 'category_id'};
-      }
 
 
 

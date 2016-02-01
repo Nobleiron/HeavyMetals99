@@ -13,6 +13,7 @@ angular.module("HM_SearchMD")
       $scope.openDatepicker = openDatepicker;
 
       $scope.acceptUserQuery = acceptUserQuery;
+
       $scope.cartProduct = [];
 
       $scope.$on('Cart:Count:Fetched',function(e,data){
@@ -22,12 +23,8 @@ angular.module("HM_SearchMD")
           $scope.results &&  $scope.results.map(function(r){
               r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
             });
-
         }
-
       });
-
-
 
       !angular.equals({}, $scope.flags.selectedCategory) ? _initialize() : $scope.$on('Categories:Loaded', _initialize);
 
@@ -188,9 +185,6 @@ angular.module("HM_SearchMD")
         return obj.length ?  obj : undefined;
       }
 
-      function normalizeSearchQuery(str){
-        return str.replace('\'','');
-      }
 
       function _getSearchResult(fresh){
         if(fresh){
@@ -212,9 +206,6 @@ angular.module("HM_SearchMD")
               }else{
                 var result = data.result.SearchResult || data.result.ProductList;
                 $scope.results = $scope.results.concat(result);
-                //$scope.results.map(function(r){
-                //  r.alreadyExistsInCart = $scope.cartProduct.indexOf(r.Product_Id) > -1;
-                //});
                 $scope.flags.page += 1 ;
               }
             })
@@ -233,9 +224,5 @@ angular.module("HM_SearchMD")
         $state.go('hm.search.results', $scope.params);
         toastr.success('Thanks for submitting your query. We will get back to you shortly');
       }
-
-
-
-      // scroll to top button
 
     }]);

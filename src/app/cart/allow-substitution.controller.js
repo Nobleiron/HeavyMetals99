@@ -2,7 +2,6 @@
 angular.module("HM_CartMD")
   .controller("HM_CartAllowSusbtitueCtrl",['$scope','HM_RestSV','HM_HeaderCnst','filterFilter',function( $scope,RestSV,HeaderCnst,filterFilter){
 
-    debugger
     $scope.showAutocomplete = false;
 
     $scope.getProducts = getProducts;
