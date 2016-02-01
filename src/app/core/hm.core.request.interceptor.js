@@ -9,7 +9,7 @@ angular.module('HM_RequestHeadersINT', [])
            var userObj = localStorageService.get("userObj");
             var guestSession = localStorageService.get('session');
           var reg = /index\.php/;
-
+          request.headers["session_id"] = "TEMP_Session_id";
             request.headers["X-API-KEY"] = "123";
             if(guestSession && reg.test(request.url)){
               request.params = request.params || {};
