@@ -2,6 +2,7 @@
 angular.module('HM_LandingMD')
   .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_LandingCnst','HM_RestSV','localStorageService', function ($scope, $state, filterFilter, landingCnst, RestSV, localStorageService) {
 
+    $scope.oneAtATime = true;
 
     $scope.params.type = "rent";
 
@@ -91,6 +92,8 @@ angular.module('HM_LandingMD')
     }
 
 
-
+    $scope.status= {
+      isFirstOpen: true
+    }
 
   }]);
