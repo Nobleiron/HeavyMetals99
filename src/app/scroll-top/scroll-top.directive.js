@@ -28,4 +28,43 @@ angular.module("HM_ScrollTopMD")
                 });
             }
         };
-    }]);
+    }])
+  .directive('testimonial', ['$window', function($window) {
+    return {
+      link: function(scope, element, attrs) {
+        $('#theCarousel').carousel({
+            interval: false
+          })
+
+          $('.multi-item-carousel .item').each(function(){
+            var next = $(this).next();
+            if (!next.length) {
+              next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            
+            if (next.next().length>0) {
+              next.next().children(':first-child').clone().appendTo($(this));
+            }
+            else {
+              $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+            }
+          });
+      }
+    }
+  }])
+
+  .directive("scroll", ['$window', function ($window) {
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+             if (this.pageYOffset >= 100) {
+                 scope.boolChangeClass = true;
+                 console.log('Scrolled below header.');
+             } else {
+                 scope.boolChangeClass = false;
+                 console.log('Header is in view.');
+             }
+            scope.$apply();
+        });
+    };
+}]);
