@@ -7,6 +7,8 @@ angular.module("HM_CartMD")
 
     $scope.applyPromoCode = applyPromoCode;
 
+    $scope.selectedSubstitute = {};
+
     //$scope.allowSubstitution = {
     //  closeEl: '.close',
     //  overlay: {
@@ -18,15 +20,19 @@ angular.module("HM_CartMD")
 
 
     function allowSubstitution(product){
-      debugger
-
         var modalInstance = $uibModal.open({
           animation: true,
           templateUrl: '/app/cart/allow-substitution.html',
-          controller: 'HM_CartAllowSusbtitueCtrl'
+          controller: 'HM_CartAllowSusbtitueCtrl',
+          resolve : {
+            productToAllowSubstitute : function(){
+              return product;
+            }
+          }
         });
 
         modalInstance.result.then(function (selectedItem) {
+          debugger
           $scope.selected = selectedItem;
         }, function () {
         });

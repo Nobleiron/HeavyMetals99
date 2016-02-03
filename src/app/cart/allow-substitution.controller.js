@@ -1,37 +1,37 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartAllowSusbtitueCtrl",['$scope','HM_RestSV','HM_HeaderCnst','filterFilter',function( $scope,RestSV,HeaderCnst,filterFilter){
-
-    $scope.showAutocomplete = false;
+  .controller("HM_CartAllowSusbtitueCtrl",['$scope','$modalInstance','HM_RestSV','HM_HeaderCnst','productToAllowSubstitute',function( $scope, $modalInstance, RestSV,HeaderCnst,productToAllowSubstitute){
 
     $scope.getProducts = getProducts;
 
     $scope.selectSearchedItem = selectSearchedItem;
 
+    $scope.doneSubstituteSelection = doneSubstituteSelection;
+
+debugger
+    function doneSubstituteSelection(){
+      $modalInstance.close($scope.selectedSubstitute);
+    }
+
     function selectSearchedItem(product){
-      $scope.showAutocomplete = false;
+      $scope.query = product.Product_Name;
+      $scope.selectedSubstitute = product;
     }
 
 
-    function getProducts(search){
-      return RestSV.get( HeaderCnst.search.url() ,{
-        search_text : search,
+    function getProducts(val){
+      return RestSV.post( HeaderCnst.search.url() ,{
+        search_text : val
       }).then(function(response){
-        if($scope.showAutocomplete){
-          var filtered = filterFilter(response.data.result.ProductList, search);
-          var results = _(filtered)
-            .groupBy('Category_Name')
-            .map(function (g) {
-              g[0].firstInGroup = true;  // the first item in each group
-              return g;
-            })
-            .flatten()
-            .value();
-          return results;
+        if(response.data.result == ""){
+          return [];
         }
-
+        return response.data.result.ProductList.map(function(item){
+          return item;
+        });
       });
     }
+
 
 
   }]);

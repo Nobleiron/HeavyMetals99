@@ -5,18 +5,55 @@
 </div>
 <div class="row fields-row">
   <div class="col-md-12 site-col">
-    <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-change="showAutocomplete = true" ng-model="selectedProduct"
-           typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-           typeahead-on-select="selectSearchedItem($item, $model, $label)"
-           typeahead-template-url="typeahead-item.html">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <form class="navbar-form my-search-nav" role="search">
+        <i class="fa fa-spinner fa-spin loading-search header-spinner" ng-show="loadingSubstitute"></i>
+        <input class="form-control" type="text" ng-model="query" Placeholder="Search Product Substitute"
+               uib-typeahead="product for product in getProducts($viewValue)"
+               typeahead-on-select="selectSearchedItem($item, $model, $label)"
+               typeahead-template-url="search-substitue.html"
+               typeahead-loading="loadingSubstitute" typeahead-no-results="noResults" ng-class="{'loading-time': loadingSubstitute}">
+
+        <div ng-show="noResults">
+          <i class="glyphicon glyphicon-remove"></i> No Results Found
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div ng-show="selectedSubstitute">
+        <img ng-src="{{selectedSubstitute.Product_Image[0].ProductImage_Path}}" err-src style="width: 100px;height:100px;"/>
+        <h3>{{selectedSubstitute.Product_Name}}</h3>
+        <ul class="price-ul">
+          <li>
+            <p class="daily_title">Daily</p>
+            <p class="daily_price">${{selectedSubstitute.Product_Price.Daily}}</p>
+          </li>
+          <li>
+            <p class="daily_title">Weekly</p>
+            <p class="daily_price">${{selectedSubstitute.Product_Price.Weekly}}</p>
+          </li>
+          <li>
+            <p class="daily_title">Monthly</p>
+            <p class="daily_price">${{selectedSubstitute.Product_Price.Monthly}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <div class="row nomargin">
   <div class="col-md-12 site-col">
-    <button class="btn sign_mybtn all-btn primary-btn pull-right" ng-click="deleteJobSiteConfirm(jobsite)">
+    <button class="btn sign_mybtn all-btn primary-btn pull-right" ng-click="doneSubstituteSelection()" ng-disabled="!selectedSubstitute">
       <span btn-load-indicator="Delete:JobSite:Process">Done</span>
     </button>
     <button class="btn sell-equ all-btn popup-white-btn" ng-click="$dismiss()">Cancel</button>
   </div>
 </div>
+
+<script type="text/ng-template" id="search-substitue.html">
+  <a>
+    <span ng-bind-html="match.label.Product_Name | uibTypeaheadHighlight:query"></span>
+  </a>
+</script>

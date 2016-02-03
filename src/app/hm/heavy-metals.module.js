@@ -26,7 +26,7 @@
       'valdr',
       'HM_RoutesMD',
       'HM_GlobalMD'])
-    .config(['$provide','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
+    .config(['$provide','$animateProvider','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
     .run(['$rootScope','$state','HM_RestSV','localStorageService', function($rootScope, $state, RestSV, localStorageService){
       $rootScope.$state = $state;
       $rootScope.params = {};
@@ -35,23 +35,24 @@
       });
 
       $rootScope.userObj = localStorageService.get('userObj');
-      if(!$rootScope.userObj){
-        RestSV
-          .head('')
-          .then(function(response){
-              if(response.headers().session){
-                localStorageService.set('session',response.headers().session);
-              }
-          }, function(){
-            debugger
-          })
-      }
+
+        //RestSV
+        //  .head('')
+        //  .then(function(response){
+        //      if(response.headers().session){
+        //        localStorageService.set('session',response.headers().session);
+        //      }
+        //  }, function(){
+        //    debugger
+        //  })
+
     }]);
 
 
 
-  function _configure($provide,localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
+  function _configure($provide,$animateProvider,localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
 
+    $animateProvider.classNameFilter(/^((?!(fa-spinner)).)*$/);
 
     $provide.decorator('$state', ['$delegate', '$rootScope',function($delegate, $rootScope) {
       $rootScope.$on('$stateChangeStart', function(event, state,toParams,fromState,fromParams) {
