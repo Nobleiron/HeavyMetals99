@@ -96,7 +96,10 @@
 			<div class="line"></div>
 		</div>
 	</div>
-	<div class="row">
+  <div class="row" ng-show="flags.mostRentedCategoryFetcing">
+    <load-indicator loading="true"></load-indicator>
+  </div>
+	<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category)">
@@ -142,7 +145,10 @@
 				<div class="line"></div>
 			</div>
 		</div>
-		<div class="row">
+    <div class="row" ng-show="flags.mostRentedCategoryFetcing">
+      <load-indicator loading="true"></load-indicator>
+    </div>
+		<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category)">
