@@ -1,11 +1,11 @@
 'use strict';
 (function () {
   angular.module("HM_RoutesMD", [])
-    .config(['$stateProvider', '$urlRouterProvider', 'HM_RoutesCnst', _configure])
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider','HM_RoutesCnst', _configure])
     .run(['$rootScope', '$modal', _run]);
 
 
-  function _configure($stateProvider, $urlRouterProvider, Routescnst) {
+  function _configure($stateProvider, $urlRouterProvider, $locationProvider,Routescnst) {
 
 
 
@@ -31,6 +31,7 @@
         .state(state, stateObj);
     }
     $urlRouterProvider.otherwise(Routescnst.defaultRoute);
+    $locationProvider.html5Mode(true)
   }
 
   function _run( $rootScope, $modal) {
