@@ -55,7 +55,9 @@
 							<a href="">BUY</a>
 							<a href="">RENT</a>
 						</p>
+            <form class="navbar-form my-search-nav header-form-small" role="search">
 						<div class="pull-center landing-search-div">
+
               <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
                      ng-change="showAutocomplete = true"
                      ng-model="selectedProduct"
@@ -64,15 +66,16 @@
                      typeahead-template-url="typeahead-item.html"
                      typeahead-loading="isLoading" ng-class="{'loading-time': isLoading}"/>
 
-							<button class="btn all-btn sign_mybtn landing-search hidden-xs">
+							<button class="btn all-btn sign_mybtn landing-search hidden-xs" type="submit" ng-click="selectSearchedItem()">
                 <span  ng-show="!isLoading">
                   <i class="fa fa-search"></i>&nbsp
 								    Find
 								</span>
                 <i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
               </button>
+
 							<div class="visible-xs">
-								<button class="btn all-btn sign_mybtn">
+								<button class="btn all-btn sign_mybtn" type="submit" ng-click="selectSearchedItem()">
                   <span  ng-show="!isLoading">
                     <i class="fa fa-search"></i>&nbsp
 								    Find
@@ -81,6 +84,7 @@
                 </button>
 							</div>
 						</div>
+            </form>
 					</div>
 				</div>
 			</div>
