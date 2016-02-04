@@ -2946,6 +2946,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	margin: 0 15px;
 	font-weight: 600;
 	color: #000;
+	border-top: 1px solid transparent;
 }
 
 .landing-nav>li>a:hover,
@@ -2964,7 +2965,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	margin-top: 10%;
 	color: #fff;
 	font-size: 35px;
-	font-weight: 600;
+	font-weight: 300;
 	padding-left: 200px;
 	padding-right: 200px;
 }
@@ -2977,6 +2978,10 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	margin: 0 15px;
 	font-weight: 400;
 	color: #ffffff;
+}
+
+.rent-buy-option .active {
+	border-bottom: 2px solid #009ddc;
 }
 
 .rent-buy-option a:hover {
@@ -3051,6 +3056,12 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	min-height: 250px;
 }
 
+.landing-carousel-control .carousel-inner {
+	width: 93%;
+	overflow: hidden;
+  margin-left: 3%;
+}
+
 .landing-carousel-control .left,
 .landing-carousel-control .right {
 	background: none;
@@ -3061,11 +3072,9 @@ td.quantity .ng-invalid-pattern .error{display:block;}
   -webkit-align-items: center;
 }
 
-.landing-carousel-control i {
-	font-size: 70px;
-	color: #666666;
-	margin-left: -20px;
-	margin-right: -15px;
+.landing-carousel-control .glyphicon-chevron-right,
+.landing-carousel-control .glyphicon-chevron-left {
+	color: #dddddd;
 }
 
 .most-rented-equip {
@@ -3102,7 +3111,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 .rented-detail-left {
 	text-align: center;
 	border-right: 1px solid #ededed;
-	min-height: 300px;
+	min-height: 355px;
 	padding: 55px 35px 0;
 }
 
@@ -3149,6 +3158,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center 30%;
+	height: 485px;
 }
 
 .address-accordion .panel {
@@ -3335,6 +3345,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-size: 35px;
 	padding: 0 15px;
 	background-color: #ffffff;
+}
+
+.landing-img-max {
+	max-width: 250px;
+}
+
+.social-share {
+	margin-bottom: 20px;
+	padding-right: 5%;
+	text-align: right;
+}
+
+.social-share i {
+	font-size: 21px;
+	cursor: pointer;
+	background: #fff;
+	color: #13c0f8;
+	border-radius: 100%;
+	width: 35px;
+	height: 35px;
+	padding-top: 6px;
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+}
+
+.social-share a {
+	text-decoration: none;
+	text-align: center;
+}
+
+.social-share i:hover {
+	-webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  color: #000;
+}
+
+.footer-team-col {
+	padding-left: 5%;
 }
 
 

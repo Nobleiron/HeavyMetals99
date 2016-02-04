@@ -1205,6 +1205,14 @@
 	.landing-carousel-control {
 		min-height: 460px;
 	}
+	.footer-team-col {
+		padding-left: 15px;
+	}
+
+	.social-share {
+		text-align: center;
+		padding-right: 0;
+	}
 }
 
 @media screen and (max-width: 480px) {

@@ -54,7 +54,7 @@
 						</h3>
 						<h3 class="sentence visible-xs">Search or Buy Construction Equipments</h3>
 						<p class="rent-buy-option">
-							<a href="">BUY</a>
+							<a href="" class="active">BUY</a>
 							<a href="">RENT</a>
 						</p>
             <form role="search">
@@ -109,13 +109,13 @@
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category)">
             <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
           </div>
       </uib-slide>
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category)">
             <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
       </uib-slide>
     </uib-carousel>
@@ -130,7 +130,7 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
       <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostRentedCategoryProducts | limitTo:3">
-        <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" style="width:100%">
+        <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
         <p class="desc-text">{{product.Product_Name}}</p>
       </div>
 			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
@@ -158,13 +158,13 @@
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category)">
             <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
       </uib-slide>
       <uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category)">
             <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
       </uib-slide>
     </uib-carousel>
@@ -179,7 +179,7 @@
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
 				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3">
-          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" style="width:100%">
+          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
           <p class="desc-text">{{product.Product_Name}}</p>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
@@ -190,23 +190,23 @@
 	</div>
 </section>
 <!-- most bought end -->
-<!-- service start -->
+<!-- buy certified start -->
 <div class="container" id="repair">
 	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
 			<img src="/assets/images/landing-repair.jpg" class="landing-image">
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
 			<h3>Buy Certified used Equipments</h3>
 			<div class="line"></div>
-			<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
+			<p class="desc-text">Buy quality equipment at the lowest price with Nobleiron. From Bobcat to JLG, excavators to boom lifts and even specialty equipment, we have whatever you're looking for offering best value for money.Save an average of 40% on construction equipment rental with Nobleiron.</p>
 			<button class="btn all-btn primary-btn sign_mybtn">Enquire Now</button>
 		</div>
 	</div>
 </div>
-<!-- service end -->
-<!-- software start -->
-<section class="most-bought" id="software">
+<!-- buy certified end -->
+<!-- sell your equipment start -->
+<section class="most-bought">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
@@ -215,17 +215,17 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
 				<h3>Sell your Equipment</h3>
 				<div class="line"></div>
-				<p class="desc-text">Easily manage your fleet from anywhere on your device</p>
+				<p class="desc-text">When you aren't using your equipment and its getting rust,<br> let it raise money for you by selling it to us. We give best price when you sell<br> equipments to us.</p>
 				<button class="btn all-btn primary-btn sign_mybtn autowidth">Get The Software Now</button>
 			</div>
 		</div>
 	</div>
 </section>
-<!-- software end -->
-<!-- service start -->
-<div class="container" id="repair">
+<!-- sell your equipment end -->
+<!-- fleet maintenance start -->
+<div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
 			<img src="/assets/images/landing-repair.jpg" class="landing-image">
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
@@ -236,7 +236,7 @@
 		</div>
 	</div>
 </div>
-<!-- service end -->
+<!-- fleet maintenance end -->
 <!-- software start -->
 <section class="most-bought" id="software">
 	<div class="container-fluid">
@@ -247,7 +247,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
 				<h3>Our Software</h3>
 				<div class="line"></div>
-				<p class="desc-text">Easily manage your fleet from anywhere on your device</p>
+				<p class="desc-text">Noble Iron Online is powered by Texada Software’s cloud platform.<br> Texada builds software for equipment rental companies,<br> equipment dealerships, construction companies, contractors,<br> and any construction or industrial equipment user, including mechanics,<br> logistics and service technicians. Texada Software manages the entire equipment lifecycle,<br> including equipment purchasing, rental & sales transactions, inventory location,<br> utilization, maintenance and depreciation tracking, used equipment sales analysis, and inventory replenishment. Texada (toll-free in North America): <span class="color-blue">1-800-361-1233</span></p>
 				<button class="btn all-btn primary-btn sign_mybtn autowidth">Get The Software Now</button>
 			</div>
 		</div>
@@ -255,9 +255,9 @@
 </section>
 <!-- software end -->
 <!-- service start -->
-<div class="container" id="repair">
+<div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
 			<img src="/assets/images/landing-repair.jpg" class="landing-image">
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
@@ -409,9 +409,9 @@
 		<div class="container footer-container">
 			<div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<img src="/assets/images/image_page2.png">
+					<img src="/assets/images/footer-crane.png" class="fullwidth landing-img-max">
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading footer-team-col">
 					<h4>Noble Iron</h4>
 					<div class="line"></div>
 					<ul>
@@ -439,7 +439,7 @@
 					<div class="line"></div>
 					<p>Get news on our latest promotions, products and service. We'll never share your email address and you can opt out any time</p>
 					<div class="landing-search-div footer-input">
-						<input class="form-control" type="text" placeholder="Enter your mail id"></input>
+						<input class="form-control" type="text" placeholder="Enter your mail id">
 						<button class="btn all-btn sign_mybtn landing-search hidden-md hidden-sm hidden-xs">
 							Subscribe
 						</button>
@@ -449,6 +449,19 @@
 							</button>
 						</div>
 					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="social-share">
+							<a href="">
+								<i class="fa fa-facebook"></i> &nbsp  &nbsp
+							</a>
+							<a href="">
+								<i class="fa fa-linkedin"></i> &nbsp  &nbsp
+							</a>
+							<a href="">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</div>
 				</div>
 			</div>
 		</div>
