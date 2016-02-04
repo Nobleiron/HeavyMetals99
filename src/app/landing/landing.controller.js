@@ -1,6 +1,6 @@
 'use strict';
 angular.module('HM_LandingMD')
-  .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_LandingCnst','HM_RestSV','localStorageService', function ($scope, $state, filterFilter, landingCnst, RestSV, localStorageService) {
+    .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_SearchCnst','HM_RestSV','localStorageService', function ($scope, $state, filterFilter, landingCnst, RestSV, localStorageService) {
 
     $scope.oneAtATime = true;
 
@@ -13,11 +13,34 @@ angular.module('HM_LandingMD')
     $scope.toggleRentOrBuy = toggleRentOrBuy;
 
 
+    $scope.fetchMostRentedProducts = fetchMostRentedProducts;
+
+    $scope.flags = {
+      mostRentedCategoryFetcing : true,
+      mostRentedCategoryProductsFetcing : true
+    };
+
+
+
     $scope.closeThis = function(){
       console.log("Closethis called")
     };
 
     _initialize();
+
+
+
+    function fetchMostRentedProducts(category){
+      $scope.flags.mostRentedCategoryProductsFetcing = true;
+      category && ($scope.selectecMostRentedCategory = category);
+      RestSV
+        .get( landingCnst.productByCategory.url(),{category_id: $scope.selectecMostRentedCategory.Id})
+        .then(function(response){
+          $scope.mostRentedCategoryProducts = response.data.result.ProductList
+          $scope.flags.mostRentedCategoryProductsFetcing = false;
+        })
+    }
+
 
     function selectSearchedItem(product){
       if(typeof $scope.selectedProduct == "object"){
@@ -63,7 +86,11 @@ angular.module('HM_LandingMD')
       $scope.params.attributes = undefined;
       $scope.userObj = localStorageService.get('userObj');
       fetchEquipmentMenus();
-      loadCategories();
+      loadCategories()
+        .then(function(){
+          fetchMostRentedProducts();
+        })
+
     }
 
     function fetchEquipmentMenus(){
@@ -83,11 +110,15 @@ angular.module('HM_LandingMD')
 
 
     function loadCategories(){
+      $scope.flags.mostRentedCategoryFetcing = true;
       return RestSV
         .get( landingCnst.categoryList.url(),{type: 'rent'})
         .then(function(response){
           var rootCategories = response.data.result.CategoryList;
+          $scope.flags.mostRentedCategoryFetcing = false;
           $scope.displayCategories = rootCategories[0].children;
+          $scope.selectecMostRentedCategory = $scope.displayCategories[0];
+
         })
     }
 
