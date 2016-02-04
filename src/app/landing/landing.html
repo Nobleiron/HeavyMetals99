@@ -191,7 +191,7 @@
     </uib-carousel>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rented-detail-col">
 			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rented-detail-left">
-				<h3>Scissor Lifts</h3>
+				<h3>{{selectecMostRentedCategory.Name}}</h3>
 				<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -199,21 +199,14 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
-			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment">
-				<img src="/assets/images/image_page2.png">
-				<p class="desc-text">Backhoes & Attachment</p>
-			</div>
-			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment">
-				<img src="/assets/images/image_page2.png">
-				<p class="desc-text">Mini Excavators</p>
-			</div>
-			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment">
-				<img src="/assets/images/image_page2.png">
-				<p class="desc-text">Vehicles & Propane</p>
-			</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostRentedCategoryProducts | limitTo:3">
+        <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" style="width:100%">
+        <p class="desc-text">{{product.Product_Name}}</p>
+      </div>
 			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-				<button class="btn all-btn sign_mybtn primary-btn autowidth">View All</button>
-			</div>
+        <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
+
+      </div>
 		</div>
 	</div>
 </div>
