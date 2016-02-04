@@ -177,47 +177,15 @@
 		</div> -->
 		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Scissor Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Boom Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Backhoes & Attachment Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Mini Excavators</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Vehicles & Propane</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category)">
+            <p>{{category.Name}}</p>
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
+          </div>
       </uib-slide>
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Scissor Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Boom Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Backhoes & Attachment Lifts</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Mini Excavators</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip">
-							<p>Vehicles & Propane</p>
-						<img src="/assets/images/image_page2.png" alt="most rented pic">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category)">
+            <p>{{category.Name}}</p>
+            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" style="width:100%;">
 					</div>
       </uib-slide>
     </uib-carousel>
