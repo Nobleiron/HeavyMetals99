@@ -54,8 +54,9 @@
 						</h3>
 						<h3 class="sentence visible-xs">Search or Buy Construction Equipments</h3>
 						<p class="rent-buy-option">
-							<a href="" class="active">BUY</a>
-							<a href="">RENT</a>
+              <a href="" class="active">RENT</a>
+							<a href="" >BUY</a>
+
 						</p>
             <form role="search">
 						<div class="pull-center landing-search-div">
@@ -129,7 +130,7 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostRentedCategoryProducts | limitTo:3">
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
         <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
         <p class="desc-text">{{product.Product_Name}}</p>
       </div>
@@ -178,7 +179,7 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3">
+				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
           <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
           <p class="desc-text">{{product.Product_Name}}</p>
 				</div>
