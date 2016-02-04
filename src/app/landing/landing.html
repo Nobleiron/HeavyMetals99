@@ -28,8 +28,10 @@
 										<li><a href="#" scroll-to="buy" duration="1800">Buy</a></li>
 										<li><a href="#" scroll-to="repair" duration="1800">Repair</a></li>
 										<li><a href="#" scroll-to="software" duration="1800">Our Software</a></li>
-										<li><a href="#" scroll-to="testimonial" duration="1800">Testimonials</a></li>
+										<!-- <li><a href="#" scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
 										<li><a href="#" scroll-to="contact" duration="1800">Contact</a></li>
+										<li><a href="/#/login">Login</a></li>
+										<li><a href="/#/register">Register</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container-fluid -->
@@ -55,16 +57,15 @@
 							<a href="">BUY</a>
 							<a href="">RENT</a>
 						</p>
-            <form class="navbar-form my-search-nav header-form-small" role="search">
+            <form role="search">
 						<div class="pull-center landing-search-div">
-
-              <input type="text" class="form-control search-head-without" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
+              <input type="text" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
                      ng-change="showAutocomplete = true"
                      ng-model="selectedProduct"
                      typeahead="item as item.Product_Name for item in getProducts($viewValue)"
                      typeahead-on-select="selectSearchedItem($item, $model, $label)"
                      typeahead-template-url="typeahead-item.html"
-                     typeahead-loading="isLoading" ng-class="{'loading-time': isLoading}"/>
+                     typeahead-loading="isLoading"/>
 
 							<button class="btn all-btn sign_mybtn landing-search hidden-xs" type="submit" ng-click="selectSearchedItem()">
                 <span  ng-show="!isLoading">
@@ -196,7 +197,39 @@
 			<img src="/assets/images/landing-repair.jpg" class="landing-image">
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
-			<h3>We Repair All</h3>
+			<h3>Buy Certified used Equipments</h3>
+			<div class="line"></div>
+			<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
+			<button class="btn all-btn primary-btn sign_mybtn">Enquire Now</button>
+		</div>
+	</div>
+</div>
+<!-- service end -->
+<!-- software start -->
+<section class="most-bought" id="software">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
+				<img src="/assets/images/landing-software.png" class="landing-image software-img">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+				<h3>Sell your Equipment</h3>
+				<div class="line"></div>
+				<p class="desc-text">Easily manage your fleet from anywhere on your device</p>
+				<button class="btn all-btn primary-btn sign_mybtn autowidth">Get The Software Now</button>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- software end -->
+<!-- service start -->
+<div class="container" id="repair">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<img src="/assets/images/landing-repair.jpg" class="landing-image">
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+			<h3>Fleet Maintenance and Re-conditioning</h3>
 			<div class="line"></div>
 			<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
 			<button class="btn all-btn primary-btn sign_mybtn">Enquire Now</button>
@@ -221,6 +254,21 @@
 	</div>
 </section>
 <!-- software end -->
+<!-- service start -->
+<div class="container" id="repair">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<img src="/assets/images/landing-repair.jpg" class="landing-image">
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+			<h3>Love construction industry?</h3>
+			<div class="line"></div>
+			<p class="desc-text">Come join our nationwide team of Entreprenurs as an Independent consultant.</p>
+			<button class="btn all-btn primary-btn sign_mybtn">Join Now</button>
+		</div>
+	</div>
+</div>
+<!-- service end -->
 <!-- testimonials start -->
 <!-- <div class="container hidden-xs">
 	<div class="row">

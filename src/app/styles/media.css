@@ -15,7 +15,7 @@
 
 @media screen and (min-width: 1200px) {
 	.landing-search:after, .landing-search:before {
-		top: 70.3%;
+		top: 69.5%;
 		border: solid transparent;
 		content: " ";
 		height: 0;
@@ -1162,7 +1162,7 @@
 	}
 
 	.landing-search:after, .landing-search:before {
-		top: 71.3%;
+		top: 75%;
 		border: solid transparent;
 		content: " ";
 		height: 0;
