@@ -510,7 +510,8 @@
 		text-align: center;
 	}
 
-	.landing-carousel-control i {
+	.landing-carousel-control .glyphicon-chevron-right,
+	.landing-carousel-control .glyphicon-chevron-left {
 		display: none;
 	}
 	.repair-heading {
@@ -1199,6 +1200,10 @@
 	}
 	.landing-top {
 		background-position: 0px -100px;
+	}
+
+	.landing-carousel-control {
+		min-height: 460px;
 	}
 }
 

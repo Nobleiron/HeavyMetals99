@@ -3043,8 +3043,12 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	margin-bottom: 25px;
 }
 
-.landing-carousel-control.left,
-.landing-carousel-control.right {
+.landing-carousel-control {
+	min-height: 250px;
+}
+
+.landing-carousel-control .left,
+.landing-carousel-control .right {
 	background: none;
 	width: auto;
 	display: flex;
