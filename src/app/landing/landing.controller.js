@@ -14,6 +14,7 @@ angular.module('HM_LandingMD')
 
 
     $scope.fetchMostRentedProducts = fetchMostRentedProducts;
+    $scope.fetchMostBoughtProducts = fetchMostBoughtProducts;
 
     $scope.flags = {
       mostRentedCategoryFetcing : true,
@@ -38,6 +39,18 @@ angular.module('HM_LandingMD')
         .then(function(response){
           $scope.mostRentedCategoryProducts = response.data.result.ProductList
           $scope.flags.mostRentedCategoryProductsFetcing = false;
+        })
+    }
+
+
+    function fetchMostBoughtProducts(category){
+      $scope.flags.mostBoughtCategoryProductsFetcing = true;
+      category && ($scope.selectecMostBoughtCategory = category);
+      RestSV
+        .get( landingCnst.productByCategory.url(),{category_id: $scope.selectecMostBoughtCategory.Id})
+        .then(function(response){
+          $scope.mostBoughtCategoryProducts = response.data.result.ProductList
+          $scope.flags.mostBoughtCategoryProductsFetcing = false;
         })
     }
 
@@ -89,6 +102,7 @@ angular.module('HM_LandingMD')
       loadCategories()
         .then(function(){
           fetchMostRentedProducts();
+          fetchMostBoughtProducts();
         })
 
     }
@@ -118,6 +132,7 @@ angular.module('HM_LandingMD')
           $scope.flags.mostRentedCategoryFetcing = false;
           $scope.displayCategories = rootCategories[0].children;
           $scope.selectecMostRentedCategory = $scope.displayCategories[0];
+          $scope.selectecMostBoughtCategory = $scope.displayCategories[0];
 
         })
     }
