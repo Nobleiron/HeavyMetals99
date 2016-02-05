@@ -11,6 +11,11 @@ angular.module("HM_CartMD")
         return '/cart';
       }
     },
+    allowSubstitution : {
+      url : function(){
+        return '/cart/substitute';
+      }
+    },
     updateQty : {
       url : function(){
         return '/cart';
