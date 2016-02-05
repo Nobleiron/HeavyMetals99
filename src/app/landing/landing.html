@@ -54,8 +54,8 @@
 						</h3>
 						<h3 class="sentence visible-xs">Search or Buy Construction Equipments</h3>
 						<p class="rent-buy-option">
-              <a  ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
-							<a ng-click="toggleRentOrBuy(false)" ng-class="{'active': !flags.rented}">BUY</a>
+              <a href="" ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
+							<a href="" ng-click="toggleRentOrBuy(false)" ng-class="{'active': !flags.rented}">BUY</a>
 
 						</p>
             <form role="search">
@@ -130,7 +130,7 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
         <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
         <p class="desc-text">{{product.Product_Name}}</p>
       </div>
@@ -179,7 +179,7 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
           <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
           <p class="desc-text">{{product.Product_Name}}</p>
 				</div>
@@ -195,9 +195,9 @@
 <div class="container" id="repair">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
-			<img src="/assets/images/landing-repair.jpg" class="landing-image">
+			<img src="/assets/images/buy.png" class="landing-image">
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
 			<h3>Buy Certified used Equipments</h3>
 			<div class="line"></div>
 			<p class="desc-text">Buy quality equipment at the lowest price with Nobleiron. From Bobcat to JLG, excavators to boom lifts and even specialty equipment, we have whatever you're looking for offering best value for money.Save an average of 40% on construction equipment rental with Nobleiron.</p>
@@ -213,7 +213,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
 				<img src="/assets/images/landing-software.png" class="landing-image software-img">
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
 				<h3>Sell your Equipment</h3>
 				<div class="line"></div>
 				<p class="desc-text">When you aren't using your equipment and its getting rust,<br> let it raise money for you by selling it to us. We give best price when you sell<br> equipments to us.</p>
@@ -245,7 +245,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
 				<img src="/assets/images/landing-software.png" class="landing-image software-img">
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
 				<h3>Our Software</h3>
 				<div class="line"></div>
 				<p class="desc-text">Noble Iron Online is powered by Texada Software’s cloud platform.<br> Texada builds software for equipment rental companies,<br> equipment dealerships, construction companies, contractors,<br> and any construction or industrial equipment user, including mechanics,<br> logistics and service technicians. Texada Software manages the entire equipment lifecycle,<br> including equipment purchasing, rental & sales transactions, inventory location,<br> utilization, maintenance and depreciation tracking, used equipment sales analysis, and inventory replenishment. Texada (toll-free in North America): <span class="color-blue">1-800-361-1233</span></p>
@@ -255,11 +255,11 @@
 	</div>
 </section>
 <!-- software end -->
-<!-- service start -->
+<!-- Love start -->
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
-			<img src="/assets/images/landing-repair.jpg" class="landing-image">
+			<img src="/assets/images/love.jpg" class="love-image">
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
 			<h3>Love construction industry?</h3>
@@ -269,7 +269,7 @@
 		</div>
 	</div>
 </div>
-<!-- service end -->
+<!-- Love end -->
 <!-- testimonials start -->
 <!-- <div class="container hidden-xs">
 	<div class="row">
@@ -384,8 +384,7 @@
 							</h4>
 						</uib-accordion-heading>
 						<p class="desc-text">
-							8314 E. Slauson Avenue Pico Rivera, CA 90660 <br>
-							Phone: 1-855-767-4424
+							505 Rankin Road Houston, TX 77073
 						</p>
 					</uib-accordion-group>
 					<uib-accordion-group>
@@ -416,13 +415,13 @@
 					<h4>Noble Iron</h4>
 					<div class="line"></div>
 					<ul>
-						<a href=""><li>Team</li></a>
-						<a href=""><li>Board Of Directors</li></a>
-						<a href="#/FAQ"><li>Faq</li></a>
-						<a href="#/press-releases"><li>Press Releases</li></a>
-						<a href="#/financial-reports"><li>Financial Reports</li></a>
-						<a href="#/annual-meeting"><li>2015 Annual Meeting</li></a>
-						<a href="#/contact-us"><li>Contact Us</li></a>
+						<a ui-sref="hm.team" class="on-hover-pointer"><li>Team</li></a>
+						<a ui-sref="hm.boardOfDirectors" class="on-hover-pointer"><li>Board Of Directors</li></a>
+						<a ui-sref="hm.faq" class="on-hover-pointer"><li>Faq</li></a>
+						<a ui-sref="hm.pressReleases" class="on-hover-pointer"><li>Press Releases</li></a>
+						<a ui-sref="hm.financialReports" class="on-hover-pointer"><li>Financial Reports</li></a>
+						<a ui-sref="hm.annualMeeting" class="on-hover-pointer"><li>2015 Annual Meeting</li></a>
+						<a ui-sref="hm.contactUs" class="on-hover-pointer"><li>Contact Us</li></a>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
@@ -432,7 +431,11 @@
 						<li>Sales and Rental: 1-855-767-4424</li>
 						<li>Texada Software: 1-800-361-1233</li>
 						<li>Investor Relations: (832) 767-4424</li>
-						<li>Email: customercare@nobleiron.com</li>
+						<li>Email: <a href="mailto:customercare@nobleiron.com" class="color-blue">customercare@nobleiron.com</a></li>
+						<li>
+							<p class="nopadding"> <i class="fa fa-map-marker color-white"></i>&nbsp 505 Rankin Road<br>
+							 Houston - TX 77073</p>
+						</li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
@@ -470,10 +473,10 @@
 	<section class="main-footer">
 		<div class="container">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bottom-col">
-				<p>2016 Noble Iron. All rights reserved.</p>
+				<p>© 2016 Noble Iron. All rights reserved.</p>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right bottom-col">
-				<p  scroll-to="home" duration="1800">Top <i class="fa fa-arrow-circle-o-up"></i></p>
+				<p scroll-to="home" duration="1800" class="on-hover-pointer">Top <i class="fa fa-arrow-circle-o-up"></i></p>
 			</div>
 		</div>
 	</section>
