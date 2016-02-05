@@ -3385,6 +3385,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	padding-left: 5%;
 }
 
+.selected-item {
+	background-color: #fafafa;
+}
+
+.selected-item:after, .selected-item:before {
+	bottom: 100%;
+	left: 60%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	top: 100%;
+}
+
+.selected-item:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #ffffff;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.selected-item:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-bottom-color: #dddddd;
+	border-width: 8px;
+	margin-left: -34px;
+}
+
 
 
 

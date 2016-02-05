@@ -31,7 +31,8 @@ angular.module('HM_LandingMD')
 
 
 
-    function fetchMostRentedProducts(category){
+    function fetchMostRentedProducts(category, index){
+      $scope.selectedItem = index;
       $scope.flags.mostRentedCategoryProductsFetcing = true;
       category && ($scope.selectecMostRentedCategory = category);
       RestSV
@@ -43,7 +44,8 @@ angular.module('HM_LandingMD')
     }
 
 
-    function fetchMostBoughtProducts(category){
+    function fetchMostBoughtProducts(category, index){
+      $scope.selectedBuyItem = index;
       $scope.flags.mostBoughtCategoryProductsFetcing = true;
       category && ($scope.selectecMostBoughtCategory = category);
       RestSV

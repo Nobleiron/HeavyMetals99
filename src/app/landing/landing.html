@@ -108,13 +108,13 @@
 	<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category)">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
           </div>
       </uib-slide>
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category)">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
@@ -157,13 +157,13 @@
 		<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category)">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
       </uib-slide>
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category)">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
