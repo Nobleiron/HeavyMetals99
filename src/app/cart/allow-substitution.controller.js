@@ -8,7 +8,6 @@ angular.module("HM_CartMD")
 
     $scope.doneSubstituteSelection = doneSubstituteSelection;
 
-debugger
     function doneSubstituteSelection(){
       $modalInstance.close($scope.selectedSubstitute);
     }
