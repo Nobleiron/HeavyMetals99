@@ -20,7 +20,7 @@ angular.module("HM_SearchMD")
         $scope.results = [];
         angular.extend($scope.params,$stateParams);
         $scope.selectedAttributes = {};
-        $scope.selection = { type : "rent"};
+        $scope.selection = { type : $stateParams.type};
         $scope.flags = {
           searchResultLoading : false,
           categoryCollapse : false,

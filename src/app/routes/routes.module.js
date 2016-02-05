@@ -14,8 +14,9 @@
         continue;
       }
       var registerState = Routescnst.routes[state];
-      var stateObj = angular.extend({resolve: {
-        PreviousState: [
+      var stateObj = angular.extend({
+        resolve: {
+          PreviousState: [
           "$state",
           function ($state) {
             var currentStateData = {
@@ -25,13 +26,38 @@
             };
             return currentStateData;
           }
-        ]
-      }},registerState);
+        ],
+
+        session : ['$rootScope','$q','HM_RestSV','localStorageService',function($rootScope,$q,RestSV,localStorageService){
+          var deferred = $q.defer();
+          $rootScope.userObj = localStorageService.get('userObj');
+          $rootScope.session = $rootScope.session || {};
+          var guestSession = localStorageService.get('session');
+          if(!$rootScope.userObj && !guestSession && !$rootScope.session.fetched){
+            $rootScope.session.fetched = true;
+            RestSV
+              .head('')
+              .then(function(response){
+                if(response.headers().session){
+                  localStorageService.set('session',response.headers().session);
+                  deferred.resolve(true);
+                }
+              }, function(){
+                deferred.resolve(true);
+              })
+          }else{
+            deferred.resolve(true);
+          }
+
+          return deferred.promise
+        }]
+      }
+      },registerState);
       $stateProvider
         .state(state, stateObj);
     }
     $urlRouterProvider.otherwise(Routescnst.defaultRoute);
-    $locationProvider.html5Mode(true)
+   // $locationProvider.html5Mode(true)
   }
 
   function _run( $rootScope, $modal) {

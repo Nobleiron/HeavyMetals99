@@ -30,8 +30,8 @@
 										<li><a href="#" scroll-to="software" duration="1800">Our Software</a></li>
 										<!-- <li><a href="#" scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
 										<li><a href="#" scroll-to="contact" duration="1800">Contact</a></li>
-										<li><a href="/#/login">Login</a></li>
-										<li><a href="/#/register">Register</a></li>
+										<li ng-if="!userObj"><a href="/#/login">Login</a></li>
+										<li ng-if="!userObj"><a href="/#/register">Register</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container-fluid -->
@@ -54,8 +54,8 @@
 						</h3>
 						<h3 class="sentence visible-xs">Search or Buy Construction Equipments</h3>
 						<p class="rent-buy-option">
-              <a href="" class="active">RENT</a>
-							<a href="" >BUY</a>
+              <a  ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
+							<a ng-click="toggleRentOrBuy(false)" ng-class="{'active': !flags.rented}">BUY</a>
 
 						</p>
             <form role="search">
@@ -365,8 +365,8 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 address-col">
-				<uib-accordion close-others="oneAtATime" class="faq-accordion address-accordion">
-					<uib-accordion-group is-open="status.isFirstOpen">
+				<uib-accordion close-others="true" class="faq-accordion address-accordion">
+					<uib-accordion-group is-open="true">
 						<uib-accordion-heading>
 							<h4 class="go-back-text">
 								Noble Iron California

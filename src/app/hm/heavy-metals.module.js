@@ -36,16 +36,6 @@
 
       $rootScope.userObj = localStorageService.get('userObj');
 
-        RestSV
-          .head('')
-          .then(function(response){
-              if(response.headers().session){
-                localStorageService.set('session',response.headers().session);
-              }
-          }, function(){
-            
-          })
-
     }]);
 
 

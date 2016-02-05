@@ -2,7 +2,6 @@
 angular.module('HM_LandingMD')
     .controller('HM_LandingCtrl', ['$scope','$state','filterFilter','HM_SearchCnst','HM_RestSV','localStorageService', function ($scope, $state, filterFilter, landingCnst, RestSV, localStorageService) {
 
-    $scope.oneAtATime = true;
 
     $scope.params.type = "rent";
 
@@ -12,23 +11,12 @@ angular.module('HM_LandingMD')
 
     $scope.toggleRentOrBuy = toggleRentOrBuy;
 
-
     $scope.fetchMostRentedProducts = fetchMostRentedProducts;
+
     $scope.fetchMostBoughtProducts = fetchMostBoughtProducts;
 
-    $scope.flags = {
-      mostRentedCategoryFetcing : true,
-      mostRentedCategoryProductsFetcing : true
-    };
-
-
-
-    $scope.closeThis = function(){
-      console.log("Closethis called")
-    };
 
     _initialize();
-
 
 
     function fetchMostRentedProducts(category, index){
@@ -90,13 +78,15 @@ angular.module('HM_LandingMD')
     function _initialize(){
       $scope.selectedProduct = '';
       $scope.flags = {
-        rented : true
+        rented : true,
+        mostRentedCategoryFetcing : true,
+        mostRentedCategoryProductsFetcing : true
       };
       $scope.params.page = undefined;
       $scope.params.category_id = undefined;
       $scope.params.query = undefined;
       $scope.params.view_type = undefined;
-      $scope.params.type = undefined;
+      $scope.params.type = $scope.flags.rented ? "rent" : "buy";
 
       $scope.params.attributes = undefined;
       $scope.userObj = localStorageService.get('userObj');
@@ -139,9 +129,5 @@ angular.module('HM_LandingMD')
         })
     }
 
-
-    $scope.status= {
-      isFirstOpen: true
-    }
 
   }]);
