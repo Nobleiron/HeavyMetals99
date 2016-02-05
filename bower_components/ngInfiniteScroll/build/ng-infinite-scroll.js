@@ -1,4 +1,4 @@
-/* ng-infinite-scroll - v1.2.0 - 2015-12-02 */
+/* ng-infinite-scroll - v1.2.0 - 2015-02-14 */
 var mod;
 
 mod = angular.module('infinite-scroll', []);
@@ -17,7 +17,7 @@ mod.directive('infiniteScroll', [
         infiniteScrollListenForEvent: '@'
       },
       link: function(scope, elem, attrs) {
-        var changeContainer, checkInterval, checkWhenEnabled, container, handleInfiniteScrollContainer, handleInfiniteScrollDisabled, handleInfiniteScrollDistance, handleInfiniteScrollUseDocumentBottom, handler, height, immediateCheck, offsetTop, pageYOffset, scrollDistance, scrollEnabled, throttle, unregisterEventListener, useDocumentBottom, windowElement;
+        var changeContainer, checkWhenEnabled, container, handleInfiniteScrollContainer, handleInfiniteScrollDisabled, handleInfiniteScrollDistance, handleInfiniteScrollUseDocumentBottom, handler, height, immediateCheck, offsetTop, pageYOffset, scrollDistance, scrollEnabled, throttle, unregisterEventListener, useDocumentBottom, windowElement;
         windowElement = angular.element($window);
         scrollDistance = null;
         scrollEnabled = null;
@@ -26,7 +26,6 @@ mod.directive('infiniteScroll', [
         immediateCheck = true;
         useDocumentBottom = false;
         unregisterEventListener = null;
-        checkInterval = false;
         height = function(elem) {
           elem = elem[0] || elem;
           if (isNaN(elem.offsetHeight)) {
@@ -77,9 +76,6 @@ mod.directive('infiniteScroll', [
               }
             }
           } else {
-            if (checkInterval) {
-              $interval.cancel(checkInterval);
-            }
             return checkWhenEnabled = false;
           }
         };
@@ -179,11 +175,11 @@ mod.directive('infiniteScroll', [
         if (attrs.infiniteScrollImmediateCheck != null) {
           immediateCheck = scope.$eval(attrs.infiniteScrollImmediateCheck);
         }
-        return checkInterval = $interval((function() {
+        return $interval((function() {
           if (immediateCheck) {
             return handler();
           }
-        }), 0);
+        }), 0, 1);
       }
     };
   }

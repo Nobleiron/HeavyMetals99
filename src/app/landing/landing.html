@@ -23,13 +23,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav navbar-right landing-nav">
-										<li><a href="#" scroll-to="home" duration="1800">Home</a></li>
-										<li><a href="#" scroll-to="rent" duration="1800">Rent</a></li>
-										<li><a href="#" scroll-to="buy" duration="1800">Buy</a></li>
-										<li><a href="#" scroll-to="repair" duration="1800">Repair</a></li>
-										<li><a href="#" scroll-to="software" duration="1800">Our Software</a></li>
-										<!-- <li><a href="#" scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
-										<li><a href="#" scroll-to="contact" duration="1800">Contact</a></li>
+										<li><a   scroll-to="home" duration="1800">Home</a></li>
+										<li><a   scroll-to="rent" duration="1800">Rent</a></li>
+										<li><a   scroll-to="buy" duration="1800">Buy</a></li>
+										<li><a   scroll-to="repair" duration="1800">Repair</a></li>
+										<li><a   scroll-to="software" duration="1800">Our Software</a></li>
+										<!-- <li><a   scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
+										<li><a   scroll-to="contact" duration="1800">Contact</a></li>
 										<li ng-if="!userObj"><a href="/#/login">Login</a></li>
 										<li ng-if="!userObj"><a href="/#/register">Register</a></li>
 									</ul>
@@ -108,7 +108,7 @@
 	<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectecMostRentedCategory.Id == category.Id}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
           </div>
@@ -157,7 +157,7 @@
 		<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
 			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
       <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
             <p>{{category.Name}}</p>
             <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
