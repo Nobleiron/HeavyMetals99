@@ -20,6 +20,7 @@ angular.module("HM_CartMD")
 
 
     function allowSubstitution(product){
+      $scope.productToAllowSubstitute = product;
         var modalInstance = $uibModal.open({
           animation: true,
           templateUrl: '/app/cart/allow-substitution.html',
@@ -32,9 +33,17 @@ angular.module("HM_CartMD")
         });
 
         modalInstance.result.then(function (selectedItem) {
-          debugger
           $scope.selected = selectedItem;
-        }, function () {
+          RestSV.post(ShoppingCartCnst.allowSubstitution.url(),{
+            product_id: product.Product_id,
+            substitute : [{product_id : selectedItem.Product_Id, preference : 1}]
+          })
+            .then(function(){
+              toastr.success("Substitute preference saved");
+            })
+            .catch(function(){
+              toastr.error("Failed to save substitute preference");
+            })
         });
 
     }
