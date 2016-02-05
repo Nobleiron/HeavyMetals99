@@ -3145,7 +3145,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .landing-image {
 	width: 65%;
-	min-width: 320px;
+	min-width: 250px;
 	max-width: 350px;
 }
 
