@@ -80,6 +80,7 @@ angular.module("HM_RoutesMD")
         },
         'hm.search' : {
           url : '?type',
+          abstract : true,
           templateUrl: 'app/search/search.html',
           controller: 'HM_SearchCtrl'
         },
