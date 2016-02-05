@@ -275,6 +275,14 @@ angular.module("HM_RoutesMD")
           url: '/financial-reports',
           templateUrl: 'app/financial-reports/financial-reports.html'
         },
+        'hm.team': {
+          url: '/team',
+          templateUrl: 'app/team/team.html'
+        },
+        'hm.boardOfDirectors': {
+          url: '/board-of-directors',
+          templateUrl: 'app/board-of-directors/board-of-directors.html'
+        },
         'hm.dashboard.invoiceDetail': {
           url: '/invoice-detail',
           templateUrl: 'app/invoice-detail/invoice-detail.html'
