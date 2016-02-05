@@ -3092,7 +3092,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .most-rented-equip:hover {
-	background: #fafafa;
+	background: #dddddd;
 }
 
 .most-rented-equip p {
@@ -3125,7 +3125,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .other-equipment:hover {
-	background-color: #fafafa;
+	background-color: #dddddd;
 }
 
 .most-bought {
@@ -3401,7 +3401,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .selected-item {
-	background-color: #fafafa;
+	background-color: #dddddd;
 }
 
 .selected-item:after, .selected-item:before {

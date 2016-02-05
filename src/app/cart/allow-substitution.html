@@ -5,10 +5,10 @@
 </div>
 <div class="row fields-row">
   <div class="col-md-12 site-col">
-    <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <form class="navbar-form my-search-nav" role="search">
         <i class="fa fa-spinner fa-spin loading-search header-spinner" ng-show="loadingSubstitute"></i>
-        <input class="form-control" type="text" ng-model="query" Placeholder="Search Product Substitute"
+        <input class="form-control fullwidth" type="text" ng-model="query" Placeholder="Search Product Substitute"
                uib-typeahead="product for product in getProducts($viewValue)"
                typeahead-on-select="selectSearchedItem($item, $model, $label)"
                typeahead-template-url="search-substitue.html"
