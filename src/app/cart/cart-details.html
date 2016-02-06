@@ -102,15 +102,39 @@
         <a ng-click="allowSubstitution(product)" class="on-hover-pointer">Allow Substitution?</a>
 
         <p class="qty-head">Quantity</p>
-        <ng-form>
-          <input ng-pattern="/[1-9*]+/" class="form-control" ng-model="cartData.summary.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.summary.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])" >
-          <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress" style="position: absolute; margin-top: -32px; right: 25px;" ></i>
+        <ng-form name="product[{{product.Product_id}}]" ng-init="cartData.summary.productsQuantity[product.Product_id].updateInProgress = false;">
+          <input ng-pattern="/[1-9*]+/"
+                 name = "quantity"
+                 class="form-control"
+                 ng-model="cartData.summary.productsQuantity[product.Product_id].qty"
+                 type="text"
+                 autocomplete="off"
+                 spellcheck="false"
+                 >
+          <p>
+          <span ng-show="product[product.Product_id].quantity.$dirty">
+            <button class="quantity-update check"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-check"
+                 ng-class="{'fa-check' : !cartData.summary.productsQuantity[product.Product_id].updateInProgress,'fa-spinner fa-spin' : cartData.summary.productsQuantity[product.Product_id].updateInProgress}">
+              </i>
+            </button>
+            <button class="quantity-update update-close"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="resetQuantity(cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-close"></i>
+            </button>
+            </span>
+          </p>
+
+          <!--<i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress" style="position: absolute; margin-top: -32px; right: 25px;" ></i>-->
         </ng-form>
 
         <!-- <i class="fa fa-map-marker marker"></i>
         <span>Bay Area, Houstan</span>
         <span class="pull-right"><a href="#/update-job-site">Update</a></span> -->
-        <p class="sub-total">Sub-Total: &nbsp ${{product.Product_rate}}
+        <p class="sub-total">Sub-Total: &nbsp ${{product.Total_rate}}
           <span class="pull-right">
             <a ng-click="deleteProductFromCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">Delete</a>
           </span>
