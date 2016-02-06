@@ -177,11 +177,15 @@ angular.module("HM_CartMD")
 
 
     function reserve(){
+      $scope.$broadcast('Reserve:Process:Start');
       _normalizePaymentDetails();
       _normalizeJobSiteDetails();
       _normalizeContactDetails();
       normalizeCartDataToSubmit.delivery_status = 'R';
-      _submitCart();
+      _submitCart().then(function(){
+        $scope.$broadcast('Reserve:Process:End');
+        $rootScope.$broadcast("Cart:Updated", 0);
+      });
     }
 
 
@@ -217,14 +221,18 @@ angular.module("HM_CartMD")
     }
 
     function generateQuote(){
+      $scope.$broadcast('Quote:Process:Start');
       _normalizeJobSiteDetails();
       _normalizeContactDetails();
        normalizeCartDataToSubmit.delivery_status = 'Q';
-      _submitCart();
+      _submitCart().then(function(){
+        $scope.$broadcast('Quote:Process:End');
+        $rootScope.$broadcast("Cart:Updated", 0);
+      })
     }
 
     function _submitCart(){
-      RestSV.post(ShoppingCartCnst.cartSubmit.url(),normalizeCartDataToSubmit)
+    return RestSV.post(ShoppingCartCnst.cartSubmit.url(),normalizeCartDataToSubmit)
         .then(function(response){
           var orders = response.data.result.Orders || response.data.result.Order;
           localStorageService.remove("cartData");
