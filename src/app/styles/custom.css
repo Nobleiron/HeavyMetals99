@@ -391,3 +391,17 @@ form input:after {
   content:"*";
   color:red;
 }
+
+.quantity-update,.quantity-update:active,.quantity-update:focus{
+  border: none;
+  background: none;
+  font-size: 18px;
+  outline: none;
+}
+
+.quantity-update.check{
+  color: #009ddc;
+}
+.quantity-update.update-close{
+  color: #d9534f;
+}

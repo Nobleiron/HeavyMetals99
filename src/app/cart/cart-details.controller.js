@@ -16,7 +16,16 @@ angular.module("HM_CartMD")
     //  }
     //};
 
+    $scope.resetQuantity = resetQuantity;
+
     $scope.allowSubstitution = allowSubstitution;
+
+
+
+    function resetQuantity(model, form){
+      model.qty = model.originalQuantity;
+      form.$setPristine();
+    }
 
 
     function allowSubstitution(product){
@@ -48,24 +57,26 @@ angular.module("HM_CartMD")
 
     }
 
-    function updateCart(productId, cartData){
+    function updateCart(productId, cartData, productForm){
       if(!(/[1-9*]+/.test(cartData.qty))){
         return false;
       }
-      if(cartData.isDirty){
-        cartData.isDirty = false;
+      //if(cartData.isDirty){
+      //  cartData.isDirty = false;
         cartData.updateInProgress = true;
         RestSV.put(ShoppingCartCnst.updateQty.url(),{
           proid: productId,
           qty : cartData.qty
         })
           .then(function(response){
+            cartData.originalQuantity = cartData.qty;
             angular.merge($scope.data.cart,response.data.result.Cart_Content);
           })
           .finally(function(){
+            productForm.$setPristine();
             cartData.updateInProgress = false;
           })
-      }
+      //}
 
     }
 

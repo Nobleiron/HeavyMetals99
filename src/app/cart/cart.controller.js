@@ -127,9 +127,9 @@ angular.module("HM_CartMD")
             $scope.data.cart = response.data.result.Cart_Content;
 
             $scope.data.cart && $scope.data.cart.Product && $scope.data.cart.Product.forEach(function(product){
-              if(!$scope.cartData.summary.productsQuantity[product.Product_id]){
-                $scope.cartData.summary.productsQuantity[product.Product_id] = { qty: product.Product_quantity,isDirty: false}
-              }
+              $scope.cartData.summary.productsQuantity[product.Product_id] = $scope.cartData.summary.productsQuantity[product.Product_id] || {};
+              angular.extend($scope.cartData.summary.productsQuantity[product.Product_id] ,{ qty: product.Product_quantity, originalQuantity: product.Product_quantity})
+
               $scope.cartData.duration.span= humanizeDuration(moment($scope.cartData.duration.toDt).diff(moment($scope.cartData.duration.fromDt)));
               steps.summary.complete = true;
             })

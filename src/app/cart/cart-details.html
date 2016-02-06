@@ -39,9 +39,31 @@
           </ul>
         </td>
         <td class="quantity vertically-middle">
-          <ng-form>
-          <input ng-pattern="/[1-9*]+/" class="form-control" ng-model="cartData.summary.productsQuantity[product.Product_id].qty" type="text" ng-change="cartData.summary.productsQuantity[product.Product_id].isDirty = true" ng-blur="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])" >
-          <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress" ></i>
+          <ng-form name="product[{{product.Product_id}}]" ng-init="cartData.summary.productsQuantity[product.Product_id].updateInProgress = false;">
+            <!--{{cartData.summary.productsQuantity[product.Product_id].updateInProgress}}-->
+          <input ng-pattern="/[1-9*]+/"
+                 class="form-control"
+                 name = "quantity"
+                 ng-model="cartData.summary.productsQuantity[product.Product_id].qty"
+                 type="text"
+                 autocomplete="off"
+                 spellcheck="false"
+                 >
+
+            <span ng-show="product[product.Product_id].quantity.$dirty">
+            <button class="quantity-update check"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-check"
+                 ng-class="{'fa-check' : !cartData.summary.productsQuantity[product.Product_id].updateInProgress,'fa-spinner fa-spin' : cartData.summary.productsQuantity[product.Product_id].updateInProgress}">
+              </i>
+            </button>
+            <button class="quantity-update update-close"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="resetQuantity(cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-close"></i>
+            </button>
+            </span>
           <br>
           <div class="error">Invalid Quantity</div>
           </ng-form>
