@@ -137,6 +137,11 @@ angular.module("HM_RoutesMD")
           controller: 'HM_QuoteDetailsCtrl',
           templateUrl: 'app/quotes-detail/quotes-detail.html'
         },
+        'hm.guestQuotesDetail' : {
+          url: '/quotes/g/:id',
+          controller: 'HM_QuoteDetailsCtrl',
+          templateUrl: 'app/quotes-detail/guest-quote-details.html'
+        },
         'hm.dashboard.myCatalogue' : {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
