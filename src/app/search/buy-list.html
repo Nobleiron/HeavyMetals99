@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-6 nopadding">
       <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
-      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a  >{{item.MAKE}}</a></span></h5>
+      <!--<h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a  >{{item.MAKE}}</a></span></h5>-->
       <div class="col-md-3 star_list">
         <div class="star-list-top">
           <a  > <i class="fa fa-star"></i>
@@ -22,16 +22,8 @@
         <div class="daily_ul">
           <ul>
             <li>
-              <p class="daily_title">Daily</p>
-              <p class="daily_price">${{item.Product_Price.Daily}}</p>
-            </li>
-            <li>
-              <p class="daily_title">Weekly</p>
-              <p class="daily_price">${{item.Product_Price.Weekly}}</p>
-            </li>
-            <li>
-              <p class="daily_title">Monthly</p>
-              <p class="daily_price">${{item.Product_Price.Monthly}}</p>
+              <p class="daily_title">Price</p>
+              <p class="daily_price">${{item.Product_Price}}</p>
             </li>
           </ul>
         </div>
