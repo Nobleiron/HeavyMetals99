@@ -100,7 +100,7 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites.length">
         <p class="desc-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp No Jobsites Available</p>
-        <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
+        <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="tabs.addNew = true;hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding" ng-if="cartData.jobsites.length">
