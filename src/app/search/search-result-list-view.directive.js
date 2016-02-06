@@ -1,8 +1,16 @@
 'use strict';
 angular.module("HM_SearchMD")
-  .directive('searchResultListView', [ function(){
+  .directive('searchResultListView', [ '$parse', function($parse){
     return {
       restrict : 'E',
-      templateUrl : 'app/search/list.html'
+      template: '<ng-include src="dynamicTemplateUrl"></ng-include>',
+      link : function(scope) {
+       var unwatch =  scope.$watch('selection', function(c) {
+         if(c){
+           scope.dynamicTemplateUrl = c.type == "buy" ? 'app/search/buy-list.html' : 'app/search/list.html';
+           unwatch();
+         }
+        });
+      }
     };
   }]);
