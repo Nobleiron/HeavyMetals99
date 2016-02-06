@@ -22,11 +22,12 @@ angular.module('HM_LandingMD')
     function fetchMostRentedProducts(category, index){
       $scope.selectedItem = index;
       $scope.flags.mostRentedCategoryProductsFetcing = true;
+      $scope.mostRentedCategoryProducts = [];
       category && ($scope.selectecMostRentedCategory = category);
       RestSV
         .get( landingCnst.productByCategory.url(),{category_id: $scope.selectecMostRentedCategory.Id})
         .then(function(response){
-          $scope.mostRentedCategoryProducts = response.data.result.ProductList
+          $scope.mostRentedCategoryProducts = response.data.result.ProductList.slice(0, 3);
           $scope.flags.mostRentedCategoryProductsFetcing = false;
         })
     }
@@ -35,11 +36,12 @@ angular.module('HM_LandingMD')
     function fetchMostBoughtProducts(category, index){
       $scope.selectedBuyItem = index;
       $scope.flags.mostBoughtCategoryProductsFetcing = true;
+      $scope.mostBoughtCategoryProducts = [];
       category && ($scope.selectecMostBoughtCategory = category);
       RestSV
         .get( landingCnst.productByCategory.url(),{category_id: $scope.selectecMostBoughtCategory.Id})
         .then(function(response){
-          $scope.mostBoughtCategoryProducts = response.data.result.ProductList
+          $scope.mostBoughtCategoryProducts = response.data.result.ProductList.slice(0, 3);
           $scope.flags.mostBoughtCategoryProductsFetcing = false;
         })
     }

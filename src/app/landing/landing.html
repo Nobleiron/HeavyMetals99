@@ -135,7 +135,7 @@
         <load-indicator loading="true"></load-indicator>
       </div>
       <div ng-show="!flags.mostRentedCategoryProductsFetcing">
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
           <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
           <p class="desc-text">{{product.Product_Name}}</p>
         </div>
@@ -191,7 +191,7 @@
           <load-indicator loading="true"></load-indicator>
         </div>
         <div ng-show="!flags.mostBoughtCategoryProductsFetcing">
-          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
             <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
             <p class="desc-text">{{product.Product_Name}}</p>
           </div>
