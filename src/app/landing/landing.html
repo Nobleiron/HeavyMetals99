@@ -23,16 +23,16 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav navbar-right landing-nav">
-										<li><a   scroll-to="home" duration="1800">Home</a></li>
-										<li><a   scroll-to="rent" duration="1800">Rent</a></li>
-										<li><a   scroll-to="buy" duration="1800">Buy</a></li>
-										<li><a   scroll-to="repair" duration="1800">Repair</a></li>
-										<li><a   scroll-to="software" duration="1800">Our Software</a></li>
+										<li><a scroll-to="home" duration="1800">Home</a></li>
+										<li><a scroll-to="rent" duration="1800">Rent</a></li>
+										<li><a scroll-to="buy" duration="1800">Buy</a></li>
+										<li><a scroll-to="repair" duration="1800">Repair</a></li>
+										<li><a scroll-to="software" duration="1800">Our Software</a></li>
 										<!-- <li><a   scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
 										<li><a   scroll-to="contact" duration="1800">Contact</a></li>
-										<li ng-if="!userObj"><a href="/#/login">Login</a></li>
-										<li ng-if="!userObj"><a href="/#/register">Register</a></li>
-										<li ng-if="userObj"><a href="/#/logout">Logout</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.login">Login</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.register">Register</a></li>
+										<li ng-if="userObj"><a ui-sref="hmPrelogin.logout">Logout</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container-fluid -->
@@ -131,14 +131,21 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
-        <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
-        <p class="desc-text">{{product.Product_Name}}</p>
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostRentedCategoryProductsFetcing" style="margin-top: 100px;">
+        <load-indicator loading="true"></load-indicator>
       </div>
-			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-        <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
+      <div ng-show="!flags.mostRentedCategoryProductsFetcing">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+          <p class="desc-text">{{product.Product_Name}}</p>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+          <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
 
+        </div>
       </div>
+
+
 		</div>
 	</div>
 </div>
@@ -180,13 +187,19 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
-          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
-          <p class="desc-text">{{product.Product_Name}}</p>
-				</div>
-				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-					<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
-				</div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostBoughtCategoryProductsFetcing" style="margin-top: 100px;">
+          <load-indicator loading="true"></load-indicator>
+        </div>
+        <div ng-show="!flags.mostBoughtCategoryProductsFetcing">
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts | limitTo:3" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+            <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+            <p class="desc-text">{{product.Product_Name}}</p>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+            <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
+          </div>
+        </div>
+
 			</div>
 		</div>
 	</div>
