@@ -33,7 +33,7 @@
           <script type="text/ng-template" id="searchbox.tpl.html">
             <input type="text" class="form-control" placeholder="Search Location"/>
           </script>
-          <div class="jobsite-lookup">
+          <div class="jobsite-lookup" ng-if="showMap">
             <ui-gmap-google-map
               center="map.center"
               zoom="map.zoom"
@@ -47,11 +47,37 @@
           </div>
         </div>
       </div>
-      <div class="row nomargin">
-        <div class="col-md-12 leftpadding">
-          <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">
-            <span btn-load-indicator="Cart:Jobsite:Save">Add Job Site</span>
-          </button>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding">
+        <h3 class="heading-text">Jobsite Contact Information</h3>
+        <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Name" ng-model="cartData.delivery.contactInfo.firstName">
+           <i class="fa fa-user pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.phone">
+           <i class="fa fa-user pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Email" ng-model="cartData.delivery.contactInfo.email">
+           <i class="fa fa-envelope-o pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+        <div class="form-control search-div">
+          <textarea placeholder="Delivery Note" ng-model="cartData.delivery.contactInfo.deliveryNote">
+
+          </textarea>
+          <!--<input type="text" placeholder="Delivery Note" ng-model="cartData.delivery.contactInfo.deliveryNote">-->
+          <i class="fa fa-pencil pull-right"></i>
         </div>
       </div>
     </div>
@@ -125,18 +151,18 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
         <div class="form-control search-div">
-          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.lastName">
+          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.phone">
           <!-- <i class="fa fa-user pull-right"></i> -->
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
         <div class="form-control search-div">
-          <input type="text" placeholder="Purchase Order" ng-model="cartData.delivery.contactInfo.email">
+          <input type="text" placeholder="Purchase Order" ng-model="cartData.delivery.contactInfo.purchaseOrder">
           <!-- <i class="fa fa-envelope-o pull-right"></i> -->
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
-          <textarea class="form-control delivery-note-textarea">Delivery Note</textarea>
+          <textarea class="form-control delivery-note-textarea" ng-model="cartData.delivery.contactInfo.deliveryNote">Delivery Note</textarea>
           <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
           <!-- <i class="fa fa-phone pull-right"></i> -->
       </div>

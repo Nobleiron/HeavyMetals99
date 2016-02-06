@@ -10,13 +10,12 @@ angular.module('HM_ResponseINT', [])
         return {
 
           'responseError': function (response) {
-            if (response.status == 401 && response.data.errortext == "Unauthorized User") {
-
-
-              $location.path('/logout');
-
-              return $q.reject(response);
+            if (response.status == 401) {
+              if(response && response.data && response.data.errortext == "Unauthorized User"){
+                $location.path('/logout');
+              }
             }
+            return $q.reject(response);
           }
 
         }

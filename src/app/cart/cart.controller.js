@@ -78,12 +78,14 @@ angular.module("HM_CartMD")
 
     function validateStepsCompletion(){
       var cartData = $scope.cartData;
-      if(!angular.equals(cartData.delivery.selectedJobSite, {})){
-        steps.delivery.complete = true;
-      } else{
-        steps.delivery.complete = false;
+      if($scope.userObj){
+          steps.delivery.complete = !angular.equals(cartData.delivery.selectedJobSite, {})
+      }else{
+        var inValid =  !!_.findKey(cartData.delivery.contactInfo, function(o) {
+          return o  == "" || o == undefined;
+        }) || angular.equals(cartData.delivery.contactInfo, {});
+        steps.delivery.complete = !angular.equals(cartData.delivery.selectedJobSite, {}) &&  !inValid
       }
-
       if(!angular.equals(cartData.summary.productsQuantity, {})){
         steps.summary.complete = true;
       }else{
@@ -204,6 +206,8 @@ angular.module("HM_CartMD")
       $scope.cartData.delivery.contactInfo.lastName && (normalizeCartDataToSubmit.contact_name = normalizeCartDataToSubmit.contact_name + ' ' + $scope.cartData.delivery.contactInfo.lastName);
       normalizeCartDataToSubmit.email = $scope.cartData.delivery.contactInfo.email || null;
       normalizeCartDataToSubmit.contact_phone = $scope.cartData.delivery.contactInfo.phone || null;
+      normalizeCartDataToSubmit.purchase_order_number = $scope.cartData.delivery.contactInfo.purchaseOrder || null;
+      normalizeCartDataToSubmit.delivery_note = $scope.cartData.delivery.contactInfo.deliveryNote || null;
     }
 
 
@@ -222,11 +226,12 @@ angular.module("HM_CartMD")
     function _submitCart(){
       RestSV.post(ShoppingCartCnst.cartSubmit.url(),normalizeCartDataToSubmit)
         .then(function(response){
+          var orders = response.data.result.Orders || response.data.result.Order;
           localStorageService.remove("cartData");
           if(normalizeCartDataToSubmit.delivery_status == 'R'){
-            $state.go('hm.reserveEquipmentSuccess',{source: 'reservation',id: response.data.result.Order[0].Order_id});
+            $state.go('hm.reserveEquipmentSuccess',{source: 'reservation',id: orders[0].Order_id});
           }else{
-            $state.go('hm.dashboard.quotesDetail',{id: response.data.result.Order[0].Order_id});
+            $state.go('hm.dashboard.quotesDetail',{id: orders[0].Order_id});
           }
 
         })

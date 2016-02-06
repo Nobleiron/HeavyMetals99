@@ -23,7 +23,7 @@ angular.module("HM_CartMD")
     },
     applyPromoCode : {
       url : function(){
-        return '/cart/applyPromocode';
+        return '/cart/promocode';
       }
     },
     updateDuration : {
