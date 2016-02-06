@@ -13,6 +13,7 @@ angular.module('HM_RequestHeadersINT', [])
             if(reg.test(request.url)){
               if(userObj){
                 request.headers["auth_token"] = localStorageService.get("userObj").auth_token
+                request.headers["session_id"] = guestSession;
               }else if(reg.test(request.url)){
                 request.headers["session_id"] = guestSession;
                 request.data = request.data || {};
