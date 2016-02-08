@@ -23,16 +23,51 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav navbar-right landing-nav">
-										<li><a scroll-to="home" duration="1800">Home</a></li>
-										<li><a scroll-to="rent" duration="1800">Rent</a></li>
-										<li><a scroll-to="buy" duration="1800">Buy</a></li>
-										<li><a scroll-to="repair" duration="1800">Repair</a></li>
-										<li><a scroll-to="software" duration="1800">Our Software</a></li>
+										<li><a scroll-to="home" duration="1800" class="on-hover-pointer">Home</a></li>
+										<li><a scroll-to="rent" duration="1800" class="on-hover-pointer">Rent</a></li>
+										<li><a scroll-to="buy" duration="1800" class="on-hover-pointer">Buy</a></li>
+										<li><a scroll-to="repair" duration="1800" class="on-hover-pointer">Repair</a></li>
+										<li><a scroll-to="software" duration="1800" class="on-hover-pointer">Our Software</a></li>
 										<!-- <li><a   scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
-										<li><a   scroll-to="contact" duration="1800">Contact</a></li>
-										<li ng-if="!userObj"><a ui-sref="hmPrelogin.login">Login</a></li>
-										<li ng-if="!userObj"><a ui-sref="hmPrelogin.register">Register</a></li>
-										<li ng-if="userObj"><a ui-sref="hmPrelogin.logout">Logout</a></li>
+										<li><a   scroll-to="contact" duration="1800" class="on-hover-pointer">Contact</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.login" class="on-hover-pointer">Login</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.register" class="on-hover-pointer">Register</a></li>
+										<!-- <li ng-if="userObj"><a ui-sref="hmPrelogin.logout" class="on-hover-pointer">Logout</a></li> -->
+										<li ng-if="userObj" class="hidden-xs">
+											<div class="btn-group profile-dropdown user-div" dropdown>
+												<button class="btn landing-profile-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+													<i class="fa fa-caret-down heading-text"></i>
+												</button>
+												<ul class="dropdown-menu list-group user-list-group arrow_box landing-dropdown-menu"  role="menu" aria-labelledby="single-button">
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1"  >Purchases</a></li>
+													<li role="presentation"class="list-group-item noborder" ng-if="!userObj.portal_login"><a class="nopadding" role="menuitem" tabindex="-1" ui-sref="hm.portalAccess">Get Portal Access</a></li>
+													<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
+													<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+													<li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+												</ul>
+											</div>
+										</li>
+										<!-- mobile my account tab -->
+										<li ng-if="userObj" class="visible-xs">
+											<uib-accordion>
+										    <uib-accordion-group class="landing-panel-group">
+										      <uib-accordion-heading>
+										        {{userObj.logged_userName}}
+										      </uib-accordion-heading>
+										      <ul>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/dashboard">Dashboard</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="#/orders/history">Recent Orders</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding">Purchases</a></li>
+														<li class="list-group-item bottomborder" ng-if="!userObj.portal_login"><a class="nopadding" ui-sref="hm.portalAccess">Get Portal Access</a></li>
+														<li class="list-group-item"><a class="nopadding" href="/#/user/profile">Profile Settings</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/help">Help</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/logout">Logout</a></li>
+													</ul>
+										    </uib-accordion-group>
+										  </uib-accordion>
+										</li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container-fluid -->
@@ -55,39 +90,39 @@
 						</h3>
 						<h3 class="sentence visible-xs">Search or Buy Construction Equipments</h3>
 						<p class="rent-buy-option">
-              <a href="" ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
+							<a href="" ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
 							<a href="" ng-click="toggleRentOrBuy(false)" ng-class="{'active': !flags.rented}">BUY</a>
 
 						</p>
-            <form role="search">
+						<form role="search">
 						<div class="pull-center landing-search-div">
-              <input type="text" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
-                     ng-change="showAutocomplete = true"
-                     ng-model="selectedProduct"
-                     typeahead="item as item.Product_Name for item in getProducts($viewValue)"
-                     typeahead-on-select="selectSearchedItem($item, $model, $label)"
-                     typeahead-template-url="typeahead-item.html"
-                     typeahead-loading="isLoading"/>
+							<input type="text" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
+										 ng-change="showAutocomplete = true"
+										 ng-model="selectedProduct"
+										 typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+										 typeahead-on-select="selectSearchedItem($item, $model, $label)"
+										 typeahead-template-url="typeahead-item.html"
+										 typeahead-loading="isLoading"/>
 
 							<button class="btn all-btn sign_mybtn landing-search hidden-xs" type="submit" ng-click="selectSearchedItem()">
-                <span  ng-show="!isLoading">
-                  <i class="fa fa-search"></i>&nbsp
-								    Find
+								<span  ng-show="!isLoading">
+									<i class="fa fa-search"></i>&nbsp
+										Find
 								</span>
-                <i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
-              </button>
+								<i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
+							</button>
 
 							<div class="visible-xs">
 								<button class="btn all-btn sign_mybtn" type="submit" ng-click="selectSearchedItem()">
-                  <span  ng-show="!isLoading">
-                    <i class="fa fa-search"></i>&nbsp
-								    Find
-								  </span>
-                  <i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
-                </button>
+									<span  ng-show="!isLoading">
+										<i class="fa fa-search"></i>&nbsp
+										Find
+									</span>
+									<i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
+								</button>
 							</div>
 						</div>
-            </form>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -103,24 +138,38 @@
 			<div class="line"></div>
 		</div>
 	</div>
-  <div class="row" ng-show="flags.mostRentedCategoryFetcing">
-    <load-indicator loading="true"></load-indicator>
-  </div>
+	<div class="row" ng-show="flags.mostRentedCategoryFetcing">
+		<load-indicator loading="true"></load-indicator>
+	</div>
 	<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
-		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
-      <uib-slide>
+		<!-- web view slider start -->
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control hidden-xs hidden-sm">
+			<uib-slide>
 					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectecMostRentedCategory.Id == category.Id}">
-            <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
-          </div>
-      </uib-slide>
-      <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
-            <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						<p>{{category.Name}}</p>
+						<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
 					</div>
-      </uib-slide>
-    </uib-carousel>
+			</uib-slide>
+			<uib-slide>
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
+						<p>{{category.Name}}</p>
+						<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+					</div>
+			</uib-slide>
+		</uib-carousel>
+		<!-- web view slider end -->
+		<!-- mobile view slider start -->
+		<div class="visible-xs visible-sm">
+			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
+				<uib-slide ng-repeat="category in displayCategories">
+						<div class="col-sm-10 col-xs-10 most-rented-equip" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectecMostRentedCategory.Id == category.Id}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+			</uib-carousel>
+		</div>
+		<!-- mobile view slider end -->
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rented-detail-col">
 			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rented-detail-left">
 				<h3>{{selectecMostRentedCategory.Name}}</h3>
@@ -131,21 +180,18 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 			</div>
-      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostRentedCategoryProductsFetcing" style="margin-top: 100px;">
-        <load-indicator loading="true"></load-indicator>
-      </div>
-      <div ng-show="!flags.mostRentedCategoryProductsFetcing">
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
-          <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
-          <p class="desc-text">{{product.Product_Name}}</p>
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-          <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
-
-        </div>
-      </div>
-
-
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostRentedCategoryProductsFetcing" style="margin-top: 100px;">
+				<load-indicator loading="true"></load-indicator>
+			</div>
+			<div ng-show="!flags.mostRentedCategoryProductsFetcing">
+				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+					<img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+					<p class="desc-text">{{product.Product_Name}}</p>
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+					<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -159,24 +205,38 @@
 				<div class="line"></div>
 			</div>
 		</div>
-    <div class="row" ng-show="flags.mostRentedCategoryFetcing">
-      <load-indicator loading="true"></load-indicator>
-    </div>
+		<div class="row" ng-show="flags.mostRentedCategoryFetcing">
+			<load-indicator loading="true"></load-indicator>
+		</div>
 		<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
-			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
-      <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
-            <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
-					</div>
-      </uib-slide>
-      <uib-slide>
-					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
-            <p>{{category.Name}}</p>
-            <img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
-					</div>
-      </uib-slide>
-    </uib-carousel>
+			<!-- web view slider start -->
+			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control hidden-xs hidden-sm">
+				<uib-slide>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+				<uib-slide>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+			</uib-carousel>
+			<!-- web view slider end -->
+			<!-- mobile view slider start -->
+			<div class="visible-xs visible-sm">
+				<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
+					<uib-slide ng-repeat="category in displayCategories">
+							<div class="col-xs-10 most-rented-equip" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
+								<p>{{category.Name}}</p>
+								<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+							</div>
+					</uib-slide>
+				</uib-carousel>
+			</div>
+			<!-- mobile view slider end -->
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rented-detail-col">
 				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rented-detail-left">
 					<h3>{{selectecMostBoughtCategory.Name}}</h3>
@@ -187,18 +247,18 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
-        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostBoughtCategoryProductsFetcing" style="margin-top: 100px;">
-          <load-indicator loading="true"></load-indicator>
-        </div>
-        <div ng-show="!flags.mostBoughtCategoryProductsFetcing">
-          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
-            <img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
-            <p class="desc-text">{{product.Product_Name}}</p>
-          </div>
-          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-            <button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
-          </div>
-        </div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostBoughtCategoryProductsFetcing" style="margin-top: 100px;">
+					<load-indicator loading="true"></load-indicator>
+				</div>
+				<div ng-show="!flags.mostBoughtCategoryProductsFetcing">
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+						<img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+						<p class="desc-text">{{product.Product_Name}}</p>
+					</div>
+					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+						<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
+					</div>
+				</div>
 
 			</div>
 		</div>
@@ -243,7 +303,7 @@
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
 			<img src="/assets/images/landing-repair.jpg" class="landing-image">
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
 			<h3>Fleet Maintenance and Re-conditioning</h3>
 			<div class="line"></div>
 			<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
@@ -293,9 +353,9 @@
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 testimonial-carousel" testimonial>
 				<div class="carousel slide multi-item-carousel" id="theCarousel">
-				  <div class="carousel-inner">
+					<div class="carousel-inner">
 					<div class="item active">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 							<div class="abc lr-padding">
 								<p>Hello</p>
 								<div class="testimonial-name">
@@ -303,10 +363,10 @@
 									<p class="nomargin desc-text">Amerx Corp</p>
 								</div>
 							</div>
-					  </div>
+						</div>
 					</div>
 					<div class="item">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 						<div class="abc lr-padding">
 							<p>World</p>
 									<div class="testimonial-name">
@@ -314,10 +374,10 @@
 										<p class="nomargin desc-text">Amerx Corp</p>
 									</div>
 						</div>
-					  </div>
+						</div>
 					</div>
 					<div class="item">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 						<div class="abc lr-padding">
 							<p>Nice</p>
 									<div class="testimonial-name">
@@ -325,10 +385,10 @@
 										<p class="nomargin desc-text">Amerx Corp</p>
 									</div>
 						</div>
-					  </div>
+						</div>
 					</div>
 					<div class="item">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 						<div class="abc lr-padding">
 							<p>This</p>
 									<div class="testimonial-name">
@@ -336,10 +396,10 @@
 										<p class="nomargin desc-text">Amerx Corp</p>
 									</div>
 						</div>
-					  </div>
+						</div>
 					</div>
 					<div class="item">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 						<div class="abc lr-padding">
 							<p>One</p>
 									<div class="testimonial-name">
@@ -347,10 +407,10 @@
 										<p class="nomargin desc-text">Amerx Corp</p>
 									</div>
 						</div>
-					  </div>
+						</div>
 					</div>
 					<div class="item">
-					  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
 						<div class="abc lr-padding">
 							<p>Is This</p>
 									<div class="testimonial-name">
@@ -358,15 +418,15 @@
 										<p class="nomargin desc-text">Amerx Corp</p>
 									</div>
 						</div>
-					  </div>
+						</div>
 					</div>
-				  </div>
-				  <a href="#theCarousel" data-slide="prev" class="prev-btn">
+					</div>
+					<a href="#theCarousel" data-slide="prev" class="prev-btn">
 					<i class="fa fa-angle-left"></i>
-				  </a>
-				  <a href="#theCarousel" data-slide="next" class="next-btn">
+					</a>
+					<a href="#theCarousel" data-slide="next" class="next-btn">
 					<i class="fa fa-angle-right"></i>
-				  </a>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -455,13 +515,13 @@
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
 					<h4>Newsletter</h4>
 					<div class="line"></div>
-					<p>Get news on our latest promotions, products and service. We'll never share your email address and you can opt out any time</p>
+					<p class="get-news">Get news on our latest promotions, products and service. We'll never share your email address and you can opt out any time</p>
 					<div class="landing-search-div footer-input">
 						<input class="form-control" type="text" placeholder="Enter your mail id">
 						<button class="btn all-btn sign_mybtn landing-search hidden-md hidden-sm hidden-xs">
 							Subscribe
 						</button>
-						<div class="visible-md visible-sm visible-xs pull-center">
+						<div class="visible-md visible-sm visible-xs">
 							<button class="btn all-btn sign_mybtn">
 								Subscribe
 							</button>

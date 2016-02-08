@@ -3054,7 +3054,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 }
 
 .landing-carousel-control {
-	min-height: 250px;
+	min-height: 225px;
 }
 
 .landing-carousel-control .carousel-inner {
@@ -3166,6 +3166,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .software-img {
 	max-width: 100%;
+	width: 80%;
 }
 
 .address-back {
@@ -3330,13 +3331,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .multi-item-carousel .carousel-inner > .item {
-    -webkit-transition: 0.6s ease-in-out all;
-    transition: 0.6s ease-in-out all;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
-    -webkit-perspective: none;
-    -webkit-transform: none!important;
-    transform: none!important;
+	-webkit-transition: 0.6s ease-in-out all;
+	transition: 0.6s ease-in-out all;
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+	-webkit-perspective: none;
+	-webkit-transform: none!important;
+	transform: none!important;
   }
 }
 
@@ -3427,6 +3428,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	border-bottom-color: #dddddd;
 	border-width: 8px;
 	margin-left: -34px;
+}
+
+.carousel-indicators {
+	display: none;
+}
+
+.landing-profile-btn {
+	background: none;
+	color: #000 !important;
+	font-weight: 600;
+	padding: 30px 0 29px;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.landing-dropdown-menu {
+	top: 85%;
 }
 
 
