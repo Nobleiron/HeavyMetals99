@@ -24,12 +24,12 @@ angular.module("HM_CartMD")
     $scope.data =  {
       cart : null,
       card : {
-        cc_name : "tanmoy",
-        cc_number: "5105105105105100",
-        cc_cvv: "123",
-        cc_month : "07",
-        cc_year : "17",
-        expiry : "11 / 1111"
+        cc_name : "",
+        cc_number: "",
+        cc_cvv: "",
+        cc_month : "",
+        cc_year : "",
+        expiry : ""
       }
     };
 
@@ -199,6 +199,9 @@ angular.module("HM_CartMD")
         normalizeCartDataToSubmit.city = 'xxx';
         normalizeCartDataToSubmit.state = 'xxx';
         normalizeCartDataToSubmit.zip = '123456';
+        normalizeCartDataToSubmit.payment_method = "C"
+      }else{
+        normalizeCartDataToSubmit.payment_method = "ACH"
       }
 
     }

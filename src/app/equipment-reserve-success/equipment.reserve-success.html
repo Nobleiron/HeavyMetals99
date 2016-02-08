@@ -9,11 +9,11 @@
       <!-- START  Request Confirmation -->
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 sell-main-part">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 req_job_tit nopadding reserve-success-heading req-confirm heading-text">Request Confirmation</div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right nopadding req-confirm">
-          <a class="color-blue" ui-sref="hm.orderHistory"><i class="fa fa-print color-blue"></i>&nbsp Print Order Details</a>
-          &nbsp &nbsp
-          <a class="color-blue" ui-sref="hm.orderHistory"><i class="fa fa-eye color-blue"></i>&nbsp View Orders</a>
-        </div>
+        <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right nopadding req-confirm">-->
+          <!--<a class="color-blue"><i class="fa fa-print color-blue"></i>&nbsp Print Order Details</a>-->
+          <!--&nbsp &nbsp-->
+          <!--<a class="color-blue" ui-sref="hm.orderHistory"><i class="fa fa-eye color-blue"></i>&nbsp View Orders</a>-->
+        <!--</div>-->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small border-dashed"></div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
           <p class="theme_clr reserve-success-heading heading-text">
@@ -30,19 +30,19 @@
             <tbody>
             <tr>
               <td class="req_tabal_lf desc-text bold-font">Request ID: </td>
-              <td class="desc-text">5784-BD245</td>
+              <td class="desc-text">#{{order.Order_id}}</td>
 
             </tr>
-            <tr>
-              <td class="req_tabal_lf desc-text bold-font">Full Name:  </td>
-              <td class="desc-text">Hemag Brosnan</td>
+            <!--<tr>-->
+              <!--<td class="req_tabal_lf desc-text bold-font">Full Name:  </td>-->
+              <!--<td class="desc-text">Hemag Brosnan</td>-->
 
-            </tr>
-            <tr>
-              <td class="req_tabal_lf desc-text bold-font">Email Address:  </td>
-              <td class="desc-text">john@doe.com</td>
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td class="req_tabal_lf desc-text bold-font">Email Address:  </td>-->
+              <!--<td class="desc-text">john@doe.com</td>-->
 
-            </tr>
+            <!--</tr>-->
             <tr>
               <td class="req_tabal_lf desc-text bold-font">Job Site Address:   </td>
               <td class="desc-text">{{order.Jobsite.Site_Name}} {{order.Jobsite.Address1}}</td>
@@ -64,7 +64,7 @@
           <h3 class="req_job_tit reserve-success-heading heading-text">Payments</h3>
           <p class="comferm_email_tex reserve-success-heading desc-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.{{order| json}}
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
           </p>
           <p class="theme_clr reserve-success-heading desc-text">
             Payment is made by E-check (ACH)
