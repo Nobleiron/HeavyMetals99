@@ -206,11 +206,13 @@ angular.module("HM_CartMD")
 
     function _normalizeContactDetails(){
       normalizeCartDataToSubmit.contact_name = $scope.cartData.delivery.contactInfo.firstName  || null;
+      normalizeCartDataToSubmit.site_contact_name = $scope.cartData.delivery.contactInfo.firstName  || 'xxx';
+      normalizeCartDataToSubmit.site_contact_phone = $scope.cartData.delivery.contactInfo.phone || '1234567890';
       normalizeCartDataToSubmit.contact_name  = normalizeCartDataToSubmit.contact_name || '';
       $scope.cartData.delivery.contactInfo.lastName && (normalizeCartDataToSubmit.contact_name = normalizeCartDataToSubmit.contact_name + ' ' + $scope.cartData.delivery.contactInfo.lastName);
       normalizeCartDataToSubmit.email = $scope.cartData.delivery.contactInfo.email || null;
       normalizeCartDataToSubmit.contact_phone = $scope.cartData.delivery.contactInfo.phone || null;
-      normalizeCartDataToSubmit.purchase_order_number = $scope.cartData.delivery.contactInfo.purchaseOrder || null;
+      normalizeCartDataToSubmit.purchase_order_number = $scope.cartData.delivery.contactInfo.purchaseOrder || '1234567890';
       normalizeCartDataToSubmit.delivery_note = $scope.cartData.delivery.contactInfo.deliveryNote || null;
     }
 
@@ -239,7 +241,12 @@ angular.module("HM_CartMD")
           if(normalizeCartDataToSubmit.delivery_status == 'R'){
             $state.go('hm.reserveEquipmentSuccess',{source: 'reservation',id: orders[0].Order_id});
           }else{
-            $state.go('hm.dashboard.quotesDetail',{id: orders[0].Order_id});
+            if($scope.userObj){
+              $state.go('hm.dashboard.quotesDetail',{id: orders[0].Order_id});
+            }else{
+              //localStorageService.set(('orders_' + orders[0].Order_id), orders[0]);
+              $state.go('hm.guestQuotesDetail',{id: orders[0].Order_id});
+            }
           }
 
         })
