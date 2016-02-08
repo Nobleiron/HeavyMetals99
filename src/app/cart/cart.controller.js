@@ -216,6 +216,7 @@ angular.module("HM_CartMD")
       normalizeCartDataToSubmit.email = $scope.cartData.delivery.contactInfo.email || null;
       normalizeCartDataToSubmit.contact_phone = $scope.cartData.delivery.contactInfo.phone || null;
       normalizeCartDataToSubmit.purchase_order_number = $scope.cartData.delivery.contactInfo.purchaseOrder || '1234567890';
+      normalizeCartDataToSubmit.purchase_order= $scope.cartData.delivery.contactInfo.purchaseOrder || '1234567890';
       normalizeCartDataToSubmit.delivery_note = $scope.cartData.delivery.contactInfo.deliveryNote || null;
     }
 
