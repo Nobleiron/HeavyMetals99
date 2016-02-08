@@ -26,7 +26,7 @@
 										<li><a scroll-to="home" duration="1800" class="on-hover-pointer">Home</a></li>
 										<li><a scroll-to="rent" duration="1800" class="on-hover-pointer">Rent</a></li>
 										<li><a scroll-to="buy" duration="1800" class="on-hover-pointer">Buy</a></li>
-										<li><a scroll-to="repair" duration="1800" class="on-hover-pointer">Repair</a></li>
+										<li><a scroll-to="service" duration="1800" class="on-hover-pointer">Services</a></li>
 										<li><a scroll-to="software" duration="1800" class="on-hover-pointer">Our Software</a></li>
 										<!-- <li><a   scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
 										<li><a   scroll-to="contact" duration="1800" class="on-hover-pointer">Contact</a></li>
@@ -95,7 +95,7 @@
 
 						</p>
 						<form role="search">
-						<div class="pull-center landing-search-div">
+						<div class="pull-center landing-search-div" id="rent">
 							<input type="text" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
 										 ng-change="showAutocomplete = true"
 										 ng-model="selectedProduct"
@@ -131,7 +131,7 @@
 </section>
 <!-- landing header and background end -->
 <!-- most rented start -->
-<div class="container" id="rent">
+<div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center most-rented-heading">
 			<h3>Most Rented</h3>
@@ -189,7 +189,7 @@
 					<p class="desc-text">{{product.Product_Name}}</p>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
-					<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})">View All</button>
+					<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})"  id="buy">View All</button>
 				</div>
 			</div>
 		</div>
@@ -197,7 +197,7 @@
 </div>
 <!-- most rented end -->
 <!-- most bought start -->
-<section class="most-bought" id="buy">
+<section class="most-bought">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center most-rented-heading">
@@ -255,7 +255,7 @@
 						<img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
 						<p class="desc-text">{{product.Product_Name}}</p>
 					</div>
-					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn" id="service">
 						<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
 					</div>
 				</div>
@@ -266,7 +266,7 @@
 </section>
 <!-- most bought end -->
 <!-- buy certified start -->
-<div class="container" id="repair">
+<div class="container">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
 			<img src="/assets/images/buy.png" class="landing-image">
@@ -307,13 +307,13 @@
 			<h3>Fleet Maintenance and Re-conditioning</h3>
 			<div class="line"></div>
 			<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud xercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est aborum.</p>
-			<button class="btn all-btn primary-btn sign_mybtn">Enquire Now</button>
+			<button class="btn all-btn primary-btn sign_mybtn" id="software">Enquire Now</button>
 		</div>
 	</div>
 </div>
 <!-- fleet maintenance end -->
 <!-- software start -->
-<section class="most-bought" id="software">
+<section class="most-bought">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
@@ -323,7 +323,7 @@
 				<h3>Our Software</h3>
 				<div class="line"></div>
 				<p class="desc-text">Noble Iron Online is powered by Texada Software’s cloud platform.<br> Texada builds software for equipment rental companies,<br> equipment dealerships, construction companies, contractors,<br> and any construction or industrial equipment user, including mechanics,<br> logistics and service technicians. Texada Software manages the entire equipment lifecycle,<br> including equipment purchasing, rental & sales transactions, inventory location,<br> utilization, maintenance and depreciation tracking, used equipment sales analysis, and inventory replenishment. Texada (toll-free in North America): <span class="color-blue">1-800-361-1233</span></p>
-				<button class="btn all-btn primary-btn sign_mybtn autowidth">Get The Software Now</button>
+				<button class="btn all-btn primary-btn sign_mybtn autowidth" id="contact">Get The Software Now</button>
 			</div>
 		</div>
 	</div>
@@ -434,7 +434,7 @@
 </div> -->
 <!-- testimonials end -->
 <!-- address start -->
-<section class="address-back" id="contact">
+<section class="address-back">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>

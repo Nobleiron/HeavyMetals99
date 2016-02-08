@@ -257,7 +257,7 @@ a:focus { color: #0099cc;
 .shell_with ul li{}
 .shell_with ul li a{color: #848e97; line-height: 30px; padding: 0 0 0 10px;}
 .sell_main_tit{color: #666666; font-size: 20px;  font-weight: 600;}
-.sell_sec_tit{color: #009ddc; font-weight: 300;}
+.sell_sec_tit{color: #009ddc; font-weight: 300; line-height: 24px;}
 
 .cart_menu{display: inline-block;
 					 vertical-align: top;}
