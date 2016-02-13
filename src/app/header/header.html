@@ -102,12 +102,12 @@
         <div class="cart_menu" ng-if="userObj">
           <ul>
             <li>
-              <a ui-sref="hm.dashboard.main" class="marker">
+              <a ui-sref="hm.dashboard.main" class="marker" title="Dashboard">
                 <i class="fa fa-tachometer fa-2x marker"></i>
               </a>
             </li>
             <li>
-              <a ui-sref="hm.cart.details" class="marker">
+              <a ui-sref="hm.cart.details" class="marker" title="Cart">
                 <i class="fa fa-shopping-cart fa-2x marker"></i>
                 <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
               </a>
@@ -136,7 +136,7 @@
         <div ng-if="!userObj" class="not-user-div cart_menu">
           <a href="#/login" class="help-link">Login</a>
           <a href="#/register" class="help-link">Register</a>
-          <a ui-sref="hm.cart.details" class="marker">
+          <a ui-sref="hm.cart.details" class="marker" title="Cart">
           <i class="fa fa-shopping-cart fa-2x marker"></i></a>
           <span class="cart_noti" ng-if="cartCount">{{cartCount}}</span>
         </div>

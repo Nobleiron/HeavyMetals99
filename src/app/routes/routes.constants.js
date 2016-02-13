@@ -153,6 +153,7 @@ angular.module("HM_RoutesMD")
         },
         'hm.dashboard.requests' : {
           url: '/requests',
+          controller : 'HM_RequestsCtrl',
           templateUrl: 'app/requests/requests.html'
         },
         'hm.dashboard.viewContracts' : {
