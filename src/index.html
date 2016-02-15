@@ -52,7 +52,7 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/raven-js/dist/raven.min.js"></script>
-    <script src="app/menu-aim/jquery.menu-aim.js"></script>
+    <script src="app/components/menu-aim/jquery.menu-aim.js"></script>
     <script>
       // Raven.config('YOUR_PUBLIC_DSN', {
       //   // Raven settings
@@ -101,19 +101,19 @@
     <!-- Modules -->
       <script src="app/core/hm.core.request.interceptor.js"></script>
       <script src="app/core/hm.core.response.interceptor.js"></script>
-      <script src="app/routes/routes.module.js"></script>
+      <script src="app/core/routes/routes.module.js"></script>
       <script src="app/hm/heavy-metals.module.js"></script>
       <script src="app/global/global.module.js"></script>
-      <script src="app/env/env.module.js"></script>
+      <script src="app/core/env/env.module.js"></script>
       <script src="app/landing/landing.module.js"></script>
-      <script src="app/menu-aim/menu-aim.module.js"></script>
+      <script src="app/components/menu-aim/menu-aim.module.js"></script>
       <script src="app/activate-user/activate-user.module.js"></script>
       <script src="app/login/login.module.js"></script>
       <script src="app/logout/logout.module.js"></script>
       <script src="app/my-catalogue/my-catalogue.module.js"></script>
       <script src="app/user-profile/user-profile.module.js"></script>
       <script src="app/dashboard/dashboard.module.js"></script>
-      <script src="app/load-indicator/load-indicator.module.js"></script>
+      <script src="app/components/load-indicator/load-indicator.module.js"></script>
       <script src="app/terms-and-conditions/terms-and-conditions.module.js"></script>
       <script src="app/invoices/invoices.module.js"></script>
       <script src="app/equipment-detail/equipment-detail.module.js"></script>
@@ -127,19 +127,19 @@
       <script src="app/request-callback/request-callback.module.js"></script>
       <script src="app/search/search.module.js"></script>
       <script src="app/forgot-password/forgot-password.module.js"></script>
-      <script src="app/scroll-top/scroll-top.module.js"></script>
-      <script src="app/button-load-indicator/btn-load-indicator.module.js"></script>
+      <script src="app/components/scroll-top/scroll-top.module.js"></script>
+      <script src="app/components/button-load-indicator/btn-load-indicator.module.js"></script>
       <script src="app/faq/faq.module.js"></script>
       <script src="app/cart/cart.module.js"></script>
       <script src="app/cart/cart-access-rules.service.js"></script>
       <script src="app/quotes-detail/quote-details.module.js"></script>
-      <script src="app/image-util/image.zoom.directive.js"></script>
-      <script src="app/bootstrap-ui-datetime-picker/datetime-picker.js"></script>
+      <script src="app/components/image-util/image.zoom.directive.js"></script>
+      <script src="app/components/bootstrap-ui-datetime-picker/datetime-picker.js"></script>
 
     <!-- End Modules -->
 
-    <script src="app/env/env.constants.js"></script>
-    <script src="app/routes/routes.constants.js"></script>
+    <script src="app/core/env/env.constants.js"></script>
+    <script src="app/core/routes/routes.constants.js"></script>
     <script src="app/global/global.constant.js"></script>
     <script src="app/activate-user/activate-user.constant.js"></script>
     <script src="app/user-profile/user-profile.constant.js"></script>
@@ -156,14 +156,14 @@
     <script src="app/my-catalogue/my-catalogue.constant.js"></script>
     <script src="app/search/search.constant.js"></script>
     <script src="app/equipment-reserve/equipment-reserve.constant.js"></script>
-    <script src="app/header/header.constant.js"></script>
+    <script src="app/components/header/header.constant.js"></script>
     <script src="app/request-callback/request-callback.constant.js"></script>
     <script src="app/prelogin-header/prelogin-header.constant.js"></script>
     <script src="app/equipment-detail/equipment-details.constant.js"></script>
     <script src="app/equipment-reserve-success/equipment-reserve-success.constant.js"></script>
 
 
-    <script src="app/validation/validation.constraints.constant.js"></script>
+    <script src="app/components/validation/validation.constraints.constant.js"></script>
     <script src="app/core/rest.service.js"></script>
     <script src="app/core/hm.core.client-store.service.js"></script>
     <script src="app/prelogin-header/prelogin-header.controller.js"></script>
@@ -174,7 +174,7 @@
     <script src="app/quota-n-reservations/quota-n-reservations.controller.js"></script>
     <script src="app/terms-and-conditions/terms-and-conditions.controller.js"></script>
     <script src="app/activate-user/activate-user.controller.js"></script>
-    <script src="app/header/header.controller.js"></script>
+    <script src="app/components/header/header.controller.js"></script>
     <script src="app/cart/cart.controller.js"></script>
     <script src="app/cart/cart-details.controller.js"></script>
     <script src="app/cart/cart-update-jobsite.controller.js"></script>
@@ -206,13 +206,13 @@
     <script src="app/search/search-result-grid-view.directive.js"></script>
     <script src="app/jobsites/jobsite-list-view.directive.js"></script>
     <script src="app/jobsites/jobsite-map-view.directive.js"></script>
-    <script src="app/scroll-top/scroll-top.directive.js"></script>
-    <script src="app/menu-aim/menu-aim.directive.js"></script>
-    <script src="app/load-indicator/load-indicator.directive.js"></script>
-    <script src="app/button-load-indicator/btn-load-indicator.directive.js"></script>
-    <script src="app/image-util/image-err-src.directive.js"></script>
+    <script src="app/components/scroll-top/scroll-top.directive.js"></script>
+    <script src="app/components/menu-aim/menu-aim.directive.js"></script>
+    <script src="app/components/load-indicator/load-indicator.directive.js"></script>
+    <script src="app/components/button-load-indicator/btn-load-indicator.directive.js"></script>
+    <script src="app/components/image-util/image-err-src.directive.js"></script>
     <script src="app/shared/is-empty.filter.js"></script>
-    <script src="app/autocomplete/ngAutocomplete.js"></script>
+    <script src="app/components/autocomplete/ngAutocomplete.js"></script>
 
     <!-- endbuild -->
 
