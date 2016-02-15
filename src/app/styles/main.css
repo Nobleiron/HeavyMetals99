@@ -1612,6 +1612,12 @@ button:hover {
 	padding: 15px 15px 0;
 }
 
+.update-job .select-job {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 25px;
+}
+
 .job-site-list .search-div i {
 	color: #ccc;
 }
@@ -1703,6 +1709,7 @@ button:hover {
 
 .content-top {
 	padding-top: 82px;
+	min-height: 400px;
 }
 
 .user-icon {
@@ -3445,6 +3452,105 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .landing-dropdown-menu {
 	top: 85%;
+}
+
+/*get the software*/
+.get-soft-head {
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.get-software-form {
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+.get-software-form input,
+.get-software-form select,
+.get-software-form button {
+	margin-top: 10px;
+}
+
+.get-software-form textarea {
+	margin-top: 10px;
+	min-height: 70px;
+}
+
+/*team and board of directors pages css*/
+.team-accordion-group .thumbnail {
+	width: 30%;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+  transition: all 0.6s ease;
+  min-width: 110px;
+  max-width: 140px;
+}
+
+.team-accordion-group .panel-heading {
+	border-bottom: 1px solid #dddddd;
+	padding-bottom: 25px;
+}
+
+.team-accordion-group .thumbnail:hover {
+	-webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.team-accordion-group h3 {
+	margin-top: 0;
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 14px;
+  color: #009ddc;
+}
+
+.team-accordion-group .social-share {
+	text-align: left;
+  margin-bottom: 0;
+  padding-right: 0;
+  margin-top: 20px;
+}
+
+.team-accordion-group .social-share i {
+	font-size: 14px;
+  background: #009ddc;
+  color: #ffffff;
+  width: 25px;
+  height: 25px;
+  padding-top: 5px;
+  transition: all 0.6s ease;
+}
+
+.team-accordion-group .social-share i:hover {
+	-webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.team-accordion-group .panel-body {
+	padding-left: 0;
+	padding-top: 25px;
+}
+
+a,
+button {
+	cursor: pointer !important;
+	text-decoration: none;
+	transition: all 0.6s ease;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.signup-terms-checkbox:after {
+	display: none;
 }
 
 
