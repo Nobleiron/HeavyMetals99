@@ -294,6 +294,10 @@ angular.module("HM_RoutesMD")
           url: '/invoice-detail',
           templateUrl: 'app/invoice-detail/invoice-detail.html'
         },
+        'hm.getTheSoftware': {
+          url: '/get-the-software',
+          templateUrl: 'app/get-the-software/get-the-software.html'
+        },
         'hmPrelogin.login' : {
           url: '/login',
           templateUrl: 'app/login/login.html',

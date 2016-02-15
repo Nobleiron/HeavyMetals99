@@ -1293,7 +1293,12 @@
 	.footer-input {
 		width: 50%;
 	}
-
+	.get-soft-call {
+		text-align: center;
+	}
+	.get-soft-call.question {
+		margin-top: 0px;
+	}
 }
 
 @media screen and (max-width: 480px) {
