@@ -22,10 +22,12 @@ angular.module("HM_GlobalMD",[
   'HM_MenuAimMD',
   'HM_RequestCallbackMD',
   'HM_LogoutMD',
+  'HM_TeamMD',
   'HM_LandingMD',
   'HM_OrderHistoryMD',
   'HM_QuoteDetailsMD',
   'HM_SearchMD',
-  'HM_ActivateUserMD'
+  'HM_ActivateUserMD',
+  'HM_BoardOfDirectorsMD'
 
 ]);

@@ -284,11 +284,13 @@ angular.module("HM_RoutesMD")
         },
         'hm.team': {
           url: '/team',
-          templateUrl: 'app/team/team.html'
+          templateUrl: 'app/team/team.html',
+          controller: 'HM_TeamCtrl'
         },
         'hm.boardOfDirectors': {
           url: '/board-of-directors',
-          templateUrl: 'app/board-of-directors/board-of-directors.html'
+          templateUrl: 'app/board-of-directors/board-of-directors.html',
+          controller: 'HM_BoardOfDirectorsCtrl'
         },
         'hm.dashboard.invoiceDetail': {
           url: '/invoice-detail',
