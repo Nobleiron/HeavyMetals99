@@ -30,5 +30,7 @@ angular.module("HM_GlobalMD",[
   'HM_ActivateUserMD',
   'HM_BoardOfDirectorsMD',
   'HM_PressReleasesMD',
-  'HM_FinancialReportsMD'
+  'HM_FinancialReportsMD',
+  'HM_RequestsMD',
+  'HM_ContractsMD'
 ]);

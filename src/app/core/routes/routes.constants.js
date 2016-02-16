@@ -122,11 +122,6 @@ angular.module("HM_RoutesMD")
           controller: 'HM_EditJobSiteCtrl',
           openInModal: true
         },
-        // 'hm.requests' : {
-        //   url: '/requests',
-        //   templateUrl: 'app/requests/requests.html',
-        //   controller: 'HM_RequestsCtrl'
-        // },
         'hm.dashboard.quotaNReservations' : {
           url: '/quotes',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
@@ -157,9 +152,9 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/requests/requests.html'
         },
         'hm.dashboard.viewContracts' : {
-          url: '/view-contracts',
-          templateUrl: 'app/view-contracts/view-contracts.html',
-          controller: 'HM_JobSitesCtrl'
+          url: '/view-contracts?status',
+          templateUrl: 'app/contracts/contracts.html',
+          controller: 'HM_ContractsCtrl'
         },
         'hm.help': {
           url: '/help',
