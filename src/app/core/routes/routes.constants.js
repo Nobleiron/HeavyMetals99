@@ -272,7 +272,8 @@ angular.module("HM_RoutesMD")
         },
         'hm.pressReleases': {
           url: '/press-releases',
-          templateUrl: 'app/press-releases/press-releases.html'
+          templateUrl: 'app/press-releases/press-releases.html',
+          controller : 'HM_PressReleasesCtrl'
         },
         'hm.annualMeeting': {
           url: '/annual-meeting',

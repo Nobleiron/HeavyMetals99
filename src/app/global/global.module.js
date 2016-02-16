@@ -28,6 +28,6 @@ angular.module("HM_GlobalMD",[
   'HM_QuoteDetailsMD',
   'HM_SearchMD',
   'HM_ActivateUserMD',
-  'HM_BoardOfDirectorsMD'
-
+  'HM_BoardOfDirectorsMD',
+  'HM_PressReleasesMD'
 ]);

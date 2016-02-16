@@ -16,7 +16,7 @@ angular.module("HM_BoardOfDirectorsMD")
         })
         .catch(function(error){
           $scope.team = [];
-          toastr.error('Failed to fetch team info');
+          toastr.error('Failed to fetch board of directors info');
         })
         .finally(function(){
           $scope.fetchDataInProgress= false;
