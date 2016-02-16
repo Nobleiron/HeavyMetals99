@@ -3563,6 +3563,23 @@ a:hover {
 	margin-top: 20px;
 }
 
+.quotes-detail {
+	width: 10%;
+}
+
+.usabilla_live_button_container {
+	top: 360px !important;
+	margin-top: 0 !important;
+}
+
+.landing-track-button {
+	position: fixed;
+	right: -55px;
+	margin-top: 125px;
+	transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+}
+
 
 
 

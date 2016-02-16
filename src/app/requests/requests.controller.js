@@ -11,4 +11,9 @@ angular.module('HM_RequestsMD')
       $scope.$dismiss();
     }
 
+    $scope.search = function() {
+		$scope.showSearch = !$scope.showSearch;
+		$scope.showFilterDiv = false;
+	}
+
   }]);
