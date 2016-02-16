@@ -281,7 +281,8 @@ angular.module("HM_RoutesMD")
         },
         'hm.financialReports': {
           url: '/financial-reports',
-          templateUrl: 'app/financial-reports/financial-reports.html'
+          templateUrl: 'app/financial-reports/financial-reports.html',
+          controller: 'HM_FinancialReportsCtrl'
         },
         'hm.team': {
           url: '/team',
