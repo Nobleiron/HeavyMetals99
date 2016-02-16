@@ -159,7 +159,7 @@ angular.module("HM_RoutesMD")
         'hm.dashboard.viewContracts' : {
           url: '/view-contracts',
           templateUrl: 'app/view-contracts/view-contracts.html',
-          controller: 'HM_MyCatalogueCtrl'
+          controller: 'HM_JobSitesCtrl'
         },
         'hm.help': {
           url: '/help',

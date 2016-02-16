@@ -3553,6 +3553,16 @@ a:hover {
 	display: none;
 }
 
+/*contracts page*/
+
+.contracts-tab {
+	margin-top: 10px;
+}
+
+.open-contract-table {
+	margin-top: 20px;
+}
+
 
 
 

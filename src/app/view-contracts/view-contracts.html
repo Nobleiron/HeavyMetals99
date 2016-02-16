@@ -1,12 +1,154 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding">
-  <div class="tab-content">
-    <!-- START  Payment Content -->
-    <div id="dash" class="tab-pane fade in active">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+			Contracts
+	</div>
+	<!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right nopadding my-bottm-line dash_board_tit">
+		<input type="text" placeholder="Search Sites" class="form-control pull-right mng-search-bar">
+	</div> -->
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
+		<!-- <i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i> -->
+		<i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="search()"></i>
+		<div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow jobsite-search-show': showSearch}">
+			<input type="text" placeholder="Contract Id">
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding contracts-tab">
+		<ul class="nav nav-tabs gride-tab root-category profile-setting-category">
+			<li class="active">
+				<a tabtoggle data-toggle="tab" href="#profile-details">Open Contracts</a>
+			</li>
+			<li>
+				<a tabtoggle data-toggle="tab" href="#portal-settings">Close Contracts</a>
+			</li>
+		</ul>
+	</div>
+	<!-- Open Contracts -->
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active nopadding" id="profile-details">
+		<table class="table quotes-table open-contract-table">
+			<thead>
+				<tr>
+					<th>Contract Id</th>
+					<th>PO</th>
+					<th>Job Site Name</th>
+					<th class="text-right">Equipment On Rent</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Shop</td>
+					<td>Calcrete Yard</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+						<a class="invoice-no view-down view-down-quotation">
+							Pickup Request
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Shop</td>
+					<td>Calcrete Yard</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+						<a class="invoice-no view-down view-down-quotation">
+							Pickup Request
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Shop</td>
+					<td>Calcrete Yard</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+						<a class="invoice-no view-down view-down-quotation">
+							Pickup Request
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Shop</td>
+					<td>Calcrete Yard</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+						<a class="invoice-no view-down view-down-quotation">
+							Pickup Request
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-bottm-line manage_job_tit">
-        Contracts
-      </div>
-    </div>
-    <!-- End Payment Content -->
-  </div>
+	<!-- Close Contracts -->
+	<div id="portal-settings" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane fade update-exist nopadding profile-lrpadding-small">
+		<table class="table quotes-table open-contract-table">
+			<thead>
+			<tr>
+				<th>Contract Id</th>
+				<th>Job Site Name</th>
+				<th>Date</th>
+				<th>PO</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Calcrete Yard</td>
+					<td>MM/DD/YYYY</td>
+					<td>Shop</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Calcrete Yard</td>
+					<td>MM/DD/YYYY</td>
+					<td>Shop</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Calcrete Yard</td>
+					<td>MM/DD/YYYY</td>
+					<td>Shop</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="invoice-no">12345</a>
+					</td>
+					<td>Calcrete Yard</td>
+					<td>MM/DD/YYYY</td>
+					<td>Shop</td>
+					<td class="text-right">
+						<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
