@@ -7,7 +7,7 @@ angular.module("HM_RoutesMD")
           abstract : true,
           views : {
             navbar : {
-              templateUrl: 'app/prelogin-header/prelogin-header.html',
+              templateUrl: 'app/components/prelogin-header/prelogin-header.html',
               controller: 'HM_PreloginHeaderCtrl'
             },
             footer : {
@@ -22,11 +22,11 @@ angular.module("HM_RoutesMD")
           abstract : true,
           views : {
             navbar : {
-              templateUrl: 'app/header/header.html',
+              templateUrl: 'app/components/header/header.html',
               controller: 'HM_HeaderCtrl'
             },
             footer : {
-              templateUrl : 'app/footer/footer.html'
+              templateUrl : 'app/components/footer/footer.html'
             },
             '' : {
               template: "<div ui-view></div>"

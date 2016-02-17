@@ -3,7 +3,7 @@ angular.module("HM_ScrollTopMD")
   .directive('scrollTop', ['$window', function($window){
     return {
       replace : true,
-      templateUrl:'/app/scroll-top/scroll-top.html',
+      templateUrl:'/app/components/scroll-top/scroll-top.html',
       link : function(scope, element){
         scope.showTop = false
         var w = angular.element($window);
@@ -42,7 +42,7 @@ angular.module("HM_ScrollTopMD")
               next = $(this).siblings(':first');
             }
             next.children(':first-child').clone().appendTo($(this));
-            
+
             if (next.next().length>0) {
               next.next().children(':first-child').clone().appendTo($(this));
             }

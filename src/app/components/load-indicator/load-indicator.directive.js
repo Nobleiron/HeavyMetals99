@@ -4,6 +4,6 @@ angular.module("HM_LoadIndicatorMD")
     return {
       replace : true,
       scope : {loading : '=loading'},
-      templateUrl:'/app/load-indicator/load-indicator.html'
+      templateUrl:'/app/components/load-indicator/load-indicator.html'
     };
   }]);

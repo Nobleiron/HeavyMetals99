@@ -67,7 +67,7 @@
           <button class="btn btn-default my_search my-search-header hidden-xs hidden-sm" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
           <div class="dont-see-div hidden-xs hidden-sm">
             <a href="/#/help" class="help-link">Don't see what you need?</a>
-            <div class="btn-group drop-btn profile-dropdown user-div visible-xs visible-sm" dropdown>
+            <div class="btn-group drop-btn profile-dropdown user-div visible-xs visible-sm" uib-dropdown>
               <a class="help-link nomargin nopadding" href="#/FAQ">About
               </a>
           </div>
@@ -82,7 +82,7 @@
 
     <!-- web-header -->
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 my_alc nopadding header-prof-part header-xs">
-        <div class="btn-group drop-btn profile-dropdown user-div" dropdown ng-if="userObj">
+        <div class="btn-group drop-btn profile-dropdown user-div" uib-dropdown ng-if="userObj">
           <button class="btn btn-mini my-alc-btn nopadding prof-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
             <i class="fa fa-caret-down color-blue heading-text"></i>
           </button>
