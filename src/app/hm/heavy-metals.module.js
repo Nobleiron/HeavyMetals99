@@ -18,6 +18,7 @@
       'ngAutocomplete',
       'angularMoment',
       'ngSanitize',
+      'cgBusy',
       'infinite-scroll',
       'toastr',
       'LocalStorageModule',

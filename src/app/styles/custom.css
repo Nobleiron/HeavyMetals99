@@ -405,3 +405,6 @@ form input:after {
 .quantity-update.update-close{
   color: #d9534f;
 }
+.cg-busy{
+  z-index: 998;
+}
