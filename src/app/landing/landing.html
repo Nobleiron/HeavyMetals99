@@ -34,8 +34,8 @@
 										<li ng-if="!userObj"><a ui-sref="hmPrelogin.register" class="on-hover-pointer">Register</a></li>
 										<!-- <li ng-if="userObj"><a ui-sref="hmPrelogin.logout" class="on-hover-pointer">Logout</a></li> -->
 										<li ng-if="userObj" class="hidden-xs">
-											<div class="btn-group profile-dropdown user-div" dropdown>
-												<button class="btn landing-profile-btn" id="single-button" dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+											<div class="btn-group profile-dropdown user-div" uib-dropdown>
+												<button class="btn landing-profile-btn" id="single-button" uib-dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
 													<i class="fa fa-caret-down heading-text"></i>
 												</button>
 												<ul class="dropdown-menu list-group user-list-group arrow_box landing-dropdown-menu"  role="menu" aria-labelledby="single-button">

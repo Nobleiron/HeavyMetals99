@@ -15,7 +15,7 @@
 	    <uib-tab heading="Open Contract" select="loadOpenContracts()">
         <div>
 	        <div class="form-group" cg-busy="{promise:contractPromise,message:'Loading...'}">
-	          <table class="table quotes-table open-contract-table">
+	          <table class="table quotes-table open-contract-table" ng-show="openContracts.length">
 							<thead>
 								<tr>
 									<th>Contract Id</th>
@@ -40,13 +40,13 @@
 								</tr>
 							</tbody>
 						</table>
-            <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+            <uib-pagination ng-show="openContracts.length" total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
 	        </div>
           </div>
 	    </uib-tab>
 	    <uib-tab heading="Close Contract" select="loadClosedContracts()">
         <div cg-busy="{promise:contractPromise,message:'Loading...'}">
-	      <table class="table quotes-table open-contract-table">
+	      <table class="table quotes-table open-contract-table" ng-show="closedContracts.length" >
 					<thead>
 					<tr>
 						<th>Contract Id</th>
@@ -70,7 +70,7 @@
 						</tr>
 					</tbody>
 				</table>
-          <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+          <uib-pagination ng-show="closedContracts.length" total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
           </div>
 	    </uib-tab>
 	  </uib-tabset>
