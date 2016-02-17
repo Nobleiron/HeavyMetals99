@@ -2,7 +2,7 @@
 (function () {
   angular.module("HM_RoutesMD", [])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider','HM_RoutesCnst', _configure])
-    .run(['$rootScope', '$modal', _run]);
+    .run(['$rootScope', '$uibModal', _run]);
 
 
   function _configure($stateProvider, $urlRouterProvider, $locationProvider,Routescnst) {

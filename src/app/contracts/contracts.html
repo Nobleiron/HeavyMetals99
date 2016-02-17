@@ -40,7 +40,7 @@
 								</tr>
 							</tbody>
 						</table>
-            <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+            <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
 	        </div>
           </div>
 	    </uib-tab>
@@ -70,7 +70,7 @@
 						</tr>
 					</tbody>
 				</table>
-          <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages"  ng-model="flags.Page" ng-change="pageChanged()" boundary-links="true" force-ellipses="true"></uib-pagination>
+          <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.Page"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
           </div>
 	    </uib-tab>
 	  </uib-tabset>
