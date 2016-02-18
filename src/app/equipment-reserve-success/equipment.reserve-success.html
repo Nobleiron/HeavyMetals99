@@ -1,0 +1,131 @@
+<section class="content-top">
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <load-indicator loading="!flags.orderFetched"></load-indicator>
+      <div ng-if="flags.orderFetched">
+
+
+      <!-- START  Request Confirmation -->
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 sell-main-part">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 req_job_tit nopadding reserve-success-heading req-confirm heading-text">Request Confirmation</div>
+        <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right nopadding req-confirm">-->
+          <!--<a class="color-blue"><i class="fa fa-print color-blue"></i>&nbsp Print Order Details</a>-->
+          <!--&nbsp &nbsp-->
+          <!--<a class="color-blue" ui-sref="hm.orderHistory"><i class="fa fa-eye color-blue"></i>&nbsp View Orders</a>-->
+        <!--</div>-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small border-dashed"></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
+          <p class="theme_clr reserve-success-heading heading-text">
+            Thank You. Your (request) has been received and we have sent you a copy of this
+            request on your email address
+          </p>
+          <p class="comferm_email_tex reserve-success-heading desc-text">
+            A confirmation email will be sent you once your (request) is processed.
+          </p>
+          <hr class="req_dash_botam">
+          <h3 class="req_job_tit reserve-success-heading heading-text">Order Details</h3>
+          <table class="table req_tab reserve-success-heading">
+
+            <tbody>
+            <tr>
+              <td class="req_tabal_lf desc-text bold-font">Request ID: </td>
+              <td class="desc-text">#{{order.Order_id}}</td>
+
+            </tr>
+            <!--<tr>-->
+              <!--<td class="req_tabal_lf desc-text bold-font">Full Name:  </td>-->
+              <!--<td class="desc-text">Hemag Brosnan</td>-->
+
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td class="req_tabal_lf desc-text bold-font">Email Address:  </td>-->
+              <!--<td class="desc-text">john@doe.com</td>-->
+
+            <!--</tr>-->
+            <tr>
+              <td class="req_tabal_lf desc-text bold-font">Job Site Address:   </td>
+              <td class="desc-text">{{order.Jobsite.Site_Name}} {{order.Jobsite.Address1}}</td>
+
+            </tr>
+            <tr>
+              <td class="req_tabal_lf desc-text bold-font">City:  </td>
+              <td class="desc-text">{{order.Jobsite.City}}</td>
+
+            </tr>
+            <tr>
+              <td class="req_tabal_lf desc-text bold-font">ZIP Code:  </td>
+              <td class="desc-text">{{order.Jobsite.Postal}}</td>
+
+            </tr>
+            </tbody>
+          </table>
+          <hr class="req_dash_botam">
+          <h3 class="req_job_tit reserve-success-heading heading-text">Payments</h3>
+          <p class="comferm_email_tex reserve-success-heading desc-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+          </p>
+          <p class="theme_clr reserve-success-heading desc-text">
+            Payment is made by E-check (ACH)
+          </p>
+          <hr class="req_dash_botam">
+          <h3 class="req_job_tit reserve-success-heading heading-text">Track Request Status</h3>
+          <p class="comferm_email_tex reserve-success-heading desc-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+          </p>
+          <p class="theme_clr reserve-success-heading desc-text">
+            Track Here
+          </p>
+          <hr class="req_dash_botam">
+        </div>
+      </div>
+      <!-- End  Request Confirmation -->
+
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 need_main">
+        <!-- START  Noble Iron Help -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 need_part">
+          <h2 class="need_title">Need Noble Iron Help?</h2>
+          <p class="need_sub">
+            We would be more than happy to help you.
+            Our team advisors are 24/7 at your service to
+            help you.
+          </p>
+          <p class="help_clr"><a href="mailto:customercare@nobleiron.com" class="">customercare@nobleiron.com</a></p>
+          <p class="skype_tex"><i class="fa fa-phone"></i>
+            1-855-767-4424</p>
+        </div>
+        <!-- End  Noble Iron Help -->
+        <!-- START  Why Sell with us -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shell_with">
+          <h2 class="need_title">Why Sell with us?</h2>
+          <ul>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+            <li><i class="fa fa-check color-blue"></i>
+              <a href="">USP point to go here go here go here</a></li>
+
+          </ul>
+        </div>
+        <!-- End  Why Sell with us -->
+      </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- End  Main Content -->
+
+
+</section>

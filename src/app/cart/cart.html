@@ -1,0 +1,80 @@
+<div class="container content-top">
+  <div style="min-height: 400px;">
+    <load-indicator loading="cartFetchInProgress" class="loader-top"></load-indicator>
+    <div ng-show="!cartFetchInProgress">
+      <!-- cart -->
+      <div ng-show="data.cart">
+        <!-- <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line manage_job_tit manage_job_tit_small shopping-cart-heading" ng-switch="$state.current.name">
+            <span ng-switch-when="hm.cart.details">Shopping Cart</span>
+            <span ng-switch-when="hm.cart.updateAddress">Select Jobsite and Enter Contact Information</span>
+            <span ng-switch-when="hm.cart.cartDuration">Rental Period</span>
+            <span ng-switch-when="hm.cart.review">Review</span>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+        </div> -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding lr-padding-small">
+            <ul class="progress-indicator custom-complex">
+              <li class="on-hover-pointer cart-progress"  ng-repeat="(key, value) in cartData.steps" ng-class="{'completed': value.complete, 'pending': !value.complete}" ng-hide=" key == 'payment' && userObj && userObj.portal_login">
+                <a class="color-blue bold-font desc-text progress-a" ui-sref="{{value.path}}">
+                      <span class="bubble">
+                      </span>
+                  <i class="fa fa-check-circle color-blue" ng-if="value.complete"></i>&nbsp
+                  <span class="progress-span value-label-span" sttr="{{value | json}}">{{value.label}}</span>
+                  <span class="progress-span value-id-span" sttr="{{value | json}}">{{value.od}}</span>
+                </a>
+              </li>
+              <!--<li class="pending on-hover-pointer" ui-sref="hm.cart.updateAddress">-->
+                <!--<a class="color-blue bold-font desc-text progress-a">-->
+                      <!--<span class="bubble">-->
+                      <!--</span>-->
+                  <!--&lt;!&ndash; <i class="fa fa-check-circle"></i>&nbsp &ndash;&gt;-->
+                  <!--<span class="progress-span">Delivery Details</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li class="pending on-hover-pointer" ui-sref="hm.cart.cartDuration">-->
+                <!--<a href="" class="color-blue bold-font desc-text progress-a">-->
+                  <!--<span class="bubble">-->
+                  <!--</span>-->
+                  <!--&lt;!&ndash; <i class="fa fa-check-circle"></i>&nbsp &ndash;&gt;-->
+                  <!--<span class="progress-span">Duration</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li class="pending on-hover-pointer" ui-sref="hm.cart.review">-->
+                <!--<a href="" class="color-blue bold-font desc-text progress-a">-->
+                  <!--<span class="bubble">-->
+                  <!--</span>-->
+                  <!--&lt;!&ndash; <i class="fa fa-check-circle"></i>&nbsp &ndash;&gt;-->
+                  <!--<span class="progress-span">Review Order</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li class="pending on-hover-pointer" ui-sref="hm.cart.payment">-->
+                <!--<a href="" class="color-blue bold-font desc-text progress-a">-->
+                  <!--<span class="bubble">-->
+                  <!--</span>-->
+                  <!--&lt;!&ndash; <i class="fa fa-check-circle"></i>&nbsp &ndash;&gt;-->
+                  <!--<span class="progress-span">Payment</span>-->
+                <!--</a>-->
+              <!--</li>-->
+            </ul>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider-bottom"></div>
+        </div>
+        <div ui-view></div>
+        <div ui-view="main"></div>
+
+      </div>
+      <!-- empty cart -->
+      <div ng-show="!data.cart" class="pull-center">
+        <h3 class="heading-text cart-empty pull-center">
+          Sorry! No Items in Cart.
+        </h3>
+        <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+          Continue Renting
+        </button>
+        <!-- <a ui-sref="hm.search.results"> Go Back</a> -->
+      </div>
+    </div>
+  </div>
+</div>

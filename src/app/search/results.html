@@ -1,0 +1,120 @@
+
+<div class="tab-content">
+
+  <div ng-if="flags.searchResultLoading && query">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display">
+
+      <div class="col-lg-10 col-md-10 col-xs-8 dis_tex">Searching Equipments matching ‘{{query}}’</div>
+      <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
+      </div>
+    </div>
+  </div>
+  <div>
+    <!-- START  Equipment Product Display -->
+    <div id="equpment" class="tab-pane fade in active">
+      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding display" >
+        <div class="col-lg-10 col-md-10 col-xs-8 dis_tex"><span >Displaying {{results.length}} Equipments matching ‘{{query}}’</span></div>
+        <div class="col-lg-2 col-md-2 col-xs-4 text-right link_clr">
+          <div class="btn-group drop-btn">
+            <div>
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn sort-by-btn" uib-dropdown-toggle ng-disabled="disabled">
+            Sort By <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a  >Price</a></li>
+            <li role="menuitem"><a  >Maximum Availability</a></li>
+            <li role="menuitem"><a  >Relavance</a></li>
+            </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
+      <search-result-list-view ng-if="!flags.gridView" id="bottom" category-type="selection.type"></search-result-list-view>
+      <search-result-grid-view ng-if="flags.gridView" category-type="{{selection.type}}"></search-result-grid-view>
+      <load-indicator loading="flags.searchResultLoading" class="search-load-indicator-cont"></load-indicator>
+
+      <!--<div class="row" style="margin-top: 10px;text-align: center;" ng-if="searchTags.length && !flags.searchResultLoading">-->
+        <!--<div class="col-md-12 text-col">-->
+          <!--<span class="tag label label-info" ng-repeat="tag in searchTags">{{tag.name}}<a ng-click="clearSearchTag(tag.tagType)">x</a></span>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="row no-search-row" ng-if="userQuery">
+        <form>
+        <div class="col-md-12 text-col">
+          <p class="no-search-desc">
+            <span>Sorry, no result found for "{{params.query}}"</span>. Let us help you out. Tell us what do need? We will get back to you.</p>
+        </div>
+        <div class="col-md-12 col1">
+          <p>Let us help you out</p>
+        </div>
+        <div class="col-md-12 col2">
+          <p>What do you need?</p>
+          <input type="text" placeholder="Type of equipment, service, parts, etc." class="form-control your-need to-from-div">
+        </div>
+        <div class="col-md-12 col2">
+          <p>When do you need it?</p>
+        </div>
+        <div class="col-md-6 col2 col3 toppadding">
+          <div class="form-control form-left your-need to-from-div" ng-click="openDatepicker('from')">
+            <p class="pull-left">From</p>
+            <input type="text" placeholder="dd/mm/yy" ng-model="from" datepicker-popup is-open="queryFormData.from">
+            <img src="assets/images/calendar.png" class="pull-right">
+          </div>
+        </div>
+        <div class="col-md-6 col2 col3 toppadding">
+          <div class="form-control form-left your-need to-from-div" ng-click="openDatepicker('to')">
+            <p class="pull-left to">To</p>
+            <input type="text" placeholder="dd/mm/yy" ng-model="to" datepicker-popup  is-open="queryFormData.to">
+            <img src="assets/images/calendar.png" class="pull-right">
+          </div>
+        </div>
+
+        <div class="col-md-6 col2 col3 toppadding">
+          <p>Email</p>
+          <div class="form-control form-left your-need email-form">
+            <input type="text" placeholder="Enter a valid email address" class="info-input">
+          </div>
+        </div>
+        <div class="col-md-6 col2 col3 toppadding">
+          <p>Phone</p>
+          <div class="form-control form-left your-need">
+            <input type="text" placeholder="(xxx)-xxx-xxxxx)" class="info-input">
+          </div>
+        </div>
+        <div class="col-md-12 col1"></div>
+        <div class="col-md-12 col4">
+          <button class="btn btn-primary pull-right" ng-click="acceptUserQuery()">Request Further Information</button>
+        </div>
+        </form>
+      </div>
+
+      <div infinite-scroll="lazyLoadSearchResult()" infinite-scroll-distance="3"></div>
+
+
+    </div>
+    <!-- End Equipment Product Display -->
+    <div id="attachment" class="tab-pane fade">
+      Attachments
+    </div>
+    <div id="accessories" class="tab-pane fade">
+      Attachments
+    </div>
+    <div id="parts" class="tab-pane fade">
+      Attachments
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- scroll to top button -->
+  <scroll-top></scroll-top>
+<!-- scroll to top button -->

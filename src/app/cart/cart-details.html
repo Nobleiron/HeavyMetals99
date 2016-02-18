@@ -1,0 +1,205 @@
+<div class="row">
+  <!-- web shopping cart -->
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
+    <table class="table cart-table carts-table">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Equipment</th>
+        <th>Quantity</th>
+        <!-- <th>Request Dates</th> -->
+        <!-- <th>Site Location</th> -->
+        <th>Sub-Total</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="product in data.cart.Product">
+        <td class="vertically-middle cart-image-td">
+          <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
+        </td>
+        <td class="equipment-desc">
+          <h3>{{product.Product_name}}</h3>
+          <a ng-click="allowSubstitution(product)" ng-show="userObj && userObj.portal_login" class="on-hover-pointer">Allow Substitution?</a>
+
+          <ul class="price-ul">
+            <li>
+              <p class="daily_title">Daily</p>
+              <p class="daily_price">${{product.Product_price.Daily}}</p>
+            </li>
+            <li>
+              <p class="daily_title">Weekly</p>
+              <p class="daily_price">${{product.Product_price.Weekly}}</p>
+            </li>
+            <li>
+              <p class="daily_title">Monthly</p>
+              <p class="daily_price">${{product.Product_price.Monthly}}</p>
+            </li>
+          </ul>
+        </td>
+        <td class="quantity vertically-middle">
+          <ng-form name="product[{{product.Product_id}}]" ng-init="cartData.summary.productsQuantity[product.Product_id].updateInProgress = false;">
+            <!--{{cartData.summary.productsQuantity[product.Product_id].updateInProgress}}-->
+          <input ng-pattern="/[1-9*]+/"
+                 class="form-control"
+                 name = "quantity"
+                 ng-model="cartData.summary.productsQuantity[product.Product_id].qty"
+                 type="text"
+                 autocomplete="off"
+                 spellcheck="false"
+                 >
+
+            <span ng-show="product[product.Product_id].quantity.$dirty">
+            <button class="quantity-update check"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-check"
+                 ng-class="{'fa-check' : !cartData.summary.productsQuantity[product.Product_id].updateInProgress,'fa-spinner fa-spin' : cartData.summary.productsQuantity[product.Product_id].updateInProgress}">
+              </i>
+            </button>
+            <button class="quantity-update update-close"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="resetQuantity(cartData.summary.productsQuantity[product.Product_id],product[product.Product_id].quantity)">
+              <i class="fa fa-close"></i>
+            </button>
+            </span>
+          <br>
+          <div class="error">Invalid Quantity</div>
+          </ng-form>
+        </td>
+        <!-- <td class="duration vertically-middle">
+                              <p>12 Dec, 2015 - 23:00</p>
+                              <p class="to">to</p>
+                              <p>14 Dec, 2015 - 23:00</p>
+                          </td> -->
+        <!-- <td class="area vertically-middle">
+                              <i class="fa fa-map-marker marker"></i>
+                              <span>Bay Area, Houstan</span>
+                              <p><a href="#/update-job-site">Update</a></p>
+                          </td> -->
+        <td class="vertically-middle pricing">${{product.Total_rate}}</td>
+        <td class="vertically-middle delete-icon on-hover-pointer">
+          <a ng-click="deleteProductFromCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">
+            <i class="fa fa-trash fa-2x" ng-if="!cartData.summary.productsQuantity[product.Product_id].deleteInProgress"></i>
+            <i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].deleteInProgress"></i>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- mobile shopping cart -->
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
+    <div class="cart-for-mobile" ng-repeat="product in data.cart.Product">
+      <div class="cart-image-div">
+        <img ng-src="{{product.Product_image}}" err-src>
+      </div>
+      <div class="equipment-desc">
+        <h3>{{product.Product_name}}</h3>
+        <a ng-click="allowSubstitution(product)" ng-show="userObj && userObj.portal_login" class="on-hover-pointer">Allow Substitution?</a>
+        <p class="qty-head">Quantity</p>
+        <ng-form name="mobproduct[{{product.Product_id}}]" ng-init="cartData.summary.productsQuantity[product.Product_id].updateInProgress = false;">
+          <input ng-pattern="/[1-9*]+/"
+                 name = "quantity"
+                 class="form-control"
+                 ng-model="cartData.summary.productsQuantity[product.Product_id].qty"
+                 type="text"
+                 autocomplete="off"
+                 spellcheck="false"
+                 >
+          <p>
+          <span ng-show="mobproduct[product.Product_id].quantity.$dirty">
+            <button class="quantity-update check"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="updateCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id],mobproduct[product.Product_id].quantity)">
+              <i class="fa fa-check"
+                 ng-class="{'fa-check' : !cartData.summary.productsQuantity[product.Product_id].updateInProgress,'fa-spinner fa-spin' : cartData.summary.productsQuantity[product.Product_id].updateInProgress}">
+              </i>
+            </button>
+            <button class="quantity-update update-close"
+                    ng-disabled="cartData.summary.productsQuantity[product.Product_id].updateInProgress"
+                    ng-click="resetQuantity(cartData.summary.productsQuantity[product.Product_id],mobproduct[product.Product_id].quantity)">
+              <i class="fa fa-close"></i>
+            </button>
+            </span>
+          </p>
+
+          <!--<i class="fa fa-spinner fa-spin" ng-if="cartData.summary.productsQuantity[product.Product_id].updateInProgress" style="position: absolute; margin-top: -32px; right: 25px;" ></i>-->
+        </ng-form>
+
+        <!-- <i class="fa fa-map-marker marker"></i>
+        <span>Bay Area, Houstan</span>
+        <span class="pull-right"><a href="#/update-job-site">Update</a></span> -->
+        <p class="sub-total">Sub-Total: &nbsp ${{product.Total_rate}}
+          <span class="pull-right">
+            <a ng-click="deleteProductFromCart(product.Product_id,cartData.summary.productsQuantity[product.Product_id])">Delete</a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 promo-code lr-padding lr-padding-small">
+    <form name='promoCodeForm' ng-submit="applyPromoCode()">
+      <input type="text" placeholder="Promo code" class="form-control" ng-model="promoCode">
+      <button class="btn sign_mybtn all-btn primary-btn" ng-disabled="promoCode == '' || promoCodeForm.$pristine" ng-click="applyPromoCode()">
+        <span btn-load-indicator="Cart:ApplyPromoCode">Apply</span>
+      </button>
+    </form>
+    <p class="desc-text note-text">Note: Taxes, fees and delivery charges are estimates and provided for your convinience, Actual charges may vary.</p>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 total-price lr-padding lr-padding-small">
+    <!-- <div class="total-price-div text-left total-price-padding">
+      <h3>
+        <label>Sub-Total Rental:
+        </label>
+          <span class="pull-right">${{cart.Sub_total}}</span>
+      </h3>
+      <h3 ng-repeat="(key, value) in cart.Charges">
+        <label>{{key}}:
+        </label>
+          <span class="pull-right">${{value}}</span>
+      </h3>
+      <h3>
+        <label class="total">Total:
+        </label>
+          <span class="total pull-right">${{cart.Grand_total}}</span>
+      </h3>
+    </div> -->
+    <div class="text-left total-price-padding">
+      <h3 class="desc-text topmargin">
+        <span>Sub-Total Rental:</span>
+        <span class="pull-right">${{data.cart.Sub_total}}</span>
+      </h3>
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in data.cart.Charges">
+        <span>{{key}}:</span>
+        <span class="pull-right">${{value}}</span>
+      </h3>
+      <h3 class="desc-text topmargin" ng-if="data.cart.Discount !='0.00'">
+        <span>Discount:</span>
+        <span class="pull-right">{{data.cart.Discount}}</span>
+      </h3>
+      <h3 class="desc-text bold-font topmargin">
+        <label class="total">Total:</label>
+        <span class="total pull-right">${{data.cart.Grand_total}}</span>
+      </h3>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+  <div class="row nomargin">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cont-rent-btn">
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp
+        Continue Renting
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reserve-generate-btn">
+      <a ui-sref="hm.cart.updateAddress" class="btn sign_mybtn all-btn primary-btn">
+        Next
+        &nbsp<i class="fa fa fa-chevron-right"></i>
+      </a>
+      <!-- <button class="btn sign_mybtn all-btn primary-btn">Reserve Now</button> -->
+    </div>
+  </div>
+</div>
+

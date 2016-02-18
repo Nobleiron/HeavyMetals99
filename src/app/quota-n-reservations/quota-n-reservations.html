@@ -1,0 +1,82 @@
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+  <load-indicator loading="!flags.ordersFetched"></load-indicator>
+  <div ng-show="flags.ordersFetched">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
+    Quotation
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
+    <!--<i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="filter()"></i>-->
+    <div ng-show="orders.length">
+      <i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="search()"></i>
+      <div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow': showSearch}">
+        <input type="text" placeholder="Quote Id">
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box search-box-xs job-site-list quotes-filter-div search-arrow-box" ng-class="{'search-show': showSearch}">
+    <div class="form-control search-div quotes-search searchShow">
+      <input type="text" placeholder="Quote Id">
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': showFilterDiv}">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">From Date</p>
+      <div class="form-control search-div select-date" ng-click="openDatepicker('from')">
+        <input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="from" is-open="queryFormData.from">
+        <i class="fa fa-calendar pull-right quotation-filter-icon"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">To Date</p>
+      <div class="form-control search-div select-date" ng-click="openDatepicker('to')">
+        <input type="text" placeholder="dd/mm/yyyy" datepicker-popup ng-model="to"  is-open="queryFormData.to">
+        <i class="fa fa-calendar pull-right quotation-filter-icon"></i>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <p class="desc-text">Job Site</p>
+      <div class="form-control search-div select-date">
+        <input type="text" placeholder="Enter Jobsite Keyword" ng-model="jobsite">
+        <i class="fa fa-map-marker pull-right quotation-filter-icon"></i>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-btn-div text-right devider">
+      <button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
+      <button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
+    <div ng-show="flags.ordersFetched && !orders.length" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
+      <h3 class="heading-text cart-empty pull-center">
+        Sorry! No Quotes generated yet.
+      </h3>
+      <button class="btn sell-equ all-btn cont-renting" ng-click="$state.go('hm.search.results')"><i class="fa fa-chevron-left"></i> &nbsp;
+        Go back to add products first
+      </button>
+    </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" ng-show="orders.length">
+    <table class="table quotes-table">
+      <thead>
+      <tr>
+        <th>Quote ID</th>
+        <th>Request Date</th>
+        <th>Job Site</th>
+        <th>Quote Value</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="order in orders">
+        <td><a ui-sref="hm.dashboard.quotesDetail({id: order.Order_id })" class="invoice-no">{{order.Order_id}}</a></td>
+        <td>{{order.Request_date}}</td>
+        <td>Site 1</td>
+        <td>${{order.Order_total}}</td>
+        <td class="text-right">
+          <a ui-sref="hm.dashboard.quotesDetail({id: order.Order_id })" class="invoice-no view-down"><i class="fa fa-eye invoice-no heading-text"></i></a>
+          <a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>

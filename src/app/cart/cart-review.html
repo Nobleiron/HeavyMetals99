@@ -1,0 +1,188 @@
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h3 class="bold-font heading-text devider-bottom topmargin">Just take a glimpse of order before you confirm</h3>
+	</div>
+</div>
+<div class="row">
+	<!-- web-shopping cart review -->
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
+		<table class="table cart-table carts-table">
+			<thead>
+			<tr>
+				<th></th>
+				<th>Equipment</th>
+				<th>Application Rates</th>
+				<th>Quantity</th>
+				<th>Sub-Total</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="product in data.cart.Product">
+				<td class="vertically-middle">
+          <img ng-src="{{product.Product_image}}" err-src style="width: 100px;height:100px;"/>
+				</td>
+				<td class="equipment-desc">
+					<h3>{{product.Product_name}}</h3>
+					<p class="desc-text">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
+				</td>
+				<td class="vertically-middle review-price-detail">
+					<ul class="price-ul">
+						<li>
+							<p class="daily_title">Daily</p>
+							<p class="daily_price nomargin">${{product.Product_price.Daily}}</p>
+						</li>
+						<li>
+							<p class="daily_title">Weekly</p>
+							<p class="daily_price nomargin">${{product.Product_price.Weekly}}</p>
+						</li>
+						<li>
+							<p class="daily_title">Monthly</p>
+							<p class="daily_price nomargin">${{product.Product_price.Monthly}}</p>
+						</li>
+					</ul>
+				</td>
+				<td class="vertically-middle review-qty">
+					{{cartData.summary.productsQuantity[product.Product_id].qty}}
+				</td>
+				<td class="vertically-middle pricing">${{product.Total_rate}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- mobile shopping cart review -->
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
+    <div class="cart-for-mobile" ng-repeat="product in data.cart.Product">
+      <div class="cart-image-div">
+        <img ng-src="{{product.Product_image}}" err-src />
+      </div>
+      <div class="equipment-desc">
+        <h3>{{product.Product_name}}</h3>
+        <p class="desc-text nomargin">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</p>
+        <p class="qty-head">Quantity
+        	<span class="pull-right color-blue">{{cartData.summary.productsQuantity[product.Product_id].qty}}</span>
+        </p>
+        <p class="sub-total">Sub-Total:
+          <span class="pull-right color-blue">
+           	${{product.Total_rate}}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row bg-color-gray">
+	<!-- jobsite details part start -->
+	<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 review-jobsite-details">
+		<!-- jobsite details -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col">
+			<h3 class="bold-font heading-text">Jobsite Details</h3>
+
+			<i class="fa fa-map-marker color-blue heading-text"></i>
+      <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
+      <br>
+      <p class="address2">{{cartData.delivery.selectedJobSite.Address1}}</p>
+      <p class="address2">{{cartData.delivery.selectedJobSite.Address2}}</p>
+      <p class="address2">{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+      <p class="zip">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
+      <i class="fa fa-phone-square color-blue heading-text"></i>
+      <span class="number">{{cartData.delivery.selectedJobSite.Phone}}</span>
+      <!--<i class="fa fa-user color-blue heading-text"></i>-->
+  		<!--<span>-->
+  			<!--Contact Person-->
+  		<!--</span>-->
+		</div>
+		<!-- devider -->
+    <div ng-show="jobsiteContactInfoEmpty(cartData.delivery.ContactInfo)">
+
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
+		<!-- contact information -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col" >
+			<h3 class="bold-font heading-text">Contact Information</h3>
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 nopadding person-details">
+				<i class="fa fa-user color-blue heading-text"></i>
+	  		<span>
+	  			{{cartData.delivery.contactInfo.firstName}}&nbsp;{{cartData.delivery.contactInfo.lastName}}
+	  		</span>
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 nopadding person-details">
+				<i class="fa fa-envelope-o color-blue heading-text"></i>
+	  		<span>
+	  			{{cartData.delivery.contactInfo.email}}
+	  		</span>
+			</div>
+			<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12 nopadding person-details">
+				<i class="fa fa-phone-square color-blue heading-text"></i>
+	  		<span>
+	  			{{cartData.delivery.contactInfo.phone}}
+	  		</span>
+			</div>
+		</div>
+    </div>
+		<!-- devider -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider bord_dash_bot"></div>
+		<!-- request date -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col request-date-col">
+			<h3 class="bold-font heading-text">Date</h3>
+			<p>
+				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp Start Date & Time:</span>&nbsp
+				<span>{{cartData.duration.fromDt | date : 'longDate'}}</span>
+			</p>
+			<p>
+				<span class="bold-font"><i class="fa fa-clock-o color-blue"></i>&nbsp End Date & Time:</span>&nbsp
+        <span>{{cartData.duration.toDt| date : 'longDate'}}</span>
+			</p>
+		</div>
+		<!-- devider -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider bord_dash_bot devider-bottom"></div>
+		<!-- duration text -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+			<p class="desc-text approx-text">
+				Approximately renting for{{cartData.duration.span}} (If returned by <span >{{cartData.duration.toDt | amDateFormat:'HH:mmA, dddd'}}</span>))
+			</p>
+		</div>
+		<div class="col-xs-12 bord_dash_bot visible-xs"></div>
+	</div>
+	<!-- jobsite details part End -->
+	<!-- total price part start -->
+	<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 total-price">
+    <div class="text-left total-price-padding">
+      <h3 class="desc-text">
+        <span>Sub-Total Rental:</span>
+        <span class="pull-right">${{data.cart.Sub_total}}</span>
+      </h3>
+      <h3 class="desc-text topmargin" ng-repeat="(key, value) in data.cart.Charges">
+        <span>{{key}}:</span>
+        <span class="pull-right">${{value}}</span>
+      </h3>
+      <h3 class="desc-text topmargin" ng-if="data.cart.Discount !='0.00'">
+        <span>Discount:</span>
+        <span class="pull-right">{{data.cart.Discount}}</span>
+      </h3>
+      <h3 class="desc-text bold-font topmargin">
+        <label>Total:</label>
+        <span class="pull-right">${{data.cart.Grand_total}}</span>
+      </h3>
+    </div>
+  </div>
+  <!-- total price part End -->
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 hiddne-sm hidden-xs"></div>
+</div>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider bord_dash_bot devider-bottom"></div>
+</div>
+<div class="row review-btn-row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+		<button class="btn all-btn sell-equ btn-right-margin" ui-sref="hm.cart.cartDuration">
+			<i class="fa fa fa-chevron-left"></i>&nbsp
+			Back
+		</button>
+		<button ng-hide="userObj && userObj.portal_login" class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.cart.payment">
+			Next
+			&nbsp<i class="fa fa fa-chevron-right"></i>
+		</button>
+    <button ng-hide="userObj && !userObj.portal_login" class="btn sign_mybtn all-btn primary-btn autowidth" ng-click="generateQuote()">
+      <span btn-load-indicator="Quote:Process">Generate Quote</span>
+    </button>
+	</div>
+</div>

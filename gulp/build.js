@@ -26,8 +26,13 @@ module.exports = function(options) {
 
 
   gulp.task('copyViews', function() {
-    return gulp.src('./src/app/views/**/*.html')
-      .pipe( gulp.dest('./dist/app/views') )
+    return gulp.src('./src/app/**/*.html')
+      .pipe( gulp.dest('./dist/app') )
+  });
+
+  gulp.task('copyImages', function() {
+    return gulp.src('./src/assets/**/*.{png,jpg,ico}')
+      .pipe( gulp.dest('./dist/assets') )
   });
 
   gulp.task('html', ['inject', 'partials','copyViews'], function () {
@@ -72,23 +77,24 @@ module.exports = function(options) {
   // Only applies for fonts from bower dependencies
   // Custom fonts are handled by the "other" task
   gulp.task('fonts', function () {
-    return gulp.src($.mainBowerFiles())
-      .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
-      .pipe($.flatten())
+
+    return gulp.src('./src/app/styles/fonts/*.*')
+      //.pipe($.filter('/src/app/styles/fonts/*.{eot,svg,ttf,woff,woff2,otf}'))
       .pipe(gulp.dest(options.dist + '/fonts/'));
   });
 
-  gulp.task('other', function () {
-    return gulp.src([
-      options.src + '/**/*',
-      '!' + options.src + '/**/*.{html,css,js}'
-    ])
-      .pipe(gulp.dest(options.dist + '/'));
-  });
+  // gulp.task('other', function () {
+  //   return gulp.src([
+  //     options.src + '/**/*',
+  //     '!' + options.src + '/**/*.{html,css,js}'
+  //   ])
+  //     .pipe(gulp.dest(options.dist + '/'));
+  // });
+
 
   gulp.task('clean', function (done) {
-    $.del([options.dist + '/', options.tmp + '/'], done);
+    $.del('./dist', done);
   });
 
-  gulp.task('build', ['html', 'fonts', 'other']);
+  gulp.task('build', ['html', 'fonts', 'copyImages']);
 };

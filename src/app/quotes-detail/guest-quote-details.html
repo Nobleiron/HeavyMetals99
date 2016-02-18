@@ -1,0 +1,120 @@
+<section class="content-top">
+  <!-- START  Main Content -->
+  <article class="main-cantain">
+    <div class="container">
+      <div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <load-indicator loading="!flags.orderFetched"></load-indicator>
+  <div ng-show="flags.orderFetched">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
+      <p class="theme_clr reserve-success-heading heading-text">
+        Thank You. Your quote has been generated and we have sent you a copy of this on your email address
+      </p>
+      </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
+      <!--<a href="#/quota-n-reservations" class="desc-text"><i class="fa fa-chevron-left"></i>&nbsp Back to Quotes List</a>-->
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 quotes-id">
+      <h3 class="go-back-text">
+        Quote #{{order.Order_id}}
+        <span class="pull-right">Date: {{order.Order_date}}</span>
+      </h3>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
+      <table class="table cart-table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Equipment</th>
+          <th>Quantity</th>
+          <th>Request Dates</th>
+          <th>Sub-Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="product in order.Products">
+          <td class="vertically-middle">
+            <img ng-src="{{product.Product_Image}}"  err-src style="width: 150px;">
+          </td>
+          <td class="equipment-desc vertically-middle quotes-equip">
+            <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
+            <i class="fa fa-map-marker marker"></i>
+            <span>{{order.Jobsite.Site_Name}}</span>
+          </td>
+          <td class="vertically-middle">
+            <p class="desc-text">{{product.Product_Quantity}}</p>
+          </td>
+          <td class="duration vertically-middle">
+            <p>{{order.Start_date}} - {{order.Start_time}}</p>
+            <p class="to">to</p>
+            <p>{{order.End_date}} - {{order.End_time}}</p>
+          </td>
+          <td class="vertically-middle pull-center pricing">${{product.Total_Rate}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
+      <div class="cart-for-mobile" ng-repeat="product in order.Products">
+        <div class="cart-image-div">
+          <img ng-src="{{product.Product_Image}}"  err-src>
+        </div>
+        <div class="equipment-desc quotes-equip">
+          <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
+          <i class="fa fa-map-marker marker"></i>
+          <span>{{order.Jobsite.Site_Name}}</span>
+          <p class="desc-text quantity-p">Quantity: {{product.Product_Quantity}}
+            <span class="pull-right bold-font">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding quotes-site-price">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail">
+        <h4 class="go-back-text">Details</h4>
+        <i class="fa fa-map-marker marker go-back-text"></i>
+        <span class="go-back-text">{{order.Jobsite.Site_Name}}</span>
+        <br>
+        <p>{{order.Jobsite.Address1}}</p>
+        <p>{{order.Jobsite.City}}</p>
+        <p class="zip">Zip Code: {{order.Jobsite.Postal}}</p>
+        <i class="fa fa-phone-square zip marker go-back-text" ng-if="order.Jobsite.Phone"></i>
+        <span class="marker go-back-text" ng-if="order.Jobsite.Phone">+{{order.Jobsite.Phone}}</span>
+        <!--<br>-->
+        <!--<i class="fa fa-user marker go-back-text"></i>-->
+        <!--<span class="marker go-back-text">-->
+        <!--Name of Contact Person-->
+        <!--</span>-->
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 total-price quotes-total-price">
+        <div class="total-price-div">
+
+          <h3>
+            <label>Sub-Total Rental:</label>
+            <span>${{order.Sub_total}}</span>
+          </h3>
+          <h3 ng-repeat="(key, value) in order.Charges">
+            <label>{{key}}:</label>
+            <span>${{value}}</span>
+          </h3>
+          <h3 ng-if="order.Discount && order.Discount !='0.00'">
+            <label>Discount:</label>
+            <span>{{order.Discount}}</span>
+          </h3>
+          <h3>
+            <label class="total">Total:</label>
+            <span class="total">${{order.Grand_Total}}</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="bottommargin"></div>
+    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reserve-generate-btn">-->
+      <!--<button class="btn sign_mybtn all-btn primary-btn"><i class="fa fa-download"></i>&nbsp Download</button>-->
+    <!--</div>-->
+  </div>
+</div>
+</div>
+      </div>
+    </article>
+  </section>

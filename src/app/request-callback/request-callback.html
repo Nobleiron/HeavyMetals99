@@ -1,0 +1,57 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Request a Callback<a class="close-cross" ng-click="$dismiss()"><i class="fa fa-times"></i></a></h3>
+
+  </div>
+  <div class="modal-body">
+    <form id="form-callme" method="post">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon user-icon"><span class="glyphicon glyphicon-user"></span></span>
+          <select name="cbt" id="cbt" class="form-control">
+            <option value="1">Call Me Now</option>
+            <option value="2">Call Me In 5 Mins</option>
+            <option value="3">Call Me When Agent is Available</option>
+          </select>
+          <!-- <div class="btn-group req-btn-group">
+          <div>
+            <div class="btn-group fullwidth" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-mini nopadding prof-btn fullwidth" uib-dropdown-toggle ng-disabled="disabled">
+            <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu sort-by-dropdown" role="menu" aria-labelledby="single-button">
+            <li role="menuitem" value="1">Call Me Now</li>
+            <li role="menuitem" value="2">Call Me In 5 Mins</li>
+            <li role="menuitem" value="3">Call Me When Agent is Available</li>
+            </ul>
+            </div>
+          </div>
+        </div> -->
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-8 padding-right-0 req-call-num">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+              <input type="phone" name="p1" id="p1" class="form-control col-xs-12 col-sm-6 col-md-8" ng-model="phone" ui-mask="999-999-9999" >
+            </div>
+          </div>
+          <div class="col-md-4 padding-left-2 req-call-num">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+              <input type="phone" name="p2" size="5" id="p2" class="form-control col-xs-6 col-md-4" ui-mask="9999" ng-model="extension"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="phoneError"></div>
+      <div id="errorDiv"></div>
+      <!--ctl_error=1-->
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn sign_mybtn all-btn primary-btn" ng-click="requestCallback()">Call Me</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal-content">
+  <div class="modal-header no-search-row noborder leftpadding rightpadding">
+    <div class="col-md-12 col1 ">
+      <p>Jobsite<a class="close-cross pull-right"  ng-click="$dismiss()" aria-label="Close"><i class="fa fa-times marker on-hover-pointer"></i></a></p>
+    </div>
+  </div>
+  <div class="modal-body  job-site-detail view-jobsite">
+    <h4 class="go-back-text">Details</h4>
+    <i class="fa fa-map-marker marker go-back-text"></i>
+    <span class="go-back-text">{{jobsite.Site_Name}}</span>
+    <br>
+    <p>{{jobsite.Address1}}</p>
+    <p>{{jobsite.Address2}}</p>
+    <p>{{jobsite.City}}&nbsp;{{jobsite.Prov}}</p>
+    <p class="zip">Zip Code: {{jobsite.Postal}}</p>
+    <i class="fa fa-phone-square zip marker go-back-text"></i>
+    <span class="marker go-back-text">{{jobsite.Phone}}</span>
+    <br>
+    <i class="fa fa-user marker go-back-text"></i>
+          <span class="marker go-back-text">
+            Name of Contact Person
+          </span>
+  </div>
+</div>

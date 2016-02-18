@@ -1,0 +1,38 @@
+<header class="head_without_index">
+  <div class="container">
+    <nav class="navbar">
+      <div class="container nopadding">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed landing-header prelogin-header-btn topmargin" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+            <i class="fa fa-search color-blue"></i>
+          </button>
+          <a href="/#/" class="navbar-brand toppadding">  <img src="assets/images/logo.png" alt="" class="header-img-small"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse collapse-for-small pre-collapse" id="bs-example-navbar-collapse-1">
+          <div class="nav navbar-nav landing-header prelogin-header">
+            <div>
+              <form class="topnav-search header-form-small" role="search">
+                <i class="fa fa-spinner fa-spin loading-search header-spinner" ng-hide="!isLoading"></i>
+                <input type="text" class="form-control search-head search-on-header"  name="q" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query" ng-model="selectedProduct"
+                       typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+                       typeahead-on-select="selectSearchedItem($item, $model, $label)"
+                       autocomplete="off"
+                       typeahead-template-url="typeahead-item.html"
+                       typeahead-loading="isLoading" ng-class="{'loading-time': isLoading}">
+
+                <button class="btn btn-default my_search my-search-header" type="submit" ng-click="selectSearchedItem()"><i class="glyphicon glyphicon-arrow-right"></i></button>
+
+                <a href="/#/help" class="help-link see-your-need-small">Don't see what you need?</a>
+              </form>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+</header>

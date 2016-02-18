@@ -9,7 +9,6 @@ var options = {
   src: 'src',
   dist: 'dist',
   tmp: '.tmp',
-  e2e: 'e2e',
   errorHandler: function(title) {
     return function(err) {
       gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
@@ -22,8 +21,9 @@ var options = {
   }
 };
 
+// Loading gulp task files through require js
 wrench.readdirSyncRecursive('./gulp').filter(function(file) {
-  return (/\.(js|coffee)$/i).test(file);
+  return (/\.js$/i).test(file);
 }).map(function(file) {
   require('./gulp/' + file)(options);
 });

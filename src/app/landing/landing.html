@@ -1,0 +1,558 @@
+<!-- landing header and background start -->
+<section scroll id="home">
+	<header class="landing-top">
+		<div class="landing-top-header animated" ng-class="{'fadeInDown header-on-scroll': boolChangeClass}">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<nav class="navbar nomargin">
+							<div class="container-fluid">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed landing-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar landing-icon-bar"></span>
+										<span class="icon-bar landing-icon-bar"></span>
+										<span class="icon-bar landing-icon-bar"></span>
+									</button>
+									<a class="navbar-brand nopadding" ui-sref="landing">
+										<img src="/assets/images/logo.png" class="landing-logo">
+									</a>
+								</div>
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav navbar-right landing-nav">
+										<li><a scroll-to="home" duration="1800" class="on-hover-pointer">Home</a></li>
+										<li><a scroll-to="rent" duration="1800" class="on-hover-pointer">Rent</a></li>
+										<li><a scroll-to="buy" duration="1800" class="on-hover-pointer">Buy</a></li>
+										<li><a scroll-to="service" duration="1800" class="on-hover-pointer">Services</a></li>
+										<li><a scroll-to="software" duration="1800" class="on-hover-pointer">Our Software</a></li>
+										<!-- <li><a   scroll-to="testimonial" duration="1800">Testimonials</a></li> -->
+										<li><a   scroll-to="contact" duration="1800" class="on-hover-pointer">Contact</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.login" class="on-hover-pointer">Login</a></li>
+										<li ng-if="!userObj"><a ui-sref="hmPrelogin.register" class="on-hover-pointer">Register</a></li>
+										<!-- <li ng-if="userObj"><a ui-sref="hmPrelogin.logout" class="on-hover-pointer">Logout</a></li> -->
+										<li ng-if="userObj" class="hidden-xs">
+											<div class="btn-group profile-dropdown user-div" uib-dropdown>
+												<button class="btn landing-profile-btn" id="single-button" uib-dropdown-toggle><img class="pro_pic" src="/assets/images/pro_pic.png">{{userObj.logged_userName}}
+													<i class="fa fa-caret-down heading-text"></i>
+												</button>
+												<ul class="dropdown-menu list-group user-list-group arrow_box landing-dropdown-menu"  role="menu" aria-labelledby="single-button">
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/dashboard">Dashboard</a></li>
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1" href="#/orders/history">Recent Orders</a></li>
+													<li role="presentation"class="list-group-item noborder"><a class="nopadding" role="menuitem" tabindex="-1"  >Purchases</a></li>
+													<li role="presentation"class="list-group-item noborder" ng-if="!userObj.portal_login"><a class="nopadding" role="menuitem" tabindex="-1" ui-sref="hm.portalAccess">Get Portal Access</a></li>
+													<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/user/profile">Profile Settings</a></li>
+													<li role="presentation" class="list-group-item"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/help">Help</a></li>
+													<li role="presentation" class="list-group-item bottomborder"><a class="nopadding" role="menuitem" tabindex="-1" href="/#/logout">Logout</a></li>
+												</ul>
+											</div>
+										</li>
+										<!-- mobile my account tab -->
+										<li ng-if="userObj" class="visible-xs">
+											<uib-accordion>
+												<uib-accordion-group class="landing-panel-group">
+													<uib-accordion-heading>
+														{{userObj.logged_userName}}
+													</uib-accordion-heading>
+													<ul>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/dashboard">Dashboard</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="#/orders/history">Recent Orders</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding">Purchases</a></li>
+														<li class="list-group-item bottomborder" ng-if="!userObj.portal_login"><a class="nopadding" ui-sref="hm.portalAccess">Get Portal Access</a></li>
+														<li class="list-group-item"><a class="nopadding" href="/#/user/profile">Profile Settings</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/help">Help</a></li>
+														<li class="list-group-item bottomborder"><a class="nopadding" href="/#/logout">Logout</a></li>
+													</ul>
+												</uib-accordion-group>
+											</uib-accordion>
+										</li>
+									</ul>
+								</div><!-- /.navbar-collapse -->
+							</div><!-- /.container-fluid -->
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="landing-top-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search-buy-col">
+						<button class="btn all-btn primary-btn sign_mybtn landing-track-button">Track Order</button>
+						<h3 class="sentence hidden-xs">Rent or Buy Construction
+							<div class="slidingVertical">
+								<span>Equipment</span>
+								<span>Parts</span>
+								<span>Accesories</span>
+								<span>Attachments</span>
+							</div>
+						</h3>
+						<h3 class="sentence visible-xs">Rent or Buy Construction Equipment</h3>
+						<p class="rent-buy-option">
+							<a href="" ng-click="toggleRentOrBuy(true)" ng-class="{'active': flags.rented}">RENT</a>
+							<a href="" ng-click="toggleRentOrBuy(false)" ng-class="{'active': !flags.rented}">BUY</a>
+
+						</p>
+						<form role="search">
+						<div class="pull-center landing-search-div" id="rent">
+							<input type="text" name="q" autocomplete="off" placeholder="Search lifts, boom lifts, forklifts etc" id="top-query" name="query"
+										 ng-change="showAutocomplete = true"
+										 ng-model="selectedProduct"
+										 typeahead="item as item.Product_Name for item in getProducts($viewValue)"
+										 typeahead-on-select="selectSearchedItem($item, $model, $label)"
+										 typeahead-template-url="typeahead-item.html"
+										 typeahead-loading="isLoading"/>
+
+							<button class="btn all-btn sign_mybtn landing-search hidden-xs" type="submit" ng-click="selectSearchedItem()">
+								<span  ng-show="!isLoading">
+									<i class="fa fa-search"></i>&nbsp
+										Find
+								</span>
+								<i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
+							</button>
+
+							<div class="visible-xs">
+								<button class="btn all-btn sign_mybtn" type="submit" ng-click="selectSearchedItem()">
+									<span  ng-show="!isLoading">
+										<i class="fa fa-search"></i>&nbsp
+										Find
+									</span>
+									<i class="fa fa-spinner fa-spin" ng-hide="!isLoading"></i>
+								</button>
+							</div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</section>
+<!-- landing header and background end -->
+<!-- most rented start -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center most-rented-heading">
+			<h3>Most Rented</h3>
+			<div class="line"></div>
+		</div>
+	</div>
+	<div class="row" ng-show="flags.mostRentedCategoryFetcing">
+		<load-indicator loading="true"></load-indicator>
+	</div>
+	<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
+		<!-- web view slider start -->
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control hidden-xs hidden-sm">
+			<uib-slide>
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip"  ng-repeat="category in displayCategories | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectecMostRentedCategory.Id == category.Id}">
+						<p>{{category.Name}}</p>
+						<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+					</div>
+			</uib-slide>
+			<uib-slide>
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(4, displayCategories.length) | limitTo:5" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectedItem == $index}">
+						<p>{{category.Name}}</p>
+						<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+					</div>
+			</uib-slide>
+		</uib-carousel>
+		<!-- web view slider end -->
+		<!-- mobile view slider start -->
+		<div class="visible-xs visible-sm">
+			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
+				<uib-slide ng-repeat="category in displayCategories">
+						<div class="col-sm-10 col-xs-10 most-rented-equip" ng-click="fetchMostRentedProducts(category, $index)" ng-class="{'selected-item': selectecMostRentedCategory.Id == category.Id}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+			</uib-carousel>
+		</div>
+		<!-- mobile view slider end -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rented-detail-col">
+			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rented-detail-left">
+				<h3>{{selectecMostRentedCategory.Name}}</h3>
+				<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			</div>
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostRentedCategoryProductsFetcing" style="margin-top: 100px;">
+				<load-indicator loading="true"></load-indicator>
+			</div>
+			<div ng-show="!flags.mostRentedCategoryProductsFetcing">
+				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostRentedCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+					<img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+					<p class="desc-text">{{product.Product_Name}}</p>
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn">
+					<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostRentedCategory.Id})"  id="buy">View All</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- most rented end -->
+<!-- most bought start -->
+<section class="most-bought">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center most-rented-heading">
+				<h3>Most Purchased</h3>
+				<div class="line"></div>
+			</div>
+		</div>
+		<div class="row" ng-show="flags.mostRentedCategoryFetcing">
+			<load-indicator loading="true"></load-indicator>
+		</div>
+		<div class="row" ng-style="{'visibility' : displayCategories.length ? 'visible' : 'hidden'}">
+			<!-- web view slider start -->
+			<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control hidden-xs hidden-sm">
+				<uib-slide>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+				<uib-slide>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 most-rented-equip" ng-repeat="category in displayCategories.slice(5, displayCategories.length) | limitTo: 5" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectedBuyItem == $index}">
+							<p>{{category.Name}}</p>
+							<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+						</div>
+				</uib-slide>
+			</uib-carousel>
+			<!-- web view slider end -->
+			<!-- mobile view slider start -->
+			<div class="visible-xs visible-sm">
+				<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="landing-carousel-control">
+					<uib-slide ng-repeat="category in displayCategories">
+							<div class="col-xs-10 most-rented-equip" ng-click="fetchMostBoughtProducts(category, $index)" ng-class="{'selected-item': selectecMostBoughtCategory.Id == category.Id}">
+								<p>{{category.Name}}</p>
+								<img ng-src="{{category.Image_path}}" err-src alt="most rented pic" class="fullwidth landing-img-max">
+							</div>
+					</uib-slide>
+				</uib-carousel>
+			</div>
+			<!-- mobile view slider end -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rented-detail-col">
+				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rented-detail-left">
+					<h3>{{selectecMostBoughtCategory.Name}}</h3>
+					<p class="desc-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" ng-show="flags.mostBoughtCategoryProductsFetcing" style="margin-top: 100px;">
+					<load-indicator loading="true"></load-indicator>
+				</div>
+				<div ng-show="!flags.mostBoughtCategoryProductsFetcing">
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 other-equipment on-hover-pointer" ng-repeat="product in mostBoughtCategoryProducts" ui-sref="hm.equipmentDetails({ id : product.Product_Id})">
+						<img ng-src="{{product.Product_Image[0].ProductImage_Path}}" class="fullwidth landing-img-max">
+						<p class="desc-text">{{product.Product_Name}}</p>
+					</div>
+					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right view-all-btn" id="service">
+						<button class="btn all-btn sign_mybtn primary-btn autowidth" ui-sref="hm.search.results({category_id : selectecMostBoughtCategory.Id})">View All</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- most bought end -->
+<!-- buy certified start -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
+			<img src="/assets/images/buy.png" class="landing-image">
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
+			<h3>Buy Certified used Equipments</h3>
+			<div class="line"></div>
+			<p class="desc-text">With Noble Iron Certified equipment, you can now have confidence that equipment you purchase isn’t on the verge of breaking down. We perform a thorough inspection of all Noble Iron  Certified equipment to ensure that the machine is in great, working condition. We offer a money back guarantee and extended service contracts so you protect you investment.</p>
+			<button class="btn all-btn primary-btn sign_mybtn" ui-sref="hm.search.results({ type : 'buy'})">Browse Equipments</button>
+		</div>
+	</div>
+</div>
+<!-- buy certified end -->
+<!-- sell your equipment start -->
+<section class="most-bought">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
+				<img src="/assets/images/landing-software.png" class="landing-image software-img">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
+				<h3>Sell your Equipment</h3>
+				<div class="line"></div>
+				<p class="desc-text">When you sell your equipment with Noble Iron, you have a whole team of experts working for you – sales, marketing, internet services, customer service, accounting and more. Our all-inclusive service saves you time and money, so you can focus on running your business while we work to get you maximum returns.</p>
+				<button class="btn all-btn primary-btn sign_mybtn autowidth" ui-sref="hm.sellEquipment">&nbsp;&nbsp;&nbsp;Sell Now&nbsp;&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- sell your equipment end -->
+<!-- fleet maintenance start -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">
+			<img src="/assets/images/landing-repair.jpg" class="landing-image">
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
+			<h3>Fleet Maintenance and Re-conditioning</h3>
+			<div class="line"></div>
+			<p class="desc-text">Join the many satisfied Noble Iron fleet maintenance customers that are saving thousands annually by turning over the hassles of maintaining and managing their equipment fleet to our team of equipment professionals. Noble Iron can provide you faster equipment repair turnaround time, Increased equipment productivity and Extended equipment life. To learn more about this and Insightful Key Performance Indicator (KPI) management reports contact us today.</p>
+			<button class="btn all-btn primary-btn sign_mybtn" id="software">Learn More</button>
+		</div>
+	</div>
+</div>
+<!-- fleet maintenance end -->
+<!-- software start -->
+<section class="most-bought">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding">
+				<img src="/assets/images/landing-software.png" class="landing-image software-img">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading offers-col">
+				<h3>Our Software</h3>
+				<div class="line"></div>
+				<p class="desc-text">Noble Iron Online is powered by Texada Software’s cloud platform.<br> Texada builds software for equipment rental companies,<br> equipment dealerships, construction companies, contractors,<br> and any construction or industrial equipment user, including mechanics,<br> logistics and service technicians. Texada Software manages the entire equipment lifecycle,<br> including equipment purchasing, rental & sales transactions, inventory location,<br> utilization, maintenance and depreciation tracking, used equipment sales analysis, and inventory replenishment. Texada (toll-free in North America): <span class="color-blue">1-800-361-1233</span></p>
+				<button class="btn all-btn primary-btn sign_mybtn autowidth" id="contact">Get The Software Now</button>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- software end -->
+<!-- Love start -->
+<!--<div class="container">-->
+	<!--<div class="row">-->
+		<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center">-->
+			<!--<img src="/assets/images/love.jpg" class="love-image">-->
+		<!--</div>-->
+		<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 most-rented-heading repair-heading">-->
+			<!--<h3>Love construction industry?</h3>-->
+			<!--<div class="line"></div>-->
+			<!--<p class="desc-text">Come join our nationwide team of Entreprenurs as an Independent consultant.</p>-->
+			<!--<button class="btn all-btn primary-btn sign_mybtn">Join Now</button>-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</div>-->
+<!-- Love end -->
+<!-- testimonials start -->
+<!-- <div class="container hidden-xs">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center most-rented-heading">
+			<h3>Testimonials</h3>
+			<div class="line"></div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 testimonial-carousel" testimonial>
+				<div class="carousel slide multi-item-carousel" id="theCarousel">
+					<div class="carousel-inner">
+					<div class="item active">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+							<div class="abc lr-padding">
+								<p>Hello</p>
+								<div class="testimonial-name">
+									<h4 class="nomargin heading-text">Alex Simon</h4>
+									<p class="nomargin desc-text">Amerx Corp</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="abc lr-padding">
+							<p>World</p>
+									<div class="testimonial-name">
+										<h4 class="nomargin heading-text">Alex Simon</h4>
+										<p class="nomargin desc-text">Amerx Corp</p>
+									</div>
+						</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="abc lr-padding">
+							<p>Nice</p>
+									<div class="testimonial-name">
+										<h4 class="nomargin heading-text">Alex Simon</h4>
+										<p class="nomargin desc-text">Amerx Corp</p>
+									</div>
+						</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="abc lr-padding">
+							<p>This</p>
+									<div class="testimonial-name">
+										<h4 class="nomargin heading-text">Alex Simon</h4>
+										<p class="nomargin desc-text">Amerx Corp</p>
+									</div>
+						</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="abc lr-padding">
+							<p>One</p>
+									<div class="testimonial-name">
+										<h4 class="nomargin heading-text">Alex Simon</h4>
+										<p class="nomargin desc-text">Amerx Corp</p>
+									</div>
+						</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 leftpadding">
+						<div class="abc lr-padding">
+							<p>Is This</p>
+									<div class="testimonial-name">
+										<h4 class="nomargin heading-text">Alex Simon</h4>
+										<p class="nomargin desc-text">Amerx Corp</p>
+									</div>
+						</div>
+						</div>
+					</div>
+					</div>
+					<a href="#theCarousel" data-slide="prev" class="prev-btn">
+					<i class="fa fa-angle-left"></i>
+					</a>
+					<a href="#theCarousel" data-slide="next" class="next-btn">
+					<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- testimonials end -->
+<!-- address start -->
+<section class="address-back">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 address-col">
+				<uib-accordion close-others="true" class="faq-accordion address-accordion">
+					<uib-accordion-group is-open="true">
+						<uib-accordion-heading>
+							<h4 class="go-back-text">
+								Noble Iron California
+							</h4>
+						</uib-accordion-heading>
+						<p class="desc-text">
+							8314 E. Slauson Avenue Pico Rivera, CA 90660 <br>
+							Phone: 1-855-767-4424
+						</p>
+					</uib-accordion-group>
+					<uib-accordion-group>
+						<uib-accordion-heading>
+							<h4 class="go-back-text">
+								Noble Iron Texas
+							</h4>
+						</uib-accordion-heading>
+						<p class="desc-text">
+							505 Rankin Road Houston, TX 77073
+						</p>
+					</uib-accordion-group>
+					<uib-accordion-group>
+						<uib-accordion-heading>
+							<h4 class="go-back-text">
+								Texada Software Inc.
+							</h4>
+						</uib-accordion-heading>
+						<p class="desc-text">
+							8314 E. Slauson Avenue Pico Rivera, CA 90660 <br>
+							Phone: 1-855-767-4424
+						</p>
+					</uib-accordion-group>
+				</uib-accordion>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+		</div>
+	</div>
+</section>
+<footer>
+	<section class="footer-section">
+		<div class="container footer-container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<img src="/assets/images/footer-crane.png" class="fullwidth landing-img-max">
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading footer-team-col">
+					<h4>Noble Iron</h4>
+					<div class="line"></div>
+					<ul>
+						<a ui-sref="hm.team" class="on-hover-pointer"><li>Team</li></a>
+						<a ui-sref="hm.boardOfDirectors" class="on-hover-pointer"><li>Board Of Directors</li></a>
+						<a ui-sref="hm.faq" class="on-hover-pointer"><li>Faq</li></a>
+						<a ui-sref="hm.pressReleases" class="on-hover-pointer"><li>Press Releases</li></a>
+						<a ui-sref="hm.financialReports" class="on-hover-pointer"><li>Financial Reports</li></a>
+						<a ui-sref="hm.annualMeeting" class="on-hover-pointer"><li>2015 Annual Meeting</li></a>
+						<a ui-sref="hm.contactUs" class="on-hover-pointer"><li>Contact Us</li></a>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
+					<h4>Contact</h4>
+					<div class="line"></div>
+					<ul>
+						<li>Sales and Rental: 1-855-767-4424</li>
+						<li>Texada Software: 1-800-361-1233</li>
+						<li>Investor Relations: (832) 767-4424</li>
+						<li>Email: <a href="mailto:customercare@nobleiron.com" class="color-blue">customercare@nobleiron.com</a></li>
+						<li>
+							<p class="nopadding"> <i class="fa fa-map-marker color-white"></i>&nbsp 505 Rankin Road<br>
+							 Houston - TX 77073</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 most-rented-heading">
+					<h4>Newsletter</h4>
+					<div class="line"></div>
+					<p class="get-news">Get news on our latest promotions, products and service. We'll never share your email address and you can opt out any time</p>
+					<div class="landing-search-div footer-input">
+						<input class="form-control" type="text" placeholder="Enter your mail id">
+						<button class="btn all-btn sign_mybtn landing-search hidden-md hidden-sm hidden-xs">
+							Subscribe
+						</button>
+						<div class="visible-md visible-sm visible-xs">
+							<button class="btn all-btn sign_mybtn">
+								Subscribe
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="social-share">
+							<a href="">
+								<i class="fa fa-facebook"></i> &nbsp  &nbsp
+							</a>
+							<a href="">
+								<i class="fa fa-linkedin"></i> &nbsp  &nbsp
+							</a>
+							<a href="">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="main-footer">
+		<div class="container">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bottom-col">
+				<p>© 2016 Noble Iron. All rights reserved.</p>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right bottom-col">
+				<p scroll-to="home" duration="1800" class="on-hover-pointer">Top <i class="fa fa-arrow-circle-o-up"></i></p>
+			</div>
+		</div>
+	</section>
+</footer>

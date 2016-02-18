@@ -77,3 +77,334 @@ form.ng-submitted.ng-invalid .tooltip .tooltip-arrow{
 .register-user .flex-field fieldset.form-group{
   margin-bottom: 0;
 }
+
+.btn.my-btn:focus{
+  outline: none;
+}
+
+.modal-content .modal-header .modal-title .close-cross{
+  float: right;
+}
+
+.lift_box figure img ,.lift-list figure img{
+  width: 100%;
+  height: 100%;
+}
+
+.pac-container.pac-logo {
+  z-index: 1050;
+}
+
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+.pac-controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px !important;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 400px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+  margin-left: -1px;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 401px;
+}
+
+.pac-container {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.angular-google-map-container {
+  width: 100%;
+  height: 600px;
+}
+
+/* fix for Twitter Bootstrap handling of responsive images */
+.angular-google-map img {
+  max-width: inherit;
+}
+
+.btn[disabled]{
+  color: #ccc;
+}
+
+.cssload-jumping{
+  position:relative;
+  display:block;
+  margin: 0px auto;
+  width:77px;
+}
+
+.cssload-jumping, .cssload-jumping * {
+  box-sizing: border-box;
+}
+
+.cssload-jumping span {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background: rgb(207,195,207);
+  border-radius: 350px;
+  background-clip: padding-box;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+}
+
+.cssload-jumping span:nth-child(1) {
+  animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-animation: scale 1.15s 0.12s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(2) {
+  animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-animation: scale 1.15s 0.23s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(3) {
+  animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-animation: scale 1.15s 0.35s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(4) {
+  animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-animation: scale 1.15s 0.46s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.cssload-jumping span:nth-child(5) {
+  animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -ms-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-animation: scale 1.15s 0.58s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.9, 0.9);
+    background: rgba(232,229,232,0.98);
+  }
+  50% {
+    transform: scale(1, 1);
+    margin: 0 2px;
+    background: rgba(184,171,184,0.98);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@-o-keyframes scale {
+  0% {
+    -o-transform: scale(0);
+  }
+  25% {
+    -o-transform: scale(0.9, 0.9);
+    background: rgba(232,229,232,0.98);
+  }
+  50% {
+    -o-transform: scale(1, 1);
+    margin: 0 2px;
+    background: rgba(184,171,184,0.98);
+  }
+  100% {
+    -o-transform: scale(0);
+  }
+}
+
+@-ms-keyframes scale {
+  0% {
+    -ms-transform: scale(0);
+  }
+  25% {
+    -ms-transform: scale(0.9, 0.9);
+    background: rgba(232,229,232,0.98);
+  }
+  50% {
+    -ms-transform: scale(1, 1);
+    margin: 0 2px;
+    background: rgba(184,171,184,0.98);
+  }
+  100% {
+    -ms-transform: scale(0);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 0.9);
+    background: rgba(232,229,232,0.98);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    margin: 0 2px;
+    background: rgba(184,171,184,0.98);
+  }
+  100% {
+    -webkit-transform: scale(0);
+  }
+}
+
+@-moz-keyframes scale {
+  0% {
+    -moz-transform: scale(0);
+  }
+  25% {
+    -moz-transform: scale(0.9, 0.9);
+    background: rgba(232,229,232,0.98);
+  }
+  50% {
+    -moz-transform: scale(1, 1);
+    margin: 0 2px;
+    background: rgba(184,171,184,0.98);
+  }
+  100% {
+    -moz-transform: scale(0);
+  }
+}
+.category_filter1 .categories .sub-categories{
+  margin-left: 30px;
+}
+
+.category_filter1 .sub-categories{
+  margin-top: 10px;
+}
+
+.root-categories{
+  margin-bottom: 15px;
+}
+
+.fadable {
+  transition: 0s linear all;
+}
+.fadable.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+  transition: 0.4s linear all;
+}
+.fadable.ng-hide-remove.ng-hide-remove-active {
+  opacity: .5;
+}
+.fadable.ng-hide-add {
+  opacity: .5;
+  display: block !important;
+  transition: 0.4s linear all;
+}
+.fadable.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+/* you can also define the transition style
+   on the base class as well (.repeat-item) */
+/*.repeat-item.ng-enter,*/
+/*.repeat-item.ng-leave {*/
+  /*-webkit-transition:0.7s linear opacity;*/
+  /*transition:0.7s linear opacity;*/
+/*}*/
+
+/*.repeat-item.ng-enter,*/
+/*.repeat-item.ng-leave.ng-leave-active {*/
+  /*opacity:0;*/
+  /*height: 0px;*/
+/*}*/
+/*.repeat-item.ng-leave,*/
+/*.repeat-item.ng-enter.ng-enter-active {*/
+  /*opacity:1;*/
+  /*height: 30px;*/
+/*}*/
+
+
+.repeat-item.ng-leave.ng-leave-active,
+.repeat-item.ng-enter {
+  opacity: 0;
+  -webkit-transition: opacity 0.7s linear;
+  -moz-transition: opacity 0.7s linear;
+  transition: opacity 0.7s linear;
+}
+
+.jobsite-lookup .angular-google-map{
+  height:200px;
+}
+.jobsite-lookup .angular-google-map-container{
+  height:200px;
+}
+
+
+.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
+  border: 0;
+}
+
+
+.cart-duration-cont .select-date {
+  width: 98%;
+}
+
+form input:after {
+  content:"*";
+  color:red;
+}
+
+.quantity-update,.quantity-update:active,.quantity-update:focus{
+  border: none;
+  background: none;
+  font-size: 18px;
+  outline: none;
+}
+
+.quantity-update.check{
+  color: #009ddc;
+}
+.quantity-update.update-close{
+  color: #d9534f;
+}
+.cg-busy{
+  z-index: 998;
+}

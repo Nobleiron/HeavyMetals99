@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding lr-padding-small">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
+      <div class="pickup-delivery payment-option pay-now" ng-class="{'active-pickup-delivery': cartData.payment.paynow == 'true'}">
+        <input type="radio" name="get-option" ng-model="cartData.payment.paynow" value="true">
+        <span class="go-back-text bold-font">Pay Now</span>
+        <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last</p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding-small">
+      <div class="pickup-delivery delivery-xs payment-option" ng-class="{'active-pickup-delivery': cartData.payment.paynow == 'false'}">
+        <input type="radio" name="get-option" ng-model="cartData.payment.paynow" value="false">
+        <span class="go-back-text bold-font">Pay Later</span>
+        <p class="desc-text pickup-desc">Your Credit Card will be charged for the amount mentioned in cart summary. Any differences can be settled at last</p>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding nopadding-small credit-card-col" ng-show="cartData.payment.paynow == 'true'">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 leftpadding nopadding-small">
+        <form action="#"
+              name="cardForm"
+              data-card
+              data-width="500"
+              class="addcard__previev card-detail-form"
+              data-card-container="#card-container"
+              data-placeholders="cardPlaceholders"
+              data-options="cardOptions"
+              data-messages="cardMessages">
+          <div class="card-detail">
+            <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="data.card.cc_number" class="form-control" />
+            <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="data.card.cc_name" class="form-control" />
+          </div>
+          <div class="form-input-div">
+            <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="data.card.expiry" />
+            <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="data.card.cc_cvv" />
+          </div>
+          <div>
+            <input type="button" class="btn all-btn sell-equ btn-right-margin" value="Clear" data-ng-click="clear()" />
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div id="card-container"></div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot" ng-show="cartData.payment.paynow == 'true'"></div>
+    <!-- billing address -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding jobsite-details-col toppadding">
+      <h3 class="heading-text topmargin">Billing Address</h3>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider-bottom"></div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 nopadding">
+        <input type="text" class="form-control billing-input" placeholder="Name">
+        <input type="text" class="form-control billing-input" placeholder="Address1">
+        <input type="text" class="form-control billing-input" placeholder="Address2">
+        <input type="text" class="form-control billing-input" placeholder="City">
+        <input type="text" class="form-control billing-input" placeholder="State">
+        <input type="text" class="form-control billing-input" placeholder="Zip">
+      </div>
+    </div>
+  </div>
+
+  <!-- cart summary part -->
+  <div ui-view="snapshot"></div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
+  <div class="row nomargin">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reserve-generate-btn">
+      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn" ng-click="generateQuote()">
+        <span btn-load-indicator="Quote:Process">Skip and Generate Quote</span>
+      </button>
+      <button class="btn sign_mybtn all-btn primary-btn autowidth skip-btn" ng-click="reserve()">
+        <span btn-load-indicator="Reserve:Process"><i class="fa fa-check"></i>&nbsp
+        Confirm Reservation</span>
+      </button>
+    </div>
+  </div>
+</div>

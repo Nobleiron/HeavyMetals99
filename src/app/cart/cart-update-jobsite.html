@@ -1,0 +1,245 @@
+<div class="row">
+
+  <!-- guest user -->
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding" ng-if="!userObj">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane leftpadding job-leftpadding-small">
+      <div class="row fields-row">
+        <form valdr-type="JobSite">
+          <div class="col-md-12 site-col lr-padding">
+            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
+          </div>
+          <div class="col-md-12 other-col lr-padding">
+            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
+          </div>
+          <div class="col-md-12 other-col lr-padding" id="searchbox">
+          </div>
+        </form>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <script type="text/ng-template" id="searchbox.tpl.html">
+            <input type="text" class="form-control" placeholder="Search Location"/>
+          </script>
+          <div class="jobsite-lookup" ng-if="showMap">
+            <ui-gmap-google-map
+              center="map.center"
+              zoom="map.zoom"
+              options="map.options"
+              pan="true"
+              refresh="showMap"
+              >
+              <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
+                                  events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+            </ui-gmap-google-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding">
+        <h3 class="heading-text">Jobsite Contact Information</h3>
+        <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Name" ng-model="cartData.delivery.contactInfo.firstName">
+           <i class="fa fa-user pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.phone">
+           <i class="fa fa-user pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Email" ng-model="cartData.delivery.contactInfo.email">
+           <i class="fa fa-envelope-o pull-right"></i>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+        <div class="form-control search-div">
+          <textarea placeholder="Delivery Note" ng-model="cartData.delivery.contactInfo.deliveryNote">
+
+          </textarea>
+          <!--<input type="text" placeholder="Delivery Note" ng-model="cartData.delivery.contactInfo.deliveryNote">-->
+          <i class="fa fa-pencil pull-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- registered user select and add jobsite part -->
+  <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding" ng-if="userObj">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftpadding delivery-leftpadding-small">
+      <ul class="nav nav-tabs gride-tab root-category">
+        <li ng-class="{'active': !tabs.addNew}">
+          <a  ng-click="tabs.addNew = false">Existing Job Sites</a>
+        </li>
+        <li ng-class="{'active': tabs.addNew}">
+          <a ng-click="tabs.addNew = true;hackMapLoad()">Add New</a>
+        </li>
+      </ul>
+    </div>
+    <!-- update existing job -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 update-exist tab-pane fade in active leftpadding delivery-leftpadding-small" ng-show="!tabs.addNew">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding lr-padding-small" ng-if="!cartData.jobsites.length">
+        <p class="desc-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp No Jobsites Available</p>
+        <a tabtoggle data-toggle="tab" href="#add-new-job" ng-click="tabs.addNew = true;hackMapLoad()" class="btn all-btn sell-equ add-jobsite-btn"><i class="fa fa-plus"></i> Add Jobsite</a>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list update-job lr-padding" ng-if="cartData.jobsites.length">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Search" ng-model="searchJosite">
+          <i class="fa fa-search pull-right icon-right"></i>
+        </div>
+        <h4 class="select-job">Jobsite Name</h4>
+        <div class="job-lists inner-scroll">
+          <div ng-repeat="site in cartData.jobsites | orderBy:'-selected' | filter:searchJosite">
+            <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == cartData.delivery.selectedJobSite.SiteID">
+            <span>{{site.Site_Name}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail" ng-if="(cartData.delivery.selectedJobSite | isEmpty)">
+        <p class="heading-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp
+          No Jobsite Selected
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail leftpadding-small rightpadding-small" ng-if="!(cartData.delivery.selectedJobSite | isEmpty)">
+        <h4>Details</h4>
+        <i class="fa fa-map-marker marker"></i>
+        <span>{{cartData.delivery.selectedJobSite.Site_Name}}</span>
+        <br>
+        <p>{{cartData.delivery.selectedJobSite.Address1}}</p>
+        <p>{{cartData.delivery.selectedJobSite.Address2}}</p>
+        <p>{{cartData.delivery.selectedJobSite.City}}&nbsp;{{cartData.delivery.selectedJobSite.Prov}}</p>
+        <p class="zip">Zip Code: {{cartData.delivery.selectedJobSite.Postal}}</p>
+        <i class="fa fa-phone-square zip marker"></i>
+        <span class="marker">{{cartData.delivery.selectedJobSite.Phone}}</span>
+        <br>
+        <span ng-show="cartData.delivery.contactInfo.firstName">
+        <i class="fa fa-user marker"></i>
+  			<span class="marker">
+  				{{cartData.delivery.contactInfo.firstName}} {{cartData.delivery.contactInfo.lastName}}
+  			</span>
+        </span>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-date-heading lr-padding">
+        <h3 class="heading-text">Jobsite Contact Information</h3>
+        <p class="desc-text">This is for in case we need to contact you about your order or at Jobsite Location Details</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Name" ng-model="cartData.delivery.contactInfo.firstName">
+            <!-- <i class="fa fa-user pull-right"></i> -->
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Site Contact Phone" ng-model="cartData.delivery.contactInfo.phone">
+          <!-- <i class="fa fa-user pull-right"></i> -->
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time lr-padding">
+        <div class="form-control search-div">
+          <input type="text" placeholder="Purchase Order" ng-model="cartData.delivery.contactInfo.purchaseOrder">
+          <!-- <i class="fa fa-envelope-o pull-right"></i> -->
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
+          <textarea class="form-control delivery-note-textarea" ng-model="cartData.delivery.contactInfo.deliveryNote">Delivery Note</textarea>
+          <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
+          <!-- <i class="fa fa-phone pull-right"></i> -->
+      </div>
+      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 special-instruction heading-border">
+        <textarea class="form-control desc-text">Special Instructions</textarea>
+      </div> -->
+    </div>
+
+    <!-- add new job -->
+    <div ng-show="tabs.addNew" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane">
+      <div class="row fields-row">
+        <form valdr-type="JobSite">
+          <div class="col-md-12 site-col lr-padding">
+            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
+          </div>
+          <div class="col-md-12 other-col lr-padding">
+            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-md-6 other-col lr-padding">
+            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
+          </div>
+          <div class="col-md-6 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
+          </div>
+          <div class="col-md-12 other-col lr-padding" id="searchbox">
+          </div>
+        </form>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <script type="text/ng-template" id="searchbox.tpl.html">
+            <input type="text" class="form-control" placeholder="Search Location"/>
+          </script>
+          <div class="jobsite-lookup" ng-if="showMap" >
+            <ui-gmap-google-map
+              center="map.center"
+              zoom="map.zoom"
+              options="map.options"
+              pan="true"
+              refresh="showMap"
+              >
+              <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
+                                  events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+            </ui-gmap-google-map>
+          </div>
+        </div>
+      </div>
+      <div class="row nomargin">
+        <div class="col-md-12 site-col">
+          <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">
+            <span btn-load-indicator="Cart:Jobsite:Save">Add Job Site</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- cart summary part -->
+  <div ui-view="snapshot"></div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding devider devider-bottom"></div>
+  <div class="row nomargin review-btn-row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+      <button class="btn all-btn sell-equ btn-right-margin" ui-sref="hm.cart.details">
+        <i class="fa fa fa-chevron-left"></i>&nbsp
+        Back
+      </button>
+      <button class="btn all-btn sign_mybtn primary-btn autowidth" ng-disabled="!cartData.steps.delivery.complete" ui-sref="hm.cart.cartDuration">
+        <span>Next</span>
+        &nbsp<i class="fa fa fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
