@@ -1,8 +1,8 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-  <div ng-show="flags.invoicesInProgress" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <load-indicator loading="flags.invoicesInProgress"></load-indicator>
-  </div>
-  <div ng-style="{'visibility': flags.invoicesInProgress ? 'hidden':'visible'}">
+  <!--<div ng-show="flags.invoicesInProgress" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+    <!--<load-indicator loading="flags.invoicesInProgress"></load-indicator>-->
+  <!--</div>-->
+  <div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
       Invoices
     </div>
@@ -50,12 +50,12 @@
           </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot bord_dash_bot_small"></div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col invoices-btn-div">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col invoices-btn-div" style="visibility: hidden;" ng-style="{'visibility': flags.invoicesInProgress ? 'hidden':'visible'}">
       <button class="btn btn-default pull-right manage-job-btn deactivate list all-btn" ng-class="{'active primary-btn' : flags.outstanding}" ng-click="toggleInvoiceView(true)">Outstanding</button>
       <button class="btn btn-default pull-right manage-job-btn deactivate map all-btn" ng-click="toggleInvoiceView(false)" ng-class="{'active primary-btn' : !flags.outstanding}">All Invoices</button>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding hidden-xs">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding hidden-xs" cg-busy="invoicesPromise">
       <table class="table table-striped quotes-table">
         <thead>
         <tr>
@@ -73,7 +73,7 @@
           <td><a href="#/invoice-detail" class="invoice-no">{{invoice.InvoiceID}}</a></td>
           <td>{{invoice.Site_Name}}</td>
           <td>{{invoice.Source}}</td>
-          <td>{{invoice.Purchase_Order_ID}}</td>
+          <td>{{invoice.PurchaseOrder}}</td>
           <td>{{invoice.Total}}</td>
           <td>{{invoice.Balance}}</td>
           <td>
@@ -82,6 +82,8 @@
         </tr>
         </tbody>
       </table>
+
+      <uib-pagination ng-show="invoices.length && flags.qty >= 10 && flags.total_pages > 1" total-items="flags.qty * flags.total_pages" ng-model="flags.page"  ng-change="pageChange()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
     </div>
     <div class="col-xs-12 visible-xs">
       <div ng-repeat="invoice in invoices" class="invoices-small">

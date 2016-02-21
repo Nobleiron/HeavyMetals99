@@ -5,27 +5,34 @@ angular.module("HM_InvoicesMD")
     $scope.flags = {
       outstanding : false,
       invoicesInProgress : true,
-      is_include_history : false
+      is_include_history : false,
+      page : 1
     };
 
     $scope.showFilter = false;
     $scope.filterBtn = function() {
       $scope.showFilter = !$scope.showFilter
-    }
+    };
 
 
     $scope.fetchInvoices  = _fetchInvoices;
 
     $scope.toggleInvoiceView  = _toggleInvoiceView;
 
+    $scope.pageChange = pageChange;
+
     _fetchInvoices();
 
     function _fetchInvoices(){
-      var params = {is_include_history : $scope.flags.is_include_history, outstanding: $scope.flags.outstanding};
+      var params = {is_include_history : $scope.flags.is_include_history, outstanding: $scope.flags.outstanding,
+        page : $scope.flags.page
+      };
       $scope.query && $scope.query.length >= 3 && angular.extend(params,{search_by :'Site_Name',search_value : $scope.query});
-      RestSV.get(InvoicesCnst.invoicesList.url(), params)
+      $scope.invoicesPromise = RestSV.get(InvoicesCnst.invoicesList.url(), params)
         .then(function(response){
           $scope.invoices = response.data.result.InvoiceInquery_List || response.data.result.OutstandingInvoice_List;
+          $scope.flags.total_pages = parseInt(response.data.result.Total_pages);
+          $scope.flags.qty = response.data.result.InvoiceInquery_Qty || response.data.result.InvoiceList_Qty;
         })
         .catch(function(){
 
@@ -55,6 +62,10 @@ angular.module("HM_InvoicesMD")
       $scope.jobsite = '';
     }
 
+
+    function pageChange(){
+      _fetchInvoices();
+    }
 
 
 

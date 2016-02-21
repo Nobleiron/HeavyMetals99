@@ -7,7 +7,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time leftpadding">
       <p class="desc-text">Start Renting From</p>
       <div class="form-control search-div select-date" >
-        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" ng-model="cartData.duration.fromDt" is-open="fromDtOpened"  placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('fromDt')" ng-click="fromDtOpened= !fromDtOpened"/>
+        <input type="text"  datetime-picker="MM/dd/yyyy HH:mm:a" datepicker-options="{startingDay:0}"   ng-model="cartData.duration.fromDt"  is-open="fromDtOpened"  placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('fromDt')" ng-click="fromDtOpened= !fromDtOpened"/>
         <i class="fa fa-calendar pull-right" ng-click="fromDtOpened= !fromDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->
@@ -19,7 +19,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time duration-time rightpadding duration-rightpadding-small leftpadding-small">
       <p class="desc-text">Return Details</p>
       <div class="form-control search-div select-date">
-        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  ng-model="cartData.duration.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('toDt')" ng-click="toDtOpened= !toDtOpened"/>
+        <input type="text" datetime-picker="MM/dd/yyyy HH:mm:a"  datepicker-options="{startingDay:0}" ng-model="cartData.duration.toDt" is-open="toDtOpened" placeholder="mm/dd/yyyy" ng-change="deliveryTimeChange('toDt')" ng-click="toDtOpened= !toDtOpened"/>
         <i class="fa fa-calendar pull-right" ng-click="toDtOpened= !toDtOpened"></i>
       </div>
       <!--<div class="form-control search-div select-date">-->

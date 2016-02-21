@@ -19,6 +19,7 @@
       'angularMoment',
       'ngSanitize',
       'cgBusy',
+      'ui.bootstrap.datetimepicker',
       'infinite-scroll',
       'toastr',
       'LocalStorageModule',
