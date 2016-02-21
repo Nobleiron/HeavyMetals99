@@ -3580,7 +3580,7 @@ a:hover {
 	-webkit-transform: rotate(270deg);
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+.contracts-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
 	color: #555;
     cursor: default;
     background-color: transparent; 
@@ -3589,6 +3589,10 @@ a:hover {
     background: transparent;
     border-color: transparent;
     border-bottom: 1px solid #009ddc;
+}
+
+.user-profile-tabs .nav>li>a {
+	padding: 10px 10px;
 }
 
 
