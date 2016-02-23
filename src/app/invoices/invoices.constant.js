@@ -5,5 +5,10 @@ angular.module('HM_InvoicesMD')
       url: function () {
         return '/portal/invoices';
       }
+    },
+    details : {
+      url : function(){
+        return '/portal/Invoice_detail'
+      }
     }
   });

@@ -63,7 +63,7 @@ angular.module("HM_RoutesMD")
           templateUrl : 'app/change-password/change-password.html'
         },
         'hm.dashboard.invoices' : {
-          url: '/invoices',
+          url: '/invoices?outstanding&page',
           templateUrl: 'app/invoices/invoices.html',
           controller: 'HM_InvoicesCtrl'
         },
@@ -151,8 +151,8 @@ angular.module("HM_RoutesMD")
           controller : 'HM_RequestsCtrl',
           templateUrl: 'app/requests/requests.html'
         },
-        'hm.dashboard.viewContracts' : {
-          url: '/view-contracts?status',
+        'hm.dashboard.contracts' : {
+          url: '/contracts?status',
           templateUrl: 'app/contracts/contracts.html',
           controller: 'HM_ContractsCtrl'
         },
@@ -290,8 +290,9 @@ angular.module("HM_RoutesMD")
           controller: 'HM_BoardOfDirectorsCtrl'
         },
         'hm.dashboard.invoiceDetail': {
-          url: '/invoice-detail',
-          templateUrl: 'app/invoice-detail/invoice-detail.html'
+          url: '/invoice/:id/details',
+          templateUrl: 'app/invoices/invoice-detail.html',
+          controller: 'HM_InvoiceDetailsCtrl'
         },
         'hm.getTheSoftware': {
           url: '/get-the-software',

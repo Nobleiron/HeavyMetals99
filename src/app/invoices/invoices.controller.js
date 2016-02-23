@@ -1,18 +1,7 @@
 'use strict';
 angular.module("HM_InvoicesMD")
-  .controller('HM_InvoicesCtrl', ['$scope','PreviousState','HM_RestSV','HM_InvoicesCnst',function($scope,PreviousState,RestSV, InvoicesCnst){
+  .controller('HM_InvoicesCtrl', ['$scope','$stateParams','$state','HM_RestSV','HM_InvoicesCnst',function($scope,$stateParams,$state, RestSV, InvoicesCnst){
 
-    $scope.flags = {
-      outstanding : false,
-      invoicesInProgress : true,
-      is_include_history : false,
-      page : 1
-    };
-
-    $scope.showFilter = false;
-    $scope.filterBtn = function() {
-      $scope.showFilter = !$scope.showFilter
-    };
 
 
     $scope.fetchInvoices  = _fetchInvoices;
@@ -21,18 +10,20 @@ angular.module("HM_InvoicesMD")
 
     $scope.pageChange = pageChange;
 
+    _defineScope();
+
     _fetchInvoices();
 
     function _fetchInvoices(){
-      var params = {is_include_history : $scope.flags.is_include_history, outstanding: $scope.flags.outstanding,
+      var params = {is_include_history : $scope.flags.is_include_history, outstanding: $scope.flags.outstanding == 'Y',
         page : $scope.flags.page
       };
       $scope.query && $scope.query.length >= 3 && angular.extend(params,{search_by :'Site_Name',search_value : $scope.query});
       $scope.invoicesPromise = RestSV.get(InvoicesCnst.invoicesList.url(), params)
         .then(function(response){
-          $scope.invoices = response.data.result.InvoiceInquery_List || response.data.result.OutstandingInvoice_List;
+          $scope.invoices = response.data.result.Invoices;
           $scope.flags.total_pages = parseInt(response.data.result.Total_pages);
-          $scope.flags.qty = response.data.result.InvoiceInquery_Qty || response.data.result.InvoiceList_Qty;
+          $scope.flags.qty = response.data.result.Invoices_Qty;
         })
         .catch(function(){
 
@@ -42,9 +33,10 @@ angular.module("HM_InvoicesMD")
         })
     }
 
-    function _toggleInvoiceView(option){
-      $scope.flags.outstanding = !$scope.flags.outstanding;
-      _fetchInvoices();
+    function _toggleInvoiceView(){
+      $scope.flags.outstanding = $scope.flags.outstanding == 'Y' ? 'N' : 'Y';
+      $scope.flags.page = 1;
+      pageChange()
     }
 
     $scope.search = function() {
@@ -65,8 +57,22 @@ angular.module("HM_InvoicesMD")
 
     function pageChange(){
       _fetchInvoices();
+      $state.go('hm.dashboard.invoices', {page : $scope.flags.page, outstanding: $scope.flags.outstanding},{notify: false})
     }
 
+    function _defineScope(){
+      console.log($stateParams);
+      $scope.flags = angular.extend({
+        outstanding : 'N',
+        invoicesInProgress : true,
+        is_include_history : false,
+        page : 1
+      },$stateParams);
+      $scope.showFilter = false;
+      $scope.filterBtn = function() {
+        $scope.showFilter = !$scope.showFilter
+      };
+    }
 
 
   }]);

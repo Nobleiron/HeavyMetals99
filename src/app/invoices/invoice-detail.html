@@ -1,14 +1,15 @@
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" cg-busy="invoicesPromise">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding my-bottm-line manage_job_tit">
     <a href="#/invoices" class="desc-text"><i class="fa fa-chevron-left"></i>&nbsp Back to Invoices</a>
   </div>
+  <div ng-style="{'visibility': invoice ? 'visible' : 'hidden'}">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 quotes-id">
     <h3 class="go-back-text">
-      Invoice #23456
-      <span class="pull-right">Date: 15 Nov, 2015</span>
+      Invoice #{{invoice.Invoice_id}}
+      <span class="pull-right">Date: {{invoice.Order_date}}</span>
     </h3>
   </div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding table-responsive hidden-sm hidden-xs"  >
     <table class="table cart-table">
       <thead>
       <tr>
@@ -20,90 +21,52 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
+      <tr ng-repeat="product in invoice.Products">
         <td class="vertically-middle">
           <i class="fa fa-truck fa-4x"></i>
         </td>
         <td class="equipment-desc vertically-middle quotes-equip">
-          <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
+          <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
           <i class="fa fa-map-marker marker"></i>
-          <span>Bay Area, Houstan</span>
+          <span>{{invoice.Jobsite.Site_Name}}</span>
         </td>
         <td class="quantity vertically-middle">
           <p class="desc-text pull-center qty">1</p>
         </td>
         <td class="duration vertically-middle">
-          <p>12 Dec, 2015 - 23:00</p>
+          <p>{{invoice.Start_date}}, {{invoice.Start_time}}</p>
           <p class="to">to</p>
-          <p>14 Dec, 2015 - 11:30</p>
+          <p>{{invoice.End_date}}, {{invoice.End_time}}</p>
         </td>
-        <td class="vertically-middle pricing">$3556</td>
-      </tr>
-      <tr>
-        <td class="vertically-middle">
-          <i class="fa fa-truck fa-4x"></i>
-        </td>
-        <td class="equipment-desc vertically-middle quotes-equip">
-          <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
-          <i class="fa fa-map-marker marker"></i>
-          <span>Bay Area, Houstan</span>
-        </td>
-        <td class="quantity vertically-middle">
-          <p class="desc-text pull-center qty">1</p>
-        </td>
-        <td class="duration vertically-middle">
-          <p>12 Dec, 2015 - 23:00</p>
-          <p class="to">to</p>
-          <p>14 Dec, 2015 - 11:30</p>
-        </td>
-        <td class="vertically-middle pricing">$3556</td>
-      </tr>
-      <tr>
-        <td class="vertically-middle">
-          <i class="fa fa-truck fa-4x"></i>
-        </td>
-        <td class="equipment-desc vertically-middle quotes-equip">
-          <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
-          <i class="fa fa-map-marker marker"></i>
-          <span>Bay Area, Houstan</span>
-        </td>
-        <td class="quantity vertically-middle">
-          <p class="desc-text pull-center qty">1</p>
-        </td>
-        <td class="duration vertically-middle">
-          <p>12 Dec, 2015 - 23:00</p>
-          <p class="to">to</p>
-          <p>14 Dec, 2015 - 11:30</p>
-        </td>
-        <td class="vertically-middle pricing">$3556</td>
+        <td class="vertically-middle pricing">${{product.Total_Rate}}</td>
       </tr>
       </tbody>
     </table>
   </div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md" >
     <div class="cart-for-mobile">
       <div class="cart-image-div">
         <i class="fa fa-truck fa-4x"></i>
       </div>
       <div class="equipment-desc quotes-equip">
-        <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
+        <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
         <i class="fa fa-map-marker marker"></i>
-        <span>Bay Area, Houstan</span>
+        <span>{{invoice.Jobsite.Site_Name}}</span>
         <p class="desc-text quantity-p">Quantity: 1
-          <span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+          <span class="pull-right bold-font">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
         </p>
       </div>
     </div>
-    <div class="cart-for-mobile">
+    <div class="cart-for-mobile" ng-repeat="product in invoice.Products">
       <div class="cart-image-div">
         <i class="fa fa-truck fa-4x"></i>
       </div>
       <div class="equipment-desc quotes-equip">
-        <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
+        <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
         <i class="fa fa-map-marker marker"></i>
-        <span>Bay Area, Houstan</span>
+        <span>{{invoice.Jobsite.Site_Name}}</span>
         <p class="desc-text quantity-p">Quantity: 1
-          <span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+          <span class="pull-right bold-font">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
         </p>
       </div>
     </div>
@@ -125,13 +88,13 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail">
       <h4 class="go-back-text">Details</h4>
       <i class="fa fa-map-marker marker go-back-text"></i>
-      <span class="go-back-text">DSK Ranwara Constructions</span>
+      <span class="go-back-text">{{invoice.Jobsite.Site_Name}}</span>
       <br>
-      <p>Commercial Area</p>
-      <p>Houstan - TX</p>
-      <p class="zip">Zip Code: 34001</p>
+      <p>{{invoice.Jobsite.Address1}}</p>
+      <p ng-if="invoice.Jobsite.Address2">{{invoice.Jobsite.Address2}}</p>
+      <p class="zip">Zip Code: {{invoice.Jobsite.Postal}}</p>
       <i class="fa fa-phone-square zip marker go-back-text"></i>
-      <span class="marker go-back-text">+1 657 657 5678</span>
+      <span class="marker go-back-text">+{{invoice.Jobsite.Phone}}</span>
       <br>
       <i class="fa fa-user marker go-back-text"></i>
                   <span class="marker go-back-text">
@@ -140,25 +103,21 @@
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 total-price quotes-total-price">
       <div class="total-price-div">
-        <h3>
-          <label>Sub-Total Rental:</label>
-          <span>$ 13,847</span>
+        <h3 ng-repeat="charge in invoice.Charges">
+          <label>{{charge.Service_desc}}:</label>
+          <span>${{charge.Service_total}}</span>
         </h3>
-        <h3>
-          <label>Environmental Fee:</label>
-          <span>$ 13,847</span>
-        </h3>
-        <h3>
-          <label>Equipment Protection Program:</label>
-          <span>$ 13,847</span>
-        </h3>
-        <h3>
-          <label>Taxes:</label>
-          <span>$ 13,847</span>
+        <!--<h3  ng-repeat="tax in invoice.Tax_charges">-->
+          <!--<label>{{tax.Tax_desc}}(Taxes):</label>-->
+          <!--<span>${{tax.Tax_amount}}</span>-->
+        <!--</h3>-->
+        <h3 ng-if="invoice.Discount">
+          <label>Discount:</label>
+          <span>${{invoice.Discount}}</span>
         </h3>
         <h3>
           <label class="total">Total:</label>
-          <span class="total">$ 13,847</span>
+          <span class="total">$ {{invoice.Grand_Total}}</span>
         </h3>
       </div>
     </div>
@@ -167,5 +126,6 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reserve-generate-btn nopadding">
     <button class="btn sign_mybtn all-btn primary-btn"><i class="fa fa-download"></i>&nbsp Download</button>
     <button class="btn sign_mybtn all-btn primary-btn">Pay Now</button>
+  </div>
   </div>
 </div>
