@@ -1,37 +1,44 @@
 angular.module("HM_ContractsMD")
-  .controller('HM_ContractsCtrl', ['$scope', 'HM_RestSV', 'HM_ContractCnst', function ($scope, RestSV, ContractCnst) {
+  .controller('HM_ContractsCtrl', ['$scope','$state','$stateParams', 'HM_RestSV', 'HM_ContractCnst','toastr', function ($scope,$state, $stateParams, RestSV, ContractCnst,toastr) {
+
 
 
     _defineScope();
 
-    function _defineScope() {
-      $scope.flags = {
-        PageNoforOpen: 1,
-        PageNoforClosed: 1,
-        openTab: true,
-        showFilter: false,
-        dataLoading: false,
-        showSearch: false
-      };
+    $scope.loadOpenContracts = loadOpenContracts;
 
-      $scope.loadOpenContracts = loadOpenContracts;
+    $scope.loadClosedContracts = loadClosedContracts;
 
-      $scope.loadClosedContracts = loadClosedContracts;
+    $scope.tabChange = tabChange;
 
-      $scope.tabChange = tabChange;
+    $scope.toggleFilter = toggleFilter;
 
-      $scope.toggleFilter = toggleFilter;
+    $scope.toggleSearch = toggleSearch;
 
-      $scope.toggleSearch = toggleSearch;
-    }
+    $scope.pageChanged = pageChanged;
+
+
 
 
     function toggleFilter() {
       $scope.flags.showFilter = !$scope.flags.showFilter
     };
 
-    function tabChange() {
-      $scope.flags.openTab ? loadOpenContracts() : loadClosedContracts();
+    function tabChange(tab) {
+      $scope.flags.status =  tab;
+
+      if(tab === 'open'){
+        $scope.flags.pc = null;
+        loadOpenContracts();
+      }else{
+        $scope.flags.po = null;
+        loadClosedContracts();
+      }
+      $state.go('hm.dashboard.contracts',{
+        pc :  $scope.flags.pc,
+        po :  $scope.flags.po,
+        status :   $scope.flags.status
+      },{notify : false});
     };
 
 
@@ -40,8 +47,6 @@ angular.module("HM_ContractsMD")
     }
 
     function loadOpenContracts() {
-      $scope.flags.dataLoading = true;
-      $scope.flags.openTab = true;
       $scope.contractPromise = RestSV.get(ContractCnst.list.url(), {
         active_status: true,
         return_status_qty: true,
@@ -49,11 +54,13 @@ angular.module("HM_ContractsMD")
         detail_report_status: false,
         search_value :  $scope.flags.contractName ||  null,
         search_by : 'name',
-        page: $scope.flags.PageNoforOpen
+        page: $scope.flags.po
       })
         .then(function (response) {
           $scope.openContracts = response.data.result.ContactList;
-          $scope.flags.dataLoading = false;
+          $scope.flags.qty = response.data.result.ContactList_Quantity;
+          $scope.flags.hasData = !!$scope.openContracts;
+          $scope.flags.Total_pages = parseInt(response.data.result.Total_pages);
         })
         .catch(function (error) {
           $scope.openContracts = [];
@@ -63,8 +70,6 @@ angular.module("HM_ContractsMD")
     }
 
     function loadClosedContracts() {
-      $scope.flags.openTab = false;
-      $scope.flags.dataLoading = true;
       $scope.contractPromise = RestSV.get(ContractCnst.list.url(), {
         active_status: false,
         return_status_qty: true,
@@ -72,11 +77,13 @@ angular.module("HM_ContractsMD")
         detail_report_status: false,
         search_by : 'name',
         search_value :  $scope.flags.contractName ||  null,
-        page: $scope.flags.PageNoforClosed
+        page: $scope.flags.pc
       })
         .then(function (response) {
           $scope.closedContracts = response.data.result.ContactList;
-          $scope.flags.dataLoading = false;
+          $scope.flags.hasData = !!$scope.closedContracts;
+          $scope.flags.qty = response.data.result.ContactList_Quantity;
+          $scope.flags.Total_pages = parseInt(response.data.result.Total_pages);
         })
         .catch(function (error) {
           $scope.closedContracts = [];
@@ -85,5 +92,33 @@ angular.module("HM_ContractsMD")
 
     }
 
+
+    function pageChanged(){
+      if($scope.flags.status === 'open'){
+        loadOpenContracts();
+      }else{
+        loadClosedContracts();
+      }
+      $state.go('hm.dashboard.contracts',{
+        pc :  $scope.flags.pc,
+        po :  $scope.flags.po,
+        status :   $scope.flags.status
+      },{notify : false});
+    }
+
+
+    function _defineScope() {
+      $scope.flags = angular.extend({
+        po: 1,
+        pc: 1,
+        status: 'open',
+        openTab : $stateParams.status === 'open',
+        closedTab : $stateParams.status !== 'open',
+        hasData : true,
+        showFilter: false,
+        dataLoading: false,
+        showSearch: false
+      }, $stateParams);
+    }
 
   }]);

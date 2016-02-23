@@ -54,7 +54,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding contracts-tab">
 		<uib-tabset>
-	    <uib-tab heading="Open Contract" select="loadOpenContracts()">
+	    <uib-tab heading="Open Contract" select="tabChange('open')" active="flags.openTab">
         <div>
 	        <div class="form-group" cg-busy="{promise:contractPromise,message:'Loading...'}">
             <div ng-show="openContracts.length">
@@ -83,9 +83,9 @@
 								</tr>
 							</tbody>
 						</table>
-            <uib-pagination total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.PageNoforOpen"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+            <uib-pagination ng-if="flags.qty * flags.Total_pages" total-items="flags.qty * flags.Total_pages" ng-model="flags.po"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
             </div>
-            <div ng-show="!openContracts.length && !flags.dataLoading" >
+            <div ng-show="!flags.hasData" >
               <h3 class="heading-text cart-empty pull-center">
                 <i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Open Contracts</span>
               </h3>
@@ -93,8 +93,8 @@
 	        </div>
           </div>
 	    </uib-tab>
-	    <uib-tab heading="Close Contract" select="loadClosedContracts()">
-        <div cg-busy="{promise:contractPromise,message:'Loading...'}">
+	    <uib-tab heading="Close Contract" select="tabChange('closed')" active="flags.closedTab">
+        <div cg-busy="{promise:contractPromise,message:'Loading...'}" >
           <div ng-show="closedContracts.length">
             <table class="table quotes-table open-contract-table">
               <thead>
@@ -120,9 +120,9 @@
               </tr>
               </tbody>
             </table>
-            <uib-pagination ng-show="closedContracts.length" total-items="flags.ContactList_Quantity * flags.Total_pages" ng-model="flags.PageNoforClosed"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+            <uib-pagination ng-if="flags.qty * flags.Total_pages" ng-show="closedContracts.length" total-items="flags.qty * flags.Total_pages" ng-model="flags.pc"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
           </div>
-          <div ng-show="!closedContracts.length && !flags.dataLoading" >
+          <div ng-show="!flags.hasData" >
             <h3 class="heading-text cart-empty pull-center">
               <i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Closed Contracts</span>
             </h3>

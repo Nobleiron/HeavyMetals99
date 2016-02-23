@@ -152,7 +152,7 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/requests/requests.html'
         },
         'hm.dashboard.contracts' : {
-          url: '/contracts?status',
+          url: '/contracts?status&po&pc',
           templateUrl: 'app/contracts/contracts.html',
           controller: 'HM_ContractsCtrl'
         },
