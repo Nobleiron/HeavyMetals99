@@ -75,7 +75,7 @@ angular.module("HM_JobSitesMD")
                 data: {jobsite_id: jobsite.SiteID}
               })
               .then(function (response) {
-                $scope.jobsites = response.data.result.JobSite_Details;
+                _fetchJobsites();
                 toastr.success("JobSite Deleted Successfully.")
                 scope.$dismiss();
 
