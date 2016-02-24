@@ -1,7 +1,9 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_EditJobSiteCtrl', ['$rootScope','$scope' , 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function($rootScope, $scope, RestSV, GoogleMapApi ,toastr,JobSiteCnst){
+  .controller('HM_EditJobSiteCtrl', ['$rootScope','$scope' ,'$state', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function($rootScope, $scope, $state, RestSV, GoogleMapApi ,toastr,JobSiteCnst){
 
+
+    debugger
     var componentForm = {
       street_number: 'short_name',
       route: 'long_name',
@@ -93,9 +95,9 @@ angular.module("HM_JobSitesMD")
           phone : $scope.address.phone
         })
         .then(function(response){
-          initJobSiteData(response.data.result.Updated_data);
-          $rootScope.$broadcast("JobSite:Update",response.data.result.Updated_data);
+          $state.go('hm.dashboard.jobSites',{ page : $scope.modalParams.page},{reload : true})
           toastr.success("JobSite Address Update Successfully");
+
           $scope.$dismiss();
         })
         .catch(function(response){

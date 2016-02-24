@@ -105,7 +105,7 @@ angular.module("HM_RoutesMD")
           controller: 'HM_EquipmentDetailCtrl'
         },
         'hm.dashboard.jobSites' : {
-          url: '/manage/jobsites?listView',
+          url: '/manage/jobsites?mapView&page',
           templateUrl: 'app/jobsites/jobsites.html',
           controller: 'HM_JobSitesCtrl'
         },

@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_AddJobSiteCtrl', ['$rootScope','$scope', '$timeout', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function( $rootScope,$scope, $timeout, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
+  .controller('HM_AddJobSiteCtrl', ['$rootScope','$scope', '$timeout','$state', 'uiGmapLogger', 'HM_RestSV','uiGmapGoogleMapApi','toastr','HM_JobSitesCnst', function( $rootScope,$scope, $timeout,$state, $log, RestSV, GoogleMapApi ,toastr,AddJobSiteCnst){
 
     var componentForm = {
       street_number: 'short_name',
@@ -83,9 +83,9 @@ angular.module("HM_JobSitesMD")
           phone : $scope.address.phone
         })
         .then(function(response){
-          $rootScope.$broadcast('JobSite:Add',response.data.result.Jobsite_details);
           toastr.success("JobSite Added Successfully");
           $scope.$dismiss();
+          $state.go('hm.dashboard.jobSites',{},{reload : true})
         })
         .catch(function(response){
           $scope.$dismiss();

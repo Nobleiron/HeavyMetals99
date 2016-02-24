@@ -1,33 +1,24 @@
 'use strict';
 angular.module("HM_JobSitesMD")
-  .controller('HM_JobSitesCtrl', ['$scope', '$state', '$uibModal', 'HM_RestSV', 'HM_JobSitesCnst', function ($scope, $state, $uibModal, RestSV, ManageJobSitesCnst) {
+  .controller('HM_JobSitesCtrl', ['$scope', '$state','$stateParams', '$uibModal', 'HM_RestSV', 'HM_JobSitesCnst', 'toastr',function ($scope, $state, $stateParams, $uibModal, RestSV, ManageJobSitesCnst,toastr) {
 
     $scope.jobsites = [];
 
-    $scope.flags = {
+    $scope.flags = angular.extend({
       jobSiteFetchInProgress: true,
       page: 1
-    };
-    $scope.params = angular.extend({listView: false}, $state.params);
-    $scope.params.listView = toBool($scope.params.listView);
+    },$stateParams);
+    $scope.params = angular.extend({mapView: false}, $state.params);
+    $scope.params.mapView = toBool($scope.params.mapView);
     $scope.map = {center: {latitude: 41.850033, longitude: -87.6500523}, zoom: 8};
 
     $scope.viewJobSiteDetails = viewJobSiteDetails;
 
     $scope.deleteJobSite = deleteJobSite;
 
-    $scope.toggleListView = toggleListView;
+    $scope.toggleMapView = toggleMapView;
 
     $scope.pageChange = pageChange;
-
-    $scope.$on('JobSite:Update', function (e, jobsite) {
-      $scope.jobsites.map(function (j) {
-        jobsite.SiteID === j.SiteID && angular.extend(j, jobsite);
-      });
-    });
-    $scope.$on('JobSite:Add', function (e, jobsite) {
-      $scope.jobsites = jobsite;
-    });
 
     _fetchJobsites();
 
@@ -35,11 +26,10 @@ angular.module("HM_JobSitesMD")
     function _fetchJobsites() {
       $scope.jobsitesPromise = RestSV.get(ManageJobSitesCnst.jobsites.url(), {
         page: $scope.flags.page,
-        listView : $scope.params.listView
+        mapView : $scope.params.mapView
       })
         .then(function (response) {
           if (response.data.result) {
-            $scope.flags.page = response.data.result.Page;
             $scope.flags.qty = response.data.result.Quantity;
             $scope.flags.total_pages = response.data.result.Total_pages;
             $scope.jobsites = response.data.result.Jobsite_details;
@@ -86,7 +76,9 @@ angular.module("HM_JobSitesMD")
               })
               .then(function (response) {
                 $scope.jobsites = response.data.result.JobSite_Details;
+                toastr.success("JobSite Deleted Successfully.")
                 scope.$dismiss();
+
               })
               .catch(function () {
 
@@ -111,12 +103,12 @@ angular.module("HM_JobSitesMD")
 
     function pageChange() {
       _fetchJobsites();
-      $state.go('hm.dashboard.invoices', {page: $scope.flags.page}, {notify: false});
+      $state.go('hm.dashboard.jobSites', {page: $scope.flags.page}, {notify: false});
     }
 
-    function toggleListView(bool) {
-      $scope.params.listView = bool;
-      $state.go('hm.dashboard.jobSites', $scope.params);
+    function toggleMapView(bool) {
+      $scope.params.mapView = bool;
+      $state.go('hm.dashboard.jobSites', $scope.params,{reload : true});
     }
 
     $scope.showFilter = false;
