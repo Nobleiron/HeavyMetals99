@@ -37,6 +37,7 @@ angular.module("HM_MyCatalogueMD")
           .delete( MyCatalogueCnst.addToOrRemoveFromWishList.url(),{ data : {product_id : product.Product_Id }})
           .success(function(response){
             $scope.catelog.splice($scope.catelog.indexOf(product), 1)
+              $scope.flags.noCatalogue = !$scope.catelog.length
           })
           .finally(function(){
             $scope.$broadcast('Add:Wishlist:Process:End',product.Product_Id)
