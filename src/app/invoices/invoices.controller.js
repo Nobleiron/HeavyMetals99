@@ -21,15 +21,18 @@ angular.module("HM_InvoicesMD")
       $scope.query && $scope.query.length >= 3 && angular.extend(params,{search_by :'Site_Name',search_value : $scope.query});
       $scope.invoicesPromise = RestSV.get(InvoicesCnst.invoicesList.url(), params)
         .then(function(response){
-          $scope.invoices = response.data.result.Invoices;
-          $scope.flags.total_pages = parseInt(response.data.result.Total_pages);
-          $scope.flags.qty = response.data.result.Invoices_Qty;
+          if(response.data.result){
+            $scope.invoices = response.data.result.Invoices;
+            $scope.flags.total_pages = parseInt(response.data.result.Total_pages);
+            $scope.flags.qty = response.data.result.Invoices_Qty;
+            $scope.flags.noInvoices = false;
+          }else{
+            $scope.flags.noInvoices = true;
+          }
+
         })
         .catch(function(){
 
-        })
-        .finally(function(){
-          $scope.flags.invoicesInProgress = false;
         })
     }
 
@@ -64,7 +67,7 @@ angular.module("HM_InvoicesMD")
       console.log($stateParams);
       $scope.flags = angular.extend({
         outstanding : 'N',
-        invoicesInProgress : true,
+        noInvoices : false,
         is_include_history : false,
         page : 1
       },$stateParams);

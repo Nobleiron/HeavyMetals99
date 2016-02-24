@@ -1,6 +1,5 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-  <load-indicator loading="!flags.ordersFetched"></load-indicator>
-  <div ng-show="flags.ordersFetched">
+  <div>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
     Quotation
   </div>
@@ -46,7 +45,7 @@
     </div>
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-    <div ng-show="flags.ordersFetched && !orders.length" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
+    <div ng-show="flags.noQuotations" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
       <h3 class="heading-text cart-empty pull-center">
         Sorry! No Quotes generated yet.
       </h3>
@@ -54,7 +53,7 @@
         Go back to add products first
       </button>
     </div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" ng-show="orders.length">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" ng-show="!flags.noQuotations" cg-busy="quotationPromise">
     <table class="table quotes-table">
       <thead>
       <tr>
@@ -77,6 +76,7 @@
       </tr>
       </tbody>
     </table>
+    <uib-pagination ng-show="orders.length && flags.qty >= 10 && flags.total_pages > 1" ng-if="flags.qty * flags.total_pages" total-items="flags.qty * flags.total_pages" ng-model="flags.page"  ng-change="pageChange()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
   </div>
 </div>
   </div>

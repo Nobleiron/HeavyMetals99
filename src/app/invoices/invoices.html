@@ -55,7 +55,12 @@
       <button class="btn btn-default pull-right manage-job-btn deactivate map all-btn" ng-click="toggleInvoiceView()" ng-class="{'active primary-btn' : flags.outstanding !=='Y'}">All Invoices</button>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding"><hr class="devider"></div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding hidden-xs">
+    <div ng-show="flags.noInvoices" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
+      <h3 class="heading-text cart-empty pull-center">
+        Sorry! There are no Invoices
+      </h3>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding hidden-xs" ng-if="!flags.noInvoices">
       <table class="table table-striped quotes-table">
         <thead>
         <tr>
