@@ -4,6 +4,10 @@ angular.module("HM_MyCatalogueMD")
 
     $scope.removeFromWishList = removeFromWishList;
 
+    $scope.flags = {
+      noCatalogue : false
+    }
+
     _initialize();
 
     function _initialize(){
@@ -13,9 +17,10 @@ angular.module("HM_MyCatalogueMD")
 
     function fetchMyCatelog(){
       $scope.catelogFetchInProgress= true;
-      RestSV.get(MyCatalogueCnst.list.url())
+      $scope.myCataloguePromise = RestSV.get(MyCatalogueCnst.list.url())
         .then(function(response){
           $scope.catelog = response.data.result.ProductList;
+          $scope.flags.noCatalogue = !response.data.result
         })
         .catch(function(error){
           $scope.catelog = [];
