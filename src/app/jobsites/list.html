@@ -17,3 +17,5 @@
   </tr>
   </tbody>
 </table>
+
+<uib-pagination ng-show="jobsites.length && flags.qty >= 10 && flags.total_pages > 1" ng-if="flags.qty * flags.total_pages" total-items="flags.qty * flags.total_pages" ng-model="flags.page"  ng-change="pageChange()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>

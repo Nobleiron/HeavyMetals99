@@ -11,7 +11,7 @@ angular.module("HM_RoutesMD")
               controller: 'HM_PreloginHeaderCtrl'
             },
             footer : {
-              templateUrl : 'app/prelogin-footer/footer.html'
+              templateUrl : 'app/components/prelogin-footer/footer.html'
             },
             '' : {
               template: "<div ui-view></div>"

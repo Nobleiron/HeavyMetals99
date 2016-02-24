@@ -1,20 +1,14 @@
 <section class="content-top">
   <!-- START  Main Content -->
   <article class="main-cantain">
-    <div class="container">
+    <div class="container" cg-busy="ordersPromise">
       <!-- START  My Orders  -->
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit nopadding-xs">
         My Account/ My Orders
         <hr class="order-hr">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc nopadding-xs">
-        <load-indicator loading="!flags.ordersFetched"></load-indicator>
-        <!-- <div ng-show="!flags.ordersFetched" class="pull-center">
-          <p class="heading-text"><i class="fa fa-exclamation-circle exclamation-color"></i> &nbsp No Recent Orders</p>
-        </div> -->
-        <div ng-show="flags.ordersFetched">
-
-
+        <div>
         <!-- web accordion -->
         <uib-accordion close-others="oneAtATime"  class="visible-lg visible-md visible-sm">
           <uib-accordion-group ng-repeat="order in orders" class="order-history-accordion">
@@ -154,6 +148,11 @@
           </uib-accordion-group>
         </uib-accordion>
         </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" ng-show="!flags.hasData">
+        <h3 class="heading-text cart-empty pull-center">
+          <i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Orders</span>
+        </h3>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sell-main-part">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_mar nopadding">
