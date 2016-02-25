@@ -1,21 +1,30 @@
 'use strict';
 angular.module("HM_OrderHistoryMD")
-  .controller("HM_OrderHistoryCtrl",['$scope','HM_RestSV','HM_QuotaNReservationsCnst', function($scope,RestSV,QuotaCnst){
+  .controller("HM_OrderHistoryCtrl",['$scope','HM_RestSV','HM_QuotaNReservationsCnst','HM_QuoteDetailsCnst', function($scope,RestSV,QuotaCnst, OrderCnst){
 
 
 
     _defineScope();
     _fetchOrders();
 
-    $scope.toggleAccordian = function(order){
-      $scope.orders.forEach(function(d){
-        if(d.orderNo != order.orderNo){
-          d.toggleOpened = false;
-        }});
-      order.toggleOpened = !order.toggleOpened;
+    $scope.fetchOrdeDetail = fetchOrdeDetail;
 
-    };
 
+    function fetchOrdeDetail(order){
+      if( !order.products || !order.products.length){
+        order.fetchingDetails = true;
+        RestSV
+          .get(OrderCnst.details.url(),{
+            order_id : order.Order_id
+          })
+          .then(function(response){
+            if(response.data.result){
+              order.products = response.data.result.Orders.Products;
+              order.fetchingDetails = false;
+            }
+          });
+      }
+    }
 
 
     function _fetchOrders(){
