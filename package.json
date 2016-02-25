@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "gulp-exec": "^2.1.2",
-    "gulp-scp2": "^0.2.0"
+    "gulp-scp2": "^0.2.0",
+    "run-sequence": "^1.1.5"
   },
   "scripts": {
     "test": "gulp test"

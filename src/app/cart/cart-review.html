@@ -184,5 +184,9 @@
     <button ng-hide="userObj && !userObj.portal_login" class="btn sign_mybtn all-btn primary-btn autowidth" ng-click="generateQuote()">
       <span btn-load-indicator="Quote:Process">Generate Quote</span>
     </button>
+    <button ng-show="userObj && userObj.portal_login" class="btn sign_mybtn all-btn primary-btn autowidth" ng-click="reserve()">
+        <span btn-load-indicator="Reserve:Process"><i class="fa fa-check"></i>&nbsp
+        Confirm Reservation</span>
+    </button>
 	</div>
 </div>

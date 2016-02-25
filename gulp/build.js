@@ -1,10 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
-
+var shell = require('gulp-shell');
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
+var runSequence = require('run-sequence');
 
 module.exports = function(options) {
   gulp.task('partials', function () {
@@ -97,4 +98,13 @@ module.exports = function(options) {
   });
 
   gulp.task('build', ['html', 'fonts', 'copyImages']);
+  gulp.task('release', function(callback){
+    runSequence('clean','build','deploy', callback)
+  });
+
+  gulp.task('deploy', shell.task([
+    'sh ./upload.sh'
+  ]));
+
+
 };
