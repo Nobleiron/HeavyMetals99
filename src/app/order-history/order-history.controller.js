@@ -35,7 +35,7 @@ angular.module("HM_OrderHistoryMD")
         })
         .then(function(response){
           if(response.data.result){
-            $scope.orders = response.data.result.order_list;
+            $scope.orders =  response.data.result.order_list;
 
             $scope.orders.forEach(function(order){
               order.toggleOpened = false;

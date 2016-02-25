@@ -10,6 +10,11 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 req_job_tit order-history-acc nopadding-xs">
         <div cg-busy="ordersPromise">
+          <div ng-show="flags.ordersFetched && !orders.length" >
+            <h3 class="heading-text cart-empty pull-center" style="height: 100px;">
+              <span style="margin-left: 5px;">Sorry!. You have no orders</span>
+            </h3>
+          </div>
           <!-- web accordion -->
           <uib-accordion close-others="oneAtATime"  class="visible-lg visible-md visible-sm">
             <uib-accordion-group ng-repeat="order in orders" class="order-history-accordion" is-open="order.open">
@@ -36,7 +41,8 @@
                     <td class="topborder">
                       <h3 class="gas_title heading-text nomargin">{{product.Product_name}}</h3>
                       <p class="nomargin">Order#{{order.Order_id}} </p>
-                      <h4 class="rent_title desc-text">Quantity: {{product.Product_Quantity}}</h4>
+                      <p class="nomargin">Quantity: {{product.Product_Quantity}}</p>
+                      <!--<h4 class="rent_title desc-text">Quantity: {{product.Product_Quantity}}</h4>-->
                       <h5 class="order_his_title desc-text">Product Total: ${{product.Total_Rate}}</h5>
                     </td>
                     <td class="vertically-middle text-right topborder">
