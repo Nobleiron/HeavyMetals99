@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_EquipmentReserveMD")
-  .controller("HM_EquipmentReserveCtrl",['$rootScope','$scope','$modalInstance','toastr','HM_RestSV','HM_EquipmentReserveCnst', function($rootScope, $scope, $modalInstance,toastr, RestSV, EquipmentReserveCnst ){
+  .controller("HM_EquipmentReserveCtrl",['$rootScope','$scope','toastr','HM_RestSV','HM_EquipmentReserveCnst', function($rootScope, $scope,toastr, RestSV, EquipmentReserveCnst ){
 
     $scope.quantity = 1;
 

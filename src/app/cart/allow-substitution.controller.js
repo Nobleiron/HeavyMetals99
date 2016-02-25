@@ -1,6 +1,6 @@
 'use strict';
 angular.module("HM_CartMD")
-  .controller("HM_CartAllowSusbtitueCtrl",['$scope','$modalInstance','HM_RestSV','HM_HeaderCnst','productToAllowSubstitute',function( $scope, $modalInstance, RestSV,HeaderCnst,productToAllowSubstitute){
+  .controller("HM_CartAllowSusbtitueCtrl",['$scope','$uibModalInstance','HM_RestSV','HM_HeaderCnst',function( $scope, $uibModalInstance, RestSV,HeaderCnst){
 
     $scope.getProducts = getProducts;
 
@@ -9,7 +9,7 @@ angular.module("HM_CartMD")
     $scope.doneSubstituteSelection = doneSubstituteSelection;
 
     function doneSubstituteSelection(){
-      $modalInstance.close($scope.selectedSubstitute);
+      $uibModalInstance.close($scope.selectedSubstitute);
     }
 
     function selectSearchedItem(product){

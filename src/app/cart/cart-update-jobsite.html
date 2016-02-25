@@ -109,8 +109,8 @@
         </div>
         <h4 class="select-job">Jobsite Name</h4>
         <div class="job-lists inner-scroll">
-          <div ng-repeat="site in cartData.jobsites | orderBy:'-selected' | filter:searchJosite">
-            <input type="radio" name="Site Name" ng-click="selectJobsite(site)" ng-checked="site.SiteID == cartData.delivery.selectedJobSite.SiteID">
+          <div ng-repeat="site in cartData.jobsites | orderBy:'-selected' | filter:searchJosite" ng-click="selectJobsite(site)">
+            <input type="radio" name="Site Name"  ng-checked="site.SiteID == cartData.delivery.selectedJobSite.SiteID">
             <span>{{site.Site_Name}}</span>
           </div>
         </div>
