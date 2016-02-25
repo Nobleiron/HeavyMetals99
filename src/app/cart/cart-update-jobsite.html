@@ -86,7 +86,7 @@
   <!-- registered user select and add jobsite part -->
   <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 lr-padding" ng-if="userObj">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftpadding delivery-leftpadding-small">
-      <ul class="nav nav-tabs gride-tab root-category">
+      <ul class="nav nav-tabs gride-tab root-category jobsite-tabs">
         <li ng-class="{'active': !tabs.addNew}">
           <a  ng-click="tabs.addNew = false">Existing Job Sites</a>
         </li>
@@ -161,10 +161,11 @@
           <!-- <i class="fa fa-envelope-o pull-right"></i> -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list select-date-time leftpadding-small rightpadding-small">
-          <textarea class="form-control delivery-note-textarea" ng-model="cartData.delivery.contactInfo.deliveryNote">Delivery Note</textarea>
-          <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
-          <!-- <i class="fa fa-phone pull-right"></i> -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 job-site-list select-date-time leftpadding rightpadding-small">
+        <h3 class="heading-text topmargin">Delivery Notes</h3>
+        <textarea class="form-control delivery-note-textarea" ng-model="cartData.delivery.contactInfo.deliveryNote">Delivery Note</textarea>
+        <!-- <input type="text" placeholder="" ng-model="cartData.delivery.contactInfo.phone"> -->
+        <!-- <i class="fa fa-phone pull-right"></i> -->
       </div>
       <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 special-instruction heading-border">
         <textarea class="form-control desc-text">Special Instructions</textarea>
@@ -173,52 +174,46 @@
 
     <!-- add new job -->
     <div ng-show="tabs.addNew" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane">
-      <div class="row fields-row">
-        <form valdr-type="JobSite">
-          <div class="col-md-12 site-col lr-padding">
-            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
-          </div>
-          <div class="col-md-12 other-col lr-padding">
-            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
-          </div>
-          <div class="col-md-6 other-col lr-padding">
-            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
-          </div>
-          <div class="col-md-6 other-col rightpadding addjob-left-padding">
-            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
-          </div>
-          <div class="col-md-6 other-col lr-padding">
-            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
-          </div>
-          <div class="col-md-6 other-col rightpadding addjob-left-padding">
-            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
-          </div>
-          <div class="col-md-12 other-col lr-padding" id="searchbox">
-          </div>
-        </form>
-
-      </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding form-control jobsite-search-location bottommargin" id="searchbox" ng-click="searchLocation()">
+            <i class="fa fa-search pull-right"></i>
+          </div>
           <script type="text/ng-template" id="searchbox.tpl.html">
             <input type="text" class="form-control" placeholder="Search Location"/>
           </script>
-          <div class="jobsite-lookup" ng-if="showMap" >
-            <ui-gmap-google-map
-              center="map.center"
-              zoom="map.zoom"
-              options="map.options"
-              pan="true"
-              refresh="showMap"
+          <div class="jobsite-lookup col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding hide-map" ng-if="showMap" ng-class="{'show-map map-margin': showGoogleMap}">
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options" pan="true" refresh="showMap"
               >
-              <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
-                                  events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+              <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
             </ui-gmap-google-map>
           </div>
         </div>
       </div>
+      <div class="row fields-row">
+        <form valdr-type="JobSite">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-col lr-padding">
+            <input type="text" placeholder="Job Site Name" name="jobsiteName" class="form-control" ng-model="address.jobsite">
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 other-col lr-padding">
+            <input type="text" placeholder="Address" class="form-control" name="address" ng-model="address.locality">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-col lr-padding">
+            <input type="text" placeholder="City" name="city" class="form-control" ng-model="address.route">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="State" class="form-control" name="State" ng-model="address.administrative_area_level_1">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-col lr-padding">
+            <input type="text" placeholder="Zip Code" class="form-control" name="zipCode" ng-model="address.postal_code">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-col rightpadding addjob-left-padding">
+            <input type="text" placeholder="Phone" class="form-control" name="zipCode" ng-model="address.phone">
+          </div>
+        </form>
+      </div>
       <div class="row nomargin">
-        <div class="col-md-12 site-col">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-col nopadding">
           <button class="btn sign_mybtn all-btn primary-btn" ng-click="addJobSite()">
             <span btn-load-indicator="Cart:Jobsite:Save">Add Job Site</span>
           </button>

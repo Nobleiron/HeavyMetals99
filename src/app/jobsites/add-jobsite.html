@@ -4,50 +4,45 @@
   </div>
 </div>
 <div class="row fields-row">
-  <div class="col-md-12 site-col">
-    <input type="text" placeholder="Job Site Name" class="form-control" ng-model="address.jobsite">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search-loc-col">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nomargin form-control jobsite-search-location" id="searchbox" ng-click="searchLocation()">
+      <i class="fa fa-search pull-right"></i>
+    </div>
   </div>
-  <div class="col-md-12 other-col">
-    <input type="text" placeholder="Address" class="form-control" ng-model="address.route">
-  </div>
-  <div class="col-md-6 other-col">
-    <input type="text" placeholder="City" class="form-control" ng-model="address.locality">
-  </div>
-  <div class="col-md-6 other-col">
-    <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
-  </div>
-  <div class="col-md-6 other-col">
-    <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
-  </div>
-  <div class="col-md-6 other-col">
-    <input type="text" placeholder="Phone" class="form-control" ng-model="address.phone">
-  </div>
-  <div class="col-md-12 other-col" id="searchbox">
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <script type="text/ng-template" id="searchbox.tpl.html">
       <input type="text" class="form-control" placeholder="Search Location"/>
     </script>
 
-    <div ng-if="showMap" class="jobsite-lookup">
-      <ui-gmap-google-map
-        center="map.center"
-        zoom="map.zoom"
-        options="map.options"
-        pan="true"
-        >
-        <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'"
-                            events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
+    <div class="jobsite-lookup col-lg-12 col-md-12 col-sm-12 col-xs-12 lr-padding hide-map" ng-if="showMap" ng-class="{'show-map map-margin': showGoogleMap}">
+      <ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options" pan="true">
+        <ui-gmap-search-box options="searchbox.options" template="'searchbox.tpl.html'" parentdiv="'searchbox'" events="searchbox.events" position="'TOP_CENTER'"></ui-gmap-search-box>
       </ui-gmap-google-map>
     </div>
-
-
+  </div>
+</div>
+<div class="row fields-row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-col">
+    <input type="text" placeholder="Job Site Name" class="form-control" ng-model="address.jobsite">
+  </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 other-col">
+    <input type="text" placeholder="Address" class="form-control" ng-model="address.route">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 other-col">
+    <input type="text" placeholder="City" class="form-control" ng-model="address.locality">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 other-col">
+    <input type="text" placeholder="State" class="form-control" ng-model="address.administrative_area_level_1">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 other-col">
+    <input type="text" placeholder="Zip Code" class="form-control" ng-model="address.postal_code">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 other-col">
+    <input type="text" placeholder="Phone" class="form-control" ng-model="address.phone">
   </div>
 </div>
 <div class="row nomargin">
-  <div class="col-md-12 site-col">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-col">
     <button class="btn sign_mybtn all-btn primary-btn pull-right" ng-click="addJobSite()">
       <span btn-load-indicator="Add:JobSite:Process">Add Job Site</span>
     </button>

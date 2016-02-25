@@ -6,7 +6,7 @@
     <ul>
       <li ng-repeat="product in data.cart.Product">
         <img ng-src="{{product.Product_image}}" err-src/>
-        <p class="bold-font go-back-text equipment-name color-blue">{{product.Product_name}}</p>
+        <p class="go-back-text equipment-name color-blue">{{product.Product_name}}</p>
         <!-- <input type="checkbox" class="allow-checkbox" ng-model="cartData.productsQuantity[product.Product_id].allowSubstitution" onclick="return false;"><span class="desc-text allow">Allow Substitution</span> -->
         <span class="desc-text allow">{{cartData.summary.productsQuantity[product.Product_id].allowSubstitution ? 'Substitution Permitted' : 'No Substitution Permitted' }}</span>
         <span class="desc-text pull-right qty-summary">Qty: {{cartData.summary.productsQuantity[product.Product_id].qty}}</span>
@@ -24,7 +24,7 @@
         <span class="pull-right">${{data.cart.Sub_total}}</span>
       </h3>
       <h3 class="desc-text topmargin" ng-repeat="(key, value) in data.cart.Charges">
-        <span>{{key}}:</span>
+        <span style="font-transform: capitalize;">{{key}}:</span>
         <span class="pull-right">${{value}}</span>
       </h3>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot nopadding"></div>

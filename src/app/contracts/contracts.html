@@ -1,136 +1,135 @@
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side" cg-busy="{promise:contractPromise,message:'Loading...'}">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
 			Contracts
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right nopadding my-bottm-line dash_board_tit job-site-list">
-    <i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="toggleFilter()"></i>
+		<i class="fa fa-filter marker pull-right heading-text search-filter-icon" ng-click="toggleFilter()"></i>
 		<i class="fa fa-search marker pull-right heading-text search-filter-icon" ng-click="toggleSearch()"></i>
-		<div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow jobsite-search-show': flags.showSearch}">
+		<div class="form-control search-div quotes-search hidden-xs" ng-class="{'searchShow': flags.showSearch}">
 			<input type="text" placeholder="Contract Id">
 		</div>
 	</div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': flags.showFilter}">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-      <p class="desc-text">From Date</p>
-      <div class="form-control search-div select-date">
-        <input type="text"
-               datetime-picker="MM/dd/yyyy"
-               datepicker-options="{startingDay:0}"
-               enable-time="false"
-               ng-model="flags.fromDate"
-               is-open="flags.fromDtOpened"
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 arrow_box job-site-list quotes-filter-div filter-arrow-box" ng-class="{'filter-show': flags.showFilter}">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<p class="desc-text">From Date</p>
+			<div class="form-control search-div select-date">
+				<input type="text"
+							 datetime-picker="MM/dd/yyyy"
+							 datepicker-options="{startingDay:0}"
+							 enable-time="false"
+							 ng-model="flags.fromDate"
+							 is-open="flags.fromDtOpened"
 
-               ng-click="flags.fromDtOpened= !flags.fromDtOpened"
-               placeholder="dd/mm/yyyy">
-        <i class="fa fa-calendar"></i>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-      <p class="desc-text">To Date</p>
-      <div class="form-control search-div select-date">
-        <input type="text"
-               datetime-picker="MM/dd/yyyy"
-               ng-model="flags.toDate"
-               enable-time="false"
-               placeholder="dd/mm/yyyy"
-               is-open="flags.toDtOpened"
-               datepicker-options="{startingDay:0}"
-               ng-click="flags.toDtOpened= !flags.toDtOpened">
-        <i class="fa fa-calendar"></i>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-      <p class="desc-text">Contract</p>
-      <div class="form-control search-div select-date">
-        <input type="text" placeholder="Enter contract Keyword" ng-model="flags.contractName">
-        <i class="fa fa-marker"></i>
-      </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-btn-div text-right devider">
-      <button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
-      <button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
-    </div>
-  </div>
+							 ng-click="flags.fromDtOpened= !flags.fromDtOpened"
+							 placeholder="dd/mm/yyyy">
+				<i class="fa fa-calendar"></i>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<p class="desc-text">To Date</p>
+			<div class="form-control search-div select-date">
+				<input type="text"
+							 datetime-picker="MM/dd/yyyy"
+							 ng-model="flags.toDate"
+							 enable-time="false"
+							 placeholder="dd/mm/yyyy"
+							 is-open="flags.toDtOpened"
+							 datepicker-options="{startingDay:0}"
+							 ng-click="flags.toDtOpened= !flags.toDtOpened">
+				<i class="fa fa-calendar"></i>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<p class="desc-text">Contract</p>
+			<div class="form-control search-div select-date">
+				<input type="text" placeholder="Enter contract Keyword" ng-model="flags.contractName">
+				<i class="fa fa-marker"></i>
+			</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 site-btn-div text-right devider">
+			<button class="btn sign_mybtn all-btn primary-btn filter-btns">Apply</button>
+			<button class="btn sign_mybtn all-btn primary-btn filter-btns" ng-click="reset()">Reset</button>
+		</div>
+	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding contracts-tab">
 		<uib-tabset>
-	    <uib-tab heading="Open Contract" select="tabChange('open')" active="flags.openTab">
-        <div>
-	        <div class="form-group" cg-busy="{promise:contractPromise,message:'Loading...'}">
-            <div ng-show="openContracts.length">
-	          <table class="table quotes-table open-contract-table">
+			<uib-tab heading="Open Contract" select="tabChange('open')" active="flags.openTab">
+				<div>
+					<div class="form-group">
+						<div ng-show="openContracts.length">
+							<table class="table quotes-table open-contract-table">
+								<thead>
+									<tr>
+										<th>Contract Id</th>
+										<th>PO</th>
+										<th>Job Site Name</th>
+										<th class="text-right">Equipment On Rent</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="contract in openContracts">
+										<td>
+											<a class="invoice-no">{{contract.Contract_No}}</a>
+										</td>
+										<td>{{contract.Purchase_Order_No}}</td>
+										<td>{{contract.Site_Name}}</td>
+										<td class="text-right">
+											<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
+											<a class="invoice-no view-down view-down-quotation">
+												Pickup Request
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<uib-pagination ng-if="flags.qty * flags.Total_pages" total-items="flags.qty * flags.Total_pages" ng-model="flags.po"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+						</div>
+						<div ng-show="!flags.hasData" >
+							<h3 class="heading-text cart-empty pull-center">
+								<i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Open Contracts</span>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</uib-tab>
+			<uib-tab heading="Closed Contract" select="tabChange('closed')" active="flags.closedTab">
+				<div>
+					<div ng-show="closedContracts.length">
+						<table class="table quotes-table open-contract-table">
 							<thead>
 								<tr>
 									<th>Contract Id</th>
-									<th>PO</th>
 									<th>Job Site Name</th>
-									<th class="text-right">Equipment On Rent</th>
+									<th>Date</th>
+									<th>PO</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="contract in openContracts">
+								<tr ng-repeat="contract in closedContracts">
 									<td>
 										<a class="invoice-no">{{contract.Contract_No}}</a>
 									</td>
-									<td>{{contract.Purchase_Order_No}}</td>
 									<td>{{contract.Site_Name}}</td>
+									<td>{{contract.Date}}</td>
+									<td>{{contract.Purchase_Order_No}}</td>
 									<td class="text-right">
 										<a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
-										<a class="invoice-no view-down view-down-quotation">
-											Pickup Request
-										</a>
 									</td>
 								</tr>
 							</tbody>
 						</table>
-            <uib-pagination ng-if="flags.qty * flags.Total_pages" total-items="flags.qty * flags.Total_pages" ng-model="flags.po"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
-            </div>
-            <div ng-show="!flags.hasData" >
-              <h3 class="heading-text cart-empty pull-center">
-                <i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Open Contracts</span>
-              </h3>
-            </div>
-	        </div>
-          </div>
-	    </uib-tab>
-	    <uib-tab heading="Close Contract" select="tabChange('closed')" active="flags.closedTab">
-        <div cg-busy="{promise:contractPromise,message:'Loading...'}" >
-          <div ng-show="closedContracts.length">
-            <table class="table quotes-table open-contract-table">
-              <thead>
-              <tr>
-                <th>Contract Id</th>
-                <th>Job Site Name</th>
-                <th>Date</th>
-                <th>PO</th>
-                <th></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr ng-repeat="contract in closedContracts">
-                <td>
-                  <a class="invoice-no">{{contract.Contract_No}}</a>
-                </td>
-                <td>{{contract.Site_Name}}</td>
-                <td>{{contract.Date}}</td>
-                <td>{{contract.Purchase_Order_No}}</td>
-                <td class="text-right">
-                  <a class="invoice-no view-down view-down-quotation"><i class="fa fa-download invoice-no heading-text"></i></a>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-            <uib-pagination ng-if="flags.qty * flags.Total_pages" ng-show="closedContracts.length" total-items="flags.qty * flags.Total_pages" ng-model="flags.pc"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
-          </div>
-          <div ng-show="!flags.hasData" >
-            <h3 class="heading-text cart-empty pull-center">
-              <i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Closed Contracts</span>
-            </h3>
-          </div>
+						<uib-pagination ng-if="flags.qty * flags.Total_pages" ng-show="closedContracts.length" total-items="flags.qty * flags.Total_pages" ng-model="flags.pc"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
+					</div>
+					<div ng-show="!flags.hasData" >
+						<h3 class="heading-text cart-empty pull-center">
+							<i class="fa fa-file-o"></i> <span style="margin-left: 5px;">Sorry!. No Closed Contracts</span>
+						</h3>
+					</div>
 
-          </div>
-	    </uib-tab>
-	  </uib-tabset>
-      </div>
+				</div>
+			</uib-tab>
+		</uib-tabset>
 	</div>
 </div>

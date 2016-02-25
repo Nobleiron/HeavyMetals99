@@ -25,61 +25,42 @@
         <td class="vertically-middle">
           <i class="fa fa-truck fa-4x"></i>
         </td>
-        <td class="equipment-desc vertically-middle quotes-equip">
-          <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
-          <i class="fa fa-map-marker marker"></i>
-          <span>{{invoice.Jobsite.Site_Name}}</span>
+        <td class="equipment-desc quotes-equip">
+          <a class="heading-text on-hover-pointer marker" ng-if="product.Product_name" style="margin: 0 0 8px;">{{product.Product_name}}</a>
+          <a class="heading-text on-hover-pointer marker" ng-if="!product.Product_name" style="margin: 0 0 8px;">--</a>
+          <i class="fa fa-map-marker color-blue"></i>
+          <span ng-if="invoice.Jobsite.Site_Name">{{invoice.Jobsite.Site_Name}}</span>
+          <span ng-if="!invoice.Jobsite.Site_Name">--</span>
         </td>
-        <td class="quantity vertically-middle">
-          <p class="desc-text pull-center qty">1</p>
+        <td class="quantity vertically-middle" style="width: 15%;">
+          <p class="desc-text">1</p>
         </td>
         <td class="duration vertically-middle">
-          <p>{{invoice.Start_date}}, {{invoice.Start_time}}</p>
-          <p class="to">to</p>
-          <p>{{invoice.End_date}}, {{invoice.End_time}}</p>
+          <p ng-if="invoice.Start_date">{{invoice.Start_date}}, {{invoice.Start_time}}</p>
+          <p class="to" ng-if="invoice.Start_date">to</p>
+          <p ng-if="invoice.End_date">{{invoice.End_date}}, {{invoice.End_time}}</p>
+          <p ng-if="!invoice.End_date || !invoice.Start_date">--</p>
         </td>
-        <td class="vertically-middle pricing">${{product.Total_Rate}}</td>
+        <td class="vertically-middle pricing" ng-if="product.Total_Rate">${{product.Total_Rate}}</td>
+        <td class="vertically-middle pricing" ng-if="!product.Total_Rate">--</td>
       </tr>
       </tbody>
     </table>
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-col nopadding hidden-lg hidden-md" >
-    <div class="cart-for-mobile">
-      <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
-      </div>
-      <div class="equipment-desc quotes-equip">
-        <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
-        <i class="fa fa-map-marker marker"></i>
-        <span>{{invoice.Jobsite.Site_Name}}</span>
-        <p class="desc-text quantity-p">Quantity: 1
-          <span class="pull-right bold-font">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
-        </p>
-      </div>
-    </div>
     <div class="cart-for-mobile" ng-repeat="product in invoice.Products">
       <div class="cart-image-div">
         <i class="fa fa-truck fa-4x"></i>
       </div>
       <div class="equipment-desc quotes-equip">
-        <a class="heading-text on-hover-pointer marker">{{product.Product_name}}</a>
+        <a class="heading-text on-hover-pointer marker" ng-if="product.Product_name">{{product.Product_name}}</a>
+        <a class="heading-text on-hover-pointer marker" ng-if="!product.Product_name">--</a>
         <i class="fa fa-map-marker marker"></i>
-        <span>{{invoice.Jobsite.Site_Name}}</span>
+        <span ng-if="invoice.Jobsite.Site_Name">{{invoice.Jobsite.Site_Name}}</span>
+        <span ng-if="!invoice.Jobsite.Site_Name">{{invoice.Jobsite.Site_Name}}</span>
         <p class="desc-text quantity-p">Quantity: 1
-          <span class="pull-right bold-font">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
-        </p>
-      </div>
-    </div>
-    <div class="cart-for-mobile">
-      <div class="cart-image-div">
-        <i class="fa fa-truck fa-4x"></i>
-      </div>
-      <div class="equipment-desc quotes-equip">
-        <a class="heading-text on-hover-pointer marker">Electric Equipment Wide-16 "</a>
-        <i class="fa fa-map-marker marker"></i>
-        <span>Bay Area, Houstan</span>
-        <p class="desc-text quantity-p">Quantity: 1
-          <span class="pull-right bold-font">Sub-Total: &nbsp $3556</span>
+          <span class="pull-right bold-font" ng-if="product.Total_Rate">Sub-Total: &nbsp ${{product.Total_Rate}}</span>
+          <span class="pull-right bold-font" ng-if="!product.Total_Rate">Sub Total: &nbsp --</span>
         </p>
       </div>
     </div>
@@ -101,23 +82,24 @@
                     Name of Contact Person
                   </span>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 total-price quotes-total-price">
-      <div class="total-price-div">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 total-price quotes-total-price">
+      <div class="total-price-div text-left">
         <h3 ng-repeat="charge in invoice.Charges">
-          <label>{{charge.Service_desc}}:</label>
-          <span>${{charge.Service_total}}</span>
+          <label class="nomargin">{{charge.Service_desc}}:</label>
+          <span class="pull-right">${{charge.Service_total}}</span>
         </h3>
         <!--<h3  ng-repeat="tax in invoice.Tax_charges">-->
           <!--<label>{{tax.Tax_desc}}(Taxes):</label>-->
           <!--<span>${{tax.Tax_amount}}</span>-->
         <!--</h3>-->
         <h3 ng-if="invoice.Discount">
-          <label>Discount:</label>
-          <span>${{invoice.Discount}}</span>
+          <label class="nomargin">Discount:</label>
+          <span class="pull-right">${{invoice.Discount}}</span>
         </h3>
         <h3>
-          <label class="total">Total:</label>
-          <span class="total">$ {{invoice.Grand_Total}}</span>
+          <label class="total nomargin">Total:</label>
+          <span class="total pull-right">$ {{invoice.Grand_Total}}</span>
         </h3>
       </div>
     </div>

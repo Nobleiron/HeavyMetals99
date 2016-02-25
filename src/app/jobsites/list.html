@@ -9,8 +9,14 @@
   <tbody>
   <tr ng-repeat="jobsite in jobsites">
     <td><a href="" class="invoice-no">{{jobsite.SiteID}}</a></td>
-    <td>{{jobsite.Site_Name}}</td>
-    <td class="text-right">
+    <td>{{jobsite.Site_Name}}
+      <p class="visible-xs action-btns">
+        <a class="invoice-no view-down"  ng-click="viewJobSiteDetails(jobsite);"><i class="fa fa-eye invoice-no heading-text"></i></a>
+        <a ui-sref="hm.dashboard.jobSites.editJobSite({data : jobsite, page : flags.page})" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
+        <a ng-click="deleteJobSite(jobsite)" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a>
+      </p>
+    </td>
+    <td class="text-right hidden-xs">
       <a class="invoice-no view-down"  ng-click="viewJobSiteDetails(jobsite);"><i class="fa fa-eye invoice-no heading-text"></i></a>
       <a ui-sref="hm.dashboard.jobSites.editJobSite({data : jobsite, page : flags.page})" class="invoice-no view-down"><i class="fa fa-pencil-square-o invoice-no heading-text"></i></a>
       <a ng-click="deleteJobSite(jobsite)" class="invoice-no view-down"><i class="fa fa-trash invoice-no heading-text"></i></a></td>
