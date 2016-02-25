@@ -10,6 +10,12 @@ angular.module('HM_RequestsMD')
       _fetchRequest();
     }
 
+    $scope.toggleRequestView = toggleRequestView;
+
+    function toggleRequestView(bool) {
+      $scope.params.serviceRequest = bool;
+    }
+
 
     function _fetchRequest(){
       $scope.fetchDataInProgress= true;
@@ -26,9 +32,19 @@ angular.module('HM_RequestsMD')
         })
     }
 
-    $scope.search = function() {
-		$scope.showSearch = !$scope.showSearch;
-		$scope.showFilterDiv = false;
-	}
+     $scope.search = function() {
+      $scope.showSearch = !$scope.showSearch;
+      $scope.showFilterDiv = false;
+    }
+
+    $scope.filter = function() {
+      $scope.showFilterDiv = !$scope.showFilterDiv;
+      $scope.showSearch = false;
+    }
+    $scope.reset = function() {
+      $scope.fromDate = '';
+      $scope.toDate = '';
+      $scope.jobsite = '';
+    }
 
   }]);

@@ -1,11 +1,7 @@
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" cg-busy="jobsitesPromise">
   <!-- <div class="tab-content"> -->
   <!-- START  Dashboard Content -->
   <!-- <div id="dash" class="tab-pane fade in active"> -->
-
-
-  <div cg-busy="jobsitesPromise">
-
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding my-bottm-line manage_job_tit">
       Manage Job Sites
     </div>
@@ -52,7 +48,7 @@
       </div>
     </div> -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot"></div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 manage-job-btn-col manage-jobsite-btn-col">
       <a ui-sref="hm.dashboard.jobSites.addJobSite" class="btn pull-left manage-job-btn add-job-site-btn sign_mybtn all-btn primary-btn">Add Job Site</a>
       <button class="btn btn-default pull-right manage-job-btn deactivate map map-view-btn all-btn" ng-click="toggleMapView(true)" ng-class="{'active primary-btn' : params.mapView}">Map View</button>
       <button class="btn btn-default pull-right manage-job-btn deactivate list list-view-btn all-btn" ng-class="{'active primary-btn' : !params.mapView}" ng-click="toggleMapView(false)">List View</button>
@@ -68,7 +64,6 @@
       <job-site-list-view></job-site-list-view>
 
     </div>
-  </div>
 
 
 </div>

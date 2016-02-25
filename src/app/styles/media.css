@@ -1147,6 +1147,10 @@
 		line-height: 20px;
 	}
 
+	.header-xs .cart_menu ul li a.no-count {
+		line-height: 30px;
+	}
+
 	.header-xs .cart_menu .cart_noti {
 		vertical-align: super;
 	}

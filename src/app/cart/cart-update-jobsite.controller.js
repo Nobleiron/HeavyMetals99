@@ -148,4 +148,8 @@ angular.module("HM_CartMD")
         })
     }
 
+    $scope.searchLocation =function() {
+      $scope.showGoogleMap = !$scope.showGoogleMap;
+    }
+
   }]);

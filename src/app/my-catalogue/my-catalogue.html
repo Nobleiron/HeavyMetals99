@@ -1,6 +1,5 @@
-
-
-  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding catalog-div">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 display_side nopadding catalog-div">
+  <div cg-busy="myCataloguePromise">
     <div class="clearfix">
       <div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 my-bottm-line manage_job_tit manage_job_tit_small">
@@ -19,7 +18,6 @@
           </button>
           <!-- <a ui-sref="hm.search.results"> Go Back</a> -->
         </div>
-        <div cg-busy="myCataloguePromise">
         <div class="col-md-4 lift_box nopadding repeat-item pull-left" ng-repeat="product in catelog"  ng-show="!flags.noCatalogue">
           <figure class="catalogue-fig">
             <a ui-sref="hm.equipmentDetails({id: product.Product_Id})"><img alt="" ng-src="{{product.Product_Image[0].ProductImage_Path}}"/></a>
@@ -60,9 +58,9 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
   </div>
+</div>
 
 

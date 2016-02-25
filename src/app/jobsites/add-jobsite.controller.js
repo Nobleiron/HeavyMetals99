@@ -95,6 +95,8 @@ angular.module("HM_JobSitesMD")
         })
     }
 
-
+    $scope.searchLocation =function() {
+      $scope.showGoogleMap = !$scope.showGoogleMap;
+    }
 
   }]);

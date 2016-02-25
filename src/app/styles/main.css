@@ -263,7 +263,8 @@ a:focus { color: #0099cc;
 					 vertical-align: top;}
 .cart_menu ul{margin: 0; padding: 0;}
 .cart_menu ul li{display: inline;}
-.cart_menu ul li a{padding: 5px; line-height: 43px;z-index: 1000;}
+.cart_menu ul li a{padding: 5px; line-height: 39px;z-index: 1000; transition: none;}
+.cart_menu ul li a.no-count{padding: 5px; line-height: 50px;z-index: 1000; transition: none;}
 .cart_menu .cart_noti{
 	/*background: #ff5600 none repeat scroll 0 0;
 											border-radius: 50px;
@@ -809,6 +810,16 @@ a:focus { color: #0099cc;
 	border-bottom-right-radius: 0;
 }
 
+.manage-jobsite-btn-col .list {
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.manage-jobsite-btn-col .map {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
 .manage-job-btn-col .deactivate {
 	background-color: #fff;
 	color: #666666;
@@ -1291,7 +1302,7 @@ button:hover {
 }
 
 .topmargin {
-	margin-top: 0;
+	margin-top: 0 !important;
 }
 
 .bottommargin {
@@ -1651,7 +1662,7 @@ button:hover {
 
 .job-lists span {
 	font-size: 13px;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	margin-left: 5px;
 }
 
@@ -2417,9 +2428,10 @@ button:hover {
 }
 
 .cart-summary-col img {
-	width: 45px;
-	height: 45px;
+	width: 50px;
+	height: 50px;
 	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .cart-summary-col .shopping-cart-heading {
@@ -2442,7 +2454,9 @@ button:hover {
 
 .cart-summary-col .equipment-name {
 	margin-bottom: 5px;
-		font-size: 14px;
+	font-size: 14px;
+  width: 75%;
+  display: inline-block;
 }
 
 .cart-summary-col .total {
@@ -2919,15 +2933,16 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .delivery-note-textarea {
 	resize: vertical;
+	height: 100px !important;
 }
 
 /*landing page*/
 
 .landing-top {
 	background-image: url('/assets/images/landing-cover.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0px -240px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0px -240px;
 }
 
 .landing-top-content {
@@ -3005,7 +3020,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-  right: 33.5%;
+	right: 33.5%;
 }
 
 .landing-search:after {
@@ -3029,12 +3044,12 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .landing-search-div input {
 	width: 50%;
-  display: inline-block;
-  height: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border: none;
-  border-radius: 4px;
+	display: inline-block;
+	height: 50px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: none;
+	border-radius: 4px;
 }
 
 .landing-search-div button {
@@ -3067,7 +3082,7 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 .landing-carousel-control .carousel-inner {
 	width: 93%;
 	overflow: hidden;
-  margin-left: 3%;
+	margin-left: 3%;
 }
 
 .landing-carousel-control .left,
@@ -3075,9 +3090,9 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 	background: none;
 	width: auto;
 	display: flex;
-  align-items: center;
-  display: -webkit-flex;
-  -webkit-align-items: center;
+	align-items: center;
+	display: -webkit-flex;
+	-webkit-align-items: center;
 }
 
 .landing-carousel-control .glyphicon-chevron-right,
@@ -3285,14 +3300,14 @@ td.quantity .ng-invalid-pattern .error{display:block;}
 
 .testimonial-carousel .multi-item-carousel .item.active .abc .testimonial-name {
 	background: #009ddc;
-  color: #ffffff;
-  padding: 7px 15px;
+	color: #ffffff;
+	padding: 7px 15px;
 }
 
 .testimonial-carousel .multi-item-carousel .item .abc .testimonial-name {
 	background: #009ddc;
-  color: #ffffff;
-  padding: 7px 15px;
+	color: #ffffff;
+	padding: 7px 15px;
 }
 
 .testimonial-carousel .multi-item-carousel .item.active .abc .testimonial-name p {
@@ -3322,22 +3337,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .multi-item-carousel .carousel-inner > .item {
-  -webkit-transition: 0.6s ease-in-out all;
-  transition: 0.6s ease-in-out all;
+	-webkit-transition: 0.6s ease-in-out all;
+	transition: 0.6s ease-in-out all;
 }
 .multi-item-carousel .carousel-inner .active.left {
-  left: -33%;
+	left: -33%;
 }
 .multi-item-carousel .carousel-inner .active.right {
-  left: 33%;
+	left: 33%;
 }
 
 .multi-item-carousel .carouse-control.left,
 .multi-item-carousel .carouse-control.right {
-  background-image: none;
+	background-image: none;
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
-  .multi-item-carousel .carousel-inner > .item {
+	.multi-item-carousel .carousel-inner > .item {
 	-webkit-transition: 0.6s ease-in-out all;
 	transition: 0.6s ease-in-out all;
 	-webkit-backface-visibility: visible;
@@ -3345,7 +3360,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	-webkit-perspective: none;
 	-webkit-transform: none!important;
 	transform: none!important;
-  }
+	}
 }
 
 .next-btn {
@@ -3359,8 +3374,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .prev-btn {
 	position: absolute;
 	margin-top: -42px;
-  left: 55%;
-  cursor: pointer;
+	left: 55%;
+	cursor: pointer;
 }
 
 .next-btn i,
@@ -3390,7 +3405,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	height: 35px;
 	padding-top: 6px;
 	-webkit-transition: -webkit-transform .8s ease-in-out;
-  transition: transform .8s ease-in-out;
+	transition: transform .8s ease-in-out;
 }
 
 .social-share a {
@@ -3400,8 +3415,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .social-share i:hover {
 	-webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
-  color: #000;
+	transform: rotate(360deg);
+	color: #000;
 }
 
 .footer-team-col {
@@ -3478,13 +3493,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 /*team and board of directors pages css*/
 .team-accordion-group .thumbnail {
-	width: 30%;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 0;
-  transition: all 0.6s ease;
-  min-width: 110px;
-  max-width: 140px;
+	width: 25%;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 0;
+	transition: all 0.6s ease;
+	min-width: 110px;
+	max-width: 140px;
 }
 
 .team-accordion-group .panel-heading {
@@ -3494,43 +3509,57 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .team-accordion-group .thumbnail:hover {
 	-webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .team-accordion-group h3 {
 	margin-top: 0;
-  font-size: 18px;
-  font-weight: 400;
-  padding-top: 14px;
-  color: #009ddc;
+	font-size: 16px;
+	font-weight: 400;
+	padding-top: 5px;
+	color: #009ddc;
+	margin-bottom: 5px;
+}
+
+.team-accordion-group p {
+	margin-bottom: 2px;
+	font-size: 13px;
+}
+
+.team-accordion-group .team-description {
+	padding-top: 10px;
+}
+
+.separator {
+	margin-top: 15px;
 }
 
 .team-accordion-group .social-share {
 	text-align: left;
-  margin-bottom: 0;
-  padding-right: 0;
-  margin-top: 20px;
+	margin-bottom: 0;
+	padding-right: 0;
+	margin-top: 6px;
 }
 
 .team-accordion-group .social-share i {
 	font-size: 14px;
-  background: #009ddc;
-  color: #ffffff;
-  width: 25px;
-  height: 25px;
-  padding-top: 5px;
-  transition: all 0.6s ease;
+	background: #009ddc;
+	color: #ffffff;
+	width: 25px;
+	height: 25px;
+	padding-top: 5px;
+	transition: all 0.6s ease;
 }
 
 .team-accordion-group .social-share i:hover {
 	-webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .team-accordion-group .panel-body {
@@ -3582,17 +3611,87 @@ a:hover {
 
 .contracts-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
 	color: #555;
-    cursor: default;
-    background-color: transparent; 
-    border: 1px solid transparent; 
-    border-bottom: 1px solid #009ddc;
-    background: transparent;
-    border-color: transparent;
-    border-bottom: 1px solid #009ddc;
+	cursor: default;
+	background-color: transparent; 
+	border: 1px solid transparent; 
+	border-bottom: 1px solid #009ddc;
+	background: transparent;
+	border-color: transparent;
+	border-bottom: 1px solid #009ddc;
 }
 
 .user-profile-tabs .nav>li>a {
 	padding: 10px 10px;
+}
+
+.jobsite-tabs>li>a {
+	border: none;
+}
+
+.jobsite-tabs>li.active>a:hover {
+	border: none;
+	border-bottom: 2px solid #009ddc;
+}
+
+.job-site-list .job-lists div:hover {
+	cursor: pointer;
+	background-color: #eeeeee;
+}
+
+.job-site-detail span {
+	vertical-align: top;
+}
+
+.jobsite-search-location {
+	padding: 0;
+  margin: 10px 0;
+  height: 36px;
+}
+
+.jobsite-search-location i {
+	margin-top: 10px;
+	margin-right: 10px;
+	color: #009ddc;
+}
+
+.jobsite-search-location input {
+	border: none;
+  box-shadow: none;
+  padding: 0 12px;
+  display: inline-block;
+  width: 85%;
+}
+
+.jobsite-search-location input:focus {
+	border: none;
+	box-shadow: none;
+}
+
+.hide-map {
+	height: 1px;
+	opacity: 0;
+	overflow: hidden;
+	transition: all 1s ease;
+}
+
+.show-map {
+	height: 200px;
+	opacity: 1;
+	overflow: auto;
+	transition: all 1s ease;
+}
+
+.search-loc-col {
+	padding: 0 20px;
+}
+
+.map-margin {
+	margin-top: 10px;
+}
+
+.action-btns {
+	margin-bottom: 0;
+	line-height: 0;
 }
 
 
