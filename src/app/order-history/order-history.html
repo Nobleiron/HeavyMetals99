@@ -37,7 +37,7 @@
                   </thead>
                   <tbody>
                   <tr ng-repeat="product in order.products">
-                    <td class="order-img-td topborder"><img ng-src="product.Product_Image" err-src alt=""></td>
+                    <td class="order-img-td topborder"><img ng-src="{{product.Product_Image}}" err-src alt=""></td>
                     <td class="topborder">
                       <h3 class="gas_title heading-text nomargin">{{product.Product_name}}</h3>
                       <p class="nomargin">Order#{{order.Order_id}} </p>
