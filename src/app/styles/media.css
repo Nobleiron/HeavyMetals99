@@ -570,6 +570,14 @@
 		animation-name: none;
 	}
 
+	.landing-padding-desc {
+		width: 100%;
+	}
+
+	div.total-price-padding {
+    padding-bottom: 0px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -1303,6 +1311,19 @@
 	.get-soft-call.question {
 		margin-top: 0px;
 	}
+	.address-back {
+		height: auto;
+	}
+
+	.total-price-padding {
+    padding-right: 15px !important;
+    padding-bottom: 0px;
+    padding-top: 15px;
+	}
+
+	.promo-code {
+    padding: 15px 0px 10px;
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -1496,6 +1517,9 @@
 
 	.footer-input {
 		width: 100%;
+	}
+	.equipment-history-col {
+		padding: 10px 10px 0 2px;
 	}
 }
 

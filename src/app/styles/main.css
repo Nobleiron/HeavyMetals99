@@ -333,7 +333,7 @@ a:focus { color: #0099cc;
 					 /*top: 130px;*/
 				 }
 .lift_box figure{padding: 1px;}
-.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 15px; padding: 0 0 0 10px;  font-weight: 600;}
+.lift_box_tit{text-overflow: ellipsis; white-space: nowrap; overflow: hidden;font-size: 15px; padding: 0 0 5px 10px;  font-weight: 600;}
 .lift_box_tit a{color: #666666;}
 .lift_box_subtit{color: #666666; font-size: 13px; padding: 0 0 0 10px;}
 .lift_box_vendor{color: #009ddc; font-size: 13px; }
@@ -811,11 +811,13 @@ a:focus { color: #0099cc;
 }
 
 .manage-jobsite-btn-col .list {
+	border-radius: 4px;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
 }
 
 .manage-jobsite-btn-col .map {
+	border-radius: 4px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -3607,6 +3609,7 @@ a:hover {
 	margin-top: 125px;
 	transform: rotate(270deg);
 	-webkit-transform: rotate(270deg);
+	z-index: 1000;
 }
 
 .contracts-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
@@ -3692,6 +3695,39 @@ a:hover {
 .action-btns {
 	margin-bottom: 0;
 	line-height: 0;
+}
+
+.landing-padding-desc {
+	width: 80%;
+}
+
+.equipment-history-col {
+	padding: 10px 10px 0;
+}
+
+.equipment-history-col .eye_view {
+	padding: 0;
+}
+
+.grid-lift-box {
+	width: 30%;
+}
+
+.manage-search-arrow-box:after, .manage-search-arrow-box:before {
+  left: 100% !important;
+}
+
+.mobile-contracts {
+	padding: 12px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.mobile-contracts p {
+	margin-bottom: 5px;
+}
+
+.mobile-contracts p:last-child {
+	margin-top: 15px;
 }
 
 

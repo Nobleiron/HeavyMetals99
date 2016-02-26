@@ -58,10 +58,10 @@
 				<div>
 					<div class="form-group">
 						<div ng-show="openContracts.length">
-							<table class="table quotes-table open-contract-table">
+							<table class="table quotes-table open-contract-table hidden-xs">
 								<thead>
 									<tr>
-										<th>Contract Id</th>
+										<th>Contract ID</th>
 										<th>PO</th>
 										<th>Job Site Name</th>
 										<th class="text-right">Equipment On Rent</th>
@@ -83,6 +83,31 @@
 									</tr>
 								</tbody>
 							</table>
+							<div class="visible-xs desc-text">
+								<div ng-repeat="contract in openContracts" class="mobile-contracts">
+									<p class="bold-font">
+										Contract ID
+										<span class="pull-right color-blue normal-font">{{contract.Contract_No}}</span>
+									</p>
+									<p class="bold-font">
+										PO
+										<span class="pull-right normal-font">{{contract.Purchase_Order_No}}</span>
+									</p>
+									<p class="bold-font">
+										Job Site Name
+										<span class="pull-right normal-font">{{contract.Site_Name}}</span>
+									</p>
+									<p class="bold-font">
+										<button class="btn all-btn primary-btn sign_mybtn autowidth">
+											<i class="fa fa-download"></i>&nbsp
+											Download
+										</button>
+										<button class="btn all-btn primary-btn sign_mybtn pull-right autowidth">
+											Pickup Request
+										</button>
+									</p>
+								</div>
+							</div>
 							<uib-pagination ng-if="flags.qty * flags.Total_pages" total-items="flags.qty * flags.Total_pages" ng-model="flags.po"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
 						</div>
 						<div ng-show="!flags.hasData" >
@@ -96,7 +121,7 @@
 			<uib-tab heading="Closed Contract" select="tabChange('closed')" active="flags.closedTab">
 				<div>
 					<div ng-show="closedContracts.length">
-						<table class="table quotes-table open-contract-table">
+						<table class="table quotes-table open-contract-table hidden-xs">
 							<thead>
 								<tr>
 									<th>Contract Id</th>
@@ -120,6 +145,32 @@
 								</tr>
 							</tbody>
 						</table>
+						<div class="visible-xs desc-text">
+								<div ng-repeat="contract in closedContracts" class="mobile-contracts">
+									<p class="bold-font">
+										Contract ID
+										<span class="pull-right color-blue normal-font">{{contract.Contract_No}}</span>
+									</p>
+									<p class="bold-font">
+										Job Site Name
+										<span class="pull-right normal-font">{{contract.Site_Name}}</span>
+									</p>
+									<p class="bold-font">
+										Date
+										<span class="pull-right normal-font">{{contract.Date}}</span>
+									</p>
+									<p class="bold-font">
+										PO
+										<span class="pull-right normal-font">{{contract.Purchase_Order_No}}</span>
+									</p>
+									<p class="bold-font">
+										<button class="btn all-btn primary-btn sign_mybtn autowidth">
+											<i class="fa fa-download"></i>&nbsp
+											Download
+										</button>
+									</p>
+								</div>
+						</div>
 						<uib-pagination ng-if="flags.qty * flags.Total_pages" ng-show="closedContracts.length" total-items="flags.qty * flags.Total_pages" ng-model="flags.pc"  ng-change="pageChanged()" max-size="10" rotate="false" boundary-link-numbers="true" force-ellipses="true"></uib-pagination>
 					</div>
 					<div ng-show="!flags.hasData" >

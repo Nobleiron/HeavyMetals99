@@ -55,7 +55,7 @@
       <div class="equipment-desc quotes-equip">
         <a class="heading-text on-hover-pointer marker" ng-if="product.Product_name">{{product.Product_name}}</a>
         <a class="heading-text on-hover-pointer marker" ng-if="!product.Product_name">--</a>
-        <i class="fa fa-map-marker marker"></i>
+        <i class="fa fa-map-marker color-blue"></i>
         <span ng-if="invoice.Jobsite.Site_Name">{{invoice.Jobsite.Site_Name}}</span>
         <span ng-if="!invoice.Jobsite.Site_Name">{{invoice.Jobsite.Site_Name}}</span>
         <p class="desc-text quantity-p">Quantity: 1
@@ -68,17 +68,17 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding quotes-site-price">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail">
       <h4 class="go-back-text">Details</h4>
-      <i class="fa fa-map-marker marker go-back-text"></i>
+      <i class="fa fa-map-marker color-blue"></i>
       <span class="go-back-text">{{invoice.Jobsite.Site_Name}}</span>
       <br>
       <p>{{invoice.Jobsite.Address1}}</p>
       <p ng-if="invoice.Jobsite.Address2">{{invoice.Jobsite.Address2}}</p>
       <p class="zip">Zip Code: {{invoice.Jobsite.Postal}}</p>
-      <i class="fa fa-phone-square zip marker go-back-text"></i>
-      <span class="marker go-back-text">+{{invoice.Jobsite.Phone}}</span>
+      <i class="fa fa-phone-square zip color-blue"></i>
+      <span class="color-blue go-back-text">+{{invoice.Jobsite.Phone}}</span>
       <br>
-      <i class="fa fa-user marker go-back-text"></i>
-                  <span class="marker go-back-text">
+      <i class="fa fa-user color-blue"></i>
+                  <span class="color-blue go-back-text">
                     Name of Contact Person
                   </span>
     </div>

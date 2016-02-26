@@ -8,17 +8,21 @@
     </div>
     <div class="col-md-6 nopadding">
       <h4 class="lift_box_tit"><a ng-href="/#/equipments/{{item.Product_Id}}">{{item.Product_Name}}</a></h4>
-      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a  >{{item.MAKE}}</a></span></h5>
-      <div class="col-md-3 star_list">
+      <h5 class="lift_box_subtit">by <span class="lift_box_vendor"><a  >{{item.MAKE}}</a></span>
+        <a class="pull-right rating-stars"> 
+          <i class="fa fa-star desc-text"></i>
+          <i class="fa fa-star desc-text"></i>
+          <i class="fa fa-star desc-text"></i>
+          <i class="fa fa-star-half-o desc-text"></i>
+          <i class="fa fa-star-o desc-text"></i>
+        </a>
+      </h5>
+      <!-- <div class="col-md-3 star_list">
         <div class="star-list-top">
-          <a  > <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i></a>
+
         </div>
-      </div>
-      <div class="col-md-9">
+      </div> -->
+      <div class="col-md-12">
         <div class="daily_ul">
           <ul>
             <li>
@@ -36,7 +40,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-12">
+      <!-- <div class="col-md-12">
         <div class=" heart_list">
           <ul>
             <li>
@@ -59,10 +63,26 @@
             </li>
           </ul>
         </div>
+      </div> -->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 equipment-history-col">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 nopadding text-left">
+          <a href=""><i class="fa fa-eye list-icon-top"></i>
+            <span class="eye_view">357 views</span>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 nopadding pull-center">
+          <a href=""> <i class="fa fa-clock-o fa-icon-clr list-icon-top"></i>
+          </a>
+          <span class="eye_view">7 Times Rented</span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopadding text-right">
+          <a href=""><i class="fa fa-share-alt fa-icon-clr list-icon-top"></i>
+          </a>
+          <span class="eye_view">26 Shares</span>
+        </div>
       </div>
-
     </div>
-    <div class="col-md-3 right-btn-col">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 right-btn-col">
       <button ui-sref="hm.reserveEquipment({id :item.Product_Id})" type="button" class="btn all-btn my-reserve sell-equ" ng-disabled="item.alreadyExistsInCart" ng-class="{'is-added add-top': item.Is_in_catelog, 'add-top': !item.Is_in_catelog }">Add{{item.alreadyExistsInCart ? 'ed' : ''}} to Cart</button>
       <button type="button" class="btn add-list all-btn sell-equ add-top" ng-click="addToOrRemoveFromWishList(item)">
         <span btn-load-indicator="Add:Wishlist:Process" btn-uid="item.Product_Id">{{item.Is_in_catelog ? 'Added to Catalog': 'Add to Catalog'}}</span>
