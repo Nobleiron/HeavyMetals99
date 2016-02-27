@@ -1,0 +1,19 @@
+<div class="modal-content">
+  <div class="modal-header no-search-row noborder leftpadding rightpadding">
+    <div class="col-md-12 col1 ">
+      <p>Assign Customer<a class="close-cross pull-right"  ng-click="$dismiss()" aria-label="Close"><i class="fa fa-times marker on-hover-pointer"></i></a></p>
+    </div>
+  </div>
+  <div class="modal-body  job-site-detail view-jobsite">
+    <h4 class="go-back-text">Customer </h4>
+    <p>{{customer.CustomerNO}}</p>
+    <p>{{customer.CustomerName}}</p>
+    <p>{{customer.Phone}}</p>
+    <p>{{customer.Email}}</p>
+    <p>
+      <button type="submit" ng-click="saveAssignedCustomer(customer)" class="btn  primary-btn">
+        <span btn-load-indicator="Assign:Customer:Process">Assign</span>
+      </button>
+    </p>
+  </div>
+</div>

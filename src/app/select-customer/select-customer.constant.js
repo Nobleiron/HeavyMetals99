@@ -4,5 +4,11 @@ angular.module("HM_SelectCustomerMD")
       url : function(){
         return '/portalcustomers';
       }
-    }
+    },
+    assign : {
+      url : function(){
+        return '/portalcustomers/assign';
+      }
+    },
+    noOfRecords : 15
   });
