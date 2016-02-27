@@ -1,8 +1,10 @@
 'use strict';
 angular.module('HM_UserProfileMD')
-  .controller('HM_UserProfileCtrl', ['$scope','HM_RestSV','HM_UserProfileCnst',function ($scope, RestSV, UserProfileCnst) {
+  .controller('HM_UserProfileCtrl', ['$scope','HM_RestSV','HM_UserProfileCnst','toastr',function ($scope, RestSV, UserProfileCnst,toastr) {
 
     $scope.saveUserDetails = saveUserDetails;
+
+    $scope.userProfile = {}
 
     _initialize();
 
@@ -14,19 +16,30 @@ angular.module('HM_UserProfileMD')
 
     function saveUserDetails(){
       //TODO
-      RestSV.put(UserProfileCnst.saveDetails.url(),{
+      if($scope.userProfile.form.$valid){
+      $scope.userDetailsPromise = RestSV.put(UserProfileCnst.update.url(),{
+        name : $scope.userDetails.User_name,
+        address : $scope.userDetails.Address,
+        city : $scope.userDetails.City,
+        state : $scope.userDetails.State,
+        company : $scope.userDetails.Company,
+        zip_code : $scope.userDetails.Postal_code,
+        phone : $scope.userDetails.Phone,
+        country : "99"
 
       })
-        .then(function(response){
+        .then(function(){
+          toastr.success("Profile updated successfully")
         })
         .catch(function(){
-
+        toastr.error("Failed to Update User Details")
         });
+      }
     }
 
 
     function _getUserDetails(){
-      RestSV.get(UserProfileCnst.details.url())
+      $scope.userDetailsPromise = RestSV.get(UserProfileCnst.details.url())
         .then(function(response){
           $scope.userDetails = response.data.result.User_details;
           _getFirstNameAndLastName();

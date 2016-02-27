@@ -10,5 +10,10 @@ angular.module('HM_InvoicesMD')
       url : function(){
         return '/portal/Invoice_detail'
       }
+    },
+    download: {
+      url : function(){
+        return '/portal/downloadPdf';
+      }
     }
   });

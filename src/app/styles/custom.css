@@ -408,3 +408,8 @@ form input:after {
 .cg-busy{
   z-index: 998;
 }
+
+.user-profile-tabs .ng-submitted .form-group.ng-invalid{
+  border : 1px solid #ff5600;
+
+}

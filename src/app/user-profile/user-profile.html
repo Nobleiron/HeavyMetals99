@@ -46,7 +46,7 @@
 	</article>
 </section> -->
 <div class="container content-top">
-	<div class="row">
+	<div class="row" cg-busy="userDetailsPromise">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-bottm-line manage_job_tit manage_job_tit_small shopping-cart-heading">
 			Profile Settings
 		</div>
@@ -161,7 +161,7 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 profile-setting portal-security-ques">
 					<h3 class="desc-text bold-font">Portal Security Question</h3>
-					<p class="desc-text">Recovery Email: 
+					<p class="desc-text">Recovery Email:
 						<input class="form-control" placeholder="Email">
 					</p>
 					<p class="desc-text">Security Question:
@@ -230,60 +230,65 @@
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding contracts-tab user-profile-tabs">
 		<uib-tabset>
 	    <uib-tab heading="Profile Settings">
+        <form  role="form" name="userProfile.form" novalidate valdr-type="UserProfile">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding" id="profile-details">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list profile-setting leftpadding toppadding profile-leftpadding-small">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="First Name">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputs-div">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="Username" name="userName" ng-model="userDetails.User_name" >
 								<i class="fa fa-user"></i>
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Last Name">
-								<i class="fa fa-user"></i>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Email">
-								<i class="fa fa-envelope-o"></i>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Phone Number">
+						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">-->
+							<!--<div class="form-control search-div" valdr-form-group>-->
+								<!--<input type="text" placeholder="Last Name" name="lastName" ng-model="userDetails.lastName">-->
+								<!--<i class="fa fa-user"></i>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">-->
+							<!--<div class="form-control search-div">-->
+								<!--<input type="text" placeholder="Email">-->
+								<!--<i class="fa fa-envelope-o"></i>-->
+							<!--</div>-->
+						<!--</div>-->
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div" >
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="Phone Number" name="phone" ng-model="userDetails.Phone">
 								<i class="fa fa-phone"></i>
 							</div>
 						</div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Company Name">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="Company Name" name="company" ng-model="userDetails.Company">
 								<i class="fa fa-building-o"></i>
 							</div>
 						</div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Communication Address">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" ng-model="userDetails.Address" name="address" placeholder="Communication Address">
 								<i class="fa fa-map-marker"></i>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="City">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="City" name="city" ng-model="userDetails.City">
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="Zip Code">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="Zip Code" name="zipCode" ng-model="userDetails.Postal_code">
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">
-							<div class="form-control search-div">
-								<input type="text" placeholder="State">
+							<div class="form-control search-div" valdr-form-group>
+								<input type="text" placeholder="State" name="state" ng-model="userDetails.State">
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div"></div>
+						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">-->
+              <!--<div class="form-control search-div" valdr-form-group>-->
+                <!--<input type="hidden" placeholder="Country" name="country" ng-model="userDetails.Country_name" value="99">-->
+              <!--</div>-->
+						<!--</div>-->
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-detail pull-center">
 						<div class="upload-pic-div">
@@ -294,13 +299,14 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cont-rent-btn ">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-							<button class="btn sign_mybtn all-btn primary-btn profile-save-btn">Save</button>
+							<button class="btn sign_mybtn all-btn primary-btn profile-save-btn" ng-click="saveUserDetails();">Save</button>
 							<button class="btn sell-equ all-btn cont-renting">
 								Cancel
 							</button>
 						</div>
 					</div>
 				</div>
+        </form>
 	    </uib-tab>
 	    <uib-tab heading="Portal Settings">
         <div id="portal-settings" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding profile-lrpadding-small">
@@ -326,7 +332,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 profile-setting portal-security-ques">
 							<h3 class="desc-text bold-font">Portal Security Question</h3>
-							<p class="desc-text">Recovery Email: 
+							<p class="desc-text">Recovery Email:
 								<input class="form-control" placeholder="Email">
 							</p>
 							<p class="desc-text">Security Question:
@@ -384,7 +390,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cont-rent-btn ">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<button class="btn sign_mybtn all-btn primary-btn profile-save-btn">Save</button>
+								<button class="btn sign_mybtn all-btn primary-btn profile-save-btn" ng-click="saveUserDetails();">Save</button>
 								<button class="btn sell-equ all-btn cont-renting">
 									Cancel
 								</button>

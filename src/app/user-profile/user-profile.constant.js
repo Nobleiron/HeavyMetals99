@@ -5,6 +5,11 @@ angular.module('HM_UserProfileMD')
       url : function(){
         return '/user'
       }
+    },
+    update : {
+      url : function(){
+        return '/user/update'
+      }
     }
 
   });

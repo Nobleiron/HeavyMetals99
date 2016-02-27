@@ -2305,6 +2305,10 @@ button:hover {
 	margin-top: 5px;
 }
 
+.profile-setting .form-group{
+ margin-bottom: 0px;
+}
+
 .upload-pic-div {
 	height: 200px;
 	border-radius: 4px;
@@ -3615,8 +3619,8 @@ a:hover {
 .contracts-tab .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
 	color: #555;
 	cursor: default;
-	background-color: transparent; 
-	border: 1px solid transparent; 
+	background-color: transparent;
+	border: 1px solid transparent;
 	border-bottom: 1px solid #009ddc;
 	background: transparent;
 	border-color: transparent;

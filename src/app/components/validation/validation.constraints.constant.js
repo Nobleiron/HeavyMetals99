@@ -95,6 +95,38 @@ angular.module("HeavyMetals")
           'message': 'State is required.'
         }
       }
+    },
+    'UserProfile' :{
+      'company' : {
+        'required' : {
+          'message' : "Company is required"
+        }
+      },
+      'city' : {
+        'required' : {
+          'message' : "City is required"
+        }
+      },
+      'address' : {
+        'required' : {
+          'message' : "Address is required"
+        }
+      },
+      'phone': {
+        'required': {
+          'message': 'Phone is required.'
+        }
+      },
+      'state': {
+        'required': {
+          'message': 'State is required.'
+        }
+      },
+      'userName' :{
+        'required': {
+          'message': 'Username is required.'
+        }
+      }
     }
 
 
