@@ -1,11 +1,11 @@
 angular.module("HM_PortalAccessMD")
-  .controller('HM_PortalAccessCtrl', ['$scope','$rootScope','$state','HM_PortalAccessCnst','HM_RestSV','localStorageService', function ($scope,$rootScope, $state, PortalAccessCnst,RestSV, localStorageService ) {
+  .controller('HM_PortalAccessCtrl', ['$scope','$rootScope','$state','HM_PortalAccessCnst','HM_RestSV','localStorageService','toastr', function ($scope,$rootScope, $state, PortalAccessCnst,RestSV, localStorageService,toastr ) {
 
 
     $scope.portalLogin = portalLogin;
     $scope.loginData = {
       credentials : "valid"
-    }
+    };
 
     function _invalidateLoginForm(){
       $scope.loginData.credentials = "";
@@ -22,9 +22,9 @@ angular.module("HM_PortalAccessMD")
 
 
     function  portalLogin(){
+      $scope.$broadcast('PortalAccess:Process:Start')
       _resetLoginValidity();
       if($scope.loginForm.$valid){
-        $scope.loading = true;
         RestSV
           .post( PortalAccessCnst.access.url() ,{
             email : $scope.loginData.email,
@@ -37,16 +37,18 @@ angular.module("HM_PortalAccessMD")
             var userObj = angular.extend({_id : 'userObj'},response.data.result.logged_user_data.logged_user)
             localStorageService.set('userObj',userObj);
             $rootScope.$broadcast("PortalAccess:Granted", userObj);
+            toastr.success("Portal Access Granted");
             $state.go('hm.dashboard.main');
           })
           .catch(function(error){
             $scope.formSubmitted = true;
             _invalidateLoginForm();
+            toastr.error("Failed to give Portal Access");
             console.log("Error logging in", error)
-            $scope.loading = false;
-          });
-      } else {
-        $scope.loading = false;
+          })
+          .finally(function(){
+            $scope.$broadcast('PortalAccess:Process:End');
+          })
       }
     }
   }])

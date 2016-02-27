@@ -284,6 +284,7 @@
 								<input type="text" placeholder="State" name="state" ng-model="userDetails.State">
 							</div>
 						</div>
+
 						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 inputs-div">-->
               <!--<div class="form-control search-div" valdr-form-group>-->
                 <!--<input type="hidden" placeholder="Country" name="country" ng-model="userDetails.Country_name" value="99">-->
@@ -309,6 +310,7 @@
         </form>
 	    </uib-tab>
 	    <uib-tab heading="Portal Settings">
+        <form  role="form" name="updatePortalPassword.form" novalidate valdr-type="UpdatePortalPassword">
         <div id="portal-settings" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding profile-lrpadding-small">
 					<div class="row fields-row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
@@ -355,13 +357,15 @@
 						</div>
 					</div>
 				</div>
+          </form>
 	    </uib-tab>
 	    <uib-tab heading="Security">
+        <form  role="form" name="updatePassword.form" novalidate valdr-type="UpdatePassword">
       	<div id="security" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding profile-lrpadding-small">
 					<div class="row fields-row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 site-col job-site-list profile-setting">
-							<div class="form-control search-div security-input">
-								<input type="password" placeholder="Old Password">
+							<div class="form-control search-div security-input" valdr-form-group>
+								<input type="password" placeholder="Old Password" name="oldPassword" ng-model="updatePassword.oldPassword">
 								<i class="fa fa-key"></i>
 							</div>
 						</div>
@@ -369,8 +373,8 @@
 					<div class="row fields-row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding portal-setting">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list profile-setting">
-								<div class="form-control search-div">
-									<input type="password" placeholder="New Password">
+								<div class="form-control search-div" valdr-form-group>
+									<input type="password" placeholder="New Password" name="newPassword1" ng-model="updatePassword.newPassword1">
 									<i class="fa fa-key"></i>
 								</div>
 							</div>
@@ -379,8 +383,8 @@
 					<div class="row fields-row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding portal-setting">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 job-site-list profile-setting">
-								<div class="form-control search-div">
-									<input type="password" placeholder="Confirm Password">
+								<div class="form-control search-div" valdr-form-group>
+									<input type="password" placeholder="Confirm Password" name="newPassword2" ng-model="updatePassword.newPassword2">
 									<i class="fa fa-key"></i>
 								</div>
 							</div>
@@ -390,7 +394,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bord_dash_bot devider"></div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cont-rent-btn ">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<button class="btn sign_mybtn all-btn primary-btn profile-save-btn" ng-click="saveUserDetails();">Save</button>
+								<button class="btn sign_mybtn all-btn primary-btn profile-save-btn" ng-click="savePassword();">Save</button>
 								<button class="btn sell-equ all-btn cont-renting">
 									Cancel
 								</button>
@@ -398,6 +402,7 @@
 						</div>
 					</div>
 				</div>
+          </form>
 	    </uib-tab>
 	  </uib-tabset>
       </div>

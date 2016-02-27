@@ -1,0 +1,41 @@
+<div class="container content-top" >
+  <div class="row heading-border">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+      <h3 class="heading-text">Select Customer</h3>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right my-bottm-line dash_board_tit job-site-list">
+      <div>
+        <div class="form-control search-div quotes-search hidden-xs searchShow">
+          <input type="text" placeholder="Search Customer" ng-model="query">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row about-row" cg-busy="portalCustomersPromise">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 description-col contact-us-col toppadding">
+      <table class="table quotes-table" >
+        <thead>
+        <tr>
+          <th>Customer No.</th>
+          <th>Customer Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="customer in portalCustomerList | filter : query">
+          <td>{{customer.CustomerNO}}</td>
+          <td>{{customer.CustomerName}}</td>
+          <td>{{customer.Phone}}</td>
+          <td>{{customer.Email}}</td>
+          <td class="text-right">
+            <a   class="invoice-no view-down"><span style="margin-right: 5px;">Assign</span><i class="fa fa-arrow-circle-o-right invoice-no heading-text"></i></a>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

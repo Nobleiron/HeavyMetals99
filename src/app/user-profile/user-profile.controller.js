@@ -4,7 +4,11 @@ angular.module('HM_UserProfileMD')
 
     $scope.saveUserDetails = saveUserDetails;
 
-    $scope.userProfile = {}
+    $scope.savePassword = savePassword;
+
+    $scope.userProfile = {};
+    $scope.updatePassword= {};
+    $scope.updatePortalDetails= {};
 
     _initialize();
 
@@ -35,6 +39,22 @@ angular.module('HM_UserProfileMD')
         toastr.error("Failed to Update User Details")
         });
       }
+    }
+
+
+    function savePassword(){
+      if($scope.updatePassword.form.$valid){
+        $scope.userDetailsPromise = RestSV.put(UserProfileCnst.updatePassword.url(),{
+          new_pass : $scope.updatePassword.newPassword1
+        })
+          .then(function(){
+            toastr.success("Password updated successfully")
+          })
+          .catch(function(){
+            toastr.error("Failed to Update Password")
+          });
+      }
+
     }
 
 
