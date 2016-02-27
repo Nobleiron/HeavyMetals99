@@ -240,7 +240,7 @@ angular.module("HM_CartMD")
     function _submitCart(){
     return RestSV.post(ShoppingCartCnst.cartSubmit.url(),normalizeCartDataToSubmit)
         .then(function(response){
-          var orders = response.data.result.Orders || response.data.result.Order;
+          var orders = response.data.result.Orders || response.data.result.Order || response.data.result.Order_details.Orders;
           localStorageService.remove("cartData");
           if(normalizeCartDataToSubmit.delivery_status == 'R'){
             $state.go('hm.reserveEquipmentSuccess',{source: 'reservation',id: orders[0].Order_id});
