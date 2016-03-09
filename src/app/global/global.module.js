@@ -2,8 +2,6 @@
 angular.module("HM_GlobalMD",[
   'HM_DashboardMD',
   'HM_InvoicesMD',
-  'HM_EnvMD',
-  'HM_RoutesMD',
   'HM_JobSitesMD',
   'HM_EquipmentDetailMD',
   'HM_EquipmentSellMD',

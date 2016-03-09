@@ -1,73 +1,75 @@
-'use strict';
-angular.module("HM_RoutesMD")
-  .constant('HM_RoutesCnst', {
+(function () {
 
-      routes : {
-        'hmPrelogin' : {
-          abstract : true,
-          views : {
-            navbar : {
+  'use strict';
+  var app = angular.module("HeavyMetals")
+    .constant('HM_RoutesCnst', {
+
+      routes: {
+        'hmPrelogin': {
+          abstract: true,
+          views: {
+            navbar: {
               templateUrl: 'app/components/prelogin-header/prelogin-header.html',
               controller: 'HM_PreloginHeaderCtrl'
             },
-            footer : {
-              templateUrl : 'app/components/prelogin-footer/footer.html'
+            footer: {
+              templateUrl: 'app/components/prelogin-footer/footer.html'
             },
-            '' : {
+            '': {
               template: "<div ui-view></div>"
             }
           }
         },
-        'hm' :{
-          abstract : true,
-          views : {
-            navbar : {
+        'hm': {
+          abstract: true,
+          views: {
+            navbar: {
               templateUrl: 'app/components/header/header.html',
               controller: 'HM_HeaderCtrl'
             },
-            footer : {
-              templateUrl : 'app/components/footer/footer.html'
+            footer: {
+              templateUrl: 'app/components/footer/footer.html'
             },
-            '' : {
+            '': {
               template: "<div ui-view></div>"
             }
           }
         },
-        'hm.dashboard' : {
-          abstract : true,
-          templateUrl : "app/dashboard/dashboard.html",
+        'hm.dashboard': {
+          abstract: true,
+          templateUrl: "app/dashboard/dashboard.html",
           controller: 'HM_DashboardCtrl'
         },
-        'landing' : {
+        'landing': {
           url: '/',
           templateUrl: 'app/landing/landing.html',
           controller: 'HM_LandingCtrl'
         },
-        'hm.dashboard.main' : {
+        'hm.dashboard.main': {
           url: '/dashboard',
           controller: 'HM_DashboardMainCtrl',
           templateUrl: 'app/dashboard-main/dashboard-main.html'
         },
-        'hm.sellEquipment' :{
-          url : '/equipments/sell',
-          templateUrl : 'app/equipment-sell/equipment-sell.html',
+        'hm.sellEquipment': {
+          url: '/equipments/sell',
+          templateUrl: 'app/equipment-sell/equipment-sell.html',
           controller: 'HM_EquipmentSellCtrl'
         },
-        'hm.userProfile' :{
-          url : '/user/profile',
-          templateUrl : 'app/user-profile/user-profile.html',
+        'hm.userProfile': {
+          url: '/user/profile',
+          templateUrl: 'app/user-profile/user-profile.html',
           controller: 'HM_UserProfileCtrl'
         },
-        'hm.selectCustomer' : {
-          url : '/select-customer',
-          templateUrl : 'app/select-customer/select-customer.html',
+        'hm.selectCustomer': {
+          url: '/select-customer',
+          templateUrl: 'app/select-customer/select-customer.html',
           controller: 'HM_SelectCustomerCtrl'
         },
-        'hm.changePassword' :{
-          url : '/change/password',
-          templateUrl : 'app/change-password/change-password.html'
+        'hm.changePassword': {
+          url: '/change/password',
+          templateUrl: 'app/change-password/change-password.html'
         },
-        'hm.dashboard.invoices' : {
+        'hm.dashboard.invoices': {
           url: '/invoices?outstanding&page',
           templateUrl: 'app/invoices/invoices.html',
           controller: 'HM_InvoicesCtrl'
@@ -77,39 +79,39 @@ angular.module("HM_RoutesMD")
           templateUrl: 'app/portal-access/portal-access.html',
           controller: 'HM_PortalAccessCtrl'
         },
-        'hm.reserveEquipment' : {
+        'hm.reserveEquipment': {
           url: '/equipments/:id/reserve',
           templateUrl: 'app/equipment-reserve/equipment-reserve.html',
           controller: 'HM_EquipmentReserveCtrl',
-          openInModal : true
+          openInModal: true
         },
-        'hm.search' : {
-          url : '?type',
-          abstract : true,
+        'hm.search': {
+          url: '?type',
+          abstract: true,
           templateUrl: 'app/search/search.html',
           controller: 'HM_SearchCtrl'
         },
-        'hm.search.results' : {
+        'hm.search.results': {
           url: '/search?query&view_type=grid&category_id&{:attributes}',
           templateUrl: 'app/search/results.html',
           controller: 'HM_SearchResultCtrl'
         },
-        'hm.reserveEquipmentSuccess' : {
+        'hm.reserveEquipmentSuccess': {
           url: '/{source:(?:quote|reservation)}/:id/success',
           templateUrl: 'app/equipment-reserve-success/equipment.reserve-success.html',
           controller: 'HM_EquipmentReserveSuccessCtrl'
         },
-        'hm.orderHistory' : {
+        'hm.orderHistory': {
           url: '/orders/history',
           templateUrl: 'app/order-history/order-history.html',
           controller: 'HM_OrderHistoryCtrl'
         },
-        'hm.equipmentDetails' : {
+        'hm.equipmentDetails': {
           url: '/equipments/:id',
           templateUrl: 'app/equipment-detail/equipment-detail.html',
           controller: 'HM_EquipmentDetailCtrl'
         },
-        'hm.dashboard.jobSites' : {
+        'hm.dashboard.jobSites': {
           url: '/manage/jobsites?mapView&page',
           templateUrl: 'app/jobsites/jobsites.html',
           controller: 'HM_JobSitesCtrl'
@@ -122,41 +124,41 @@ angular.module("HM_RoutesMD")
         },
         'hm.dashboard.jobSites.editJobSite': {
           url: '/add-job',
-          params : {data : null},
+          params: {data: null},
           templateUrl: 'app/jobsites/edit-jobsite.html',
           controller: 'HM_EditJobSiteCtrl',
           openInModal: true
         },
-        'hm.dashboard.quotaNReservations' : {
+        'hm.dashboard.quotaNReservations': {
           url: '/quotes',
           templateUrl: 'app/quota-n-reservations/quota-n-reservations.html',
           controller: 'HM_QuotaNReservationsCtrl'
         },
-        'hm.dashboard.quotesDetail' : {
+        'hm.dashboard.quotesDetail': {
           url: '/quotes/:id',
           controller: 'HM_QuoteDetailsCtrl',
           templateUrl: 'app/quotes-detail/quotes-detail.html'
         },
-        'hm.guestQuotesDetail' : {
+        'hm.guestQuotesDetail': {
           url: '/quotes/g/:id',
           controller: 'HM_QuoteDetailsCtrl',
           templateUrl: 'app/quotes-detail/guest-quote-details.html'
         },
-        'hm.dashboard.myCatalogue' : {
+        'hm.dashboard.myCatalogue': {
           url: '/my-catalogue',
           templateUrl: 'app/my-catalogue/my-catalogue.html',
           controller: 'HM_MyCatalogueCtrl'
         },
-        'hm.dashboard.makePayment' : {
+        'hm.dashboard.makePayment': {
           url: '/make-payment',
           templateUrl: 'app/make-payment/make-payment.html'
         },
-        'hm.dashboard.requests' : {
+        'hm.dashboard.requests': {
           url: '/requests',
-          controller : 'HM_RequestsCtrl',
+          controller: 'HM_RequestsCtrl',
           templateUrl: 'app/requests/requests.html'
         },
-        'hm.dashboard.contracts' : {
+        'hm.dashboard.contracts': {
           url: '/contracts?status&po&pc',
           templateUrl: 'app/contracts/contracts.html',
           controller: 'HM_ContractsCtrl'
@@ -178,9 +180,9 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart.updateAddress': {
           url: '/delivery-details',
-          views : {
+          views: {
             "": {
-              templateUrl:'app/cart/cart-update-jobsite.html',
+              templateUrl: 'app/cart/cart-update-jobsite.html',
               controller: 'HM_CartUpdateJobSiteCtrl'
             },
             "snapshot@hm.cart.updateAddress": {
@@ -191,21 +193,21 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart.cartDuration': {
           url: '/rental-period',
-          views : {
+          views: {
             "": {
               templateUrl: 'app/cart/cart-duration.html',
-              controller : 'HM_CartDurationCtrl'
+              controller: 'HM_CartDurationCtrl'
             },
             "snapshot@hm.cart.cartDuration": {
               templateUrl: 'app/cart/cart-snapshot.html'
             }
           },
-          resolve : {
-            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+          resolve: {
+            whoCares: ['HM_CartAccessRules', '$state', '$timeout', function (CartAccessRules, $state, $timeout) {
 
               var canAccess = CartAccessRules.canAccess($state.next.name);
-              if(!canAccess){
-                $timeout(function() {
+              if (!canAccess) {
+                $timeout(function () {
                   $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
@@ -215,20 +217,20 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart.payment': {
           url: '/payment',
-          views : {
+          views: {
             "": {
               templateUrl: 'app/cart/cart-payment.html',
-              controller : 'HM_CartPaymentCtrl'
+              controller: 'HM_CartPaymentCtrl'
             },
             "snapshot@hm.cart.payment": {
               templateUrl: 'app/cart/cart-snapshot.html'
             }
           },
-          resolve : {
-            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+          resolve: {
+            whoCares: ['HM_CartAccessRules', '$state', '$timeout', function (CartAccessRules, $state, $timeout) {
               var canAccess = CartAccessRules.canAccess($state.next.name);
-              if(!canAccess){
-                $timeout(function() {
+              if (!canAccess) {
+                $timeout(function () {
                   $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
@@ -238,17 +240,17 @@ angular.module("HM_RoutesMD")
         },
         'hm.cart.review': {
           url: '/review',
-          views : {
+          views: {
             "": {
               controller: 'HM_CartReviewCtrl',
               templateUrl: 'app/cart/cart-review.html'
             }
           },
-          resolve : {
-            whoCares : ['HM_CartAccessRules','$state','$timeout',function(CartAccessRules,$state,$timeout){
+          resolve: {
+            whoCares: ['HM_CartAccessRules', '$state', '$timeout', function (CartAccessRules, $state, $timeout) {
               var canAccess = CartAccessRules.canAccess($state.next.name);
-              if(!canAccess){
-                $timeout(function() {
+              if (!canAccess) {
+                $timeout(function () {
                   $state.go($state.prev.name || 'hm.cart.details');
                 });
               }
@@ -273,7 +275,7 @@ angular.module("HM_RoutesMD")
         'hm.pressReleases': {
           url: '/press-releases',
           templateUrl: 'app/press-releases/press-releases.html',
-          controller : 'HM_PressReleasesCtrl'
+          controller: 'HM_PressReleasesCtrl'
         },
         'hm.annualMeeting': {
           url: '/annual-meeting',
@@ -303,58 +305,151 @@ angular.module("HM_RoutesMD")
           url: '/get-the-software',
           templateUrl: 'app/get-the-software/get-the-software.html'
         },
-        'hmPrelogin.login' : {
+        'hmPrelogin.login': {
           url: '/login',
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },
-        'hmPrelogin.forgotPassword' : {
+        'hmPrelogin.forgotPassword': {
           url: '/forgot-password',
           templateUrl: 'app/forgot-password/forgot-password.html',
           controller: 'HM_ForgotPasswordCtrl'
         },
-        'hmPrelogin.register' : {
+        'hmPrelogin.register': {
           url: '/register?terms',
           templateUrl: 'app/login/login.html',
           controller: 'HM_LoginCtrl'
         },
-        'hmPrelogin.activateUser' : {
+        'hmPrelogin.activateUser': {
           url: '/user/activate?auth_code&email',
           templateUrl: 'app/activate-user/activate-user.html',
           controller: 'HM_ActivateUserCtrl'
         },
-        'hmPrelogin.logout' : {
+        'hmPrelogin.logout': {
           url: '/logout',
-          templateUrl : 'app/logout/logout.html',
+          templateUrl: 'app/logout/logout.html',
           controller: 'HM_LogoutCtrl'
         },
-        'hmPrelogin.requestCallback' : {
-          url : '/request-callback',
-          templateUrl : 'app/request-callback/request-callback.html',
-          controller : 'HM_RequestCallBackCtrl',
-          openInModal : true
+        'hmPrelogin.requestCallback': {
+          url: '/request-callback',
+          templateUrl: 'app/request-callback/request-callback.html',
+          controller: 'HM_RequestCallBackCtrl',
+          openInModal: true
         },
-        'hmPrelogin.termsAndConditions' : {
-          url : '/terms-n-conditions',
-          templateUrl : 'app/terms-and-conditions/terms-and-conditions.html',
-          controller : 'HM_TermsAndConditionsCtrl',
-          openInModal : true
+        'hmPrelogin.termsAndConditions': {
+          url: '/terms-n-conditions',
+          templateUrl: 'app/terms-and-conditions/terms-and-conditions.html',
+          controller: 'HM_TermsAndConditionsCtrl',
+          openInModal: true
         },
-        'hmPrelogin.termsDetails' : {
-          url : '/terms/detail',
-          templateUrl : 'app/terms-and-conditions/terms-and-conditions-detail.html'
+        'hmPrelogin.termsDetails': {
+          url: '/terms/detail',
+          templateUrl: 'app/terms-and-conditions/terms-and-conditions-detail.html'
         }
 
       },
-      defaultRoute : function($injector){
+      defaultRoute: function ($injector) {
         var localStorageService = $injector.get('localStorageService');
         var userObj = localStorageService.get("userObj");
-        if(userObj){
+        if (userObj) {
           return '/search'
-        }else{
+        } else {
           return '/'
         }
 
       }
 
-  });
+    });
+
+
+  app.
+  config(['$stateProvider', '$urlRouterProvider', 'HM_RoutesCnst', _configure])
+    .run(['$rootScope', '$uibModal', _run]);
+
+
+  function _configure($stateProvider, $urlRouterProvider, Routescnst) {
+
+
+    for (var state in Routescnst.routes) {
+      if (!Routescnst.routes.hasOwnProperty(state)) {
+        continue;
+      }
+      var registerState = Routescnst.routes[state];
+      var stateObj = angular.extend({
+        resolve: {
+          PreviousState: [
+            "$state",
+            function ($state) {
+              var currentStateData = {
+                name: $state.current.name,
+                params: $state.params,
+                url: $state.href($state.current.name, $state.params)
+              };
+              return currentStateData;
+            }
+          ],
+
+          session: ['$rootScope', '$q', 'HM_RestSV', 'localStorageService', function ($rootScope, $q, RestSV, localStorageService) {
+            var deferred = $q.defer();
+            $rootScope.userObj = localStorageService.get('userObj');
+            $rootScope.session = $rootScope.session || {};
+            var guestSession = localStorageService.get('session');
+            if (!$rootScope.userObj && !guestSession && !$rootScope.session.fetched) {
+              $rootScope.session.fetched = true;
+              RestSV
+                .head('')
+                .then(function (response) {
+                  if (response.headers().session) {
+                    localStorageService.set('session', response.headers().session);
+                    deferred.resolve(true);
+                  }
+                }, function () {
+                  deferred.resolve(true);
+                })
+            } else {
+              deferred.resolve(true);
+            }
+
+            return deferred.promise
+          }]
+        }
+      }, registerState);
+      $stateProvider
+        .state(state, stateObj);
+    }
+    $urlRouterProvider.otherwise(Routescnst.defaultRoute);
+    // $locationProvider.html5Mode(true)
+  }
+
+  function _run($rootScope, $modal) {
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+      if (toState.openInModal) {
+        var modalInstance = $modal.open({
+          templateUrl: toState.templateUrl,
+          controller: toState.controller,
+          scope: function () {
+
+            var scope = $rootScope.$new();
+            scope.modalParams = toParams;
+            // Might leak memory
+            scope.$on("$stateChangeSuccess", function () {
+              modalInstance.close();
+            });
+            return scope;
+          }()
+        });
+
+
+        /**
+         * Prevent the transition to the dummy state, stay where you are
+         */
+        event.preventDefault();
+
+      }
+
+    });
+
+  }
+
+}());

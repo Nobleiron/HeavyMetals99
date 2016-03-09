@@ -1,4 +1,4 @@
-angular.module("HM_EnvMD")
+angular.module("HeavyMetals")
   .constant('HM_EnvCnst', {
 
     current : 'development',
@@ -8,10 +8,10 @@ angular.module("HM_EnvMD")
     },
 
     staging : {
-      restEndPoint : 'http://52.88.68.50/index.php/'
+      restEndPoint : 'http://52.88.68.50/index.php'
     },
     production : {
-      restEndPoint : 'http://52.88.68.50/index.php/'
+      restEndPoint : 'http://52.88.68.50/index.php'
     }
 
   });

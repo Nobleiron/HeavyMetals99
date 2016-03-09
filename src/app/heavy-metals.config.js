@@ -11,39 +11,11 @@
 
 (function () {
 
-  angular.module('HeavyMetals',
-    ['ngAnimate',
-      'ui.router',
-      'ui.bootstrap',
-      'ngAutocomplete',
-      'angularMoment',
-      'ngSanitize',
-      'cgBusy',
-      'ui.bootstrap.datetimepicker',
-      'infinite-scroll',
-      'toastr',
-      'LocalStorageModule',
-      'HM_RequestHeadersINT',
-      'HM_ResponseINT',
-      'valdr',
-      'HM_RoutesMD',
-      'HM_GlobalMD'])
-    .config(['$provide','$animateProvider','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure])
-    .run(['$rootScope','$state','HM_RestSV','localStorageService', function($rootScope, $state, RestSV, localStorageService){
-      $rootScope.$state = $state;
-      $rootScope.params = {};
-      $rootScope.$on('$stateChangeSuccess', function() {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
-      });
-
-      $rootScope.userObj = localStorageService.get('userObj');
-
-    }]);
-
+  angular.module('HeavyMetals')
+    .config(['$provide','$animateProvider','localStorageServiceProvider','valdrProvider','ValidationConstraintsCnst','toastrConfig', _configure]);
 
 
   function _configure($provide,$animateProvider,localStorageServiceProvider, valdrProvider, ValidationConstraintsCnst,toastrConfig) {
-
     $animateProvider.classNameFilter(/^((?!(fa-spinner)).)*$/);
 
     $provide.decorator('$state', ['$delegate', '$rootScope',function($delegate, $rootScope) {
